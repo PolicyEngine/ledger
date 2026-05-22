@@ -1,0 +1,780 @@
+schema_version: arch.source_package.v1
+package_id: statswales-council-tax-levels-2026
+label: StatsWales council tax levels in Wales 2026-27
+artifact:
+  source_name: stats_wales
+  source_table: 'Council Tax levels: April 2026 to March 2027'
+  resource_package: db
+  resource_directory: data/stats_wales/council_tax_levels_2026
+  manifest: manifest.yaml
+  vintage: council_tax_levels_2026_27
+  extracted_at: '2026-05-22'
+  extraction_method: openpyxl whole-workbook used-range cell parse
+  parser: xlsx_used_range
+  artifact_year: 2026
+record_sets:
+- record_set_id: statswales_council_tax_levels.fy2026_27.local_authority_band_d
+  record_set_spec_id: statswales_council_tax_levels.local_authority_band_d.v1
+  source_record_id_prefix: statswales_council_tax_levels.fy2026_27.local_authority_band_d
+  sheet_name: Table1
+  period_type: fiscal_year
+  period: 2026-27
+  geography_id: W92000004
+  geography_level: country
+  geography_name: Wales
+  geography_vintage: current
+  entity: household
+  entity_role: council_tax_payer
+  domain: uk_housing
+  groupby_dimension: local_authority
+  rows:
+  - value_id: w06000001
+    label: Isle of Anglesey
+    ordinal: 0
+    row_number: 3
+    geography_id: W06000001
+    geography_level: local_authority
+    geography_name: Isle of Anglesey
+    geography_vintage: current
+    source_row_id: w06000001
+    expected_row_header_column: A
+    expected_row_header: Isle of Anglesey
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000001
+      label: Local authority
+  - value_id: w06000002
+    label: Gwynedd
+    ordinal: 1
+    row_number: 4
+    geography_id: W06000002
+    geography_level: local_authority
+    geography_name: Gwynedd
+    geography_vintage: current
+    source_row_id: w06000002
+    expected_row_header_column: A
+    expected_row_header: Gwynedd
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000002
+      label: Local authority
+  - value_id: w06000003
+    label: Conwy
+    ordinal: 2
+    row_number: 5
+    geography_id: W06000003
+    geography_level: local_authority
+    geography_name: Conwy
+    geography_vintage: current
+    source_row_id: w06000003
+    expected_row_header_column: A
+    expected_row_header: Conwy
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000003
+      label: Local authority
+  - value_id: w06000004
+    label: Denbighshire
+    ordinal: 3
+    row_number: 6
+    geography_id: W06000004
+    geography_level: local_authority
+    geography_name: Denbighshire
+    geography_vintage: current
+    source_row_id: w06000004
+    expected_row_header_column: A
+    expected_row_header: Denbighshire
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000004
+      label: Local authority
+  - value_id: w06000005
+    label: Flintshire
+    ordinal: 4
+    row_number: 7
+    geography_id: W06000005
+    geography_level: local_authority
+    geography_name: Flintshire
+    geography_vintage: current
+    source_row_id: w06000005
+    expected_row_header_column: A
+    expected_row_header: Flintshire
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000005
+      label: Local authority
+  - value_id: w06000006
+    label: Wrexham
+    ordinal: 5
+    row_number: 8
+    geography_id: W06000006
+    geography_level: local_authority
+    geography_name: Wrexham
+    geography_vintage: current
+    source_row_id: w06000006
+    expected_row_header_column: A
+    expected_row_header: Wrexham
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000006
+      label: Local authority
+  - value_id: w06000023
+    label: Powys
+    ordinal: 6
+    row_number: 9
+    geography_id: W06000023
+    geography_level: local_authority
+    geography_name: Powys
+    geography_vintage: current
+    source_row_id: w06000023
+    expected_row_header_column: A
+    expected_row_header: Powys
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000023
+      label: Local authority
+  - value_id: w06000008
+    label: Ceredigion
+    ordinal: 7
+    row_number: 10
+    geography_id: W06000008
+    geography_level: local_authority
+    geography_name: Ceredigion
+    geography_vintage: current
+    source_row_id: w06000008
+    expected_row_header_column: A
+    expected_row_header: Ceredigion
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000008
+      label: Local authority
+  - value_id: w06000009
+    label: Pembrokeshire
+    ordinal: 8
+    row_number: 11
+    geography_id: W06000009
+    geography_level: local_authority
+    geography_name: Pembrokeshire
+    geography_vintage: current
+    source_row_id: w06000009
+    expected_row_header_column: A
+    expected_row_header: Pembrokeshire
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000009
+      label: Local authority
+  - value_id: w06000010
+    label: Carmarthenshire
+    ordinal: 9
+    row_number: 12
+    geography_id: W06000010
+    geography_level: local_authority
+    geography_name: Carmarthenshire
+    geography_vintage: current
+    source_row_id: w06000010
+    expected_row_header_column: A
+    expected_row_header: Carmarthenshire
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000010
+      label: Local authority
+  - value_id: w06000011
+    label: Swansea
+    ordinal: 10
+    row_number: 13
+    geography_id: W06000011
+    geography_level: local_authority
+    geography_name: Swansea
+    geography_vintage: current
+    source_row_id: w06000011
+    expected_row_header_column: A
+    expected_row_header: Swansea
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000011
+      label: Local authority
+  - value_id: w06000012
+    label: Neath Port Talbot
+    ordinal: 11
+    row_number: 14
+    geography_id: W06000012
+    geography_level: local_authority
+    geography_name: Neath Port Talbot
+    geography_vintage: current
+    source_row_id: w06000012
+    expected_row_header_column: A
+    expected_row_header: Neath Port Talbot
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000012
+      label: Local authority
+  - value_id: w06000013
+    label: Bridgend
+    ordinal: 12
+    row_number: 15
+    geography_id: W06000013
+    geography_level: local_authority
+    geography_name: Bridgend
+    geography_vintage: current
+    source_row_id: w06000013
+    expected_row_header_column: A
+    expected_row_header: Bridgend
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000013
+      label: Local authority
+  - value_id: w06000014
+    label: Vale of Glamorgan
+    ordinal: 13
+    row_number: 16
+    geography_id: W06000014
+    geography_level: local_authority
+    geography_name: Vale of Glamorgan
+    geography_vintage: current
+    source_row_id: w06000014
+    expected_row_header_column: A
+    expected_row_header: Vale of Glamorgan
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000014
+      label: Local authority
+  - value_id: w06000015
+    label: Cardiff
+    ordinal: 14
+    row_number: 17
+    geography_id: W06000015
+    geography_level: local_authority
+    geography_name: Cardiff
+    geography_vintage: current
+    source_row_id: w06000015
+    expected_row_header_column: A
+    expected_row_header: Cardiff
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000015
+      label: Local authority
+  - value_id: w06000016
+    label: Rhondda Cynon Taf
+    ordinal: 15
+    row_number: 18
+    geography_id: W06000016
+    geography_level: local_authority
+    geography_name: Rhondda Cynon Taf
+    geography_vintage: current
+    source_row_id: w06000016
+    expected_row_header_column: A
+    expected_row_header: Rhondda Cynon Taf
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000016
+      label: Local authority
+  - value_id: w06000024
+    label: Merthyr Tydfil
+    ordinal: 16
+    row_number: 19
+    geography_id: W06000024
+    geography_level: local_authority
+    geography_name: Merthyr Tydfil
+    geography_vintage: current
+    source_row_id: w06000024
+    expected_row_header_column: A
+    expected_row_header: Merthyr Tydfil
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000024
+      label: Local authority
+  - value_id: w06000018
+    label: Caerphilly
+    ordinal: 17
+    row_number: 20
+    geography_id: W06000018
+    geography_level: local_authority
+    geography_name: Caerphilly
+    geography_vintage: current
+    source_row_id: w06000018
+    expected_row_header_column: A
+    expected_row_header: Caerphilly
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000018
+      label: Local authority
+  - value_id: w06000019
+    label: Blaenau Gwent
+    ordinal: 18
+    row_number: 21
+    geography_id: W06000019
+    geography_level: local_authority
+    geography_name: Blaenau Gwent
+    geography_vintage: current
+    source_row_id: w06000019
+    expected_row_header_column: A
+    expected_row_header: Blaenau Gwent
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000019
+      label: Local authority
+  - value_id: w06000020
+    label: Torfaen
+    ordinal: 19
+    row_number: 22
+    geography_id: W06000020
+    geography_level: local_authority
+    geography_name: Torfaen
+    geography_vintage: current
+    source_row_id: w06000020
+    expected_row_header_column: A
+    expected_row_header: Torfaen
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000020
+      label: Local authority
+  - value_id: w06000021
+    label: Monmouthshire
+    ordinal: 20
+    row_number: 23
+    geography_id: W06000021
+    geography_level: local_authority
+    geography_name: Monmouthshire
+    geography_vintage: current
+    source_row_id: w06000021
+    expected_row_header_column: A
+    expected_row_header: Monmouthshire
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000021
+      label: Local authority
+  - value_id: w06000022
+    label: Newport
+    ordinal: 21
+    row_number: 24
+    geography_id: W06000022
+    geography_level: local_authority
+    geography_name: Newport
+    geography_vintage: current
+    source_row_id: w06000022
+    expected_row_header_column: A
+    expected_row_header: Newport
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000022
+      label: Local authority
+  measures:
+  - measure_id: overall_average_band_d
+    label: Overall average Band D council tax
+    ordinal: 0
+    column: B
+    source_column_id: overall_average_band_d
+    expected_column_header_row: 2
+    expected_column_header: Overall average band D
+    concept: uk_housing.average_band_d_council_tax
+    source_concept: statswales.overall_average_band_d_council_tax
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: gbp
+    aggregation: mean
+    expected_cell_type: number
+- record_set_id: statswales_council_tax_levels.fy2026_27.local_authority_council_tax_income
+  record_set_spec_id: statswales_council_tax_levels.local_authority_council_tax_income.v1
+  source_record_id_prefix: statswales_council_tax_levels.fy2026_27.local_authority_council_tax_income
+  sheet_name: Table3
+  period_type: fiscal_year
+  period: 2026-27
+  geography_id: W92000004
+  geography_level: country
+  geography_name: Wales
+  geography_vintage: current
+  entity: household
+  entity_role: council_tax_payer
+  domain: uk_public_sector
+  groupby_dimension: local_authority
+  rows:
+  - value_id: w06000001
+    label: Isle of Anglesey
+    ordinal: 0
+    row_number: 3
+    geography_id: W06000001
+    geography_level: local_authority
+    geography_name: Isle of Anglesey
+    geography_vintage: current
+    source_row_id: w06000001
+    expected_row_header_column: A
+    expected_row_header: Isle of Anglesey
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000001
+      label: Local authority
+  - value_id: w06000002
+    label: Gwynedd
+    ordinal: 1
+    row_number: 4
+    geography_id: W06000002
+    geography_level: local_authority
+    geography_name: Gwynedd
+    geography_vintage: current
+    source_row_id: w06000002
+    expected_row_header_column: A
+    expected_row_header: Gwynedd
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000002
+      label: Local authority
+  - value_id: w06000003
+    label: Conwy
+    ordinal: 2
+    row_number: 5
+    geography_id: W06000003
+    geography_level: local_authority
+    geography_name: Conwy
+    geography_vintage: current
+    source_row_id: w06000003
+    expected_row_header_column: A
+    expected_row_header: Conwy
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000003
+      label: Local authority
+  - value_id: w06000004
+    label: Denbighshire
+    ordinal: 3
+    row_number: 6
+    geography_id: W06000004
+    geography_level: local_authority
+    geography_name: Denbighshire
+    geography_vintage: current
+    source_row_id: w06000004
+    expected_row_header_column: A
+    expected_row_header: Denbighshire
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000004
+      label: Local authority
+  - value_id: w06000005
+    label: Flintshire
+    ordinal: 4
+    row_number: 7
+    geography_id: W06000005
+    geography_level: local_authority
+    geography_name: Flintshire
+    geography_vintage: current
+    source_row_id: w06000005
+    expected_row_header_column: A
+    expected_row_header: Flintshire
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000005
+      label: Local authority
+  - value_id: w06000006
+    label: Wrexham
+    ordinal: 5
+    row_number: 8
+    geography_id: W06000006
+    geography_level: local_authority
+    geography_name: Wrexham
+    geography_vintage: current
+    source_row_id: w06000006
+    expected_row_header_column: A
+    expected_row_header: Wrexham
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000006
+      label: Local authority
+  - value_id: w06000023
+    label: Powys
+    ordinal: 6
+    row_number: 9
+    geography_id: W06000023
+    geography_level: local_authority
+    geography_name: Powys
+    geography_vintage: current
+    source_row_id: w06000023
+    expected_row_header_column: A
+    expected_row_header: Powys
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000023
+      label: Local authority
+  - value_id: w06000008
+    label: Ceredigion
+    ordinal: 7
+    row_number: 10
+    geography_id: W06000008
+    geography_level: local_authority
+    geography_name: Ceredigion
+    geography_vintage: current
+    source_row_id: w06000008
+    expected_row_header_column: A
+    expected_row_header: Ceredigion
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000008
+      label: Local authority
+  - value_id: w06000009
+    label: Pembrokeshire
+    ordinal: 8
+    row_number: 11
+    geography_id: W06000009
+    geography_level: local_authority
+    geography_name: Pembrokeshire
+    geography_vintage: current
+    source_row_id: w06000009
+    expected_row_header_column: A
+    expected_row_header: Pembrokeshire
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000009
+      label: Local authority
+  - value_id: w06000010
+    label: Carmarthenshire
+    ordinal: 9
+    row_number: 12
+    geography_id: W06000010
+    geography_level: local_authority
+    geography_name: Carmarthenshire
+    geography_vintage: current
+    source_row_id: w06000010
+    expected_row_header_column: A
+    expected_row_header: Carmarthenshire
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000010
+      label: Local authority
+  - value_id: w06000011
+    label: Swansea
+    ordinal: 10
+    row_number: 13
+    geography_id: W06000011
+    geography_level: local_authority
+    geography_name: Swansea
+    geography_vintage: current
+    source_row_id: w06000011
+    expected_row_header_column: A
+    expected_row_header: Swansea
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000011
+      label: Local authority
+  - value_id: w06000012
+    label: Neath Port Talbot
+    ordinal: 11
+    row_number: 14
+    geography_id: W06000012
+    geography_level: local_authority
+    geography_name: Neath Port Talbot
+    geography_vintage: current
+    source_row_id: w06000012
+    expected_row_header_column: A
+    expected_row_header: Neath Port Talbot
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000012
+      label: Local authority
+  - value_id: w06000013
+    label: Bridgend
+    ordinal: 12
+    row_number: 15
+    geography_id: W06000013
+    geography_level: local_authority
+    geography_name: Bridgend
+    geography_vintage: current
+    source_row_id: w06000013
+    expected_row_header_column: A
+    expected_row_header: Bridgend
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000013
+      label: Local authority
+  - value_id: w06000014
+    label: Vale of Glamorgan
+    ordinal: 13
+    row_number: 16
+    geography_id: W06000014
+    geography_level: local_authority
+    geography_name: Vale of Glamorgan
+    geography_vintage: current
+    source_row_id: w06000014
+    expected_row_header_column: A
+    expected_row_header: Vale of Glamorgan
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000014
+      label: Local authority
+  - value_id: w06000015
+    label: Cardiff
+    ordinal: 14
+    row_number: 17
+    geography_id: W06000015
+    geography_level: local_authority
+    geography_name: Cardiff
+    geography_vintage: current
+    source_row_id: w06000015
+    expected_row_header_column: A
+    expected_row_header: Cardiff
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000015
+      label: Local authority
+  - value_id: w06000016
+    label: Rhondda Cynon Taf
+    ordinal: 15
+    row_number: 18
+    geography_id: W06000016
+    geography_level: local_authority
+    geography_name: Rhondda Cynon Taf
+    geography_vintage: current
+    source_row_id: w06000016
+    expected_row_header_column: A
+    expected_row_header: Rhondda Cynon Taf
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000016
+      label: Local authority
+  - value_id: w06000024
+    label: Merthyr Tydfil
+    ordinal: 16
+    row_number: 19
+    geography_id: W06000024
+    geography_level: local_authority
+    geography_name: Merthyr Tydfil
+    geography_vintage: current
+    source_row_id: w06000024
+    expected_row_header_column: A
+    expected_row_header: Merthyr Tydfil
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000024
+      label: Local authority
+  - value_id: w06000018
+    label: Caerphilly
+    ordinal: 17
+    row_number: 20
+    geography_id: W06000018
+    geography_level: local_authority
+    geography_name: Caerphilly
+    geography_vintage: current
+    source_row_id: w06000018
+    expected_row_header_column: A
+    expected_row_header: Caerphilly
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000018
+      label: Local authority
+  - value_id: w06000019
+    label: Blaenau Gwent
+    ordinal: 18
+    row_number: 21
+    geography_id: W06000019
+    geography_level: local_authority
+    geography_name: Blaenau Gwent
+    geography_vintage: current
+    source_row_id: w06000019
+    expected_row_header_column: A
+    expected_row_header: Blaenau Gwent
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000019
+      label: Local authority
+  - value_id: w06000020
+    label: Torfaen
+    ordinal: 19
+    row_number: 22
+    geography_id: W06000020
+    geography_level: local_authority
+    geography_name: Torfaen
+    geography_vintage: current
+    source_row_id: w06000020
+    expected_row_header_column: A
+    expected_row_header: Torfaen
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000020
+      label: Local authority
+  - value_id: w06000021
+    label: Monmouthshire
+    ordinal: 20
+    row_number: 23
+    geography_id: W06000021
+    geography_level: local_authority
+    geography_name: Monmouthshire
+    geography_vintage: current
+    source_row_id: w06000021
+    expected_row_header_column: A
+    expected_row_header: Monmouthshire
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000021
+      label: Local authority
+  - value_id: w06000022
+    label: Newport
+    ordinal: 21
+    row_number: 24
+    geography_id: W06000022
+    geography_level: local_authority
+    geography_name: Newport
+    geography_vintage: current
+    source_row_id: w06000022
+    expected_row_header_column: A
+    expected_row_header: Newport
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: W06000022
+      label: Local authority
+  measures:
+  - measure_id: council_tax_income
+    label: Council tax income
+    ordinal: 0
+    column: F
+    source_column_id: council_tax_income_millions
+    expected_column_header_row: 2
+    expected_column_header: "Council tax income\n(\xA3m)"
+    concept: uk_public_sector.council_tax_income
+    source_concept: statswales.council_tax_income
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: gbp
+    aggregation: sum
+    value_scale: 1000000
+    expected_cell_type: number

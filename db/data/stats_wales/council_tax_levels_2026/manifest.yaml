@@ -1,0 +1,18 @@
+source_id: stats_wales
+package_id: statswales-council-tax-levels-2026
+dataset: statswales_council_tax_levels_2026
+source_page: https://www.gov.wales/council-tax-levels-april-2026-march-2027
+table: 'Council Tax levels: April 2026 to March 2027'
+files:
+  2026:
+    filename: council_tax_levels_april_2026_march_2027.xlsx
+    source_url: https://www.gov.wales/sites/default/files/statistics-and-research/2026-03/council-tax-levels-april-2026-march-2027-153478.xlsx
+    sha256: 4c7513aef77b2d276c533e3289e730f324efade40adc9d2da9c2ad30d2a094a1
+    size_bytes: 26893
+    fetched_at: '2026-05-22T04:30:08+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/stats_wales/statswales-council-tax-levels-2026/2026/4c7513aef77b2d276c533e3289e730f324efade40adc9d2da9c2ad30d2a094a1/council_tax_levels_april_2026_march_2027.xlsx
+        uri: r2://arch-raw/raw/stats_wales/statswales-council-tax-levels-2026/2026/4c7513aef77b2d276c533e3289e730f324efade40adc9d2da9c2ad30d2a094a1/council_tax_levels_april_2026_march_2027.xlsx

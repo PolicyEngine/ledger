@@ -1,0 +1,19 @@
+source_id: mhclg
+package_id: mhclg-council-tax-levels-2026
+dataset: mhclg_council_tax_levels_2026
+source_page: https://www.gov.uk/government/statistics/council-tax-levels-set-by-local-authorities-in-england-2026-to-2027
+table: 'Council Tax levels set by local authorities in England 2026 to 2027: Table
+  10 Local Authority Level Data'
+files:
+  2026:
+    filename: Table_10_2026_27.ods
+    source_url: https://assets.publishing.service.gov.uk/media/6a02eeeccd2e0e8b5b20b449/Table_10_2026-27.ods
+    sha256: b5b8345743fb722e48699243d1654a3e35b96c89a14c6eb26888035c3e38feb0
+    size_bytes: 279362
+    fetched_at: '2026-05-22T04:30:08+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/mhclg/mhclg-council-tax-levels-2026/2026/b5b8345743fb722e48699243d1654a3e35b96c89a14c6eb26888035c3e38feb0/Table_10_2026_27.ods
+        uri: r2://arch-raw/raw/mhclg/mhclg-council-tax-levels-2026/2026/b5b8345743fb722e48699243d1654a3e35b96c89a14c6eb26888035c3e38feb0/Table_10_2026_27.ods

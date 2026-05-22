@@ -185,6 +185,9 @@ SOURCE_PACKAGE_ALIASES = {
     "mhclg-english-housing-survey-rented-sectors-2023-24": Path(
         "packages/mhclg/english_housing_survey_rented_sectors_2023_24"
     ),
+    "mhclg-council-tax-levels-2026": Path(
+        "packages/mhclg/council_tax_levels_2026"
+    ),
     "nrs-vital-events-reference-tables-2024": Path(
         "packages/nrs/vital_events_reference_tables_2024"
     ),
@@ -269,6 +272,9 @@ SOURCE_PACKAGE_ALIASES = {
     "soi-table-1-1": Path("packages/irs_soi/table_1_1"),
     "soi-table-1-4": Path("packages/irs_soi/table_1_4"),
     "soi-w2-statistics-2020": Path("packages/irs_soi/w2_statistics_2020"),
+    "statswales-council-tax-levels-2026": Path(
+        "packages/stats_wales/council_tax_levels_2026"
+    ),
     "usda-snap-fy69-to-current": Path("packages/usda_snap/fy69_to_current"),
     "voa-council-tax-bands-2025": Path("packages/voa/council_tax_bands_2025"),
 }
