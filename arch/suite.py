@@ -66,6 +66,7 @@ SUPPORTED_SOURCE_PACKAGES = {
     "isc-census-2024-pupil-count",
     "jct-tax-expenditures-2024-mortgage-interest-deduction",
     "kff-marketplace-effectuated-enrollment",
+    "mhclg-council-taxbase-2025",
     "mhclg-council-tax-levels-2026",
     "obr-efo-expenditure",
     "obr-efo-receipts",

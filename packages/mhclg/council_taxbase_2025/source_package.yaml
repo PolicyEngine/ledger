@@ -1,0 +1,5965 @@
+schema_version: arch.source_package.v1
+package_id: mhclg-council-taxbase-2025
+label: MHCLG council taxbase in England 2025
+artifact:
+  source_name: mhclg
+  source_table: 'Council Taxbase: Local authority level data for 2025 (revised)'
+  resource_package: db
+  resource_directory: data/mhclg/council_taxbase_2025
+  manifest: manifest.yaml
+  vintage: council_taxbase_2025_revised
+  extracted_at: '2026-05-22'
+  extraction_method: openpyxl whole-workbook used-range cell parse
+  parser: xlsx_used_range
+  artifact_year: 2025
+record_sets:
+- record_set_id: mhclg_council_taxbase.cy2025.local_authority_taxbase_after_support
+  record_set_spec_id: mhclg_council_taxbase.local_authority_taxbase_after_support.v1
+  source_record_id_prefix: mhclg_council_taxbase.cy2025.local_authority_taxbase_after_support
+  sheet_name: Council Taxbase Data
+  period_type: calendar_year
+  period: 2025
+  geography_id: E92000001
+  geography_level: country
+  geography_name: England
+  geography_vintage: current
+  entity: dwelling
+  entity_role: band_d_equivalent_dwelling
+  domain: uk_housing
+  groupby_dimension: local_authority
+  rows:
+  - value_id: e07000223
+    label: Adur
+    ordinal: 0
+    row_number: 8
+    geography_id: E07000223
+    geography_level: local_authority
+    geography_name: Adur
+    geography_vintage: current
+    source_row_id: e07000223
+    expected_row_header_column: D
+    expected_row_header: Adur
+    guard_cells:
+    - column: B
+      expected_value: E07000223
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000223
+      label: Local authority
+  - value_id: e07000032
+    label: Amber Valley
+    ordinal: 1
+    row_number: 9
+    geography_id: E07000032
+    geography_level: local_authority
+    geography_name: Amber Valley
+    geography_vintage: current
+    source_row_id: e07000032
+    expected_row_header_column: D
+    expected_row_header: Amber Valley
+    guard_cells:
+    - column: B
+      expected_value: E07000032
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000032
+      label: Local authority
+  - value_id: e07000224
+    label: Arun
+    ordinal: 2
+    row_number: 10
+    geography_id: E07000224
+    geography_level: local_authority
+    geography_name: Arun
+    geography_vintage: current
+    source_row_id: e07000224
+    expected_row_header_column: D
+    expected_row_header: Arun
+    guard_cells:
+    - column: B
+      expected_value: E07000224
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000224
+      label: Local authority
+  - value_id: e07000170
+    label: Ashfield
+    ordinal: 3
+    row_number: 11
+    geography_id: E07000170
+    geography_level: local_authority
+    geography_name: Ashfield
+    geography_vintage: current
+    source_row_id: e07000170
+    expected_row_header_column: D
+    expected_row_header: Ashfield
+    guard_cells:
+    - column: B
+      expected_value: E07000170
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000170
+      label: Local authority
+  - value_id: e07000105
+    label: Ashford
+    ordinal: 4
+    row_number: 12
+    geography_id: E07000105
+    geography_level: local_authority
+    geography_name: Ashford
+    geography_vintage: current
+    source_row_id: e07000105
+    expected_row_header_column: D
+    expected_row_header: Ashford
+    guard_cells:
+    - column: B
+      expected_value: E07000105
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000105
+      label: Local authority
+  - value_id: e07000200
+    label: Babergh
+    ordinal: 5
+    row_number: 13
+    geography_id: E07000200
+    geography_level: local_authority
+    geography_name: Babergh
+    geography_vintage: current
+    source_row_id: e07000200
+    expected_row_header_column: D
+    expected_row_header: Babergh
+    guard_cells:
+    - column: B
+      expected_value: E07000200
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000200
+      label: Local authority
+  - value_id: e09000002
+    label: Barking and Dagenham
+    ordinal: 6
+    row_number: 14
+    geography_id: E09000002
+    geography_level: local_authority
+    geography_name: Barking and Dagenham
+    geography_vintage: current
+    source_row_id: e09000002
+    expected_row_header_column: D
+    expected_row_header: Barking and Dagenham
+    guard_cells:
+    - column: B
+      expected_value: E09000002
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000002
+      label: Local authority
+  - value_id: e09000003
+    label: Barnet
+    ordinal: 7
+    row_number: 15
+    geography_id: E09000003
+    geography_level: local_authority
+    geography_name: Barnet
+    geography_vintage: current
+    source_row_id: e09000003
+    expected_row_header_column: D
+    expected_row_header: Barnet
+    guard_cells:
+    - column: B
+      expected_value: E09000003
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000003
+      label: Local authority
+  - value_id: e08000038
+    label: Barnsley
+    ordinal: 8
+    row_number: 16
+    geography_id: E08000038
+    geography_level: local_authority
+    geography_name: Barnsley
+    geography_vintage: current
+    source_row_id: e08000038
+    expected_row_header_column: D
+    expected_row_header: Barnsley
+    guard_cells:
+    - column: B
+      expected_value: E08000038
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000038
+      label: Local authority
+  - value_id: e07000066
+    label: Basildon
+    ordinal: 9
+    row_number: 17
+    geography_id: E07000066
+    geography_level: local_authority
+    geography_name: Basildon
+    geography_vintage: current
+    source_row_id: e07000066
+    expected_row_header_column: D
+    expected_row_header: Basildon
+    guard_cells:
+    - column: B
+      expected_value: E07000066
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000066
+      label: Local authority
+  - value_id: e07000084
+    label: Basingstoke and Deane
+    ordinal: 10
+    row_number: 18
+    geography_id: E07000084
+    geography_level: local_authority
+    geography_name: Basingstoke and Deane
+    geography_vintage: current
+    source_row_id: e07000084
+    expected_row_header_column: D
+    expected_row_header: Basingstoke and Deane
+    guard_cells:
+    - column: B
+      expected_value: E07000084
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000084
+      label: Local authority
+  - value_id: e07000171
+    label: Bassetlaw
+    ordinal: 11
+    row_number: 19
+    geography_id: E07000171
+    geography_level: local_authority
+    geography_name: Bassetlaw
+    geography_vintage: current
+    source_row_id: e07000171
+    expected_row_header_column: D
+    expected_row_header: Bassetlaw
+    guard_cells:
+    - column: B
+      expected_value: E07000171
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000171
+      label: Local authority
+  - value_id: e06000022
+    label: Bath and North East Somerset
+    ordinal: 12
+    row_number: 20
+    geography_id: E06000022
+    geography_level: local_authority
+    geography_name: Bath and North East Somerset
+    geography_vintage: current
+    source_row_id: e06000022
+    expected_row_header_column: D
+    expected_row_header: Bath and North East Somerset
+    guard_cells:
+    - column: B
+      expected_value: E06000022
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000022
+      label: Local authority
+  - value_id: e06000055
+    label: Bedford
+    ordinal: 13
+    row_number: 21
+    geography_id: E06000055
+    geography_level: local_authority
+    geography_name: Bedford
+    geography_vintage: current
+    source_row_id: e06000055
+    expected_row_header_column: D
+    expected_row_header: Bedford
+    guard_cells:
+    - column: B
+      expected_value: E06000055
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000055
+      label: Local authority
+  - value_id: e09000004
+    label: Bexley
+    ordinal: 14
+    row_number: 22
+    geography_id: E09000004
+    geography_level: local_authority
+    geography_name: Bexley
+    geography_vintage: current
+    source_row_id: e09000004
+    expected_row_header_column: D
+    expected_row_header: Bexley
+    guard_cells:
+    - column: B
+      expected_value: E09000004
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000004
+      label: Local authority
+  - value_id: e08000025
+    label: Birmingham
+    ordinal: 15
+    row_number: 23
+    geography_id: E08000025
+    geography_level: local_authority
+    geography_name: Birmingham
+    geography_vintage: current
+    source_row_id: e08000025
+    expected_row_header_column: D
+    expected_row_header: Birmingham
+    guard_cells:
+    - column: B
+      expected_value: E08000025
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000025
+      label: Local authority
+  - value_id: e07000129
+    label: Blaby
+    ordinal: 16
+    row_number: 24
+    geography_id: E07000129
+    geography_level: local_authority
+    geography_name: Blaby
+    geography_vintage: current
+    source_row_id: e07000129
+    expected_row_header_column: D
+    expected_row_header: Blaby
+    guard_cells:
+    - column: B
+      expected_value: E07000129
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000129
+      label: Local authority
+  - value_id: e06000008
+    label: Blackburn with Darwen
+    ordinal: 17
+    row_number: 25
+    geography_id: E06000008
+    geography_level: local_authority
+    geography_name: Blackburn with Darwen
+    geography_vintage: current
+    source_row_id: e06000008
+    expected_row_header_column: D
+    expected_row_header: Blackburn with Darwen
+    guard_cells:
+    - column: B
+      expected_value: E06000008
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000008
+      label: Local authority
+  - value_id: e06000009
+    label: Blackpool
+    ordinal: 18
+    row_number: 26
+    geography_id: E06000009
+    geography_level: local_authority
+    geography_name: Blackpool
+    geography_vintage: current
+    source_row_id: e06000009
+    expected_row_header_column: D
+    expected_row_header: Blackpool
+    guard_cells:
+    - column: B
+      expected_value: E06000009
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000009
+      label: Local authority
+  - value_id: e07000033
+    label: Bolsover
+    ordinal: 19
+    row_number: 27
+    geography_id: E07000033
+    geography_level: local_authority
+    geography_name: Bolsover
+    geography_vintage: current
+    source_row_id: e07000033
+    expected_row_header_column: D
+    expected_row_header: Bolsover
+    guard_cells:
+    - column: B
+      expected_value: E07000033
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000033
+      label: Local authority
+  - value_id: e08000001
+    label: Bolton
+    ordinal: 20
+    row_number: 28
+    geography_id: E08000001
+    geography_level: local_authority
+    geography_name: Bolton
+    geography_vintage: current
+    source_row_id: e08000001
+    expected_row_header_column: D
+    expected_row_header: Bolton
+    guard_cells:
+    - column: B
+      expected_value: E08000001
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000001
+      label: Local authority
+  - value_id: e07000136
+    label: Boston
+    ordinal: 21
+    row_number: 29
+    geography_id: E07000136
+    geography_level: local_authority
+    geography_name: Boston
+    geography_vintage: current
+    source_row_id: e07000136
+    expected_row_header_column: D
+    expected_row_header: Boston
+    guard_cells:
+    - column: B
+      expected_value: E07000136
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000136
+      label: Local authority
+  - value_id: e06000058
+    label: Bournemouth Christchurch and Poole
+    ordinal: 22
+    row_number: 30
+    geography_id: E06000058
+    geography_level: local_authority
+    geography_name: Bournemouth Christchurch and Poole
+    geography_vintage: current
+    source_row_id: e06000058
+    expected_row_header_column: D
+    expected_row_header: Bournemouth Christchurch and Poole
+    guard_cells:
+    - column: B
+      expected_value: E06000058
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000058
+      label: Local authority
+  - value_id: e06000036
+    label: Bracknell Forest
+    ordinal: 23
+    row_number: 31
+    geography_id: E06000036
+    geography_level: local_authority
+    geography_name: Bracknell Forest
+    geography_vintage: current
+    source_row_id: e06000036
+    expected_row_header_column: D
+    expected_row_header: Bracknell Forest
+    guard_cells:
+    - column: B
+      expected_value: E06000036
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000036
+      label: Local authority
+  - value_id: e08000032
+    label: Bradford
+    ordinal: 24
+    row_number: 32
+    geography_id: E08000032
+    geography_level: local_authority
+    geography_name: Bradford
+    geography_vintage: current
+    source_row_id: e08000032
+    expected_row_header_column: D
+    expected_row_header: Bradford
+    guard_cells:
+    - column: B
+      expected_value: E08000032
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000032
+      label: Local authority
+  - value_id: e07000067
+    label: Braintree
+    ordinal: 25
+    row_number: 33
+    geography_id: E07000067
+    geography_level: local_authority
+    geography_name: Braintree
+    geography_vintage: current
+    source_row_id: e07000067
+    expected_row_header_column: D
+    expected_row_header: Braintree
+    guard_cells:
+    - column: B
+      expected_value: E07000067
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000067
+      label: Local authority
+  - value_id: e07000143
+    label: Breckland
+    ordinal: 26
+    row_number: 34
+    geography_id: E07000143
+    geography_level: local_authority
+    geography_name: Breckland
+    geography_vintage: current
+    source_row_id: e07000143
+    expected_row_header_column: D
+    expected_row_header: Breckland
+    guard_cells:
+    - column: B
+      expected_value: E07000143
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000143
+      label: Local authority
+  - value_id: e09000005
+    label: Brent
+    ordinal: 27
+    row_number: 35
+    geography_id: E09000005
+    geography_level: local_authority
+    geography_name: Brent
+    geography_vintage: current
+    source_row_id: e09000005
+    expected_row_header_column: D
+    expected_row_header: Brent
+    guard_cells:
+    - column: B
+      expected_value: E09000005
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000005
+      label: Local authority
+  - value_id: e07000068
+    label: Brentwood
+    ordinal: 28
+    row_number: 36
+    geography_id: E07000068
+    geography_level: local_authority
+    geography_name: Brentwood
+    geography_vintage: current
+    source_row_id: e07000068
+    expected_row_header_column: D
+    expected_row_header: Brentwood
+    guard_cells:
+    - column: B
+      expected_value: E07000068
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000068
+      label: Local authority
+  - value_id: e06000043
+    label: Brighton and Hove
+    ordinal: 29
+    row_number: 37
+    geography_id: E06000043
+    geography_level: local_authority
+    geography_name: Brighton and Hove
+    geography_vintage: current
+    source_row_id: e06000043
+    expected_row_header_column: D
+    expected_row_header: Brighton and Hove
+    guard_cells:
+    - column: B
+      expected_value: E06000043
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000043
+      label: Local authority
+  - value_id: e06000023
+    label: Bristol
+    ordinal: 30
+    row_number: 38
+    geography_id: E06000023
+    geography_level: local_authority
+    geography_name: Bristol
+    geography_vintage: current
+    source_row_id: e06000023
+    expected_row_header_column: D
+    expected_row_header: Bristol
+    guard_cells:
+    - column: B
+      expected_value: E06000023
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000023
+      label: Local authority
+  - value_id: e07000144
+    label: Broadland
+    ordinal: 31
+    row_number: 39
+    geography_id: E07000144
+    geography_level: local_authority
+    geography_name: Broadland
+    geography_vintage: current
+    source_row_id: e07000144
+    expected_row_header_column: D
+    expected_row_header: Broadland
+    guard_cells:
+    - column: B
+      expected_value: E07000144
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000144
+      label: Local authority
+  - value_id: e09000006
+    label: Bromley
+    ordinal: 32
+    row_number: 40
+    geography_id: E09000006
+    geography_level: local_authority
+    geography_name: Bromley
+    geography_vintage: current
+    source_row_id: e09000006
+    expected_row_header_column: D
+    expected_row_header: Bromley
+    guard_cells:
+    - column: B
+      expected_value: E09000006
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000006
+      label: Local authority
+  - value_id: e07000234
+    label: Bromsgrove
+    ordinal: 33
+    row_number: 41
+    geography_id: E07000234
+    geography_level: local_authority
+    geography_name: Bromsgrove
+    geography_vintage: current
+    source_row_id: e07000234
+    expected_row_header_column: D
+    expected_row_header: Bromsgrove
+    guard_cells:
+    - column: B
+      expected_value: E07000234
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000234
+      label: Local authority
+  - value_id: e07000095
+    label: Broxbourne
+    ordinal: 34
+    row_number: 42
+    geography_id: E07000095
+    geography_level: local_authority
+    geography_name: Broxbourne
+    geography_vintage: current
+    source_row_id: e07000095
+    expected_row_header_column: D
+    expected_row_header: Broxbourne
+    guard_cells:
+    - column: B
+      expected_value: E07000095
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000095
+      label: Local authority
+  - value_id: e07000172
+    label: Broxtowe
+    ordinal: 35
+    row_number: 43
+    geography_id: E07000172
+    geography_level: local_authority
+    geography_name: Broxtowe
+    geography_vintage: current
+    source_row_id: e07000172
+    expected_row_header_column: D
+    expected_row_header: Broxtowe
+    guard_cells:
+    - column: B
+      expected_value: E07000172
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000172
+      label: Local authority
+  - value_id: e06000060
+    label: Buckinghamshire
+    ordinal: 36
+    row_number: 44
+    geography_id: E06000060
+    geography_level: local_authority
+    geography_name: Buckinghamshire
+    geography_vintage: current
+    source_row_id: e06000060
+    expected_row_header_column: D
+    expected_row_header: Buckinghamshire
+    guard_cells:
+    - column: B
+      expected_value: E06000060
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000060
+      label: Local authority
+  - value_id: e07000117
+    label: Burnley
+    ordinal: 37
+    row_number: 45
+    geography_id: E07000117
+    geography_level: local_authority
+    geography_name: Burnley
+    geography_vintage: current
+    source_row_id: e07000117
+    expected_row_header_column: D
+    expected_row_header: Burnley
+    guard_cells:
+    - column: B
+      expected_value: E07000117
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000117
+      label: Local authority
+  - value_id: e08000002
+    label: Bury
+    ordinal: 38
+    row_number: 46
+    geography_id: E08000002
+    geography_level: local_authority
+    geography_name: Bury
+    geography_vintage: current
+    source_row_id: e08000002
+    expected_row_header_column: D
+    expected_row_header: Bury
+    guard_cells:
+    - column: B
+      expected_value: E08000002
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000002
+      label: Local authority
+  - value_id: e08000033
+    label: Calderdale
+    ordinal: 39
+    row_number: 47
+    geography_id: E08000033
+    geography_level: local_authority
+    geography_name: Calderdale
+    geography_vintage: current
+    source_row_id: e08000033
+    expected_row_header_column: D
+    expected_row_header: Calderdale
+    guard_cells:
+    - column: B
+      expected_value: E08000033
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000033
+      label: Local authority
+  - value_id: e07000008
+    label: Cambridge
+    ordinal: 40
+    row_number: 48
+    geography_id: E07000008
+    geography_level: local_authority
+    geography_name: Cambridge
+    geography_vintage: current
+    source_row_id: e07000008
+    expected_row_header_column: D
+    expected_row_header: Cambridge
+    guard_cells:
+    - column: B
+      expected_value: E07000008
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000008
+      label: Local authority
+  - value_id: e09000007
+    label: Camden
+    ordinal: 41
+    row_number: 49
+    geography_id: E09000007
+    geography_level: local_authority
+    geography_name: Camden
+    geography_vintage: current
+    source_row_id: e09000007
+    expected_row_header_column: D
+    expected_row_header: Camden
+    guard_cells:
+    - column: B
+      expected_value: E09000007
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000007
+      label: Local authority
+  - value_id: e07000192
+    label: Cannock Chase
+    ordinal: 42
+    row_number: 50
+    geography_id: E07000192
+    geography_level: local_authority
+    geography_name: Cannock Chase
+    geography_vintage: current
+    source_row_id: e07000192
+    expected_row_header_column: D
+    expected_row_header: Cannock Chase
+    guard_cells:
+    - column: B
+      expected_value: E07000192
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000192
+      label: Local authority
+  - value_id: e07000106
+    label: Canterbury
+    ordinal: 43
+    row_number: 51
+    geography_id: E07000106
+    geography_level: local_authority
+    geography_name: Canterbury
+    geography_vintage: current
+    source_row_id: e07000106
+    expected_row_header_column: D
+    expected_row_header: Canterbury
+    guard_cells:
+    - column: B
+      expected_value: E07000106
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000106
+      label: Local authority
+  - value_id: e07000069
+    label: Castle Point
+    ordinal: 44
+    row_number: 52
+    geography_id: E07000069
+    geography_level: local_authority
+    geography_name: Castle Point
+    geography_vintage: current
+    source_row_id: e07000069
+    expected_row_header_column: D
+    expected_row_header: Castle Point
+    guard_cells:
+    - column: B
+      expected_value: E07000069
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000069
+      label: Local authority
+  - value_id: e06000056
+    label: Central Bedfordshire
+    ordinal: 45
+    row_number: 53
+    geography_id: E06000056
+    geography_level: local_authority
+    geography_name: Central Bedfordshire
+    geography_vintage: current
+    source_row_id: e06000056
+    expected_row_header_column: D
+    expected_row_header: Central Bedfordshire
+    guard_cells:
+    - column: B
+      expected_value: E06000056
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000056
+      label: Local authority
+  - value_id: e07000130
+    label: Charnwood
+    ordinal: 46
+    row_number: 54
+    geography_id: E07000130
+    geography_level: local_authority
+    geography_name: Charnwood
+    geography_vintage: current
+    source_row_id: e07000130
+    expected_row_header_column: D
+    expected_row_header: Charnwood
+    guard_cells:
+    - column: B
+      expected_value: E07000130
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000130
+      label: Local authority
+  - value_id: e07000070
+    label: Chelmsford
+    ordinal: 47
+    row_number: 55
+    geography_id: E07000070
+    geography_level: local_authority
+    geography_name: Chelmsford
+    geography_vintage: current
+    source_row_id: e07000070
+    expected_row_header_column: D
+    expected_row_header: Chelmsford
+    guard_cells:
+    - column: B
+      expected_value: E07000070
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000070
+      label: Local authority
+  - value_id: e07000078
+    label: Cheltenham
+    ordinal: 48
+    row_number: 56
+    geography_id: E07000078
+    geography_level: local_authority
+    geography_name: Cheltenham
+    geography_vintage: current
+    source_row_id: e07000078
+    expected_row_header_column: D
+    expected_row_header: Cheltenham
+    guard_cells:
+    - column: B
+      expected_value: E07000078
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000078
+      label: Local authority
+  - value_id: e07000177
+    label: Cherwell
+    ordinal: 49
+    row_number: 57
+    geography_id: E07000177
+    geography_level: local_authority
+    geography_name: Cherwell
+    geography_vintage: current
+    source_row_id: e07000177
+    expected_row_header_column: D
+    expected_row_header: Cherwell
+    guard_cells:
+    - column: B
+      expected_value: E07000177
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000177
+      label: Local authority
+  - value_id: e06000049
+    label: Cheshire East
+    ordinal: 50
+    row_number: 58
+    geography_id: E06000049
+    geography_level: local_authority
+    geography_name: Cheshire East
+    geography_vintage: current
+    source_row_id: e06000049
+    expected_row_header_column: D
+    expected_row_header: Cheshire East
+    guard_cells:
+    - column: B
+      expected_value: E06000049
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000049
+      label: Local authority
+  - value_id: e06000050
+    label: Cheshire West and Chester
+    ordinal: 51
+    row_number: 59
+    geography_id: E06000050
+    geography_level: local_authority
+    geography_name: Cheshire West and Chester
+    geography_vintage: current
+    source_row_id: e06000050
+    expected_row_header_column: D
+    expected_row_header: Cheshire West and Chester
+    guard_cells:
+    - column: B
+      expected_value: E06000050
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000050
+      label: Local authority
+  - value_id: e07000034
+    label: Chesterfield
+    ordinal: 52
+    row_number: 60
+    geography_id: E07000034
+    geography_level: local_authority
+    geography_name: Chesterfield
+    geography_vintage: current
+    source_row_id: e07000034
+    expected_row_header_column: D
+    expected_row_header: Chesterfield
+    guard_cells:
+    - column: B
+      expected_value: E07000034
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000034
+      label: Local authority
+  - value_id: e07000225
+    label: Chichester
+    ordinal: 53
+    row_number: 61
+    geography_id: E07000225
+    geography_level: local_authority
+    geography_name: Chichester
+    geography_vintage: current
+    source_row_id: e07000225
+    expected_row_header_column: D
+    expected_row_header: Chichester
+    guard_cells:
+    - column: B
+      expected_value: E07000225
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000225
+      label: Local authority
+  - value_id: e07000118
+    label: Chorley
+    ordinal: 54
+    row_number: 62
+    geography_id: E07000118
+    geography_level: local_authority
+    geography_name: Chorley
+    geography_vintage: current
+    source_row_id: e07000118
+    expected_row_header_column: D
+    expected_row_header: Chorley
+    guard_cells:
+    - column: B
+      expected_value: E07000118
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000118
+      label: Local authority
+  - value_id: e09000001
+    label: City of London
+    ordinal: 55
+    row_number: 63
+    geography_id: E09000001
+    geography_level: local_authority
+    geography_name: City of London
+    geography_vintage: current
+    source_row_id: e09000001
+    expected_row_header_column: D
+    expected_row_header: City of London
+    guard_cells:
+    - column: B
+      expected_value: E09000001
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000001
+      label: Local authority
+  - value_id: e07000071
+    label: Colchester
+    ordinal: 56
+    row_number: 64
+    geography_id: E07000071
+    geography_level: local_authority
+    geography_name: Colchester
+    geography_vintage: current
+    source_row_id: e07000071
+    expected_row_header_column: D
+    expected_row_header: Colchester
+    guard_cells:
+    - column: B
+      expected_value: E07000071
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000071
+      label: Local authority
+  - value_id: e06000052
+    label: Cornwall
+    ordinal: 57
+    row_number: 65
+    geography_id: E06000052
+    geography_level: local_authority
+    geography_name: Cornwall
+    geography_vintage: current
+    source_row_id: e06000052
+    expected_row_header_column: D
+    expected_row_header: Cornwall
+    guard_cells:
+    - column: B
+      expected_value: E06000052
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000052
+      label: Local authority
+  - value_id: e07000079
+    label: Cotswold
+    ordinal: 58
+    row_number: 66
+    geography_id: E07000079
+    geography_level: local_authority
+    geography_name: Cotswold
+    geography_vintage: current
+    source_row_id: e07000079
+    expected_row_header_column: D
+    expected_row_header: Cotswold
+    guard_cells:
+    - column: B
+      expected_value: E07000079
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000079
+      label: Local authority
+  - value_id: e08000026
+    label: Coventry
+    ordinal: 59
+    row_number: 67
+    geography_id: E08000026
+    geography_level: local_authority
+    geography_name: Coventry
+    geography_vintage: current
+    source_row_id: e08000026
+    expected_row_header_column: D
+    expected_row_header: Coventry
+    guard_cells:
+    - column: B
+      expected_value: E08000026
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000026
+      label: Local authority
+  - value_id: e07000226
+    label: Crawley
+    ordinal: 60
+    row_number: 68
+    geography_id: E07000226
+    geography_level: local_authority
+    geography_name: Crawley
+    geography_vintage: current
+    source_row_id: e07000226
+    expected_row_header_column: D
+    expected_row_header: Crawley
+    guard_cells:
+    - column: B
+      expected_value: E07000226
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000226
+      label: Local authority
+  - value_id: e09000008
+    label: Croydon
+    ordinal: 61
+    row_number: 69
+    geography_id: E09000008
+    geography_level: local_authority
+    geography_name: Croydon
+    geography_vintage: current
+    source_row_id: e09000008
+    expected_row_header_column: D
+    expected_row_header: Croydon
+    guard_cells:
+    - column: B
+      expected_value: E09000008
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000008
+      label: Local authority
+  - value_id: e06000063
+    label: Cumberland
+    ordinal: 62
+    row_number: 70
+    geography_id: E06000063
+    geography_level: local_authority
+    geography_name: Cumberland
+    geography_vintage: current
+    source_row_id: e06000063
+    expected_row_header_column: D
+    expected_row_header: Cumberland
+    guard_cells:
+    - column: B
+      expected_value: E06000063
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000063
+      label: Local authority
+  - value_id: e07000096
+    label: Dacorum
+    ordinal: 63
+    row_number: 71
+    geography_id: E07000096
+    geography_level: local_authority
+    geography_name: Dacorum
+    geography_vintage: current
+    source_row_id: e07000096
+    expected_row_header_column: D
+    expected_row_header: Dacorum
+    guard_cells:
+    - column: B
+      expected_value: E07000096
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000096
+      label: Local authority
+  - value_id: e06000005
+    label: Darlington
+    ordinal: 64
+    row_number: 72
+    geography_id: E06000005
+    geography_level: local_authority
+    geography_name: Darlington
+    geography_vintage: current
+    source_row_id: e06000005
+    expected_row_header_column: D
+    expected_row_header: Darlington
+    guard_cells:
+    - column: B
+      expected_value: E06000005
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000005
+      label: Local authority
+  - value_id: e07000107
+    label: Dartford
+    ordinal: 65
+    row_number: 73
+    geography_id: E07000107
+    geography_level: local_authority
+    geography_name: Dartford
+    geography_vintage: current
+    source_row_id: e07000107
+    expected_row_header_column: D
+    expected_row_header: Dartford
+    guard_cells:
+    - column: B
+      expected_value: E07000107
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000107
+      label: Local authority
+  - value_id: e06000015
+    label: Derby
+    ordinal: 66
+    row_number: 74
+    geography_id: E06000015
+    geography_level: local_authority
+    geography_name: Derby
+    geography_vintage: current
+    source_row_id: e06000015
+    expected_row_header_column: D
+    expected_row_header: Derby
+    guard_cells:
+    - column: B
+      expected_value: E06000015
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000015
+      label: Local authority
+  - value_id: e07000035
+    label: Derbyshire Dales
+    ordinal: 67
+    row_number: 75
+    geography_id: E07000035
+    geography_level: local_authority
+    geography_name: Derbyshire Dales
+    geography_vintage: current
+    source_row_id: e07000035
+    expected_row_header_column: D
+    expected_row_header: Derbyshire Dales
+    guard_cells:
+    - column: B
+      expected_value: E07000035
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000035
+      label: Local authority
+  - value_id: e08000017
+    label: Doncaster
+    ordinal: 68
+    row_number: 76
+    geography_id: E08000017
+    geography_level: local_authority
+    geography_name: Doncaster
+    geography_vintage: current
+    source_row_id: e08000017
+    expected_row_header_column: D
+    expected_row_header: Doncaster
+    guard_cells:
+    - column: B
+      expected_value: E08000017
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000017
+      label: Local authority
+  - value_id: e06000059
+    label: Dorset
+    ordinal: 69
+    row_number: 77
+    geography_id: E06000059
+    geography_level: local_authority
+    geography_name: Dorset
+    geography_vintage: current
+    source_row_id: e06000059
+    expected_row_header_column: D
+    expected_row_header: Dorset
+    guard_cells:
+    - column: B
+      expected_value: E06000059
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000059
+      label: Local authority
+  - value_id: e07000108
+    label: Dover
+    ordinal: 70
+    row_number: 78
+    geography_id: E07000108
+    geography_level: local_authority
+    geography_name: Dover
+    geography_vintage: current
+    source_row_id: e07000108
+    expected_row_header_column: D
+    expected_row_header: Dover
+    guard_cells:
+    - column: B
+      expected_value: E07000108
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000108
+      label: Local authority
+  - value_id: e08000027
+    label: Dudley
+    ordinal: 71
+    row_number: 79
+    geography_id: E08000027
+    geography_level: local_authority
+    geography_name: Dudley
+    geography_vintage: current
+    source_row_id: e08000027
+    expected_row_header_column: D
+    expected_row_header: Dudley
+    guard_cells:
+    - column: B
+      expected_value: E08000027
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000027
+      label: Local authority
+  - value_id: e06000047
+    label: Durham
+    ordinal: 72
+    row_number: 80
+    geography_id: E06000047
+    geography_level: local_authority
+    geography_name: Durham
+    geography_vintage: current
+    source_row_id: e06000047
+    expected_row_header_column: D
+    expected_row_header: Durham
+    guard_cells:
+    - column: B
+      expected_value: E06000047
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000047
+      label: Local authority
+  - value_id: e09000009
+    label: Ealing
+    ordinal: 73
+    row_number: 81
+    geography_id: E09000009
+    geography_level: local_authority
+    geography_name: Ealing
+    geography_vintage: current
+    source_row_id: e09000009
+    expected_row_header_column: D
+    expected_row_header: Ealing
+    guard_cells:
+    - column: B
+      expected_value: E09000009
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000009
+      label: Local authority
+  - value_id: e07000009
+    label: East Cambridgeshire
+    ordinal: 74
+    row_number: 82
+    geography_id: E07000009
+    geography_level: local_authority
+    geography_name: East Cambridgeshire
+    geography_vintage: current
+    source_row_id: e07000009
+    expected_row_header_column: D
+    expected_row_header: East Cambridgeshire
+    guard_cells:
+    - column: B
+      expected_value: E07000009
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000009
+      label: Local authority
+  - value_id: e07000040
+    label: East Devon
+    ordinal: 75
+    row_number: 83
+    geography_id: E07000040
+    geography_level: local_authority
+    geography_name: East Devon
+    geography_vintage: current
+    source_row_id: e07000040
+    expected_row_header_column: D
+    expected_row_header: East Devon
+    guard_cells:
+    - column: B
+      expected_value: E07000040
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000040
+      label: Local authority
+  - value_id: e07000085
+    label: East Hampshire
+    ordinal: 76
+    row_number: 84
+    geography_id: E07000085
+    geography_level: local_authority
+    geography_name: East Hampshire
+    geography_vintage: current
+    source_row_id: e07000085
+    expected_row_header_column: D
+    expected_row_header: East Hampshire
+    guard_cells:
+    - column: B
+      expected_value: E07000085
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000085
+      label: Local authority
+  - value_id: e07000242
+    label: East Hertfordshire
+    ordinal: 77
+    row_number: 85
+    geography_id: E07000242
+    geography_level: local_authority
+    geography_name: East Hertfordshire
+    geography_vintage: current
+    source_row_id: e07000242
+    expected_row_header_column: D
+    expected_row_header: East Hertfordshire
+    guard_cells:
+    - column: B
+      expected_value: E07000242
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000242
+      label: Local authority
+  - value_id: e07000137
+    label: East Lindsey
+    ordinal: 78
+    row_number: 86
+    geography_id: E07000137
+    geography_level: local_authority
+    geography_name: East Lindsey
+    geography_vintage: current
+    source_row_id: e07000137
+    expected_row_header_column: D
+    expected_row_header: East Lindsey
+    guard_cells:
+    - column: B
+      expected_value: E07000137
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000137
+      label: Local authority
+  - value_id: e06000011
+    label: East Riding of Yorkshire
+    ordinal: 79
+    row_number: 87
+    geography_id: E06000011
+    geography_level: local_authority
+    geography_name: East Riding of Yorkshire
+    geography_vintage: current
+    source_row_id: e06000011
+    expected_row_header_column: D
+    expected_row_header: East Riding of Yorkshire
+    guard_cells:
+    - column: B
+      expected_value: E06000011
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000011
+      label: Local authority
+  - value_id: e07000193
+    label: East Staffordshire
+    ordinal: 80
+    row_number: 88
+    geography_id: E07000193
+    geography_level: local_authority
+    geography_name: East Staffordshire
+    geography_vintage: current
+    source_row_id: e07000193
+    expected_row_header_column: D
+    expected_row_header: East Staffordshire
+    guard_cells:
+    - column: B
+      expected_value: E07000193
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000193
+      label: Local authority
+  - value_id: e07000244
+    label: East Suffolk
+    ordinal: 81
+    row_number: 89
+    geography_id: E07000244
+    geography_level: local_authority
+    geography_name: East Suffolk
+    geography_vintage: current
+    source_row_id: e07000244
+    expected_row_header_column: D
+    expected_row_header: East Suffolk
+    guard_cells:
+    - column: B
+      expected_value: E07000244
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000244
+      label: Local authority
+  - value_id: e07000061
+    label: Eastbourne
+    ordinal: 82
+    row_number: 90
+    geography_id: E07000061
+    geography_level: local_authority
+    geography_name: Eastbourne
+    geography_vintage: current
+    source_row_id: e07000061
+    expected_row_header_column: D
+    expected_row_header: Eastbourne
+    guard_cells:
+    - column: B
+      expected_value: E07000061
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000061
+      label: Local authority
+  - value_id: e07000086
+    label: Eastleigh
+    ordinal: 83
+    row_number: 91
+    geography_id: E07000086
+    geography_level: local_authority
+    geography_name: Eastleigh
+    geography_vintage: current
+    source_row_id: e07000086
+    expected_row_header_column: D
+    expected_row_header: Eastleigh
+    guard_cells:
+    - column: B
+      expected_value: E07000086
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000086
+      label: Local authority
+  - value_id: e07000207
+    label: Elmbridge
+    ordinal: 84
+    row_number: 92
+    geography_id: E07000207
+    geography_level: local_authority
+    geography_name: Elmbridge
+    geography_vintage: current
+    source_row_id: e07000207
+    expected_row_header_column: D
+    expected_row_header: Elmbridge
+    guard_cells:
+    - column: B
+      expected_value: E07000207
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000207
+      label: Local authority
+  - value_id: e09000010
+    label: Enfield
+    ordinal: 85
+    row_number: 93
+    geography_id: E09000010
+    geography_level: local_authority
+    geography_name: Enfield
+    geography_vintage: current
+    source_row_id: e09000010
+    expected_row_header_column: D
+    expected_row_header: Enfield
+    guard_cells:
+    - column: B
+      expected_value: E09000010
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000010
+      label: Local authority
+  - value_id: e07000072
+    label: Epping Forest
+    ordinal: 86
+    row_number: 94
+    geography_id: E07000072
+    geography_level: local_authority
+    geography_name: Epping Forest
+    geography_vintage: current
+    source_row_id: e07000072
+    expected_row_header_column: D
+    expected_row_header: Epping Forest
+    guard_cells:
+    - column: B
+      expected_value: E07000072
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000072
+      label: Local authority
+  - value_id: e07000208
+    label: Epsom and Ewell
+    ordinal: 87
+    row_number: 95
+    geography_id: E07000208
+    geography_level: local_authority
+    geography_name: Epsom and Ewell
+    geography_vintage: current
+    source_row_id: e07000208
+    expected_row_header_column: D
+    expected_row_header: Epsom and Ewell
+    guard_cells:
+    - column: B
+      expected_value: E07000208
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000208
+      label: Local authority
+  - value_id: e07000036
+    label: Erewash
+    ordinal: 88
+    row_number: 96
+    geography_id: E07000036
+    geography_level: local_authority
+    geography_name: Erewash
+    geography_vintage: current
+    source_row_id: e07000036
+    expected_row_header_column: D
+    expected_row_header: Erewash
+    guard_cells:
+    - column: B
+      expected_value: E07000036
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000036
+      label: Local authority
+  - value_id: e07000041
+    label: Exeter
+    ordinal: 89
+    row_number: 97
+    geography_id: E07000041
+    geography_level: local_authority
+    geography_name: Exeter
+    geography_vintage: current
+    source_row_id: e07000041
+    expected_row_header_column: D
+    expected_row_header: Exeter
+    guard_cells:
+    - column: B
+      expected_value: E07000041
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000041
+      label: Local authority
+  - value_id: e07000087
+    label: Fareham
+    ordinal: 90
+    row_number: 98
+    geography_id: E07000087
+    geography_level: local_authority
+    geography_name: Fareham
+    geography_vintage: current
+    source_row_id: e07000087
+    expected_row_header_column: D
+    expected_row_header: Fareham
+    guard_cells:
+    - column: B
+      expected_value: E07000087
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000087
+      label: Local authority
+  - value_id: e07000010
+    label: Fenland
+    ordinal: 91
+    row_number: 99
+    geography_id: E07000010
+    geography_level: local_authority
+    geography_name: Fenland
+    geography_vintage: current
+    source_row_id: e07000010
+    expected_row_header_column: D
+    expected_row_header: Fenland
+    guard_cells:
+    - column: B
+      expected_value: E07000010
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000010
+      label: Local authority
+  - value_id: e07000112
+    label: Folkestone and Hythe
+    ordinal: 92
+    row_number: 100
+    geography_id: E07000112
+    geography_level: local_authority
+    geography_name: Folkestone and Hythe
+    geography_vintage: current
+    source_row_id: e07000112
+    expected_row_header_column: D
+    expected_row_header: Folkestone and Hythe
+    guard_cells:
+    - column: B
+      expected_value: E07000112
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000112
+      label: Local authority
+  - value_id: e07000080
+    label: Forest of Dean
+    ordinal: 93
+    row_number: 101
+    geography_id: E07000080
+    geography_level: local_authority
+    geography_name: Forest of Dean
+    geography_vintage: current
+    source_row_id: e07000080
+    expected_row_header_column: D
+    expected_row_header: Forest of Dean
+    guard_cells:
+    - column: B
+      expected_value: E07000080
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000080
+      label: Local authority
+  - value_id: e07000119
+    label: Fylde
+    ordinal: 94
+    row_number: 102
+    geography_id: E07000119
+    geography_level: local_authority
+    geography_name: Fylde
+    geography_vintage: current
+    source_row_id: e07000119
+    expected_row_header_column: D
+    expected_row_header: Fylde
+    guard_cells:
+    - column: B
+      expected_value: E07000119
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000119
+      label: Local authority
+  - value_id: e08000037
+    label: Gateshead
+    ordinal: 95
+    row_number: 103
+    geography_id: E08000037
+    geography_level: local_authority
+    geography_name: Gateshead
+    geography_vintage: current
+    source_row_id: e08000037
+    expected_row_header_column: D
+    expected_row_header: Gateshead
+    guard_cells:
+    - column: B
+      expected_value: E08000037
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000037
+      label: Local authority
+  - value_id: e07000173
+    label: Gedling
+    ordinal: 96
+    row_number: 104
+    geography_id: E07000173
+    geography_level: local_authority
+    geography_name: Gedling
+    geography_vintage: current
+    source_row_id: e07000173
+    expected_row_header_column: D
+    expected_row_header: Gedling
+    guard_cells:
+    - column: B
+      expected_value: E07000173
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000173
+      label: Local authority
+  - value_id: e07000081
+    label: Gloucester
+    ordinal: 97
+    row_number: 105
+    geography_id: E07000081
+    geography_level: local_authority
+    geography_name: Gloucester
+    geography_vintage: current
+    source_row_id: e07000081
+    expected_row_header_column: D
+    expected_row_header: Gloucester
+    guard_cells:
+    - column: B
+      expected_value: E07000081
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000081
+      label: Local authority
+  - value_id: e07000088
+    label: Gosport
+    ordinal: 98
+    row_number: 106
+    geography_id: E07000088
+    geography_level: local_authority
+    geography_name: Gosport
+    geography_vintage: current
+    source_row_id: e07000088
+    expected_row_header_column: D
+    expected_row_header: Gosport
+    guard_cells:
+    - column: B
+      expected_value: E07000088
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000088
+      label: Local authority
+  - value_id: e07000109
+    label: Gravesham
+    ordinal: 99
+    row_number: 107
+    geography_id: E07000109
+    geography_level: local_authority
+    geography_name: Gravesham
+    geography_vintage: current
+    source_row_id: e07000109
+    expected_row_header_column: D
+    expected_row_header: Gravesham
+    guard_cells:
+    - column: B
+      expected_value: E07000109
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000109
+      label: Local authority
+  - value_id: e07000145
+    label: Great Yarmouth
+    ordinal: 100
+    row_number: 108
+    geography_id: E07000145
+    geography_level: local_authority
+    geography_name: Great Yarmouth
+    geography_vintage: current
+    source_row_id: e07000145
+    expected_row_header_column: D
+    expected_row_header: Great Yarmouth
+    guard_cells:
+    - column: B
+      expected_value: E07000145
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000145
+      label: Local authority
+  - value_id: e09000011
+    label: Greenwich
+    ordinal: 101
+    row_number: 109
+    geography_id: E09000011
+    geography_level: local_authority
+    geography_name: Greenwich
+    geography_vintage: current
+    source_row_id: e09000011
+    expected_row_header_column: D
+    expected_row_header: Greenwich
+    guard_cells:
+    - column: B
+      expected_value: E09000011
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000011
+      label: Local authority
+  - value_id: e07000209
+    label: Guildford
+    ordinal: 102
+    row_number: 110
+    geography_id: E07000209
+    geography_level: local_authority
+    geography_name: Guildford
+    geography_vintage: current
+    source_row_id: e07000209
+    expected_row_header_column: D
+    expected_row_header: Guildford
+    guard_cells:
+    - column: B
+      expected_value: E07000209
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000209
+      label: Local authority
+  - value_id: e09000012
+    label: Hackney
+    ordinal: 103
+    row_number: 111
+    geography_id: E09000012
+    geography_level: local_authority
+    geography_name: Hackney
+    geography_vintage: current
+    source_row_id: e09000012
+    expected_row_header_column: D
+    expected_row_header: Hackney
+    guard_cells:
+    - column: B
+      expected_value: E09000012
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000012
+      label: Local authority
+  - value_id: e06000006
+    label: Halton
+    ordinal: 104
+    row_number: 112
+    geography_id: E06000006
+    geography_level: local_authority
+    geography_name: Halton
+    geography_vintage: current
+    source_row_id: e06000006
+    expected_row_header_column: D
+    expected_row_header: Halton
+    guard_cells:
+    - column: B
+      expected_value: E06000006
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000006
+      label: Local authority
+  - value_id: e09000013
+    label: Hammersmith and Fulham
+    ordinal: 105
+    row_number: 113
+    geography_id: E09000013
+    geography_level: local_authority
+    geography_name: Hammersmith and Fulham
+    geography_vintage: current
+    source_row_id: e09000013
+    expected_row_header_column: D
+    expected_row_header: Hammersmith and Fulham
+    guard_cells:
+    - column: B
+      expected_value: E09000013
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000013
+      label: Local authority
+  - value_id: e07000131
+    label: Harborough
+    ordinal: 106
+    row_number: 114
+    geography_id: E07000131
+    geography_level: local_authority
+    geography_name: Harborough
+    geography_vintage: current
+    source_row_id: e07000131
+    expected_row_header_column: D
+    expected_row_header: Harborough
+    guard_cells:
+    - column: B
+      expected_value: E07000131
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000131
+      label: Local authority
+  - value_id: e09000014
+    label: Haringey
+    ordinal: 107
+    row_number: 115
+    geography_id: E09000014
+    geography_level: local_authority
+    geography_name: Haringey
+    geography_vintage: current
+    source_row_id: e09000014
+    expected_row_header_column: D
+    expected_row_header: Haringey
+    guard_cells:
+    - column: B
+      expected_value: E09000014
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000014
+      label: Local authority
+  - value_id: e07000073
+    label: Harlow
+    ordinal: 108
+    row_number: 116
+    geography_id: E07000073
+    geography_level: local_authority
+    geography_name: Harlow
+    geography_vintage: current
+    source_row_id: e07000073
+    expected_row_header_column: D
+    expected_row_header: Harlow
+    guard_cells:
+    - column: B
+      expected_value: E07000073
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000073
+      label: Local authority
+  - value_id: e09000015
+    label: Harrow
+    ordinal: 109
+    row_number: 117
+    geography_id: E09000015
+    geography_level: local_authority
+    geography_name: Harrow
+    geography_vintage: current
+    source_row_id: e09000015
+    expected_row_header_column: D
+    expected_row_header: Harrow
+    guard_cells:
+    - column: B
+      expected_value: E09000015
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000015
+      label: Local authority
+  - value_id: e07000089
+    label: Hart
+    ordinal: 110
+    row_number: 118
+    geography_id: E07000089
+    geography_level: local_authority
+    geography_name: Hart
+    geography_vintage: current
+    source_row_id: e07000089
+    expected_row_header_column: D
+    expected_row_header: Hart
+    guard_cells:
+    - column: B
+      expected_value: E07000089
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000089
+      label: Local authority
+  - value_id: e06000001
+    label: Hartlepool
+    ordinal: 111
+    row_number: 119
+    geography_id: E06000001
+    geography_level: local_authority
+    geography_name: Hartlepool
+    geography_vintage: current
+    source_row_id: e06000001
+    expected_row_header_column: D
+    expected_row_header: Hartlepool
+    guard_cells:
+    - column: B
+      expected_value: E06000001
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000001
+      label: Local authority
+  - value_id: e07000062
+    label: Hastings
+    ordinal: 112
+    row_number: 120
+    geography_id: E07000062
+    geography_level: local_authority
+    geography_name: Hastings
+    geography_vintage: current
+    source_row_id: e07000062
+    expected_row_header_column: D
+    expected_row_header: Hastings
+    guard_cells:
+    - column: B
+      expected_value: E07000062
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000062
+      label: Local authority
+  - value_id: e07000090
+    label: Havant
+    ordinal: 113
+    row_number: 121
+    geography_id: E07000090
+    geography_level: local_authority
+    geography_name: Havant
+    geography_vintage: current
+    source_row_id: e07000090
+    expected_row_header_column: D
+    expected_row_header: Havant
+    guard_cells:
+    - column: B
+      expected_value: E07000090
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000090
+      label: Local authority
+  - value_id: e09000016
+    label: Havering
+    ordinal: 114
+    row_number: 122
+    geography_id: E09000016
+    geography_level: local_authority
+    geography_name: Havering
+    geography_vintage: current
+    source_row_id: e09000016
+    expected_row_header_column: D
+    expected_row_header: Havering
+    guard_cells:
+    - column: B
+      expected_value: E09000016
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000016
+      label: Local authority
+  - value_id: e06000019
+    label: Herefordshire
+    ordinal: 115
+    row_number: 123
+    geography_id: E06000019
+    geography_level: local_authority
+    geography_name: Herefordshire
+    geography_vintage: current
+    source_row_id: e06000019
+    expected_row_header_column: D
+    expected_row_header: Herefordshire
+    guard_cells:
+    - column: B
+      expected_value: E06000019
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000019
+      label: Local authority
+  - value_id: e07000098
+    label: Hertsmere
+    ordinal: 116
+    row_number: 124
+    geography_id: E07000098
+    geography_level: local_authority
+    geography_name: Hertsmere
+    geography_vintage: current
+    source_row_id: e07000098
+    expected_row_header_column: D
+    expected_row_header: Hertsmere
+    guard_cells:
+    - column: B
+      expected_value: E07000098
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000098
+      label: Local authority
+  - value_id: e07000037
+    label: High Peak
+    ordinal: 117
+    row_number: 125
+    geography_id: E07000037
+    geography_level: local_authority
+    geography_name: High Peak
+    geography_vintage: current
+    source_row_id: e07000037
+    expected_row_header_column: D
+    expected_row_header: High Peak
+    guard_cells:
+    - column: B
+      expected_value: E07000037
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000037
+      label: Local authority
+  - value_id: e09000017
+    label: Hillingdon
+    ordinal: 118
+    row_number: 126
+    geography_id: E09000017
+    geography_level: local_authority
+    geography_name: Hillingdon
+    geography_vintage: current
+    source_row_id: e09000017
+    expected_row_header_column: D
+    expected_row_header: Hillingdon
+    guard_cells:
+    - column: B
+      expected_value: E09000017
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000017
+      label: Local authority
+  - value_id: e07000132
+    label: Hinckley and Bosworth
+    ordinal: 119
+    row_number: 127
+    geography_id: E07000132
+    geography_level: local_authority
+    geography_name: Hinckley and Bosworth
+    geography_vintage: current
+    source_row_id: e07000132
+    expected_row_header_column: D
+    expected_row_header: Hinckley and Bosworth
+    guard_cells:
+    - column: B
+      expected_value: E07000132
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000132
+      label: Local authority
+  - value_id: e07000227
+    label: Horsham
+    ordinal: 120
+    row_number: 128
+    geography_id: E07000227
+    geography_level: local_authority
+    geography_name: Horsham
+    geography_vintage: current
+    source_row_id: e07000227
+    expected_row_header_column: D
+    expected_row_header: Horsham
+    guard_cells:
+    - column: B
+      expected_value: E07000227
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000227
+      label: Local authority
+  - value_id: e09000018
+    label: Hounslow
+    ordinal: 121
+    row_number: 129
+    geography_id: E09000018
+    geography_level: local_authority
+    geography_name: Hounslow
+    geography_vintage: current
+    source_row_id: e09000018
+    expected_row_header_column: D
+    expected_row_header: Hounslow
+    guard_cells:
+    - column: B
+      expected_value: E09000018
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000018
+      label: Local authority
+  - value_id: e07000011
+    label: Huntingdonshire
+    ordinal: 122
+    row_number: 130
+    geography_id: E07000011
+    geography_level: local_authority
+    geography_name: Huntingdonshire
+    geography_vintage: current
+    source_row_id: e07000011
+    expected_row_header_column: D
+    expected_row_header: Huntingdonshire
+    guard_cells:
+    - column: B
+      expected_value: E07000011
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000011
+      label: Local authority
+  - value_id: e07000120
+    label: Hyndburn
+    ordinal: 123
+    row_number: 131
+    geography_id: E07000120
+    geography_level: local_authority
+    geography_name: Hyndburn
+    geography_vintage: current
+    source_row_id: e07000120
+    expected_row_header_column: D
+    expected_row_header: Hyndburn
+    guard_cells:
+    - column: B
+      expected_value: E07000120
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000120
+      label: Local authority
+  - value_id: e07000202
+    label: Ipswich
+    ordinal: 124
+    row_number: 132
+    geography_id: E07000202
+    geography_level: local_authority
+    geography_name: Ipswich
+    geography_vintage: current
+    source_row_id: e07000202
+    expected_row_header_column: D
+    expected_row_header: Ipswich
+    guard_cells:
+    - column: B
+      expected_value: E07000202
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000202
+      label: Local authority
+  - value_id: e06000046
+    label: Isle of Wight
+    ordinal: 125
+    row_number: 133
+    geography_id: E06000046
+    geography_level: local_authority
+    geography_name: Isle of Wight
+    geography_vintage: current
+    source_row_id: e06000046
+    expected_row_header_column: D
+    expected_row_header: Isle of Wight
+    guard_cells:
+    - column: B
+      expected_value: E06000046
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000046
+      label: Local authority
+  - value_id: e06000053
+    label: Isles of Scilly
+    ordinal: 126
+    row_number: 134
+    geography_id: E06000053
+    geography_level: local_authority
+    geography_name: Isles of Scilly
+    geography_vintage: current
+    source_row_id: e06000053
+    expected_row_header_column: D
+    expected_row_header: Isles of Scilly
+    guard_cells:
+    - column: B
+      expected_value: E06000053
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000053
+      label: Local authority
+  - value_id: e09000019
+    label: Islington
+    ordinal: 127
+    row_number: 135
+    geography_id: E09000019
+    geography_level: local_authority
+    geography_name: Islington
+    geography_vintage: current
+    source_row_id: e09000019
+    expected_row_header_column: D
+    expected_row_header: Islington
+    guard_cells:
+    - column: B
+      expected_value: E09000019
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000019
+      label: Local authority
+  - value_id: e09000020
+    label: Kensington and Chelsea
+    ordinal: 128
+    row_number: 136
+    geography_id: E09000020
+    geography_level: local_authority
+    geography_name: Kensington and Chelsea
+    geography_vintage: current
+    source_row_id: e09000020
+    expected_row_header_column: D
+    expected_row_header: Kensington and Chelsea
+    guard_cells:
+    - column: B
+      expected_value: E09000020
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000020
+      label: Local authority
+  - value_id: e07000146
+    label: King's Lynn and West Norfolk
+    ordinal: 129
+    row_number: 137
+    geography_id: E07000146
+    geography_level: local_authority
+    geography_name: King's Lynn and West Norfolk
+    geography_vintage: current
+    source_row_id: e07000146
+    expected_row_header_column: D
+    expected_row_header: King's Lynn and West Norfolk
+    guard_cells:
+    - column: B
+      expected_value: E07000146
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000146
+      label: Local authority
+  - value_id: e06000010
+    label: Kingston upon Hull
+    ordinal: 130
+    row_number: 138
+    geography_id: E06000010
+    geography_level: local_authority
+    geography_name: Kingston upon Hull
+    geography_vintage: current
+    source_row_id: e06000010
+    expected_row_header_column: D
+    expected_row_header: Kingston upon Hull
+    guard_cells:
+    - column: B
+      expected_value: E06000010
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000010
+      label: Local authority
+  - value_id: e09000021
+    label: Kingston upon Thames
+    ordinal: 131
+    row_number: 139
+    geography_id: E09000021
+    geography_level: local_authority
+    geography_name: Kingston upon Thames
+    geography_vintage: current
+    source_row_id: e09000021
+    expected_row_header_column: D
+    expected_row_header: Kingston upon Thames
+    guard_cells:
+    - column: B
+      expected_value: E09000021
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000021
+      label: Local authority
+  - value_id: e08000034
+    label: Kirklees
+    ordinal: 132
+    row_number: 140
+    geography_id: E08000034
+    geography_level: local_authority
+    geography_name: Kirklees
+    geography_vintage: current
+    source_row_id: e08000034
+    expected_row_header_column: D
+    expected_row_header: Kirklees
+    guard_cells:
+    - column: B
+      expected_value: E08000034
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000034
+      label: Local authority
+  - value_id: e08000011
+    label: Knowsley
+    ordinal: 133
+    row_number: 141
+    geography_id: E08000011
+    geography_level: local_authority
+    geography_name: Knowsley
+    geography_vintage: current
+    source_row_id: e08000011
+    expected_row_header_column: D
+    expected_row_header: Knowsley
+    guard_cells:
+    - column: B
+      expected_value: E08000011
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000011
+      label: Local authority
+  - value_id: e09000022
+    label: Lambeth
+    ordinal: 134
+    row_number: 142
+    geography_id: E09000022
+    geography_level: local_authority
+    geography_name: Lambeth
+    geography_vintage: current
+    source_row_id: e09000022
+    expected_row_header_column: D
+    expected_row_header: Lambeth
+    guard_cells:
+    - column: B
+      expected_value: E09000022
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000022
+      label: Local authority
+  - value_id: e07000121
+    label: Lancaster
+    ordinal: 135
+    row_number: 143
+    geography_id: E07000121
+    geography_level: local_authority
+    geography_name: Lancaster
+    geography_vintage: current
+    source_row_id: e07000121
+    expected_row_header_column: D
+    expected_row_header: Lancaster
+    guard_cells:
+    - column: B
+      expected_value: E07000121
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000121
+      label: Local authority
+  - value_id: e08000035
+    label: Leeds
+    ordinal: 136
+    row_number: 144
+    geography_id: E08000035
+    geography_level: local_authority
+    geography_name: Leeds
+    geography_vintage: current
+    source_row_id: e08000035
+    expected_row_header_column: D
+    expected_row_header: Leeds
+    guard_cells:
+    - column: B
+      expected_value: E08000035
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000035
+      label: Local authority
+  - value_id: e06000016
+    label: Leicester
+    ordinal: 137
+    row_number: 145
+    geography_id: E06000016
+    geography_level: local_authority
+    geography_name: Leicester
+    geography_vintage: current
+    source_row_id: e06000016
+    expected_row_header_column: D
+    expected_row_header: Leicester
+    guard_cells:
+    - column: B
+      expected_value: E06000016
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000016
+      label: Local authority
+  - value_id: e07000063
+    label: Lewes
+    ordinal: 138
+    row_number: 146
+    geography_id: E07000063
+    geography_level: local_authority
+    geography_name: Lewes
+    geography_vintage: current
+    source_row_id: e07000063
+    expected_row_header_column: D
+    expected_row_header: Lewes
+    guard_cells:
+    - column: B
+      expected_value: E07000063
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000063
+      label: Local authority
+  - value_id: e09000023
+    label: Lewisham
+    ordinal: 139
+    row_number: 147
+    geography_id: E09000023
+    geography_level: local_authority
+    geography_name: Lewisham
+    geography_vintage: current
+    source_row_id: e09000023
+    expected_row_header_column: D
+    expected_row_header: Lewisham
+    guard_cells:
+    - column: B
+      expected_value: E09000023
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000023
+      label: Local authority
+  - value_id: e07000194
+    label: Lichfield
+    ordinal: 140
+    row_number: 148
+    geography_id: E07000194
+    geography_level: local_authority
+    geography_name: Lichfield
+    geography_vintage: current
+    source_row_id: e07000194
+    expected_row_header_column: D
+    expected_row_header: Lichfield
+    guard_cells:
+    - column: B
+      expected_value: E07000194
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000194
+      label: Local authority
+  - value_id: e07000138
+    label: Lincoln
+    ordinal: 141
+    row_number: 149
+    geography_id: E07000138
+    geography_level: local_authority
+    geography_name: Lincoln
+    geography_vintage: current
+    source_row_id: e07000138
+    expected_row_header_column: D
+    expected_row_header: Lincoln
+    guard_cells:
+    - column: B
+      expected_value: E07000138
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000138
+      label: Local authority
+  - value_id: e08000012
+    label: Liverpool
+    ordinal: 142
+    row_number: 150
+    geography_id: E08000012
+    geography_level: local_authority
+    geography_name: Liverpool
+    geography_vintage: current
+    source_row_id: e08000012
+    expected_row_header_column: D
+    expected_row_header: Liverpool
+    guard_cells:
+    - column: B
+      expected_value: E08000012
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000012
+      label: Local authority
+  - value_id: e06000032
+    label: Luton
+    ordinal: 143
+    row_number: 151
+    geography_id: E06000032
+    geography_level: local_authority
+    geography_name: Luton
+    geography_vintage: current
+    source_row_id: e06000032
+    expected_row_header_column: D
+    expected_row_header: Luton
+    guard_cells:
+    - column: B
+      expected_value: E06000032
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000032
+      label: Local authority
+  - value_id: e07000110
+    label: Maidstone
+    ordinal: 144
+    row_number: 152
+    geography_id: E07000110
+    geography_level: local_authority
+    geography_name: Maidstone
+    geography_vintage: current
+    source_row_id: e07000110
+    expected_row_header_column: D
+    expected_row_header: Maidstone
+    guard_cells:
+    - column: B
+      expected_value: E07000110
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000110
+      label: Local authority
+  - value_id: e07000074
+    label: Maldon
+    ordinal: 145
+    row_number: 153
+    geography_id: E07000074
+    geography_level: local_authority
+    geography_name: Maldon
+    geography_vintage: current
+    source_row_id: e07000074
+    expected_row_header_column: D
+    expected_row_header: Maldon
+    guard_cells:
+    - column: B
+      expected_value: E07000074
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000074
+      label: Local authority
+  - value_id: e07000235
+    label: Malvern Hills
+    ordinal: 146
+    row_number: 154
+    geography_id: E07000235
+    geography_level: local_authority
+    geography_name: Malvern Hills
+    geography_vintage: current
+    source_row_id: e07000235
+    expected_row_header_column: D
+    expected_row_header: Malvern Hills
+    guard_cells:
+    - column: B
+      expected_value: E07000235
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000235
+      label: Local authority
+  - value_id: e08000003
+    label: Manchester
+    ordinal: 147
+    row_number: 155
+    geography_id: E08000003
+    geography_level: local_authority
+    geography_name: Manchester
+    geography_vintage: current
+    source_row_id: e08000003
+    expected_row_header_column: D
+    expected_row_header: Manchester
+    guard_cells:
+    - column: B
+      expected_value: E08000003
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000003
+      label: Local authority
+  - value_id: e07000174
+    label: Mansfield
+    ordinal: 148
+    row_number: 156
+    geography_id: E07000174
+    geography_level: local_authority
+    geography_name: Mansfield
+    geography_vintage: current
+    source_row_id: e07000174
+    expected_row_header_column: D
+    expected_row_header: Mansfield
+    guard_cells:
+    - column: B
+      expected_value: E07000174
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000174
+      label: Local authority
+  - value_id: e06000035
+    label: Medway
+    ordinal: 149
+    row_number: 157
+    geography_id: E06000035
+    geography_level: local_authority
+    geography_name: Medway
+    geography_vintage: current
+    source_row_id: e06000035
+    expected_row_header_column: D
+    expected_row_header: Medway
+    guard_cells:
+    - column: B
+      expected_value: E06000035
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000035
+      label: Local authority
+  - value_id: e07000133
+    label: Melton
+    ordinal: 150
+    row_number: 158
+    geography_id: E07000133
+    geography_level: local_authority
+    geography_name: Melton
+    geography_vintage: current
+    source_row_id: e07000133
+    expected_row_header_column: D
+    expected_row_header: Melton
+    guard_cells:
+    - column: B
+      expected_value: E07000133
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000133
+      label: Local authority
+  - value_id: e09000024
+    label: Merton
+    ordinal: 151
+    row_number: 159
+    geography_id: E09000024
+    geography_level: local_authority
+    geography_name: Merton
+    geography_vintage: current
+    source_row_id: e09000024
+    expected_row_header_column: D
+    expected_row_header: Merton
+    guard_cells:
+    - column: B
+      expected_value: E09000024
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000024
+      label: Local authority
+  - value_id: e07000042
+    label: Mid Devon
+    ordinal: 152
+    row_number: 160
+    geography_id: E07000042
+    geography_level: local_authority
+    geography_name: Mid Devon
+    geography_vintage: current
+    source_row_id: e07000042
+    expected_row_header_column: D
+    expected_row_header: Mid Devon
+    guard_cells:
+    - column: B
+      expected_value: E07000042
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000042
+      label: Local authority
+  - value_id: e07000203
+    label: Mid Suffolk
+    ordinal: 153
+    row_number: 161
+    geography_id: E07000203
+    geography_level: local_authority
+    geography_name: Mid Suffolk
+    geography_vintage: current
+    source_row_id: e07000203
+    expected_row_header_column: D
+    expected_row_header: Mid Suffolk
+    guard_cells:
+    - column: B
+      expected_value: E07000203
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000203
+      label: Local authority
+  - value_id: e07000228
+    label: Mid Sussex
+    ordinal: 154
+    row_number: 162
+    geography_id: E07000228
+    geography_level: local_authority
+    geography_name: Mid Sussex
+    geography_vintage: current
+    source_row_id: e07000228
+    expected_row_header_column: D
+    expected_row_header: Mid Sussex
+    guard_cells:
+    - column: B
+      expected_value: E07000228
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000228
+      label: Local authority
+  - value_id: e06000002
+    label: Middlesbrough
+    ordinal: 155
+    row_number: 163
+    geography_id: E06000002
+    geography_level: local_authority
+    geography_name: Middlesbrough
+    geography_vintage: current
+    source_row_id: e06000002
+    expected_row_header_column: D
+    expected_row_header: Middlesbrough
+    guard_cells:
+    - column: B
+      expected_value: E06000002
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000002
+      label: Local authority
+  - value_id: e06000042
+    label: Milton Keynes
+    ordinal: 156
+    row_number: 164
+    geography_id: E06000042
+    geography_level: local_authority
+    geography_name: Milton Keynes
+    geography_vintage: current
+    source_row_id: e06000042
+    expected_row_header_column: D
+    expected_row_header: Milton Keynes
+    guard_cells:
+    - column: B
+      expected_value: E06000042
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000042
+      label: Local authority
+  - value_id: e07000210
+    label: Mole Valley
+    ordinal: 157
+    row_number: 165
+    geography_id: E07000210
+    geography_level: local_authority
+    geography_name: Mole Valley
+    geography_vintage: current
+    source_row_id: e07000210
+    expected_row_header_column: D
+    expected_row_header: Mole Valley
+    guard_cells:
+    - column: B
+      expected_value: E07000210
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000210
+      label: Local authority
+  - value_id: e07000091
+    label: New Forest
+    ordinal: 158
+    row_number: 166
+    geography_id: E07000091
+    geography_level: local_authority
+    geography_name: New Forest
+    geography_vintage: current
+    source_row_id: e07000091
+    expected_row_header_column: D
+    expected_row_header: New Forest
+    guard_cells:
+    - column: B
+      expected_value: E07000091
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000091
+      label: Local authority
+  - value_id: e07000175
+    label: Newark and Sherwood
+    ordinal: 159
+    row_number: 167
+    geography_id: E07000175
+    geography_level: local_authority
+    geography_name: Newark and Sherwood
+    geography_vintage: current
+    source_row_id: e07000175
+    expected_row_header_column: D
+    expected_row_header: Newark and Sherwood
+    guard_cells:
+    - column: B
+      expected_value: E07000175
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000175
+      label: Local authority
+  - value_id: e08000021
+    label: Newcastle upon Tyne
+    ordinal: 160
+    row_number: 168
+    geography_id: E08000021
+    geography_level: local_authority
+    geography_name: Newcastle upon Tyne
+    geography_vintage: current
+    source_row_id: e08000021
+    expected_row_header_column: D
+    expected_row_header: Newcastle upon Tyne
+    guard_cells:
+    - column: B
+      expected_value: E08000021
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000021
+      label: Local authority
+  - value_id: e07000195
+    label: Newcastle-under-Lyme
+    ordinal: 161
+    row_number: 169
+    geography_id: E07000195
+    geography_level: local_authority
+    geography_name: Newcastle-under-Lyme
+    geography_vintage: current
+    source_row_id: e07000195
+    expected_row_header_column: D
+    expected_row_header: Newcastle-under-Lyme
+    guard_cells:
+    - column: B
+      expected_value: E07000195
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000195
+      label: Local authority
+  - value_id: e09000025
+    label: Newham
+    ordinal: 162
+    row_number: 170
+    geography_id: E09000025
+    geography_level: local_authority
+    geography_name: Newham
+    geography_vintage: current
+    source_row_id: e09000025
+    expected_row_header_column: D
+    expected_row_header: Newham
+    guard_cells:
+    - column: B
+      expected_value: E09000025
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000025
+      label: Local authority
+  - value_id: e07000043
+    label: North Devon
+    ordinal: 163
+    row_number: 171
+    geography_id: E07000043
+    geography_level: local_authority
+    geography_name: North Devon
+    geography_vintage: current
+    source_row_id: e07000043
+    expected_row_header_column: D
+    expected_row_header: North Devon
+    guard_cells:
+    - column: B
+      expected_value: E07000043
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000043
+      label: Local authority
+  - value_id: e07000038
+    label: North East Derbyshire
+    ordinal: 164
+    row_number: 172
+    geography_id: E07000038
+    geography_level: local_authority
+    geography_name: North East Derbyshire
+    geography_vintage: current
+    source_row_id: e07000038
+    expected_row_header_column: D
+    expected_row_header: North East Derbyshire
+    guard_cells:
+    - column: B
+      expected_value: E07000038
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000038
+      label: Local authority
+  - value_id: e06000012
+    label: North East Lincolnshire
+    ordinal: 165
+    row_number: 173
+    geography_id: E06000012
+    geography_level: local_authority
+    geography_name: North East Lincolnshire
+    geography_vintage: current
+    source_row_id: e06000012
+    expected_row_header_column: D
+    expected_row_header: North East Lincolnshire
+    guard_cells:
+    - column: B
+      expected_value: E06000012
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000012
+      label: Local authority
+  - value_id: e07000099
+    label: North Hertfordshire
+    ordinal: 166
+    row_number: 174
+    geography_id: E07000099
+    geography_level: local_authority
+    geography_name: North Hertfordshire
+    geography_vintage: current
+    source_row_id: e07000099
+    expected_row_header_column: D
+    expected_row_header: North Hertfordshire
+    guard_cells:
+    - column: B
+      expected_value: E07000099
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000099
+      label: Local authority
+  - value_id: e07000139
+    label: North Kesteven
+    ordinal: 167
+    row_number: 175
+    geography_id: E07000139
+    geography_level: local_authority
+    geography_name: North Kesteven
+    geography_vintage: current
+    source_row_id: e07000139
+    expected_row_header_column: D
+    expected_row_header: North Kesteven
+    guard_cells:
+    - column: B
+      expected_value: E07000139
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000139
+      label: Local authority
+  - value_id: e06000013
+    label: North Lincolnshire
+    ordinal: 168
+    row_number: 176
+    geography_id: E06000013
+    geography_level: local_authority
+    geography_name: North Lincolnshire
+    geography_vintage: current
+    source_row_id: e06000013
+    expected_row_header_column: D
+    expected_row_header: North Lincolnshire
+    guard_cells:
+    - column: B
+      expected_value: E06000013
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000013
+      label: Local authority
+  - value_id: e07000147
+    label: North Norfolk
+    ordinal: 169
+    row_number: 177
+    geography_id: E07000147
+    geography_level: local_authority
+    geography_name: North Norfolk
+    geography_vintage: current
+    source_row_id: e07000147
+    expected_row_header_column: D
+    expected_row_header: North Norfolk
+    guard_cells:
+    - column: B
+      expected_value: E07000147
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000147
+      label: Local authority
+  - value_id: e06000061
+    label: North Northamptonshire
+    ordinal: 170
+    row_number: 178
+    geography_id: E06000061
+    geography_level: local_authority
+    geography_name: North Northamptonshire
+    geography_vintage: current
+    source_row_id: e06000061
+    expected_row_header_column: D
+    expected_row_header: North Northamptonshire
+    guard_cells:
+    - column: B
+      expected_value: E06000061
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000061
+      label: Local authority
+  - value_id: e06000024
+    label: North Somerset
+    ordinal: 171
+    row_number: 179
+    geography_id: E06000024
+    geography_level: local_authority
+    geography_name: North Somerset
+    geography_vintage: current
+    source_row_id: e06000024
+    expected_row_header_column: D
+    expected_row_header: North Somerset
+    guard_cells:
+    - column: B
+      expected_value: E06000024
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000024
+      label: Local authority
+  - value_id: e08000022
+    label: North Tyneside
+    ordinal: 172
+    row_number: 180
+    geography_id: E08000022
+    geography_level: local_authority
+    geography_name: North Tyneside
+    geography_vintage: current
+    source_row_id: e08000022
+    expected_row_header_column: D
+    expected_row_header: North Tyneside
+    guard_cells:
+    - column: B
+      expected_value: E08000022
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000022
+      label: Local authority
+  - value_id: e07000218
+    label: North Warwickshire
+    ordinal: 173
+    row_number: 181
+    geography_id: E07000218
+    geography_level: local_authority
+    geography_name: North Warwickshire
+    geography_vintage: current
+    source_row_id: e07000218
+    expected_row_header_column: D
+    expected_row_header: North Warwickshire
+    guard_cells:
+    - column: B
+      expected_value: E07000218
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000218
+      label: Local authority
+  - value_id: e07000134
+    label: North West Leicestershire
+    ordinal: 174
+    row_number: 182
+    geography_id: E07000134
+    geography_level: local_authority
+    geography_name: North West Leicestershire
+    geography_vintage: current
+    source_row_id: e07000134
+    expected_row_header_column: D
+    expected_row_header: North West Leicestershire
+    guard_cells:
+    - column: B
+      expected_value: E07000134
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000134
+      label: Local authority
+  - value_id: e06000065
+    label: North Yorkshire
+    ordinal: 175
+    row_number: 183
+    geography_id: E06000065
+    geography_level: local_authority
+    geography_name: North Yorkshire
+    geography_vintage: current
+    source_row_id: e06000065
+    expected_row_header_column: D
+    expected_row_header: North Yorkshire
+    guard_cells:
+    - column: B
+      expected_value: E06000065
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000065
+      label: Local authority
+  - value_id: e06000057
+    label: Northumberland
+    ordinal: 176
+    row_number: 184
+    geography_id: E06000057
+    geography_level: local_authority
+    geography_name: Northumberland
+    geography_vintage: current
+    source_row_id: e06000057
+    expected_row_header_column: D
+    expected_row_header: Northumberland
+    guard_cells:
+    - column: B
+      expected_value: E06000057
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000057
+      label: Local authority
+  - value_id: e07000148
+    label: Norwich
+    ordinal: 177
+    row_number: 185
+    geography_id: E07000148
+    geography_level: local_authority
+    geography_name: Norwich
+    geography_vintage: current
+    source_row_id: e07000148
+    expected_row_header_column: D
+    expected_row_header: Norwich
+    guard_cells:
+    - column: B
+      expected_value: E07000148
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000148
+      label: Local authority
+  - value_id: e06000018
+    label: Nottingham
+    ordinal: 178
+    row_number: 186
+    geography_id: E06000018
+    geography_level: local_authority
+    geography_name: Nottingham
+    geography_vintage: current
+    source_row_id: e06000018
+    expected_row_header_column: D
+    expected_row_header: Nottingham
+    guard_cells:
+    - column: B
+      expected_value: E06000018
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000018
+      label: Local authority
+  - value_id: e07000219
+    label: Nuneaton and Bedworth
+    ordinal: 179
+    row_number: 187
+    geography_id: E07000219
+    geography_level: local_authority
+    geography_name: Nuneaton and Bedworth
+    geography_vintage: current
+    source_row_id: e07000219
+    expected_row_header_column: D
+    expected_row_header: Nuneaton and Bedworth
+    guard_cells:
+    - column: B
+      expected_value: E07000219
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000219
+      label: Local authority
+  - value_id: e07000135
+    label: Oadby and Wigston
+    ordinal: 180
+    row_number: 188
+    geography_id: E07000135
+    geography_level: local_authority
+    geography_name: Oadby and Wigston
+    geography_vintage: current
+    source_row_id: e07000135
+    expected_row_header_column: D
+    expected_row_header: Oadby and Wigston
+    guard_cells:
+    - column: B
+      expected_value: E07000135
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000135
+      label: Local authority
+  - value_id: e08000004
+    label: Oldham
+    ordinal: 181
+    row_number: 189
+    geography_id: E08000004
+    geography_level: local_authority
+    geography_name: Oldham
+    geography_vintage: current
+    source_row_id: e08000004
+    expected_row_header_column: D
+    expected_row_header: Oldham
+    guard_cells:
+    - column: B
+      expected_value: E08000004
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000004
+      label: Local authority
+  - value_id: e07000178
+    label: Oxford
+    ordinal: 182
+    row_number: 190
+    geography_id: E07000178
+    geography_level: local_authority
+    geography_name: Oxford
+    geography_vintage: current
+    source_row_id: e07000178
+    expected_row_header_column: D
+    expected_row_header: Oxford
+    guard_cells:
+    - column: B
+      expected_value: E07000178
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000178
+      label: Local authority
+  - value_id: e07000122
+    label: Pendle
+    ordinal: 183
+    row_number: 191
+    geography_id: E07000122
+    geography_level: local_authority
+    geography_name: Pendle
+    geography_vintage: current
+    source_row_id: e07000122
+    expected_row_header_column: D
+    expected_row_header: Pendle
+    guard_cells:
+    - column: B
+      expected_value: E07000122
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000122
+      label: Local authority
+  - value_id: e06000031
+    label: Peterborough
+    ordinal: 184
+    row_number: 192
+    geography_id: E06000031
+    geography_level: local_authority
+    geography_name: Peterborough
+    geography_vintage: current
+    source_row_id: e06000031
+    expected_row_header_column: D
+    expected_row_header: Peterborough
+    guard_cells:
+    - column: B
+      expected_value: E06000031
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000031
+      label: Local authority
+  - value_id: e06000026
+    label: Plymouth
+    ordinal: 185
+    row_number: 193
+    geography_id: E06000026
+    geography_level: local_authority
+    geography_name: Plymouth
+    geography_vintage: current
+    source_row_id: e06000026
+    expected_row_header_column: D
+    expected_row_header: Plymouth
+    guard_cells:
+    - column: B
+      expected_value: E06000026
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000026
+      label: Local authority
+  - value_id: e06000044
+    label: Portsmouth
+    ordinal: 186
+    row_number: 194
+    geography_id: E06000044
+    geography_level: local_authority
+    geography_name: Portsmouth
+    geography_vintage: current
+    source_row_id: e06000044
+    expected_row_header_column: D
+    expected_row_header: Portsmouth
+    guard_cells:
+    - column: B
+      expected_value: E06000044
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000044
+      label: Local authority
+  - value_id: e07000123
+    label: Preston
+    ordinal: 187
+    row_number: 195
+    geography_id: E07000123
+    geography_level: local_authority
+    geography_name: Preston
+    geography_vintage: current
+    source_row_id: e07000123
+    expected_row_header_column: D
+    expected_row_header: Preston
+    guard_cells:
+    - column: B
+      expected_value: E07000123
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000123
+      label: Local authority
+  - value_id: e06000038
+    label: Reading
+    ordinal: 188
+    row_number: 196
+    geography_id: E06000038
+    geography_level: local_authority
+    geography_name: Reading
+    geography_vintage: current
+    source_row_id: e06000038
+    expected_row_header_column: D
+    expected_row_header: Reading
+    guard_cells:
+    - column: B
+      expected_value: E06000038
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000038
+      label: Local authority
+  - value_id: e09000026
+    label: Redbridge
+    ordinal: 189
+    row_number: 197
+    geography_id: E09000026
+    geography_level: local_authority
+    geography_name: Redbridge
+    geography_vintage: current
+    source_row_id: e09000026
+    expected_row_header_column: D
+    expected_row_header: Redbridge
+    guard_cells:
+    - column: B
+      expected_value: E09000026
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000026
+      label: Local authority
+  - value_id: e06000003
+    label: Redcar and Cleveland
+    ordinal: 190
+    row_number: 198
+    geography_id: E06000003
+    geography_level: local_authority
+    geography_name: Redcar and Cleveland
+    geography_vintage: current
+    source_row_id: e06000003
+    expected_row_header_column: D
+    expected_row_header: Redcar and Cleveland
+    guard_cells:
+    - column: B
+      expected_value: E06000003
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000003
+      label: Local authority
+  - value_id: e07000236
+    label: Redditch
+    ordinal: 191
+    row_number: 199
+    geography_id: E07000236
+    geography_level: local_authority
+    geography_name: Redditch
+    geography_vintage: current
+    source_row_id: e07000236
+    expected_row_header_column: D
+    expected_row_header: Redditch
+    guard_cells:
+    - column: B
+      expected_value: E07000236
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000236
+      label: Local authority
+  - value_id: e07000211
+    label: Reigate and Banstead
+    ordinal: 192
+    row_number: 200
+    geography_id: E07000211
+    geography_level: local_authority
+    geography_name: Reigate and Banstead
+    geography_vintage: current
+    source_row_id: e07000211
+    expected_row_header_column: D
+    expected_row_header: Reigate and Banstead
+    guard_cells:
+    - column: B
+      expected_value: E07000211
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000211
+      label: Local authority
+  - value_id: e07000124
+    label: Ribble Valley
+    ordinal: 193
+    row_number: 201
+    geography_id: E07000124
+    geography_level: local_authority
+    geography_name: Ribble Valley
+    geography_vintage: current
+    source_row_id: e07000124
+    expected_row_header_column: D
+    expected_row_header: Ribble Valley
+    guard_cells:
+    - column: B
+      expected_value: E07000124
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000124
+      label: Local authority
+  - value_id: e09000027
+    label: Richmond upon Thames
+    ordinal: 194
+    row_number: 202
+    geography_id: E09000027
+    geography_level: local_authority
+    geography_name: Richmond upon Thames
+    geography_vintage: current
+    source_row_id: e09000027
+    expected_row_header_column: D
+    expected_row_header: Richmond upon Thames
+    guard_cells:
+    - column: B
+      expected_value: E09000027
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000027
+      label: Local authority
+  - value_id: e08000005
+    label: Rochdale
+    ordinal: 195
+    row_number: 203
+    geography_id: E08000005
+    geography_level: local_authority
+    geography_name: Rochdale
+    geography_vintage: current
+    source_row_id: e08000005
+    expected_row_header_column: D
+    expected_row_header: Rochdale
+    guard_cells:
+    - column: B
+      expected_value: E08000005
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000005
+      label: Local authority
+  - value_id: e07000075
+    label: Rochford
+    ordinal: 196
+    row_number: 204
+    geography_id: E07000075
+    geography_level: local_authority
+    geography_name: Rochford
+    geography_vintage: current
+    source_row_id: e07000075
+    expected_row_header_column: D
+    expected_row_header: Rochford
+    guard_cells:
+    - column: B
+      expected_value: E07000075
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000075
+      label: Local authority
+  - value_id: e07000125
+    label: Rossendale
+    ordinal: 197
+    row_number: 205
+    geography_id: E07000125
+    geography_level: local_authority
+    geography_name: Rossendale
+    geography_vintage: current
+    source_row_id: e07000125
+    expected_row_header_column: D
+    expected_row_header: Rossendale
+    guard_cells:
+    - column: B
+      expected_value: E07000125
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000125
+      label: Local authority
+  - value_id: e07000064
+    label: Rother
+    ordinal: 198
+    row_number: 206
+    geography_id: E07000064
+    geography_level: local_authority
+    geography_name: Rother
+    geography_vintage: current
+    source_row_id: e07000064
+    expected_row_header_column: D
+    expected_row_header: Rother
+    guard_cells:
+    - column: B
+      expected_value: E07000064
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000064
+      label: Local authority
+  - value_id: e08000018
+    label: Rotherham
+    ordinal: 199
+    row_number: 207
+    geography_id: E08000018
+    geography_level: local_authority
+    geography_name: Rotherham
+    geography_vintage: current
+    source_row_id: e08000018
+    expected_row_header_column: D
+    expected_row_header: Rotherham
+    guard_cells:
+    - column: B
+      expected_value: E08000018
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000018
+      label: Local authority
+  - value_id: e07000220
+    label: Rugby
+    ordinal: 200
+    row_number: 208
+    geography_id: E07000220
+    geography_level: local_authority
+    geography_name: Rugby
+    geography_vintage: current
+    source_row_id: e07000220
+    expected_row_header_column: D
+    expected_row_header: Rugby
+    guard_cells:
+    - column: B
+      expected_value: E07000220
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000220
+      label: Local authority
+  - value_id: e07000212
+    label: Runnymede
+    ordinal: 201
+    row_number: 209
+    geography_id: E07000212
+    geography_level: local_authority
+    geography_name: Runnymede
+    geography_vintage: current
+    source_row_id: e07000212
+    expected_row_header_column: D
+    expected_row_header: Runnymede
+    guard_cells:
+    - column: B
+      expected_value: E07000212
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000212
+      label: Local authority
+  - value_id: e07000176
+    label: Rushcliffe
+    ordinal: 202
+    row_number: 210
+    geography_id: E07000176
+    geography_level: local_authority
+    geography_name: Rushcliffe
+    geography_vintage: current
+    source_row_id: e07000176
+    expected_row_header_column: D
+    expected_row_header: Rushcliffe
+    guard_cells:
+    - column: B
+      expected_value: E07000176
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000176
+      label: Local authority
+  - value_id: e07000092
+    label: Rushmoor
+    ordinal: 203
+    row_number: 211
+    geography_id: E07000092
+    geography_level: local_authority
+    geography_name: Rushmoor
+    geography_vintage: current
+    source_row_id: e07000092
+    expected_row_header_column: D
+    expected_row_header: Rushmoor
+    guard_cells:
+    - column: B
+      expected_value: E07000092
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000092
+      label: Local authority
+  - value_id: e06000017
+    label: Rutland
+    ordinal: 204
+    row_number: 212
+    geography_id: E06000017
+    geography_level: local_authority
+    geography_name: Rutland
+    geography_vintage: current
+    source_row_id: e06000017
+    expected_row_header_column: D
+    expected_row_header: Rutland
+    guard_cells:
+    - column: B
+      expected_value: E06000017
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000017
+      label: Local authority
+  - value_id: e08000006
+    label: Salford
+    ordinal: 205
+    row_number: 213
+    geography_id: E08000006
+    geography_level: local_authority
+    geography_name: Salford
+    geography_vintage: current
+    source_row_id: e08000006
+    expected_row_header_column: D
+    expected_row_header: Salford
+    guard_cells:
+    - column: B
+      expected_value: E08000006
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000006
+      label: Local authority
+  - value_id: e08000028
+    label: Sandwell
+    ordinal: 206
+    row_number: 214
+    geography_id: E08000028
+    geography_level: local_authority
+    geography_name: Sandwell
+    geography_vintage: current
+    source_row_id: e08000028
+    expected_row_header_column: D
+    expected_row_header: Sandwell
+    guard_cells:
+    - column: B
+      expected_value: E08000028
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000028
+      label: Local authority
+  - value_id: e08000014
+    label: Sefton
+    ordinal: 207
+    row_number: 215
+    geography_id: E08000014
+    geography_level: local_authority
+    geography_name: Sefton
+    geography_vintage: current
+    source_row_id: e08000014
+    expected_row_header_column: D
+    expected_row_header: Sefton
+    guard_cells:
+    - column: B
+      expected_value: E08000014
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000014
+      label: Local authority
+  - value_id: e07000111
+    label: Sevenoaks
+    ordinal: 208
+    row_number: 216
+    geography_id: E07000111
+    geography_level: local_authority
+    geography_name: Sevenoaks
+    geography_vintage: current
+    source_row_id: e07000111
+    expected_row_header_column: D
+    expected_row_header: Sevenoaks
+    guard_cells:
+    - column: B
+      expected_value: E07000111
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000111
+      label: Local authority
+  - value_id: e08000039
+    label: Sheffield
+    ordinal: 209
+    row_number: 217
+    geography_id: E08000039
+    geography_level: local_authority
+    geography_name: Sheffield
+    geography_vintage: current
+    source_row_id: e08000039
+    expected_row_header_column: D
+    expected_row_header: Sheffield
+    guard_cells:
+    - column: B
+      expected_value: E08000039
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000039
+      label: Local authority
+  - value_id: e06000051
+    label: Shropshire
+    ordinal: 210
+    row_number: 218
+    geography_id: E06000051
+    geography_level: local_authority
+    geography_name: Shropshire
+    geography_vintage: current
+    source_row_id: e06000051
+    expected_row_header_column: D
+    expected_row_header: Shropshire
+    guard_cells:
+    - column: B
+      expected_value: E06000051
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000051
+      label: Local authority
+  - value_id: e06000039
+    label: Slough
+    ordinal: 211
+    row_number: 219
+    geography_id: E06000039
+    geography_level: local_authority
+    geography_name: Slough
+    geography_vintage: current
+    source_row_id: e06000039
+    expected_row_header_column: D
+    expected_row_header: Slough
+    guard_cells:
+    - column: B
+      expected_value: E06000039
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000039
+      label: Local authority
+  - value_id: e08000029
+    label: Solihull
+    ordinal: 212
+    row_number: 220
+    geography_id: E08000029
+    geography_level: local_authority
+    geography_name: Solihull
+    geography_vintage: current
+    source_row_id: e08000029
+    expected_row_header_column: D
+    expected_row_header: Solihull
+    guard_cells:
+    - column: B
+      expected_value: E08000029
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000029
+      label: Local authority
+  - value_id: e06000066
+    label: Somerset
+    ordinal: 213
+    row_number: 221
+    geography_id: E06000066
+    geography_level: local_authority
+    geography_name: Somerset
+    geography_vintage: current
+    source_row_id: e06000066
+    expected_row_header_column: D
+    expected_row_header: Somerset
+    guard_cells:
+    - column: B
+      expected_value: E06000066
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000066
+      label: Local authority
+  - value_id: e07000012
+    label: South Cambridgeshire
+    ordinal: 214
+    row_number: 222
+    geography_id: E07000012
+    geography_level: local_authority
+    geography_name: South Cambridgeshire
+    geography_vintage: current
+    source_row_id: e07000012
+    expected_row_header_column: D
+    expected_row_header: South Cambridgeshire
+    guard_cells:
+    - column: B
+      expected_value: E07000012
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000012
+      label: Local authority
+  - value_id: e07000039
+    label: South Derbyshire
+    ordinal: 215
+    row_number: 223
+    geography_id: E07000039
+    geography_level: local_authority
+    geography_name: South Derbyshire
+    geography_vintage: current
+    source_row_id: e07000039
+    expected_row_header_column: D
+    expected_row_header: South Derbyshire
+    guard_cells:
+    - column: B
+      expected_value: E07000039
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000039
+      label: Local authority
+  - value_id: e06000025
+    label: South Gloucestershire
+    ordinal: 216
+    row_number: 224
+    geography_id: E06000025
+    geography_level: local_authority
+    geography_name: South Gloucestershire
+    geography_vintage: current
+    source_row_id: e06000025
+    expected_row_header_column: D
+    expected_row_header: South Gloucestershire
+    guard_cells:
+    - column: B
+      expected_value: E06000025
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000025
+      label: Local authority
+  - value_id: e07000044
+    label: South Hams
+    ordinal: 217
+    row_number: 225
+    geography_id: E07000044
+    geography_level: local_authority
+    geography_name: South Hams
+    geography_vintage: current
+    source_row_id: e07000044
+    expected_row_header_column: D
+    expected_row_header: South Hams
+    guard_cells:
+    - column: B
+      expected_value: E07000044
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000044
+      label: Local authority
+  - value_id: e07000140
+    label: South Holland
+    ordinal: 218
+    row_number: 226
+    geography_id: E07000140
+    geography_level: local_authority
+    geography_name: South Holland
+    geography_vintage: current
+    source_row_id: e07000140
+    expected_row_header_column: D
+    expected_row_header: South Holland
+    guard_cells:
+    - column: B
+      expected_value: E07000140
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000140
+      label: Local authority
+  - value_id: e07000141
+    label: South Kesteven
+    ordinal: 219
+    row_number: 227
+    geography_id: E07000141
+    geography_level: local_authority
+    geography_name: South Kesteven
+    geography_vintage: current
+    source_row_id: e07000141
+    expected_row_header_column: D
+    expected_row_header: South Kesteven
+    guard_cells:
+    - column: B
+      expected_value: E07000141
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000141
+      label: Local authority
+  - value_id: e07000149
+    label: South Norfolk
+    ordinal: 220
+    row_number: 228
+    geography_id: E07000149
+    geography_level: local_authority
+    geography_name: South Norfolk
+    geography_vintage: current
+    source_row_id: e07000149
+    expected_row_header_column: D
+    expected_row_header: South Norfolk
+    guard_cells:
+    - column: B
+      expected_value: E07000149
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000149
+      label: Local authority
+  - value_id: e07000179
+    label: South Oxfordshire
+    ordinal: 221
+    row_number: 229
+    geography_id: E07000179
+    geography_level: local_authority
+    geography_name: South Oxfordshire
+    geography_vintage: current
+    source_row_id: e07000179
+    expected_row_header_column: D
+    expected_row_header: South Oxfordshire
+    guard_cells:
+    - column: B
+      expected_value: E07000179
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000179
+      label: Local authority
+  - value_id: e07000126
+    label: South Ribble
+    ordinal: 222
+    row_number: 230
+    geography_id: E07000126
+    geography_level: local_authority
+    geography_name: South Ribble
+    geography_vintage: current
+    source_row_id: e07000126
+    expected_row_header_column: D
+    expected_row_header: South Ribble
+    guard_cells:
+    - column: B
+      expected_value: E07000126
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000126
+      label: Local authority
+  - value_id: e07000196
+    label: South Staffordshire
+    ordinal: 223
+    row_number: 231
+    geography_id: E07000196
+    geography_level: local_authority
+    geography_name: South Staffordshire
+    geography_vintage: current
+    source_row_id: e07000196
+    expected_row_header_column: D
+    expected_row_header: South Staffordshire
+    guard_cells:
+    - column: B
+      expected_value: E07000196
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000196
+      label: Local authority
+  - value_id: e08000023
+    label: South Tyneside
+    ordinal: 224
+    row_number: 232
+    geography_id: E08000023
+    geography_level: local_authority
+    geography_name: South Tyneside
+    geography_vintage: current
+    source_row_id: e08000023
+    expected_row_header_column: D
+    expected_row_header: South Tyneside
+    guard_cells:
+    - column: B
+      expected_value: E08000023
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000023
+      label: Local authority
+  - value_id: e06000045
+    label: Southampton
+    ordinal: 225
+    row_number: 233
+    geography_id: E06000045
+    geography_level: local_authority
+    geography_name: Southampton
+    geography_vintage: current
+    source_row_id: e06000045
+    expected_row_header_column: D
+    expected_row_header: Southampton
+    guard_cells:
+    - column: B
+      expected_value: E06000045
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000045
+      label: Local authority
+  - value_id: e06000033
+    label: Southend-on-Sea
+    ordinal: 226
+    row_number: 234
+    geography_id: E06000033
+    geography_level: local_authority
+    geography_name: Southend-on-Sea
+    geography_vintage: current
+    source_row_id: e06000033
+    expected_row_header_column: D
+    expected_row_header: Southend-on-Sea
+    guard_cells:
+    - column: B
+      expected_value: E06000033
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000033
+      label: Local authority
+  - value_id: e09000028
+    label: Southwark
+    ordinal: 227
+    row_number: 235
+    geography_id: E09000028
+    geography_level: local_authority
+    geography_name: Southwark
+    geography_vintage: current
+    source_row_id: e09000028
+    expected_row_header_column: D
+    expected_row_header: Southwark
+    guard_cells:
+    - column: B
+      expected_value: E09000028
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000028
+      label: Local authority
+  - value_id: e07000213
+    label: Spelthorne
+    ordinal: 228
+    row_number: 236
+    geography_id: E07000213
+    geography_level: local_authority
+    geography_name: Spelthorne
+    geography_vintage: current
+    source_row_id: e07000213
+    expected_row_header_column: D
+    expected_row_header: Spelthorne
+    guard_cells:
+    - column: B
+      expected_value: E07000213
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000213
+      label: Local authority
+  - value_id: e07000240
+    label: St Albans
+    ordinal: 229
+    row_number: 237
+    geography_id: E07000240
+    geography_level: local_authority
+    geography_name: St Albans
+    geography_vintage: current
+    source_row_id: e07000240
+    expected_row_header_column: D
+    expected_row_header: St Albans
+    guard_cells:
+    - column: B
+      expected_value: E07000240
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000240
+      label: Local authority
+  - value_id: e08000013
+    label: St Helens
+    ordinal: 230
+    row_number: 238
+    geography_id: E08000013
+    geography_level: local_authority
+    geography_name: St Helens
+    geography_vintage: current
+    source_row_id: e08000013
+    expected_row_header_column: D
+    expected_row_header: St Helens
+    guard_cells:
+    - column: B
+      expected_value: E08000013
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000013
+      label: Local authority
+  - value_id: e07000197
+    label: Stafford
+    ordinal: 231
+    row_number: 239
+    geography_id: E07000197
+    geography_level: local_authority
+    geography_name: Stafford
+    geography_vintage: current
+    source_row_id: e07000197
+    expected_row_header_column: D
+    expected_row_header: Stafford
+    guard_cells:
+    - column: B
+      expected_value: E07000197
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000197
+      label: Local authority
+  - value_id: e07000198
+    label: Staffordshire Moorlands
+    ordinal: 232
+    row_number: 240
+    geography_id: E07000198
+    geography_level: local_authority
+    geography_name: Staffordshire Moorlands
+    geography_vintage: current
+    source_row_id: e07000198
+    expected_row_header_column: D
+    expected_row_header: Staffordshire Moorlands
+    guard_cells:
+    - column: B
+      expected_value: E07000198
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000198
+      label: Local authority
+  - value_id: e07000243
+    label: Stevenage
+    ordinal: 233
+    row_number: 241
+    geography_id: E07000243
+    geography_level: local_authority
+    geography_name: Stevenage
+    geography_vintage: current
+    source_row_id: e07000243
+    expected_row_header_column: D
+    expected_row_header: Stevenage
+    guard_cells:
+    - column: B
+      expected_value: E07000243
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000243
+      label: Local authority
+  - value_id: e08000007
+    label: Stockport
+    ordinal: 234
+    row_number: 242
+    geography_id: E08000007
+    geography_level: local_authority
+    geography_name: Stockport
+    geography_vintage: current
+    source_row_id: e08000007
+    expected_row_header_column: D
+    expected_row_header: Stockport
+    guard_cells:
+    - column: B
+      expected_value: E08000007
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000007
+      label: Local authority
+  - value_id: e06000004
+    label: Stockton-on-Tees
+    ordinal: 235
+    row_number: 243
+    geography_id: E06000004
+    geography_level: local_authority
+    geography_name: Stockton-on-Tees
+    geography_vintage: current
+    source_row_id: e06000004
+    expected_row_header_column: D
+    expected_row_header: Stockton-on-Tees
+    guard_cells:
+    - column: B
+      expected_value: E06000004
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000004
+      label: Local authority
+  - value_id: e06000021
+    label: Stoke-on-Trent
+    ordinal: 236
+    row_number: 244
+    geography_id: E06000021
+    geography_level: local_authority
+    geography_name: Stoke-on-Trent
+    geography_vintage: current
+    source_row_id: e06000021
+    expected_row_header_column: D
+    expected_row_header: Stoke-on-Trent
+    guard_cells:
+    - column: B
+      expected_value: E06000021
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000021
+      label: Local authority
+  - value_id: e07000221
+    label: Stratford-on-Avon
+    ordinal: 237
+    row_number: 245
+    geography_id: E07000221
+    geography_level: local_authority
+    geography_name: Stratford-on-Avon
+    geography_vintage: current
+    source_row_id: e07000221
+    expected_row_header_column: D
+    expected_row_header: Stratford-on-Avon
+    guard_cells:
+    - column: B
+      expected_value: E07000221
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000221
+      label: Local authority
+  - value_id: e07000082
+    label: Stroud
+    ordinal: 238
+    row_number: 246
+    geography_id: E07000082
+    geography_level: local_authority
+    geography_name: Stroud
+    geography_vintage: current
+    source_row_id: e07000082
+    expected_row_header_column: D
+    expected_row_header: Stroud
+    guard_cells:
+    - column: B
+      expected_value: E07000082
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000082
+      label: Local authority
+  - value_id: e08000024
+    label: Sunderland
+    ordinal: 239
+    row_number: 247
+    geography_id: E08000024
+    geography_level: local_authority
+    geography_name: Sunderland
+    geography_vintage: current
+    source_row_id: e08000024
+    expected_row_header_column: D
+    expected_row_header: Sunderland
+    guard_cells:
+    - column: B
+      expected_value: E08000024
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000024
+      label: Local authority
+  - value_id: e07000214
+    label: Surrey Heath
+    ordinal: 240
+    row_number: 248
+    geography_id: E07000214
+    geography_level: local_authority
+    geography_name: Surrey Heath
+    geography_vintage: current
+    source_row_id: e07000214
+    expected_row_header_column: D
+    expected_row_header: Surrey Heath
+    guard_cells:
+    - column: B
+      expected_value: E07000214
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000214
+      label: Local authority
+  - value_id: e09000029
+    label: Sutton
+    ordinal: 241
+    row_number: 249
+    geography_id: E09000029
+    geography_level: local_authority
+    geography_name: Sutton
+    geography_vintage: current
+    source_row_id: e09000029
+    expected_row_header_column: D
+    expected_row_header: Sutton
+    guard_cells:
+    - column: B
+      expected_value: E09000029
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000029
+      label: Local authority
+  - value_id: e07000113
+    label: Swale
+    ordinal: 242
+    row_number: 250
+    geography_id: E07000113
+    geography_level: local_authority
+    geography_name: Swale
+    geography_vintage: current
+    source_row_id: e07000113
+    expected_row_header_column: D
+    expected_row_header: Swale
+    guard_cells:
+    - column: B
+      expected_value: E07000113
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000113
+      label: Local authority
+  - value_id: e06000030
+    label: Swindon
+    ordinal: 243
+    row_number: 251
+    geography_id: E06000030
+    geography_level: local_authority
+    geography_name: Swindon
+    geography_vintage: current
+    source_row_id: e06000030
+    expected_row_header_column: D
+    expected_row_header: Swindon
+    guard_cells:
+    - column: B
+      expected_value: E06000030
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000030
+      label: Local authority
+  - value_id: e08000008
+    label: Tameside
+    ordinal: 244
+    row_number: 252
+    geography_id: E08000008
+    geography_level: local_authority
+    geography_name: Tameside
+    geography_vintage: current
+    source_row_id: e08000008
+    expected_row_header_column: D
+    expected_row_header: Tameside
+    guard_cells:
+    - column: B
+      expected_value: E08000008
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000008
+      label: Local authority
+  - value_id: e07000199
+    label: Tamworth
+    ordinal: 245
+    row_number: 253
+    geography_id: E07000199
+    geography_level: local_authority
+    geography_name: Tamworth
+    geography_vintage: current
+    source_row_id: e07000199
+    expected_row_header_column: D
+    expected_row_header: Tamworth
+    guard_cells:
+    - column: B
+      expected_value: E07000199
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000199
+      label: Local authority
+  - value_id: e07000215
+    label: Tandridge
+    ordinal: 246
+    row_number: 254
+    geography_id: E07000215
+    geography_level: local_authority
+    geography_name: Tandridge
+    geography_vintage: current
+    source_row_id: e07000215
+    expected_row_header_column: D
+    expected_row_header: Tandridge
+    guard_cells:
+    - column: B
+      expected_value: E07000215
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000215
+      label: Local authority
+  - value_id: e07000045
+    label: Teignbridge
+    ordinal: 247
+    row_number: 255
+    geography_id: E07000045
+    geography_level: local_authority
+    geography_name: Teignbridge
+    geography_vintage: current
+    source_row_id: e07000045
+    expected_row_header_column: D
+    expected_row_header: Teignbridge
+    guard_cells:
+    - column: B
+      expected_value: E07000045
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000045
+      label: Local authority
+  - value_id: e06000020
+    label: Telford and Wrekin
+    ordinal: 248
+    row_number: 256
+    geography_id: E06000020
+    geography_level: local_authority
+    geography_name: Telford and Wrekin
+    geography_vintage: current
+    source_row_id: e06000020
+    expected_row_header_column: D
+    expected_row_header: Telford and Wrekin
+    guard_cells:
+    - column: B
+      expected_value: E06000020
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000020
+      label: Local authority
+  - value_id: e07000076
+    label: Tendring
+    ordinal: 249
+    row_number: 257
+    geography_id: E07000076
+    geography_level: local_authority
+    geography_name: Tendring
+    geography_vintage: current
+    source_row_id: e07000076
+    expected_row_header_column: D
+    expected_row_header: Tendring
+    guard_cells:
+    - column: B
+      expected_value: E07000076
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000076
+      label: Local authority
+  - value_id: e07000093
+    label: Test Valley
+    ordinal: 250
+    row_number: 258
+    geography_id: E07000093
+    geography_level: local_authority
+    geography_name: Test Valley
+    geography_vintage: current
+    source_row_id: e07000093
+    expected_row_header_column: D
+    expected_row_header: Test Valley
+    guard_cells:
+    - column: B
+      expected_value: E07000093
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000093
+      label: Local authority
+  - value_id: e07000083
+    label: Tewkesbury
+    ordinal: 251
+    row_number: 259
+    geography_id: E07000083
+    geography_level: local_authority
+    geography_name: Tewkesbury
+    geography_vintage: current
+    source_row_id: e07000083
+    expected_row_header_column: D
+    expected_row_header: Tewkesbury
+    guard_cells:
+    - column: B
+      expected_value: E07000083
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000083
+      label: Local authority
+  - value_id: e07000114
+    label: Thanet
+    ordinal: 252
+    row_number: 260
+    geography_id: E07000114
+    geography_level: local_authority
+    geography_name: Thanet
+    geography_vintage: current
+    source_row_id: e07000114
+    expected_row_header_column: D
+    expected_row_header: Thanet
+    guard_cells:
+    - column: B
+      expected_value: E07000114
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000114
+      label: Local authority
+  - value_id: e07000102
+    label: Three Rivers
+    ordinal: 253
+    row_number: 261
+    geography_id: E07000102
+    geography_level: local_authority
+    geography_name: Three Rivers
+    geography_vintage: current
+    source_row_id: e07000102
+    expected_row_header_column: D
+    expected_row_header: Three Rivers
+    guard_cells:
+    - column: B
+      expected_value: E07000102
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000102
+      label: Local authority
+  - value_id: e06000034
+    label: Thurrock
+    ordinal: 254
+    row_number: 262
+    geography_id: E06000034
+    geography_level: local_authority
+    geography_name: Thurrock
+    geography_vintage: current
+    source_row_id: e06000034
+    expected_row_header_column: D
+    expected_row_header: Thurrock
+    guard_cells:
+    - column: B
+      expected_value: E06000034
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000034
+      label: Local authority
+  - value_id: e07000115
+    label: Tonbridge and Malling
+    ordinal: 255
+    row_number: 263
+    geography_id: E07000115
+    geography_level: local_authority
+    geography_name: Tonbridge and Malling
+    geography_vintage: current
+    source_row_id: e07000115
+    expected_row_header_column: D
+    expected_row_header: Tonbridge and Malling
+    guard_cells:
+    - column: B
+      expected_value: E07000115
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000115
+      label: Local authority
+  - value_id: e06000027
+    label: Torbay
+    ordinal: 256
+    row_number: 264
+    geography_id: E06000027
+    geography_level: local_authority
+    geography_name: Torbay
+    geography_vintage: current
+    source_row_id: e06000027
+    expected_row_header_column: D
+    expected_row_header: Torbay
+    guard_cells:
+    - column: B
+      expected_value: E06000027
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000027
+      label: Local authority
+  - value_id: e07000046
+    label: Torridge
+    ordinal: 257
+    row_number: 265
+    geography_id: E07000046
+    geography_level: local_authority
+    geography_name: Torridge
+    geography_vintage: current
+    source_row_id: e07000046
+    expected_row_header_column: D
+    expected_row_header: Torridge
+    guard_cells:
+    - column: B
+      expected_value: E07000046
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000046
+      label: Local authority
+  - value_id: e09000030
+    label: Tower Hamlets
+    ordinal: 258
+    row_number: 266
+    geography_id: E09000030
+    geography_level: local_authority
+    geography_name: Tower Hamlets
+    geography_vintage: current
+    source_row_id: e09000030
+    expected_row_header_column: D
+    expected_row_header: Tower Hamlets
+    guard_cells:
+    - column: B
+      expected_value: E09000030
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000030
+      label: Local authority
+  - value_id: e08000009
+    label: Trafford
+    ordinal: 259
+    row_number: 267
+    geography_id: E08000009
+    geography_level: local_authority
+    geography_name: Trafford
+    geography_vintage: current
+    source_row_id: e08000009
+    expected_row_header_column: D
+    expected_row_header: Trafford
+    guard_cells:
+    - column: B
+      expected_value: E08000009
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000009
+      label: Local authority
+  - value_id: e07000116
+    label: Tunbridge Wells
+    ordinal: 260
+    row_number: 268
+    geography_id: E07000116
+    geography_level: local_authority
+    geography_name: Tunbridge Wells
+    geography_vintage: current
+    source_row_id: e07000116
+    expected_row_header_column: D
+    expected_row_header: Tunbridge Wells
+    guard_cells:
+    - column: B
+      expected_value: E07000116
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000116
+      label: Local authority
+  - value_id: e07000077
+    label: Uttlesford
+    ordinal: 261
+    row_number: 269
+    geography_id: E07000077
+    geography_level: local_authority
+    geography_name: Uttlesford
+    geography_vintage: current
+    source_row_id: e07000077
+    expected_row_header_column: D
+    expected_row_header: Uttlesford
+    guard_cells:
+    - column: B
+      expected_value: E07000077
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000077
+      label: Local authority
+  - value_id: e07000180
+    label: Vale of White Horse
+    ordinal: 262
+    row_number: 270
+    geography_id: E07000180
+    geography_level: local_authority
+    geography_name: Vale of White Horse
+    geography_vintage: current
+    source_row_id: e07000180
+    expected_row_header_column: D
+    expected_row_header: Vale of White Horse
+    guard_cells:
+    - column: B
+      expected_value: E07000180
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000180
+      label: Local authority
+  - value_id: e08000036
+    label: Wakefield
+    ordinal: 263
+    row_number: 271
+    geography_id: E08000036
+    geography_level: local_authority
+    geography_name: Wakefield
+    geography_vintage: current
+    source_row_id: e08000036
+    expected_row_header_column: D
+    expected_row_header: Wakefield
+    guard_cells:
+    - column: B
+      expected_value: E08000036
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000036
+      label: Local authority
+  - value_id: e08000030
+    label: Walsall
+    ordinal: 264
+    row_number: 272
+    geography_id: E08000030
+    geography_level: local_authority
+    geography_name: Walsall
+    geography_vintage: current
+    source_row_id: e08000030
+    expected_row_header_column: D
+    expected_row_header: Walsall
+    guard_cells:
+    - column: B
+      expected_value: E08000030
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000030
+      label: Local authority
+  - value_id: e09000031
+    label: Waltham Forest
+    ordinal: 265
+    row_number: 273
+    geography_id: E09000031
+    geography_level: local_authority
+    geography_name: Waltham Forest
+    geography_vintage: current
+    source_row_id: e09000031
+    expected_row_header_column: D
+    expected_row_header: Waltham Forest
+    guard_cells:
+    - column: B
+      expected_value: E09000031
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000031
+      label: Local authority
+  - value_id: e09000032
+    label: Wandsworth
+    ordinal: 266
+    row_number: 274
+    geography_id: E09000032
+    geography_level: local_authority
+    geography_name: Wandsworth
+    geography_vintage: current
+    source_row_id: e09000032
+    expected_row_header_column: D
+    expected_row_header: Wandsworth
+    guard_cells:
+    - column: B
+      expected_value: E09000032
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000032
+      label: Local authority
+  - value_id: e06000007
+    label: Warrington
+    ordinal: 267
+    row_number: 275
+    geography_id: E06000007
+    geography_level: local_authority
+    geography_name: Warrington
+    geography_vintage: current
+    source_row_id: e06000007
+    expected_row_header_column: D
+    expected_row_header: Warrington
+    guard_cells:
+    - column: B
+      expected_value: E06000007
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000007
+      label: Local authority
+  - value_id: e07000222
+    label: Warwick
+    ordinal: 268
+    row_number: 276
+    geography_id: E07000222
+    geography_level: local_authority
+    geography_name: Warwick
+    geography_vintage: current
+    source_row_id: e07000222
+    expected_row_header_column: D
+    expected_row_header: Warwick
+    guard_cells:
+    - column: B
+      expected_value: E07000222
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000222
+      label: Local authority
+  - value_id: e07000103
+    label: Watford
+    ordinal: 269
+    row_number: 277
+    geography_id: E07000103
+    geography_level: local_authority
+    geography_name: Watford
+    geography_vintage: current
+    source_row_id: e07000103
+    expected_row_header_column: D
+    expected_row_header: Watford
+    guard_cells:
+    - column: B
+      expected_value: E07000103
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000103
+      label: Local authority
+  - value_id: e07000216
+    label: Waverley
+    ordinal: 270
+    row_number: 278
+    geography_id: E07000216
+    geography_level: local_authority
+    geography_name: Waverley
+    geography_vintage: current
+    source_row_id: e07000216
+    expected_row_header_column: D
+    expected_row_header: Waverley
+    guard_cells:
+    - column: B
+      expected_value: E07000216
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000216
+      label: Local authority
+  - value_id: e07000065
+    label: Wealden
+    ordinal: 271
+    row_number: 279
+    geography_id: E07000065
+    geography_level: local_authority
+    geography_name: Wealden
+    geography_vintage: current
+    source_row_id: e07000065
+    expected_row_header_column: D
+    expected_row_header: Wealden
+    guard_cells:
+    - column: B
+      expected_value: E07000065
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000065
+      label: Local authority
+  - value_id: e07000241
+    label: Welwyn Hatfield
+    ordinal: 272
+    row_number: 280
+    geography_id: E07000241
+    geography_level: local_authority
+    geography_name: Welwyn Hatfield
+    geography_vintage: current
+    source_row_id: e07000241
+    expected_row_header_column: D
+    expected_row_header: Welwyn Hatfield
+    guard_cells:
+    - column: B
+      expected_value: E07000241
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000241
+      label: Local authority
+  - value_id: e06000037
+    label: West Berkshire
+    ordinal: 273
+    row_number: 281
+    geography_id: E06000037
+    geography_level: local_authority
+    geography_name: West Berkshire
+    geography_vintage: current
+    source_row_id: e06000037
+    expected_row_header_column: D
+    expected_row_header: West Berkshire
+    guard_cells:
+    - column: B
+      expected_value: E06000037
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000037
+      label: Local authority
+  - value_id: e07000047
+    label: West Devon
+    ordinal: 274
+    row_number: 282
+    geography_id: E07000047
+    geography_level: local_authority
+    geography_name: West Devon
+    geography_vintage: current
+    source_row_id: e07000047
+    expected_row_header_column: D
+    expected_row_header: West Devon
+    guard_cells:
+    - column: B
+      expected_value: E07000047
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000047
+      label: Local authority
+  - value_id: e07000127
+    label: West Lancashire
+    ordinal: 275
+    row_number: 283
+    geography_id: E07000127
+    geography_level: local_authority
+    geography_name: West Lancashire
+    geography_vintage: current
+    source_row_id: e07000127
+    expected_row_header_column: D
+    expected_row_header: West Lancashire
+    guard_cells:
+    - column: B
+      expected_value: E07000127
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000127
+      label: Local authority
+  - value_id: e07000142
+    label: West Lindsey
+    ordinal: 276
+    row_number: 284
+    geography_id: E07000142
+    geography_level: local_authority
+    geography_name: West Lindsey
+    geography_vintage: current
+    source_row_id: e07000142
+    expected_row_header_column: D
+    expected_row_header: West Lindsey
+    guard_cells:
+    - column: B
+      expected_value: E07000142
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000142
+      label: Local authority
+  - value_id: e06000062
+    label: West Northamptonshire
+    ordinal: 277
+    row_number: 285
+    geography_id: E06000062
+    geography_level: local_authority
+    geography_name: West Northamptonshire
+    geography_vintage: current
+    source_row_id: e06000062
+    expected_row_header_column: D
+    expected_row_header: West Northamptonshire
+    guard_cells:
+    - column: B
+      expected_value: E06000062
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000062
+      label: Local authority
+  - value_id: e07000181
+    label: West Oxfordshire
+    ordinal: 278
+    row_number: 286
+    geography_id: E07000181
+    geography_level: local_authority
+    geography_name: West Oxfordshire
+    geography_vintage: current
+    source_row_id: e07000181
+    expected_row_header_column: D
+    expected_row_header: West Oxfordshire
+    guard_cells:
+    - column: B
+      expected_value: E07000181
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000181
+      label: Local authority
+  - value_id: e07000245
+    label: West Suffolk
+    ordinal: 279
+    row_number: 287
+    geography_id: E07000245
+    geography_level: local_authority
+    geography_name: West Suffolk
+    geography_vintage: current
+    source_row_id: e07000245
+    expected_row_header_column: D
+    expected_row_header: West Suffolk
+    guard_cells:
+    - column: B
+      expected_value: E07000245
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000245
+      label: Local authority
+  - value_id: e09000033
+    label: Westminster
+    ordinal: 280
+    row_number: 288
+    geography_id: E09000033
+    geography_level: local_authority
+    geography_name: Westminster
+    geography_vintage: current
+    source_row_id: e09000033
+    expected_row_header_column: D
+    expected_row_header: Westminster
+    guard_cells:
+    - column: B
+      expected_value: E09000033
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E09000033
+      label: Local authority
+  - value_id: e06000064
+    label: Westmorland and Furness
+    ordinal: 281
+    row_number: 289
+    geography_id: E06000064
+    geography_level: local_authority
+    geography_name: Westmorland and Furness
+    geography_vintage: current
+    source_row_id: e06000064
+    expected_row_header_column: D
+    expected_row_header: Westmorland and Furness
+    guard_cells:
+    - column: B
+      expected_value: E06000064
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000064
+      label: Local authority
+  - value_id: e08000010
+    label: Wigan
+    ordinal: 282
+    row_number: 290
+    geography_id: E08000010
+    geography_level: local_authority
+    geography_name: Wigan
+    geography_vintage: current
+    source_row_id: e08000010
+    expected_row_header_column: D
+    expected_row_header: Wigan
+    guard_cells:
+    - column: B
+      expected_value: E08000010
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000010
+      label: Local authority
+  - value_id: e06000054
+    label: Wiltshire
+    ordinal: 283
+    row_number: 291
+    geography_id: E06000054
+    geography_level: local_authority
+    geography_name: Wiltshire
+    geography_vintage: current
+    source_row_id: e06000054
+    expected_row_header_column: D
+    expected_row_header: Wiltshire
+    guard_cells:
+    - column: B
+      expected_value: E06000054
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000054
+      label: Local authority
+  - value_id: e07000094
+    label: Winchester
+    ordinal: 284
+    row_number: 292
+    geography_id: E07000094
+    geography_level: local_authority
+    geography_name: Winchester
+    geography_vintage: current
+    source_row_id: e07000094
+    expected_row_header_column: D
+    expected_row_header: Winchester
+    guard_cells:
+    - column: B
+      expected_value: E07000094
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000094
+      label: Local authority
+  - value_id: e06000040
+    label: Windsor and Maidenhead
+    ordinal: 285
+    row_number: 293
+    geography_id: E06000040
+    geography_level: local_authority
+    geography_name: Windsor and Maidenhead
+    geography_vintage: current
+    source_row_id: e06000040
+    expected_row_header_column: D
+    expected_row_header: Windsor and Maidenhead
+    guard_cells:
+    - column: B
+      expected_value: E06000040
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000040
+      label: Local authority
+  - value_id: e08000015
+    label: Wirral
+    ordinal: 286
+    row_number: 294
+    geography_id: E08000015
+    geography_level: local_authority
+    geography_name: Wirral
+    geography_vintage: current
+    source_row_id: e08000015
+    expected_row_header_column: D
+    expected_row_header: Wirral
+    guard_cells:
+    - column: B
+      expected_value: E08000015
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000015
+      label: Local authority
+  - value_id: e07000217
+    label: Woking
+    ordinal: 287
+    row_number: 295
+    geography_id: E07000217
+    geography_level: local_authority
+    geography_name: Woking
+    geography_vintage: current
+    source_row_id: e07000217
+    expected_row_header_column: D
+    expected_row_header: Woking
+    guard_cells:
+    - column: B
+      expected_value: E07000217
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000217
+      label: Local authority
+  - value_id: e06000041
+    label: Wokingham
+    ordinal: 288
+    row_number: 296
+    geography_id: E06000041
+    geography_level: local_authority
+    geography_name: Wokingham
+    geography_vintage: current
+    source_row_id: e06000041
+    expected_row_header_column: D
+    expected_row_header: Wokingham
+    guard_cells:
+    - column: B
+      expected_value: E06000041
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000041
+      label: Local authority
+  - value_id: e08000031
+    label: Wolverhampton
+    ordinal: 289
+    row_number: 297
+    geography_id: E08000031
+    geography_level: local_authority
+    geography_name: Wolverhampton
+    geography_vintage: current
+    source_row_id: e08000031
+    expected_row_header_column: D
+    expected_row_header: Wolverhampton
+    guard_cells:
+    - column: B
+      expected_value: E08000031
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E08000031
+      label: Local authority
+  - value_id: e07000237
+    label: Worcester
+    ordinal: 290
+    row_number: 298
+    geography_id: E07000237
+    geography_level: local_authority
+    geography_name: Worcester
+    geography_vintage: current
+    source_row_id: e07000237
+    expected_row_header_column: D
+    expected_row_header: Worcester
+    guard_cells:
+    - column: B
+      expected_value: E07000237
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000237
+      label: Local authority
+  - value_id: e07000229
+    label: Worthing
+    ordinal: 291
+    row_number: 299
+    geography_id: E07000229
+    geography_level: local_authority
+    geography_name: Worthing
+    geography_vintage: current
+    source_row_id: e07000229
+    expected_row_header_column: D
+    expected_row_header: Worthing
+    guard_cells:
+    - column: B
+      expected_value: E07000229
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000229
+      label: Local authority
+  - value_id: e07000238
+    label: Wychavon
+    ordinal: 292
+    row_number: 300
+    geography_id: E07000238
+    geography_level: local_authority
+    geography_name: Wychavon
+    geography_vintage: current
+    source_row_id: e07000238
+    expected_row_header_column: D
+    expected_row_header: Wychavon
+    guard_cells:
+    - column: B
+      expected_value: E07000238
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000238
+      label: Local authority
+  - value_id: e07000128
+    label: Wyre
+    ordinal: 293
+    row_number: 301
+    geography_id: E07000128
+    geography_level: local_authority
+    geography_name: Wyre
+    geography_vintage: current
+    source_row_id: e07000128
+    expected_row_header_column: D
+    expected_row_header: Wyre
+    guard_cells:
+    - column: B
+      expected_value: E07000128
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000128
+      label: Local authority
+  - value_id: e07000239
+    label: Wyre Forest
+    ordinal: 294
+    row_number: 302
+    geography_id: E07000239
+    geography_level: local_authority
+    geography_name: Wyre Forest
+    geography_vintage: current
+    source_row_id: e07000239
+    expected_row_header_column: D
+    expected_row_header: Wyre Forest
+    guard_cells:
+    - column: B
+      expected_value: E07000239
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E07000239
+      label: Local authority
+  - value_id: e06000014
+    label: York
+    ordinal: 295
+    row_number: 303
+    geography_id: E06000014
+    geography_level: local_authority
+    geography_name: York
+    geography_vintage: current
+    source_row_id: e06000014
+    expected_row_header_column: D
+    expected_row_header: York
+    guard_cells:
+    - column: B
+      expected_value: E06000014
+      label: ONS area code
+    constraints:
+    - variable: local_authority
+      operator: ==
+      value: E06000014
+      label: Local authority
+  measures:
+  - measure_id: taxbase_after_council_tax_support
+    label: Tax base after allowance for council tax support
+    ordinal: 0
+    column: LX
+    source_column_id: taxbase_after_allowance_for_council_tax_support
+    expected_column_header_row: 5
+    expected_column_header: Table 1.35. Tax base after allowance for council tax support (Line 33)
+    concept: uk_housing.council_taxbase_after_council_tax_support
+    source_concept: mhclg.tax_base_after_allowance_for_council_tax_support
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: band_d_equivalent_dwellings
+    aggregation: sum
+    expected_cell_type: number

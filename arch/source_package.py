@@ -185,6 +185,7 @@ SOURCE_PACKAGE_ALIASES = {
     "mhclg-english-housing-survey-rented-sectors-2023-24": Path(
         "packages/mhclg/english_housing_survey_rented_sectors_2023_24"
     ),
+    "mhclg-council-taxbase-2025": Path("packages/mhclg/council_taxbase_2025"),
     "mhclg-council-tax-levels-2026": Path(
         "packages/mhclg/council_tax_levels_2026"
     ),
