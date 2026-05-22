@@ -1,6 +1,6 @@
 # PE UK Source Checklist
 
-Last updated: 2026-05-11.
+Last updated: 2026-05-22.
 
 This checklist tracks source-backed Arch coverage for target sources currently
 used by `policyengine_uk_data.targets`. Use it as the queue for UK source
@@ -198,6 +198,9 @@ Each completed item should have:
     source file.
   - Caveat: Arch preserves observed annual source facts. PE's flat projection
     through 2029 remains downstream target construction.
+  - 2026-05-22 downstream note: `microplex-uk` now emits the 2026 PE target
+    by holding the latest ONS HAXV observation flat, with projection metadata
+    preserving the source observation year.
 
 - [x] VOA council tax bands
   - PE modules: `sources/voa_council_tax.py` and
@@ -370,6 +373,10 @@ Each completed item should have:
   - Caveat: PE's private-school pupil target uses a static 557k rounded ISC
     assumption. Arch preserves the exact source count; downstream target
     construction should apply rounding and any model-year mapping explicitly.
+  - 2026-05-22 downstream note: `microplex-uk` now emits the PE 2026
+    OBR-labelled salary-sacrifice helper targets from the HMRC/GOV.UK base
+    facts and the PE growth assumptions, and emits the static 557k private
+    school target from the rounded ISC source count.
 
 ## Local-Area Calibration Helpers
 
