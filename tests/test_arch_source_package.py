@@ -5416,8 +5416,9 @@ def test_validate_source_package_reports_new_us_source_counts(
     assert report.counts == expected_counts
 
 
-def test_validate_source_package_reports_obr_efo_receipts_counts():
-    report = validate_source_package("obr-efo-receipts", year=2025)
+@pytest.mark.parametrize("year", [2025, 2026])
+def test_validate_source_package_reports_obr_efo_receipts_counts(year):
+    report = validate_source_package("obr-efo-receipts", year=year)
 
     assert report.valid
     assert report.counts == {
@@ -5429,8 +5430,9 @@ def test_validate_source_package_reports_obr_efo_receipts_counts():
     }
 
 
-def test_validate_source_package_reports_obr_efo_expenditure_counts():
-    report = validate_source_package("obr-efo-expenditure", year=2025)
+@pytest.mark.parametrize("year", [2025, 2026])
+def test_validate_source_package_reports_obr_efo_expenditure_counts(year):
+    report = validate_source_package("obr-efo-expenditure", year=year)
 
     assert report.valid
     assert report.counts == {

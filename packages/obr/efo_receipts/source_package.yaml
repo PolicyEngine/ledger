@@ -11,6 +11,7 @@ artifact:
   extracted_at: "2026-05-10"
   extraction_method: openpyxl whole-workbook used-range cell parse
   parser: xlsx_used_range
+  artifact_year: 2025
 record_sets:
   - record_set_id: obr_efo.fy{year}.receipts.income_tax_gross_of_tax_credits
     record_set_spec_id: obr_efo.receipts.income_tax_gross_of_tax_credits.v1
@@ -38,9 +39,23 @@ record_sets:
       - measure_id: amount
         label: Income tax gross of tax credits
         ordinal: 0
-        column: D
+        column_by_year:
+          2024: C
+          2025: D
+          2026: E
+          2027: F
+          2028: G
+          2029: H
+          2030: I
         expected_column_header_row: 5
-        expected_column_header: 2025-26
+        expected_column_header_by_year:
+          2024: 2024-25
+          2025: 2025-26
+          2026: 2026-27
+          2027: 2027-28
+          2028: 2028-29
+          2029: 2029-30
+          2030: 2030-31
         concept: uk_public_sector.income_tax_receipts_accrued
         source_concept: obr.income_tax_gross_of_tax_credits_accrued
         concept_relation: source_label
@@ -75,9 +90,23 @@ record_sets:
       - measure_id: amount
         label: National insurance contributions
         ordinal: 0
-        column: D
+        column_by_year:
+          2024: C
+          2025: D
+          2026: E
+          2027: F
+          2028: G
+          2029: H
+          2030: I
         expected_column_header_row: 5
-        expected_column_header: 2025-26
+        expected_column_header_by_year:
+          2024: 2024-25
+          2025: 2025-26
+          2026: 2026-27
+          2027: 2027-28
+          2028: 2028-29
+          2029: 2029-30
+          2030: 2030-31
         concept: uk_public_sector.national_insurance_contributions_accrued
         source_concept: obr.national_insurance_contributions_accrued
         concept_relation: source_label
@@ -112,9 +141,23 @@ record_sets:
       - measure_id: amount
         label: Class 1 employee NICs
         ordinal: 0
-        column: D
+        column_by_year:
+          2024: C
+          2025: D
+          2026: E
+          2027: F
+          2028: G
+          2029: H
+          2030: I
         expected_column_header_row: 5
-        expected_column_header: 2025-26
+        expected_column_header_by_year:
+          2024: 2024-25
+          2025: 2025-26
+          2026: 2026-27
+          2027: 2027-28
+          2028: 2028-29
+          2029: 2029-30
+          2030: 2030-31
         concept: uk_public_sector.class_1_employee_nics_accrued
         source_concept: obr.class_1_employee_nics_accrued
         concept_relation: source_label
@@ -149,9 +192,23 @@ record_sets:
       - measure_id: amount
         label: Class 1 employer NICs
         ordinal: 0
-        column: D
+        column_by_year:
+          2024: C
+          2025: D
+          2026: E
+          2027: F
+          2028: G
+          2029: H
+          2030: I
         expected_column_header_row: 5
-        expected_column_header: 2025-26
+        expected_column_header_by_year:
+          2024: 2024-25
+          2025: 2025-26
+          2026: 2026-27
+          2027: 2027-28
+          2028: 2028-29
+          2029: 2029-30
+          2030: 2030-31
         concept: uk_public_sector.class_1_employer_nics_accrued
         source_concept: obr.class_1_employer_nics_accrued
         concept_relation: source_label
@@ -186,9 +243,23 @@ record_sets:
       - measure_id: amount
         label: Class 2 and Class 4 self-employed NICs
         ordinal: 0
-        column: D
+        column_by_year:
+          2024: C
+          2025: D
+          2026: E
+          2027: F
+          2028: G
+          2029: H
+          2030: I
         expected_column_header_row: 5
-        expected_column_header: 2025-26
+        expected_column_header_by_year:
+          2024: 2024-25
+          2025: 2025-26
+          2026: 2026-27
+          2027: 2027-28
+          2028: 2028-29
+          2029: 2029-30
+          2030: 2030-31
         concept: uk_public_sector.class_2_and_class_4_self_employed_nics_accrued
         source_concept: obr.class_2_and_class_4_self_employed_nics_accrued
         concept_relation: source_label
@@ -223,9 +294,23 @@ record_sets:
       - measure_id: amount
         label: Value added tax
         ordinal: 0
-        column: E
+        column_by_year:
+          2024: D
+          2025: E
+          2026: F
+          2027: G
+          2028: H
+          2029: I
+          2030: J
         expected_column_header_row: 5
-        expected_column_header: 2025-26
+        expected_column_header_by_year:
+          2024: 2024-25
+          2025: 2025-26
+          2026: 2026-27
+          2027: 2027-28
+          2028: 2028-29
+          2029: 2029-30
+          2030: 2030-31
         concept: uk_public_sector.value_added_tax_receipts_cash
         source_concept: obr.value_added_tax_cash
         concept_relation: source_label
@@ -260,9 +345,23 @@ record_sets:
       - measure_id: amount
         label: Fuel duties
         ordinal: 0
-        column: E
+        column_by_year:
+          2024: D
+          2025: E
+          2026: F
+          2027: G
+          2028: H
+          2029: I
+          2030: J
         expected_column_header_row: 5
-        expected_column_header: 2025-26
+        expected_column_header_by_year:
+          2024: 2024-25
+          2025: 2025-26
+          2026: 2026-27
+          2027: 2027-28
+          2028: 2028-29
+          2029: 2029-30
+          2030: 2030-31
         concept: uk_public_sector.fuel_duty_receipts_cash
         source_concept: obr.fuel_duties_cash
         concept_relation: source_label
@@ -297,9 +396,23 @@ record_sets:
       - measure_id: amount
         label: Capital gains tax
         ordinal: 0
-        column: E
+        column_by_year:
+          2024: D
+          2025: E
+          2026: F
+          2027: G
+          2028: H
+          2029: I
+          2030: J
         expected_column_header_row: 5
-        expected_column_header: 2025-26
+        expected_column_header_by_year:
+          2024: 2024-25
+          2025: 2025-26
+          2026: 2026-27
+          2027: 2027-28
+          2028: 2028-29
+          2029: 2029-30
+          2030: 2030-31
         concept: uk_public_sector.capital_gains_tax_receipts_cash
         source_concept: obr.capital_gains_tax_cash
         concept_relation: source_label
@@ -334,9 +447,23 @@ record_sets:
       - measure_id: amount
         label: Stamp duty land tax
         ordinal: 0
-        column: E
+        column_by_year:
+          2024: D
+          2025: E
+          2026: F
+          2027: G
+          2028: H
+          2029: I
+          2030: J
         expected_column_header_row: 5
-        expected_column_header: 2025-26
+        expected_column_header_by_year:
+          2024: 2024-25
+          2025: 2025-26
+          2026: 2026-27
+          2027: 2027-28
+          2028: 2028-29
+          2029: 2029-30
+          2030: 2030-31
         concept: uk_public_sector.stamp_duty_land_tax_receipts_cash
         source_concept: obr.stamp_duty_land_tax_cash
         concept_relation: source_label

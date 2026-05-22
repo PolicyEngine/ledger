@@ -11,6 +11,7 @@ artifact:
   extracted_at: "2026-05-10"
   extraction_method: openpyxl whole-workbook used-range cell parse
   parser: xlsx_used_range
+  artifact_year: 2025
 record_sets:
   - record_set_id: obr_efo.fy{year}.expenditure.total_net_council_tax_receipts
     record_set_spec_id: obr_efo.expenditure.total_net_council_tax_receipts.v1
@@ -38,9 +39,23 @@ record_sets:
       - measure_id: amount
         label: Total net council tax receipts
         ordinal: 0
-        column: D
+        column_by_year:
+          2024: C
+          2025: D
+          2026: E
+          2027: F
+          2028: G
+          2029: H
+          2030: I
         expected_column_header_row: 5
-        expected_column_header: 2025-26
+        expected_column_header_by_year:
+          2024: 2024-25
+          2025: 2025-26
+          2026: 2026-27
+          2027: 2027-28
+          2028: 2028-29
+          2029: 2029-30
+          2030: 2030-31
         concept: uk_public_sector.council_tax_receipts_net_cash
         source_concept: obr.total_net_council_tax_receipts
         concept_relation: source_label
@@ -75,9 +90,23 @@ record_sets:
       - measure_id: amount
         label: England council tax receipts
         ordinal: 0
-        column: D
+        column_by_year:
+          2024: C
+          2025: D
+          2026: E
+          2027: F
+          2028: G
+          2029: H
+          2030: I
         expected_column_header_row: 5
-        expected_column_header: 2025-26
+        expected_column_header_by_year:
+          2024: 2024-25
+          2025: 2025-26
+          2026: 2026-27
+          2027: 2027-28
+          2028: 2028-29
+          2029: 2029-30
+          2030: 2030-31
         concept: uk_public_sector.council_tax_receipts_cash
         source_concept: obr.england_council_tax_receipts
         concept_relation: source_label
@@ -112,9 +141,23 @@ record_sets:
       - measure_id: amount
         label: Scotland council tax receipts
         ordinal: 0
-        column: D
+        column_by_year:
+          2024: C
+          2025: D
+          2026: E
+          2027: F
+          2028: G
+          2029: H
+          2030: I
         expected_column_header_row: 5
-        expected_column_header: 2025-26
+        expected_column_header_by_year:
+          2024: 2024-25
+          2025: 2025-26
+          2026: 2026-27
+          2027: 2027-28
+          2028: 2028-29
+          2029: 2029-30
+          2030: 2030-31
         concept: uk_public_sector.council_tax_receipts_cash
         source_concept: obr.scotland_council_tax_receipts
         concept_relation: source_label
@@ -149,9 +192,23 @@ record_sets:
       - measure_id: amount
         label: Wales council tax receipts
         ordinal: 0
-        column: D
+        column_by_year:
+          2024: C
+          2025: D
+          2026: E
+          2027: F
+          2028: G
+          2029: H
+          2030: I
         expected_column_header_row: 5
-        expected_column_header: 2025-26
+        expected_column_header_by_year:
+          2024: 2024-25
+          2025: 2025-26
+          2026: 2026-27
+          2027: 2027-28
+          2028: 2028-29
+          2029: 2029-30
+          2030: 2030-31
         concept: uk_public_sector.council_tax_receipts_cash
         source_concept: obr.wales_council_tax_receipts
         concept_relation: source_label
@@ -186,9 +243,23 @@ record_sets:
       - measure_id: amount
         label: Northern Ireland domestic rates
         ordinal: 0
-        column: D
+        column_by_year:
+          2024: C
+          2025: D
+          2026: E
+          2027: F
+          2028: G
+          2029: H
+          2030: I
         expected_column_header_row: 5
-        expected_column_header: 2025-26
+        expected_column_header_by_year:
+          2024: 2024-25
+          2025: 2025-26
+          2026: 2026-27
+          2027: 2027-28
+          2028: 2028-29
+          2029: 2029-30
+          2030: 2030-31
         concept: uk_public_sector.domestic_rates_receipts_cash
         source_concept: obr.ni_domestic_rates
         concept_relation: source_label
@@ -223,9 +294,23 @@ record_sets:
       - measure_id: amount
         label: Housing benefit not on JSA
         ordinal: 0
-        column: D
+        column_by_year:
+          2024: C
+          2025: D
+          2026: E
+          2027: F
+          2028: G
+          2029: H
+          2030: I
         expected_column_header_row: 5
-        expected_column_header: 2025-26
+        expected_column_header_by_year:
+          2024: 2024-25
+          2025: 2025-26
+          2026: 2026-27
+          2027: 2027-28
+          2028: 2028-29
+          2029: 2029-30
+          2030: 2030-31
         concept: uk_public_sector.housing_benefit_expenditure_not_on_jsa
         source_concept: obr.housing_benefit_not_on_jsa
         concept_relation: source_label
@@ -260,9 +345,23 @@ record_sets:
       - measure_id: amount
         label: DLA and PIP expenditure
         ordinal: 0
-        column: D
+        column_by_year:
+          2024: C
+          2025: D
+          2026: E
+          2027: F
+          2028: G
+          2029: H
+          2030: I
         expected_column_header_row: 5
-        expected_column_header: 2025-26
+        expected_column_header_by_year:
+          2024: 2024-25
+          2025: 2025-26
+          2026: 2026-27
+          2027: 2027-28
+          2028: 2028-29
+          2029: 2029-30
+          2030: 2030-31
         concept: uk_public_sector.dla_and_pip_expenditure
         source_concept: obr.disability_living_allowance_and_personal_independence_payments
         concept_relation: source_label
@@ -297,9 +396,23 @@ record_sets:
       - measure_id: amount
         label: Incapacity benefits
         ordinal: 0
-        column: D
+        column_by_year:
+          2024: C
+          2025: D
+          2026: E
+          2027: F
+          2028: G
+          2029: H
+          2030: I
         expected_column_header_row: 5
-        expected_column_header: 2025-26
+        expected_column_header_by_year:
+          2024: 2024-25
+          2025: 2025-26
+          2026: 2026-27
+          2027: 2027-28
+          2028: 2028-29
+          2029: 2029-30
+          2030: 2030-31
         concept: uk_public_sector.incapacity_benefits_expenditure
         source_concept: obr.incapacity_benefits
         concept_relation: source_label
@@ -334,9 +447,23 @@ record_sets:
       - measure_id: amount
         label: Attendance allowance
         ordinal: 0
-        column: D
+        column_by_year:
+          2024: C
+          2025: D
+          2026: E
+          2027: F
+          2028: G
+          2029: H
+          2030: I
         expected_column_header_row: 5
-        expected_column_header: 2025-26
+        expected_column_header_by_year:
+          2024: 2024-25
+          2025: 2025-26
+          2026: 2026-27
+          2027: 2027-28
+          2028: 2028-29
+          2029: 2029-30
+          2030: 2030-31
         concept: uk_public_sector.attendance_allowance_expenditure
         source_concept: obr.attendance_allowance
         concept_relation: source_label
@@ -371,9 +498,23 @@ record_sets:
       - measure_id: amount
         label: Pension credit
         ordinal: 0
-        column: D
+        column_by_year:
+          2024: C
+          2025: D
+          2026: E
+          2027: F
+          2028: G
+          2029: H
+          2030: I
         expected_column_header_row: 5
-        expected_column_header: 2025-26
+        expected_column_header_by_year:
+          2024: 2024-25
+          2025: 2025-26
+          2026: 2026-27
+          2027: 2027-28
+          2028: 2028-29
+          2029: 2029-30
+          2030: 2030-31
         concept: uk_public_sector.pension_credit_expenditure
         source_concept: obr.pension_credit
         concept_relation: source_label
@@ -408,9 +549,23 @@ record_sets:
       - measure_id: amount
         label: Carer's allowance
         ordinal: 0
-        column: D
+        column_by_year:
+          2024: C
+          2025: D
+          2026: E
+          2027: F
+          2028: G
+          2029: H
+          2030: I
         expected_column_header_row: 5
-        expected_column_header: 2025-26
+        expected_column_header_by_year:
+          2024: 2024-25
+          2025: 2025-26
+          2026: 2026-27
+          2027: 2027-28
+          2028: 2028-29
+          2029: 2029-30
+          2030: 2030-31
         concept: uk_public_sector.carers_allowance_expenditure
         source_concept: obr.carers_allowance
         concept_relation: source_label
@@ -445,9 +600,23 @@ record_sets:
       - measure_id: amount
         label: Statutory maternity pay
         ordinal: 0
-        column: D
+        column_by_year:
+          2024: C
+          2025: D
+          2026: E
+          2027: F
+          2028: G
+          2029: H
+          2030: I
         expected_column_header_row: 5
-        expected_column_header: 2025-26
+        expected_column_header_by_year:
+          2024: 2024-25
+          2025: 2025-26
+          2026: 2026-27
+          2027: 2027-28
+          2028: 2028-29
+          2029: 2029-30
+          2030: 2030-31
         concept: uk_public_sector.statutory_maternity_pay_expenditure
         source_concept: obr.statutory_maternity_pay
         concept_relation: source_label
@@ -482,9 +651,23 @@ record_sets:
       - measure_id: amount
         label: Winter fuel payment
         ordinal: 0
-        column: D
+        column_by_year:
+          2024: C
+          2025: D
+          2026: E
+          2027: F
+          2028: G
+          2029: H
+          2030: I
         expected_column_header_row: 5
-        expected_column_header: 2025-26
+        expected_column_header_by_year:
+          2024: 2024-25
+          2025: 2025-26
+          2026: 2026-27
+          2027: 2027-28
+          2028: 2028-29
+          2029: 2029-30
+          2030: 2030-31
         concept: uk_public_sector.winter_fuel_payment_expenditure
         source_concept: obr.winter_fuel_payment
         concept_relation: source_label
@@ -519,9 +702,23 @@ record_sets:
       - measure_id: amount
         label: Universal credit in welfare cap
         ordinal: 0
-        column: D
+        column_by_year:
+          2024: C
+          2025: D
+          2026: E
+          2027: F
+          2028: G
+          2029: H
+          2030: I
         expected_column_header_row: 5
-        expected_column_header: 2025-26
+        expected_column_header_by_year:
+          2024: 2024-25
+          2025: 2025-26
+          2026: 2026-27
+          2027: 2027-28
+          2028: 2028-29
+          2029: 2029-30
+          2030: 2030-31
         concept: uk_public_sector.universal_credit_expenditure_welfare_cap
         source_concept: obr.universal_credit_in_welfare_cap
         concept_relation: source_label
@@ -556,9 +753,23 @@ record_sets:
       - measure_id: amount
         label: Child benefit
         ordinal: 0
-        column: D
+        column_by_year:
+          2024: C
+          2025: D
+          2026: E
+          2027: F
+          2028: G
+          2029: H
+          2030: I
         expected_column_header_row: 5
-        expected_column_header: 2025-26
+        expected_column_header_by_year:
+          2024: 2024-25
+          2025: 2025-26
+          2026: 2026-27
+          2027: 2027-28
+          2028: 2028-29
+          2029: 2029-30
+          2030: 2030-31
         concept: uk_public_sector.child_benefit_expenditure
         source_concept: obr.child_benefit
         concept_relation: source_label
@@ -593,9 +804,23 @@ record_sets:
       - measure_id: amount
         label: State pension
         ordinal: 0
-        column: D
+        column_by_year:
+          2024: C
+          2025: D
+          2026: E
+          2027: F
+          2028: G
+          2029: H
+          2030: I
         expected_column_header_row: 5
-        expected_column_header: 2025-26
+        expected_column_header_by_year:
+          2024: 2024-25
+          2025: 2025-26
+          2026: 2026-27
+          2027: 2027-28
+          2028: 2028-29
+          2029: 2029-30
+          2030: 2030-31
         concept: uk_public_sector.state_pension_expenditure
         source_concept: obr.state_pension
         concept_relation: source_label
@@ -630,9 +855,23 @@ record_sets:
       - measure_id: amount
         label: Jobseeker's allowance
         ordinal: 0
-        column: D
+        column_by_year:
+          2024: C
+          2025: D
+          2026: E
+          2027: F
+          2028: G
+          2029: H
+          2030: I
         expected_column_header_row: 5
-        expected_column_header: 2025-26
+        expected_column_header_by_year:
+          2024: 2024-25
+          2025: 2025-26
+          2026: 2026-27
+          2027: 2027-28
+          2028: 2028-29
+          2029: 2029-30
+          2030: 2030-31
         concept: uk_public_sector.jobseekers_allowance_expenditure
         source_concept: obr.jobseekers_allowance
         concept_relation: source_label
@@ -667,9 +906,23 @@ record_sets:
       - measure_id: amount
         label: Universal credit outside welfare cap
         ordinal: 0
-        column: D
+        column_by_year:
+          2024: C
+          2025: D
+          2026: E
+          2027: F
+          2028: G
+          2029: H
+          2030: I
         expected_column_header_row: 5
-        expected_column_header: 2025-26
+        expected_column_header_by_year:
+          2024: 2024-25
+          2025: 2025-26
+          2026: 2026-27
+          2027: 2027-28
+          2028: 2028-29
+          2029: 2029-30
+          2030: 2030-31
         concept: uk_public_sector.universal_credit_expenditure_outside_welfare_cap
         source_concept: obr.universal_credit_outside_welfare_cap
         concept_relation: source_label
@@ -704,9 +957,23 @@ record_sets:
       - measure_id: amount
         label: BBC licence fee receipts
         ordinal: 0
-        column: D
+        column_by_year:
+          2024: C
+          2025: D
+          2026: E
+          2027: F
+          2028: G
+          2029: H
+          2030: I
         expected_column_header_row: 5
-        expected_column_header: 2025-26
+        expected_column_header_by_year:
+          2024: 2024-25
+          2025: 2025-26
+          2026: 2026-27
+          2027: 2027-28
+          2028: 2028-29
+          2029: 2029-30
+          2030: 2030-31
         concept: uk_public_sector.bbc_licence_fee_receipts_cash
         source_concept: obr.bbc_licence_fee_receipts
         concept_relation: source_label
