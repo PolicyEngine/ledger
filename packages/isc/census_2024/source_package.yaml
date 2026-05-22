@@ -66,6 +66,9 @@ record_sets:
         expected_column_header_row: 1
         expected_column_header: numeric_value
         concept: isc.independent_school_pupil_count
+        source_concept: isc.census_2024.isc_member_school_pupils
+        concept_relation: source_label
+        concept_authority: arch-uk
         unit: persons
         aggregation: count
         expected_cell_type: number
