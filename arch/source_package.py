@@ -211,8 +211,14 @@ SOURCE_PACKAGE_ALIASES = {
         "packages/ons/small_area_income_2020"
     ),
     "ons-families-households-2024": Path("packages/ons/families_households_2024"),
+    "ons-demographics-profile-2026": Path(
+        "packages/ons/demographics_profile_2026"
+    ),
     "ons-private-rent-house-prices-march-2026": Path(
         "packages/ons/private_rent_house_prices_march_2026"
+    ),
+    "ons-regional-land-profile-2026": Path(
+        "packages/ons/regional_land_profile_2026"
     ),
     "ons-subnational-dwellings-by-tenure-2024": Path(
         "packages/ons/subnational_dwellings_by_tenure_2024"

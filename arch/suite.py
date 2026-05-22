@@ -71,6 +71,8 @@ SUPPORTED_SOURCE_PACKAGES = {
     "mhclg-council-tax-levels-2026",
     "obr-efo-expenditure",
     "obr-efo-receipts",
+    "ons-demographics-profile-2026",
+    "ons-regional-land-profile-2026",
     "ons-savings-interest-income",
     "ons-uk-population-projections-2022",
     "scotgov-council-tax-bands-2025",

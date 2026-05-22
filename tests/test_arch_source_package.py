@@ -1758,6 +1758,97 @@ def test_source_package_alias_builds_ons_population_projection_facts():
     )
 
 
+def test_source_package_alias_builds_ons_demographics_profile_facts():
+    package = load_source_package("ons-demographics-profile-2026")
+    source_rows = package.build_source_rows(2026)
+    cells = package.build_source_cells(2026, source_rows=source_rows)
+    records = package.build_source_records(2026, cells=cells)
+    facts = package.build_facts(2026, cells=cells)
+    records_by_id = {record.source_record_id: record for record in records}
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "ons-demographics-profile-2026"
+    assert len(source_rows) == 138
+    assert validate_source_rows(source_rows).valid
+    assert len(cells) == 1_776
+    assert validate_source_cells(cells).valid
+    assert len(facts) == 110
+    assert validate_facts(facts).valid
+    assert all(fact.source.source_name == "ons" for fact in facts)
+    assert all(fact.source.source_file == "demographics.csv" for fact in facts)
+    assert all(fact.source.raw_r2_uri for fact in facts)
+
+    east_id = (
+        "ons.cy2026.policyengine_uk_demographics_profile."
+        "east_age_0_9.population_count"
+    )
+    children_id = (
+        "ons.cy2026.policyengine_uk_demographics_profile."
+        "scotland_children_under_16.population_count"
+    )
+    babies_id = (
+        "ons.cy2026.policyengine_uk_demographics_profile."
+        "scotland_babies_under_1.population_count"
+    )
+    assert records_by_id[east_id].source_cell_addresses == ("L2", "B2", "C2")
+    assert records_by_id[children_id].source_cell_addresses == (
+        "L110",
+        "B110",
+        "C110",
+    )
+    assert values_by_record[east_id].value == 723_000
+    assert values_by_record[children_id].value == 888_000
+    assert values_by_record[babies_id].value == 46_000
+    assert {
+        (constraint.variable, constraint.operator, constraint.value)
+        for constraint in values_by_record[east_id].constraints
+    } == {
+        ("name", "==", "east_age_0_9"),
+        ("reference", "==", "ons_age_sex_region"),
+    }
+
+
+def test_source_package_alias_builds_ons_regional_land_profile_facts():
+    package = load_source_package("ons-regional-land-profile-2026")
+    source_rows = package.build_source_rows(2026)
+    cells = package.build_source_cells(2026, source_rows=source_rows)
+    records = package.build_source_records(2026, cells=cells)
+    facts = package.build_facts(2026, cells=cells)
+    records_by_id = {record.source_record_id: record for record in records}
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "ons-regional-land-profile-2026"
+    assert len(source_rows) == 11
+    assert validate_source_rows(source_rows).valid
+    assert len(cells) == 36
+    assert validate_source_cells(cells).valid
+    assert len(records) == 22
+    assert len(facts) == 22
+    assert validate_facts(facts).valid
+    assert all(fact.source.source_name == "ons" for fact in facts)
+    assert all(fact.source.source_file == "regional_land_values.csv" for fact in facts)
+    assert all(fact.source.raw_r2_uri for fact in facts)
+
+    avg_price_id = (
+        "ons.cy2025.policyengine_uk_regional_land_profile."
+        "NORTH_EAST.avg_house_price"
+    )
+    dwellings_id = (
+        "ons.cy2025.policyengine_uk_regional_land_profile."
+        "NORTH_EAST.dwellings"
+    )
+    assert records_by_id[avg_price_id].source_cell_addresses == ("B2", "B1")
+    assert records_by_id[dwellings_id].source_cell_addresses == ("C2", "C1")
+    assert values_by_record[avg_price_id].value == 165_257
+    assert values_by_record[dwellings_id].value == 1_280_700
+    assert {
+        (constraint.variable, constraint.operator, constraint.value)
+        for constraint in values_by_record[avg_price_id].constraints
+    } == {
+        ("region", "==", "NORTH_EAST"),
+    }
+
+
 def test_source_package_alias_builds_ons_families_households_facts():
     package = load_source_package("ons-families-households-2024")
     cells = package.build_source_cells(2024)
@@ -5707,6 +5798,32 @@ def test_validate_source_package_reports_ons_population_projection_counts():
         "record_set_count": 1,
         "row_count": 13,
         "source_record_count": 13,
+        "source_region_count": 1,
+    }
+
+
+def test_validate_source_package_reports_ons_demographics_profile_counts():
+    report = validate_source_package("ons-demographics-profile-2026", year=2026)
+
+    assert report.valid
+    assert report.counts == {
+        "measure_count": 1,
+        "record_set_count": 1,
+        "row_count": 110,
+        "source_record_count": 110,
+        "source_region_count": 1,
+    }
+
+
+def test_validate_source_package_reports_ons_regional_land_profile_counts():
+    report = validate_source_package("ons-regional-land-profile-2026", year=2026)
+
+    assert report.valid
+    assert report.counts == {
+        "measure_count": 2,
+        "record_set_count": 1,
+        "row_count": 11,
+        "source_record_count": 22,
         "source_region_count": 1,
     }
 

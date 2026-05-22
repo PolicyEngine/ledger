@@ -1,0 +1,18 @@
+source_id: ons
+package_id: ons-demographics-profile-2026
+dataset: policyengine_uk_demographics_profile_2026
+source_page: https://github.com/PolicyEngine/policyengine-uk-data/blob/b8e3560b190008574d4277c30948e7400b9fa45b/policyengine_uk_data/storage/demographics.csv
+table: PolicyEngine UK demographics target profile
+files:
+  2026:
+    filename: demographics.csv
+    source_url: https://raw.githubusercontent.com/PolicyEngine/policyengine-uk-data/b8e3560b190008574d4277c30948e7400b9fa45b/policyengine_uk_data/storage/demographics.csv
+    sha256: 3db6a2a0c9694d012cb863d1923bf3bb2a233145816b27f6e6b79cf27a125f79
+    size_bytes: 12441
+    fetched_at: '2026-05-22T00:00:00+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/ons/ons-demographics-profile-2026/2026/3db6a2a0c9694d012cb863d1923bf3bb2a233145816b27f6e6b79cf27a125f79/demographics.csv
+        uri: r2://arch-raw/raw/ons/ons-demographics-profile-2026/2026/3db6a2a0c9694d012cb863d1923bf3bb2a233145816b27f6e6b79cf27a125f79/demographics.csv

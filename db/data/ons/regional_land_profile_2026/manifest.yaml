@@ -1,0 +1,18 @@
+source_id: ons
+package_id: ons-regional-land-profile-2026
+dataset: policyengine_uk_regional_land_profile_2026
+source_page: https://github.com/PolicyEngine/policyengine-uk-data/blob/b8e3560b190008574d4277c30948e7400b9fa45b/policyengine_uk_data/storage/regional_land_values.csv
+table: PolicyEngine UK regional household land value split profile
+files:
+  2026:
+    filename: regional_land_values.csv
+    source_url: https://raw.githubusercontent.com/PolicyEngine/policyengine-uk-data/b8e3560b190008574d4277c30948e7400b9fa45b/policyengine_uk_data/storage/regional_land_values.csv
+    sha256: 088b777d73e71c07890ac9e1add9b683aa962da69ca79c25dd0b54d7e325cfb6
+    size_bytes: 318
+    fetched_at: '2026-05-22T00:00:00+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/ons/ons-regional-land-profile-2026/2026/088b777d73e71c07890ac9e1add9b683aa962da69ca79c25dd0b54d7e325cfb6/regional_land_values.csv
+        uri: r2://arch-raw/raw/ons/ons-regional-land-profile-2026/2026/088b777d73e71c07890ac9e1add9b683aa962da69ca79c25dd0b54d7e325cfb6/regional_land_values.csv

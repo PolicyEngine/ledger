@@ -1,0 +1,201 @@
+schema_version: arch.source_package.v1
+package_id: ons-regional-land-profile-2026
+label: PolicyEngine UK regional household land value split profile
+artifact:
+  source_name: ons
+  source_table: PolicyEngine UK regional_land_values.csv profile used to split ONS
+    household land value
+  resource_package: db
+  resource_directory: data/ons/regional_land_profile_2026
+  manifest: manifest.yaml
+  vintage: policyengine_uk_data_b8e3560b_regional_land_profile
+  extracted_at: '2026-05-22'
+  extraction_method: delimited text full-row parse of PolicyEngine UK regional land
+    split profile
+  parser: delimited_text_full_rows
+  sheet_name: regional_land_values
+  artifact_year: 2026
+  selected_rows:
+  - region: NORTH_EAST
+  - region: NORTH_WEST
+  - region: YORKSHIRE
+  - region: EAST_MIDLANDS
+  - region: WEST_MIDLANDS
+  - region: EAST_OF_ENGLAND
+  - region: LONDON
+  - region: SOUTH_EAST
+  - region: SOUTH_WEST
+  - region: WALES
+  - region: SCOTLAND
+record_sets:
+- record_set_id: ons.cy2025.policyengine_uk_regional_land_profile
+  record_set_spec_id: ons.policyengine_uk_regional_land_profile.v1
+  source_record_id_prefix: ons.cy2025.policyengine_uk_regional_land_profile
+  sheet_name: regional_land_values
+  period_type: calendar_year
+  period: 2025
+  geography_id: GBR
+  geography_level: country
+  geography_name: United Kingdom
+  geography_vintage: policyengine_uk_data_profile
+  entity: dwelling
+  entity_role: regional_land_value_split_profile
+  domain: uk_household_land_value_regional_split_profile
+  groupby_dimension: region
+  rows:
+  - value_id: NORTH_EAST
+    label: North East
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: NORTH_EAST
+    constraints:
+    - variable: region
+      operator: ==
+      value: NORTH_EAST
+      label: PolicyEngine UK regional land profile region
+  - value_id: NORTH_WEST
+    label: North West
+    ordinal: 1
+    row_number: 3
+    expected_row_header_column: A
+    expected_row_header: NORTH_WEST
+    constraints:
+    - variable: region
+      operator: ==
+      value: NORTH_WEST
+      label: PolicyEngine UK regional land profile region
+  - value_id: YORKSHIRE
+    label: Yorkshire
+    ordinal: 2
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: YORKSHIRE
+    constraints:
+    - variable: region
+      operator: ==
+      value: YORKSHIRE
+      label: PolicyEngine UK regional land profile region
+  - value_id: EAST_MIDLANDS
+    label: East Midlands
+    ordinal: 3
+    row_number: 5
+    expected_row_header_column: A
+    expected_row_header: EAST_MIDLANDS
+    constraints:
+    - variable: region
+      operator: ==
+      value: EAST_MIDLANDS
+      label: PolicyEngine UK regional land profile region
+  - value_id: WEST_MIDLANDS
+    label: West Midlands
+    ordinal: 4
+    row_number: 6
+    expected_row_header_column: A
+    expected_row_header: WEST_MIDLANDS
+    constraints:
+    - variable: region
+      operator: ==
+      value: WEST_MIDLANDS
+      label: PolicyEngine UK regional land profile region
+  - value_id: EAST_OF_ENGLAND
+    label: East Of England
+    ordinal: 5
+    row_number: 7
+    expected_row_header_column: A
+    expected_row_header: EAST_OF_ENGLAND
+    constraints:
+    - variable: region
+      operator: ==
+      value: EAST_OF_ENGLAND
+      label: PolicyEngine UK regional land profile region
+  - value_id: LONDON
+    label: London
+    ordinal: 6
+    row_number: 8
+    expected_row_header_column: A
+    expected_row_header: LONDON
+    constraints:
+    - variable: region
+      operator: ==
+      value: LONDON
+      label: PolicyEngine UK regional land profile region
+  - value_id: SOUTH_EAST
+    label: South East
+    ordinal: 7
+    row_number: 9
+    expected_row_header_column: A
+    expected_row_header: SOUTH_EAST
+    constraints:
+    - variable: region
+      operator: ==
+      value: SOUTH_EAST
+      label: PolicyEngine UK regional land profile region
+  - value_id: SOUTH_WEST
+    label: South West
+    ordinal: 8
+    row_number: 10
+    expected_row_header_column: A
+    expected_row_header: SOUTH_WEST
+    constraints:
+    - variable: region
+      operator: ==
+      value: SOUTH_WEST
+      label: PolicyEngine UK regional land profile region
+  - value_id: WALES
+    label: Wales
+    ordinal: 9
+    row_number: 11
+    expected_row_header_column: A
+    expected_row_header: WALES
+    constraints:
+    - variable: region
+      operator: ==
+      value: WALES
+      label: PolicyEngine UK regional land profile region
+  - value_id: SCOTLAND
+    label: Scotland
+    ordinal: 10
+    row_number: 12
+    expected_row_header_column: A
+    expected_row_header: SCOTLAND
+    constraints:
+    - variable: region
+      operator: ==
+      value: SCOTLAND
+      label: PolicyEngine UK regional land profile region
+  measures:
+  - measure_id: avg_house_price
+    label: Average house price in regional land split profile
+    ordinal: 0
+    column: B
+    source_column_id: avg_house_price
+    expected_column_header_row: 1
+    expected_column_header: avg_house_price
+    concept: uk_land_profile.average_house_price
+    source_concept: policyengine_uk_data.regional_land_values.avg_house_price
+    concept_relation: approximate
+    concept_authority: policyengine-uk-data
+    concept_evidence_notes: PolicyEngine UK regional_land_values.csv average house
+      price input for regional household land shares.
+    unit: gbp
+    aggregation: mean
+    value_scale: 1
+    expected_cell_type: number
+  - measure_id: dwellings
+    label: Dwelling count in regional land split profile
+    ordinal: 1
+    column: C
+    source_column_id: dwellings
+    expected_column_header_row: 1
+    expected_column_header: dwellings
+    concept: uk_land_profile.dwelling_count
+    source_concept: policyengine_uk_data.regional_land_values.dwellings
+    concept_relation: approximate
+    concept_authority: policyengine-uk-data
+    concept_evidence_notes: PolicyEngine UK regional_land_values.csv dwelling count
+      input for regional household land shares.
+    unit: count
+    aggregation: count
+    value_scale: 1
+    expected_cell_type: number

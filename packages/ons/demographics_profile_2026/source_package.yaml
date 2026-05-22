@@ -1,0 +1,2800 @@
+schema_version: arch.source_package.v1
+package_id: ons-demographics-profile-2026
+label: PolicyEngine UK demographics target profile 2026
+artifact:
+  source_name: ons
+  source_table: PolicyEngine UK demographics.csv target profile extracted from ONS
+    subnational projections and NRS Scotland inputs
+  resource_package: db
+  resource_directory: data/ons/demographics_profile_2026
+  manifest: manifest.yaml
+  vintage: policyengine_uk_data_b8e3560b_demographics_profile
+  extracted_at: '2026-05-22'
+  extraction_method: delimited text full-row parse of PolicyEngine UK demographics
+    target profile
+  parser: delimited_text_full_rows
+  sheet_name: demographics
+  artifact_year: 2026
+  selected_rows:
+  - name: east_age_0_9
+  - name: east_age_10_19
+  - name: east_age_20_29
+  - name: east_age_30_39
+  - name: east_age_40_49
+  - name: east_age_50_59
+  - name: east_age_60_69
+  - name: east_age_70_79
+  - name: east_age_80_89
+  - name: east_midlands_age_0_9
+  - name: east_midlands_age_10_19
+  - name: east_midlands_age_20_29
+  - name: east_midlands_age_30_39
+  - name: east_midlands_age_40_49
+  - name: east_midlands_age_50_59
+  - name: east_midlands_age_60_69
+  - name: east_midlands_age_70_79
+  - name: east_midlands_age_80_89
+  - name: london_age_0_9
+  - name: london_age_10_19
+  - name: london_age_20_29
+  - name: london_age_30_39
+  - name: london_age_40_49
+  - name: london_age_50_59
+  - name: london_age_60_69
+  - name: london_age_70_79
+  - name: london_age_80_89
+  - name: north_east_age_0_9
+  - name: north_east_age_10_19
+  - name: north_east_age_20_29
+  - name: north_east_age_30_39
+  - name: north_east_age_40_49
+  - name: north_east_age_50_59
+  - name: north_east_age_60_69
+  - name: north_east_age_70_79
+  - name: north_east_age_80_89
+  - name: north_west_age_0_9
+  - name: north_west_age_10_19
+  - name: north_west_age_20_29
+  - name: north_west_age_30_39
+  - name: north_west_age_40_49
+  - name: north_west_age_50_59
+  - name: north_west_age_60_69
+  - name: north_west_age_70_79
+  - name: north_west_age_80_89
+  - name: northern_ireland_age_0_9
+  - name: northern_ireland_age_10_19
+  - name: northern_ireland_age_20_29
+  - name: northern_ireland_age_30_39
+  - name: northern_ireland_age_40_49
+  - name: northern_ireland_age_50_59
+  - name: northern_ireland_age_60_69
+  - name: northern_ireland_age_70_79
+  - name: northern_ireland_age_80_89
+  - name: scotland_age_0_9
+  - name: scotland_age_10_19
+  - name: scotland_age_20_29
+  - name: scotland_age_30_39
+  - name: scotland_age_40_49
+  - name: scotland_age_50_59
+  - name: scotland_age_60_69
+  - name: scotland_age_70_79
+  - name: scotland_age_80_89
+  - name: south_east_age_0_9
+  - name: south_east_age_10_19
+  - name: south_east_age_20_29
+  - name: south_east_age_30_39
+  - name: south_east_age_40_49
+  - name: south_east_age_50_59
+  - name: south_east_age_60_69
+  - name: south_east_age_70_79
+  - name: south_east_age_80_89
+  - name: south_west_age_0_9
+  - name: south_west_age_10_19
+  - name: south_west_age_20_29
+  - name: south_west_age_30_39
+  - name: south_west_age_40_49
+  - name: south_west_age_50_59
+  - name: south_west_age_60_69
+  - name: south_west_age_70_79
+  - name: south_west_age_80_89
+  - name: wales_age_0_9
+  - name: wales_age_10_19
+  - name: wales_age_20_29
+  - name: wales_age_30_39
+  - name: wales_age_40_49
+  - name: wales_age_50_59
+  - name: wales_age_60_69
+  - name: wales_age_70_79
+  - name: wales_age_80_89
+  - name: west_midlands_age_0_9
+  - name: west_midlands_age_10_19
+  - name: west_midlands_age_20_29
+  - name: west_midlands_age_30_39
+  - name: west_midlands_age_40_49
+  - name: west_midlands_age_50_59
+  - name: west_midlands_age_60_69
+  - name: west_midlands_age_70_79
+  - name: west_midlands_age_80_89
+  - name: yorkshire_and_the_humber_age_0_9
+  - name: yorkshire_and_the_humber_age_10_19
+  - name: yorkshire_and_the_humber_age_20_29
+  - name: yorkshire_and_the_humber_age_30_39
+  - name: yorkshire_and_the_humber_age_40_49
+  - name: yorkshire_and_the_humber_age_50_59
+  - name: yorkshire_and_the_humber_age_60_69
+  - name: yorkshire_and_the_humber_age_70_79
+  - name: yorkshire_and_the_humber_age_80_89
+  - name: scotland_children_under_16
+  - name: scotland_babies_under_1
+record_sets:
+- record_set_id: ons.cy2026.policyengine_uk_demographics_profile
+  record_set_spec_id: ons.policyengine_uk_demographics_profile.v1
+  source_record_id_prefix: ons.cy2026.policyengine_uk_demographics_profile
+  sheet_name: demographics
+  period_type: calendar_year
+  period: 2026
+  geography_id: GBR
+  geography_level: country
+  geography_name: United Kingdom
+  geography_vintage: policyengine_uk_data_profile
+  entity: person
+  entity_role: target_profile_population
+  domain: uk_demographics_target_profile
+  groupby_dimension: name
+  rows:
+  - value_id: east_age_0_9
+    label: east age 0 9
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: east_age_0_9
+    constraints:
+    - variable: name
+      operator: ==
+      value: east_age_0_9
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: east_age_10_19
+    label: east age 10 19
+    ordinal: 1
+    row_number: 3
+    expected_row_header_column: A
+    expected_row_header: east_age_10_19
+    constraints:
+    - variable: name
+      operator: ==
+      value: east_age_10_19
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: east_age_20_29
+    label: east age 20 29
+    ordinal: 2
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: east_age_20_29
+    constraints:
+    - variable: name
+      operator: ==
+      value: east_age_20_29
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: east_age_30_39
+    label: east age 30 39
+    ordinal: 3
+    row_number: 5
+    expected_row_header_column: A
+    expected_row_header: east_age_30_39
+    constraints:
+    - variable: name
+      operator: ==
+      value: east_age_30_39
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: east_age_40_49
+    label: east age 40 49
+    ordinal: 4
+    row_number: 6
+    expected_row_header_column: A
+    expected_row_header: east_age_40_49
+    constraints:
+    - variable: name
+      operator: ==
+      value: east_age_40_49
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: east_age_50_59
+    label: east age 50 59
+    ordinal: 5
+    row_number: 7
+    expected_row_header_column: A
+    expected_row_header: east_age_50_59
+    constraints:
+    - variable: name
+      operator: ==
+      value: east_age_50_59
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: east_age_60_69
+    label: east age 60 69
+    ordinal: 6
+    row_number: 8
+    expected_row_header_column: A
+    expected_row_header: east_age_60_69
+    constraints:
+    - variable: name
+      operator: ==
+      value: east_age_60_69
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: east_age_70_79
+    label: east age 70 79
+    ordinal: 7
+    row_number: 9
+    expected_row_header_column: A
+    expected_row_header: east_age_70_79
+    constraints:
+    - variable: name
+      operator: ==
+      value: east_age_70_79
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: east_age_80_89
+    label: east age 80 89
+    ordinal: 8
+    row_number: 10
+    expected_row_header_column: A
+    expected_row_header: east_age_80_89
+    constraints:
+    - variable: name
+      operator: ==
+      value: east_age_80_89
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: east_midlands_age_0_9
+    label: east midlands age 0 9
+    ordinal: 9
+    row_number: 11
+    expected_row_header_column: A
+    expected_row_header: east_midlands_age_0_9
+    constraints:
+    - variable: name
+      operator: ==
+      value: east_midlands_age_0_9
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: east_midlands_age_10_19
+    label: east midlands age 10 19
+    ordinal: 10
+    row_number: 12
+    expected_row_header_column: A
+    expected_row_header: east_midlands_age_10_19
+    constraints:
+    - variable: name
+      operator: ==
+      value: east_midlands_age_10_19
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: east_midlands_age_20_29
+    label: east midlands age 20 29
+    ordinal: 11
+    row_number: 13
+    expected_row_header_column: A
+    expected_row_header: east_midlands_age_20_29
+    constraints:
+    - variable: name
+      operator: ==
+      value: east_midlands_age_20_29
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: east_midlands_age_30_39
+    label: east midlands age 30 39
+    ordinal: 12
+    row_number: 14
+    expected_row_header_column: A
+    expected_row_header: east_midlands_age_30_39
+    constraints:
+    - variable: name
+      operator: ==
+      value: east_midlands_age_30_39
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: east_midlands_age_40_49
+    label: east midlands age 40 49
+    ordinal: 13
+    row_number: 15
+    expected_row_header_column: A
+    expected_row_header: east_midlands_age_40_49
+    constraints:
+    - variable: name
+      operator: ==
+      value: east_midlands_age_40_49
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: east_midlands_age_50_59
+    label: east midlands age 50 59
+    ordinal: 14
+    row_number: 16
+    expected_row_header_column: A
+    expected_row_header: east_midlands_age_50_59
+    constraints:
+    - variable: name
+      operator: ==
+      value: east_midlands_age_50_59
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: east_midlands_age_60_69
+    label: east midlands age 60 69
+    ordinal: 15
+    row_number: 17
+    expected_row_header_column: A
+    expected_row_header: east_midlands_age_60_69
+    constraints:
+    - variable: name
+      operator: ==
+      value: east_midlands_age_60_69
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: east_midlands_age_70_79
+    label: east midlands age 70 79
+    ordinal: 16
+    row_number: 18
+    expected_row_header_column: A
+    expected_row_header: east_midlands_age_70_79
+    constraints:
+    - variable: name
+      operator: ==
+      value: east_midlands_age_70_79
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: east_midlands_age_80_89
+    label: east midlands age 80 89
+    ordinal: 17
+    row_number: 19
+    expected_row_header_column: A
+    expected_row_header: east_midlands_age_80_89
+    constraints:
+    - variable: name
+      operator: ==
+      value: east_midlands_age_80_89
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: london_age_0_9
+    label: london age 0 9
+    ordinal: 18
+    row_number: 20
+    expected_row_header_column: A
+    expected_row_header: london_age_0_9
+    constraints:
+    - variable: name
+      operator: ==
+      value: london_age_0_9
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: london_age_10_19
+    label: london age 10 19
+    ordinal: 19
+    row_number: 21
+    expected_row_header_column: A
+    expected_row_header: london_age_10_19
+    constraints:
+    - variable: name
+      operator: ==
+      value: london_age_10_19
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: london_age_20_29
+    label: london age 20 29
+    ordinal: 20
+    row_number: 22
+    expected_row_header_column: A
+    expected_row_header: london_age_20_29
+    constraints:
+    - variable: name
+      operator: ==
+      value: london_age_20_29
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: london_age_30_39
+    label: london age 30 39
+    ordinal: 21
+    row_number: 23
+    expected_row_header_column: A
+    expected_row_header: london_age_30_39
+    constraints:
+    - variable: name
+      operator: ==
+      value: london_age_30_39
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: london_age_40_49
+    label: london age 40 49
+    ordinal: 22
+    row_number: 24
+    expected_row_header_column: A
+    expected_row_header: london_age_40_49
+    constraints:
+    - variable: name
+      operator: ==
+      value: london_age_40_49
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: london_age_50_59
+    label: london age 50 59
+    ordinal: 23
+    row_number: 25
+    expected_row_header_column: A
+    expected_row_header: london_age_50_59
+    constraints:
+    - variable: name
+      operator: ==
+      value: london_age_50_59
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: london_age_60_69
+    label: london age 60 69
+    ordinal: 24
+    row_number: 26
+    expected_row_header_column: A
+    expected_row_header: london_age_60_69
+    constraints:
+    - variable: name
+      operator: ==
+      value: london_age_60_69
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: london_age_70_79
+    label: london age 70 79
+    ordinal: 25
+    row_number: 27
+    expected_row_header_column: A
+    expected_row_header: london_age_70_79
+    constraints:
+    - variable: name
+      operator: ==
+      value: london_age_70_79
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: london_age_80_89
+    label: london age 80 89
+    ordinal: 26
+    row_number: 28
+    expected_row_header_column: A
+    expected_row_header: london_age_80_89
+    constraints:
+    - variable: name
+      operator: ==
+      value: london_age_80_89
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: north_east_age_0_9
+    label: north east age 0 9
+    ordinal: 27
+    row_number: 29
+    expected_row_header_column: A
+    expected_row_header: north_east_age_0_9
+    constraints:
+    - variable: name
+      operator: ==
+      value: north_east_age_0_9
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: north_east_age_10_19
+    label: north east age 10 19
+    ordinal: 28
+    row_number: 30
+    expected_row_header_column: A
+    expected_row_header: north_east_age_10_19
+    constraints:
+    - variable: name
+      operator: ==
+      value: north_east_age_10_19
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: north_east_age_20_29
+    label: north east age 20 29
+    ordinal: 29
+    row_number: 31
+    expected_row_header_column: A
+    expected_row_header: north_east_age_20_29
+    constraints:
+    - variable: name
+      operator: ==
+      value: north_east_age_20_29
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: north_east_age_30_39
+    label: north east age 30 39
+    ordinal: 30
+    row_number: 32
+    expected_row_header_column: A
+    expected_row_header: north_east_age_30_39
+    constraints:
+    - variable: name
+      operator: ==
+      value: north_east_age_30_39
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: north_east_age_40_49
+    label: north east age 40 49
+    ordinal: 31
+    row_number: 33
+    expected_row_header_column: A
+    expected_row_header: north_east_age_40_49
+    constraints:
+    - variable: name
+      operator: ==
+      value: north_east_age_40_49
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: north_east_age_50_59
+    label: north east age 50 59
+    ordinal: 32
+    row_number: 34
+    expected_row_header_column: A
+    expected_row_header: north_east_age_50_59
+    constraints:
+    - variable: name
+      operator: ==
+      value: north_east_age_50_59
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: north_east_age_60_69
+    label: north east age 60 69
+    ordinal: 33
+    row_number: 35
+    expected_row_header_column: A
+    expected_row_header: north_east_age_60_69
+    constraints:
+    - variable: name
+      operator: ==
+      value: north_east_age_60_69
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: north_east_age_70_79
+    label: north east age 70 79
+    ordinal: 34
+    row_number: 36
+    expected_row_header_column: A
+    expected_row_header: north_east_age_70_79
+    constraints:
+    - variable: name
+      operator: ==
+      value: north_east_age_70_79
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: north_east_age_80_89
+    label: north east age 80 89
+    ordinal: 35
+    row_number: 37
+    expected_row_header_column: A
+    expected_row_header: north_east_age_80_89
+    constraints:
+    - variable: name
+      operator: ==
+      value: north_east_age_80_89
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: north_west_age_0_9
+    label: north west age 0 9
+    ordinal: 36
+    row_number: 38
+    expected_row_header_column: A
+    expected_row_header: north_west_age_0_9
+    constraints:
+    - variable: name
+      operator: ==
+      value: north_west_age_0_9
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: north_west_age_10_19
+    label: north west age 10 19
+    ordinal: 37
+    row_number: 39
+    expected_row_header_column: A
+    expected_row_header: north_west_age_10_19
+    constraints:
+    - variable: name
+      operator: ==
+      value: north_west_age_10_19
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: north_west_age_20_29
+    label: north west age 20 29
+    ordinal: 38
+    row_number: 40
+    expected_row_header_column: A
+    expected_row_header: north_west_age_20_29
+    constraints:
+    - variable: name
+      operator: ==
+      value: north_west_age_20_29
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: north_west_age_30_39
+    label: north west age 30 39
+    ordinal: 39
+    row_number: 41
+    expected_row_header_column: A
+    expected_row_header: north_west_age_30_39
+    constraints:
+    - variable: name
+      operator: ==
+      value: north_west_age_30_39
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: north_west_age_40_49
+    label: north west age 40 49
+    ordinal: 40
+    row_number: 42
+    expected_row_header_column: A
+    expected_row_header: north_west_age_40_49
+    constraints:
+    - variable: name
+      operator: ==
+      value: north_west_age_40_49
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: north_west_age_50_59
+    label: north west age 50 59
+    ordinal: 41
+    row_number: 43
+    expected_row_header_column: A
+    expected_row_header: north_west_age_50_59
+    constraints:
+    - variable: name
+      operator: ==
+      value: north_west_age_50_59
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: north_west_age_60_69
+    label: north west age 60 69
+    ordinal: 42
+    row_number: 44
+    expected_row_header_column: A
+    expected_row_header: north_west_age_60_69
+    constraints:
+    - variable: name
+      operator: ==
+      value: north_west_age_60_69
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: north_west_age_70_79
+    label: north west age 70 79
+    ordinal: 43
+    row_number: 45
+    expected_row_header_column: A
+    expected_row_header: north_west_age_70_79
+    constraints:
+    - variable: name
+      operator: ==
+      value: north_west_age_70_79
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: north_west_age_80_89
+    label: north west age 80 89
+    ordinal: 44
+    row_number: 46
+    expected_row_header_column: A
+    expected_row_header: north_west_age_80_89
+    constraints:
+    - variable: name
+      operator: ==
+      value: north_west_age_80_89
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: northern_ireland_age_0_9
+    label: northern ireland age 0 9
+    ordinal: 45
+    row_number: 47
+    expected_row_header_column: A
+    expected_row_header: northern_ireland_age_0_9
+    constraints:
+    - variable: name
+      operator: ==
+      value: northern_ireland_age_0_9
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: northern_ireland_age_10_19
+    label: northern ireland age 10 19
+    ordinal: 46
+    row_number: 48
+    expected_row_header_column: A
+    expected_row_header: northern_ireland_age_10_19
+    constraints:
+    - variable: name
+      operator: ==
+      value: northern_ireland_age_10_19
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: northern_ireland_age_20_29
+    label: northern ireland age 20 29
+    ordinal: 47
+    row_number: 49
+    expected_row_header_column: A
+    expected_row_header: northern_ireland_age_20_29
+    constraints:
+    - variable: name
+      operator: ==
+      value: northern_ireland_age_20_29
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: northern_ireland_age_30_39
+    label: northern ireland age 30 39
+    ordinal: 48
+    row_number: 50
+    expected_row_header_column: A
+    expected_row_header: northern_ireland_age_30_39
+    constraints:
+    - variable: name
+      operator: ==
+      value: northern_ireland_age_30_39
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: northern_ireland_age_40_49
+    label: northern ireland age 40 49
+    ordinal: 49
+    row_number: 51
+    expected_row_header_column: A
+    expected_row_header: northern_ireland_age_40_49
+    constraints:
+    - variable: name
+      operator: ==
+      value: northern_ireland_age_40_49
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: northern_ireland_age_50_59
+    label: northern ireland age 50 59
+    ordinal: 50
+    row_number: 52
+    expected_row_header_column: A
+    expected_row_header: northern_ireland_age_50_59
+    constraints:
+    - variable: name
+      operator: ==
+      value: northern_ireland_age_50_59
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: northern_ireland_age_60_69
+    label: northern ireland age 60 69
+    ordinal: 51
+    row_number: 53
+    expected_row_header_column: A
+    expected_row_header: northern_ireland_age_60_69
+    constraints:
+    - variable: name
+      operator: ==
+      value: northern_ireland_age_60_69
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: northern_ireland_age_70_79
+    label: northern ireland age 70 79
+    ordinal: 52
+    row_number: 54
+    expected_row_header_column: A
+    expected_row_header: northern_ireland_age_70_79
+    constraints:
+    - variable: name
+      operator: ==
+      value: northern_ireland_age_70_79
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: northern_ireland_age_80_89
+    label: northern ireland age 80 89
+    ordinal: 53
+    row_number: 55
+    expected_row_header_column: A
+    expected_row_header: northern_ireland_age_80_89
+    constraints:
+    - variable: name
+      operator: ==
+      value: northern_ireland_age_80_89
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: scotland_age_0_9
+    label: scotland age 0 9
+    ordinal: 54
+    row_number: 56
+    expected_row_header_column: A
+    expected_row_header: scotland_age_0_9
+    constraints:
+    - variable: name
+      operator: ==
+      value: scotland_age_0_9
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: scotland_age_10_19
+    label: scotland age 10 19
+    ordinal: 55
+    row_number: 57
+    expected_row_header_column: A
+    expected_row_header: scotland_age_10_19
+    constraints:
+    - variable: name
+      operator: ==
+      value: scotland_age_10_19
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: scotland_age_20_29
+    label: scotland age 20 29
+    ordinal: 56
+    row_number: 58
+    expected_row_header_column: A
+    expected_row_header: scotland_age_20_29
+    constraints:
+    - variable: name
+      operator: ==
+      value: scotland_age_20_29
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: scotland_age_30_39
+    label: scotland age 30 39
+    ordinal: 57
+    row_number: 59
+    expected_row_header_column: A
+    expected_row_header: scotland_age_30_39
+    constraints:
+    - variable: name
+      operator: ==
+      value: scotland_age_30_39
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: scotland_age_40_49
+    label: scotland age 40 49
+    ordinal: 58
+    row_number: 60
+    expected_row_header_column: A
+    expected_row_header: scotland_age_40_49
+    constraints:
+    - variable: name
+      operator: ==
+      value: scotland_age_40_49
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: scotland_age_50_59
+    label: scotland age 50 59
+    ordinal: 59
+    row_number: 61
+    expected_row_header_column: A
+    expected_row_header: scotland_age_50_59
+    constraints:
+    - variable: name
+      operator: ==
+      value: scotland_age_50_59
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: scotland_age_60_69
+    label: scotland age 60 69
+    ordinal: 60
+    row_number: 62
+    expected_row_header_column: A
+    expected_row_header: scotland_age_60_69
+    constraints:
+    - variable: name
+      operator: ==
+      value: scotland_age_60_69
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: scotland_age_70_79
+    label: scotland age 70 79
+    ordinal: 61
+    row_number: 63
+    expected_row_header_column: A
+    expected_row_header: scotland_age_70_79
+    constraints:
+    - variable: name
+      operator: ==
+      value: scotland_age_70_79
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: scotland_age_80_89
+    label: scotland age 80 89
+    ordinal: 62
+    row_number: 64
+    expected_row_header_column: A
+    expected_row_header: scotland_age_80_89
+    constraints:
+    - variable: name
+      operator: ==
+      value: scotland_age_80_89
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: south_east_age_0_9
+    label: south east age 0 9
+    ordinal: 63
+    row_number: 65
+    expected_row_header_column: A
+    expected_row_header: south_east_age_0_9
+    constraints:
+    - variable: name
+      operator: ==
+      value: south_east_age_0_9
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: south_east_age_10_19
+    label: south east age 10 19
+    ordinal: 64
+    row_number: 66
+    expected_row_header_column: A
+    expected_row_header: south_east_age_10_19
+    constraints:
+    - variable: name
+      operator: ==
+      value: south_east_age_10_19
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: south_east_age_20_29
+    label: south east age 20 29
+    ordinal: 65
+    row_number: 67
+    expected_row_header_column: A
+    expected_row_header: south_east_age_20_29
+    constraints:
+    - variable: name
+      operator: ==
+      value: south_east_age_20_29
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: south_east_age_30_39
+    label: south east age 30 39
+    ordinal: 66
+    row_number: 68
+    expected_row_header_column: A
+    expected_row_header: south_east_age_30_39
+    constraints:
+    - variable: name
+      operator: ==
+      value: south_east_age_30_39
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: south_east_age_40_49
+    label: south east age 40 49
+    ordinal: 67
+    row_number: 69
+    expected_row_header_column: A
+    expected_row_header: south_east_age_40_49
+    constraints:
+    - variable: name
+      operator: ==
+      value: south_east_age_40_49
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: south_east_age_50_59
+    label: south east age 50 59
+    ordinal: 68
+    row_number: 70
+    expected_row_header_column: A
+    expected_row_header: south_east_age_50_59
+    constraints:
+    - variable: name
+      operator: ==
+      value: south_east_age_50_59
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: south_east_age_60_69
+    label: south east age 60 69
+    ordinal: 69
+    row_number: 71
+    expected_row_header_column: A
+    expected_row_header: south_east_age_60_69
+    constraints:
+    - variable: name
+      operator: ==
+      value: south_east_age_60_69
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: south_east_age_70_79
+    label: south east age 70 79
+    ordinal: 70
+    row_number: 72
+    expected_row_header_column: A
+    expected_row_header: south_east_age_70_79
+    constraints:
+    - variable: name
+      operator: ==
+      value: south_east_age_70_79
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: south_east_age_80_89
+    label: south east age 80 89
+    ordinal: 71
+    row_number: 73
+    expected_row_header_column: A
+    expected_row_header: south_east_age_80_89
+    constraints:
+    - variable: name
+      operator: ==
+      value: south_east_age_80_89
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: south_west_age_0_9
+    label: south west age 0 9
+    ordinal: 72
+    row_number: 74
+    expected_row_header_column: A
+    expected_row_header: south_west_age_0_9
+    constraints:
+    - variable: name
+      operator: ==
+      value: south_west_age_0_9
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: south_west_age_10_19
+    label: south west age 10 19
+    ordinal: 73
+    row_number: 75
+    expected_row_header_column: A
+    expected_row_header: south_west_age_10_19
+    constraints:
+    - variable: name
+      operator: ==
+      value: south_west_age_10_19
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: south_west_age_20_29
+    label: south west age 20 29
+    ordinal: 74
+    row_number: 76
+    expected_row_header_column: A
+    expected_row_header: south_west_age_20_29
+    constraints:
+    - variable: name
+      operator: ==
+      value: south_west_age_20_29
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: south_west_age_30_39
+    label: south west age 30 39
+    ordinal: 75
+    row_number: 77
+    expected_row_header_column: A
+    expected_row_header: south_west_age_30_39
+    constraints:
+    - variable: name
+      operator: ==
+      value: south_west_age_30_39
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: south_west_age_40_49
+    label: south west age 40 49
+    ordinal: 76
+    row_number: 78
+    expected_row_header_column: A
+    expected_row_header: south_west_age_40_49
+    constraints:
+    - variable: name
+      operator: ==
+      value: south_west_age_40_49
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: south_west_age_50_59
+    label: south west age 50 59
+    ordinal: 77
+    row_number: 79
+    expected_row_header_column: A
+    expected_row_header: south_west_age_50_59
+    constraints:
+    - variable: name
+      operator: ==
+      value: south_west_age_50_59
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: south_west_age_60_69
+    label: south west age 60 69
+    ordinal: 78
+    row_number: 80
+    expected_row_header_column: A
+    expected_row_header: south_west_age_60_69
+    constraints:
+    - variable: name
+      operator: ==
+      value: south_west_age_60_69
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: south_west_age_70_79
+    label: south west age 70 79
+    ordinal: 79
+    row_number: 81
+    expected_row_header_column: A
+    expected_row_header: south_west_age_70_79
+    constraints:
+    - variable: name
+      operator: ==
+      value: south_west_age_70_79
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: south_west_age_80_89
+    label: south west age 80 89
+    ordinal: 80
+    row_number: 82
+    expected_row_header_column: A
+    expected_row_header: south_west_age_80_89
+    constraints:
+    - variable: name
+      operator: ==
+      value: south_west_age_80_89
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: wales_age_0_9
+    label: wales age 0 9
+    ordinal: 81
+    row_number: 83
+    expected_row_header_column: A
+    expected_row_header: wales_age_0_9
+    constraints:
+    - variable: name
+      operator: ==
+      value: wales_age_0_9
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: wales_age_10_19
+    label: wales age 10 19
+    ordinal: 82
+    row_number: 84
+    expected_row_header_column: A
+    expected_row_header: wales_age_10_19
+    constraints:
+    - variable: name
+      operator: ==
+      value: wales_age_10_19
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: wales_age_20_29
+    label: wales age 20 29
+    ordinal: 83
+    row_number: 85
+    expected_row_header_column: A
+    expected_row_header: wales_age_20_29
+    constraints:
+    - variable: name
+      operator: ==
+      value: wales_age_20_29
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: wales_age_30_39
+    label: wales age 30 39
+    ordinal: 84
+    row_number: 86
+    expected_row_header_column: A
+    expected_row_header: wales_age_30_39
+    constraints:
+    - variable: name
+      operator: ==
+      value: wales_age_30_39
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: wales_age_40_49
+    label: wales age 40 49
+    ordinal: 85
+    row_number: 87
+    expected_row_header_column: A
+    expected_row_header: wales_age_40_49
+    constraints:
+    - variable: name
+      operator: ==
+      value: wales_age_40_49
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: wales_age_50_59
+    label: wales age 50 59
+    ordinal: 86
+    row_number: 88
+    expected_row_header_column: A
+    expected_row_header: wales_age_50_59
+    constraints:
+    - variable: name
+      operator: ==
+      value: wales_age_50_59
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: wales_age_60_69
+    label: wales age 60 69
+    ordinal: 87
+    row_number: 89
+    expected_row_header_column: A
+    expected_row_header: wales_age_60_69
+    constraints:
+    - variable: name
+      operator: ==
+      value: wales_age_60_69
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: wales_age_70_79
+    label: wales age 70 79
+    ordinal: 88
+    row_number: 90
+    expected_row_header_column: A
+    expected_row_header: wales_age_70_79
+    constraints:
+    - variable: name
+      operator: ==
+      value: wales_age_70_79
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: wales_age_80_89
+    label: wales age 80 89
+    ordinal: 89
+    row_number: 91
+    expected_row_header_column: A
+    expected_row_header: wales_age_80_89
+    constraints:
+    - variable: name
+      operator: ==
+      value: wales_age_80_89
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: west_midlands_age_0_9
+    label: west midlands age 0 9
+    ordinal: 90
+    row_number: 92
+    expected_row_header_column: A
+    expected_row_header: west_midlands_age_0_9
+    constraints:
+    - variable: name
+      operator: ==
+      value: west_midlands_age_0_9
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: west_midlands_age_10_19
+    label: west midlands age 10 19
+    ordinal: 91
+    row_number: 93
+    expected_row_header_column: A
+    expected_row_header: west_midlands_age_10_19
+    constraints:
+    - variable: name
+      operator: ==
+      value: west_midlands_age_10_19
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: west_midlands_age_20_29
+    label: west midlands age 20 29
+    ordinal: 92
+    row_number: 94
+    expected_row_header_column: A
+    expected_row_header: west_midlands_age_20_29
+    constraints:
+    - variable: name
+      operator: ==
+      value: west_midlands_age_20_29
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: west_midlands_age_30_39
+    label: west midlands age 30 39
+    ordinal: 93
+    row_number: 95
+    expected_row_header_column: A
+    expected_row_header: west_midlands_age_30_39
+    constraints:
+    - variable: name
+      operator: ==
+      value: west_midlands_age_30_39
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: west_midlands_age_40_49
+    label: west midlands age 40 49
+    ordinal: 94
+    row_number: 96
+    expected_row_header_column: A
+    expected_row_header: west_midlands_age_40_49
+    constraints:
+    - variable: name
+      operator: ==
+      value: west_midlands_age_40_49
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: west_midlands_age_50_59
+    label: west midlands age 50 59
+    ordinal: 95
+    row_number: 97
+    expected_row_header_column: A
+    expected_row_header: west_midlands_age_50_59
+    constraints:
+    - variable: name
+      operator: ==
+      value: west_midlands_age_50_59
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: west_midlands_age_60_69
+    label: west midlands age 60 69
+    ordinal: 96
+    row_number: 98
+    expected_row_header_column: A
+    expected_row_header: west_midlands_age_60_69
+    constraints:
+    - variable: name
+      operator: ==
+      value: west_midlands_age_60_69
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: west_midlands_age_70_79
+    label: west midlands age 70 79
+    ordinal: 97
+    row_number: 99
+    expected_row_header_column: A
+    expected_row_header: west_midlands_age_70_79
+    constraints:
+    - variable: name
+      operator: ==
+      value: west_midlands_age_70_79
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: west_midlands_age_80_89
+    label: west midlands age 80 89
+    ordinal: 98
+    row_number: 100
+    expected_row_header_column: A
+    expected_row_header: west_midlands_age_80_89
+    constraints:
+    - variable: name
+      operator: ==
+      value: west_midlands_age_80_89
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: yorkshire_and_the_humber_age_0_9
+    label: yorkshire and the humber age 0 9
+    ordinal: 99
+    row_number: 101
+    expected_row_header_column: A
+    expected_row_header: yorkshire_and_the_humber_age_0_9
+    constraints:
+    - variable: name
+      operator: ==
+      value: yorkshire_and_the_humber_age_0_9
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: yorkshire_and_the_humber_age_10_19
+    label: yorkshire and the humber age 10 19
+    ordinal: 100
+    row_number: 102
+    expected_row_header_column: A
+    expected_row_header: yorkshire_and_the_humber_age_10_19
+    constraints:
+    - variable: name
+      operator: ==
+      value: yorkshire_and_the_humber_age_10_19
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: yorkshire_and_the_humber_age_20_29
+    label: yorkshire and the humber age 20 29
+    ordinal: 101
+    row_number: 103
+    expected_row_header_column: A
+    expected_row_header: yorkshire_and_the_humber_age_20_29
+    constraints:
+    - variable: name
+      operator: ==
+      value: yorkshire_and_the_humber_age_20_29
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: yorkshire_and_the_humber_age_30_39
+    label: yorkshire and the humber age 30 39
+    ordinal: 102
+    row_number: 104
+    expected_row_header_column: A
+    expected_row_header: yorkshire_and_the_humber_age_30_39
+    constraints:
+    - variable: name
+      operator: ==
+      value: yorkshire_and_the_humber_age_30_39
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: yorkshire_and_the_humber_age_40_49
+    label: yorkshire and the humber age 40 49
+    ordinal: 103
+    row_number: 105
+    expected_row_header_column: A
+    expected_row_header: yorkshire_and_the_humber_age_40_49
+    constraints:
+    - variable: name
+      operator: ==
+      value: yorkshire_and_the_humber_age_40_49
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: yorkshire_and_the_humber_age_50_59
+    label: yorkshire and the humber age 50 59
+    ordinal: 104
+    row_number: 106
+    expected_row_header_column: A
+    expected_row_header: yorkshire_and_the_humber_age_50_59
+    constraints:
+    - variable: name
+      operator: ==
+      value: yorkshire_and_the_humber_age_50_59
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: yorkshire_and_the_humber_age_60_69
+    label: yorkshire and the humber age 60 69
+    ordinal: 105
+    row_number: 107
+    expected_row_header_column: A
+    expected_row_header: yorkshire_and_the_humber_age_60_69
+    constraints:
+    - variable: name
+      operator: ==
+      value: yorkshire_and_the_humber_age_60_69
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: yorkshire_and_the_humber_age_70_79
+    label: yorkshire and the humber age 70 79
+    ordinal: 106
+    row_number: 108
+    expected_row_header_column: A
+    expected_row_header: yorkshire_and_the_humber_age_70_79
+    constraints:
+    - variable: name
+      operator: ==
+      value: yorkshire_and_the_humber_age_70_79
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: yorkshire_and_the_humber_age_80_89
+    label: yorkshire and the humber age 80 89
+    ordinal: 107
+    row_number: 109
+    expected_row_header_column: A
+    expected_row_header: yorkshire_and_the_humber_age_80_89
+    constraints:
+    - variable: name
+      operator: ==
+      value: yorkshire_and_the_humber_age_80_89
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: ons_age_sex_region
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: ons_age_sex_region
+      label: source reference
+  - value_id: scotland_children_under_16
+    label: scotland children under 16
+    ordinal: 108
+    row_number: 110
+    expected_row_header_column: A
+    expected_row_header: scotland_children_under_16
+    constraints:
+    - variable: name
+      operator: ==
+      value: scotland_children_under_16
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: nrs_mid_year_population_estimates
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: nrs_mid_year_population_estimates
+      label: source reference
+  - value_id: scotland_babies_under_1
+    label: scotland babies under 1
+    ordinal: 109
+    row_number: 111
+    expected_row_header_column: A
+    expected_row_header: scotland_babies_under_1
+    constraints:
+    - variable: name
+      operator: ==
+      value: scotland_babies_under_1
+      label: PolicyEngine UK demographics target name
+    - variable: reference
+      operator: ==
+      value: nrs_vital_events
+      label: PolicyEngine UK demographics reference id
+    guard_cells:
+    - column: B
+      row: start
+      expected_value: person-k
+      label: source unit
+    - column: C
+      row: start
+      expected_value: nrs_vital_events
+      label: source reference
+  measures:
+  - measure_id: population_count
+    label: Population count in PolicyEngine UK demographics target profile
+    ordinal: 0
+    column: L
+    source_column_id: '2026'
+    concept: uk_demographics.population_count
+    source_concept: policyengine_uk_data.demographics.population_count
+    concept_relation: approximate
+    concept_authority: policyengine-uk-data
+    concept_evidence_notes: PolicyEngine UK demographics.csv stores regional/country
+      population targets in thousands for calibration target names.
+    unit: count
+    aggregation: count
+    value_scale: 1000
+    expected_cell_type: number
