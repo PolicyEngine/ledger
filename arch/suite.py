@@ -61,6 +61,7 @@ SUPPORTED_SOURCE_PACKAGES = {
     "cmsny-undocumented-population-2023",
     "hmrc-salary-sacrifice-relief-2024",
     "hmrc-spi-income-bands-2023",
+    "hmrc-spi-income-projection-2026",
     "hhs-acf-liheap-fy2023-national-profile",
     "hhs-acf-liheap-fy2024-national-profile",
     "isc-census-2024-pupil-count",
@@ -1103,6 +1104,13 @@ def _constraint_evidenced_by_source_rows(
             constraint.operator,
             constraint.value,
         )
+    if _source_row_bound_constraint_matches(
+        rows,
+        str(constraint.variable),
+        constraint.operator,
+        constraint.value,
+    ):
+        return True
     if not _is_adjusted_gross_income_variable(str(constraint.variable)):
         return False
     return _agi_stub_constraint_matches_rows(
@@ -1142,6 +1150,59 @@ def _agi_stub_constraint_matches_rows(
             and max(upper_bounds) == expected_number
         )
     return False
+
+
+def _source_row_bound_constraint_matches(
+    rows: list[SourceRow],
+    variable: str,
+    operator: str,
+    expected: Any,
+) -> bool:
+    expected_number = _number_or_none(expected)
+    if expected_number is None:
+        return False
+    if operator in {">", ">="}:
+        values = _source_row_bound_values(rows, variable, "lower")
+    elif operator in {"<", "<="}:
+        values = _source_row_bound_values(rows, variable, "upper")
+    else:
+        return False
+    return bool(values) and all(
+        (source_number := _number_or_none(value)) is not None
+        and source_number == expected_number
+        for value in values
+    )
+
+
+def _source_row_bound_values(
+    rows: list[SourceRow],
+    variable: str,
+    bound: str,
+) -> list[Any]:
+    values = []
+    suffixes = (
+        (f"{bound}_bound", f"{bound}bound", bound)
+        if bound in {"lower", "upper"}
+        else (bound,)
+    )
+    for row in rows:
+        values_by_column = {
+            _normalize_semantic_name(column): value
+            for column, value in row.values.items()
+        }
+        matched = False
+        for candidate in _semantic_name_candidates(variable):
+            for suffix in suffixes:
+                key = f"{candidate}{_normalize_semantic_name(suffix)}"
+                if key in values_by_column:
+                    values.append(values_by_column[key])
+                    matched = True
+                    break
+            if matched:
+                break
+        if not matched:
+            return []
+    return values
 
 
 def _agi_stub_constraint_matches(

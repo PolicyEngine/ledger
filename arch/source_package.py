@@ -166,6 +166,9 @@ SOURCE_PACKAGE_ALIASES = {
         "packages/hmrc/salary_sacrifice_reform_2025"
     ),
     "hmrc-spi-income-bands-2023": Path("packages/hmrc_spi/income_bands_2023"),
+    "hmrc-spi-income-projection-2026": Path(
+        "packages/hmrc_spi/income_projection_2026"
+    ),
     "hmrc-spi-local-income-2022": Path("packages/hmrc_spi/local_income_2022"),
     "kff-marketplace-effectuated-enrollment": Path(
         "packages/kff/marketplace_effectuated_enrollment"

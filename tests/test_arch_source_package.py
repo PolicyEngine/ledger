@@ -1404,6 +1404,71 @@ def test_source_package_alias_builds_hmrc_spi_income_band_facts():
     } == {("total_income", ">=", 1_000_000)}
 
 
+def test_source_package_alias_builds_hmrc_spi_projection_facts():
+    package = load_source_package("hmrc-spi-income-projection-2026")
+    source_rows = package.build_source_rows(2026)
+    cells = package.build_source_cells(2026, source_rows=source_rows)
+    records = package.build_source_records(2026, cells=cells)
+    facts = package.build_facts(2026, cells=cells)
+    records_by_id = {record.source_record_id: record for record in records}
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "hmrc-spi-income-projection-2026"
+    assert len(source_rows) == 112
+    assert validate_source_rows(source_rows).valid
+    assert len(cells) == 221
+    assert validate_source_cells(cells).valid
+    assert len(facts) == 144
+    assert validate_facts(facts).valid
+    assert all(fact.source.source_name == "hmrc_spi" for fact in facts)
+    assert all(fact.source.source_file == "incomes_projection.csv" for fact in facts)
+    assert all(fact.source.raw_r2_uri for fact in facts)
+    assert {f"{fact.period.type}:{fact.period.value}" for fact in facts} == {
+        "calendar_year:2026"
+    }
+    assert all(fact.geography.id == "GBR" for fact in facts)
+
+    employment_id = (
+        "hmrc_spi.cy2026.income_projection.by_total_income_band."
+        "12k_to_15k.employment_income_amount"
+    )
+    property_id = (
+        "hmrc_spi.cy2026.income_projection.by_total_income_band."
+        "12k_to_15k.property_income_amount"
+    )
+    dividend_id = (
+        "hmrc_spi.cy2026.income_projection.by_total_income_band."
+        "500k_to_1m.dividend_income_amount"
+    )
+    assert records_by_id[employment_id].source_cell_addresses == (
+        "D2",
+        "D1",
+        "B2",
+        "Q2",
+    )
+    assert records_by_id[property_id].source_cell_addresses == (
+        "L2",
+        "L1",
+        "B2",
+        "Q2",
+    )
+    assert values_by_record[employment_id].value == 4_003_725_725
+    assert values_by_record[property_id].value == 46_028_865
+    assert values_by_record[dividend_id].value == 6_422_119_621
+    assert values_by_record[property_id].measure.source_concept == (
+        "policyengine_uk_data.incomes_projection.property_income_amount"
+    )
+    assert values_by_record[property_id].measure.concept_relation == "approximate"
+    assert (
+        "total_income",
+        "<",
+        15_000,
+    ) in {
+        (constraint.variable, constraint.operator, constraint.value)
+        for constraint in values_by_record[property_id].constraints
+    }
+
+
 def test_source_package_alias_builds_hmrc_spi_local_income_facts():
     package = load_source_package("hmrc-spi-local-income-2022")
     rows = package.build_source_rows(2022)
@@ -5559,6 +5624,19 @@ def test_validate_source_package_reports_hmrc_spi_income_band_counts():
         "row_count": 26,
         "source_record_count": 156,
         "source_region_count": 2,
+    }
+
+
+def test_validate_source_package_reports_hmrc_spi_projection_counts():
+    report = validate_source_package("hmrc-spi-income-projection-2026", year=2026)
+
+    assert report.valid
+    assert report.counts == {
+        "measure_count": 12,
+        "record_set_count": 1,
+        "row_count": 12,
+        "source_record_count": 144,
+        "source_region_count": 1,
     }
 
 

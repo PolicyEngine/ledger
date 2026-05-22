@@ -370,6 +370,119 @@ def test_agent_acceptance_rejects_row_constraints_without_source_evidence():
     }
 
 
+def test_agent_acceptance_accepts_source_row_bound_constraints():
+    artifact = SourceArtifactMetadata(
+        source_name="hmrc_spi",
+        source_table="test",
+        source_file="test.csv",
+        url="https://example.test/test.csv",
+        vintage="test",
+        sha256="abc123",
+        size_bytes=10,
+        extracted_at="2026-05-22",
+        extraction_method="test",
+        raw_r2_bucket="arch-raw",
+        raw_r2_key="raw/hmrc_spi/test.csv",
+        raw_r2_uri="r2://arch-raw/raw/hmrc_spi/test.csv",
+    )
+    row = SourceRow(
+        artifact=artifact,
+        sheet_name="incomes_projection",
+        row_number=58,
+        values={
+            "total_income_lower_bound": 12570,
+            "total_income_upper_bound": 15000.0,
+            "employment_income_amount": 1,
+        },
+    )
+    row_key = build_source_row_key(row)
+    cell = SourceCell(
+        artifact=artifact,
+        sheet_name="incomes_projection",
+        row_number=2,
+        column_number=4,
+        address="D2",
+        cell_type="number",
+        raw_value=1,
+        display_value="1",
+        source_row_key=row_key,
+    )
+    fact = AggregateFact(
+        value=1,
+        period=PeriodDimension(type="calendar_year", value=2026),
+        geography=GeographyDimension(
+            level="country",
+            id="GBR",
+            vintage="current",
+            name="United Kingdom",
+        ),
+        entity=EntityDimension(name="person"),
+        measure=Measure(
+            concept="uk_personal_income.employment_income",
+            unit="gbp",
+        ),
+        aggregation=Aggregation(method="sum"),
+        source=SourceProvenance(
+            source_name="hmrc_spi",
+            source_table="test",
+            source_file="test.csv",
+            url="https://example.test/test.csv",
+            vintage="test",
+            extracted_at="2026-05-22",
+            extraction_method="test",
+        ),
+        source_record_id="hmrc_spi.test.12k_to_15k.employment_income_amount",
+        source_cell_keys=(build_source_cell_key(cell),),
+        source_row_keys=(row_key,),
+        constraints=(
+            AggregateConstraint(
+                variable="total_income",
+                operator=">=",
+                value=12570,
+            ),
+            AggregateConstraint(
+                variable="total_income",
+                operator="<",
+                value=15000,
+            ),
+        ),
+        layout=SourceRecordLayout(
+            groupby_dimension="total_income",
+            groupby_value_id="12k_to_15k",
+            table_record_kind="detail",
+        ),
+    )
+
+    report = build_agent_acceptance_report(
+        [fact],
+        [row],
+        [cell],
+        source_rows=validate_source_rows([row]),
+        source_cells=validate_source_cells([cell]),
+        source_regions=SourceRegionSuiteReport(
+            region_count=0,
+            covered_cell_count=0,
+            errors=(),
+        ),
+        source_records=SourceRecordSuiteReport(
+            spec_count=1,
+            resolved_count=1,
+            lineaged_count=1,
+            errors=(),
+        ),
+        fact_report=validate_facts([fact]),
+        concept_alignments=ConceptAlignmentReport(
+            alignment_count=0,
+            checked_count=0,
+            alignments=(),
+            errors=(),
+        ),
+    )
+
+    assert report.valid
+    assert report.checks["row_lineage_semantics_evidenced"]
+
+
 def test_agent_acceptance_accepts_age_constraints_from_source_cell_header():
     artifact = SourceArtifactMetadata(
         source_name="census_population_projections",

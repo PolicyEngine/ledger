@@ -1,0 +1,18 @@
+source_id: hmrc_spi
+package_id: hmrc-spi-income-projection-2026
+dataset: policyengine_uk_spi_income_projection_2026
+source_page: https://github.com/PolicyEngine/policyengine-uk-data/blob/b8e3560b190008574d4277c30948e7400b9fa45b/policyengine_uk_data/storage/incomes_projection.csv
+table: PolicyEngine UK SPI income projection profile
+files:
+  2026:
+    filename: incomes_projection.csv
+    source_url: https://raw.githubusercontent.com/PolicyEngine/policyengine-uk-data/b8e3560b190008574d4277c30948e7400b9fa45b/policyengine_uk_data/storage/incomes_projection.csv
+    sha256: 64b59f54f157a309598865056f5f0222e13c093aad585867779b659564f19457
+    size_bytes: 16677
+    fetched_at: '2026-05-22T00:00:00+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/hmrc_spi/hmrc-spi-income-projection-2026/2026/64b59f54f157a309598865056f5f0222e13c093aad585867779b659564f19457/incomes_projection.csv
+        uri: r2://arch-raw/raw/hmrc_spi/hmrc-spi-income-projection-2026/2026/64b59f54f157a309598865056f5f0222e13c093aad585867779b659564f19457/incomes_projection.csv
