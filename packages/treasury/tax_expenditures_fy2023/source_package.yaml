@@ -54,7 +54,7 @@ record_sets:
             expected_value: 27
             label: PDF extracted line number
           - column: D
-            expected_value: "64,440"
+            expected_value: "$64,440"
             label: outlay effect text
           - column: F
             expected_value: "2021 $9,071; 2022 $10,242; 2023 $10,273; 2024 $10,271; 2025 $10,388; 2026 $5.920; 2027 $0; 2028 $0; 2029 $0; 2030 0; and 2031 0. 14/ In addition, the earned income tax credit on receipts has outlay effects of (in millions of dollars): 2021 $68,870; 2022 $77,290; 2023 $64,440; 2024 $67,330; 2025 $68,650; 2026 $69,260; 2027 $68,940; 2028 $69,610; 2029 $70,440; 2030 $71,480; and 2031 $72,710. 15/ In addition, the recovery rebate credits have outlay effects of (in millions of dollars): 2021 $274,654; 2022 $2,528; 2023 $43; and $0 thereafter."

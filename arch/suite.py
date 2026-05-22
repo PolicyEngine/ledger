@@ -60,6 +60,7 @@ SUPPORTED_SOURCE_PACKAGES = {
     "dhs-ohss-unauthorized-immigrant-population-2018-2022",
     "cmsny-undocumented-population-2023",
     "hmrc-salary-sacrifice-relief-2024",
+    "hmt-budget-policy-costings-2025-salary-sacrifice",
     "hmrc-spi-income-bands-2023",
     "hmrc-spi-income-projection-2026",
     "hhs-acf-liheap-fy2023-national-profile",

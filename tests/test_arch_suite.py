@@ -139,17 +139,17 @@ def test_build_source_suite_supports_soi_table_1_4(tmp_path):
     assert summary["counts"] == {
         "artifact_count": 1,
         "agent_acceptance_error_count": 0,
-        "concept_alignment_count": 1,
-        "constraint_count": 432,
-        "consumer_fact_count": 240,
-        "fact_count": 240,
+        "concept_alignment_count": 2,
+        "constraint_count": 468,
+        "consumer_fact_count": 260,
+        "fact_count": 260,
         "lineage_coverage": 1.0,
         "source_cell_count": 8109,
-        "source_record_count": 240,
+        "source_record_count": 260,
         "source_region_count": 1,
         "source_row_count": 0,
     }
-    assert summary["reports"]["source_regions"]["covered_cell_count"] == 1780
+    assert summary["reports"]["source_regions"]["covered_cell_count"] == 2340
     assert summary["reports"]["agent_acceptance"]["valid"]
     assert summary["reports"]["agent_acceptance"]["warnings"][0]["code"] == (
         "concept_alignment_validation_skipped"

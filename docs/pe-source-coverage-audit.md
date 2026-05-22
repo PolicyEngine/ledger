@@ -118,8 +118,8 @@ deferred with notes.
 
 ## Current Counts
 
-- Source package aliases: 87.
-- UK checklist items: 28 total, 26 checked, 2 unchecked.
+- Source package aliases: 100.
+- UK checklist items: 28 total, 27 checked, 1 unchecked.
 - US manifest rows: 214 total.
 - US publisher-source rows: 166 total.
 - US publisher-source rows with `source_package` and `build_suite_valid`: 45.
@@ -136,16 +136,20 @@ deferred with notes.
 ## UK Status
 
 The UK checklist is mostly represented as build-suite-backed source packages or
-explicit partial coverage. The two unchecked items are intentionally not facts
-yet:
+explicit partial coverage. One unchecked item is intentionally not a fact yet:
 
 - `DWP Scotland UC child-under-1 household count`: blocked pending a working
   Stat-Xplore export/API response for the Scotland UC household target. The
   2026-05-12 recheck still returned Stat-Xplore HTTP 503 maintenance pages, and
   no agent-readable Stat-Xplore API key is available.
-- `HMRC salary sacrifice contribution amount`: blocked pending source
-  clarification because the referenced SPP/HMRC material supports relief-cost
-  facts, not the claimed total salary-sacrificed contribution amount.
+
+The salary-sacrifice contribution-amount item now has a source-backed Arch
+fact from HMT Budget 2025 Policy Costings:
+`hmt-budget-policy-costings-2025-salary-sacrifice` preserves the official PDF
+and emits the CY2024 £32bn pension-contribution amount using salary-sacrifice
+arrangements. It should not be mapped to the current PE target until PE target
+construction is corrected, because the current PE target still uses a stale
+£24bn base.
 
 The Scotland demographic special-cases item is now marked done/partial for the
 NRS under-16 and live-birth packages, while the Scotland Census 3+ children
@@ -351,12 +355,13 @@ Completion audit evidence:
   are geography/support artifacts, access-blocked sources, superseded
   duplicates, policy-context sources, derived intermediates, or
   target-construction work.
-- UK checklist audit: 28 rows total; 26 checked; the 2 unchecked rows are
-  documented blockers (`DWP Scotland UC child-under-1 household count` pending
-  working Stat-Xplore access/API key, and `HMRC salary sacrifice contribution
-  amount` pending source clarification).
+- UK checklist audit: 28 rows total; 27 checked; the 1 unchecked row is a
+  documented blocker (`DWP Scotland UC child-under-1 household count` pending
+  working Stat-Xplore access/API key). `HMRC/HMT salary sacrifice contribution
+  amount` now has an HMT source-backed Arch fact but remains a PE target-value
+  mismatch until PE's stale £24bn base is corrected.
 - Focused and full verification passed: `tests/test_arch_source_package.py`
-  (`204 passed`), `tests/test_arch_suite.py` (`12 passed`), targeted package
+  (`227 passed`), `tests/test_arch_suite.py` (`13 passed`), targeted package
   build suites for the newly added ISC and CMSNY packages, and full source-plan
   tests.
 - Raw-artifact metadata for the newly added source packages is present in

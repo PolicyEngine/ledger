@@ -165,6 +165,9 @@ SOURCE_PACKAGE_ALIASES = {
     "hmrc-salary-sacrifice-reform-2025": Path(
         "packages/hmrc/salary_sacrifice_reform_2025"
     ),
+    "hmt-budget-policy-costings-2025-salary-sacrifice": Path(
+        "packages/hmt/budget_policy_costings_2025"
+    ),
     "hmrc-spi-income-bands-2023": Path("packages/hmrc_spi/income_bands_2023"),
     "hmrc-spi-income-projection-2026": Path(
         "packages/hmrc_spi/income_projection_2026"

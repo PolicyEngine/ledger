@@ -1,0 +1,69 @@
+schema_version: arch.source_package.v1
+package_id: hmt-budget-policy-costings-2025-salary-sacrifice
+label: HMT Budget 2025 policy costings salary sacrifice pension contributions
+artifact:
+  source_name: hmt
+  source_table: Budget 2025 policy costings
+  resource_package: db
+  resource_directory: data/hmt/budget_policy_costings_2025
+  manifest: manifest.yaml
+  vintage: budget_2025
+  extracted_at: "2026-05-22"
+  extraction_method: pypdf text-line number extraction from full publisher PDF
+  parser: pdf_text_numbers
+  artifact_year: 2025
+record_sets:
+  - record_set_id: hmt_budget_2025.cy2024.salary_sacrifice_pension_contributions
+    record_set_spec_id: hmt_budget_2025.salary_sacrifice_pension_contributions.v1
+    source_record_id_prefix: hmt_budget_2025.cy2024.salary_sacrifice_pension_contributions
+    sheet_name: document_numbers
+    period_type: calendar_year
+    period: 2024
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: person
+    entity_role: employee
+    domain: uk_pensions
+    groupby_dimension: salary_sacrifice.pension_contribution_arrangement
+    rows:
+      - value_id: all_salary_sacrifice_pension_contributions
+        label: Pension contributions using salary sacrifice arrangements
+        ordinal: 0
+        row_number: 1052
+        expected_row_header_column: C
+        expected_row_header: "In 2024, it is estimated £32bn of pensions contributions used salary sacrifice"
+        filters:
+          salary_sacrifice.pension_contribution_arrangement: salary_sacrifice
+        constraints:
+          - variable: salary_sacrifice.pension_contribution_arrangement
+            operator: "=="
+            value: salary_sacrifice
+            label: Salary sacrifice pension contribution arrangement
+        guard_cells:
+          - column: A
+            expected_value: 47
+            label: PDF page number
+          - column: B
+            expected_value: 23
+            label: PDF extracted line number
+          - column: D
+            expected_value: "£32bn"
+            label: contribution amount text
+        table_record_kind: total
+    measures:
+      - measure_id: contribution_amount
+        label: Contribution amount
+        ordinal: 0
+        column: E
+        source_column_id: numeric_value
+        expected_column_header_row: 1
+        expected_column_header: numeric_value
+        concept: uk_pensions.pension_salary_sacrifice_contribution_amount
+        source_concept: hmt.budget_2025.salary_sacrifice_pension_contribution_amount
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        expected_cell_type: number

@@ -587,7 +587,7 @@ def test_source_package_alias_builds_soi_table_1_2_facts():
     assert validate_source_cells(cells).valid
     assert validate_facts(facts).valid
     assert len(cells) == 3_087
-    assert len(facts) == 58
+    assert len(facts) == 7
     assert all(fact.source.raw_r2_uri for fact in facts)
     itemized_deductions = (
         "irs_soi.ty2023.table_1_2.all_returns.all.total_itemized_deductions_amount"
@@ -1305,6 +1305,52 @@ def test_source_package_alias_builds_hmrc_salary_sacrifice_reform_facts():
     }
 
 
+def test_source_package_alias_builds_hmt_budget_salary_sacrifice_fact():
+    package = load_source_package("hmt-budget-policy-costings-2025-salary-sacrifice")
+    cells = package.build_source_cells(2025)
+    records = package.build_source_records(2025, cells=cells)
+    facts = package.build_facts(2025, cells=cells)
+    records_by_id = {record.source_record_id: record for record in records}
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "hmt-budget-policy-costings-2025-salary-sacrifice"
+    assert len(cells) == 15_690
+    assert validate_source_cells(cells).valid
+    assert len(facts) == 1
+    assert validate_facts(facts).valid
+
+    source_record_id = (
+        "hmt_budget_2025.cy2024.salary_sacrifice_pension_contributions."
+        "all_salary_sacrifice_pension_contributions.contribution_amount"
+    )
+    fact = values_by_record[source_record_id]
+    assert records_by_id[source_record_id].source_cell_addresses == (
+        "E1052",
+        "E1",
+        "A1052",
+        "B1052",
+        "D1052",
+    )
+    assert fact.value == 32_000_000_000
+    assert fact.period.type == "calendar_year"
+    assert fact.period.value == 2024
+    assert fact.geography.id == "GBR"
+    assert fact.entity.name == "person"
+    assert fact.source.source_name == "hmt"
+    assert fact.source.source_file == "Budget_2025_Policy_Costings.pdf"
+    assert fact.source.raw_r2_uri
+    assert fact.measure.concept == (
+        "uk_pensions.pension_salary_sacrifice_contribution_amount"
+    )
+    assert fact.measure.source_concept == (
+        "hmt.budget_2025.salary_sacrifice_pension_contribution_amount"
+    )
+    assert fact.measure.unit == "gbp"
+    assert fact.filters[
+        "salary_sacrifice.pension_contribution_arrangement"
+    ] == "salary_sacrifice"
+
+
 def test_source_package_alias_builds_isc_census_pupil_count_fact():
     package = load_source_package("isc-census-2024-pupil-count")
     cells = package.build_source_cells(2024)
@@ -1314,7 +1360,7 @@ def test_source_package_alias_builds_isc_census_pupil_count_fact():
     values_by_record = {fact.source_record_id: fact for fact in facts}
 
     assert package.package_id == "isc-census-2024-pupil-count"
-    assert len(cells) == 77_064
+    assert len(cells) == 77_088
     assert validate_source_cells(cells).valid
     assert len(facts) == 1
     assert validate_facts(facts).valid
@@ -2127,7 +2173,7 @@ def test_source_package_alias_builds_voa_council_tax_band_facts():
     assert package.package_id == "voa-council-tax-bands-2025"
     assert len(cells) == 14_262
     assert validate_source_cells(cells).valid
-    assert len(facts) == 90
+    assert len(facts) == 2_653
     assert validate_facts(facts).valid
     assert all(fact.source.source_name == "voa" for fact in facts)
     assert all(
@@ -5393,7 +5439,7 @@ def test_validate_source_package_reports_kff_marketplace_enrollment_counts():
                 "record_set_count": 3,
                 "row_count": 3,
                 "source_record_count": 5,
-                "source_region_count": 1,
+                "source_region_count": 3,
             },
         ),
         (
@@ -5692,6 +5738,22 @@ def test_validate_source_package_reports_hmrc_salary_sacrifice_reform_counts():
     }
 
 
+def test_validate_source_package_reports_hmt_budget_salary_sacrifice_counts():
+    report = validate_source_package(
+        "hmt-budget-policy-costings-2025-salary-sacrifice",
+        year=2025,
+    )
+
+    assert report.valid
+    assert report.counts == {
+        "measure_count": 1,
+        "record_set_count": 1,
+        "row_count": 1,
+        "source_record_count": 1,
+        "source_region_count": 1,
+    }
+
+
 def test_validate_source_package_reports_isc_census_pupil_count_counts():
     report = validate_source_package("isc-census-2024-pupil-count", year=2024)
 
@@ -5897,11 +5959,11 @@ def test_validate_source_package_reports_voa_council_tax_band_counts():
 
     assert report.valid
     assert report.counts == {
-        "measure_count": 9,
-        "record_set_count": 1,
-        "row_count": 10,
-        "source_record_count": 90,
-        "source_region_count": 1,
+        "measure_count": 18,
+        "record_set_count": 10,
+        "row_count": 2573,
+        "source_record_count": 2653,
+        "source_region_count": 10,
     }
 
 

@@ -163,18 +163,20 @@ Each completed item should have:
     used by PE: income tax total/basic/higher/additional and employee/employer
     Class 1 NICs totals.
 
-- [ ] HMRC salary sacrifice contribution amount
+- [x] HMT salary sacrifice contribution amount - source fact done, PE target
+  mismatch open
   - PE module: `sources/hmrc_salary_sacrifice.py`.
   - Current PE target: total salary sacrificed contributions.
-  - Claimed source: SPP Review 2025 PDF.
-  - Status: blocked pending source clarification. The PE reference URL is
-    stale, and the current SPP paper states that HMRC figures suggest the total
-    cost of National Insurance relief on pension contributions was £24.0bn in
-    2023-24, with £4.1bn relating to pension salary sacrifice. That supports
-    the HMRC relief facts already packaged above, but not a total salary
-    sacrificed contribution amount of £24bn.
-  - Arch action: do not ingest this as an Arch contribution fact until a
-    primary source for the contribution amount is identified.
+  - Claimed PE source: SPP Review 2025 PDF.
+  - Source fact: HMT Budget 2025 Policy Costings states that 2024 pension
+    contributions using salary sacrifice arrangements are estimated at £32bn.
+  - Arch package: `hmt-budget-policy-costings-2025-salary-sacrifice`.
+  - Covers the official HMT PDF line with full-document PDF number parsing,
+    checksum/R2 metadata, and selector lineage to the `£32bn` numeric cell.
+  - Caveat: do not map this package to the current PE target until PE target
+    construction is corrected. The current PE target uses a stale £24bn base,
+    while the primary contribution-amount source now preserved by Arch is
+    £32bn for calendar year 2024.
 
 - [x] HMRC SPI income bands
   - PE module: `sources/hmrc_spi.py`.

@@ -608,8 +608,8 @@ def _ods_cell_text(cell: ElementTree.Element) -> str:
 
 _HTML_BLOCK_TAGS = {"h1", "h2", "h3", "h4", "h5", "h6", "p", "li"}
 _HTML_NUMBER_RE = re.compile(
-    r"(?<![\w.])-?(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?"
-    r"(?:\s*(?:thousand|million|billion))?(?![\w.])",
+    r"(?<![\w.])[£$€]?-?(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?"
+    r"(?:\s*(?:thousand|million|billion)|bn)?(?![\w.])",
     flags=re.IGNORECASE,
 )
 
@@ -852,12 +852,13 @@ def _html_scalar(text: str) -> Scalar:
 
 
 def _html_number_scalar(text: str) -> int | float:
-    normalized = text.replace(",", "").lower()
+    normalized = text.replace(",", "").lower().lstrip("£$€")
     multiplier = 1
     for suffix, value in (
         ("thousand", 1_000),
         ("million", 1_000_000),
         ("billion", 1_000_000_000),
+        ("bn", 1_000_000_000),
     ):
         if normalized.endswith(suffix):
             multiplier = value
