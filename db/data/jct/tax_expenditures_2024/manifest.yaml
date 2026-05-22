@@ -1,0 +1,18 @@
+source_id: jct
+package_id: jct-tax-expenditures-2024-mortgage-interest-deduction
+dataset: jct_tax_expenditures_2024_mortgage_interest_deduction
+source_page: https://www.jct.gov/publications/2024/jcx-48-24/
+table: JCT Estimates Of Federal Tax Expenditures For Fiscal Years 2024-2028 Table 1
+files:
+  2024:
+    filename: jct_x_48_24.pdf
+    source_url: https://www.jct.gov/getattachment/765709fb-9a4b-430a-8f9e-4d342ec97f7e/x-48-24.pdf
+    sha256: 227fabbe2f1ecc5b093dc55ca7695f2de1a433e54a2f640cefbee858a1fb8fff
+    size_bytes: 586101
+    fetched_at: '2026-05-11T23:45:14+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/jct/jct-tax-expenditures-2024-mortgage-interest-deduction/2024/227fabbe2f1ecc5b093dc55ca7695f2de1a433e54a2f640cefbee858a1fb8fff/jct_x_48_24.pdf
+        uri: r2://arch-raw/raw/jct/jct-tax-expenditures-2024-mortgage-interest-deduction/2024/227fabbe2f1ecc5b093dc55ca7695f2de1a433e54a2f640cefbee858a1fb8fff/jct_x_48_24.pdf

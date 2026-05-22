@@ -1,0 +1,117 @@
+schema_version: arch.source_package.v1
+package_id: cms-medicare-state-payment-of-premiums
+label: CMS state payment of Medicare premiums beneficiary lower bounds
+artifact:
+  source_name: cms_medicare
+  source_table: CMS State Payment of Medicare Premiums page
+  resource_package: db
+  resource_directory: data/cms_medicare/state_payment_of_premiums
+  manifest: manifest.yaml
+  vintage: page_snapshot_2026
+  extracted_at: '2026-05-11'
+  extraction_method: HTML tables and numeric document text parse
+  parser: html_tables_and_text
+  artifact_year: 2026
+record_sets:
+- record_set_id: cms_medicare.cy2026.state_paid_premiums.part_b
+  record_set_spec_id: cms_medicare.state_paid_premiums.beneficiary_lower_bounds.v1
+  source_record_id_prefix: cms_medicare.cy2026.state_paid_premiums.part_b
+  sheet_name: document_numbers
+  period_type: calendar_year
+  period: 2026
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: medicare_beneficiary_with_state_paid_premium
+  domain: state_payment_of_medicare_premiums
+  groupby_dimension: medicare.premium_part
+  rows:
+  - value_id: part_b
+    label: Medicare Part B premiums
+    ordinal: 0
+    row_number: 10
+    filters:
+      medicare.premium_part: part_b
+      premium_payer: state
+      estimate.bound_type: lower_bound
+    constraints:
+    - variable: medicare.premium_part
+      operator: ==
+      value: part_b
+      label: Medicare premium part
+    - variable: premium_payer
+      operator: ==
+      value: state
+      label: Premium payer
+    - variable: estimate.bound_type
+      operator: ==
+      value: lower_bound
+      label: Estimate bound type
+    expected_row_header_column: C
+    expected_row_header: 'States pay Medicare Part B premiums each month for over 10 million individuals and Part A premium for over 700,000 individuals. This process promotes access to Medicare coverage for low-income older adults and people with disabilities, and it helps states ensure that Medicare is the first and primary payer for Medicare covered services for dually eligible beneficiaries.'
+    table_record_kind: detail
+  measures:
+  - measure_id: beneficiary_count_lower_bound
+    label: Beneficiary count lower bound
+    ordinal: 0
+    column: E
+    source_column_id: numeric_value
+    expected_column_header_row: 1
+    expected_column_header: numeric_value
+    concept: cms_medicare.state_paid_medicare_premium_beneficiary_count_lower_bound
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: cms_medicare.cy2026.state_paid_premiums.part_a
+  record_set_spec_id: cms_medicare.state_paid_premiums.beneficiary_lower_bounds.v1
+  source_record_id_prefix: cms_medicare.cy2026.state_paid_premiums.part_a
+  sheet_name: document_numbers
+  period_type: calendar_year
+  period: 2026
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: medicare_beneficiary_with_state_paid_premium
+  domain: state_payment_of_medicare_premiums
+  groupby_dimension: medicare.premium_part
+  rows:
+  - value_id: part_a
+    label: Medicare Part A premium
+    ordinal: 0
+    row_number: 11
+    filters:
+      medicare.premium_part: part_a
+      premium_payer: state
+      estimate.bound_type: lower_bound
+    constraints:
+    - variable: medicare.premium_part
+      operator: ==
+      value: part_a
+      label: Medicare premium part
+    - variable: premium_payer
+      operator: ==
+      value: state
+      label: Premium payer
+    - variable: estimate.bound_type
+      operator: ==
+      value: lower_bound
+      label: Estimate bound type
+    expected_row_header_column: C
+    expected_row_header: 'States pay Medicare Part B premiums each month for over 10 million individuals and Part A premium for over 700,000 individuals. This process promotes access to Medicare coverage for low-income older adults and people with disabilities, and it helps states ensure that Medicare is the first and primary payer for Medicare covered services for dually eligible beneficiaries.'
+    table_record_kind: detail
+  measures:
+  - measure_id: beneficiary_count_lower_bound
+    label: Beneficiary count lower bound
+    ordinal: 0
+    column: E
+    source_column_id: numeric_value
+    expected_column_header_row: 1
+    expected_column_header: numeric_value
+    concept: cms_medicare.state_paid_medicare_premium_beneficiary_count_lower_bound
+    unit: count
+    aggregation: count
+    expected_cell_type: number

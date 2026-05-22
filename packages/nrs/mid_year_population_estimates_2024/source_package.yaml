@@ -1,0 +1,76 @@
+schema_version: arch.source_package.v1
+package_id: nrs-mid-year-population-estimates-2024
+label: NRS Scotland mid-year population estimates 2024
+artifact:
+  source_name: nrs
+  source_table: NRS mid-year population estimates 2024 Table 3
+  resource_package: db
+  resource_directory: data/nrs/mid_year_population_estimates_2024
+  manifest: manifest.yaml
+  vintage: mid_year_population_estimates_2024
+  extracted_at: '2026-05-11'
+  extraction_method: xlsx whole-workbook used-range cell parse
+  parser: xlsx_used_range
+  artifact_year: 2024
+record_sets:
+- record_set_id: nrs_population_estimates.cy2024.table_3.scotland_age_structure
+  record_set_spec_id: nrs_population_estimates.table_3.scotland_age_structure.v1
+  source_record_id_prefix: nrs_population_estimates.cy2024.table_3.scotland_age_structure
+  sheet_name: Table 3
+  period_type: calendar_year
+  period: 2024
+  geography_id: S92000003
+  geography_level: country
+  geography_name: Scotland
+  geography_vintage: current
+  entity: person
+  entity_role: usual_resident_population
+  domain: uk_demographics
+  groupby_dimension: uk_demographics.population_group
+  rows:
+  - value_id: scotland
+    label: Scotland
+    ordinal: 0
+    row_number: 6
+    table_record_kind: total
+    expected_row_header_column: A
+    expected_row_header: Scotland
+    guard_cells:
+    - column: A
+      row: 1
+      expected_value: "Table 3: Age and sex structure by administrative area, Scotland: mid-2024"
+      label: table title
+    - column: B
+      row: start
+      expected_value: S92000003
+      label: Scotland area code
+    - column: C
+      row: start
+      expected_value: Country
+      label: area type
+  measures:
+  - measure_id: children_under_16_count
+    label: Persons under 16
+    ordinal: 0
+    column: E
+    source_column_id: persons_under_16
+    expected_column_header_row: 5
+    expected_column_header: "Persons\nUnder 16"
+    concept: uk_demographics.population_count
+    source_concept: nrs.mid_year_population_under_16
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+    constraints:
+    - variable: person.age
+      operator: '>='
+      value: 0
+      unit: years
+      label: Age lower bound
+    - variable: person.age
+      operator: <
+      value: 16
+      unit: years
+      label: Age upper bound

@@ -15,6 +15,7 @@ from urllib.request import Request, urlopen
 
 import pandas as pd
 import yaml
+from sqlalchemy import delete
 from sqlmodel import Session, select
 
 from .schema import (
@@ -36,6 +37,49 @@ TABLE_1_1_PACKAGE_DIR = "data/irs_soi/table_1_1"
 TABLE_1_4_PACKAGE_DIR = "data/irs_soi/table_1_4"
 TABLE_1_1_MANIFEST = "manifest.yaml"
 TABLE_1_4_MANIFEST = "manifest.yaml"
+
+TABLE_1_4_INCOME_SOURCE_COLUMNS = {
+    "wages_salaries": {
+        "header_phrase_options": (
+            ("total wages", "number of returns"),
+            ("salaries and wages", "number of returns"),
+        ),
+        "label": "Total wages",
+    },
+    "net_capital_gains": {
+        "header_phrase_options": (
+            (
+                "sales of capital assets reported on form 1040",
+                "taxable net gain",
+                "number of returns",
+            ),
+        ),
+        "label": "Sales of capital assets reported on Form 1040, Schedule D",
+    },
+    "taxable_ira_distributions": {
+        "header_phrase_options": (
+            (
+                "taxable individual retirement arrangement",
+                "number of returns",
+            ),
+        ),
+        "label": "Taxable Individual Retirement Arrangement (IRA) distributions",
+    },
+    "taxable_pension_income": {
+        "anchor_phrases": ("pensions and annuities", "number of returns"),
+        "detail_phrases": ("taxable", "number of returns"),
+        "label": "Taxable pensions and annuities",
+    },
+    "unemployment_compensation": {
+        "header_phrase_options": (("unemployment compensation", "number of returns"),),
+        "label": "Unemployment compensation",
+    },
+    "taxable_social_security": {
+        "anchor_phrases": ("social security benefits", "number of returns"),
+        "detail_phrases": ("taxable", "number of returns"),
+        "label": "Taxable Social Security benefits",
+    },
+}
 
 # AGI bracket definitions (lower, upper) in dollars.
 AGI_BRACKETS = {
@@ -87,18 +131,28 @@ class SOITable11Data(TypedDict):
     source_url: str
     total_returns: int
     total_agi: int
+    total_income_tax_after_credits_returns: int
     total_income_tax: int
     returns_by_agi_bracket: dict[str, int]
     agi_by_bracket: dict[str, int]
+    income_tax_after_credits_returns_by_bracket: dict[str, int]
     income_tax_by_bracket: dict[str, int]
 
 
 class SOITable14Data(TypedDict):
     source_url: str
+    income_sources: dict[str, SOITable14IncomeSourceData]
     total_employment_income_returns: int
     total_employment_income: int
     employment_income_returns_by_agi_bracket: dict[str, int]
     employment_income_by_agi_bracket: dict[str, int]
+
+
+class SOITable14IncomeSourceData(TypedDict):
+    total_returns: int
+    total_amount: int
+    returns_by_agi_bracket: dict[str, int]
+    amount_by_agi_bracket: dict[str, int]
 
 
 @lru_cache(maxsize=1)
@@ -274,6 +328,29 @@ def _find_column(df: pd.DataFrame, *phrases: str) -> int:
     raise ValueError(f"Could not find SOI Table 1.1 column containing: {joined}")
 
 
+def _find_table_1_4_income_source_count_column(
+    df: pd.DataFrame,
+    source_id: str,
+    column_spec: dict[str, Any],
+) -> int:
+    for phrases in column_spec.get("header_phrase_options", ()):
+        try:
+            return _find_column(df, *phrases)
+        except ValueError:
+            continue
+
+    anchor_phrases = column_spec.get("anchor_phrases")
+    detail_phrases = column_spec.get("detail_phrases")
+    if anchor_phrases and detail_phrases:
+        anchor_col = _find_column(df, *anchor_phrases)
+        for column in range(anchor_col + 1, min(anchor_col + 8, df.shape[1])):
+            header = _header_text(df, column)
+            if all(phrase.lower() in header for phrase in detail_phrases):
+                return column
+
+    raise ValueError(f"Could not find SOI Table 1.4 source column: {source_id}")
+
+
 def _table_1_1_size_rows(df: pd.DataFrame) -> pd.DataFrame:
     labels = df.iloc[:, 0].map(_clean_label)
     start_matches = labels[labels == "All returns"]
@@ -314,26 +391,41 @@ def _parse_soi_table_1_1_frame(
 ) -> SOITable11Data:
     count_col = _find_column(df, "number of returns")
     agi_col = _find_column(df, "adjusted gross income less deficit", "amount")
+    income_tax_after_credits_returns_col = _find_column(
+        df,
+        "income tax after credits",
+        "number of returns",
+    )
     income_tax_col = _find_column(df, "total income tax", "amount")
     rows = _table_1_1_size_rows(df)
     all_returns = _row_by_label(rows, "All returns")
 
     returns_by_bracket = {}
     agi_by_bracket = {}
+    income_tax_after_credits_returns_by_bracket = {}
     income_tax_by_bracket = {}
     for source_label, bracket_name in TABLE_1_1_AGI_LABEL_TO_BRACKET.items():
         row = _row_by_label(rows, source_label)
         returns_by_bracket[bracket_name] = _count_value(row.iat[count_col])
         agi_by_bracket[bracket_name] = _money_value(row.iat[agi_col])
+        income_tax_after_credits_returns_by_bracket[bracket_name] = _count_value(
+            row.iat[income_tax_after_credits_returns_col]
+        )
         income_tax_by_bracket[bracket_name] = _money_value(row.iat[income_tax_col])
 
     return {
         "source_url": source_url,
         "total_returns": _count_value(all_returns.iat[count_col]),
         "total_agi": _money_value(all_returns.iat[agi_col]),
+        "total_income_tax_after_credits_returns": _count_value(
+            all_returns.iat[income_tax_after_credits_returns_col]
+        ),
         "total_income_tax": _money_value(all_returns.iat[income_tax_col]),
         "returns_by_agi_bracket": returns_by_bracket,
         "agi_by_bracket": agi_by_bracket,
+        "income_tax_after_credits_returns_by_bracket": (
+            income_tax_after_credits_returns_by_bracket
+        ),
         "income_tax_by_bracket": income_tax_by_bracket,
     }
 
@@ -343,32 +435,47 @@ def _parse_soi_table_1_4_frame(
     *,
     source_url: str,
 ) -> SOITable14Data:
-    wage_count_col = _find_column(df, "wages", "number of returns")
-    wage_amount_col = wage_count_col + 1
-    if "amount" not in _header_text(df, wage_amount_col):
-        raise ValueError("Could not find SOI Table 1.4 wage amount column")
     rows = _table_1_4_size_rows(df)
     all_returns = _row_by_label(rows, "All returns, total")
 
-    wage_returns_by_bracket = {}
-    wage_amount_by_bracket = {}
-    for source_label, bracket_name in TABLE_1_1_AGI_LABEL_TO_BRACKET.items():
-        row = _row_by_label(rows, source_label)
-        wage_returns_by_bracket[bracket_name] = _count_value(row.iat[wage_count_col])
-        wage_amount_by_bracket[bracket_name] = _table_1_4_money_value(
-            row.iat[wage_amount_col]
+    income_sources = {}
+    for source_id, column_spec in TABLE_1_4_INCOME_SOURCE_COLUMNS.items():
+        count_col = _find_table_1_4_income_source_count_column(
+            df,
+            source_id,
+            column_spec,
         )
+        amount_col = count_col + 1
+        if "amount" not in _header_text(df, amount_col):
+            raise ValueError(
+                f"Could not find SOI Table 1.4 {source_id} amount column"
+            )
+
+        returns_by_bracket = {}
+        amount_by_bracket = {}
+        for source_label, bracket_name in TABLE_1_1_AGI_LABEL_TO_BRACKET.items():
+            row = _row_by_label(rows, source_label)
+            returns_by_bracket[bracket_name] = _count_value(row.iat[count_col])
+            amount_by_bracket[bracket_name] = _table_1_4_money_value(
+                row.iat[amount_col]
+            )
+
+        income_sources[source_id] = {
+            "total_returns": _count_value(all_returns.iat[count_col]),
+            "total_amount": _table_1_4_money_value(all_returns.iat[amount_col]),
+            "returns_by_agi_bracket": returns_by_bracket,
+            "amount_by_agi_bracket": amount_by_bracket,
+        }
+
+    wages = income_sources["wages_salaries"]
 
     return {
         "source_url": source_url,
-        "total_employment_income_returns": _count_value(
-            all_returns.iat[wage_count_col]
-        ),
-        "total_employment_income": _table_1_4_money_value(
-            all_returns.iat[wage_amount_col]
-        ),
-        "employment_income_returns_by_agi_bracket": wage_returns_by_bracket,
-        "employment_income_by_agi_bracket": wage_amount_by_bracket,
+        "income_sources": income_sources,
+        "total_employment_income_returns": wages["total_returns"],
+        "total_employment_income": wages["total_amount"],
+        "employment_income_returns_by_agi_bracket": wages["returns_by_agi_bracket"],
+        "employment_income_by_agi_bracket": wages["amount_by_agi_bracket"],
     }
 
 
@@ -439,6 +546,23 @@ def _add_target(
     )
 
 
+def _soi_table_1_1_target_variables() -> list[str]:
+    return [
+        "tax_unit_count",
+        "adjusted_gross_income",
+        "income_tax_liability",
+        "income_tax_liability_returns",
+    ]
+
+
+def _soi_table_1_4_target_variables() -> list[str]:
+    return [
+        f"{source_id}_{suffix}"
+        for source_id in TABLE_1_4_INCOME_SOURCE_COLUMNS
+        for suffix in ("returns", "amount")
+    ]
+
+
 def load_soi_targets(session: Session, years: list[int] | None = None) -> None:
     """
     Load SOI targets into database.
@@ -449,6 +573,29 @@ def load_soi_targets(session: Session, years: list[int] | None = None) -> None:
     """
     if years is None:
         years = available_soi_years()
+
+    table_1_1_years = [year for year in years if year in available_soi_years()]
+    table_1_4_years = [
+        year for year in years if year in available_soi_table_1_4_years()
+    ]
+    if table_1_1_years:
+        session.exec(
+            delete(Target).where(
+                Target.source == DataSource.IRS_SOI,
+                Target.source_table == "Table 1.1",
+                Target.period.in_(table_1_1_years),
+                Target.variable.in_(_soi_table_1_1_target_variables()),
+            )
+        )
+    if table_1_4_years:
+        session.exec(
+            delete(Target).where(
+                Target.source == DataSource.IRS_SOI,
+                Target.source_table == "Table 1.4",
+                Target.period.in_(table_1_4_years),
+                Target.variable.in_(_soi_table_1_4_target_variables()),
+            )
+        )
 
     for year in years:
         if year not in available_soi_years():
@@ -498,28 +645,40 @@ def load_soi_targets(session: Session, years: list[int] | None = None) -> None:
             target_type=TargetType.AMOUNT,
             source_url=source_url,
         )
+        _add_target(
+            session,
+            stratum_id=national_stratum.id,
+            variable="income_tax_liability_returns",
+            period=year,
+            value=data["total_income_tax_after_credits_returns"],
+            target_type=TargetType.COUNT,
+            source_url=source_url,
+        )
 
         if table_1_4_data is not None and table_1_4_source_url is not None:
-            _add_target(
-                session,
-                stratum_id=national_stratum.id,
-                variable="employment_income",
-                period=year,
-                value=table_1_4_data["total_employment_income_returns"],
-                target_type=TargetType.COUNT,
-                source_url=table_1_4_source_url,
-                source_table="Table 1.4",
-            )
-            _add_target(
-                session,
-                stratum_id=national_stratum.id,
-                variable="employment_income",
-                period=year,
-                value=table_1_4_data["total_employment_income"],
-                target_type=TargetType.AMOUNT,
-                source_url=table_1_4_source_url,
-                source_table="Table 1.4",
-            )
+            for source_id, source_data in table_1_4_data[
+                "income_sources"
+            ].items():
+                _add_target(
+                    session,
+                    stratum_id=national_stratum.id,
+                    variable=f"{source_id}_returns",
+                    period=year,
+                    value=source_data["total_returns"],
+                    target_type=TargetType.COUNT,
+                    source_url=table_1_4_source_url,
+                    source_table="Table 1.4",
+                )
+                _add_target(
+                    session,
+                    stratum_id=national_stratum.id,
+                    variable=f"{source_id}_amount",
+                    period=year,
+                    value=source_data["total_amount"],
+                    target_type=TargetType.AMOUNT,
+                    source_url=table_1_4_source_url,
+                    source_table="Table 1.4",
+                )
 
         for bracket_name, (lower, upper) in AGI_BRACKETS.items():
             constraints = []
@@ -571,37 +730,48 @@ def load_soi_targets(session: Session, years: list[int] | None = None) -> None:
                     source_url=source_url,
                 )
 
-            if table_1_4_data is not None and table_1_4_source_url is not None:
-                if (
-                    bracket_name
-                    in table_1_4_data["employment_income_returns_by_agi_bracket"]
-                ):
-                    _add_target(
-                        session,
-                        stratum_id=bracket_stratum.id,
-                        variable="employment_income",
-                        period=year,
-                        value=table_1_4_data[
-                            "employment_income_returns_by_agi_bracket"
-                        ][bracket_name],
-                        target_type=TargetType.COUNT,
-                        source_url=table_1_4_source_url,
-                        source_table="Table 1.4",
-                    )
+            if bracket_name in data["income_tax_after_credits_returns_by_bracket"]:
+                _add_target(
+                    session,
+                    stratum_id=bracket_stratum.id,
+                    variable="income_tax_liability_returns",
+                    period=year,
+                    value=data["income_tax_after_credits_returns_by_bracket"][
+                        bracket_name
+                    ],
+                    target_type=TargetType.COUNT,
+                    source_url=source_url,
+                )
 
-                if bracket_name in table_1_4_data["employment_income_by_agi_bracket"]:
-                    _add_target(
-                        session,
-                        stratum_id=bracket_stratum.id,
-                        variable="employment_income",
-                        period=year,
-                        value=table_1_4_data["employment_income_by_agi_bracket"][
-                            bracket_name
-                        ],
-                        target_type=TargetType.AMOUNT,
-                        source_url=table_1_4_source_url,
-                        source_table="Table 1.4",
-                    )
+            if table_1_4_data is not None and table_1_4_source_url is not None:
+                for source_id, source_data in table_1_4_data[
+                    "income_sources"
+                ].items():
+                    returns_by_bracket = source_data["returns_by_agi_bracket"]
+                    amount_by_bracket = source_data["amount_by_agi_bracket"]
+                    if bracket_name in returns_by_bracket:
+                        _add_target(
+                            session,
+                            stratum_id=bracket_stratum.id,
+                            variable=f"{source_id}_returns",
+                            period=year,
+                            value=returns_by_bracket[bracket_name],
+                            target_type=TargetType.COUNT,
+                            source_url=table_1_4_source_url,
+                            source_table="Table 1.4",
+                        )
+
+                    if bracket_name in amount_by_bracket:
+                        _add_target(
+                            session,
+                            stratum_id=bracket_stratum.id,
+                            variable=f"{source_id}_amount",
+                            period=year,
+                            value=amount_by_bracket[bracket_name],
+                            target_type=TargetType.AMOUNT,
+                            source_url=table_1_4_source_url,
+                            source_table="Table 1.4",
+                        )
 
     session.commit()
 

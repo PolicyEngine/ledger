@@ -1,0 +1,1094 @@
+schema_version: arch.source_package.v1
+package_id: dwp-uc-two-child-limit-2025
+label: DWP Universal Credit two-child-limit April 2025
+artifact:
+  source_name: dwp
+  source_table: Data tables Universal Credit statistics on the Two Child Limit April 2025
+  resource_package: db
+  resource_directory: data/dwp/uc_two_child_limit_2025
+  manifest: manifest.yaml
+  vintage: april_2025
+  extracted_at: '2026-05-10'
+  extraction_method: odf content.xml whole-workbook used-range cell parse
+  parser: ods_used_range
+record_sets:
+  - record_set_id: dwp_uc_two_child_limit.cy{year}.not_receiving_child_element_summary.households
+    record_set_spec_id: dwp_uc_two_child_limit.not_receiving_child_element_summary.households.v1
+    source_record_id_prefix: dwp_uc_two_child_limit.cy{year}.not_receiving_child_element_summary.households
+    sheet_name: '01'
+    period_type: calendar_year
+    period: '{year}'
+    geography_id: GBR
+    geography_level: country
+    geography_name: Great Britain
+    geography_vintage: current
+    entity: household
+    entity_role: universal_credit_household
+    domain: uk_universal_credit_two_child_limit
+    groupby_dimension: uk_universal_credit.two_child_limit_status
+    rows:
+      - value_id: not_receiving_child_element
+        label: Not receiving a child element
+        ordinal: 0
+        row_number: 11
+        filters:
+          uk_universal_credit.two_child_limit_status: not_receiving_child_element
+        constraints:
+          - variable: uk_universal_credit.two_child_limit_status
+            operator: "=="
+            value: not_receiving_child_element
+            label: Two-child-limit child element status
+        expected_row_header_column: A
+        expected_row_header: Not receiving a child element
+    measures:
+      - measure_id: households
+        label: Universal Credit households affected by the Two Child Limit policy
+        ordinal: 0
+        column: B
+        expected_column_header_row: 8
+        expected_column_header: Universal Credit households affected by the Two Child Limit policy
+        concept: uk_universal_credit.two_child_limit_households
+        source_concept: dwp.universal_credit_households_affected_by_two_child_limit_policy
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dwp_uc_two_child_limit.cy{year}.not_receiving_child_element_summary.children_within_households
+    record_set_spec_id: dwp_uc_two_child_limit.not_receiving_child_element_summary.children_within_households.v1
+    source_record_id_prefix: dwp_uc_two_child_limit.cy{year}.not_receiving_child_element_summary.children_within_households
+    sheet_name: '01'
+    period_type: calendar_year
+    period: '{year}'
+    geography_id: GBR
+    geography_level: country
+    geography_name: Great Britain
+    geography_vintage: current
+    entity: person
+    entity_role: child_in_universal_credit_household
+    domain: uk_universal_credit_two_child_limit
+    groupby_dimension: uk_universal_credit.two_child_limit_status
+    rows:
+      - value_id: not_receiving_child_element
+        label: Not receiving a child element
+        ordinal: 0
+        row_number: 11
+        filters:
+          uk_universal_credit.two_child_limit_status: not_receiving_child_element
+        constraints:
+          - variable: uk_universal_credit.two_child_limit_status
+            operator: "=="
+            value: not_receiving_child_element
+            label: Two-child-limit child element status
+        expected_row_header_column: A
+        expected_row_header: Not receiving a child element
+    measures:
+      - measure_id: children_within_households
+        label: Children within Universal Credit households affected by the Two Child Limit policy
+        ordinal: 0
+        column: C
+        expected_column_header_row: 8
+        expected_column_header: Children within Universal Credit households affected by the Two Child Limit policy
+        concept: uk_universal_credit.two_child_limit_children_within_households
+        source_concept: dwp.children_within_universal_credit_households_affected_by_two_child_limit_policy
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dwp_uc_two_child_limit.cy{year}.not_receiving_child_element_summary.affected_children
+    record_set_spec_id: dwp_uc_two_child_limit.not_receiving_child_element_summary.affected_children.v1
+    source_record_id_prefix: dwp_uc_two_child_limit.cy{year}.not_receiving_child_element_summary.affected_children
+    sheet_name: '01'
+    period_type: calendar_year
+    period: '{year}'
+    geography_id: GBR
+    geography_level: country
+    geography_name: Great Britain
+    geography_vintage: current
+    entity: person
+    entity_role: child_affected_by_two_child_limit
+    domain: uk_universal_credit_two_child_limit
+    groupby_dimension: uk_universal_credit.two_child_limit_status
+    rows:
+      - value_id: not_receiving_child_element
+        label: Not receiving a child element
+        ordinal: 0
+        row_number: 11
+        filters:
+          uk_universal_credit.two_child_limit_status: not_receiving_child_element
+        constraints:
+          - variable: uk_universal_credit.two_child_limit_status
+            operator: "=="
+            value: not_receiving_child_element
+            label: Two-child-limit child element status
+        expected_row_header_column: A
+        expected_row_header: Not receiving a child element
+    measures:
+      - measure_id: affected_children
+        label: Children affected by the Two Child Limit policy
+        ordinal: 0
+        column: D
+        expected_column_header_row: 8
+        expected_column_header: Children affected by the Two Child Limit policy
+        concept: uk_universal_credit.two_child_limit_affected_children
+        source_concept: dwp.children_affected_by_two_child_limit_policy
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dwp_uc_two_child_limit.cy{year}.not_receiving_by_child_count.households
+    record_set_spec_id: dwp_uc_two_child_limit.not_receiving_by_child_count.households.v1
+    source_record_id_prefix: dwp_uc_two_child_limit.cy{year}.not_receiving_by_child_count.households
+    sheet_name: 03A
+    period_type: calendar_year
+    period: '{year}'
+    geography_id: GBR
+    geography_level: country
+    geography_name: Great Britain
+    geography_vintage: current
+    entity: household
+    entity_role: universal_credit_household
+    domain: uk_universal_credit_two_child_limit
+    groupby_dimension: uk_universal_credit.two_child_limit_status
+    rows:
+      - value_id: not_receiving_child_element
+        label: Not receiving a child element
+        ordinal: 0
+        row_number: 11
+        filters:
+          uk_universal_credit.two_child_limit_status: not_receiving_child_element
+        constraints:
+          - variable: uk_universal_credit.two_child_limit_status
+            operator: "=="
+            value: not_receiving_child_element
+            label: Two-child-limit child element status
+        expected_row_header_column: A
+        expected_row_header: Not receiving a child element
+    measures:
+      - measure_id: households_3_children
+        label: UC households with 3 children
+        ordinal: 0
+        column: B
+        expected_column_header_row: 8
+        expected_column_header: 3 children in household
+        concept: uk_universal_credit.two_child_limit_households
+        source_concept: dwp.universal_credit_households_affected_by_two_child_limit_policy_by_children_in_household
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_household.dependent_child_count_category: 3
+        constraints:
+          - variable: uk_household.dependent_child_count_category
+            operator: "=="
+            value: 3
+            label: Dependent children in household
+      - measure_id: households_4_children
+        label: UC households with 4 children
+        ordinal: 1
+        column: C
+        expected_column_header_row: 8
+        expected_column_header: 4 children in household
+        concept: uk_universal_credit.two_child_limit_households
+        source_concept: dwp.universal_credit_households_affected_by_two_child_limit_policy_by_children_in_household
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_household.dependent_child_count_category: 4
+        constraints:
+          - variable: uk_household.dependent_child_count_category
+            operator: "=="
+            value: 4
+            label: Dependent children in household
+      - measure_id: households_5_children
+        label: UC households with 5 children
+        ordinal: 2
+        column: D
+        expected_column_header_row: 8
+        expected_column_header: 5 children in household
+        concept: uk_universal_credit.two_child_limit_households
+        source_concept: dwp.universal_credit_households_affected_by_two_child_limit_policy_by_children_in_household
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_household.dependent_child_count_category: 5
+        constraints:
+          - variable: uk_household.dependent_child_count_category
+            operator: "=="
+            value: 5
+            label: Dependent children in household
+      - measure_id: households_6_plus_children
+        label: UC households with 6 or more children
+        ordinal: 3
+        column: E
+        expected_column_header_row: 8
+        expected_column_header: 6 or more children in household
+        concept: uk_universal_credit.two_child_limit_households
+        source_concept: dwp.universal_credit_households_affected_by_two_child_limit_policy_by_children_in_household
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_household.dependent_child_count_category: 6_plus
+        constraints:
+          - variable: uk_household.dependent_child_count_category
+            operator: "=="
+            value: 6_plus
+            label: Dependent children in household
+  - record_set_id: dwp_uc_two_child_limit.cy{year}.not_receiving_by_child_count.children_within_households
+    record_set_spec_id: dwp_uc_two_child_limit.not_receiving_by_child_count.children_within_households.v1
+    source_record_id_prefix: dwp_uc_two_child_limit.cy{year}.not_receiving_by_child_count.children_within_households
+    sheet_name: 03B
+    period_type: calendar_year
+    period: '{year}'
+    geography_id: GBR
+    geography_level: country
+    geography_name: Great Britain
+    geography_vintage: current
+    entity: person
+    entity_role: child_in_universal_credit_household
+    domain: uk_universal_credit_two_child_limit
+    groupby_dimension: uk_universal_credit.two_child_limit_status
+    rows:
+      - value_id: not_receiving_child_element
+        label: Not receiving a child element
+        ordinal: 0
+        row_number: 11
+        filters:
+          uk_universal_credit.two_child_limit_status: not_receiving_child_element
+        constraints:
+          - variable: uk_universal_credit.two_child_limit_status
+            operator: "=="
+            value: not_receiving_child_element
+            label: Two-child-limit child element status
+        expected_row_header_column: A
+        expected_row_header: Not receiving a child element
+    measures:
+      - measure_id: children_within_households_3_children
+        label: Children in UC households with 3 children
+        ordinal: 0
+        column: B
+        expected_column_header_row: 8
+        expected_column_header: 3 children in household
+        concept: uk_universal_credit.two_child_limit_children_within_households
+        source_concept: dwp.children_within_universal_credit_households_affected_by_two_child_limit_policy_by_children_in_household
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_household.dependent_child_count_category: 3
+        constraints:
+          - variable: uk_household.dependent_child_count_category
+            operator: "=="
+            value: 3
+            label: Dependent children in household
+      - measure_id: children_within_households_4_children
+        label: Children in UC households with 4 children
+        ordinal: 1
+        column: C
+        expected_column_header_row: 8
+        expected_column_header: 4 children in household
+        concept: uk_universal_credit.two_child_limit_children_within_households
+        source_concept: dwp.children_within_universal_credit_households_affected_by_two_child_limit_policy_by_children_in_household
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_household.dependent_child_count_category: 4
+        constraints:
+          - variable: uk_household.dependent_child_count_category
+            operator: "=="
+            value: 4
+            label: Dependent children in household
+      - measure_id: children_within_households_5_children
+        label: Children in UC households with 5 children
+        ordinal: 2
+        column: D
+        expected_column_header_row: 8
+        expected_column_header: 5 children in household
+        concept: uk_universal_credit.two_child_limit_children_within_households
+        source_concept: dwp.children_within_universal_credit_households_affected_by_two_child_limit_policy_by_children_in_household
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_household.dependent_child_count_category: 5
+        constraints:
+          - variable: uk_household.dependent_child_count_category
+            operator: "=="
+            value: 5
+            label: Dependent children in household
+      - measure_id: children_within_households_6_plus_children
+        label: Children in UC households with 6 or more children
+        ordinal: 3
+        column: E
+        expected_column_header_row: 8
+        expected_column_header: 6 or more children in household
+        concept: uk_universal_credit.two_child_limit_children_within_households
+        source_concept: dwp.children_within_universal_credit_households_affected_by_two_child_limit_policy_by_children_in_household
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_household.dependent_child_count_category: 6_plus
+        constraints:
+          - variable: uk_household.dependent_child_count_category
+            operator: "=="
+            value: 6_plus
+            label: Dependent children in household
+  - record_set_id: dwp_uc_two_child_limit.cy{year}.not_receiving_by_child_count.affected_children
+    record_set_spec_id: dwp_uc_two_child_limit.not_receiving_by_child_count.affected_children.v1
+    source_record_id_prefix: dwp_uc_two_child_limit.cy{year}.not_receiving_by_child_count.affected_children
+    sheet_name: 03C
+    period_type: calendar_year
+    period: '{year}'
+    geography_id: GBR
+    geography_level: country
+    geography_name: Great Britain
+    geography_vintage: current
+    entity: person
+    entity_role: child_affected_by_two_child_limit
+    domain: uk_universal_credit_two_child_limit
+    groupby_dimension: uk_universal_credit.two_child_limit_status
+    rows:
+      - value_id: not_receiving_child_element
+        label: Not receiving a child element
+        ordinal: 0
+        row_number: 11
+        filters:
+          uk_universal_credit.two_child_limit_status: not_receiving_child_element
+        constraints:
+          - variable: uk_universal_credit.two_child_limit_status
+            operator: "=="
+            value: not_receiving_child_element
+            label: Two-child-limit child element status
+        expected_row_header_column: A
+        expected_row_header: Not receiving a child element
+    measures:
+      - measure_id: affected_children_3_children
+        label: Affected children in UC households with 3 children
+        ordinal: 0
+        column: B
+        expected_column_header_row: 8
+        expected_column_header: 3 children in household
+        concept: uk_universal_credit.two_child_limit_affected_children
+        source_concept: dwp.children_affected_by_two_child_limit_policy_by_children_in_household
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_household.dependent_child_count_category: 3
+        constraints:
+          - variable: uk_household.dependent_child_count_category
+            operator: "=="
+            value: 3
+            label: Dependent children in household
+      - measure_id: affected_children_4_children
+        label: Affected children in UC households with 4 children
+        ordinal: 1
+        column: C
+        expected_column_header_row: 8
+        expected_column_header: 4 children in household
+        concept: uk_universal_credit.two_child_limit_affected_children
+        source_concept: dwp.children_affected_by_two_child_limit_policy_by_children_in_household
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_household.dependent_child_count_category: 4
+        constraints:
+          - variable: uk_household.dependent_child_count_category
+            operator: "=="
+            value: 4
+            label: Dependent children in household
+      - measure_id: affected_children_5_children
+        label: Affected children in UC households with 5 children
+        ordinal: 2
+        column: D
+        expected_column_header_row: 8
+        expected_column_header: 5 children in household
+        concept: uk_universal_credit.two_child_limit_affected_children
+        source_concept: dwp.children_affected_by_two_child_limit_policy_by_children_in_household
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_household.dependent_child_count_category: 5
+        constraints:
+          - variable: uk_household.dependent_child_count_category
+            operator: "=="
+            value: 5
+            label: Dependent children in household
+      - measure_id: affected_children_6_plus_children
+        label: Affected children in UC households with 6 or more children
+        ordinal: 3
+        column: E
+        expected_column_header_row: 8
+        expected_column_header: 6 or more children in household
+        concept: uk_universal_credit.two_child_limit_affected_children
+        source_concept: dwp.children_affected_by_two_child_limit_policy_by_children_in_household
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_household.dependent_child_count_category: 6_plus
+        constraints:
+          - variable: uk_household.dependent_child_count_category
+            operator: "=="
+            value: 6_plus
+            label: Dependent children in household
+  - record_set_id: dwp_uc_two_child_limit.cy{year}.not_receiving_by_health_disability.households
+    record_set_spec_id: dwp_uc_two_child_limit.not_receiving_by_health_disability.households.v1
+    source_record_id_prefix: dwp_uc_two_child_limit.cy{year}.not_receiving_by_health_disability.households
+    sheet_name: 04A
+    period_type: calendar_year
+    period: '{year}'
+    geography_id: GBR
+    geography_level: country
+    geography_name: Great Britain
+    geography_vintage: current
+    entity: household
+    entity_role: universal_credit_household
+    domain: uk_universal_credit_two_child_limit
+    groupby_dimension: uk_universal_credit.two_child_limit_status
+    rows:
+      - value_id: not_receiving_child_element
+        label: Not receiving a child element
+        ordinal: 0
+        row_number: 11
+        filters:
+          uk_universal_credit.two_child_limit_status: not_receiving_child_element
+        constraints:
+          - variable: uk_universal_credit.two_child_limit_status
+            operator: "=="
+            value: not_receiving_child_element
+            label: Two-child-limit child element status
+        expected_row_header_column: A
+        expected_row_header: Not receiving a child element
+    measures:
+      - measure_id: any_health_disability_entitlement
+        label: UC households receiving any health or disability entitlement
+        ordinal: 0
+        column: B
+        expected_column_header_row: 8
+        expected_column_header: "Household recieves any of the following:"
+        concept: uk_universal_credit.two_child_limit_households
+        source_concept: dwp.universal_credit_households_affected_by_two_child_limit_policy_by_health_disability_entitlement
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.health_disability_entitlement: any_health_disability
+        constraints:
+          - variable: uk_universal_credit.health_disability_entitlement
+            operator: "=="
+            value: any_health_disability
+            label: Health or disability entitlement
+      - measure_id: health_or_lcwra_element
+        label: UC households with health or LCWRA element
+        ordinal: 1
+        column: C
+        expected_column_header_row: 8
+        expected_column_header: Health (or limited capability for work or work related activity LCWRA) element of UC
+        concept: uk_universal_credit.two_child_limit_households
+        source_concept: dwp.universal_credit_households_affected_by_two_child_limit_policy_by_health_disability_entitlement
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.health_disability_entitlement: health_or_lcwra_element
+        constraints:
+          - variable: uk_universal_credit.health_disability_entitlement
+            operator: "=="
+            value: health_or_lcwra_element
+            label: Health or disability entitlement
+      - measure_id: claimant_dla
+        label: UC households with claimant DLA
+        ordinal: 2
+        column: D
+        expected_column_header_row: 8
+        expected_column_header: Claimant with Disability Living Allowance (DLA)
+        concept: uk_universal_credit.two_child_limit_households
+        source_concept: dwp.universal_credit_households_affected_by_two_child_limit_policy_by_health_disability_entitlement
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.health_disability_entitlement: claimant_dla
+        constraints:
+          - variable: uk_universal_credit.health_disability_entitlement
+            operator: "=="
+            value: claimant_dla
+            label: Health or disability entitlement
+      - measure_id: claimant_pip
+        label: UC households with claimant PIP
+        ordinal: 3
+        column: E
+        expected_column_header_row: 8
+        expected_column_header: Claimant with Personal Independence Payment (PIP)
+        concept: uk_universal_credit.two_child_limit_households
+        source_concept: dwp.universal_credit_households_affected_by_two_child_limit_policy_by_health_disability_entitlement
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.health_disability_entitlement: claimant_pip
+        constraints:
+          - variable: uk_universal_credit.health_disability_entitlement
+            operator: "=="
+            value: claimant_pip
+            label: Health or disability entitlement
+      - measure_id: disabled_child_element
+        label: UC households with disabled child element
+        ordinal: 4
+        column: F
+        expected_column_header_row: 8
+        expected_column_header: Disabled Child Element of UC
+        concept: uk_universal_credit.two_child_limit_households
+        source_concept: dwp.universal_credit_households_affected_by_two_child_limit_policy_by_health_disability_entitlement
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.health_disability_entitlement: disabled_child_element
+        constraints:
+          - variable: uk_universal_credit.health_disability_entitlement
+            operator: "=="
+            value: disabled_child_element
+            label: Health or disability entitlement
+      - measure_id: child_dla_pip_or_blind
+        label: UC households with child DLA, PIP, or blind status
+        ordinal: 5
+        column: G
+        expected_column_header_row: 8
+        expected_column_header: Household with child with DLA, with PIP, or is blind
+        concept: uk_universal_credit.two_child_limit_households
+        source_concept: dwp.universal_credit_households_affected_by_two_child_limit_policy_by_health_disability_entitlement
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.health_disability_entitlement: child_dla_pip_or_blind
+        constraints:
+          - variable: uk_universal_credit.health_disability_entitlement
+            operator: "=="
+            value: child_dla_pip_or_blind
+            label: Health or disability entitlement
+      - measure_id: child_dla
+        label: UC households with child DLA
+        ordinal: 6
+        column: H
+        expected_column_header_row: 8
+        expected_column_header: Household with child with Disability Living Allowance (DLA)
+        concept: uk_universal_credit.two_child_limit_households
+        source_concept: dwp.universal_credit_households_affected_by_two_child_limit_policy_by_health_disability_entitlement
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.health_disability_entitlement: child_dla
+        constraints:
+          - variable: uk_universal_credit.health_disability_entitlement
+            operator: "=="
+            value: child_dla
+            label: Health or disability entitlement
+      - measure_id: child_pip
+        label: UC households with child PIP
+        ordinal: 7
+        column: I
+        expected_column_header_row: 8
+        expected_column_header: Household with child with Personal Independence Payment (PIP)
+        concept: uk_universal_credit.two_child_limit_households
+        source_concept: dwp.universal_credit_households_affected_by_two_child_limit_policy_by_health_disability_entitlement
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.health_disability_entitlement: child_pip
+        constraints:
+          - variable: uk_universal_credit.health_disability_entitlement
+            operator: "=="
+            value: child_pip
+            label: Health or disability entitlement
+      - measure_id: blind_child
+        label: UC households with blind child
+        ordinal: 8
+        column: J
+        expected_column_header_row: 8
+        expected_column_header: Household with blind child
+        concept: uk_universal_credit.two_child_limit_households
+        source_concept: dwp.universal_credit_households_affected_by_two_child_limit_policy_by_health_disability_entitlement
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.health_disability_entitlement: blind_child
+        constraints:
+          - variable: uk_universal_credit.health_disability_entitlement
+            operator: "=="
+            value: blind_child
+            label: Health or disability entitlement
+  - record_set_id: dwp_uc_two_child_limit.cy{year}.not_receiving_by_health_disability.children_within_households
+    record_set_spec_id: dwp_uc_two_child_limit.not_receiving_by_health_disability.children_within_households.v1
+    source_record_id_prefix: dwp_uc_two_child_limit.cy{year}.not_receiving_by_health_disability.children_within_households
+    sheet_name: 04B
+    period_type: calendar_year
+    period: '{year}'
+    geography_id: GBR
+    geography_level: country
+    geography_name: Great Britain
+    geography_vintage: current
+    entity: person
+    entity_role: child_in_universal_credit_household
+    domain: uk_universal_credit_two_child_limit
+    groupby_dimension: uk_universal_credit.two_child_limit_status
+    rows:
+      - value_id: not_receiving_child_element
+        label: Not receiving a child element
+        ordinal: 0
+        row_number: 11
+        filters:
+          uk_universal_credit.two_child_limit_status: not_receiving_child_element
+        constraints:
+          - variable: uk_universal_credit.two_child_limit_status
+            operator: "=="
+            value: not_receiving_child_element
+            label: Two-child-limit child element status
+        expected_row_header_column: A
+        expected_row_header: Not receiving a child element
+    measures:
+      - measure_id: any_health_disability_entitlement
+        label: Children in UC households with any health or disability entitlement
+        ordinal: 0
+        column: B
+        expected_column_header_row: 8
+        expected_column_header: "Household recieves any of the following:"
+        concept: uk_universal_credit.two_child_limit_children_within_households
+        source_concept: dwp.children_within_universal_credit_households_affected_by_two_child_limit_policy_by_health_disability_entitlement
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.health_disability_entitlement: any_health_disability
+        constraints:
+          - variable: uk_universal_credit.health_disability_entitlement
+            operator: "=="
+            value: any_health_disability
+            label: Health or disability entitlement
+      - measure_id: health_or_lcwra_element
+        label: Children in UC households with health or LCWRA element
+        ordinal: 1
+        column: C
+        expected_column_header_row: 8
+        expected_column_header: Health (or limited capability for work or work related activity LCWRA) element of UC
+        concept: uk_universal_credit.two_child_limit_children_within_households
+        source_concept: dwp.children_within_universal_credit_households_affected_by_two_child_limit_policy_by_health_disability_entitlement
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.health_disability_entitlement: health_or_lcwra_element
+        constraints:
+          - variable: uk_universal_credit.health_disability_entitlement
+            operator: "=="
+            value: health_or_lcwra_element
+            label: Health or disability entitlement
+      - measure_id: claimant_dla
+        label: Children in UC households with claimant DLA
+        ordinal: 2
+        column: D
+        expected_column_header_row: 8
+        expected_column_header: Claimant with Disability Living Allowance (DLA)
+        concept: uk_universal_credit.two_child_limit_children_within_households
+        source_concept: dwp.children_within_universal_credit_households_affected_by_two_child_limit_policy_by_health_disability_entitlement
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.health_disability_entitlement: claimant_dla
+        constraints:
+          - variable: uk_universal_credit.health_disability_entitlement
+            operator: "=="
+            value: claimant_dla
+            label: Health or disability entitlement
+      - measure_id: claimant_pip
+        label: Children in UC households with claimant PIP
+        ordinal: 3
+        column: E
+        expected_column_header_row: 8
+        expected_column_header: Claimant with Personal Independence Payment (PIP)
+        concept: uk_universal_credit.two_child_limit_children_within_households
+        source_concept: dwp.children_within_universal_credit_households_affected_by_two_child_limit_policy_by_health_disability_entitlement
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.health_disability_entitlement: claimant_pip
+        constraints:
+          - variable: uk_universal_credit.health_disability_entitlement
+            operator: "=="
+            value: claimant_pip
+            label: Health or disability entitlement
+      - measure_id: disabled_child_element
+        label: Children in UC households with disabled child element
+        ordinal: 4
+        column: F
+        expected_column_header_row: 8
+        expected_column_header: Disabled Child Element of UC
+        concept: uk_universal_credit.two_child_limit_children_within_households
+        source_concept: dwp.children_within_universal_credit_households_affected_by_two_child_limit_policy_by_health_disability_entitlement
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.health_disability_entitlement: disabled_child_element
+        constraints:
+          - variable: uk_universal_credit.health_disability_entitlement
+            operator: "=="
+            value: disabled_child_element
+            label: Health or disability entitlement
+      - measure_id: child_dla_pip_or_blind
+        label: Children in UC households with child DLA, PIP, or blind status
+        ordinal: 5
+        column: G
+        expected_column_header_row: 8
+        expected_column_header: Household with child with DLA, with PIP, or is blind
+        concept: uk_universal_credit.two_child_limit_children_within_households
+        source_concept: dwp.children_within_universal_credit_households_affected_by_two_child_limit_policy_by_health_disability_entitlement
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.health_disability_entitlement: child_dla_pip_or_blind
+        constraints:
+          - variable: uk_universal_credit.health_disability_entitlement
+            operator: "=="
+            value: child_dla_pip_or_blind
+            label: Health or disability entitlement
+      - measure_id: child_dla
+        label: Children in UC households with child DLA
+        ordinal: 6
+        column: H
+        expected_column_header_row: 8
+        expected_column_header: Household with child with Disability Living Allowance (DLA)
+        concept: uk_universal_credit.two_child_limit_children_within_households
+        source_concept: dwp.children_within_universal_credit_households_affected_by_two_child_limit_policy_by_health_disability_entitlement
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.health_disability_entitlement: child_dla
+        constraints:
+          - variable: uk_universal_credit.health_disability_entitlement
+            operator: "=="
+            value: child_dla
+            label: Health or disability entitlement
+      - measure_id: child_pip
+        label: Children in UC households with child PIP
+        ordinal: 7
+        column: I
+        expected_column_header_row: 8
+        expected_column_header: Household with child with Personal Independence Payment (PIP)
+        concept: uk_universal_credit.two_child_limit_children_within_households
+        source_concept: dwp.children_within_universal_credit_households_affected_by_two_child_limit_policy_by_health_disability_entitlement
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.health_disability_entitlement: child_pip
+        constraints:
+          - variable: uk_universal_credit.health_disability_entitlement
+            operator: "=="
+            value: child_pip
+            label: Health or disability entitlement
+      - measure_id: blind_child
+        label: Children in UC households with blind child
+        ordinal: 8
+        column: J
+        expected_column_header_row: 8
+        expected_column_header: Household with blind child
+        concept: uk_universal_credit.two_child_limit_children_within_households
+        source_concept: dwp.children_within_universal_credit_households_affected_by_two_child_limit_policy_by_health_disability_entitlement
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.health_disability_entitlement: blind_child
+        constraints:
+          - variable: uk_universal_credit.health_disability_entitlement
+            operator: "=="
+            value: blind_child
+            label: Health or disability entitlement
+  - record_set_id: dwp_uc_two_child_limit.cy{year}.not_receiving_by_health_disability.affected_children
+    record_set_spec_id: dwp_uc_two_child_limit.not_receiving_by_health_disability.affected_children.v1
+    source_record_id_prefix: dwp_uc_two_child_limit.cy{year}.not_receiving_by_health_disability.affected_children
+    sheet_name: 04C
+    period_type: calendar_year
+    period: '{year}'
+    geography_id: GBR
+    geography_level: country
+    geography_name: Great Britain
+    geography_vintage: current
+    entity: person
+    entity_role: child_affected_by_two_child_limit
+    domain: uk_universal_credit_two_child_limit
+    groupby_dimension: uk_universal_credit.two_child_limit_status
+    rows:
+      - value_id: not_receiving_child_element
+        label: Not receiving a child element
+        ordinal: 0
+        row_number: 11
+        filters:
+          uk_universal_credit.two_child_limit_status: not_receiving_child_element
+        constraints:
+          - variable: uk_universal_credit.two_child_limit_status
+            operator: "=="
+            value: not_receiving_child_element
+            label: Two-child-limit child element status
+        expected_row_header_column: A
+        expected_row_header: Not receiving a child element
+    measures:
+      - measure_id: any_health_disability_entitlement
+        label: Affected children in UC households with any health or disability entitlement
+        ordinal: 0
+        column: B
+        expected_column_header_row: 8
+        expected_column_header: "Household recieves any of the following:"
+        concept: uk_universal_credit.two_child_limit_affected_children
+        source_concept: dwp.children_affected_by_two_child_limit_policy_by_health_disability_entitlement
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.health_disability_entitlement: any_health_disability
+        constraints:
+          - variable: uk_universal_credit.health_disability_entitlement
+            operator: "=="
+            value: any_health_disability
+            label: Health or disability entitlement
+      - measure_id: health_or_lcwra_element
+        label: Affected children in UC households with health or LCWRA element
+        ordinal: 1
+        column: C
+        expected_column_header_row: 8
+        expected_column_header: Health (or limited capability for work or work related activity LCWRA) element of UC
+        concept: uk_universal_credit.two_child_limit_affected_children
+        source_concept: dwp.children_affected_by_two_child_limit_policy_by_health_disability_entitlement
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.health_disability_entitlement: health_or_lcwra_element
+        constraints:
+          - variable: uk_universal_credit.health_disability_entitlement
+            operator: "=="
+            value: health_or_lcwra_element
+            label: Health or disability entitlement
+      - measure_id: claimant_dla
+        label: Affected children in UC households with claimant DLA
+        ordinal: 2
+        column: D
+        expected_column_header_row: 8
+        expected_column_header: Claimant with Disability Living Allowance (DLA)
+        concept: uk_universal_credit.two_child_limit_affected_children
+        source_concept: dwp.children_affected_by_two_child_limit_policy_by_health_disability_entitlement
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.health_disability_entitlement: claimant_dla
+        constraints:
+          - variable: uk_universal_credit.health_disability_entitlement
+            operator: "=="
+            value: claimant_dla
+            label: Health or disability entitlement
+      - measure_id: claimant_pip
+        label: Affected children in UC households with claimant PIP
+        ordinal: 3
+        column: E
+        expected_column_header_row: 8
+        expected_column_header: Claimant with Personal Independence Payment (PIP)
+        concept: uk_universal_credit.two_child_limit_affected_children
+        source_concept: dwp.children_affected_by_two_child_limit_policy_by_health_disability_entitlement
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.health_disability_entitlement: claimant_pip
+        constraints:
+          - variable: uk_universal_credit.health_disability_entitlement
+            operator: "=="
+            value: claimant_pip
+            label: Health or disability entitlement
+      - measure_id: disabled_child_element
+        label: Affected children in UC households with disabled child element
+        ordinal: 4
+        column: F
+        expected_column_header_row: 8
+        expected_column_header: Disabled Child Element of UC
+        concept: uk_universal_credit.two_child_limit_affected_children
+        source_concept: dwp.children_affected_by_two_child_limit_policy_by_health_disability_entitlement
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.health_disability_entitlement: disabled_child_element
+        constraints:
+          - variable: uk_universal_credit.health_disability_entitlement
+            operator: "=="
+            value: disabled_child_element
+            label: Health or disability entitlement
+      - measure_id: child_dla_pip_or_blind
+        label: Affected children in UC households with child DLA, PIP, or blind status
+        ordinal: 5
+        column: G
+        expected_column_header_row: 8
+        expected_column_header: Household with child with DLA, with PIP, or is blind
+        concept: uk_universal_credit.two_child_limit_affected_children
+        source_concept: dwp.children_affected_by_two_child_limit_policy_by_health_disability_entitlement
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.health_disability_entitlement: child_dla_pip_or_blind
+        constraints:
+          - variable: uk_universal_credit.health_disability_entitlement
+            operator: "=="
+            value: child_dla_pip_or_blind
+            label: Health or disability entitlement
+      - measure_id: child_dla
+        label: Affected children in UC households with child DLA
+        ordinal: 6
+        column: H
+        expected_column_header_row: 8
+        expected_column_header: Household with child with Disability Living Allowance (DLA)
+        concept: uk_universal_credit.two_child_limit_affected_children
+        source_concept: dwp.children_affected_by_two_child_limit_policy_by_health_disability_entitlement
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.health_disability_entitlement: child_dla
+        constraints:
+          - variable: uk_universal_credit.health_disability_entitlement
+            operator: "=="
+            value: child_dla
+            label: Health or disability entitlement
+      - measure_id: child_pip
+        label: Affected children in UC households with child PIP
+        ordinal: 7
+        column: I
+        expected_column_header_row: 8
+        expected_column_header: Household with child with Personal Independence Payment (PIP)
+        concept: uk_universal_credit.two_child_limit_affected_children
+        source_concept: dwp.children_affected_by_two_child_limit_policy_by_health_disability_entitlement
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.health_disability_entitlement: child_pip
+        constraints:
+          - variable: uk_universal_credit.health_disability_entitlement
+            operator: "=="
+            value: child_pip
+            label: Health or disability entitlement
+      - measure_id: blind_child
+        label: Affected children in UC households with blind child
+        ordinal: 8
+        column: J
+        expected_column_header_row: 8
+        expected_column_header: Household with blind child
+        concept: uk_universal_credit.two_child_limit_affected_children
+        source_concept: dwp.children_affected_by_two_child_limit_policy_by_health_disability_entitlement
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.health_disability_entitlement: blind_child
+        constraints:
+          - variable: uk_universal_credit.health_disability_entitlement
+            operator: "=="
+            value: blind_child
+            label: Health or disability entitlement

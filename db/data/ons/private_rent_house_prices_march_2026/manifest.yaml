@@ -1,0 +1,18 @@
+source_id: ons
+package_id: ons-private-rent-house-prices-march-2026
+dataset: private_rent_house_prices_march_2026
+source_page: https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/privaterentandhousepricesuk/march2026
+table: Private rent and house prices UK March 2026
+files:
+  2026:
+    filename: ons_private_rent_house_prices_march_2026.html
+    source_url: https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/privaterentandhousepricesuk/march2026
+    sha256: 7b3f718128f3350243058bc4c4e8503f09ea19e2a644a7626a67e78a68663170
+    size_bytes: 90756
+    fetched_at: '2026-05-11T14:39:02+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/ons/ons-private-rent-house-prices-march-2026/2026/7b3f718128f3350243058bc4c4e8503f09ea19e2a644a7626a67e78a68663170/ons_private_rent_house_prices_march_2026.html
+        uri: r2://arch-raw/raw/ons/ons-private-rent-house-prices-march-2026/2026/7b3f718128f3350243058bc4c4e8503f09ea19e2a644a7626a67e78a68663170/ons_private_rent_house_prices_march_2026.html

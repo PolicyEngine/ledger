@@ -1,0 +1,18 @@
+source_id: ons
+package_id: ons-households-by-type-2025
+dataset: ons_ons-households-by-type-2025
+source_page: https://www.ons.gov.uk/file?uri=%2Fpeoplepopulationandcommunity%2Fbirthsdeathsandmarriages%2Ffamilies%2Fdatasets%2Fhouseholdsbytypeofhouseholdandfamilyregionsofenglandandgbconstituentcountries%2F2025%2Fhouseholdsbyregionscountries2025.xlsx
+table: ons-households-by-type-2025
+files:
+  2025:
+    filename: householdsbyregionscountries2025.xlsx
+    source_url: https://www.ons.gov.uk/file?uri=%2Fpeoplepopulationandcommunity%2Fbirthsdeathsandmarriages%2Ffamilies%2Fdatasets%2Fhouseholdsbytypeofhouseholdandfamilyregionsofenglandandgbconstituentcountries%2F2025%2Fhouseholdsbyregionscountries2025.xlsx
+    sha256: 42073679190e7e93f56b1cd9b03d53125060c017e795a07d2c8fbb4887b96a10
+    size_bytes: 249435
+    fetched_at: '2026-05-11T02:31:23+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/ons/ons-households-by-type-2025/2025/42073679190e7e93f56b1cd9b03d53125060c017e795a07d2c8fbb4887b96a10/householdsbyregionscountries2025.xlsx
+        uri: r2://arch-raw/raw/ons/ons-households-by-type-2025/2025/42073679190e7e93f56b1cd9b03d53125060c017e795a07d2c8fbb4887b96a10/householdsbyregionscountries2025.xlsx

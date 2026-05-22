@@ -1,0 +1,18 @@
+source_id: slc
+package_id: slc-student-support-england-2025
+dataset: slc_student_support_england_2025
+source_page: https://www.gov.uk/government/statistics/student-support-for-higher-education-in-england-2025
+table: Student support for higher education in England 2025
+files:
+  2025:
+    filename: slcsp052025.xlsx
+    source_url: https://assets.publishing.service.gov.uk/media/691d9e662c6b98ecdbc5003f/slcsp052025.xlsx
+    sha256: 42c6f0572b4cf3c5e08387968315a72f34a1188c3a0f73412e42c430f4450708
+    size_bytes: 257419
+    fetched_at: '2026-05-10T14:07:42+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/slc/slc-student-support-england-2025/2025/42c6f0572b4cf3c5e08387968315a72f34a1188c3a0f73412e42c430f4450708/slcsp052025.xlsx
+        uri: r2://arch-raw/raw/slc/slc-student-support-england-2025/2025/42c6f0572b4cf3c5e08387968315a72f34a1188c3a0f73412e42c430f4450708/slcsp052025.xlsx

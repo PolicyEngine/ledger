@@ -1,0 +1,85 @@
+schema_version: arch.source_package.v1
+package_id: dft-nts-household-car-availability-2024
+label: DfT National Travel Survey household car availability 2024
+artifact:
+  source_name: dft
+  source_table: NTS 2024 household car availability and trends in car trips
+  resource_package: db
+  resource_directory: data/dft/nts_household_car_availability_2024
+  manifest: manifest.yaml
+  vintage: national_travel_survey_2024
+  extracted_at: '2026-05-11'
+  extraction_method: HTML numeric document text parse from official GOV.UK publication page
+  parser: html_tables_and_text
+  artifact_year: 2024
+record_sets:
+  - record_set_id: dft_nts.cy2024.household_car_availability
+    record_set_spec_id: dft_nts.household_car_availability.v1
+    source_record_id_prefix: dft_nts.cy2024.household_car_availability
+    sheet_name: document_numbers
+    period_type: calendar_year
+    period: 2024
+    geography_id: E92000001
+    geography_level: country
+    geography_name: England
+    geography_vintage: current
+    entity: household
+    entity_role: private_household
+    domain: household_transport
+    groupby_dimension: household.vehicle_availability
+    rows:
+      - value_id: no_car_or_van
+        label: No car or van
+        ordinal: 0
+        row_number: 13
+        constraints:
+          - variable: household.car_or_van_count
+            operator: ==
+            value: 0
+            unit: vehicles
+            label: Household cars or vans
+        expected_row_header_column: C
+        expected_row_header: Around a third (34%) of households had two or more cars in 2024, 44% one car and 22% no cars.
+        table_record_kind: detail
+      - value_id: one_car_or_van
+        label: One car or van
+        ordinal: 1
+        row_number: 12
+        constraints:
+          - variable: household.car_or_van_count
+            operator: ==
+            value: 1
+            unit: vehicles
+            label: Household cars or vans
+        expected_row_header_column: C
+        expected_row_header: Around a third (34%) of households had two or more cars in 2024, 44% one car and 22% no cars.
+        table_record_kind: detail
+      - value_id: two_or_more_cars_or_vans
+        label: Two or more cars or vans
+        ordinal: 2
+        row_number: 10
+        constraints:
+          - variable: household.car_or_van_count
+            operator: '>='
+            value: 2
+            unit: vehicles
+            label: Household cars or vans
+        expected_row_header_column: C
+        expected_row_header: Around a third (34%) of households had two or more cars in 2024, 44% one car and 22% no cars.
+        table_record_kind: detail
+    measures:
+      - measure_id: household_share
+        label: Share of households
+        ordinal: 0
+        column: E
+        source_column_id: numeric_value
+        expected_column_header_row: 1
+        expected_column_header: numeric_value
+        concept: household_transport.car_or_van_availability_household_share
+        source_concept: dft_nts.household_car_availability_share
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: share
+        aggregation: share
+        value_scale: 0.01
+        expected_cell_type: number

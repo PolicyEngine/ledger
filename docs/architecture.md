@@ -8,16 +8,19 @@ structured, queryable facts. Microplex consumes Arch facts to produce final
 calibrated simulation inputs.
 
 This document describes the full data pipeline from source publications to
-Microplex target sets and calibrated output.
+Microplex target sets and calibrated output. Arch is global at the schema,
+validation, and build-harness layer. Jurisdiction source packages such as
+`arch-us` and `arch-uk` emit records into that shared contract.
 
 ## Repository Boundaries
 
 | Layer | Owns | Does not own |
 |-------|------|--------------|
-| Arch | Source artifacts, provenance, source facts, target inputs, microdata ingestion | Source reconciliation, aging, imputation, active target selection |
+| Arch | Source artifacts, provenance, aggregate facts, constraints, microdata ingestion | Source reconciliation, aging, imputation, active target selection |
 | Microplex Targets | Source selection, reconciliation, aging, imputation, active target sets | Source artifact storage and provenance |
 | Microplex | Entity model, weights, calibration interfaces, calibrated output | Source ETL and source provenance |
-| Jurisdiction packages | Model-specific adapters, variable mappings, target recipes | Source facts |
+| Jurisdiction source packages | Source-specific parsers and specs that emit Arch records | Forked fact or constraint schemas |
+| Jurisdiction simulation packages | Model-specific adapters, variable mappings, target recipes | Source facts |
 | PolicyEngine | Policy-facing workflows and analysis tools | Source ETL or calibrated microdata generation |
 
 ## Storage Layers
@@ -60,6 +63,19 @@ from arch.normalization import convert_units
 The `db` package contains the current SQLModel persistence and loader
 implementation behind the public `arch` namespace.
 
+Jurisdiction source packages should use short import namespaces and published
+distribution names with a Cosilico prefix:
+
+```text
+repo: CosilicoAI/arch-us
+distribution: cosilico-arch-us
+import: arch_us
+```
+
+They should depend on `cosilico-arch` and emit shared `arch` objects rather than
+redefining source rows/cells, source-row values, aggregate facts, aggregate
+constraints, stable keys, or DB tables.
+
 ## Data Flow
 
 ```text
@@ -83,8 +99,8 @@ arch.normalization        microdata.*
  arithmetic)
       |                        |
       v                        |
-targets.*                     |
-(target input                 |
+arch.aggregate_facts          |
+(published aggregate          |
  facts)                       |
       |                        |
       +-----------+------------+
@@ -99,16 +115,32 @@ targets.*                     |
               microdata)
 ```
 
-## Source Facts And Target Inputs
+## Source Facts And Microplex Targets
 
-Source ETL should separate source facts from Microplex target composition:
+Source ETL should separate Arch aggregate facts from Microplex target composition:
 
 1. Load or parse source publications into source lineage and published cells.
 2. Materialize source-backed facts in Arch.
 3. Apply representation-only normalization such as unit scale conversion or
    source-published total/share arithmetic.
-4. Materialize the fact as a target input with source and derivation metadata.
-5. Let Microplex Targets select, reconcile, age, and activate target sets.
+4. Keep the fact queryable with source and derivation metadata.
+5. Let Microplex select, reconcile, age, and activate calibration target sets.
+
+Arch source facts can align source-published concepts to canonical vocabulary
+terms. When a legal concept is available from Axiom, Arch should use the Axiom
+term as the canonical concept key and keep the publisher's column/series concept
+as `source_concept`. For example, SOI adjusted gross income is represented as:
+
+```text
+canonical concept: us:statutes/26/62#adjusted_gross_income
+source concept:    irs_soi.adjusted_gross_income
+relation:          exact
+authority:         arch-us
+```
+
+This alignment is evidence-bearing metadata, not an Arch dependency on Axiom
+runtime behavior. Nonlegal empirical inputs can use shared Arch/common concepts
+and later align to Axiom or Microplex where appropriate.
 
 The `arch.normalization` package owns low-assumption representation helpers:
 
@@ -137,6 +169,22 @@ Projection facts from official sources such as CBO, OBR, and ONS can be loaded
 as source facts directly. Cosilico-owned inflation, aging, projection, or
 cross-source reconciliation assumptions belong in Microplex Targets, not Arch.
 
+### Downstream Adapter Aliases
+
+Arch variables should describe source-backed facts, not downstream simulator
+variables. If a Microplex or PolicyEngine target cell names the same empirical
+quantity differently, the alias belongs in the downstream adapter.
+
+For example, IRS SOI publishes nonnegative income tax liability aggregates.
+Arch should preserve that as an SOI liability fact, while a Microplex adapter
+may use it to satisfy a model target named `income_tax_positive`. Arch should
+not create a duplicate source fact solely to match the model variable name.
+
+This rule also applies in reverse: if a Microplex target cell is really a
+survey input, imputed model feature, or source-selection decision rather than a
+publisher aggregate, the cell should stay out of Arch until a primary source
+fact and its provenance are identified.
+
 ## Calibration Pipeline
 
 ### 1. Target Inputs (from `targets.*` schema)
@@ -155,7 +203,7 @@ VALUES (1, 'eitc_recipients', 2500000, 2023);
 
 ### 2. Variable Mapping
 
-Arch target input variables are source-linked variable IDs. They should not
+Arch fact concepts are source-linked or canonical vocabulary IDs. They should not
 depend on a simulator implementation. Microplex jurisdiction packages map those
 target IDs to model variables and entities.
 

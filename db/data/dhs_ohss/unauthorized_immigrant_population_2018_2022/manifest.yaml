@@ -1,0 +1,22 @@
+source: DHS Office of Homeland Security Statistics
+dataset: Estimates of the Unauthorized Immigrant Population Residing in the United States
+vintage: January 2018-January 2022
+retrieved: 2026-05-11
+notes: >-
+  Full publisher PDF downloaded from the DHS OHSS site and parsed with the
+  Arch PDF document-number parser.
+files:
+  2022:
+    filename: dhs_ohss_unauthorized_immigrant_population_2018_2022.pdf
+    sha256: ae61e88ab0b5af76684c228580ae58a275335f8ef73528399b9cbf31bf810e88
+    source_url: https://ohss.dhs.gov/sites/default/files/2024-06/2024_0418_ohss_estimates-of-the-unauthorized-immigrant-population-residing-in-the-united-states-january-2018%25E2%2580%2593january-2022.pdf
+    source_table: Estimates of the Unauthorized Immigrant Population Residing in the United States, January 2018-January 2022
+    size_bytes: 660215
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/dhs_ohss/dhs-ohss-unauthorized-immigrant-population-2018-2022/2022/ae61e88ab0b5af76684c228580ae58a275335f8ef73528399b9cbf31bf810e88/dhs_ohss_unauthorized_immigrant_population_2018_2022.pdf
+        uri: r2://arch-raw/raw/dhs_ohss/dhs-ohss-unauthorized-immigrant-population-2018-2022/2022/ae61e88ab0b5af76684c228580ae58a275335f8ef73528399b9cbf31bf810e88/dhs_ohss_unauthorized_immigrant_population_2018_2022.pdf
+source_id: dhs_ohss
+package_id: dhs-ohss-unauthorized-immigrant-population-2018-2022

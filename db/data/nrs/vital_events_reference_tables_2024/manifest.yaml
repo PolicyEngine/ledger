@@ -1,0 +1,18 @@
+source_id: nrs
+package_id: nrs-vital-events-reference-tables-2024
+dataset: nrs_vital_events_reference_tables_2024
+source_page: https://www.nrscotland.gov.uk/publications/vital-events-reference-tables-2024/
+table: NRS vital events reference tables 2024 chapter 1
+files:
+  2024:
+    filename: vital-events-reference-tables-chapter-1.xlsx
+    source_url: https://www.nrscotland.gov.uk/media/t2pnvj2q/vital-events-reference-tables-chapter-1.xlsx
+    sha256: 3a74e8638ca98e2e36df2b9e1cf3600aeb22a6a6a94b5757b7018d7e6d2f1ee7
+    size_bytes: 90193
+    fetched_at: '2026-05-11T02:45:59+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/nrs/nrs-vital-events-reference-tables-2024/2024/3a74e8638ca98e2e36df2b9e1cf3600aeb22a6a6a94b5757b7018d7e6d2f1ee7/vital-events-reference-tables-chapter-1.xlsx
+        uri: r2://arch-raw/raw/nrs/nrs-vital-events-reference-tables-2024/2024/3a74e8638ca98e2e36df2b9e1cf3600aeb22a6a6a94b5757b7018d7e6d2f1ee7/vital-events-reference-tables-chapter-1.xlsx

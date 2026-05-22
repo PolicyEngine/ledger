@@ -1,0 +1,16 @@
+source_id: dwp
+package_id: dwp-uc-national-payment-dist-2025
+dataset: dwp_uc_national_payment_dist_2025
+source_page: https://stat-xplore.dwp.gov.uk/
+table: Stat-Xplore Households on Universal Credit by monthly award amount and family type
+files:
+  2025:
+    filename: uc_national_payment_dist.xlsx
+    source_url: https://stat-xplore.dwp.gov.uk/
+    sha256: f649b3a1a1c54e9d7fdaa2bfae7be6ab84af6994776e45e5294413e4e47fffef
+    size_bytes: 19747
+    storage:
+      r2:
+        bucket: arch-raw
+        key: raw/dwp/dwp-uc-national-payment-dist-2025/2025/f649b3a1a1c54e9d7fdaa2bfae7be6ab84af6994776e45e5294413e4e47fffef/uc_national_payment_dist.xlsx
+        uri: r2://arch-raw/raw/dwp/dwp-uc-national-payment-dist-2025/2025/f649b3a1a1c54e9d7fdaa2bfae7be6ab84af6994776e45e5294413e4e47fffef/uc_national_payment_dist.xlsx

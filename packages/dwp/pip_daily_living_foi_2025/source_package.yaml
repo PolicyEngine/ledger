@@ -1,0 +1,102 @@
+schema_version: arch.source_package.v1
+package_id: dwp-pip-daily-living-foi-2025
+label: DWP FOI2025/24990 PIP daily living component response
+artifact:
+  source_name: dwp
+  source_table: DWP FOI2025/24990 PIP daily living component response
+  resource_package: db
+  resource_directory: data/dwp/pip_daily_living_foi_2025
+  manifest: manifest.yaml
+  vintage: april_2025
+  extracted_at: '2026-05-10'
+  extraction_method: HTML source table parse from DWP FOI response attachment
+  parser: html_tables_and_text
+record_sets:
+  - record_set_id: dwp_pip.month2025_01.daily_living_claimants_by_award_rate
+    record_set_spec_id: dwp_pip.daily_living_claimants_by_award_rate.v1
+    source_record_id_prefix: dwp_pip.month2025_01.daily_living_claimants_by_award_rate
+    sheet_name: table_1
+    period_type: month
+    period: '2025-01'
+    geography_id: DWP_EW_ABROAD
+    geography_level: statistical_scope
+    geography_name: England, Wales, and abroad under DWP policy ownership
+    geography_vintage: january_2025
+    entity: person
+    entity_role: pip_claimant
+    domain: uk_personal_independence_payment
+    groupby_dimension: uk_personal_independence_payment.daily_living_award_status
+    shared_filters:
+      uk_personal_independence_payment.component: daily_living
+      uk_personal_independence_payment.rules: normal_rules
+      uk_personal_independence_payment.claimant_age_group: working_age
+      uk_personal_independence_payment.policy_ownership_scope: england_wales_abroad
+    rows:
+      - value_id: enhanced
+        label: Claimants in Receipt of Enhanced Daily Living
+        ordinal: 0
+        row_number: 2
+        filters:
+          uk_personal_independence_payment.daily_living_award_status: enhanced
+        constraints:
+          - variable: uk_personal_independence_payment.daily_living_award_status
+            operator: "=="
+            value: enhanced
+            label: PIP daily living award status
+          - variable: uk_personal_independence_payment.component
+            operator: "=="
+            value: daily_living
+            label: PIP component
+          - variable: uk_personal_independence_payment.rules
+            operator: "=="
+            value: normal_rules
+            label: PIP rules basis
+          - variable: uk_personal_independence_payment.claimant_age_group
+            operator: "=="
+            value: working_age
+            label: Claimant age group
+          - variable: uk_personal_independence_payment.policy_ownership_scope
+            operator: "=="
+            value: england_wales_abroad
+            label: DWP policy ownership scope
+      - value_id: standard
+        label: Claimants in Receipt of Standard Daily Living
+        ordinal: 1
+        row_number: 3
+        filters:
+          uk_personal_independence_payment.daily_living_award_status: standard
+        constraints:
+          - variable: uk_personal_independence_payment.daily_living_award_status
+            operator: "=="
+            value: standard
+            label: PIP daily living award status
+          - variable: uk_personal_independence_payment.component
+            operator: "=="
+            value: daily_living
+            label: PIP component
+          - variable: uk_personal_independence_payment.rules
+            operator: "=="
+            value: normal_rules
+            label: PIP rules basis
+          - variable: uk_personal_independence_payment.claimant_age_group
+            operator: "=="
+            value: working_age
+            label: Claimant age group
+          - variable: uk_personal_independence_payment.policy_ownership_scope
+            operator: "=="
+            value: england_wales_abroad
+            label: DWP policy ownership scope
+    measures:
+      - measure_id: claimants
+        label: PIP daily living component claimants
+        ordinal: 0
+        column: B
+        expected_column_header_row: 1
+        expected_column_header: Volume of PIP claimants
+        concept: uk_personal_independence_payment.daily_living_component_claimants
+        source_concept: dwp_foi.pip_daily_living_component_claimants_by_award_rate
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number

@@ -1,0 +1,70 @@
+schema_version: arch.source_package.v1
+package_id: ons-savings-interest-income
+label: ONS household-sector savings interest income
+artifact:
+  source_name: ons
+  source_table: ONS UKEA HAXV households interest resources
+  resource_package: db
+  resource_directory: data/ons/savings_interest_income
+  manifest: manifest.yaml
+  vintage: ons_ukea_2026_03_30_release
+  extracted_at: '2026-05-10'
+  extraction_method: ONS time-series JSON annual observations parse
+  parser: ons_timeseries_json_years
+  sheet_name: years
+  artifact_year: 2026
+  selected_rows:
+    - ons_series_id: HAXV
+      frequency: annual
+      year: '{year}'
+record_sets:
+  - record_set_id: ons_ukea.cy{year}.haxv_savings_interest_income
+    record_set_spec_id: ons_ukea.haxv_savings_interest_income.v1
+    source_record_id_prefix: ons_ukea.cy{year}.haxv_savings_interest_income
+    sheet_name: years
+    period_type: calendar_year
+    period: '{year}'
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: household
+    entity_role: ons_s14_households_sector
+    domain: uk_household_sector
+    groupby_dimension: ons_series_id
+    rows:
+      - value_id: haxv
+        label: HAXV
+        ordinal: 0
+        row_number: 2
+        table_record_kind: total
+        expected_row_header_column: A
+        expected_row_header: HAXV
+        filters:
+          ons_series_id: HAXV
+          frequency: annual
+        constraints:
+          - variable: ons_series_id
+            operator: "=="
+            value: HAXV
+            label: ONS time-series identifier
+          - variable: frequency
+            operator: "=="
+            value: annual
+            label: Observation frequency
+    measures:
+      - measure_id: amount
+        label: Household-sector interest resources
+        ordinal: 0
+        column: H
+        source_column_id: value
+        expected_column_header_row: 1
+        expected_column_header: value
+        concept: uk_personal_income.savings_interest_income
+        source_concept: ons.haxv_households_s14_interest_resources
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000
+        expected_cell_type: number

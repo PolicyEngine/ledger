@@ -1,0 +1,18 @@
+source_id: ons
+package_id: ons-national-balance-sheet-reference-tables-2025
+dataset: ons_ons-national-balance-sheet-reference-tables-2025
+source_page: https://www.ons.gov.uk/file?uri=%2Feconomy%2Fnationalaccounts%2Fuksectoraccounts%2Fdatasets%2Fthenationalbalancesheetestimates%2Fcurrent%2Fnbsreferencetables2025.xlsx
+table: ons-national-balance-sheet-reference-tables-2025
+files:
+  2025:
+    filename: nbsreferencetables2025.xlsx
+    source_url: https://www.ons.gov.uk/file?uri=%2Feconomy%2Fnationalaccounts%2Fuksectoraccounts%2Fdatasets%2Fthenationalbalancesheetestimates%2Fcurrent%2Fnbsreferencetables2025.xlsx
+    sha256: 8bec0fbbaf474c76daf721100f1cbda6bda57957ff370f85d36fca4e310d3a79
+    size_bytes: 532615
+    fetched_at: '2026-05-11T02:31:23+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/ons/ons-national-balance-sheet-reference-tables-2025/2025/8bec0fbbaf474c76daf721100f1cbda6bda57957ff370f85d36fca4e310d3a79/nbsreferencetables2025.xlsx
+        uri: r2://arch-raw/raw/ons/ons-national-balance-sheet-reference-tables-2025/2025/8bec0fbbaf474c76daf721100f1cbda6bda57957ff370f85d36fca4e310d3a79/nbsreferencetables2025.xlsx

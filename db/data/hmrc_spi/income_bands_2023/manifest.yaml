@@ -1,0 +1,18 @@
+source_id: hmrc_spi
+package_id: hmrc-spi-income-bands-2023
+dataset: hmrc_spi_income_bands_2023
+source_page: https://www.gov.uk/government/statistics/income-tax-summarised-accounts-statistics
+table: HMRC SPI collated tables 3.1 to 3.17 2022-23
+files:
+  2023:
+    filename: Collated_Tables_3_1_to_3_17_2223.ods
+    source_url: https://assets.publishing.service.gov.uk/media/67cabb37ade26736dbf9ffe5/Collated_Tables_3_1_to_3_17_2223.ods
+    sha256: 18e629c5001c7a808a7dd89b220ed910c562ce6b8a42ff7523d0451f7d9e4849
+    size_bytes: 173700
+    fetched_at: '2026-05-10T22:06:34+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/hmrc_spi/hmrc-spi-income-bands-2023/2023/18e629c5001c7a808a7dd89b220ed910c562ce6b8a42ff7523d0451f7d9e4849/Collated_Tables_3_1_to_3_17_2223.ods
+        uri: r2://arch-raw/raw/hmrc_spi/hmrc-spi-income-bands-2023/2023/18e629c5001c7a808a7dd89b220ed910c562ce6b8a42ff7523d0451f7d9e4849/Collated_Tables_3_1_to_3_17_2223.ods

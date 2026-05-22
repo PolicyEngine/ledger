@@ -1,0 +1,7074 @@
+schema_version: arch.source_package.v1
+package_id: census-population-projections-2023
+label: Census 2023 national population projections by single year of age
+artifact:
+  source_name: census_population_projections
+  source_table: 2023 National Population Projections Main Series, middle series
+  resource_package: db
+  resource_directory: data/census/population_projections_2023
+  manifest: manifest.yaml
+  vintage: census_2023_population_projections
+  extracted_at: '2026-05-11'
+  extraction_method: official Census CSV full-row parse with selected year, all-race,
+    all-sex native-born and foreign-born rows; age is encoded by POP_0..POP_85 source
+    columns
+  parser: delimited_text_full_rows
+  sheet_name: np2023_d5_mid
+  artifact_year: 2023
+  selected_rows:
+  - NATIVITY: 1
+    RACE_HISP: 0
+    SEX: 0
+    YEAR: '{year}'
+  - NATIVITY: 2
+    RACE_HISP: 0
+    SEX: 0
+    YEAR: '{year}'
+record_sets:
+- record_set_id: census.popproj2023.cy{year}.national_population.age_0
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_0
+    label: Age 0
+    ordinal: 0
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 0
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 1
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: F
+    source_column_id: POP_0
+    expected_column_header_row: 1
+    expected_column_header: POP_0
+    concept: census.population_projection
+    source_concept: census.POP_0
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_1
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_1
+    label: Age 1
+    ordinal: 1
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 1
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 2
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: G
+    source_column_id: POP_1
+    expected_column_header_row: 1
+    expected_column_header: POP_1
+    concept: census.population_projection
+    source_concept: census.POP_1
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_2
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_2
+    label: Age 2
+    ordinal: 2
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 2
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 3
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: H
+    source_column_id: POP_2
+    expected_column_header_row: 1
+    expected_column_header: POP_2
+    concept: census.population_projection
+    source_concept: census.POP_2
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_3
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_3
+    label: Age 3
+    ordinal: 3
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 3
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 4
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: I
+    source_column_id: POP_3
+    expected_column_header_row: 1
+    expected_column_header: POP_3
+    concept: census.population_projection
+    source_concept: census.POP_3
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_4
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_4
+    label: Age 4
+    ordinal: 4
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 4
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 5
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: J
+    source_column_id: POP_4
+    expected_column_header_row: 1
+    expected_column_header: POP_4
+    concept: census.population_projection
+    source_concept: census.POP_4
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_5
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_5
+    label: Age 5
+    ordinal: 5
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 5
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 6
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: K
+    source_column_id: POP_5
+    expected_column_header_row: 1
+    expected_column_header: POP_5
+    concept: census.population_projection
+    source_concept: census.POP_5
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_6
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_6
+    label: Age 6
+    ordinal: 6
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 6
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 7
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: L
+    source_column_id: POP_6
+    expected_column_header_row: 1
+    expected_column_header: POP_6
+    concept: census.population_projection
+    source_concept: census.POP_6
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_7
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_7
+    label: Age 7
+    ordinal: 7
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 7
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 8
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: M
+    source_column_id: POP_7
+    expected_column_header_row: 1
+    expected_column_header: POP_7
+    concept: census.population_projection
+    source_concept: census.POP_7
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_8
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_8
+    label: Age 8
+    ordinal: 8
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 8
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 9
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: N
+    source_column_id: POP_8
+    expected_column_header_row: 1
+    expected_column_header: POP_8
+    concept: census.population_projection
+    source_concept: census.POP_8
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_9
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_9
+    label: Age 9
+    ordinal: 9
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 9
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 10
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: O
+    source_column_id: POP_9
+    expected_column_header_row: 1
+    expected_column_header: POP_9
+    concept: census.population_projection
+    source_concept: census.POP_9
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_10
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_10
+    label: Age 10
+    ordinal: 10
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 10
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 11
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: P
+    source_column_id: POP_10
+    expected_column_header_row: 1
+    expected_column_header: POP_10
+    concept: census.population_projection
+    source_concept: census.POP_10
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_11
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_11
+    label: Age 11
+    ordinal: 11
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 11
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 12
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: Q
+    source_column_id: POP_11
+    expected_column_header_row: 1
+    expected_column_header: POP_11
+    concept: census.population_projection
+    source_concept: census.POP_11
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_12
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_12
+    label: Age 12
+    ordinal: 12
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 12
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 13
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: R
+    source_column_id: POP_12
+    expected_column_header_row: 1
+    expected_column_header: POP_12
+    concept: census.population_projection
+    source_concept: census.POP_12
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_13
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_13
+    label: Age 13
+    ordinal: 13
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 13
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 14
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: S
+    source_column_id: POP_13
+    expected_column_header_row: 1
+    expected_column_header: POP_13
+    concept: census.population_projection
+    source_concept: census.POP_13
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_14
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_14
+    label: Age 14
+    ordinal: 14
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 14
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 15
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: T
+    source_column_id: POP_14
+    expected_column_header_row: 1
+    expected_column_header: POP_14
+    concept: census.population_projection
+    source_concept: census.POP_14
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_15
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_15
+    label: Age 15
+    ordinal: 15
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 15
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 16
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: U
+    source_column_id: POP_15
+    expected_column_header_row: 1
+    expected_column_header: POP_15
+    concept: census.population_projection
+    source_concept: census.POP_15
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_16
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_16
+    label: Age 16
+    ordinal: 16
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 16
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 17
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: V
+    source_column_id: POP_16
+    expected_column_header_row: 1
+    expected_column_header: POP_16
+    concept: census.population_projection
+    source_concept: census.POP_16
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_17
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_17
+    label: Age 17
+    ordinal: 17
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 17
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 18
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: W
+    source_column_id: POP_17
+    expected_column_header_row: 1
+    expected_column_header: POP_17
+    concept: census.population_projection
+    source_concept: census.POP_17
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_18
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_18
+    label: Age 18
+    ordinal: 18
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 18
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 19
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: X
+    source_column_id: POP_18
+    expected_column_header_row: 1
+    expected_column_header: POP_18
+    concept: census.population_projection
+    source_concept: census.POP_18
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_19
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_19
+    label: Age 19
+    ordinal: 19
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 19
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 20
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: Y
+    source_column_id: POP_19
+    expected_column_header_row: 1
+    expected_column_header: POP_19
+    concept: census.population_projection
+    source_concept: census.POP_19
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_20
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_20
+    label: Age 20
+    ordinal: 20
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 20
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 21
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: Z
+    source_column_id: POP_20
+    expected_column_header_row: 1
+    expected_column_header: POP_20
+    concept: census.population_projection
+    source_concept: census.POP_20
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_21
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_21
+    label: Age 21
+    ordinal: 21
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 21
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 22
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: AA
+    source_column_id: POP_21
+    expected_column_header_row: 1
+    expected_column_header: POP_21
+    concept: census.population_projection
+    source_concept: census.POP_21
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_22
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_22
+    label: Age 22
+    ordinal: 22
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 22
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 23
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: AB
+    source_column_id: POP_22
+    expected_column_header_row: 1
+    expected_column_header: POP_22
+    concept: census.population_projection
+    source_concept: census.POP_22
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_23
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_23
+    label: Age 23
+    ordinal: 23
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 23
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 24
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: AC
+    source_column_id: POP_23
+    expected_column_header_row: 1
+    expected_column_header: POP_23
+    concept: census.population_projection
+    source_concept: census.POP_23
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_24
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_24
+    label: Age 24
+    ordinal: 24
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 24
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 25
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: AD
+    source_column_id: POP_24
+    expected_column_header_row: 1
+    expected_column_header: POP_24
+    concept: census.population_projection
+    source_concept: census.POP_24
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_25
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_25
+    label: Age 25
+    ordinal: 25
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 25
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 26
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: AE
+    source_column_id: POP_25
+    expected_column_header_row: 1
+    expected_column_header: POP_25
+    concept: census.population_projection
+    source_concept: census.POP_25
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_26
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_26
+    label: Age 26
+    ordinal: 26
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 26
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 27
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: AF
+    source_column_id: POP_26
+    expected_column_header_row: 1
+    expected_column_header: POP_26
+    concept: census.population_projection
+    source_concept: census.POP_26
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_27
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_27
+    label: Age 27
+    ordinal: 27
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 27
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 28
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: AG
+    source_column_id: POP_27
+    expected_column_header_row: 1
+    expected_column_header: POP_27
+    concept: census.population_projection
+    source_concept: census.POP_27
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_28
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_28
+    label: Age 28
+    ordinal: 28
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 28
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 29
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: AH
+    source_column_id: POP_28
+    expected_column_header_row: 1
+    expected_column_header: POP_28
+    concept: census.population_projection
+    source_concept: census.POP_28
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_29
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_29
+    label: Age 29
+    ordinal: 29
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 29
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 30
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: AI
+    source_column_id: POP_29
+    expected_column_header_row: 1
+    expected_column_header: POP_29
+    concept: census.population_projection
+    source_concept: census.POP_29
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_30
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_30
+    label: Age 30
+    ordinal: 30
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 30
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 31
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: AJ
+    source_column_id: POP_30
+    expected_column_header_row: 1
+    expected_column_header: POP_30
+    concept: census.population_projection
+    source_concept: census.POP_30
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_31
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_31
+    label: Age 31
+    ordinal: 31
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 31
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 32
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: AK
+    source_column_id: POP_31
+    expected_column_header_row: 1
+    expected_column_header: POP_31
+    concept: census.population_projection
+    source_concept: census.POP_31
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_32
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_32
+    label: Age 32
+    ordinal: 32
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 32
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 33
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: AL
+    source_column_id: POP_32
+    expected_column_header_row: 1
+    expected_column_header: POP_32
+    concept: census.population_projection
+    source_concept: census.POP_32
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_33
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_33
+    label: Age 33
+    ordinal: 33
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 33
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 34
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: AM
+    source_column_id: POP_33
+    expected_column_header_row: 1
+    expected_column_header: POP_33
+    concept: census.population_projection
+    source_concept: census.POP_33
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_34
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_34
+    label: Age 34
+    ordinal: 34
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 34
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 35
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: AN
+    source_column_id: POP_34
+    expected_column_header_row: 1
+    expected_column_header: POP_34
+    concept: census.population_projection
+    source_concept: census.POP_34
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_35
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_35
+    label: Age 35
+    ordinal: 35
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 35
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 36
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: AO
+    source_column_id: POP_35
+    expected_column_header_row: 1
+    expected_column_header: POP_35
+    concept: census.population_projection
+    source_concept: census.POP_35
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_36
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_36
+    label: Age 36
+    ordinal: 36
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 36
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 37
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: AP
+    source_column_id: POP_36
+    expected_column_header_row: 1
+    expected_column_header: POP_36
+    concept: census.population_projection
+    source_concept: census.POP_36
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_37
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_37
+    label: Age 37
+    ordinal: 37
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 37
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 38
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: AQ
+    source_column_id: POP_37
+    expected_column_header_row: 1
+    expected_column_header: POP_37
+    concept: census.population_projection
+    source_concept: census.POP_37
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_38
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_38
+    label: Age 38
+    ordinal: 38
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 38
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 39
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: AR
+    source_column_id: POP_38
+    expected_column_header_row: 1
+    expected_column_header: POP_38
+    concept: census.population_projection
+    source_concept: census.POP_38
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_39
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_39
+    label: Age 39
+    ordinal: 39
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 39
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 40
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: AS
+    source_column_id: POP_39
+    expected_column_header_row: 1
+    expected_column_header: POP_39
+    concept: census.population_projection
+    source_concept: census.POP_39
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_40
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_40
+    label: Age 40
+    ordinal: 40
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 40
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 41
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: AT
+    source_column_id: POP_40
+    expected_column_header_row: 1
+    expected_column_header: POP_40
+    concept: census.population_projection
+    source_concept: census.POP_40
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_41
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_41
+    label: Age 41
+    ordinal: 41
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 41
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 42
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: AU
+    source_column_id: POP_41
+    expected_column_header_row: 1
+    expected_column_header: POP_41
+    concept: census.population_projection
+    source_concept: census.POP_41
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_42
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_42
+    label: Age 42
+    ordinal: 42
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 42
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 43
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: AV
+    source_column_id: POP_42
+    expected_column_header_row: 1
+    expected_column_header: POP_42
+    concept: census.population_projection
+    source_concept: census.POP_42
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_43
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_43
+    label: Age 43
+    ordinal: 43
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 43
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 44
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: AW
+    source_column_id: POP_43
+    expected_column_header_row: 1
+    expected_column_header: POP_43
+    concept: census.population_projection
+    source_concept: census.POP_43
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_44
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_44
+    label: Age 44
+    ordinal: 44
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 44
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 45
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: AX
+    source_column_id: POP_44
+    expected_column_header_row: 1
+    expected_column_header: POP_44
+    concept: census.population_projection
+    source_concept: census.POP_44
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_45
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_45
+    label: Age 45
+    ordinal: 45
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 45
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 46
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: AY
+    source_column_id: POP_45
+    expected_column_header_row: 1
+    expected_column_header: POP_45
+    concept: census.population_projection
+    source_concept: census.POP_45
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_46
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_46
+    label: Age 46
+    ordinal: 46
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 46
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 47
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: AZ
+    source_column_id: POP_46
+    expected_column_header_row: 1
+    expected_column_header: POP_46
+    concept: census.population_projection
+    source_concept: census.POP_46
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_47
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_47
+    label: Age 47
+    ordinal: 47
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 47
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 48
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: BA
+    source_column_id: POP_47
+    expected_column_header_row: 1
+    expected_column_header: POP_47
+    concept: census.population_projection
+    source_concept: census.POP_47
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_48
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_48
+    label: Age 48
+    ordinal: 48
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 48
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 49
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: BB
+    source_column_id: POP_48
+    expected_column_header_row: 1
+    expected_column_header: POP_48
+    concept: census.population_projection
+    source_concept: census.POP_48
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_49
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_49
+    label: Age 49
+    ordinal: 49
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 49
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 50
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: BC
+    source_column_id: POP_49
+    expected_column_header_row: 1
+    expected_column_header: POP_49
+    concept: census.population_projection
+    source_concept: census.POP_49
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_50
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_50
+    label: Age 50
+    ordinal: 50
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 50
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 51
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: BD
+    source_column_id: POP_50
+    expected_column_header_row: 1
+    expected_column_header: POP_50
+    concept: census.population_projection
+    source_concept: census.POP_50
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_51
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_51
+    label: Age 51
+    ordinal: 51
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 51
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 52
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: BE
+    source_column_id: POP_51
+    expected_column_header_row: 1
+    expected_column_header: POP_51
+    concept: census.population_projection
+    source_concept: census.POP_51
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_52
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_52
+    label: Age 52
+    ordinal: 52
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 52
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 53
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: BF
+    source_column_id: POP_52
+    expected_column_header_row: 1
+    expected_column_header: POP_52
+    concept: census.population_projection
+    source_concept: census.POP_52
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_53
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_53
+    label: Age 53
+    ordinal: 53
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 53
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 54
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: BG
+    source_column_id: POP_53
+    expected_column_header_row: 1
+    expected_column_header: POP_53
+    concept: census.population_projection
+    source_concept: census.POP_53
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_54
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_54
+    label: Age 54
+    ordinal: 54
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 54
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 55
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: BH
+    source_column_id: POP_54
+    expected_column_header_row: 1
+    expected_column_header: POP_54
+    concept: census.population_projection
+    source_concept: census.POP_54
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_55
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_55
+    label: Age 55
+    ordinal: 55
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 55
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 56
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: BI
+    source_column_id: POP_55
+    expected_column_header_row: 1
+    expected_column_header: POP_55
+    concept: census.population_projection
+    source_concept: census.POP_55
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_56
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_56
+    label: Age 56
+    ordinal: 56
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 56
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 57
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: BJ
+    source_column_id: POP_56
+    expected_column_header_row: 1
+    expected_column_header: POP_56
+    concept: census.population_projection
+    source_concept: census.POP_56
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_57
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_57
+    label: Age 57
+    ordinal: 57
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 57
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 58
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: BK
+    source_column_id: POP_57
+    expected_column_header_row: 1
+    expected_column_header: POP_57
+    concept: census.population_projection
+    source_concept: census.POP_57
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_58
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_58
+    label: Age 58
+    ordinal: 58
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 58
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 59
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: BL
+    source_column_id: POP_58
+    expected_column_header_row: 1
+    expected_column_header: POP_58
+    concept: census.population_projection
+    source_concept: census.POP_58
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_59
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_59
+    label: Age 59
+    ordinal: 59
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 59
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 60
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: BM
+    source_column_id: POP_59
+    expected_column_header_row: 1
+    expected_column_header: POP_59
+    concept: census.population_projection
+    source_concept: census.POP_59
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_60
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_60
+    label: Age 60
+    ordinal: 60
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 60
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 61
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: BN
+    source_column_id: POP_60
+    expected_column_header_row: 1
+    expected_column_header: POP_60
+    concept: census.population_projection
+    source_concept: census.POP_60
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_61
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_61
+    label: Age 61
+    ordinal: 61
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 61
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 62
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: BO
+    source_column_id: POP_61
+    expected_column_header_row: 1
+    expected_column_header: POP_61
+    concept: census.population_projection
+    source_concept: census.POP_61
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_62
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_62
+    label: Age 62
+    ordinal: 62
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 62
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 63
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: BP
+    source_column_id: POP_62
+    expected_column_header_row: 1
+    expected_column_header: POP_62
+    concept: census.population_projection
+    source_concept: census.POP_62
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_63
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_63
+    label: Age 63
+    ordinal: 63
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 63
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 64
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: BQ
+    source_column_id: POP_63
+    expected_column_header_row: 1
+    expected_column_header: POP_63
+    concept: census.population_projection
+    source_concept: census.POP_63
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_64
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_64
+    label: Age 64
+    ordinal: 64
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 64
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 65
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: BR
+    source_column_id: POP_64
+    expected_column_header_row: 1
+    expected_column_header: POP_64
+    concept: census.population_projection
+    source_concept: census.POP_64
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_65
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_65
+    label: Age 65
+    ordinal: 65
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 65
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 66
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: BS
+    source_column_id: POP_65
+    expected_column_header_row: 1
+    expected_column_header: POP_65
+    concept: census.population_projection
+    source_concept: census.POP_65
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_66
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_66
+    label: Age 66
+    ordinal: 66
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 66
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 67
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: BT
+    source_column_id: POP_66
+    expected_column_header_row: 1
+    expected_column_header: POP_66
+    concept: census.population_projection
+    source_concept: census.POP_66
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_67
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_67
+    label: Age 67
+    ordinal: 67
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 67
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 68
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: BU
+    source_column_id: POP_67
+    expected_column_header_row: 1
+    expected_column_header: POP_67
+    concept: census.population_projection
+    source_concept: census.POP_67
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_68
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_68
+    label: Age 68
+    ordinal: 68
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 68
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 69
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: BV
+    source_column_id: POP_68
+    expected_column_header_row: 1
+    expected_column_header: POP_68
+    concept: census.population_projection
+    source_concept: census.POP_68
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_69
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_69
+    label: Age 69
+    ordinal: 69
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 69
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 70
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: BW
+    source_column_id: POP_69
+    expected_column_header_row: 1
+    expected_column_header: POP_69
+    concept: census.population_projection
+    source_concept: census.POP_69
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_70
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_70
+    label: Age 70
+    ordinal: 70
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 70
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 71
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: BX
+    source_column_id: POP_70
+    expected_column_header_row: 1
+    expected_column_header: POP_70
+    concept: census.population_projection
+    source_concept: census.POP_70
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_71
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_71
+    label: Age 71
+    ordinal: 71
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 71
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 72
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: BY
+    source_column_id: POP_71
+    expected_column_header_row: 1
+    expected_column_header: POP_71
+    concept: census.population_projection
+    source_concept: census.POP_71
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_72
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_72
+    label: Age 72
+    ordinal: 72
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 72
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 73
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: BZ
+    source_column_id: POP_72
+    expected_column_header_row: 1
+    expected_column_header: POP_72
+    concept: census.population_projection
+    source_concept: census.POP_72
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_73
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_73
+    label: Age 73
+    ordinal: 73
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 73
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 74
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: CA
+    source_column_id: POP_73
+    expected_column_header_row: 1
+    expected_column_header: POP_73
+    concept: census.population_projection
+    source_concept: census.POP_73
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_74
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_74
+    label: Age 74
+    ordinal: 74
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 74
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 75
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: CB
+    source_column_id: POP_74
+    expected_column_header_row: 1
+    expected_column_header: POP_74
+    concept: census.population_projection
+    source_concept: census.POP_74
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_75
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_75
+    label: Age 75
+    ordinal: 75
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 75
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 76
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: CC
+    source_column_id: POP_75
+    expected_column_header_row: 1
+    expected_column_header: POP_75
+    concept: census.population_projection
+    source_concept: census.POP_75
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_76
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_76
+    label: Age 76
+    ordinal: 76
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 76
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 77
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: CD
+    source_column_id: POP_76
+    expected_column_header_row: 1
+    expected_column_header: POP_76
+    concept: census.population_projection
+    source_concept: census.POP_76
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_77
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_77
+    label: Age 77
+    ordinal: 77
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 77
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 78
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: CE
+    source_column_id: POP_77
+    expected_column_header_row: 1
+    expected_column_header: POP_77
+    concept: census.population_projection
+    source_concept: census.POP_77
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_78
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_78
+    label: Age 78
+    ordinal: 78
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 78
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 79
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: CF
+    source_column_id: POP_78
+    expected_column_header_row: 1
+    expected_column_header: POP_78
+    concept: census.population_projection
+    source_concept: census.POP_78
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_79
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_79
+    label: Age 79
+    ordinal: 79
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 79
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 80
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: CG
+    source_column_id: POP_79
+    expected_column_header_row: 1
+    expected_column_header: POP_79
+    concept: census.population_projection
+    source_concept: census.POP_79
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_80
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_80
+    label: Age 80
+    ordinal: 80
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 80
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 81
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: CH
+    source_column_id: POP_80
+    expected_column_header_row: 1
+    expected_column_header: POP_80
+    concept: census.population_projection
+    source_concept: census.POP_80
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_81
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_81
+    label: Age 81
+    ordinal: 81
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 81
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 82
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: CI
+    source_column_id: POP_81
+    expected_column_header_row: 1
+    expected_column_header: POP_81
+    concept: census.population_projection
+    source_concept: census.POP_81
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_82
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_82
+    label: Age 82
+    ordinal: 82
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 82
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 83
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: CJ
+    source_column_id: POP_82
+    expected_column_header_row: 1
+    expected_column_header: POP_82
+    concept: census.population_projection
+    source_concept: census.POP_82
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_83
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_83
+    label: Age 83
+    ordinal: 83
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 83
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 84
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: CK
+    source_column_id: POP_83
+    expected_column_header_row: 1
+    expected_column_header: POP_83
+    concept: census.population_projection
+    source_concept: census.POP_83
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_84
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_84
+    label: Age 84
+    ordinal: 84
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 84
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 85
+      unit: years
+      label: Age upper bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: CL
+    source_column_id: POP_84
+    expected_column_header_row: 1
+    expected_column_header: POP_84
+    concept: census.population_projection
+    source_concept: census.POP_84
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+- record_set_id: census.popproj2023.cy{year}.national_population.age_85_plus
+  record_set_spec_id: census.popproj2023.national_population_by_age.v1
+  source_record_id_prefix: census.popproj2023.cy{year}.national_population
+  sheet_name: np2023_d5_mid
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: population_projection
+  groupby_dimension: age
+  rows:
+  - value_id: age_85_plus
+    label: Age 85 and over
+    ordinal: 85
+    row_number: 2
+    row_end_number: 3
+    expected_row_header_column: D
+    expected_row_header: '{year}'
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 85
+      unit: years
+      label: Age lower bound
+    guard_cells:
+    - column: A
+      row: start
+      expected_value: 1
+      label: native-born row
+    - column: A
+      row: end
+      expected_value: 2
+      label: foreign-born row
+    - column: B
+      row: start
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: B
+      row: end
+      expected_value: 0
+      label: all races and Hispanic origins
+    - column: C
+      row: start
+      expected_value: 0
+      label: all sexes
+    - column: C
+      row: end
+      expected_value: 0
+      label: all sexes
+    - column: D
+      row: start
+      expected_value: '{year}'
+      label: projection year
+    - column: D
+      row: end
+      expected_value: '{year}'
+      label: projection year
+    table_record_kind: detail
+  measures:
+  - measure_id: population
+    label: Projected population
+    ordinal: 0
+    column: CM
+    source_column_id: POP_85
+    expected_column_header_row: 1
+    expected_column_header: POP_85
+    concept: census.population_projection
+    source_concept: census.POP_85
+    concept_relation: source_label
+    concept_authority: census
+    unit: count
+    aggregation: count
+    expected_cell_type: number

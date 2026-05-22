@@ -1,0 +1,627 @@
+schema_version: arch.source_package.v1
+package_id: ons-uk-population-projections-2022
+label: ONS UK population projections 2022-based
+artifact:
+  source_name: ons
+  source_table: ONS 2022-based principal population projections for the UK
+  resource_package: db
+  resource_directory: data/ons/uk_population_projections_2022
+  manifest: manifest.yaml
+  vintage: 2022_based_principal_projection
+  extracted_at: '2026-05-10'
+  extraction_method: ZIP member openpyxl whole-workbook used-range cell parse
+  parser: zip_xlsx_used_range
+  archive_member: uk/uk_ppp_machine_readable.xlsx
+  artifact_year: 2022
+record_sets:
+  - record_set_id: ons_population_projection.cy{year}.uk_population_by_age_gender
+    record_set_spec_id: ons_population_projection.uk_population_by_age_gender.v1
+    source_record_id_prefix: ons_population_projection.cy{year}.uk_population_by_age_gender
+    sheet_name: Population
+    period_type: calendar_year
+    period: '{year}'
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: person
+    entity_role: projected_usual_resident_population
+    domain: uk_demographics
+    groupby_dimension: uk_demographics.population_group
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 2
+        row_end_number: 215
+        table_record_kind: total
+        expected_row_header_column: A
+        expected_row_header: Females
+        guard_cells:
+          - column: B
+            row: start
+            expected_value: 0
+            label: start age
+          - column: A
+            row: end
+            expected_value: Males
+            label: end sex
+          - column: B
+            row: end
+            expected_value: 110 and over
+            label: end age
+        range_label_guards:
+          - column: B
+            expected_values:
+              parts:
+                - integer_range:
+                    start: 0
+                    end: 105
+                    final_value: 105 - 109
+                    extra_values:
+                      - 110 and over
+                - integer_range:
+                    start: 0
+                    end: 105
+                    final_value: 105 - 109
+                    extra_values:
+                      - 110 and over
+            label: age sequence
+      - value_id: female_0_14
+        label: Female age 0 to 14
+        ordinal: 1
+        row_number: 2
+        row_end_number: 16
+        filters:
+          person.gender: female
+        constraints:
+          - variable: person.gender
+            operator: "=="
+            value: female
+            label: Gender
+          - variable: person.age
+            operator: ">="
+            value: 0
+            unit: year
+            label: Age lower bound
+          - variable: person.age
+            operator: "<"
+            value: 15
+            unit: year
+            label: Age upper bound
+        expected_row_header_column: A
+        expected_row_header: Females
+        guard_cells:
+          - column: B
+            row: start
+            expected_value: 0
+            label: start age
+          - column: A
+            row: end
+            expected_value: Females
+            label: end sex
+          - column: B
+            row: end
+            expected_value: 14
+            label: end age
+        range_label_guards:
+          - column: B
+            expected_values:
+              integer_range:
+                start: 0
+                end: 14
+            label: age sequence
+      - value_id: female_15_29
+        label: Female age 15 to 29
+        ordinal: 2
+        row_number: 17
+        row_end_number: 31
+        filters:
+          person.gender: female
+        constraints:
+          - variable: person.gender
+            operator: "=="
+            value: female
+            label: Gender
+          - variable: person.age
+            operator: ">="
+            value: 15
+            unit: year
+            label: Age lower bound
+          - variable: person.age
+            operator: "<"
+            value: 30
+            unit: year
+            label: Age upper bound
+        expected_row_header_column: A
+        expected_row_header: Females
+        guard_cells:
+          - column: B
+            row: start
+            expected_value: 15
+            label: start age
+          - column: A
+            row: end
+            expected_value: Females
+            label: end sex
+          - column: B
+            row: end
+            expected_value: 29
+            label: end age
+        range_label_guards:
+          - column: B
+            expected_values:
+              integer_range:
+                start: 15
+                end: 29
+            label: age sequence
+      - value_id: female_30_44
+        label: Female age 30 to 44
+        ordinal: 3
+        row_number: 32
+        row_end_number: 46
+        filters:
+          person.gender: female
+        constraints:
+          - variable: person.gender
+            operator: "=="
+            value: female
+            label: Gender
+          - variable: person.age
+            operator: ">="
+            value: 30
+            unit: year
+            label: Age lower bound
+          - variable: person.age
+            operator: "<"
+            value: 45
+            unit: year
+            label: Age upper bound
+        expected_row_header_column: A
+        expected_row_header: Females
+        guard_cells:
+          - column: B
+            row: start
+            expected_value: 30
+            label: start age
+          - column: A
+            row: end
+            expected_value: Females
+            label: end sex
+          - column: B
+            row: end
+            expected_value: 44
+            label: end age
+        range_label_guards:
+          - column: B
+            expected_values:
+              integer_range:
+                start: 30
+                end: 44
+            label: age sequence
+      - value_id: female_45_59
+        label: Female age 45 to 59
+        ordinal: 4
+        row_number: 47
+        row_end_number: 61
+        filters:
+          person.gender: female
+        constraints:
+          - variable: person.gender
+            operator: "=="
+            value: female
+            label: Gender
+          - variable: person.age
+            operator: ">="
+            value: 45
+            unit: year
+            label: Age lower bound
+          - variable: person.age
+            operator: "<"
+            value: 60
+            unit: year
+            label: Age upper bound
+        expected_row_header_column: A
+        expected_row_header: Females
+        guard_cells:
+          - column: B
+            row: start
+            expected_value: 45
+            label: start age
+          - column: A
+            row: end
+            expected_value: Females
+            label: end sex
+          - column: B
+            row: end
+            expected_value: 59
+            label: end age
+        range_label_guards:
+          - column: B
+            expected_values:
+              integer_range:
+                start: 45
+                end: 59
+            label: age sequence
+      - value_id: female_60_74
+        label: Female age 60 to 74
+        ordinal: 5
+        row_number: 62
+        row_end_number: 76
+        filters:
+          person.gender: female
+        constraints:
+          - variable: person.gender
+            operator: "=="
+            value: female
+            label: Gender
+          - variable: person.age
+            operator: ">="
+            value: 60
+            unit: year
+            label: Age lower bound
+          - variable: person.age
+            operator: "<"
+            value: 75
+            unit: year
+            label: Age upper bound
+        expected_row_header_column: A
+        expected_row_header: Females
+        guard_cells:
+          - column: B
+            row: start
+            expected_value: 60
+            label: start age
+          - column: A
+            row: end
+            expected_value: Females
+            label: end sex
+          - column: B
+            row: end
+            expected_value: 74
+            label: end age
+        range_label_guards:
+          - column: B
+            expected_values:
+              integer_range:
+                start: 60
+                end: 74
+            label: age sequence
+      - value_id: female_75_90
+        label: Female age 75 to 90
+        ordinal: 6
+        row_number: 77
+        row_end_number: 92
+        filters:
+          person.gender: female
+        constraints:
+          - variable: person.gender
+            operator: "=="
+            value: female
+            label: Gender
+          - variable: person.age
+            operator: ">="
+            value: 75
+            unit: year
+            label: Age lower bound
+          - variable: person.age
+            operator: "<"
+            value: 91
+            unit: year
+            label: Age upper bound
+        expected_row_header_column: A
+        expected_row_header: Females
+        guard_cells:
+          - column: B
+            row: start
+            expected_value: 75
+            label: start age
+          - column: A
+            row: end
+            expected_value: Females
+            label: end sex
+          - column: B
+            row: end
+            expected_value: 90
+            label: end age
+        range_label_guards:
+          - column: B
+            expected_values:
+              integer_range:
+                start: 75
+                end: 90
+            label: age sequence
+      - value_id: male_0_14
+        label: Male age 0 to 14
+        ordinal: 7
+        row_number: 109
+        row_end_number: 123
+        filters:
+          person.gender: male
+        constraints:
+          - variable: person.gender
+            operator: "=="
+            value: male
+            label: Gender
+          - variable: person.age
+            operator: ">="
+            value: 0
+            unit: year
+            label: Age lower bound
+          - variable: person.age
+            operator: "<"
+            value: 15
+            unit: year
+            label: Age upper bound
+        expected_row_header_column: A
+        expected_row_header: Males
+        guard_cells:
+          - column: B
+            row: start
+            expected_value: 0
+            label: start age
+          - column: A
+            row: end
+            expected_value: Males
+            label: end sex
+          - column: B
+            row: end
+            expected_value: 14
+            label: end age
+        range_label_guards:
+          - column: B
+            expected_values:
+              integer_range:
+                start: 0
+                end: 14
+            label: age sequence
+      - value_id: male_15_29
+        label: Male age 15 to 29
+        ordinal: 8
+        row_number: 124
+        row_end_number: 138
+        filters:
+          person.gender: male
+        constraints:
+          - variable: person.gender
+            operator: "=="
+            value: male
+            label: Gender
+          - variable: person.age
+            operator: ">="
+            value: 15
+            unit: year
+            label: Age lower bound
+          - variable: person.age
+            operator: "<"
+            value: 30
+            unit: year
+            label: Age upper bound
+        expected_row_header_column: A
+        expected_row_header: Males
+        guard_cells:
+          - column: B
+            row: start
+            expected_value: 15
+            label: start age
+          - column: A
+            row: end
+            expected_value: Males
+            label: end sex
+          - column: B
+            row: end
+            expected_value: 29
+            label: end age
+        range_label_guards:
+          - column: B
+            expected_values:
+              integer_range:
+                start: 15
+                end: 29
+            label: age sequence
+      - value_id: male_30_44
+        label: Male age 30 to 44
+        ordinal: 9
+        row_number: 139
+        row_end_number: 153
+        filters:
+          person.gender: male
+        constraints:
+          - variable: person.gender
+            operator: "=="
+            value: male
+            label: Gender
+          - variable: person.age
+            operator: ">="
+            value: 30
+            unit: year
+            label: Age lower bound
+          - variable: person.age
+            operator: "<"
+            value: 45
+            unit: year
+            label: Age upper bound
+        expected_row_header_column: A
+        expected_row_header: Males
+        guard_cells:
+          - column: B
+            row: start
+            expected_value: 30
+            label: start age
+          - column: A
+            row: end
+            expected_value: Males
+            label: end sex
+          - column: B
+            row: end
+            expected_value: 44
+            label: end age
+        range_label_guards:
+          - column: B
+            expected_values:
+              integer_range:
+                start: 30
+                end: 44
+            label: age sequence
+      - value_id: male_45_59
+        label: Male age 45 to 59
+        ordinal: 10
+        row_number: 154
+        row_end_number: 168
+        filters:
+          person.gender: male
+        constraints:
+          - variable: person.gender
+            operator: "=="
+            value: male
+            label: Gender
+          - variable: person.age
+            operator: ">="
+            value: 45
+            unit: year
+            label: Age lower bound
+          - variable: person.age
+            operator: "<"
+            value: 60
+            unit: year
+            label: Age upper bound
+        expected_row_header_column: A
+        expected_row_header: Males
+        guard_cells:
+          - column: B
+            row: start
+            expected_value: 45
+            label: start age
+          - column: A
+            row: end
+            expected_value: Males
+            label: end sex
+          - column: B
+            row: end
+            expected_value: 59
+            label: end age
+        range_label_guards:
+          - column: B
+            expected_values:
+              integer_range:
+                start: 45
+                end: 59
+            label: age sequence
+      - value_id: male_60_74
+        label: Male age 60 to 74
+        ordinal: 11
+        row_number: 169
+        row_end_number: 183
+        filters:
+          person.gender: male
+        constraints:
+          - variable: person.gender
+            operator: "=="
+            value: male
+            label: Gender
+          - variable: person.age
+            operator: ">="
+            value: 60
+            unit: year
+            label: Age lower bound
+          - variable: person.age
+            operator: "<"
+            value: 75
+            unit: year
+            label: Age upper bound
+        expected_row_header_column: A
+        expected_row_header: Males
+        guard_cells:
+          - column: B
+            row: start
+            expected_value: 60
+            label: start age
+          - column: A
+            row: end
+            expected_value: Males
+            label: end sex
+          - column: B
+            row: end
+            expected_value: 74
+            label: end age
+        range_label_guards:
+          - column: B
+            expected_values:
+              integer_range:
+                start: 60
+                end: 74
+            label: age sequence
+      - value_id: male_75_90
+        label: Male age 75 to 90
+        ordinal: 12
+        row_number: 184
+        row_end_number: 199
+        filters:
+          person.gender: male
+        constraints:
+          - variable: person.gender
+            operator: "=="
+            value: male
+            label: Gender
+          - variable: person.age
+            operator: ">="
+            value: 75
+            unit: year
+            label: Age lower bound
+          - variable: person.age
+            operator: "<"
+            value: 91
+            unit: year
+            label: Age upper bound
+        expected_row_header_column: A
+        expected_row_header: Males
+        guard_cells:
+          - column: B
+            row: start
+            expected_value: 75
+            label: start age
+          - column: A
+            row: end
+            expected_value: Males
+            label: end sex
+          - column: B
+            row: end
+            expected_value: 90
+            label: end age
+        range_label_guards:
+          - column: B
+            expected_values:
+              integer_range:
+                start: 75
+                end: 90
+            label: age sequence
+    measures:
+      - measure_id: population_count
+        label: Population count
+        ordinal: 0
+        column_by_year:
+          2022: C
+          2023: D
+          2024: E
+          2025: F
+          2026: G
+          2027: H
+          2028: I
+          2029: J
+        expected_column_header_row: 1
+        expected_column_header_by_year:
+          2022: 2022
+          2023: 2023
+          2024: 2024
+          2025: 2025
+          2026: 2026
+          2027: 2027
+          2028: 2028
+          2029: 2029
+        concept: uk_demographics.population
+        source_concept: ons.principal_population_projection_population
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number

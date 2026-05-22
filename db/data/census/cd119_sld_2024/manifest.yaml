@@ -1,0 +1,22 @@
+source_id: census_decennial
+package_id: census-cd119-sld-2024
+dataset: census_cd119_sld_2024
+source_page: https://www2.census.gov/programs-surveys/decennial/2020/data/119th-congressional-district-summary-file/
+vintage: 2020 Census 119th Congressional District Summary File, 2024 state legislative
+  districts
+table: P1 total population and H3 occupied housing units
+files:
+  2024:
+    filename: cd119_sld_2024.json
+    source_url: https://www2.census.gov/programs-surveys/decennial/2020/data/119th-congressional-district-summary-file/
+    sha256: 47d763e5ca70f1cecc67e902c6a0da68fec672879d76b7544c53647b1ab38fa6
+    size_bytes: 7426613
+    source_table: 2020 Census CD119 state legislative districts P1/H3 selected rows
+    year: 2024
+    input_file_count: 52
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/census_decennial/census-cd119-sld-2024/2024/47d763e5ca70f1cecc67e902c6a0da68fec672879d76b7544c53647b1ab38fa6/cd119_sld_2024.json
+        uri: r2://arch-raw/raw/census_decennial/census-cd119-sld-2024/2024/47d763e5ca70f1cecc67e902c6a0da68fec672879d76b7544c53647b1ab38fa6/cd119_sld_2024.json

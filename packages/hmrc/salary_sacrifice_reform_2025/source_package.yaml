@@ -1,0 +1,91 @@
+schema_version: arch.source_package.v1
+package_id: hmrc-salary-sacrifice-reform-2025
+label: HMRC salary sacrifice reform pension contribution users 2025
+artifact:
+  source_name: hmrc
+  source_table: Salary sacrifice reform for pension contributions
+  resource_package: db
+  resource_directory: data/hmrc/salary_sacrifice_reform_2025
+  manifest: manifest.yaml
+  vintage: published_2025_12_04
+  extracted_at: '2026-05-11'
+  extraction_method: HTML numeric document text parse from official GOV.UK tax information and impact note
+  parser: html_tables_and_text
+  artifact_year: 2025
+record_sets:
+  - record_set_id: hmrc_salary_sacrifice_reform.cy2025.pension_salary_sacrifice_users
+    record_set_spec_id: hmrc_salary_sacrifice_reform.pension_salary_sacrifice_users.v1
+    source_record_id_prefix: hmrc_salary_sacrifice_reform.cy2025.pension_salary_sacrifice_users
+    sheet_name: document_numbers
+    period_type: calendar_year
+    period: 2025
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: person
+    entity_role: employee
+    domain: uk_pensions
+    groupby_dimension: salary_sacrifice.annual_pension_contribution_band
+    rows:
+      - value_id: all_users
+        label: All users
+        ordinal: 0
+        row_number: 40
+        constraints:
+          - variable: salary_sacrifice.uses_pension_salary_sacrifice
+            operator: ==
+            value: true
+            label: Uses pension salary sacrifice
+        expected_row_header_column: C
+        expected_row_header: 'Using the latest available data, an estimated 7.7 million employees currently use salary sacrifice to make pension contributions. Of these, 3.3 million sacrifice more than £2,000 of salary or bonuses. This means 44% of employees using salary sacrifice for pensions would be impacted by this measure, while 56% around 4.3 million people are fully protected by the £2,000 threshold.'
+        table_record_kind: detail
+      - value_id: above_2000
+        label: More than £2,000
+        ordinal: 1
+        row_number: 41
+        constraints:
+          - variable: salary_sacrifice.uses_pension_salary_sacrifice
+            operator: ==
+            value: true
+            label: Uses pension salary sacrifice
+          - variable: salary_sacrifice.annual_pension_contribution
+            operator: '>'
+            value: 2000
+            unit: gbp_per_year
+            label: Annual salary sacrificed for pension
+        expected_row_header_column: C
+        expected_row_header: 'Using the latest available data, an estimated 7.7 million employees currently use salary sacrifice to make pension contributions. Of these, 3.3 million sacrifice more than £2,000 of salary or bonuses. This means 44% of employees using salary sacrifice for pensions would be impacted by this measure, while 56% around 4.3 million people are fully protected by the £2,000 threshold.'
+        table_record_kind: detail
+      - value_id: at_or_below_2000
+        label: At or below £2,000
+        ordinal: 2
+        row_number: 45
+        constraints:
+          - variable: salary_sacrifice.uses_pension_salary_sacrifice
+            operator: ==
+            value: true
+            label: Uses pension salary sacrifice
+          - variable: salary_sacrifice.annual_pension_contribution
+            operator: <=
+            value: 2000
+            unit: gbp_per_year
+            label: Annual salary sacrificed for pension
+        expected_row_header_column: C
+        expected_row_header: 'Using the latest available data, an estimated 7.7 million employees currently use salary sacrifice to make pension contributions. Of these, 3.3 million sacrifice more than £2,000 of salary or bonuses. This means 44% of employees using salary sacrifice for pensions would be impacted by this measure, while 56% around 4.3 million people are fully protected by the £2,000 threshold.'
+        table_record_kind: detail
+    measures:
+      - measure_id: employee_count
+        label: Employee count
+        ordinal: 0
+        column: E
+        source_column_id: numeric_value
+        expected_column_header_row: 1
+        expected_column_header: numeric_value
+        concept: uk_pensions.pension_salary_sacrifice_employee_count
+        source_concept: hmrc.salary_sacrifice_reform.pension_salary_sacrifice_employee_count
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: persons
+        aggregation: count
+        expected_cell_type: number

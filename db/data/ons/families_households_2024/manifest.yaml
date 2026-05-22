@@ -1,0 +1,18 @@
+source_id: ons
+package_id: ons-families-households-2024
+dataset: ons_families_households_2024
+source_page: https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/families/datasets/familiesandhouseholdsfamiliesandhouseholds
+table: ONS Families and Households 2024 Table 7
+files:
+  2024:
+    filename: familiesandhouseholdsuk2024.xlsx
+    source_url: https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/birthsdeathsandmarriages/families/datasets/familiesandhouseholdsfamiliesandhouseholds/current/familiesandhouseholdsuk2024.xlsx
+    sha256: 4cc98bd67bb3a44f41faf4541594df94b12b2dd83b872c990f39425b5ffb130d
+    size_bytes: 228691
+    fetched_at: '2026-05-11T14:14:44+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/ons/ons-families-households-2024/2024/4cc98bd67bb3a44f41faf4541594df94b12b2dd83b872c990f39425b5ffb130d/familiesandhouseholdsuk2024.xlsx
+        uri: r2://arch-raw/raw/ons/ons-families-households-2024/2024/4cc98bd67bb3a44f41faf4541594df94b12b2dd83b872c990f39425b5ffb130d/familiesandhouseholdsuk2024.xlsx

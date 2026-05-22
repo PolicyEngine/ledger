@@ -1,0 +1,20 @@
+source_id: cdc_vsrr
+package_id: cdc-vsrr-live-births-monthly-2024
+dataset: cdc_vsrr_live_births_monthly_2024
+source_page: https://data.cdc.gov/National-Center-for-Health-Statistics/VSRR-State-and-National-Provisional-Counts-for-Liv/hmz2-vwda
+vintage: CDC VSRR provisional state and national counts
+table: VSRR state monthly live births
+files:
+  2024:
+    filename: cdc_vsrr_births_2024.json
+    source_url: https://data.cdc.gov/resource/hmz2-vwda.json?$select=state,year,month,period,indicator,data_value&$where=year=%222024%22%20AND%20period=%22Monthly%22%20AND%20indicator=%22Number%20of%20Live%20Births%22%20AND%20state%20!=%20%22UNITED%20STATES%22&$order=month,state&$limit=5000
+    sha256: c5ea02b4ef9499810fed2c6241182f1428c610811c3a89f268e731c14907b51c
+    size_bytes: 39926
+    source_table: CDC VSRR 2024 monthly state live births
+    year: 2024
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/cdc_vsrr/cdc-vsrr-live-births-monthly-2024/2024/c5ea02b4ef9499810fed2c6241182f1428c610811c3a89f268e731c14907b51c/cdc_vsrr_births_2024.json
+        uri: r2://arch-raw/raw/cdc_vsrr/cdc-vsrr-live-births-monthly-2024/2024/c5ea02b4ef9499810fed2c6241182f1428c610811c3a89f268e731c14907b51c/cdc_vsrr_births_2024.json

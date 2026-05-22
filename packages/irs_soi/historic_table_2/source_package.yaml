@@ -1,0 +1,357 @@
+schema_version: arch.source_package.v1
+package_id: soi-historic-table-2
+label: IRS SOI Historic Table 2 national AGI and tax-credit records
+artifact:
+  source_name: irs_soi
+  source_table: Historic Table 2
+  resource_package: db
+  resource_directory: data/irs_soi/historic_table_2
+  manifest: manifest.yaml
+  vintage: tax_year_{year}
+  extracted_at: "2026-05-09"
+  extraction_method: full CSV row parse with selected source-record cells
+  parser: delimited_text_full_rows
+  sheet_name: in55cmcsv
+  selected_rows:
+    - STATE: US
+      AGI_STUB: 0
+    - STATE: US
+      AGI_STUB: 1
+    - STATE: US
+      AGI_STUB: 2
+    - STATE: US
+      AGI_STUB: 3
+    - STATE: US
+      AGI_STUB: 4
+    - STATE: US
+      AGI_STUB: 5
+    - STATE: US
+      AGI_STUB: 6
+    - STATE: US
+      AGI_STUB: 7
+    - STATE: US
+      AGI_STUB: 8
+    - STATE: US
+      AGI_STUB: 9
+    - STATE: US
+      AGI_STUB: 10
+record_sets:
+  - record_set_id: irs_soi.ty{year}.historic_table_2.us
+    record_set_spec_id: irs_soi.historic_table_2.us.v1
+    source_record_id_prefix: irs_soi.ty{year}.historic_table_2.us
+    sheet_name: in55cmcsv
+    period_type: tax_year
+    period: "{year}"
+    geography_id: 0100000US
+    geography_level: country
+    geography_name: United States
+    geography_vintage: 2020_census
+    entity: tax_unit
+    entity_role: filing_unit
+    domain: all_individual_income_tax_returns
+    groupby_dimension: us:statutes/26/62#adjusted_gross_income
+    rows:
+      - value_id: all
+        label: All returns
+        ordinal: 0
+        row_number: 2
+        expected_row_header_column: B
+        expected_row_header: 0
+        filters:
+          filing_status: all
+          income_range: all
+        table_record_kind: total
+      - value_id: under_1
+        label: No adjusted gross income
+        ordinal: 1
+        row_number: 3
+        expected_row_header_column: B
+        expected_row_header: 1
+        filters:
+          filing_status: all
+          income_range: under_1
+        constraints:
+          - variable: us:statutes/26/62#adjusted_gross_income
+            operator: <
+            value: 1
+            unit: usd
+            label: Adjusted gross income upper bound
+      - value_id: 1_to_10k
+        label: $1 under $10,000
+        ordinal: 2
+        row_number: 4
+        expected_row_header_column: B
+        expected_row_header: 2
+        filters:
+          filing_status: all
+          income_range: 1_to_10k
+        constraints:
+          - variable: us:statutes/26/62#adjusted_gross_income
+            operator: ">="
+            value: 1
+            unit: usd
+            label: Adjusted gross income lower bound
+          - variable: us:statutes/26/62#adjusted_gross_income
+            operator: <
+            value: 10000
+            unit: usd
+            label: Adjusted gross income upper bound
+      - value_id: 10k_to_25k
+        label: $10,000 under $25,000
+        ordinal: 3
+        row_number: 5
+        expected_row_header_column: B
+        expected_row_header: 3
+        filters:
+          filing_status: all
+          income_range: 10k_to_25k
+        constraints:
+          - variable: us:statutes/26/62#adjusted_gross_income
+            operator: ">="
+            value: 10000
+            unit: usd
+            label: Adjusted gross income lower bound
+          - variable: us:statutes/26/62#adjusted_gross_income
+            operator: <
+            value: 25000
+            unit: usd
+            label: Adjusted gross income upper bound
+      - value_id: 25k_to_50k
+        label: $25,000 under $50,000
+        ordinal: 4
+        row_number: 6
+        expected_row_header_column: B
+        expected_row_header: 4
+        filters:
+          filing_status: all
+          income_range: 25k_to_50k
+        constraints:
+          - variable: us:statutes/26/62#adjusted_gross_income
+            operator: ">="
+            value: 25000
+            unit: usd
+            label: Adjusted gross income lower bound
+          - variable: us:statutes/26/62#adjusted_gross_income
+            operator: <
+            value: 50000
+            unit: usd
+            label: Adjusted gross income upper bound
+      - value_id: 50k_to_75k
+        label: $50,000 under $75,000
+        ordinal: 5
+        row_number: 7
+        expected_row_header_column: B
+        expected_row_header: 5
+        filters:
+          filing_status: all
+          income_range: 50k_to_75k
+        constraints:
+          - variable: us:statutes/26/62#adjusted_gross_income
+            operator: ">="
+            value: 50000
+            unit: usd
+            label: Adjusted gross income lower bound
+          - variable: us:statutes/26/62#adjusted_gross_income
+            operator: <
+            value: 75000
+            unit: usd
+            label: Adjusted gross income upper bound
+      - value_id: 75k_to_100k
+        label: $75,000 under $100,000
+        ordinal: 6
+        row_number: 8
+        expected_row_header_column: B
+        expected_row_header: 6
+        filters:
+          filing_status: all
+          income_range: 75k_to_100k
+        constraints:
+          - variable: us:statutes/26/62#adjusted_gross_income
+            operator: ">="
+            value: 75000
+            unit: usd
+            label: Adjusted gross income lower bound
+          - variable: us:statutes/26/62#adjusted_gross_income
+            operator: <
+            value: 100000
+            unit: usd
+            label: Adjusted gross income upper bound
+      - value_id: 100k_to_200k
+        label: $100,000 under $200,000
+        ordinal: 7
+        row_number: 9
+        expected_row_header_column: B
+        expected_row_header: 7
+        filters:
+          filing_status: all
+          income_range: 100k_to_200k
+        constraints:
+          - variable: us:statutes/26/62#adjusted_gross_income
+            operator: ">="
+            value: 100000
+            unit: usd
+            label: Adjusted gross income lower bound
+          - variable: us:statutes/26/62#adjusted_gross_income
+            operator: <
+            value: 200000
+            unit: usd
+            label: Adjusted gross income upper bound
+      - value_id: 200k_to_500k
+        label: $200,000 under $500,000
+        ordinal: 8
+        row_number: 10
+        expected_row_header_column: B
+        expected_row_header: 8
+        filters:
+          filing_status: all
+          income_range: 200k_to_500k
+        constraints:
+          - variable: us:statutes/26/62#adjusted_gross_income
+            operator: ">="
+            value: 200000
+            unit: usd
+            label: Adjusted gross income lower bound
+          - variable: us:statutes/26/62#adjusted_gross_income
+            operator: <
+            value: 500000
+            unit: usd
+            label: Adjusted gross income upper bound
+      - value_id: 500k_to_1m
+        label: $500,000 under $1,000,000
+        ordinal: 9
+        row_number: 11
+        expected_row_header_column: B
+        expected_row_header: 9
+        filters:
+          filing_status: all
+          income_range: 500k_to_1m
+        constraints:
+          - variable: us:statutes/26/62#adjusted_gross_income
+            operator: ">="
+            value: 500000
+            unit: usd
+            label: Adjusted gross income lower bound
+          - variable: us:statutes/26/62#adjusted_gross_income
+            operator: <
+            value: 1000000
+            unit: usd
+            label: Adjusted gross income upper bound
+      - value_id: 1m_plus
+        label: $1,000,000 or more
+        ordinal: 10
+        row_number: 12
+        expected_row_header_column: B
+        expected_row_header: 10
+        filters:
+          filing_status: all
+          income_range: 1m_plus
+        constraints:
+          - variable: us:statutes/26/62#adjusted_gross_income
+            operator: ">="
+            value: 1000000
+            unit: usd
+            label: Adjusted gross income lower bound
+    measures:
+      - measure_id: return_count
+        label: Number of returns
+        ordinal: 0
+        column: C
+        concept: irs_soi.individual_income_tax_returns
+        unit: count
+        aggregation: count
+      - measure_id: tax_filer_individual_count
+        label: Number of individuals
+        ordinal: 1
+        column: L
+        concept: irs_soi.tax_filer_individuals
+        unit: count
+        aggregation: count
+      - measure_id: adjusted_gross_income
+        label: Adjusted gross income
+        ordinal: 2
+        column: T
+        concept: us:statutes/26/62#adjusted_gross_income
+        source_concept: irs_soi.adjusted_gross_income
+        concept_relation: exact
+        concept_authority: arch-us
+        concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
+        concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
+        legal_vintage: tax_year_{year}
+        unit: usd
+        aggregation: sum
+        value_scale: 1000
+      - measure_id: income_tax_before_credits_returns
+        label: Returns with income tax before credits
+        ordinal: 3
+        column: CX
+        concept: irs_soi.returns_with_income_tax_before_credits
+        unit: count
+        aggregation: count
+      - measure_id: income_tax_before_credits_amount
+        label: Income tax before credits
+        ordinal: 4
+        column: CY
+        concept: irs_soi.income_tax_before_credits
+        unit: usd
+        aggregation: sum
+        value_scale: 1000
+      - measure_id: premium_tax_credit_returns
+        label: Returns with premium tax credit
+        ordinal: 5
+        column: DT
+        concept: irs_soi.returns_with_premium_tax_credit
+        unit: count
+        aggregation: count
+      - measure_id: premium_tax_credit_amount
+        label: Premium tax credit
+        ordinal: 6
+        column: DU
+        concept: irs_soi.premium_tax_credit
+        unit: usd
+        aggregation: sum
+        value_scale: 1000
+      - measure_id: eitc_claims
+        label: Returns with earned income credit
+        ordinal: 7
+        column: DZ
+        concept: irs_soi.returns_with_earned_income_credit
+        unit: count
+        aggregation: count
+      - measure_id: eitc_amount
+        label: Earned income credit
+        ordinal: 8
+        column: EA
+        concept: irs_soi.earned_income_credit
+        unit: usd
+        aggregation: sum
+        value_scale: 1000
+      - measure_id: real_estate_taxes_claims
+        label: Returns with real estate taxes
+        ordinal: 9
+        column: BZ
+        concept: irs_soi.returns_with_real_estate_taxes
+        unit: count
+        aggregation: count
+      - measure_id: real_estate_taxes_amount
+        label: Real estate taxes
+        ordinal: 10
+        column: CA
+        concept: irs_soi.real_estate_taxes
+        unit: usd
+        aggregation: sum
+        value_scale: 1000
+      - measure_id: limited_state_local_taxes_returns
+        label: Returns with limited state and local taxes
+        ordinal: 11
+        column: CB
+        concept: irs_soi.returns_with_limited_state_local_taxes
+        unit: count
+        aggregation: count
+      - measure_id: limited_state_local_taxes_amount
+        label: Limited state and local taxes
+        ordinal: 12
+        column: CC
+        concept: irs_soi.limited_state_local_taxes
+        unit: usd
+        aggregation: sum
+        value_scale: 1000

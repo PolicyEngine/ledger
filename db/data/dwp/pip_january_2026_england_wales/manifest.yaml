@@ -1,0 +1,18 @@
+source_id: dwp
+package_id: dwp-pip-january-2026-england-wales
+dataset: dwp_pip_january_2026_england_wales
+source_page: https://www.gov.uk/government/statistics/personal-independence-payment-statistics-to-january-2026
+table: PIP statistics January 2026 England and Wales tables
+files:
+  2026:
+    filename: pip-tables-jan-2026-england-and-wales.ods
+    source_url: https://assets.publishing.service.gov.uk/media/69b41386ba47c264e6c8cf40/pip-tables-jan-2026-england-and-wales.ods
+    sha256: acb4126710c33c45ef4cbaeb5d16ef84040f51f188e7f0a0545591ce36494fc6
+    size_bytes: 603327
+    fetched_at: '2026-05-10T15:00:26+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/dwp/dwp-pip-january-2026-england-wales/2026/acb4126710c33c45ef4cbaeb5d16ef84040f51f188e7f0a0545591ce36494fc6/pip-tables-jan-2026-england-and-wales.ods
+        uri: r2://arch-raw/raw/dwp/dwp-pip-january-2026-england-wales/2026/acb4126710c33c45ef4cbaeb5d16ef84040f51f188e7f0a0545591ce36494fc6/pip-tables-jan-2026-england-and-wales.ods

@@ -1,0 +1,70 @@
+schema_version: arch.source_package.v1
+package_id: dhs-ohss-unauthorized-immigrant-population-2018-2022
+label: DHS OHSS unauthorized immigrant population estimates
+artifact:
+  source_name: dhs_ohss
+  source_table: Estimates of the Unauthorized Immigrant Population Residing in the United States, January 2018-January 2022
+  resource_package: db
+  resource_directory: data/dhs_ohss/unauthorized_immigrant_population_2018_2022
+  manifest: manifest.yaml
+  vintage: january_2018_january_2022
+  extracted_at: "2026-05-11"
+  extraction_method: pypdf text-line number extraction from full publisher PDF
+  parser: pdf_text_numbers
+  artifact_year: 2022
+record_sets:
+  - record_set_id: dhs_ohss.unauthorized_immigrant_population.2022
+    record_set_spec_id: dhs_ohss.unauthorized_immigrant_population.v1
+    source_record_id_prefix: dhs_ohss.unauthorized_immigrant_population.2022
+    sheet_name: document_numbers
+    period_type: calendar_year
+    period: 2022
+    geography_id: 0100000US
+    geography_level: country
+    geography_name: United States
+    geography_vintage: 2020_census
+    entity: person
+    entity_role: resident
+    domain: immigration_status
+    groupby_dimension: immigration_status
+    rows:
+      - value_id: undocumented
+        label: Undocumented
+        ordinal: 0
+        row_number: 11
+        expected_row_header_column: C
+        expected_row_header: In summary, the Office of Homeland Security Statistics (OHSS) estimates 11.0 million unauthorized immigrants were
+        filters:
+          immigration_status: UNDOCUMENTED
+        constraints:
+          - variable: immigration_status
+            operator: "=="
+            value: UNDOCUMENTED
+            label: Undocumented immigration status
+        guard_cells:
+          - column: A
+            expected_value: 3
+            label: PDF page number
+          - column: B
+            expected_value: 15
+            label: PDF extracted line number
+          - column: D
+            expected_value: "11.0 million"
+            label: source number text
+          - column: C
+            row: 12
+            expected_value: living in the United States on January 1, 2022, down from 11.6 million in 2010 and up from 10.5 million in January 2020.
+            label: following PDF line context
+        table_record_kind: total
+    measures:
+      - measure_id: rounded_summary_count
+        label: Unauthorized immigrant population rounded summary count
+        ordinal: 0
+        column: E
+        source_column_id: numeric_value
+        expected_column_header_row: 1
+        expected_column_header: numeric_value
+        concept: dhs_ohss.unauthorized_immigrant_population
+        unit: count
+        aggregation: count
+        expected_cell_type: number

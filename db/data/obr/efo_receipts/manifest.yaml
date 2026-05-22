@@ -1,0 +1,18 @@
+source_id: obr
+package_id: obr-efo-receipts
+dataset: obr_efo_march_2026_detailed_forecast_tables_receipts
+source_page: https://obr.uk/efo/economic-and-fiscal-outlook-march-2026/
+table: March 2026 Economic and fiscal outlook detailed forecast tables receipts
+files:
+  2025:
+    filename: efo-march-2026-detailed-forecast-tables-receipts.xlsx
+    source_url: https://obr.uk/download/march-2026-economic-and-fiscal-outlook-detailed-forecast-tables-receipts/
+    sha256: f65b6cb7f96931d4abd85940794eb60f6f65afca8bbf16c74a4548bf92766a28
+    size_bytes: 187899
+    fetched_at: '2026-05-10T09:03:32+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/obr/obr-efo-receipts/2025/f65b6cb7f96931d4abd85940794eb60f6f65afca8bbf16c74a4548bf92766a28/efo-march-2026-detailed-forecast-tables-receipts.xlsx
+        uri: r2://arch-raw/raw/obr/obr-efo-receipts/2025/f65b6cb7f96931d4abd85940794eb60f6f65afca8bbf16c74a4548bf92766a28/efo-march-2026-detailed-forecast-tables-receipts.xlsx

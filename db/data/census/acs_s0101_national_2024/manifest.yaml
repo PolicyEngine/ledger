@@ -1,0 +1,20 @@
+source_id: census_acs
+package_id: census-acs-s0101-national-age-2024
+dataset: census_acs_s0101_national_age_2024
+source_page: https://api.census.gov/data/2024/acs/acs1/subject.html
+vintage: 2024 ACS 1-year subject tables
+table: S0101 Age by Sex
+files:
+  2024:
+    filename: acs_S0101_national_2024.json
+    source_url: https://api.census.gov/data/2024/acs/acs1/subject?get=group(S0101)&for=us:*
+    sha256: d8314c157e59d2a48db6aacb9e783454a40a7cc4a99bca65045e37cc26ea974c
+    size_bytes: 24148
+    source_table: ACS 2024 1-year subject table S0101 national age bands
+    year: 2024
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/census_acs/census-acs-s0101-national-age-2024/2024/d8314c157e59d2a48db6aacb9e783454a40a7cc4a99bca65045e37cc26ea974c/acs_S0101_national_2024.json
+        uri: r2://arch-raw/raw/census_acs/census-acs-s0101-national-age-2024/2024/d8314c157e59d2a48db6aacb9e783454a40a7cc4a99bca65045e37cc26ea974c/acs_S0101_national_2024.json

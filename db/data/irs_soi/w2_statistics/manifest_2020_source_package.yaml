@@ -1,0 +1,20 @@
+source_id: irs_soi
+package_id: soi-w2-statistics-2020
+dataset: irs_soi_w2_statistics_2020
+source_page: https://www.irs.gov/statistics/soi-tax-stats-individual-information-return-form-w2-statistics
+table: Table 4.B. Summary of Items for Taxpayers with Form W-2, by Return and Earner
+  Type, Tax Year 2020
+files:
+  2020:
+    filename: 20in04w2all.xlsx
+    source_url: https://www.irs.gov/pub/irs-soi/20in04w2all.xlsx
+    sha256: 1178d77618cc1d2f873506909eeec660f36e3599854f31337f9dcaec6cfc442f
+    size_bytes: 25491
+    source_table: Table 4.B. Summary of Items for Taxpayers with Form W-2, by Return
+      and Earner Type, Tax Year 2020
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/irs_soi/soi-w2-statistics-2020/2020/1178d77618cc1d2f873506909eeec660f36e3599854f31337f9dcaec6cfc442f/20in04w2all.xlsx
+        uri: r2://arch-raw/raw/irs_soi/soi-w2-statistics-2020/2020/1178d77618cc1d2f873506909eeec660f36e3599854f31337f9dcaec6cfc442f/20in04w2all.xlsx

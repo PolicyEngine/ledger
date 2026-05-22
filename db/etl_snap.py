@@ -7,6 +7,13 @@ Data source: https://www.fns.usda.gov/pd/supplemental-nutrition-assistance-progr
 
 from __future__ import annotations
 
+import re
+import zipfile
+from io import BytesIO
+from pathlib import Path
+from typing import Any
+
+from openpyxl import load_workbook
 from sqlmodel import Session, select
 
 from .schema import (
@@ -33,6 +40,62 @@ STATE_FIPS = {
     "SC": "45", "SD": "46", "TN": "47", "TX": "48", "UT": "49",
     "VT": "50", "VA": "51", "WA": "53", "WV": "54", "WI": "55",
     "WY": "56", "PR": "72", "VI": "78", "GU": "66",
+}
+STATE_NAME_TO_ABBREV = {
+    "Alabama": "AL",
+    "Alaska": "AK",
+    "Arizona": "AZ",
+    "Arkansas": "AR",
+    "California": "CA",
+    "Colorado": "CO",
+    "Connecticut": "CT",
+    "Delaware": "DE",
+    "District of Columbia": "DC",
+    "Florida": "FL",
+    "Georgia": "GA",
+    "Guam": "GU",
+    "Hawaii": "HI",
+    "Idaho": "ID",
+    "Illinois": "IL",
+    "Indiana": "IN",
+    "Iowa": "IA",
+    "Kansas": "KS",
+    "Kentucky": "KY",
+    "Louisiana": "LA",
+    "Maine": "ME",
+    "Maryland": "MD",
+    "Massachusetts": "MA",
+    "Michigan": "MI",
+    "Minnesota": "MN",
+    "Mississippi": "MS",
+    "Missouri": "MO",
+    "Montana": "MT",
+    "Nebraska": "NE",
+    "Nevada": "NV",
+    "New Hampshire": "NH",
+    "New Jersey": "NJ",
+    "New Mexico": "NM",
+    "New York": "NY",
+    "North Carolina": "NC",
+    "North Dakota": "ND",
+    "Ohio": "OH",
+    "Oklahoma": "OK",
+    "Oregon": "OR",
+    "Pennsylvania": "PA",
+    "Puerto Rico": "PR",
+    "Rhode Island": "RI",
+    "South Carolina": "SC",
+    "South Dakota": "SD",
+    "Tennessee": "TN",
+    "Texas": "TX",
+    "Utah": "UT",
+    "Vermont": "VT",
+    "Virgin Islands": "VI",
+    "Virginia": "VA",
+    "Washington": "WA",
+    "West Virginia": "WV",
+    "Wisconsin": "WI",
+    "Wyoming": "WY",
 }
 
 # SNAP data by year (from USDA FNS)
@@ -103,6 +166,121 @@ SNAP_DATA = {
 }
 
 SOURCE_URL = "https://www.fns.usda.gov/pd/supplemental-nutrition-assistance-program-snap"
+FNS_SNAP_ZIP_URL = (
+    "https://www.fns.usda.gov/sites/default/files/resource-files/"
+    "snap-zip-fy69tocurrent-6.zip"
+)
+
+
+def load_snap_data_from_fns_zip(
+    path: str | Path,
+    *,
+    years: list[int] | None = None,
+) -> dict[int, dict[str, Any]]:
+    """Load FY SNAP totals from the USDA FNS workbook archive."""
+    requested_years = set(years) if years is not None else None
+    parsed: dict[int, dict[str, Any]] = {}
+    with zipfile.ZipFile(path) as archive:
+        for name in archive.namelist():
+            year = _fiscal_year_from_workbook_name(name)
+            if year is None or (
+                requested_years is not None and year not in requested_years
+            ):
+                continue
+            with archive.open(name) as file:
+                parsed[year] = parse_snap_fns_workbook(
+                    BytesIO(file.read()),
+                    year=year,
+                )
+    return parsed
+
+
+def parse_snap_fns_workbook(workbook: str | Path | BytesIO, *, year: int) -> dict[str, Any]:
+    """Parse one USDA FNS SNAP FY workbook into loader-compatible data."""
+    source = load_workbook(workbook, data_only=True, read_only=True)
+    data: dict[str, Any] = {
+        "national": {},
+        "states": {},
+        "source_table": f"SNAP Monthly State Participation and Benefit Summary, FY {year}",
+        "source_url": FNS_SNAP_ZIP_URL,
+    }
+    for worksheet in source.worksheets:
+        current_area: str | None = None
+        for row in worksheet.iter_rows(values_only=True):
+            label = _clean_snap_label(row[0] if row else None)
+            if label is None:
+                continue
+            if _is_snap_area_label(label, row):
+                current_area = label
+                continue
+            if label != "Total" or current_area is None:
+                continue
+            parsed_total = _parse_snap_total_row(row)
+            if parsed_total is None:
+                current_area = None
+                continue
+            if current_area == "US Summary":
+                data["national"] = parsed_total
+            else:
+                state_abbrev = STATE_NAME_TO_ABBREV.get(current_area)
+                if state_abbrev is not None:
+                    data["states"][state_abbrev] = parsed_total
+            current_area = None
+    return data
+
+
+def _fiscal_year_from_workbook_name(name: str) -> int | None:
+    match = re.search(r"(?:^|/)FY(\d{2})\.xlsx$", name, flags=re.IGNORECASE)
+    if match is None:
+        return None
+    year = int(match.group(1))
+    return 1900 + year if year >= 69 else 2000 + year
+
+
+def _clean_snap_label(value: Any) -> str | None:
+    if value is None:
+        return None
+    label = str(value).strip()
+    return label or None
+
+
+def _is_snap_area_label(label: str, row: tuple[Any, ...]) -> bool:
+    if label in {
+        "Fiscal Year and Month",
+        "Footnotes:",
+        "ALL DATA SUBJECT TO REVISION",
+        "Total",
+    }:
+        return False
+    if re.match(r"^[A-Z][a-z]{2} \d{4}$", label):
+        return False
+    if len(row) > 1 and any(value not in (None, " ", "") for value in row[1:6]):
+        return False
+    return label == "US Summary" or label in STATE_NAME_TO_ABBREV
+
+
+def _parse_snap_total_row(row: tuple[Any, ...]) -> dict[str, float] | None:
+    households = _snap_number(row[1] if len(row) > 1 else None)
+    participants = _snap_number(row[2] if len(row) > 2 else None)
+    benefits = _snap_number(row[3] if len(row) > 3 else None)
+    avg_benefit_per_person = _snap_number(row[5] if len(row) > 5 else None)
+    if households is None or participants is None or benefits is None:
+        return None
+    return {
+        "households": households / 1_000,
+        "participants": participants / 1_000,
+        "benefits": benefits / 1_000_000,
+        "avg_benefit_per_person": avg_benefit_per_person or 0.0,
+    }
+
+
+def _snap_number(value: Any) -> float | None:
+    if value in (None, "--"):
+        return None
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return None
 
 
 def build_snap_target(
@@ -116,6 +294,7 @@ def build_snap_target(
     factor: float,
     target_type: TargetType,
     source_table: str,
+    source_url: str = SOURCE_URL,
 ) -> Target:
     """Build a SNAP target input from a source fact and unit conversion."""
     fact = SourceFact(
@@ -126,7 +305,7 @@ def build_snap_target(
         source=DataSource.USDA_SNAP,
         jurisdiction=stratum.jurisdiction,
         source_table=source_table,
-        source_url=SOURCE_URL,
+        source_url=source_url,
     )
     converted = convert_units(fact, factor, output_unit)
     blueprint = as_target(
@@ -180,7 +359,12 @@ def get_or_create_stratum(
     return stratum
 
 
-def load_snap_targets(session: Session, years: list[int] | None = None):
+def load_snap_targets(
+    session: Session,
+    years: list[int] | None = None,
+    *,
+    source_zip: str | Path | None = None,
+):
     """
     Load SNAP targets into database.
 
@@ -188,14 +372,24 @@ def load_snap_targets(session: Session, years: list[int] | None = None):
         session: Database session
         years: Years to load (default: all available)
     """
+    data_by_year = (
+        load_snap_data_from_fns_zip(source_zip, years=years)
+        if source_zip is not None
+        else SNAP_DATA
+    )
     if years is None:
-        years = list(SNAP_DATA.keys())
+        years = sorted(data_by_year)
 
     for year in years:
-        if year not in SNAP_DATA:
+        if year not in data_by_year:
             continue
 
-        data = SNAP_DATA[year]
+        data = data_by_year[year]
+        source_table = data.get(
+            "source_table",
+            f"SNAP Monthly State Participation and Benefit Summary, FY {year}",
+        )
+        source_url = data.get("source_url", SOURCE_URL)
 
         # Create national SNAP stratum
         national_stratum = get_or_create_stratum(
@@ -220,7 +414,8 @@ def load_snap_targets(session: Session, years: list[int] | None = None):
                 output_unit="count",
                 factor=1000,
                 target_type=TargetType.COUNT,
-                source_table="SNAP National Summary",
+                source_table=source_table,
+                source_url=source_url,
             )
         )
 
@@ -234,7 +429,8 @@ def load_snap_targets(session: Session, years: list[int] | None = None):
                 output_unit="count",
                 factor=1000,
                 target_type=TargetType.COUNT,
-                source_table="SNAP National Summary",
+                source_table=source_table,
+                source_url=source_url,
             )
         )
 
@@ -248,7 +444,8 @@ def load_snap_targets(session: Session, years: list[int] | None = None):
                 output_unit="dollars",
                 factor=1_000_000,
                 target_type=TargetType.AMOUNT,
-                source_table="SNAP National Summary",
+                source_table=source_table,
+                source_url=source_url,
             )
         )
 
@@ -282,7 +479,8 @@ def load_snap_targets(session: Session, years: list[int] | None = None):
                     output_unit="count",
                     factor=1000,
                     target_type=TargetType.COUNT,
-                    source_table="SNAP State Summary",
+                    source_table=source_table,
+                    source_url=source_url,
                 )
             )
 
@@ -296,7 +494,8 @@ def load_snap_targets(session: Session, years: list[int] | None = None):
                     output_unit="count",
                     factor=1000,
                     target_type=TargetType.COUNT,
-                    source_table="SNAP State Summary",
+                    source_table=source_table,
+                    source_url=source_url,
                 )
             )
 
@@ -310,14 +509,15 @@ def load_snap_targets(session: Session, years: list[int] | None = None):
                     output_unit="dollars",
                     factor=1_000_000,
                     target_type=TargetType.AMOUNT,
-                    source_table="SNAP State Summary",
+                    source_table=source_table,
+                    source_url=source_url,
                 )
             )
 
     session.commit()
 
 
-def run_etl(db_path=None):
+def run_etl(db_path=None, *, source_zip: str | Path | None = None):
     """Run the SNAP ETL pipeline."""
     from pathlib import Path
     from .schema import DEFAULT_DB_PATH
@@ -326,7 +526,7 @@ def run_etl(db_path=None):
     engine = init_db(path)
 
     with Session(engine) as session:
-        load_snap_targets(session)
+        load_snap_targets(session, source_zip=source_zip)
         print(f"Loaded SNAP targets to {path}")
 
 

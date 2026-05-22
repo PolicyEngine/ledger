@@ -1,0 +1,18 @@
+source_id: dwp
+package_id: dwp-pip-daily-living-foi-2025
+dataset: dwp_pip_daily_living_foi_2025
+source_page: https://www.whatdotheyknow.com/request/personal_independence_payment_pi_7
+table: DWP FOI2025/24990 PIP daily living component response
+files:
+  2025:
+    filename: response-foi2025-24990.html
+    source_url: https://www.whatdotheyknow.com/request/personal_independence_payment_pi_7/response/2989270/attach/html/3/Response%20FOI2025%2024990.pdf.html
+    sha256: 2f590f80c6080afd69eef24bccb84206fcfff698114e3b1fd7faaf9a01286a06
+    size_bytes: 2191
+    fetched_at: '2026-05-10T16:18:00+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/dwp/dwp-pip-daily-living-foi-2025/2025/2f590f80c6080afd69eef24bccb84206fcfff698114e3b1fd7faaf9a01286a06/response-foi2025-24990.html
+        uri: r2://arch-raw/raw/dwp/dwp-pip-daily-living-foi-2025/2025/2f590f80c6080afd69eef24bccb84206fcfff698114e3b1fd7faaf9a01286a06/response-foi2025-24990.html

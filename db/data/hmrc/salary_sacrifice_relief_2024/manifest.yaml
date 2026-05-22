@@ -1,0 +1,18 @@
+source_id: hmrc
+package_id: hmrc-salary-sacrifice-relief-2024
+dataset: hmrc_salary_sacrifice_relief_2024
+source_page: https://www.gov.uk/government/statistics/personal-and-stakeholder-pensions-statistics
+table: HMRC personal pensions pension tax relief Tables 6.1 and 6.2
+files:
+  2024:
+    filename: Tables_6_1_and_6_2.csv
+    source_url: https://assets.publishing.service.gov.uk/media/687a294e312ee8a5f0806b6d/Tables_6_1_and_6_2.csv
+    sha256: 32770777b16264650f787c622347e3670d849f0b614a4e5eab71f8fb8094c352
+    size_bytes: 11420
+    fetched_at: '2026-05-10T21:45:42+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/hmrc/hmrc-salary-sacrifice-relief-2024/2024/32770777b16264650f787c622347e3670d849f0b614a4e5eab71f8fb8094c352/Tables_6_1_and_6_2.csv
+        uri: r2://arch-raw/raw/hmrc/hmrc-salary-sacrifice-relief-2024/2024/32770777b16264650f787c622347e3670d849f0b614a4e5eab71f8fb8094c352/Tables_6_1_and_6_2.csv

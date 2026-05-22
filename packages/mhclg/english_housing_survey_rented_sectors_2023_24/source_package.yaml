@@ -1,0 +1,57 @@
+schema_version: arch.source_package.v1
+package_id: mhclg-english-housing-survey-rented-sectors-2023-24
+label: MHCLG English Housing Survey 2023-24 rented sectors
+artifact:
+  source_name: mhclg
+  source_table: English Housing Survey 2023-24 rented sectors
+  resource_package: db
+  resource_directory: data/mhclg/english_housing_survey_rented_sectors_2023_24
+  manifest: manifest.yaml
+  vintage: english_housing_survey_2023_24
+  extracted_at: '2026-05-11'
+  extraction_method: HTML numeric document text parse from official GOV.UK publication page
+  parser: html_tables_and_text
+  artifact_year: 2024
+record_sets:
+  - record_set_id: mhclg_ehs.fy2023_24.social_rent_weekly_costs
+    record_set_spec_id: mhclg_ehs.social_rent_weekly_costs.v1
+    source_record_id_prefix: mhclg_ehs.fy2023_24.social_rent_weekly_costs
+    sheet_name: document_numbers
+    period_type: fiscal_year
+    period: 2023-24
+    geography_id: E92000001
+    geography_level: country
+    geography_name: England
+    geography_vintage: current
+    entity: dwelling
+    entity_role: social_rented_dwelling
+    domain: uk_housing
+    groupby_dimension: housing.tenure
+    rows:
+      - value_id: social_rent
+        label: Social rent
+        ordinal: 0
+        row_number: 238
+        constraints:
+          - variable: housing.tenure
+            operator: ==
+            value: social_rent
+            label: Housing tenure
+        expected_row_header_column: C
+        expected_row_header: 'On average, private renters had higher weekly housing costs, paying a mean weekly rent of £237 (median: £196), compared to the mean payment of £222 by mortgagors (median: £185) and £118 by social renters (median: £107). Annex Table 1.7.'
+        table_record_kind: detail
+    measures:
+      - measure_id: mean_weekly_rent
+        label: Mean weekly rent
+        ordinal: 0
+        column: E
+        source_column_id: numeric_value
+        expected_column_header_row: 1
+        expected_column_header: numeric_value
+        concept: uk_housing.mean_weekly_social_rent
+        source_concept: mhclg_ehs.mean_weekly_social_rent
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp_per_week
+        aggregation: mean
+        expected_cell_type: number

@@ -1,0 +1,18 @@
+source_id: nrs
+package_id: nrs-mid-year-population-estimates-2024
+dataset: nrs_mid_year_population_estimates_2024
+source_page: https://www.nrscotland.gov.uk/publications/mid-2024-population-estimates/
+table: NRS mid-year population estimates 2024 data
+files:
+  2024:
+    filename: data-mid-year-population-estimates-2024.xlsx
+    source_url: https://www.nrscotland.gov.uk/media/txvdnee4/data-mid-year-population-estimates-2024.xlsx
+    sha256: 85e1f3bcf76b90f729fdec813de4bc43180d3f6f630865360c8c2a469a0cb74c
+    size_bytes: 147251
+    fetched_at: '2026-05-11T02:49:55+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/nrs/nrs-mid-year-population-estimates-2024/2024/85e1f3bcf76b90f729fdec813de4bc43180d3f6f630865360c8c2a469a0cb74c/data-mid-year-population-estimates-2024.xlsx
+        uri: r2://arch-raw/raw/nrs/nrs-mid-year-population-estimates-2024/2024/85e1f3bcf76b90f729fdec813de4bc43180d3f6f630865360c8c2a469a0cb74c/data-mid-year-population-estimates-2024.xlsx

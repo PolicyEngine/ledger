@@ -1,0 +1,25 @@
+source: HHS ACF Office of Family Assistance
+dataset: FY 2024 Federal TANF and State MOE Financial Data
+vintage: FY 2024
+retrieved: 2026-05-08
+notes: 'Full publisher workbook copied from the PolicyEngine US data raw-input cache
+  because direct ACF download requests from the local agent receive an AWS WAF challenge.
+  The source page and expected direct workbook URL are retained for provenance.
+
+  '
+files:
+  2024:
+    filename: fy-2024-tanf-moe-financial-data.xlsx
+    sha256: e14c29171ac508247fb95119caf9af3c1db1ca04865b3b182556c2b48459e2ba
+    source_url: https://acf.gov/ofa/data/tanf-financial-data-fy-2024
+    download_url: https://acf.gov/sites/default/files/documents/ofa/fy-2024-tanf-moe-financial-data.xlsx
+    source_table: FY 2024 Federal TANF and State MOE Financial Data
+    size_bytes: 573228
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/hhs_acf_tanf/hhs-acf-tanf-financial-2024/2024/e14c29171ac508247fb95119caf9af3c1db1ca04865b3b182556c2b48459e2ba/fy-2024-tanf-moe-financial-data.xlsx
+        uri: r2://arch-raw/raw/hhs_acf_tanf/hhs-acf-tanf-financial-2024/2024/e14c29171ac508247fb95119caf9af3c1db1ca04865b3b182556c2b48459e2ba/fy-2024-tanf-moe-financial-data.xlsx
+source_id: hhs_acf_tanf
+package_id: hhs-acf-tanf-financial-2024

@@ -1,0 +1,379 @@
+schema_version: arch.source_package.v1
+package_id: hmrc-salary-sacrifice-relief-2024
+label: HMRC salary sacrifice pension tax relief 2023-24
+artifact:
+  source_name: hmrc
+  source_table: HMRC personal pensions pension tax relief Tables 6.1 and 6.2
+  resource_package: db
+  resource_directory: data/hmrc/salary_sacrifice_relief_2024
+  manifest: manifest.yaml
+  vintage: personal_pensions_pension_tax_relief_september_2025
+  extracted_at: '2026-05-10'
+  extraction_method: delimited text full-row parse with selected-cell facts
+  parser: delimited_text_full_rows
+  sheet_name: Tables_6_1_and_6_2
+  selected_rows:
+    - tax_year: 2023 to 2024
+      income_tax_nics: Income Tax
+      contribution_type: Salary sacrificed contributions
+      nics_relief_class: Not applicable
+      sector_scheme: Total
+      scheme_type: Total
+      tax_rate: Total
+    - tax_year: 2023 to 2024
+      income_tax_nics: Income Tax
+      contribution_type: Salary sacrificed contributions
+      nics_relief_class: Not applicable
+      sector_scheme: Total
+      scheme_type: Total
+      tax_rate: Basic Rate
+    - tax_year: 2023 to 2024
+      income_tax_nics: Income Tax
+      contribution_type: Salary sacrificed contributions
+      nics_relief_class: Not applicable
+      sector_scheme: Total
+      scheme_type: Total
+      tax_rate: Higher Rate
+    - tax_year: 2023 to 2024
+      income_tax_nics: Income Tax
+      contribution_type: Salary sacrificed contributions
+      nics_relief_class: Not applicable
+      sector_scheme: Total
+      scheme_type: Total
+      tax_rate: Additional Rate
+    - tax_year: 2023 to 2024
+      income_tax_nics: NICs
+      contribution_type: Salary sacrificed contributions
+      nics_relief_class: Class 1 Primary (employee)
+      sector_scheme: Total
+      scheme_type: Total
+      tax_rate: Total
+    - tax_year: 2023 to 2024
+      income_tax_nics: NICs
+      contribution_type: Salary sacrificed contributions
+      nics_relief_class: Class 1 Secondary (employer)
+      sector_scheme: Total
+      scheme_type: Total
+      tax_rate: Total
+record_sets:
+  - record_set_id: hmrc_pensions.ty2023_24.salary_sacrifice_income_tax_relief_by_rate
+    record_set_spec_id: hmrc_pensions.salary_sacrifice_income_tax_relief_by_rate.v1
+    source_record_id_prefix: hmrc_pensions.ty2023_24.salary_sacrifice_income_tax_relief_by_rate
+    sheet_name: Tables_6_1_and_6_2
+    period_type: tax_year
+    period: '2023-24'
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: government
+    entity_role: uk_tax_authority
+    domain: uk_pension_tax_relief
+    groupby_dimension: tax_rate
+    rows:
+      - value_id: total
+        label: Total
+        ordinal: 0
+        row_number: 2
+        table_record_kind: total
+        expected_row_header_column: G
+        expected_row_header: Total
+        filters:
+          tax_year: 2023 to 2024
+          income_tax_nics: Income Tax
+          contribution_type: Salary sacrificed contributions
+          nics_relief_class: Not applicable
+          sector_scheme: Total
+          scheme_type: Total
+          tax_rate: Total
+        constraints:
+          - variable: tax_year
+            operator: "=="
+            value: 2023 to 2024
+            label: Source tax year
+          - variable: income_tax_nics
+            operator: "=="
+            value: Income Tax
+            label: HMRC relief type
+          - variable: contribution_type
+            operator: "=="
+            value: Salary sacrificed contributions
+            label: HMRC contribution type
+          - variable: nics_relief_class
+            operator: "=="
+            value: Not applicable
+            label: HMRC NICs relief class
+          - variable: sector_scheme
+            operator: "=="
+            value: Total
+            label: HMRC sector or scheme
+          - variable: scheme_type
+            operator: "=="
+            value: Total
+            label: HMRC scheme type
+          - variable: tax_rate
+            operator: "=="
+            value: Total
+            label: HMRC tax rate
+      - value_id: basic_rate
+        label: Basic Rate
+        ordinal: 1
+        row_number: 3
+        expected_row_header_column: G
+        expected_row_header: Basic Rate
+        filters:
+          tax_year: 2023 to 2024
+          income_tax_nics: Income Tax
+          contribution_type: Salary sacrificed contributions
+          nics_relief_class: Not applicable
+          sector_scheme: Total
+          scheme_type: Total
+          tax_rate: Basic Rate
+        constraints:
+          - variable: tax_year
+            operator: "=="
+            value: 2023 to 2024
+            label: Source tax year
+          - variable: income_tax_nics
+            operator: "=="
+            value: Income Tax
+            label: HMRC relief type
+          - variable: contribution_type
+            operator: "=="
+            value: Salary sacrificed contributions
+            label: HMRC contribution type
+          - variable: nics_relief_class
+            operator: "=="
+            value: Not applicable
+            label: HMRC NICs relief class
+          - variable: sector_scheme
+            operator: "=="
+            value: Total
+            label: HMRC sector or scheme
+          - variable: scheme_type
+            operator: "=="
+            value: Total
+            label: HMRC scheme type
+          - variable: tax_rate
+            operator: "=="
+            value: Basic Rate
+            label: HMRC tax rate
+      - value_id: higher_rate
+        label: Higher Rate
+        ordinal: 2
+        row_number: 4
+        expected_row_header_column: G
+        expected_row_header: Higher Rate
+        filters:
+          tax_year: 2023 to 2024
+          income_tax_nics: Income Tax
+          contribution_type: Salary sacrificed contributions
+          nics_relief_class: Not applicable
+          sector_scheme: Total
+          scheme_type: Total
+          tax_rate: Higher Rate
+        constraints:
+          - variable: tax_year
+            operator: "=="
+            value: 2023 to 2024
+            label: Source tax year
+          - variable: income_tax_nics
+            operator: "=="
+            value: Income Tax
+            label: HMRC relief type
+          - variable: contribution_type
+            operator: "=="
+            value: Salary sacrificed contributions
+            label: HMRC contribution type
+          - variable: nics_relief_class
+            operator: "=="
+            value: Not applicable
+            label: HMRC NICs relief class
+          - variable: sector_scheme
+            operator: "=="
+            value: Total
+            label: HMRC sector or scheme
+          - variable: scheme_type
+            operator: "=="
+            value: Total
+            label: HMRC scheme type
+          - variable: tax_rate
+            operator: "=="
+            value: Higher Rate
+            label: HMRC tax rate
+      - value_id: additional_rate
+        label: Additional Rate
+        ordinal: 3
+        row_number: 5
+        expected_row_header_column: G
+        expected_row_header: Additional Rate
+        filters:
+          tax_year: 2023 to 2024
+          income_tax_nics: Income Tax
+          contribution_type: Salary sacrificed contributions
+          nics_relief_class: Not applicable
+          sector_scheme: Total
+          scheme_type: Total
+          tax_rate: Additional Rate
+        constraints:
+          - variable: tax_year
+            operator: "=="
+            value: 2023 to 2024
+            label: Source tax year
+          - variable: income_tax_nics
+            operator: "=="
+            value: Income Tax
+            label: HMRC relief type
+          - variable: contribution_type
+            operator: "=="
+            value: Salary sacrificed contributions
+            label: HMRC contribution type
+          - variable: nics_relief_class
+            operator: "=="
+            value: Not applicable
+            label: HMRC NICs relief class
+          - variable: sector_scheme
+            operator: "=="
+            value: Total
+            label: HMRC sector or scheme
+          - variable: scheme_type
+            operator: "=="
+            value: Total
+            label: HMRC scheme type
+          - variable: tax_rate
+            operator: "=="
+            value: Additional Rate
+            label: HMRC tax rate
+    measures:
+      - measure_id: value_of_relief
+        label: Income tax value of relief
+        ordinal: 0
+        column: H
+        source_column_id: value_of_relief
+        expected_column_header_row: 1
+        expected_column_header: value_of_relief
+        concept: uk_pension_tax_relief.income_tax_relief_from_salary_sacrifice
+        source_concept: hmrc.value_of_relief
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000
+        expected_cell_type: number
+  - record_set_id: hmrc_pensions.ty2023_24.salary_sacrifice_nics_relief_by_class
+    record_set_spec_id: hmrc_pensions.salary_sacrifice_nics_relief_by_class.v1
+    source_record_id_prefix: hmrc_pensions.ty2023_24.salary_sacrifice_nics_relief_by_class
+    sheet_name: Tables_6_1_and_6_2
+    period_type: tax_year
+    period: '2023-24'
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: government
+    entity_role: uk_tax_authority
+    domain: uk_pension_tax_relief
+    groupby_dimension: nics_relief_class
+    rows:
+      - value_id: class_1_primary_employee
+        label: Class 1 Primary (employee)
+        ordinal: 0
+        row_number: 6
+        expected_row_header_column: D
+        expected_row_header: Class 1 Primary (employee)
+        filters:
+          tax_year: 2023 to 2024
+          income_tax_nics: NICs
+          contribution_type: Salary sacrificed contributions
+          nics_relief_class: Class 1 Primary (employee)
+          sector_scheme: Total
+          scheme_type: Total
+          tax_rate: Total
+        constraints:
+          - variable: tax_year
+            operator: "=="
+            value: 2023 to 2024
+            label: Source tax year
+          - variable: income_tax_nics
+            operator: "=="
+            value: NICs
+            label: HMRC relief type
+          - variable: contribution_type
+            operator: "=="
+            value: Salary sacrificed contributions
+            label: HMRC contribution type
+          - variable: nics_relief_class
+            operator: "=="
+            value: Class 1 Primary (employee)
+            label: HMRC NICs relief class
+          - variable: sector_scheme
+            operator: "=="
+            value: Total
+            label: HMRC sector or scheme
+          - variable: scheme_type
+            operator: "=="
+            value: Total
+            label: HMRC scheme type
+          - variable: tax_rate
+            operator: "=="
+            value: Total
+            label: HMRC tax rate
+      - value_id: class_1_secondary_employer
+        label: Class 1 Secondary (employer)
+        ordinal: 1
+        row_number: 7
+        expected_row_header_column: D
+        expected_row_header: Class 1 Secondary (employer)
+        filters:
+          tax_year: 2023 to 2024
+          income_tax_nics: NICs
+          contribution_type: Salary sacrificed contributions
+          nics_relief_class: Class 1 Secondary (employer)
+          sector_scheme: Total
+          scheme_type: Total
+          tax_rate: Total
+        constraints:
+          - variable: tax_year
+            operator: "=="
+            value: 2023 to 2024
+            label: Source tax year
+          - variable: income_tax_nics
+            operator: "=="
+            value: NICs
+            label: HMRC relief type
+          - variable: contribution_type
+            operator: "=="
+            value: Salary sacrificed contributions
+            label: HMRC contribution type
+          - variable: nics_relief_class
+            operator: "=="
+            value: Class 1 Secondary (employer)
+            label: HMRC NICs relief class
+          - variable: sector_scheme
+            operator: "=="
+            value: Total
+            label: HMRC sector or scheme
+          - variable: scheme_type
+            operator: "=="
+            value: Total
+            label: HMRC scheme type
+          - variable: tax_rate
+            operator: "=="
+            value: Total
+            label: HMRC tax rate
+    measures:
+      - measure_id: value_of_relief
+        label: NICs value of relief
+        ordinal: 0
+        column: H
+        source_column_id: value_of_relief
+        expected_column_header_row: 1
+        expected_column_header: value_of_relief
+        concept: uk_pension_tax_relief.nics_relief_from_salary_sacrifice
+        source_concept: hmrc.value_of_relief
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000
+        expected_cell_type: number

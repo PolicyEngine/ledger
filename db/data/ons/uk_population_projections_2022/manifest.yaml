@@ -1,0 +1,18 @@
+source_id: ons
+package_id: ons-uk-population-projections-2022
+dataset: ons_uk_population_projections_2022
+source_page: https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationprojections/datasets/z1zippedpopulationprojectionsdatafilesuk
+table: ONS 2022-based principal population projections for the UK
+files:
+  2022:
+    filename: uk_population_projections_2022_based_uk.zip
+    source_url: https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/populationandmigration/populationprojections/datasets/z1zippedpopulationprojectionsdatafilesuk/2022based/uk.zip
+    sha256: 35b979dee5f842c6287fa4791794edbb136770eeec69d7c9d32d8c5fb2631948
+    size_bytes: 16096577
+    fetched_at: '2026-05-10T23:09:31+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/ons/ons-uk-population-projections-2022/2022/35b979dee5f842c6287fa4791794edbb136770eeec69d7c9d32d8c5fb2631948/uk_population_projections_2022_based_uk.zip
+        uri: r2://arch-raw/raw/ons/ons-uk-population-projections-2022/2022/35b979dee5f842c6287fa4791794edbb136770eeec69d7c9d32d8c5fb2631948/uk_population_projections_2022_based_uk.zip

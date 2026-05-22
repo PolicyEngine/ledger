@@ -1,0 +1,18 @@
+source_id: slc
+package_id: slc-student-loan-borrower-forecasts-england-2025
+dataset: slc_student_loan_borrower_forecasts_england_2025
+source_page: https://explore-education-statistics.service.gov.uk/data-tables/permalink/6ff75517-7124-487c-cb4e-08de6eccf22d
+table: Explore Education Statistics student loan forecasts for England Table 6a
+files:
+  2025:
+    filename: ees_student_loan_forecasts_england_table_6a.html
+    source_url: https://explore-education-statistics.service.gov.uk/data-tables/permalink/6ff75517-7124-487c-cb4e-08de6eccf22d
+    sha256: bedbe61cde5f965b68d9cbecd07695996b1badfb3ac153bed5c17da51b59a25a
+    size_bytes: 55458
+    fetched_at: '2026-05-10T22:51:16+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/slc/slc-student-loan-borrower-forecasts-england-2025/2025/bedbe61cde5f965b68d9cbecd07695996b1badfb3ac153bed5c17da51b59a25a/ees_student_loan_forecasts_england_table_6a.html
+        uri: r2://arch-raw/raw/slc/slc-student-loan-borrower-forecasts-england-2025/2025/bedbe61cde5f965b68d9cbecd07695996b1badfb3ac153bed5c17da51b59a25a/ees_student_loan_forecasts_england_table_6a.html

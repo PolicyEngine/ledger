@@ -1,0 +1,75 @@
+schema_version: arch.source_package.v1
+package_id: treasury-tax-expenditures-fy2023-eitc-outlays
+label: Treasury Tax Expenditures FY2023 EITC outlay effects
+artifact:
+  source_name: treasury
+  source_table: Treasury Tax Expenditures FY2023 EITC outlay footnote
+  resource_package: db
+  resource_directory: data/treasury/tax_expenditures_fy2023
+  manifest: manifest.yaml
+  vintage: fiscal_year_2023
+  extracted_at: "2026-05-11"
+  extraction_method: pypdf text-line number extraction from full publisher PDF
+  parser: pdf_text_numbers
+  artifact_year: 2023
+record_sets:
+  - record_set_id: treasury.fy2023.tax_expenditures.eitc_outlay_effects
+    record_set_spec_id: treasury.tax_expenditures.eitc_outlay_effects.v1
+    source_record_id_prefix: treasury.fy2023.tax_expenditures.eitc_outlay_effects
+    sheet_name: document_numbers
+    period_type: fiscal_year
+    period: 2023
+    geography_id: 0100000US
+    geography_level: country
+    geography_name: United States
+    geography_vintage: current
+    entity: government
+    entity_role: federal_government
+    domain: tax_expenditures
+    groupby_dimension: tax_expenditure.provision
+    rows:
+      - value_id: earned_income_tax_credit
+        label: Earned income tax credit
+        ordinal: 0
+        row_number: 3224
+        expected_row_header_column: C
+        expected_row_header: "2021 $68,870; 2022 $77,290; 2023 $64,440; 2024 $67,330; 2025 $68,650; 2026 $69,260; 2027 $68,940; 2028 $69,610; 2029 $70,440; 2030 $71,480; and 2031 $72,710."
+        filters:
+          tax_expenditure.provision: earned_income_tax_credit
+          amount_type: outlay_effect
+        constraints:
+          - variable: tax_expenditure.provision
+            operator: "=="
+            value: earned_income_tax_credit
+            label: Earned income tax credit
+          - variable: amount_type
+            operator: "=="
+            value: outlay_effect
+            label: Outlay effect
+        guard_cells:
+          - column: A
+            expected_value: 25
+            label: PDF page number
+          - column: B
+            expected_value: 27
+            label: PDF extracted line number
+          - column: D
+            expected_value: "64,440"
+            label: outlay effect text
+          - column: F
+            expected_value: "2021 $9,071; 2022 $10,242; 2023 $10,273; 2024 $10,271; 2025 $10,388; 2026 $5.920; 2027 $0; 2028 $0; 2029 $0; 2030 0; and 2031 0. 14/ In addition, the earned income tax credit on receipts has outlay effects of (in millions of dollars): 2021 $68,870; 2022 $77,290; 2023 $64,440; 2024 $67,330; 2025 $68,650; 2026 $69,260; 2027 $68,940; 2028 $69,610; 2029 $70,440; 2030 $71,480; and 2031 $72,710. 15/ In addition, the recovery rebate credits have outlay effects of (in millions of dollars): 2021 $274,654; 2022 $2,528; 2023 $43; and $0 thereafter."
+            label: nearby PDF footnote context
+        table_record_kind: detail
+    measures:
+      - measure_id: outlay_effect_amount
+        label: Outlay effect amount
+        ordinal: 0
+        column: E
+        source_column_id: numeric_value
+        expected_column_header_row: 1
+        expected_column_header: numeric_value
+        concept: treasury.earned_income_tax_credit_outlay_effect
+        unit: usd
+        aggregation: sum
+        expected_cell_type: number
+        value_scale: 1000000

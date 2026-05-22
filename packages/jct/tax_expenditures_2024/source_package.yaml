@@ -1,0 +1,80 @@
+schema_version: arch.source_package.v1
+package_id: jct-tax-expenditures-2024-mortgage-interest-deduction
+label: JCT Tax Expenditures 2024 mortgage interest deduction
+artifact:
+  source_name: jct
+  source_table: JCT Estimates Of Federal Tax Expenditures For Fiscal Years 2024-2028 Table 1
+  resource_package: db
+  resource_directory: data/jct/tax_expenditures_2024
+  manifest: manifest.yaml
+  vintage: fiscal_years_2024_2028
+  extracted_at: "2026-05-11"
+  extraction_method: pypdf text-line number extraction from full publisher PDF
+  parser: pdf_text_numbers
+  artifact_year: 2024
+record_sets:
+  - record_set_id: jct.fy2024.tax_expenditures.mortgage_interest_deduction
+    record_set_spec_id: jct.tax_expenditures.mortgage_interest_deduction.v1
+    source_record_id_prefix: jct.fy2024.tax_expenditures.mortgage_interest_deduction
+    sheet_name: document_numbers
+    period_type: fiscal_year
+    period: 2024
+    geography_id: 0100000US
+    geography_level: country
+    geography_name: United States
+    geography_vintage: current
+    entity: government
+    entity_role: federal_government
+    domain: tax_expenditures
+    groupby_dimension: tax_expenditure.provision
+    rows:
+      - value_id: mortgage_interest_owner_occupied_residences
+        label: Deduction for mortgage interest on owner-occupied residences
+        ordinal: 0
+        row_number: 963
+        expected_row_header_column: C
+        expected_row_header: "residences.......................................................................................... --- --- --- --- --- 24.8 25.8 94.4 117.8 119.5 382.2"
+        filters:
+          tax_expenditure.provision: mortgage_interest_owner_occupied_residences
+          taxpayer_scope: individuals
+          amount_type: tax_expenditure
+        constraints:
+          - variable: tax_expenditure.provision
+            operator: "=="
+            value: mortgage_interest_owner_occupied_residences
+            label: Deduction for mortgage interest on owner-occupied residences
+          - variable: taxpayer_scope
+            operator: "=="
+            value: individuals
+            label: Individuals
+          - variable: amount_type
+            operator: "=="
+            value: tax_expenditure
+            label: Tax expenditure
+        guard_cells:
+          - column: A
+            expected_value: 27
+            label: PDF page number
+          - column: B
+            expected_value: 8
+            label: PDF extracted line number
+          - column: D
+            expected_value: "24.8"
+            label: 2024 individual estimate text
+          - column: F
+            expected_value: "Limitation on deduction for FDIC premiums*..................................... -1.5 -1.5 -1.6 -1.6 -1.6 --- --- --- --- --- -7.8 Deduction for mortgage interest on owner-occupied residences.......................................................................................... --- --- --- --- --- 24.8 25.8 94.4 117.8 119.5 382.2 Exclusion of income attributable to the discharge of principal residence acquisition indebtedness.................................................... --- --- --- --- --- 0.1 0.1 [2] --- --- 0.2"
+            label: nearby PDF table context
+        table_record_kind: detail
+    measures:
+      - measure_id: individual_tax_expenditure_amount
+        label: Individual tax expenditure amount
+        ordinal: 0
+        column: E
+        source_column_id: numeric_value
+        expected_column_header_row: 1
+        expected_column_header: numeric_value
+        concept: jct.mortgage_interest_owner_occupied_deduction_tax_expenditure
+        unit: usd
+        aggregation: sum
+        expected_cell_type: number
+        value_scale: 1000000000

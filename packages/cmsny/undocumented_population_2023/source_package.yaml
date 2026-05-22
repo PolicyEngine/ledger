@@ -1,0 +1,66 @@
+schema_version: arch.source_package.v1
+package_id: cmsny-undocumented-population-2023
+label: CMSNY undocumented population estimate 2023
+artifact:
+  source_name: cmsny
+  source_table: The Undocumented Population in the United States Increased to 12.2 Million in 2023
+  resource_package: db
+  resource_directory: data/cmsny/undocumented_population_2023
+  manifest: manifest.yaml
+  vintage: publication_2025_05_07
+  extracted_at: "2026-05-12"
+  extraction_method: HTML tables and numeric document text parse
+  parser: html_tables_and_text
+  artifact_year: 2023
+record_sets:
+  - record_set_id: cmsny.undocumented_population.2023
+    record_set_spec_id: cmsny.undocumented_population.v1
+    source_record_id_prefix: cmsny.undocumented_population.2023
+    sheet_name: document_numbers
+    period_type: calendar_year
+    period: 2023
+    geography_id: 0100000US
+    geography_level: country
+    geography_name: United States
+    geography_vintage: 2020_census
+    entity: person
+    entity_role: resident
+    domain: immigration_status
+    groupby_dimension: immigration_status
+    rows:
+      - value_id: undocumented_residents
+        label: Undocumented residents
+        ordinal: 0
+        row_number: 7
+        expected_row_header_column: C
+        expected_row_header: "In 2023, the US undocumented population reached 12.2 million, exceeding the previous high of 12.0 million in 2008. This report provides estimates of the undocumented population in 2023 based on data collected in the Census Bureau’s American Community Survey (ACS). The report focuses on trends in annual population growth from 2013 to 2023 for the total population and for 17 countries or areas of origin. It also describes trends in the undocumented population in the six states with the largest undocumented population in 2023."
+        filters:
+          immigration_status: UNDOCUMENTED
+        constraints:
+          - variable: immigration_status
+            operator: "=="
+            value: UNDOCUMENTED
+            label: Undocumented immigration status
+        guard_cells:
+          - column: A
+            expected_value: 39
+            label: HTML source line number
+          - column: B
+            expected_value: p
+            label: HTML block tag
+          - column: D
+            expected_value: "12.2 million"
+            label: source number text
+        table_record_kind: total
+    measures:
+      - measure_id: population_count
+        label: Undocumented population count
+        ordinal: 0
+        column: E
+        source_column_id: numeric_value
+        expected_column_header_row: 1
+        expected_column_header: numeric_value
+        concept: cmsny.undocumented_population
+        unit: count
+        aggregation: count
+        expected_cell_type: number

@@ -1,0 +1,51 @@
+schema_version: arch.source_package.v1
+package_id: slc-student-loan-repayments-wales-2025
+label: SLC student loan repayments in Wales 2024-25
+artifact:
+  source_name: slc
+  source_table: Student Loans in Wales Financial Year 2024-25 Table 1
+  resource_package: db
+  resource_directory: data/slc/student_loan_repayments_wales_2025
+  manifest: manifest.yaml
+  vintage: student_loans_wales_2024_25
+  extracted_at: '2026-05-10'
+  extraction_method: openpyxl whole-workbook used-range cell parse
+  parser: xlsx_used_range
+record_sets:
+  - record_set_id: slc_student_loans.fy2024_25.wales_he_repayments_total
+    record_set_spec_id: slc_student_loans.country_he_repayments_total.v1
+    source_record_id_prefix: slc_student_loans.fy2024_25.wales_he_repayments_total
+    sheet_name: Table 1
+    period_type: fiscal_year
+    period: '2024-25'
+    geography_id: W92000004
+    geography_level: country
+    geography_name: Wales
+    geography_vintage: current
+    entity: person
+    entity_role: student_loan_borrower
+    domain: uk_student_loans
+    groupby_dimension: uk_student_loans.repayment_scope
+    rows:
+      - value_id: all
+        label: All higher education ICR student loans
+        ordinal: 0
+        row_number: 28
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: Net repayments posted during the financial year [1][3]
+    measures:
+      - measure_id: total_higher_education
+        label: Total Higher Education net repayments posted
+        ordinal: 0
+        column: BD
+        expected_column_header_row: 7
+        expected_column_header: Total
+        concept: uk_student_loans.net_repayments_posted
+        source_concept: slc.net_repayments_posted_during_financial_year
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000
+        expected_cell_type: number

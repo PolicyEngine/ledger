@@ -51,8 +51,9 @@ From `etl_irs_soi.py` in policyengine-us-data:
 |---------------|----------------------|-------------|
 | 04475 | `qualified_business_income_deduction` | QBI deduction |
 | 17000 | `medical_expense_deduction` | Medical expenses |
-| 18425 | `salt_deduction` | SALT deduction |
+| 18460 | `salt_deduction` | Limited state and local taxes |
 | 18500 | `real_estate_taxes` | Real estate taxes |
+| 19300+19500+19530+19570 | `interest_deduction` | Mortgage interest, personal-seller mortgage interest, deductible points, and investment interest |
 
 #### Stratification
 - **Geographic**: National, State, Congressional District
@@ -101,8 +102,14 @@ From `etl_age.py` in policyengine-us-data:
 | `snap` | Total benefit cost | State |
 
 **Sources**:
-- Administrative data (Source ID 3): State totals
+- USDA FNS SNAP annual state participation and benefit workbooks: national and state totals
 - ACS Survey data (Source ID 4): Congressional district via Census Table S2201
+
+To load a primary FNS workbook archive into the local Arch target database:
+
+```bash
+uv run python -m db.cli --db macro/targets.db load snap --years 2024 --snap-fns-zip /path/to/snap-zip-fy69tocurrent-6.zip
+```
 
 #### Medicaid (etl_medicaid.py)
 | Variable | Description | Geographic Level |

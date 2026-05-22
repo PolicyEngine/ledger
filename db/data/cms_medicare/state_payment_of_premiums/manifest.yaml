@@ -1,0 +1,18 @@
+source_id: cms_medicare
+package_id: cms-medicare-state-payment-of-premiums
+dataset: cms_medicare_state_payment_of_premiums
+source_page: https://www.cms.gov/medicare/medicaid-coordination/about/state-payment-premiums
+table: CMS State Payment of Medicare Premiums page
+files:
+  2026:
+    filename: cms_state_payment_of_medicare_premiums.html
+    source_url: https://www.cms.gov/medicare/medicaid-coordination/about/state-payment-premiums
+    sha256: 686a61040a50e520afa34941953745d949ad50fdb9ff0202f335652328733ca5
+    size_bytes: 212660
+    fetched_at: '2026-05-11T13:46:20+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/cms_medicare/cms-medicare-state-payment-of-premiums/2026/686a61040a50e520afa34941953745d949ad50fdb9ff0202f335652328733ca5/cms_state_payment_of_medicare_premiums.html
+        uri: r2://arch-raw/raw/cms_medicare/cms-medicare-state-payment-of-premiums/2026/686a61040a50e520afa34941953745d949ad50fdb9ff0202f335652328733ca5/cms_state_payment_of_medicare_premiums.html

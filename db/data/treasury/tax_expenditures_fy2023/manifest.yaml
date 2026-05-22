@@ -1,0 +1,18 @@
+source_id: treasury
+package_id: treasury-tax-expenditures-fy2023-eitc-outlays
+dataset: treasury_tax_expenditures_fy2023_eitc_outlays
+source_page: https://home.treasury.gov/system/files/131/Tax-Expenditures-FY2023.pdf
+table: Treasury Tax Expenditures FY2023 EITC outlay footnote
+files:
+  2023:
+    filename: treasury_tax_expenditures_fy2023.pdf
+    source_url: https://home.treasury.gov/system/files/131/Tax-Expenditures-FY2023.pdf
+    sha256: 4d075581b1e714e0a18ce9cc59df4c7d81f5de5bfd1d17e85aab31a4ba6c04e7
+    size_bytes: 673713
+    fetched_at: '2026-05-11T23:31:35+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/treasury/treasury-tax-expenditures-fy2023-eitc-outlays/2023/4d075581b1e714e0a18ce9cc59df4c7d81f5de5bfd1d17e85aab31a4ba6c04e7/treasury_tax_expenditures_fy2023.pdf
+        uri: r2://arch-raw/raw/treasury/treasury-tax-expenditures-fy2023-eitc-outlays/2023/4d075581b1e714e0a18ce9cc59df4c7d81f5de5bfd1d17e85aab31a4ba6c04e7/treasury_tax_expenditures_fy2023.pdf

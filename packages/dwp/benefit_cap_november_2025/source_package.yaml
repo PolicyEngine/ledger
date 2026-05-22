@@ -1,0 +1,460 @@
+schema_version: arch.source_package.v1
+package_id: dwp-benefit-cap-november-2025
+label: DWP benefit cap statistics to November 2025
+artifact:
+  source_name: dwp
+  source_table: Benefit cap statistics data to November 2025
+  resource_package: db
+  resource_directory: data/dwp/benefit_cap_november_2025
+  manifest: manifest.yaml
+  vintage: november_2025
+  extracted_at: '2026-05-10'
+  extraction_method: odf content.xml whole-workbook used-range cell parse
+  parser: ods_used_range
+record_sets:
+  - record_set_id: dwp_benefit_cap.month2025_11.point_in_time_uc_households_by_amount_capped
+    record_set_spec_id: dwp_benefit_cap.point_in_time_uc_households_by_amount_capped.v1
+    source_record_id_prefix: dwp_benefit_cap.month2025_11.point_in_time_uc_households_by_amount_capped
+    sheet_name: '4'
+    period_type: month
+    period: '{year}-11'
+    geography_id: GBR
+    geography_level: country
+    geography_name: Great Britain
+    geography_vintage: current
+    entity: household
+    entity_role: universal_credit_household
+    domain: uk_benefit_cap
+    groupby_dimension: uk_benefit_cap.monthly_reduction_band
+    rows:
+      - value_id: gb_total
+        label: GB Total
+        ordinal: 0
+        row_number: 14
+        table_record_kind: total
+        expected_row_header_column: C
+        expected_row_header: GB Total
+    measures:
+      - measure_id: total
+        label: Universal Credit capped households
+        ordinal: 0
+        column: D
+        expected_column_header_row: 12
+        expected_column_header: Total
+        concept: uk_benefit_cap.capped_universal_credit_households
+        source_concept: dwp.benefit_cap_point_in_time_uc_capped_households
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+      - measure_id: up_to_100
+        label: UC capped households with monthly cap up to GBP 100
+        ordinal: 1
+        column: E
+        expected_column_header_row: 12
+        expected_column_header: Up to £100
+        concept: uk_benefit_cap.capped_universal_credit_households
+        source_concept: dwp.benefit_cap_point_in_time_uc_capped_households_by_monthly_amount_capped
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_benefit_cap.monthly_reduction_band: up_to_100
+        constraints:
+          - variable: uk_benefit_cap.monthly_reduction_band
+            operator: "=="
+            value: up_to_100
+            label: Monthly benefit cap reduction band
+          - variable: uk_benefit_cap.monthly_reduction_amount
+            operator: "<="
+            value: 100
+            unit: gbp_per_month
+            label: Monthly benefit cap reduction amount
+      - measure_id: 100_01_to_200
+        label: UC capped households with monthly cap GBP 100.01 to 200
+        ordinal: 2
+        column: F
+        expected_column_header_row: 12
+        expected_column_header: £100.01 to £200
+        concept: uk_benefit_cap.capped_universal_credit_households
+        source_concept: dwp.benefit_cap_point_in_time_uc_capped_households_by_monthly_amount_capped
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_benefit_cap.monthly_reduction_band: 100_01_to_200
+        constraints:
+          - variable: uk_benefit_cap.monthly_reduction_band
+            operator: "=="
+            value: 100_01_to_200
+            label: Monthly benefit cap reduction band
+          - variable: uk_benefit_cap.monthly_reduction_amount
+            operator: ">"
+            value: 100
+            unit: gbp_per_month
+            label: Monthly benefit cap reduction amount lower bound
+          - variable: uk_benefit_cap.monthly_reduction_amount
+            operator: "<="
+            value: 200
+            unit: gbp_per_month
+            label: Monthly benefit cap reduction amount upper bound
+      - measure_id: 200_01_to_300
+        label: UC capped households with monthly cap GBP 200.01 to 300
+        ordinal: 3
+        column: G
+        expected_column_header_row: 12
+        expected_column_header: £200.01 to £300
+        concept: uk_benefit_cap.capped_universal_credit_households
+        source_concept: dwp.benefit_cap_point_in_time_uc_capped_households_by_monthly_amount_capped
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_benefit_cap.monthly_reduction_band: 200_01_to_300
+        constraints:
+          - variable: uk_benefit_cap.monthly_reduction_band
+            operator: "=="
+            value: 200_01_to_300
+            label: Monthly benefit cap reduction band
+          - variable: uk_benefit_cap.monthly_reduction_amount
+            operator: ">"
+            value: 200
+            unit: gbp_per_month
+            label: Monthly benefit cap reduction amount lower bound
+          - variable: uk_benefit_cap.monthly_reduction_amount
+            operator: "<="
+            value: 300
+            unit: gbp_per_month
+            label: Monthly benefit cap reduction amount upper bound
+      - measure_id: 300_01_to_400
+        label: UC capped households with monthly cap GBP 300.01 to 400
+        ordinal: 4
+        column: H
+        expected_column_header_row: 12
+        expected_column_header: £300.01 to £400
+        concept: uk_benefit_cap.capped_universal_credit_households
+        source_concept: dwp.benefit_cap_point_in_time_uc_capped_households_by_monthly_amount_capped
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_benefit_cap.monthly_reduction_band: 300_01_to_400
+        constraints:
+          - variable: uk_benefit_cap.monthly_reduction_band
+            operator: "=="
+            value: 300_01_to_400
+            label: Monthly benefit cap reduction band
+          - variable: uk_benefit_cap.monthly_reduction_amount
+            operator: ">"
+            value: 300
+            unit: gbp_per_month
+            label: Monthly benefit cap reduction amount lower bound
+          - variable: uk_benefit_cap.monthly_reduction_amount
+            operator: "<="
+            value: 400
+            unit: gbp_per_month
+            label: Monthly benefit cap reduction amount upper bound
+      - measure_id: 400_01_to_500
+        label: UC capped households with monthly cap GBP 400.01 to 500
+        ordinal: 5
+        column: I
+        expected_column_header_row: 12
+        expected_column_header: £400.01 to £500
+        concept: uk_benefit_cap.capped_universal_credit_households
+        source_concept: dwp.benefit_cap_point_in_time_uc_capped_households_by_monthly_amount_capped
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_benefit_cap.monthly_reduction_band: 400_01_to_500
+        constraints:
+          - variable: uk_benefit_cap.monthly_reduction_band
+            operator: "=="
+            value: 400_01_to_500
+            label: Monthly benefit cap reduction band
+          - variable: uk_benefit_cap.monthly_reduction_amount
+            operator: ">"
+            value: 400
+            unit: gbp_per_month
+            label: Monthly benefit cap reduction amount lower bound
+          - variable: uk_benefit_cap.monthly_reduction_amount
+            operator: "<="
+            value: 500
+            unit: gbp_per_month
+            label: Monthly benefit cap reduction amount upper bound
+      - measure_id: 500_01_to_600
+        label: UC capped households with monthly cap GBP 500.01 to 600
+        ordinal: 6
+        column: J
+        expected_column_header_row: 12
+        expected_column_header: £500.01 to £600
+        concept: uk_benefit_cap.capped_universal_credit_households
+        source_concept: dwp.benefit_cap_point_in_time_uc_capped_households_by_monthly_amount_capped
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_benefit_cap.monthly_reduction_band: 500_01_to_600
+        constraints:
+          - variable: uk_benefit_cap.monthly_reduction_band
+            operator: "=="
+            value: 500_01_to_600
+            label: Monthly benefit cap reduction band
+          - variable: uk_benefit_cap.monthly_reduction_amount
+            operator: ">"
+            value: 500
+            unit: gbp_per_month
+            label: Monthly benefit cap reduction amount lower bound
+          - variable: uk_benefit_cap.monthly_reduction_amount
+            operator: "<="
+            value: 600
+            unit: gbp_per_month
+            label: Monthly benefit cap reduction amount upper bound
+      - measure_id: 600_01_to_700
+        label: UC capped households with monthly cap GBP 600.01 to 700
+        ordinal: 7
+        column: K
+        expected_column_header_row: 12
+        expected_column_header: £600.01 to £700
+        concept: uk_benefit_cap.capped_universal_credit_households
+        source_concept: dwp.benefit_cap_point_in_time_uc_capped_households_by_monthly_amount_capped
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_benefit_cap.monthly_reduction_band: 600_01_to_700
+        constraints:
+          - variable: uk_benefit_cap.monthly_reduction_band
+            operator: "=="
+            value: 600_01_to_700
+            label: Monthly benefit cap reduction band
+          - variable: uk_benefit_cap.monthly_reduction_amount
+            operator: ">"
+            value: 600
+            unit: gbp_per_month
+            label: Monthly benefit cap reduction amount lower bound
+          - variable: uk_benefit_cap.monthly_reduction_amount
+            operator: "<="
+            value: 700
+            unit: gbp_per_month
+            label: Monthly benefit cap reduction amount upper bound
+      - measure_id: 700_01_to_800
+        label: UC capped households with monthly cap GBP 700.01 to 800
+        ordinal: 8
+        column: L
+        expected_column_header_row: 12
+        expected_column_header: £700.01 to £800
+        concept: uk_benefit_cap.capped_universal_credit_households
+        source_concept: dwp.benefit_cap_point_in_time_uc_capped_households_by_monthly_amount_capped
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_benefit_cap.monthly_reduction_band: 700_01_to_800
+        constraints:
+          - variable: uk_benefit_cap.monthly_reduction_band
+            operator: "=="
+            value: 700_01_to_800
+            label: Monthly benefit cap reduction band
+          - variable: uk_benefit_cap.monthly_reduction_amount
+            operator: ">"
+            value: 700
+            unit: gbp_per_month
+            label: Monthly benefit cap reduction amount lower bound
+          - variable: uk_benefit_cap.monthly_reduction_amount
+            operator: "<="
+            value: 800
+            unit: gbp_per_month
+            label: Monthly benefit cap reduction amount upper bound
+      - measure_id: 800_01_to_900
+        label: UC capped households with monthly cap GBP 800.01 to 900
+        ordinal: 9
+        column: M
+        expected_column_header_row: 12
+        expected_column_header: £800.01 to £900
+        concept: uk_benefit_cap.capped_universal_credit_households
+        source_concept: dwp.benefit_cap_point_in_time_uc_capped_households_by_monthly_amount_capped
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_benefit_cap.monthly_reduction_band: 800_01_to_900
+        constraints:
+          - variable: uk_benefit_cap.monthly_reduction_band
+            operator: "=="
+            value: 800_01_to_900
+            label: Monthly benefit cap reduction band
+          - variable: uk_benefit_cap.monthly_reduction_amount
+            operator: ">"
+            value: 800
+            unit: gbp_per_month
+            label: Monthly benefit cap reduction amount lower bound
+          - variable: uk_benefit_cap.monthly_reduction_amount
+            operator: "<="
+            value: 900
+            unit: gbp_per_month
+            label: Monthly benefit cap reduction amount upper bound
+      - measure_id: 900_01_to_1000
+        label: UC capped households with monthly cap GBP 900.01 to 1,000
+        ordinal: 10
+        column: N
+        expected_column_header_row: 12
+        expected_column_header: £900.01 to £1,000
+        concept: uk_benefit_cap.capped_universal_credit_households
+        source_concept: dwp.benefit_cap_point_in_time_uc_capped_households_by_monthly_amount_capped
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_benefit_cap.monthly_reduction_band: 900_01_to_1000
+        constraints:
+          - variable: uk_benefit_cap.monthly_reduction_band
+            operator: "=="
+            value: 900_01_to_1000
+            label: Monthly benefit cap reduction band
+          - variable: uk_benefit_cap.monthly_reduction_amount
+            operator: ">"
+            value: 900
+            unit: gbp_per_month
+            label: Monthly benefit cap reduction amount lower bound
+          - variable: uk_benefit_cap.monthly_reduction_amount
+            operator: "<="
+            value: 1000
+            unit: gbp_per_month
+            label: Monthly benefit cap reduction amount upper bound
+      - measure_id: 1000_01_to_1100
+        label: UC capped households with monthly cap GBP 1,000.01 to 1,100
+        ordinal: 11
+        column: O
+        expected_column_header_row: 12
+        expected_column_header: £1,000.01 to £1,100
+        concept: uk_benefit_cap.capped_universal_credit_households
+        source_concept: dwp.benefit_cap_point_in_time_uc_capped_households_by_monthly_amount_capped
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_benefit_cap.monthly_reduction_band: 1000_01_to_1100
+        constraints:
+          - variable: uk_benefit_cap.monthly_reduction_band
+            operator: "=="
+            value: 1000_01_to_1100
+            label: Monthly benefit cap reduction band
+          - variable: uk_benefit_cap.monthly_reduction_amount
+            operator: ">"
+            value: 1000
+            unit: gbp_per_month
+            label: Monthly benefit cap reduction amount lower bound
+          - variable: uk_benefit_cap.monthly_reduction_amount
+            operator: "<="
+            value: 1100
+            unit: gbp_per_month
+            label: Monthly benefit cap reduction amount upper bound
+      - measure_id: 1100_01_to_1200
+        label: UC capped households with monthly cap GBP 1,100.01 to 1,200
+        ordinal: 12
+        column: P
+        expected_column_header_row: 12
+        expected_column_header: £1,100.01 to £1,200
+        concept: uk_benefit_cap.capped_universal_credit_households
+        source_concept: dwp.benefit_cap_point_in_time_uc_capped_households_by_monthly_amount_capped
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_benefit_cap.monthly_reduction_band: 1100_01_to_1200
+        constraints:
+          - variable: uk_benefit_cap.monthly_reduction_band
+            operator: "=="
+            value: 1100_01_to_1200
+            label: Monthly benefit cap reduction band
+          - variable: uk_benefit_cap.monthly_reduction_amount
+            operator: ">"
+            value: 1100
+            unit: gbp_per_month
+            label: Monthly benefit cap reduction amount lower bound
+          - variable: uk_benefit_cap.monthly_reduction_amount
+            operator: "<="
+            value: 1200
+            unit: gbp_per_month
+            label: Monthly benefit cap reduction amount upper bound
+      - measure_id: 1200_01_to_1300
+        label: UC capped households with monthly cap GBP 1,200.01 to 1,300
+        ordinal: 13
+        column: Q
+        expected_column_header_row: 12
+        expected_column_header: £1,200.01 to £1,300
+        concept: uk_benefit_cap.capped_universal_credit_households
+        source_concept: dwp.benefit_cap_point_in_time_uc_capped_households_by_monthly_amount_capped
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_benefit_cap.monthly_reduction_band: 1200_01_to_1300
+        constraints:
+          - variable: uk_benefit_cap.monthly_reduction_band
+            operator: "=="
+            value: 1200_01_to_1300
+            label: Monthly benefit cap reduction band
+          - variable: uk_benefit_cap.monthly_reduction_amount
+            operator: ">"
+            value: 1200
+            unit: gbp_per_month
+            label: Monthly benefit cap reduction amount lower bound
+          - variable: uk_benefit_cap.monthly_reduction_amount
+            operator: "<="
+            value: 1300
+            unit: gbp_per_month
+            label: Monthly benefit cap reduction amount upper bound
+      - measure_id: 1300_01_and_above
+        label: UC capped households with monthly cap GBP 1,300.01 and above
+        ordinal: 14
+        column: R
+        expected_column_header_row: 12
+        expected_column_header: £1,300.01 and above
+        concept: uk_benefit_cap.capped_universal_credit_households
+        source_concept: dwp.benefit_cap_point_in_time_uc_capped_households_by_monthly_amount_capped
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_benefit_cap.monthly_reduction_band: 1300_01_and_above
+        constraints:
+          - variable: uk_benefit_cap.monthly_reduction_band
+            operator: "=="
+            value: 1300_01_and_above
+            label: Monthly benefit cap reduction band
+          - variable: uk_benefit_cap.monthly_reduction_amount
+            operator: ">"
+            value: 1300
+            unit: gbp_per_month
+            label: Monthly benefit cap reduction amount lower bound

@@ -1,0 +1,717 @@
+schema_version: arch.source_package.v1
+package_id: obr-efo-expenditure
+label: OBR March 2026 EFO expenditure
+artifact:
+  source_name: obr
+  source_table: March 2026 Economic and fiscal outlook detailed forecast tables expenditure
+  resource_package: db
+  resource_directory: data/obr/efo_expenditure
+  manifest: manifest.yaml
+  vintage: march_2026
+  extracted_at: "2026-05-10"
+  extraction_method: openpyxl whole-workbook used-range cell parse
+  parser: xlsx_used_range
+record_sets:
+  - record_set_id: obr_efo.fy{year}.expenditure.total_net_council_tax_receipts
+    record_set_spec_id: obr_efo.expenditure.total_net_council_tax_receipts.v1
+    source_record_id_prefix: obr_efo.fy{year}.expenditure.total_net_council_tax_receipts
+    sheet_name: "4.1"
+    period_type: fiscal_year
+    period: "{year}"
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: government
+    entity_role: uk_public_sector
+    domain: uk_public_sector_receipts
+    groupby_dimension: obr.efo_expenditure_line
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 19
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: Total net council tax receipts1
+    measures:
+      - measure_id: amount
+        label: Total net council tax receipts
+        ordinal: 0
+        column: D
+        expected_column_header_row: 5
+        expected_column_header: 2025-26
+        concept: uk_public_sector.council_tax_receipts_net_cash
+        source_concept: obr.total_net_council_tax_receipts
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000000
+        expected_cell_type: number
+  - record_set_id: obr_efo.fy{year}.expenditure.england_council_tax_receipts
+    record_set_spec_id: obr_efo.expenditure.england_council_tax_receipts.v1
+    source_record_id_prefix: obr_efo.fy{year}.expenditure.england_council_tax_receipts
+    sheet_name: "4.1"
+    period_type: fiscal_year
+    period: "{year}"
+    geography_id: ENG
+    geography_level: country
+    geography_name: England
+    geography_vintage: current
+    entity: government
+    entity_role: uk_public_sector
+    domain: uk_public_sector_receipts
+    groupby_dimension: obr.efo_expenditure_line
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 6
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: England council tax receipts
+    measures:
+      - measure_id: amount
+        label: England council tax receipts
+        ordinal: 0
+        column: D
+        expected_column_header_row: 5
+        expected_column_header: 2025-26
+        concept: uk_public_sector.council_tax_receipts_cash
+        source_concept: obr.england_council_tax_receipts
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000000
+        expected_cell_type: number
+  - record_set_id: obr_efo.fy{year}.expenditure.scotland_council_tax_receipts
+    record_set_spec_id: obr_efo.expenditure.scotland_council_tax_receipts.v1
+    source_record_id_prefix: obr_efo.fy{year}.expenditure.scotland_council_tax_receipts
+    sheet_name: "4.1"
+    period_type: fiscal_year
+    period: "{year}"
+    geography_id: SCT
+    geography_level: country
+    geography_name: Scotland
+    geography_vintage: current
+    entity: government
+    entity_role: uk_public_sector
+    domain: uk_public_sector_receipts
+    groupby_dimension: obr.efo_expenditure_line
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 9
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: Scotland council tax receipts
+    measures:
+      - measure_id: amount
+        label: Scotland council tax receipts
+        ordinal: 0
+        column: D
+        expected_column_header_row: 5
+        expected_column_header: 2025-26
+        concept: uk_public_sector.council_tax_receipts_cash
+        source_concept: obr.scotland_council_tax_receipts
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000000
+        expected_cell_type: number
+  - record_set_id: obr_efo.fy{year}.expenditure.wales_council_tax_receipts
+    record_set_spec_id: obr_efo.expenditure.wales_council_tax_receipts.v1
+    source_record_id_prefix: obr_efo.fy{year}.expenditure.wales_council_tax_receipts
+    sheet_name: "4.1"
+    period_type: fiscal_year
+    period: "{year}"
+    geography_id: WLS
+    geography_level: country
+    geography_name: Wales
+    geography_vintage: current
+    entity: government
+    entity_role: uk_public_sector
+    domain: uk_public_sector_receipts
+    groupby_dimension: obr.efo_expenditure_line
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 12
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: Wales council tax receipts
+    measures:
+      - measure_id: amount
+        label: Wales council tax receipts
+        ordinal: 0
+        column: D
+        expected_column_header_row: 5
+        expected_column_header: 2025-26
+        concept: uk_public_sector.council_tax_receipts_cash
+        source_concept: obr.wales_council_tax_receipts
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000000
+        expected_cell_type: number
+  - record_set_id: obr_efo.fy{year}.expenditure.ni_domestic_rates
+    record_set_spec_id: obr_efo.expenditure.ni_domestic_rates.v1
+    source_record_id_prefix: obr_efo.fy{year}.expenditure.ni_domestic_rates
+    sheet_name: "4.1"
+    period_type: fiscal_year
+    period: "{year}"
+    geography_id: NIR
+    geography_level: country
+    geography_name: Northern Ireland
+    geography_vintage: current
+    entity: government
+    entity_role: uk_public_sector
+    domain: uk_public_sector_receipts
+    groupby_dimension: obr.efo_expenditure_line
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 16
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: NI domestic rates
+    measures:
+      - measure_id: amount
+        label: Northern Ireland domestic rates
+        ordinal: 0
+        column: D
+        expected_column_header_row: 5
+        expected_column_header: 2025-26
+        concept: uk_public_sector.domestic_rates_receipts_cash
+        source_concept: obr.ni_domestic_rates
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000000
+        expected_cell_type: number
+  - record_set_id: obr_efo.fy{year}.expenditure.housing_benefit_not_on_jsa
+    record_set_spec_id: obr_efo.expenditure.housing_benefit_not_on_jsa.v1
+    source_record_id_prefix: obr_efo.fy{year}.expenditure.housing_benefit_not_on_jsa
+    sheet_name: "4.9"
+    period_type: fiscal_year
+    period: "{year}"
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: government
+    entity_role: uk_public_sector
+    domain: uk_public_sector_expenditure
+    groupby_dimension: obr.efo_expenditure_line
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 9
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: Housing benefit (not on JSA)1
+    measures:
+      - measure_id: amount
+        label: Housing benefit not on JSA
+        ordinal: 0
+        column: D
+        expected_column_header_row: 5
+        expected_column_header: 2025-26
+        concept: uk_public_sector.housing_benefit_expenditure_not_on_jsa
+        source_concept: obr.housing_benefit_not_on_jsa
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000000
+        expected_cell_type: number
+  - record_set_id: obr_efo.fy{year}.expenditure.pip_and_dla
+    record_set_spec_id: obr_efo.expenditure.pip_and_dla.v1
+    source_record_id_prefix: obr_efo.fy{year}.expenditure.pip_and_dla
+    sheet_name: "4.9"
+    period_type: fiscal_year
+    period: "{year}"
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: government
+    entity_role: uk_public_sector
+    domain: uk_public_sector_expenditure
+    groupby_dimension: obr.efo_expenditure_line
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 10
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: Disability living allowance and personal independence payments
+    measures:
+      - measure_id: amount
+        label: DLA and PIP expenditure
+        ordinal: 0
+        column: D
+        expected_column_header_row: 5
+        expected_column_header: 2025-26
+        concept: uk_public_sector.dla_and_pip_expenditure
+        source_concept: obr.disability_living_allowance_and_personal_independence_payments
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000000
+        expected_cell_type: number
+  - record_set_id: obr_efo.fy{year}.expenditure.incapacity_benefits
+    record_set_spec_id: obr_efo.expenditure.incapacity_benefits.v1
+    source_record_id_prefix: obr_efo.fy{year}.expenditure.incapacity_benefits
+    sheet_name: "4.9"
+    period_type: fiscal_year
+    period: "{year}"
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: government
+    entity_role: uk_public_sector
+    domain: uk_public_sector_expenditure
+    groupby_dimension: obr.efo_expenditure_line
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 11
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: Incapacity benefits2
+    measures:
+      - measure_id: amount
+        label: Incapacity benefits
+        ordinal: 0
+        column: D
+        expected_column_header_row: 5
+        expected_column_header: 2025-26
+        concept: uk_public_sector.incapacity_benefits_expenditure
+        source_concept: obr.incapacity_benefits
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000000
+        expected_cell_type: number
+  - record_set_id: obr_efo.fy{year}.expenditure.attendance_allowance
+    record_set_spec_id: obr_efo.expenditure.attendance_allowance.v1
+    source_record_id_prefix: obr_efo.fy{year}.expenditure.attendance_allowance
+    sheet_name: "4.9"
+    period_type: fiscal_year
+    period: "{year}"
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: government
+    entity_role: uk_public_sector
+    domain: uk_public_sector_expenditure
+    groupby_dimension: obr.efo_expenditure_line
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 12
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: Attendance allowance
+    measures:
+      - measure_id: amount
+        label: Attendance allowance
+        ordinal: 0
+        column: D
+        expected_column_header_row: 5
+        expected_column_header: 2025-26
+        concept: uk_public_sector.attendance_allowance_expenditure
+        source_concept: obr.attendance_allowance
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000000
+        expected_cell_type: number
+  - record_set_id: obr_efo.fy{year}.expenditure.pension_credit
+    record_set_spec_id: obr_efo.expenditure.pension_credit.v1
+    source_record_id_prefix: obr_efo.fy{year}.expenditure.pension_credit
+    sheet_name: "4.9"
+    period_type: fiscal_year
+    period: "{year}"
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: government
+    entity_role: uk_public_sector
+    domain: uk_public_sector_expenditure
+    groupby_dimension: obr.efo_expenditure_line
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 13
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: Pension credit
+    measures:
+      - measure_id: amount
+        label: Pension credit
+        ordinal: 0
+        column: D
+        expected_column_header_row: 5
+        expected_column_header: 2025-26
+        concept: uk_public_sector.pension_credit_expenditure
+        source_concept: obr.pension_credit
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000000
+        expected_cell_type: number
+  - record_set_id: obr_efo.fy{year}.expenditure.carers_allowance
+    record_set_spec_id: obr_efo.expenditure.carers_allowance.v1
+    source_record_id_prefix: obr_efo.fy{year}.expenditure.carers_allowance
+    sheet_name: "4.9"
+    period_type: fiscal_year
+    period: "{year}"
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: government
+    entity_role: uk_public_sector
+    domain: uk_public_sector_expenditure
+    groupby_dimension: obr.efo_expenditure_line
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 14
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: "Carer's allowance"
+    measures:
+      - measure_id: amount
+        label: Carer's allowance
+        ordinal: 0
+        column: D
+        expected_column_header_row: 5
+        expected_column_header: 2025-26
+        concept: uk_public_sector.carers_allowance_expenditure
+        source_concept: obr.carers_allowance
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000000
+        expected_cell_type: number
+  - record_set_id: obr_efo.fy{year}.expenditure.statutory_maternity_pay
+    record_set_spec_id: obr_efo.expenditure.statutory_maternity_pay.v1
+    source_record_id_prefix: obr_efo.fy{year}.expenditure.statutory_maternity_pay
+    sheet_name: "4.9"
+    period_type: fiscal_year
+    period: "{year}"
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: government
+    entity_role: uk_public_sector
+    domain: uk_public_sector_expenditure
+    groupby_dimension: obr.efo_expenditure_line
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 15
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: Statutory maternity pay
+    measures:
+      - measure_id: amount
+        label: Statutory maternity pay
+        ordinal: 0
+        column: D
+        expected_column_header_row: 5
+        expected_column_header: 2025-26
+        concept: uk_public_sector.statutory_maternity_pay_expenditure
+        source_concept: obr.statutory_maternity_pay
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000000
+        expected_cell_type: number
+  - record_set_id: obr_efo.fy{year}.expenditure.winter_fuel_payment
+    record_set_spec_id: obr_efo.expenditure.winter_fuel_payment.v1
+    source_record_id_prefix: obr_efo.fy{year}.expenditure.winter_fuel_payment
+    sheet_name: "4.9"
+    period_type: fiscal_year
+    period: "{year}"
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: government
+    entity_role: uk_public_sector
+    domain: uk_public_sector_expenditure
+    groupby_dimension: obr.efo_expenditure_line
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 17
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: Winter fuel payment
+    measures:
+      - measure_id: amount
+        label: Winter fuel payment
+        ordinal: 0
+        column: D
+        expected_column_header_row: 5
+        expected_column_header: 2025-26
+        concept: uk_public_sector.winter_fuel_payment_expenditure
+        source_concept: obr.winter_fuel_payment
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000000
+        expected_cell_type: number
+  - record_set_id: obr_efo.fy{year}.expenditure.universal_credit_welfare_cap
+    record_set_spec_id: obr_efo.expenditure.universal_credit_welfare_cap.v1
+    source_record_id_prefix: obr_efo.fy{year}.expenditure.universal_credit_welfare_cap
+    sheet_name: "4.9"
+    period_type: fiscal_year
+    period: "{year}"
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: government
+    entity_role: uk_public_sector
+    domain: uk_public_sector_expenditure
+    groupby_dimension: obr.efo_expenditure_line
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 18
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: Universal credit
+    measures:
+      - measure_id: amount
+        label: Universal credit in welfare cap
+        ordinal: 0
+        column: D
+        expected_column_header_row: 5
+        expected_column_header: 2025-26
+        concept: uk_public_sector.universal_credit_expenditure_welfare_cap
+        source_concept: obr.universal_credit_in_welfare_cap
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000000
+        expected_cell_type: number
+  - record_set_id: obr_efo.fy{year}.expenditure.child_benefit
+    record_set_spec_id: obr_efo.expenditure.child_benefit.v1
+    source_record_id_prefix: obr_efo.fy{year}.expenditure.child_benefit
+    sheet_name: "4.9"
+    period_type: fiscal_year
+    period: "{year}"
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: government
+    entity_role: uk_public_sector
+    domain: uk_public_sector_expenditure
+    groupby_dimension: obr.efo_expenditure_line
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 32
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: Child benefit
+    measures:
+      - measure_id: amount
+        label: Child benefit
+        ordinal: 0
+        column: D
+        expected_column_header_row: 5
+        expected_column_header: 2025-26
+        concept: uk_public_sector.child_benefit_expenditure
+        source_concept: obr.child_benefit
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000000
+        expected_cell_type: number
+  - record_set_id: obr_efo.fy{year}.expenditure.state_pension
+    record_set_spec_id: obr_efo.expenditure.state_pension.v1
+    source_record_id_prefix: obr_efo.fy{year}.expenditure.state_pension
+    sheet_name: "4.9"
+    period_type: fiscal_year
+    period: "{year}"
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: government
+    entity_role: uk_public_sector
+    domain: uk_public_sector_expenditure
+    groupby_dimension: obr.efo_expenditure_line
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 40
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: State pension
+    measures:
+      - measure_id: amount
+        label: State pension
+        ordinal: 0
+        column: D
+        expected_column_header_row: 5
+        expected_column_header: 2025-26
+        concept: uk_public_sector.state_pension_expenditure
+        source_concept: obr.state_pension
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000000
+        expected_cell_type: number
+  - record_set_id: obr_efo.fy{year}.expenditure.jobseekers_allowance
+    record_set_spec_id: obr_efo.expenditure.jobseekers_allowance.v1
+    source_record_id_prefix: obr_efo.fy{year}.expenditure.jobseekers_allowance
+    sheet_name: "4.9"
+    period_type: fiscal_year
+    period: "{year}"
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: government
+    entity_role: uk_public_sector
+    domain: uk_public_sector_expenditure
+    groupby_dimension: obr.efo_expenditure_line
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 41
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: "Jobseeker's allowance"
+    measures:
+      - measure_id: amount
+        label: Jobseeker's allowance
+        ordinal: 0
+        column: D
+        expected_column_header_row: 5
+        expected_column_header: 2025-26
+        concept: uk_public_sector.jobseekers_allowance_expenditure
+        source_concept: obr.jobseekers_allowance
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000000
+        expected_cell_type: number
+  - record_set_id: obr_efo.fy{year}.expenditure.universal_credit_outside_welfare_cap
+    record_set_spec_id: obr_efo.expenditure.universal_credit_outside_welfare_cap.v1
+    source_record_id_prefix: obr_efo.fy{year}.expenditure.universal_credit_outside_welfare_cap
+    sheet_name: "4.9"
+    period_type: fiscal_year
+    period: "{year}"
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: government
+    entity_role: uk_public_sector
+    domain: uk_public_sector_expenditure
+    groupby_dimension: obr.efo_expenditure_line
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 43
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: Universal credit
+    measures:
+      - measure_id: amount
+        label: Universal credit outside welfare cap
+        ordinal: 0
+        column: D
+        expected_column_header_row: 5
+        expected_column_header: 2025-26
+        concept: uk_public_sector.universal_credit_expenditure_outside_welfare_cap
+        source_concept: obr.universal_credit_outside_welfare_cap
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000000
+        expected_cell_type: number
+  - record_set_id: obr_efo.fy{year}.expenditure.bbc_licence_fee_receipts
+    record_set_spec_id: obr_efo.expenditure.bbc_licence_fee_receipts.v1
+    source_record_id_prefix: obr_efo.fy{year}.expenditure.bbc_licence_fee_receipts
+    sheet_name: "4.19"
+    period_type: fiscal_year
+    period: "{year}"
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: government
+    entity_role: uk_public_sector
+    domain: uk_public_sector_receipts
+    groupby_dimension: obr.efo_expenditure_line
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 6
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: BBC licence fee receipts
+    measures:
+      - measure_id: amount
+        label: BBC licence fee receipts
+        ordinal: 0
+        column: D
+        expected_column_header_row: 5
+        expected_column_header: 2025-26
+        concept: uk_public_sector.bbc_licence_fee_receipts_cash
+        source_concept: obr.bbc_licence_fee_receipts
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000000
+        expected_cell_type: number

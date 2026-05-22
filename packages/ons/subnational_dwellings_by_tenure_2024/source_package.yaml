@@ -1,0 +1,211 @@
+schema_version: arch.source_package.v1
+package_id: ons-subnational-dwellings-by-tenure-2024
+label: ONS England dwelling stock by tenure 2024
+artifact:
+  source_name: ons
+  source_table: ONS subnational dwelling stock by tenure estimates Table 1a
+  resource_package: db
+  resource_directory: data/ons/subnational_dwellings_by_tenure_2024
+  manifest: manifest.yaml
+  vintage: subnational_dwellings_by_tenure_2024
+  extracted_at: '2026-05-11'
+  extraction_method: xlsx whole-workbook used-range cell parse
+  parser: xlsx_used_range
+  artifact_year: 2024
+record_sets:
+- record_set_id: ons_spree.cy2024.england_dwelling_stock_by_tenure
+  record_set_spec_id: ons_spree.england_dwelling_stock_by_tenure.v1
+  source_record_id_prefix: ons_spree.cy2024.england_dwelling_stock_by_tenure
+  sheet_name: 1a
+  period_type: calendar_year
+  period: 2024
+  geography_id: E92000001
+  geography_level: country
+  geography_name: England
+  geography_vintage: current
+  entity: dwelling
+  entity_role: dwelling_stock
+  domain: uk_housing
+  groupby_dimension: tenure_type
+  rows:
+  - value_id: england
+    label: England local-authority sum
+    ordinal: 0
+    row_number: 5
+    row_end_number: 299
+    table_record_kind: derived_total
+    expected_row_header_column: A
+    expected_row_header: E12000001
+    guard_cells:
+    - column: A
+      row: 1
+      expected_value: "Table 1a: Counts of dwelling stock by tenure in each local authority, England, 2022 to 2024"
+      label: table title
+    - column: A
+      row: 3
+      expected_value: "Source: Office for National Statistics \u2013 2021 Census, Ministry of Housing, Communities and Local Government, live tables on dwelling stock"
+      label: source note
+    - column: A
+      row: 4
+      expected_value: Region code
+      label: region-code header
+    - column: D
+      row: 4
+      expected_value: Local authority district name
+      label: district-name header
+    - column: A
+      row: end
+      expected_value: E12000009
+      label: final region code
+    - column: D
+      row: end
+      expected_value: Tewkesbury
+      label: final local authority
+  measures:
+  - measure_id: owned_outright
+    label: Owned outright dwellings
+    ordinal: 0
+    column: O
+    source_column_id: 2024_owned_outright
+    expected_column_header_row: 4
+    expected_column_header: 2024 Owned Outright
+    concept: uk_housing.dwelling_count
+    source_concept: ons.spree_owned_outright_dwelling_stock
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+    filters:
+      tenure_type: OWNED_OUTRIGHT
+    constraints:
+    - variable: tenure_type
+      operator: ==
+      value: OWNED_OUTRIGHT
+      label: Tenure type
+  - measure_id: owned_with_mortgage
+    label: Owned with mortgage or loan dwellings
+    ordinal: 1
+    column: P
+    source_column_id: 2024_owned_with_mortgage_or_loan
+    expected_column_header_row: 4
+    expected_column_header: 2024 Owned with Mortgage or Loan
+    concept: uk_housing.dwelling_count
+    source_concept: ons.spree_owned_with_mortgage_or_loan_dwelling_stock
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+    filters:
+      tenure_type: OWNED_WITH_MORTGAGE
+    constraints:
+    - variable: tenure_type
+      operator: ==
+      value: OWNED_WITH_MORTGAGE
+      label: Tenure type
+  - measure_id: private_rent
+    label: Private rent dwellings
+    ordinal: 2
+    column: Q
+    source_column_id: 2024_private_rent
+    expected_column_header_row: 4
+    expected_column_header: 2024 Private Rent
+    concept: uk_housing.dwelling_count
+    source_concept: ons.spree_private_rent_dwelling_stock
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+    filters:
+      tenure_type: RENT_PRIVATELY
+    constraints:
+    - variable: tenure_type
+      operator: ==
+      value: RENT_PRIVATELY
+      label: Tenure type
+  - measure_id: social_rent
+    label: Social rent dwellings
+    ordinal: 3
+    column: R
+    source_column_id: 2024_social_rent
+    expected_column_header_row: 4
+    expected_column_header: 2024 Social Rent
+    concept: uk_housing.dwelling_count
+    source_concept: ons.spree_social_rent_dwelling_stock
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+    filters:
+      tenure_type: SOCIAL_RENT
+    constraints:
+    - variable: tenure_type
+      operator: ==
+      value: SOCIAL_RENT
+      label: Tenure type
+- record_set_id: ons_spree.cy2024.england_dwelling_stock_total
+  record_set_spec_id: ons_spree.england_dwelling_stock_total.v1
+  source_record_id_prefix: ons_spree.cy2024.england_dwelling_stock_total
+  sheet_name: 1a
+  period_type: calendar_year
+  period: 2024
+  geography_id: E92000001
+  geography_level: country
+  geography_name: England
+  geography_vintage: current
+  entity: dwelling
+  entity_role: dwelling_stock
+  domain: uk_housing
+  groupby_dimension: total
+  rows:
+  - value_id: england
+    label: England local-authority sum
+    ordinal: 0
+    row_number: 5
+    row_end_number: 299
+    table_record_kind: total
+    expected_row_header_column: A
+    expected_row_header: E12000001
+    guard_cells:
+    - column: A
+      row: 1
+      expected_value: "Table 1a: Counts of dwelling stock by tenure in each local authority, England, 2022 to 2024"
+      label: table title
+    - column: A
+      row: 3
+      expected_value: "Source: Office for National Statistics \u2013 2021 Census, Ministry of Housing, Communities and Local Government, live tables on dwelling stock"
+      label: source note
+    - column: A
+      row: 4
+      expected_value: Region code
+      label: region-code header
+    - column: D
+      row: 4
+      expected_value: Local authority district name
+      label: district-name header
+    - column: A
+      row: end
+      expected_value: E12000009
+      label: final region code
+    - column: D
+      row: end
+      expected_value: Tewkesbury
+      label: final local authority
+  measures:
+  - measure_id: total
+    label: Total dwellings
+    ordinal: 0
+    column: S
+    source_column_id: 2024_total_dwellings
+    expected_column_header_row: 4
+    expected_column_header: 2024 Total Dwellings
+    concept: uk_housing.dwelling_count
+    source_concept: ons.spree_total_dwelling_stock
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: count
+    aggregation: count
+    expected_cell_type: number

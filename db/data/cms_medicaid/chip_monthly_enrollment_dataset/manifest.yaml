@@ -1,0 +1,19 @@
+source_id: cms_medicaid
+package_id: cms-medicaid-chip-monthly-enrollment-dataset
+dataset: cms_medicaid_cms-medicaid-chip-monthly-enrollment-dataset
+source_page: https://data.medicaid.gov/dataset/6165f45b-ca93-5bb5-9d06-db29c692a360
+table: State Medicaid and CHIP Applications, Eligibility Determinations, and Enrollment
+  Data
+files:
+  2026:
+    filename: pi-dataset-april-2026-release.csv
+    source_url: https://download.medicaid.gov/data/pi-dataset-april-2026-release.csv
+    sha256: 3db82590bf76796811ed10499290cecd85fe634e09a79bc520632194efc5e6d6
+    size_bytes: 4112804
+    fetched_at: '2026-05-11T12:09:16+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/cms_medicaid/cms-medicaid-chip-monthly-enrollment-dataset/2026/3db82590bf76796811ed10499290cecd85fe634e09a79bc520632194efc5e6d6/pi-dataset-april-2026-release.csv
+        uri: r2://arch-raw/raw/cms_medicaid/cms-medicaid-chip-monthly-enrollment-dataset/2026/3db82590bf76796811ed10499290cecd85fe634e09a79bc520632194efc5e6d6/pi-dataset-april-2026-release.csv

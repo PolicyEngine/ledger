@@ -1,0 +1,57 @@
+schema_version: arch.source_package.v1
+package_id: ons-private-rent-house-prices-march-2026
+label: ONS private rent and house prices UK March 2026
+artifact:
+  source_name: ons
+  source_table: Private rent and house prices UK March 2026
+  resource_package: db
+  resource_directory: data/ons/private_rent_house_prices_march_2026
+  manifest: manifest.yaml
+  vintage: march_2026
+  extracted_at: '2026-05-11'
+  extraction_method: HTML numeric document text parse from official ONS bulletin
+  parser: html_tables_and_text
+  artifact_year: 2026
+record_sets:
+  - record_set_id: ons_prhi.month2026_02.uk_private_rent
+    record_set_spec_id: ons_prhi.uk_private_rent.v1
+    source_record_id_prefix: ons_prhi.month2026_02.uk_private_rent
+    sheet_name: document_numbers
+    period_type: month
+    period: 2026-02
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: dwelling
+    entity_role: private_rented_dwelling
+    domain: uk_housing
+    groupby_dimension: housing.tenure
+    rows:
+      - value_id: private_rent
+        label: Private rent
+        ordinal: 0
+        row_number: 101
+        constraints:
+          - variable: housing.tenure
+            operator: ==
+            value: private_rent
+            label: Housing tenure
+        expected_row_header_column: C
+        expected_row_header: The average monthly private rent in the UK was £1,374 per month in February 2026. This is £47 (3.5%) higher than 12 months ago.
+        table_record_kind: detail
+    measures:
+      - measure_id: average_monthly_rent
+        label: Average monthly private rent
+        ordinal: 0
+        column: E
+        source_column_id: numeric_value
+        expected_column_header_row: 1
+        expected_column_header: numeric_value
+        concept: uk_housing.average_monthly_private_rent
+        source_concept: ons_prhi.average_monthly_private_rent
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp_per_month
+        aggregation: mean
+        expected_cell_type: number

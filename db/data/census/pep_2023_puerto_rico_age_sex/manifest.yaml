@@ -1,0 +1,19 @@
+source_id: census_pep
+package_id: census-pep-2023-puerto-rico-age-sex
+dataset: census_pep_2023_puerto_rico_age_sex
+source_page: https://www.census.gov/data/tables/time-series/demo/popest/2020s-counties-detail.html
+table: Vintage 2023 Puerto Rico Commonwealth Municipio Resident Population Estimates
+  by Single Year of Age and Sex
+files:
+  2023:
+    filename: cc-est2023-syasex-72.csv
+    source_url: https://www2.census.gov/programs-surveys/popest/datasets/2020-2023/counties/asrh/cc-est2023-syasex-72.csv
+    sha256: 7cdea43326562bdab6f57bd08cc5b16801a2d0c633f82a501270bce55a9ce7a2
+    size_bytes: 2530977
+    fetched_at: '2026-05-11T21:54:16+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/census_pep/census-pep-2023-puerto-rico-age-sex/2023/7cdea43326562bdab6f57bd08cc5b16801a2d0c633f82a501270bce55a9ce7a2/cc-est2023-syasex-72.csv
+        uri: r2://arch-raw/raw/census_pep/census-pep-2023-puerto-rico-age-sex/2023/7cdea43326562bdab6f57bd08cc5b16801a2d0c633f82a501270bce55a9ce7a2/cc-est2023-syasex-72.csv

@@ -1,0 +1,219 @@
+schema_version: arch.source_package.v1
+package_id: dwp-benefit-statistics-february-2026
+label: DWP benefit statistics February 2026
+artifact:
+  source_name: dwp
+  source_table: DWP benefit statistics February 2026 summary
+  resource_package: db
+  resource_directory: data/dwp/benefit_statistics_february_2026
+  manifest: manifest.yaml
+  vintage: february_2026
+  extracted_at: '2026-05-10'
+  extraction_method: HTML table parse plus document text number extraction
+  parser: html_tables_and_text
+record_sets:
+  - record_set_id: dwp_benefit_statistics.month{year}_08.headline_claimants
+    record_set_spec_id: dwp_benefit_statistics.headline_claimants.v1
+    source_record_id_prefix: dwp_benefit_statistics.month{year}_08.headline_claimants
+    sheet_name: table_1
+    period_type: month
+    period: '{year}-08'
+    geography_id: GBR
+    geography_level: country
+    geography_name: Great Britain
+    geography_vintage: current
+    entity: person
+    entity_role: benefit_claimant
+    domain: uk_social_security
+    groupby_dimension: uk_social_security.benefit
+    rows:
+      - value_id: state_pension
+        label: State Pension
+        ordinal: 0
+        row_number: 2
+        filters:
+          uk_social_security.benefit: state_pension
+        constraints:
+          - variable: uk_social_security.benefit
+            operator: "=="
+            value: state_pension
+            label: Benefit
+      - value_id: universal_credit
+        label: Universal Credit
+        ordinal: 1
+        row_number: 3
+        filters:
+          uk_social_security.benefit: universal_credit
+        constraints:
+          - variable: uk_social_security.benefit
+            operator: "=="
+            value: universal_credit
+            label: Benefit
+      - value_id: personal_independence_payment
+        label: Personal Independence Payment
+        ordinal: 2
+        row_number: 4
+        expected_row_header: Personal Independence Payment *
+        filters:
+          uk_social_security.benefit: personal_independence_payment
+        constraints:
+          - variable: uk_social_security.benefit
+            operator: "=="
+            value: personal_independence_payment
+            label: Benefit
+      - value_id: attendance_allowance
+        label: Attendance Allowance
+        ordinal: 3
+        row_number: 5
+        expected_row_header: Attendance Allowance*
+        filters:
+          uk_social_security.benefit: attendance_allowance
+        constraints:
+          - variable: uk_social_security.benefit
+            operator: "=="
+            value: attendance_allowance
+            label: Benefit
+      - value_id: housing_benefit
+        label: Housing Benefit
+        ordinal: 4
+        row_number: 6
+        filters:
+          uk_social_security.benefit: housing_benefit
+        constraints:
+          - variable: uk_social_security.benefit
+            operator: "=="
+            value: housing_benefit
+            label: Benefit
+      - value_id: pension_credit
+        label: Pension Credit
+        ordinal: 5
+        row_number: 7
+        filters:
+          uk_social_security.benefit: pension_credit
+        constraints:
+          - variable: uk_social_security.benefit
+            operator: "=="
+            value: pension_credit
+            label: Benefit
+      - value_id: carers_allowance
+        label: Carers Allowance
+        ordinal: 6
+        row_number: 8
+        expected_row_header: Carers Allowance*
+        filters:
+          uk_social_security.benefit: carers_allowance
+        constraints:
+          - variable: uk_social_security.benefit
+            operator: "=="
+            value: carers_allowance
+            label: Benefit
+      - value_id: disability_living_allowance
+        label: Disability Living Allowance
+        ordinal: 7
+        row_number: 9
+        expected_row_header: Disability Living Allowance*
+        filters:
+          uk_social_security.benefit: disability_living_allowance
+        constraints:
+          - variable: uk_social_security.benefit
+            operator: "=="
+            value: disability_living_allowance
+            label: Benefit
+      - value_id: employment_and_support_allowance
+        label: Employment and Support Allowance
+        ordinal: 8
+        row_number: 10
+        filters:
+          uk_social_security.benefit: employment_and_support_allowance
+        constraints:
+          - variable: uk_social_security.benefit
+            operator: "=="
+            value: employment_and_support_allowance
+            label: Benefit
+      - value_id: jobseekers_allowance
+        label: Jobseeker’s Allowance
+        ordinal: 9
+        row_number: 11
+        filters:
+          uk_social_security.benefit: jobseekers_allowance
+        constraints:
+          - variable: uk_social_security.benefit
+            operator: "=="
+            value: jobseekers_allowance
+            label: Benefit
+    measures:
+      - measure_id: claimants
+        label: Claimants
+        ordinal: 0
+        column: B
+        expected_column_header_row: 1
+        expected_column_header: Number of claimants
+        concept: uk_social_security.benefit_claimants
+        source_concept: dwp.benefit_claimants_by_benefit_type
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dwp_benefit_statistics.month{year}_08.esa_claimants_by_claim_type
+    record_set_spec_id: dwp_benefit_statistics.esa_claimants_by_claim_type.v1
+    source_record_id_prefix: dwp_benefit_statistics.month{year}_08.esa_claimants_by_claim_type
+    sheet_name: document_numbers
+    period_type: month
+    period: '{year}-08'
+    geography_id: GBR
+    geography_level: country
+    geography_name: Great Britain
+    geography_vintage: current
+    entity: person
+    entity_role: benefit_claimant
+    domain: uk_social_security
+    groupby_dimension: uk_social_security.esa_claim_type
+    rows:
+      - value_id: contributions_based
+        label: Contributions-based ESA
+        ordinal: 0
+        row_number: 172
+        expected_row_header_column: D
+        expected_row_header: 620,000
+        filters:
+          uk_social_security.esa_claim_type: contributions_based
+        constraints:
+          - variable: uk_social_security.esa_claim_type
+            operator: "=="
+            value: contributions_based
+            label: ESA claim type
+      - value_id: income_related
+        label: Income-related ESA
+        ordinal: 1
+        row_number: 175
+        expected_row_header_column: D
+        expected_row_header: 180,000
+        filters:
+          uk_social_security.esa_claim_type: income_related
+        constraints:
+          - variable: uk_social_security.esa_claim_type
+            operator: "=="
+            value: income_related
+            label: ESA claim type
+    measures:
+      - measure_id: claimants
+        label: ESA claimants
+        ordinal: 0
+        column: E
+        expected_column_header_row: 1
+        expected_column_header: numeric_value
+        concept: uk_social_security.benefit_claimants
+        source_concept: dwp.employment_and_support_allowance_claimants_by_claim_type
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_social_security.benefit: employment_and_support_allowance
+        constraints:
+          - variable: uk_social_security.benefit
+            operator: "=="
+            value: employment_and_support_allowance
+            label: Benefit

@@ -1,0 +1,661 @@
+schema_version: arch.source_package.v1
+package_id: hmrc-spi-income-bands-2023
+label: HMRC SPI income by total-income band 2022-23
+artifact:
+  source_name: hmrc_spi
+  source_table: HMRC SPI collated tables 3.6 and 3.7 2022-23
+  resource_package: db
+  resource_directory: data/hmrc_spi/income_bands_2023
+  manifest: manifest.yaml
+  vintage: tax_year_2022_23_march_2025
+  extracted_at: '2026-05-10'
+  extraction_method: odfpy whole-workbook used-range cell parse
+  parser: ods_used_range
+record_sets:
+- record_set_id: hmrc_spi.ty2022_23.table_3_6.income_by_total_income_band
+  record_set_spec_id: hmrc_spi.table_3_6.income_by_total_income_band.v1
+  source_record_id_prefix: hmrc_spi.ty2022_23.table_3_6.income_by_total_income_band
+  sheet_name: Table_3_6
+  period_type: tax_year
+  period: 2022-23
+  geography_id: GBR
+  geography_level: country
+  geography_name: United Kingdom
+  geography_vintage: current
+  entity: person
+  entity_role: taxpayer
+  domain: uk_taxpayers_with_income_tax_liability
+  groupby_dimension: total_income
+  rows:
+  - value_id: 12k_to_15k
+    label: GBP 12,570 to under GBP 15,000
+    ordinal: 0
+    row_number: 6
+    expected_row_header_column: A
+    expected_row_header: 12570
+    constraints:
+    - variable: total_income
+      operator: '>='
+      value: 12570
+      unit: gbp
+      label: Total income lower bound
+    - variable: total_income
+      operator: <
+      value: 15000
+      unit: gbp
+      label: Total income upper bound
+  - value_id: 15k_to_20k
+    label: GBP 15,000 to under GBP 20,000
+    ordinal: 1
+    row_number: 7
+    expected_row_header_column: A
+    expected_row_header: 15000
+    constraints:
+    - variable: total_income
+      operator: '>='
+      value: 15000
+      unit: gbp
+      label: Total income lower bound
+    - variable: total_income
+      operator: <
+      value: 20000
+      unit: gbp
+      label: Total income upper bound
+  - value_id: 20k_to_30k
+    label: GBP 20,000 to under GBP 30,000
+    ordinal: 2
+    row_number: 8
+    expected_row_header_column: A
+    expected_row_header: 20000
+    constraints:
+    - variable: total_income
+      operator: '>='
+      value: 20000
+      unit: gbp
+      label: Total income lower bound
+    - variable: total_income
+      operator: <
+      value: 30000
+      unit: gbp
+      label: Total income upper bound
+  - value_id: 30k_to_40k
+    label: GBP 30,000 to under GBP 40,000
+    ordinal: 3
+    row_number: 9
+    expected_row_header_column: A
+    expected_row_header: 30000
+    constraints:
+    - variable: total_income
+      operator: '>='
+      value: 30000
+      unit: gbp
+      label: Total income lower bound
+    - variable: total_income
+      operator: <
+      value: 40000
+      unit: gbp
+      label: Total income upper bound
+  - value_id: 40k_to_50k
+    label: GBP 40,000 to under GBP 50,000
+    ordinal: 4
+    row_number: 10
+    expected_row_header_column: A
+    expected_row_header: 40000
+    constraints:
+    - variable: total_income
+      operator: '>='
+      value: 40000
+      unit: gbp
+      label: Total income lower bound
+    - variable: total_income
+      operator: <
+      value: 50000
+      unit: gbp
+      label: Total income upper bound
+  - value_id: 50k_to_70k
+    label: GBP 50,000 to under GBP 70,000
+    ordinal: 5
+    row_number: 11
+    expected_row_header_column: A
+    expected_row_header: 50000
+    constraints:
+    - variable: total_income
+      operator: '>='
+      value: 50000
+      unit: gbp
+      label: Total income lower bound
+    - variable: total_income
+      operator: <
+      value: 70000
+      unit: gbp
+      label: Total income upper bound
+  - value_id: 70k_to_100k
+    label: GBP 70,000 to under GBP 100,000
+    ordinal: 6
+    row_number: 12
+    expected_row_header_column: A
+    expected_row_header: 70000
+    constraints:
+    - variable: total_income
+      operator: '>='
+      value: 70000
+      unit: gbp
+      label: Total income lower bound
+    - variable: total_income
+      operator: <
+      value: 100000
+      unit: gbp
+      label: Total income upper bound
+  - value_id: 100k_to_150k
+    label: GBP 100,000 to under GBP 150,000
+    ordinal: 7
+    row_number: 13
+    expected_row_header_column: A
+    expected_row_header: 100000
+    constraints:
+    - variable: total_income
+      operator: '>='
+      value: 100000
+      unit: gbp
+      label: Total income lower bound
+    - variable: total_income
+      operator: <
+      value: 150000
+      unit: gbp
+      label: Total income upper bound
+  - value_id: 150k_to_200k
+    label: GBP 150,000 to under GBP 200,000
+    ordinal: 8
+    row_number: 14
+    expected_row_header_column: A
+    expected_row_header: 150000
+    constraints:
+    - variable: total_income
+      operator: '>='
+      value: 150000
+      unit: gbp
+      label: Total income lower bound
+    - variable: total_income
+      operator: <
+      value: 200000
+      unit: gbp
+      label: Total income upper bound
+  - value_id: 200k_to_300k
+    label: GBP 200,000 to under GBP 300,000
+    ordinal: 9
+    row_number: 15
+    expected_row_header_column: A
+    expected_row_header: 200000
+    constraints:
+    - variable: total_income
+      operator: '>='
+      value: 200000
+      unit: gbp
+      label: Total income lower bound
+    - variable: total_income
+      operator: <
+      value: 300000
+      unit: gbp
+      label: Total income upper bound
+  - value_id: 300k_to_500k
+    label: GBP 300,000 to under GBP 500,000
+    ordinal: 10
+    row_number: 16
+    expected_row_header_column: A
+    expected_row_header: 300000
+    constraints:
+    - variable: total_income
+      operator: '>='
+      value: 300000
+      unit: gbp
+      label: Total income lower bound
+    - variable: total_income
+      operator: <
+      value: 500000
+      unit: gbp
+      label: Total income upper bound
+  - value_id: 500k_to_1m
+    label: GBP 500,000 to under GBP 1,000,000
+    ordinal: 11
+    row_number: 17
+    expected_row_header_column: A
+    expected_row_header: 500000
+    constraints:
+    - variable: total_income
+      operator: '>='
+      value: 500000
+      unit: gbp
+      label: Total income lower bound
+    - variable: total_income
+      operator: <
+      value: 1000000
+      unit: gbp
+      label: Total income upper bound
+  - value_id: 1m_plus
+    label: GBP 1,000,000 or more
+    ordinal: 12
+    row_number: 18
+    expected_row_header_column: A
+    expected_row_header: 1000000
+    constraints:
+    - variable: total_income
+      operator: '>='
+      value: 1000000
+      unit: gbp
+      label: Total income lower bound
+  measures:
+  - measure_id: self_employment_income_count
+    label: Self-employment income recipient count
+    ordinal: 0
+    column: B
+    source_column_id: self_employment_income_count
+    expected_column_header_row: 5
+    expected_column_header: Self-employment income (Number of individuals) [Note 1]
+    concept: uk_personal_income.self_employment_income_recipients
+    source_concept: hmrc_spi.self_employment_income_number_of_individuals
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: count
+    aggregation: count
+    value_scale: 1000
+    expected_cell_type: number
+  - measure_id: self_employment_income_amount
+    label: Self-employment income amount
+    ordinal: 1
+    column: C
+    source_column_id: self_employment_income_amount
+    expected_column_header_row: 5
+    expected_column_header: Self-employment income (Amount) [Note 1]
+    concept: uk_personal_income.self_employment_income
+    source_concept: hmrc_spi.self_employment_income_amount
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: gbp
+    aggregation: sum
+    value_scale: 1000000
+    expected_cell_type: number
+  - measure_id: employment_income_count
+    label: Employment income recipient count
+    ordinal: 2
+    column: E
+    source_column_id: employment_income_count
+    expected_column_header_row: 5
+    expected_column_header: Employment income (Number of individuals)
+    concept: uk_personal_income.employment_income_recipients
+    source_concept: hmrc_spi.employment_income_number_of_individuals
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: count
+    aggregation: count
+    value_scale: 1000
+    expected_cell_type: number
+  - measure_id: employment_income_amount
+    label: Employment income amount
+    ordinal: 3
+    column: F
+    source_column_id: employment_income_amount
+    expected_column_header_row: 5
+    expected_column_header: Employment income (Amount)
+    concept: uk_personal_income.employment_income
+    source_concept: hmrc_spi.employment_income_amount
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: gbp
+    aggregation: sum
+    value_scale: 1000000
+    expected_cell_type: number
+  - measure_id: state_pension_count
+    label: State Pension recipient count
+    ordinal: 4
+    column: H
+    source_column_id: state_pension_count
+    expected_column_header_row: 5
+    expected_column_header: Pension Income from National Insurance contributions (Number
+      of individuals) [Note 2]
+    concept: uk_personal_income.state_pension_recipients
+    source_concept: hmrc_spi.state_pension_number_of_individuals
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: count
+    aggregation: count
+    value_scale: 1000
+    expected_cell_type: number
+  - measure_id: state_pension_amount
+    label: State Pension amount
+    ordinal: 5
+    column: I
+    source_column_id: state_pension_amount
+    expected_column_header_row: 5
+    expected_column_header: Pension Income from National Insurance contributions (Amount)
+      [Note 2]
+    concept: uk_personal_income.state_pension
+    source_concept: hmrc_spi.state_pension_amount
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: gbp
+    aggregation: sum
+    value_scale: 1000000
+    expected_cell_type: number
+  - measure_id: private_pension_income_count
+    label: Private pension income recipient count
+    ordinal: 6
+    column: K
+    source_column_id: private_pension_income_count
+    expected_column_header_row: 5
+    expected_column_header: Pension income from other pensions (Number of individuals)
+    concept: uk_personal_income.private_pension_income_recipients
+    source_concept: hmrc_spi.private_pension_income_number_of_individuals
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: count
+    aggregation: count
+    value_scale: 1000
+    expected_cell_type: number
+  - measure_id: private_pension_income_amount
+    label: Private pension income amount
+    ordinal: 7
+    column: L
+    source_column_id: private_pension_income_amount
+    expected_column_header_row: 5
+    expected_column_header: Pension income from other pensions (Amount)
+    concept: uk_personal_income.private_pension_income
+    source_concept: hmrc_spi.private_pension_income_amount
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: gbp
+    aggregation: sum
+    value_scale: 1000000
+    expected_cell_type: number
+- record_set_id: hmrc_spi.ty2022_23.table_3_7.income_by_total_income_band
+  record_set_spec_id: hmrc_spi.table_3_7.income_by_total_income_band.v1
+  source_record_id_prefix: hmrc_spi.ty2022_23.table_3_7.income_by_total_income_band
+  sheet_name: Table_3_7
+  period_type: tax_year
+  period: 2022-23
+  geography_id: GBR
+  geography_level: country
+  geography_name: United Kingdom
+  geography_vintage: current
+  entity: person
+  entity_role: taxpayer
+  domain: uk_taxpayers_with_income_tax_liability
+  groupby_dimension: total_income
+  rows:
+  - value_id: 12k_to_15k
+    label: GBP 12,570 to under GBP 15,000
+    ordinal: 0
+    row_number: 6
+    expected_row_header_column: A
+    expected_row_header: 12570
+    constraints:
+    - variable: total_income
+      operator: '>='
+      value: 12570
+      unit: gbp
+      label: Total income lower bound
+    - variable: total_income
+      operator: <
+      value: 15000
+      unit: gbp
+      label: Total income upper bound
+  - value_id: 15k_to_20k
+    label: GBP 15,000 to under GBP 20,000
+    ordinal: 1
+    row_number: 7
+    expected_row_header_column: A
+    expected_row_header: 15000
+    constraints:
+    - variable: total_income
+      operator: '>='
+      value: 15000
+      unit: gbp
+      label: Total income lower bound
+    - variable: total_income
+      operator: <
+      value: 20000
+      unit: gbp
+      label: Total income upper bound
+  - value_id: 20k_to_30k
+    label: GBP 20,000 to under GBP 30,000
+    ordinal: 2
+    row_number: 8
+    expected_row_header_column: A
+    expected_row_header: 20000
+    constraints:
+    - variable: total_income
+      operator: '>='
+      value: 20000
+      unit: gbp
+      label: Total income lower bound
+    - variable: total_income
+      operator: <
+      value: 30000
+      unit: gbp
+      label: Total income upper bound
+  - value_id: 30k_to_40k
+    label: GBP 30,000 to under GBP 40,000
+    ordinal: 3
+    row_number: 9
+    expected_row_header_column: A
+    expected_row_header: 30000
+    constraints:
+    - variable: total_income
+      operator: '>='
+      value: 30000
+      unit: gbp
+      label: Total income lower bound
+    - variable: total_income
+      operator: <
+      value: 40000
+      unit: gbp
+      label: Total income upper bound
+  - value_id: 40k_to_50k
+    label: GBP 40,000 to under GBP 50,000
+    ordinal: 4
+    row_number: 10
+    expected_row_header_column: A
+    expected_row_header: 40000
+    constraints:
+    - variable: total_income
+      operator: '>='
+      value: 40000
+      unit: gbp
+      label: Total income lower bound
+    - variable: total_income
+      operator: <
+      value: 50000
+      unit: gbp
+      label: Total income upper bound
+  - value_id: 50k_to_70k
+    label: GBP 50,000 to under GBP 70,000
+    ordinal: 5
+    row_number: 11
+    expected_row_header_column: A
+    expected_row_header: 50000
+    constraints:
+    - variable: total_income
+      operator: '>='
+      value: 50000
+      unit: gbp
+      label: Total income lower bound
+    - variable: total_income
+      operator: <
+      value: 70000
+      unit: gbp
+      label: Total income upper bound
+  - value_id: 70k_to_100k
+    label: GBP 70,000 to under GBP 100,000
+    ordinal: 6
+    row_number: 12
+    expected_row_header_column: A
+    expected_row_header: 70000
+    constraints:
+    - variable: total_income
+      operator: '>='
+      value: 70000
+      unit: gbp
+      label: Total income lower bound
+    - variable: total_income
+      operator: <
+      value: 100000
+      unit: gbp
+      label: Total income upper bound
+  - value_id: 100k_to_150k
+    label: GBP 100,000 to under GBP 150,000
+    ordinal: 7
+    row_number: 13
+    expected_row_header_column: A
+    expected_row_header: 100000
+    constraints:
+    - variable: total_income
+      operator: '>='
+      value: 100000
+      unit: gbp
+      label: Total income lower bound
+    - variable: total_income
+      operator: <
+      value: 150000
+      unit: gbp
+      label: Total income upper bound
+  - value_id: 150k_to_200k
+    label: GBP 150,000 to under GBP 200,000
+    ordinal: 8
+    row_number: 14
+    expected_row_header_column: A
+    expected_row_header: 150000
+    constraints:
+    - variable: total_income
+      operator: '>='
+      value: 150000
+      unit: gbp
+      label: Total income lower bound
+    - variable: total_income
+      operator: <
+      value: 200000
+      unit: gbp
+      label: Total income upper bound
+  - value_id: 200k_to_300k
+    label: GBP 200,000 to under GBP 300,000
+    ordinal: 9
+    row_number: 15
+    expected_row_header_column: A
+    expected_row_header: 200000
+    constraints:
+    - variable: total_income
+      operator: '>='
+      value: 200000
+      unit: gbp
+      label: Total income lower bound
+    - variable: total_income
+      operator: <
+      value: 300000
+      unit: gbp
+      label: Total income upper bound
+  - value_id: 300k_to_500k
+    label: GBP 300,000 to under GBP 500,000
+    ordinal: 10
+    row_number: 16
+    expected_row_header_column: A
+    expected_row_header: 300000
+    constraints:
+    - variable: total_income
+      operator: '>='
+      value: 300000
+      unit: gbp
+      label: Total income lower bound
+    - variable: total_income
+      operator: <
+      value: 500000
+      unit: gbp
+      label: Total income upper bound
+  - value_id: 500k_to_1m
+    label: GBP 500,000 to under GBP 1,000,000
+    ordinal: 11
+    row_number: 17
+    expected_row_header_column: A
+    expected_row_header: 500000
+    constraints:
+    - variable: total_income
+      operator: '>='
+      value: 500000
+      unit: gbp
+      label: Total income lower bound
+    - variable: total_income
+      operator: <
+      value: 1000000
+      unit: gbp
+      label: Total income upper bound
+  - value_id: 1m_plus
+    label: GBP 1,000,000 or more
+    ordinal: 12
+    row_number: 18
+    expected_row_header_column: A
+    expected_row_header: 1000000
+    constraints:
+    - variable: total_income
+      operator: '>='
+      value: 1000000
+      unit: gbp
+      label: Total income lower bound
+  measures:
+  - measure_id: property_income_count
+    label: Property income recipient count
+    ordinal: 0
+    column: B
+    source_column_id: property_income_count
+    expected_column_header_row: 5
+    expected_column_header: Net income from property (Number of individuals) [Note
+      2]
+    concept: uk_personal_income.property_income_recipients
+    source_concept: hmrc_spi.net_income_from_property_number_of_individuals
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: count
+    aggregation: count
+    value_scale: 1000
+    expected_cell_type: number
+  - measure_id: property_income_amount
+    label: Property income amount
+    ordinal: 1
+    column: C
+    source_column_id: property_income_amount
+    expected_column_header_row: 5
+    expected_column_header: Net income from property (Amount) [Note 2]
+    concept: uk_personal_income.property_income
+    source_concept: hmrc_spi.net_income_from_property_amount
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: gbp
+    aggregation: sum
+    value_scale: 1000000
+    expected_cell_type: number
+  - measure_id: dividend_income_count
+    label: Dividend income recipient count
+    ordinal: 2
+    column: H
+    source_column_id: dividend_income_count
+    expected_column_header_row: 5
+    expected_column_header: Dividends (Number of individuals) [Note 5]
+    concept: uk_personal_income.dividend_income_recipients
+    source_concept: hmrc_spi.dividends_number_of_individuals
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: count
+    aggregation: count
+    value_scale: 1000
+    expected_cell_type: number
+  - measure_id: dividend_income_amount
+    label: Dividend income amount
+    ordinal: 3
+    column: I
+    source_column_id: dividend_income_amount
+    expected_column_header_row: 5
+    expected_column_header: Dividends (Amount) [Note 5]
+    concept: uk_personal_income.dividend_income
+    source_concept: hmrc_spi.dividends_amount
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: gbp
+    aggregation: sum
+    value_scale: 1000000
+    expected_cell_type: number

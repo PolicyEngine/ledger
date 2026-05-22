@@ -1,0 +1,18 @@
+source_id: scottish_government
+package_id: scotgov-scottish-budget-social-security-assistance-2026
+dataset: scotgov_scottish_budget_social_security_assistance_2026
+source_page: https://www.gov.scot/publications/scottish-budget-2026-2027/pages/7/
+table: Scottish Budget 2026 to 2027 Table 5.08 Social Security Assistance Level 3
+files:
+  2026:
+    filename: scottish_budget_2026_2027_chapter_5_social_justice.html
+    source_url: https://www.gov.scot/publications/scottish-budget-2026-2027/pages/7/
+    sha256: 55f3a7fe18e800b50a84684e0822d401be8a190dd06936a0df039d346cfedb1d
+    size_bytes: 60209
+    fetched_at: '2026-05-10T23:00:42+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/scottish_government/scotgov-scottish-budget-social-security-assistance-2026/2026/55f3a7fe18e800b50a84684e0822d401be8a190dd06936a0df039d346cfedb1d/scottish_budget_2026_2027_chapter_5_social_justice.html
+        uri: r2://arch-raw/raw/scottish_government/scotgov-scottish-budget-social-security-assistance-2026/2026/55f3a7fe18e800b50a84684e0822d401be8a190dd06936a0df039d346cfedb1d/scottish_budget_2026_2027_chapter_5_social_justice.html

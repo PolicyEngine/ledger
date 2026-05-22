@@ -1,0 +1,18 @@
+source_id: ons
+package_id: ons-national-balance-sheet-timeseries-2025
+dataset: ons_ons-national-balance-sheet-timeseries-2025
+source_page: https://www.ons.gov.uk/file?uri=%2Feconomy%2Fnationalaccounts%2Fuksectoraccounts%2Fdatasets%2Fnationalbalancesheet%2Fcurrent%2Fnbs.xlsx
+table: ons-national-balance-sheet-timeseries-2025
+files:
+  2025:
+    filename: nbs.xlsx
+    source_url: https://www.ons.gov.uk/file?uri=%2Feconomy%2Fnationalaccounts%2Fuksectoraccounts%2Fdatasets%2Fnationalbalancesheet%2Fcurrent%2Fnbs.xlsx
+    sha256: e1807ed43fb268dde8d21c71b4e3098f6fca5ebd9fbd218e9f83bf77ba8f5c5b
+    size_bytes: 145131
+    fetched_at: '2026-05-11T02:31:23+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/ons/ons-national-balance-sheet-timeseries-2025/2025/e1807ed43fb268dde8d21c71b4e3098f6fca5ebd9fbd218e9f83bf77ba8f5c5b/nbs.xlsx
+        uri: r2://arch-raw/raw/ons/ons-national-balance-sheet-timeseries-2025/2025/e1807ed43fb268dde8d21c71b4e3098f6fca5ebd9fbd218e9f83bf77ba8f5c5b/nbs.xlsx

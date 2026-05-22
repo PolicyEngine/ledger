@@ -1,0 +1,80 @@
+schema_version: arch.source_package.v1
+package_id: cms-medicare-trustees-report-2025-part-b-premium-income
+label: CMS Medicare Trustees Report 2025 Part B premium income
+artifact:
+  source_name: cms_medicare
+  source_table: 2025 Medicare Trustees Report Table III.C3
+  resource_package: db
+  resource_directory: data/cms_medicare/medicare_trustees_report_2025
+  manifest: manifest.yaml
+  vintage: trustees_report_2025
+  extracted_at: "2026-05-11"
+  extraction_method: pypdf text-line number extraction from full publisher PDF
+  parser: pdf_text_numbers
+  artifact_year: 2025
+record_sets:
+  - record_set_id: cms_medicare.cy2024.part_b_premium_income
+    record_set_spec_id: cms_medicare.part_b_premium_income.v1
+    source_record_id_prefix: cms_medicare.cy2024.part_b_premium_income
+    sheet_name: document_numbers
+    period_type: calendar_year
+    period: 2024
+    geography_id: 0100000US
+    geography_level: country
+    geography_name: United States
+    geography_vintage: current
+    entity: government
+    entity_role: medicare_part_b_account
+    domain: medicare_financing
+    groupby_dimension: medicare.financing_component
+    rows:
+      - value_id: premiums_from_enrollees
+        label: Premiums from enrollees
+        ordinal: 0
+        row_number: 3356
+        expected_row_header_column: C
+        expected_row_header: "Premiums from enrollees $139,837 $143,153 98% $144,015 97%"
+        filters:
+          medicare.part: part_b
+          medicare.financing_component: premiums_from_enrollees
+          amount_basis: actual
+        constraints:
+          - variable: medicare.part
+            operator: "=="
+            value: part_b
+            label: Medicare Part B
+          - variable: medicare.financing_component
+            operator: "=="
+            value: premiums_from_enrollees
+            label: Premiums from enrollees
+          - variable: amount_basis
+            operator: "=="
+            value: actual
+            label: Actual amount
+        guard_cells:
+          - column: A
+            expected_value: 91
+            label: PDF page number
+          - column: B
+            expected_value: 43
+            label: PDF extracted line number
+          - column: D
+            expected_value: "139,837"
+            label: actual amount text
+          - column: F
+            expected_value: "percentage of estimate Premiums from enrollees $139,837 $143,153 98% $144,015 97% Government contributions 385,9802 381,826 101 382,306 101 Benefit payments3 544,590 529,878 103 530,473 103"
+            label: nearby PDF table context
+        table_record_kind: total
+    measures:
+      - measure_id: actual_amount
+        label: Actual amount
+        ordinal: 0
+        column: E
+        source_column_id: numeric_value
+        expected_column_header_row: 1
+        expected_column_header: numeric_value
+        concept: cms_medicare.part_b_premium_income
+        unit: usd
+        aggregation: sum
+        expected_cell_type: number
+        value_scale: 1000000

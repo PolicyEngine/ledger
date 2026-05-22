@@ -1,0 +1,18 @@
+source_id: isc
+package_id: isc-census-2024-pupil-count
+dataset: isc_census_2024_pupil_count
+source_page: https://www.isc.co.uk/research/annual-census/
+table: ISC Census and Annual Report 2024 Executive Summary
+files:
+  2024:
+    filename: isc_census_2024.pdf
+    source_url: https://www.isc.co.uk/media/uukn4r3i/isc_census_2024_15may24.pdf
+    sha256: 1d9568e9a4ce02df7f0f0a3adf457bd5a7beff012cf8364512ec92b1c051e76e
+    size_bytes: 3451630
+    fetched_at: '2026-05-12T00:04:42+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/isc/isc-census-2024-pupil-count/2024/1d9568e9a4ce02df7f0f0a3adf457bd5a7beff012cf8364512ec92b1c051e76e/isc_census_2024.pdf
+        uri: r2://arch-raw/raw/isc/isc-census-2024-pupil-count/2024/1d9568e9a4ce02df7f0f0a3adf457bd5a7beff012cf8364512ec92b1c051e76e/isc_census_2024.pdf

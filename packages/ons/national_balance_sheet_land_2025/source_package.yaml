@@ -1,0 +1,300 @@
+schema_version: arch.source_package.v1
+package_id: ons-national-balance-sheet-land-2025
+label: ONS National Balance Sheet land values 2025
+artifact:
+  source_name: ons
+  source_table: ONS National Balance Sheet 2025 reference tables
+  resource_package: db
+  resource_directory: data/ons/national_balance_sheet_reference_tables_2025
+  manifest: manifest.yaml
+  vintage: national_balance_sheet_2025
+  extracted_at: '2026-05-11'
+  extraction_method: xlsx whole-workbook used-range cell parse
+  parser: xlsx_used_range
+  artifact_year: 2025
+record_sets:
+- record_set_id: ons_nbs.cy{year}.table_2.total_economy_land
+  record_set_spec_id: ons_nbs.table_2.total_economy_land.v1
+  source_record_id_prefix: ons_nbs.cy{year}.table_2.total_economy_land
+  sheet_name: Table 2
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: GBR
+  geography_level: country
+  geography_name: United Kingdom
+  geography_vintage: current
+  entity: institutional_sector
+  entity_role: national_accounts_sector
+  domain: uk_wealth
+  groupby_dimension: national_accounts.institutional_sector
+  rows:
+  - value_id: total_economy
+    label: Total economy
+    ordinal: 0
+    row_number: 46
+    expected_row_header_column: A
+    expected_row_header: '{year}'
+    filters:
+      national_accounts.institutional_sector: total_economy
+    constraints:
+    - variable: national_accounts.institutional_sector
+      operator: ==
+      value: total_economy
+      label: National accounts institutional sector
+    guard_cells:
+    - column: B
+      row: 1
+      expected_value: "National balance sheet: by asset, current prices1 (\u00a3million at end year)"
+      label: table title
+    - column: V
+      row: 7
+      expected_value: AN.211
+      label: asset code
+    - column: V
+      row: 8
+      expected_value: E44R
+      label: ONS series ID
+  measures:
+  - measure_id: land_value
+    label: Land value
+    ordinal: 0
+    column: V
+    source_column_id: E44R
+    expected_column_header_row: 6
+    expected_column_header: Land
+    concept: uk_wealth.land_value
+    source_concept: ons.national_balance_sheet_an211_land
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: gbp
+    aggregation: sum
+    value_scale: 1000000
+    expected_cell_type: number
+- record_set_id: ons_nbs.cy{year}.table_3.non_financial_corporations_land
+  record_set_spec_id: ons_nbs.table_3.non_financial_corporations_land.v1
+  source_record_id_prefix: ons_nbs.cy{year}.table_3.non_financial_corporations_land
+  sheet_name: Table 3
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: GBR
+  geography_level: country
+  geography_name: United Kingdom
+  geography_vintage: current
+  entity: institutional_sector
+  entity_role: national_accounts_sector
+  domain: uk_wealth
+  groupby_dimension: national_accounts.institutional_sector
+  rows:
+  - value_id: non_financial_corporations
+    label: Non-financial corporations
+    ordinal: 0
+    row_number: 46
+    expected_row_header_column: A
+    expected_row_header: '{year}'
+    filters:
+      national_accounts.institutional_sector: non_financial_corporations
+    constraints:
+    - variable: national_accounts.institutional_sector
+      operator: ==
+      value: non_financial_corporations
+      label: National accounts institutional sector
+    guard_cells:
+    - column: B
+      row: 1
+      expected_value: "Non-financial corporations, current prices (\u00a3million at end year) "
+      label: table title
+    - column: V
+      row: 7
+      expected_value: AN.211
+      label: asset code
+    - column: V
+      row: 8
+      expected_value: E43B
+      label: ONS series ID
+  measures:
+  - measure_id: land_value
+    label: Land value
+    ordinal: 0
+    column: V
+    source_column_id: E43B
+    expected_column_header_row: 6
+    expected_column_header: Land
+    concept: uk_wealth.land_value
+    source_concept: ons.national_balance_sheet_an211_land
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: gbp
+    aggregation: sum
+    value_scale: 1000000
+    expected_cell_type: number
+- record_set_id: ons_nbs.cy{year}.table_5.private_non_financial_corporations_land
+  record_set_spec_id: ons_nbs.table_5.private_non_financial_corporations_land.v1
+  source_record_id_prefix: ons_nbs.cy{year}.table_5.private_non_financial_corporations_land
+  sheet_name: Table 5
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: GBR
+  geography_level: country
+  geography_name: United Kingdom
+  geography_vintage: current
+  entity: institutional_sector
+  entity_role: national_accounts_sector
+  domain: uk_wealth
+  groupby_dimension: national_accounts.institutional_sector
+  rows:
+  - value_id: private_non_financial_corporations
+    label: Private non-financial corporations
+    ordinal: 0
+    row_number: 46
+    expected_row_header_column: A
+    expected_row_header: '{year}'
+    filters:
+      national_accounts.institutional_sector: private_non_financial_corporations
+    constraints:
+    - variable: national_accounts.institutional_sector
+      operator: ==
+      value: private_non_financial_corporations
+      label: National accounts institutional sector
+    guard_cells:
+    - column: B
+      row: 1
+      expected_value: "Private non-financial corporations, current prices (\u00a3million at end year)"
+      label: table title
+    - column: V
+      row: 7
+      expected_value: AN.211
+      label: asset code
+    - column: V
+      row: 8
+      expected_value: E43J
+      label: ONS series ID
+  measures:
+  - measure_id: land_value
+    label: Land value
+    ordinal: 0
+    column: V
+    source_column_id: E43J
+    expected_column_header_row: 6
+    expected_column_header: Land
+    concept: uk_wealth.land_value
+    source_concept: ons.national_balance_sheet_an211_land
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: gbp
+    aggregation: sum
+    value_scale: 1000000
+    expected_cell_type: number
+- record_set_id: ons_nbs.cy{year}.table_10.households_npish_land
+  record_set_spec_id: ons_nbs.table_10.households_npish_land.v1
+  source_record_id_prefix: ons_nbs.cy{year}.table_10.households_npish_land
+  sheet_name: Table 10
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: GBR
+  geography_level: country
+  geography_name: United Kingdom
+  geography_vintage: current
+  entity: institutional_sector
+  entity_role: national_accounts_sector
+  domain: uk_wealth
+  groupby_dimension: national_accounts.institutional_sector
+  rows:
+  - value_id: households_npish
+    label: Households and NPISH
+    ordinal: 0
+    row_number: 46
+    expected_row_header_column: A
+    expected_row_header: '{year}'
+    filters:
+      national_accounts.institutional_sector: households_npish
+    constraints:
+    - variable: national_accounts.institutional_sector
+      operator: ==
+      value: households_npish
+      label: National accounts institutional sector
+    guard_cells:
+    - column: B
+      row: 1
+      expected_value: "Households and non-profit institutions serving households (NPISH), current prices (\u00a3million at end year)"
+      label: table title
+    - column: T
+      row: 7
+      expected_value: AN.211
+      label: asset code
+    - column: T
+      row: 8
+      expected_value: E44D
+      label: ONS series ID
+  measures:
+  - measure_id: land_value
+    label: Land value
+    ordinal: 0
+    column: T
+    source_column_id: E44D
+    expected_column_header_row: 6
+    expected_column_header: Land
+    concept: uk_wealth.land_value
+    source_concept: ons.national_balance_sheet_an211_land
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: gbp
+    aggregation: sum
+    value_scale: 1000000
+    expected_cell_type: number
+- record_set_id: ons_nbs.cy{year}.table_11.households_land
+  record_set_spec_id: ons_nbs.table_11.households_land.v1
+  source_record_id_prefix: ons_nbs.cy{year}.table_11.households_land
+  sheet_name: Table 11
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: GBR
+  geography_level: country
+  geography_name: United Kingdom
+  geography_vintage: current
+  entity: institutional_sector
+  entity_role: national_accounts_sector
+  domain: uk_wealth
+  groupby_dimension: national_accounts.institutional_sector
+  rows:
+  - value_id: households
+    label: Households
+    ordinal: 0
+    row_number: 46
+    expected_row_header_column: A
+    expected_row_header: '{year}'
+    filters:
+      national_accounts.institutional_sector: households
+    constraints:
+    - variable: national_accounts.institutional_sector
+      operator: ==
+      value: households
+      label: National accounts institutional sector
+    guard_cells:
+    - column: B
+      row: 1
+      expected_value: "Households, current prices (\u00a3million at end year)"
+      label: table title
+    - column: S
+      row: 7
+      expected_value: AN.211
+      label: asset code
+    - column: S
+      row: 8
+      expected_value: E44N
+      label: ONS series ID
+  measures:
+  - measure_id: land_value
+    label: Land value
+    ordinal: 0
+    column: S
+    source_column_id: E44N
+    expected_column_header_row: 6
+    expected_column_header: Land
+    concept: uk_wealth.land_value
+    source_concept: ons.national_balance_sheet_an211_land
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: gbp
+    aggregation: sum
+    value_scale: 1000000
+    expected_cell_type: number

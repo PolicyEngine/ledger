@@ -1,0 +1,71 @@
+schema_version: arch.source_package.v1
+package_id: isc-census-2024-pupil-count
+label: ISC Census 2024 pupil count
+artifact:
+  source_name: isc
+  source_table: ISC Census and Annual Report 2024 Executive Summary
+  resource_package: db
+  resource_directory: data/isc/census_2024
+  manifest: manifest.yaml
+  vintage: census_2024
+  extracted_at: "2026-05-12"
+  extraction_method: pypdf text-line number extraction from full publisher PDF
+  parser: pdf_text_numbers
+  artifact_year: 2024
+record_sets:
+  - record_set_id: isc.cy2024.census.pupil_count
+    record_set_spec_id: isc.census.pupil_count.v1
+    source_record_id_prefix: isc.cy2024.census.pupil_count
+    sheet_name: document_numbers
+    period_type: calendar_year
+    period: 2024
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: person
+    entity_role: independent_school_pupil
+    domain: education
+    groupby_dimension: school.sector
+    rows:
+      - value_id: isc_member_school_pupils
+        label: Pupils at ISC member schools
+        ordinal: 0
+        row_number: 147
+        expected_row_header_column: C
+        expected_row_header: "• There are now 556,551 pupils at 1,411 ISC member schools. There has been an increase in"
+        filters:
+          school.sector: independent
+          school.membership: isc_member
+        constraints:
+          - variable: school.sector
+            operator: "=="
+            value: independent
+            label: Independent schools
+          - variable: school.membership
+            operator: "=="
+            value: isc_member
+            label: ISC member schools
+        guard_cells:
+          - column: A
+            expected_value: 6
+            label: PDF page number
+          - column: B
+            expected_value: 4
+            label: PDF extracted line number
+          - column: D
+            expected_value: "556,551"
+            label: pupil count text
+        table_record_kind: total
+    measures:
+      - measure_id: pupil_count
+        label: Pupil count
+        ordinal: 0
+        column: E
+        source_column_id: numeric_value
+        expected_column_header_row: 1
+        expected_column_header: numeric_value
+        concept: isc.independent_school_pupil_count
+        unit: persons
+        aggregation: count
+        expected_cell_type: number

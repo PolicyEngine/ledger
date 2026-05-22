@@ -1,0 +1,69 @@
+schema_version: arch.source_package.v1
+package_id: vanguard-how-america-saves-2024-roth-participation
+label: Vanguard How America Saves 2024 Roth participation
+artifact:
+  source_name: vanguard
+  source_table: Vanguard How America Saves 2024 Figure 43
+  resource_package: db
+  resource_directory: data/vanguard/how_america_saves_2024
+  manifest: manifest.yaml
+  vintage: report_2024
+  extracted_at: "2026-05-11"
+  extraction_method: pypdf text-line number extraction from full publisher PDF
+  parser: pdf_text_numbers
+  artifact_year: 2024
+record_sets:
+  - record_set_id: vanguard.cy2023.how_america_saves.roth_participation
+    record_set_spec_id: vanguard.how_america_saves.roth_participation.v1
+    source_record_id_prefix: vanguard.cy2023.how_america_saves.roth_participation
+    sheet_name: document_numbers
+    period_type: calendar_year
+    period: 2023
+    geography_id: 0100000US
+    geography_level: country
+    geography_name: United States
+    geography_vintage: current
+    entity: person
+    entity_role: defined_contribution_401k_participant
+    domain: employer_retirement_plan_design
+    groupby_dimension: retirement_plan.feature
+    rows:
+      - value_id: roth_contributions
+        label: Roth contributions
+        ordinal: 0
+        row_number: 3584
+        expected_row_header_column: C
+        expected_row_header: "Percentage of participants using if offered 17%"
+        filters:
+          retirement_plan.feature: roth_contributions
+          retirement_plan.population: participants_offered_feature
+        constraints:
+          - variable: retirement_plan.feature
+            operator: "=="
+            value: roth_contributions
+            label: Roth contributions
+          - variable: retirement_plan.population
+            operator: "=="
+            value: participants_offered_feature
+            label: Participants offered the feature
+        guard_cells:
+          - column: A
+            expected_value: 44
+            label: PDF page number
+          - column: B
+            expected_value: 49
+            label: PDF extracted line number
+        table_record_kind: detail
+    measures:
+      - measure_id: participant_usage_share
+        label: Share of offered participants using the feature
+        ordinal: 0
+        column: E
+        source_column_id: numeric_value
+        expected_column_header_row: 1
+        expected_column_header: numeric_value
+        concept: vanguard.roth_contribution_participant_usage_rate
+        unit: share
+        aggregation: share
+        expected_cell_type: number
+        value_scale: 0.01

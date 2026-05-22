@@ -1,0 +1,32 @@
+source_id: census_pep
+package_id: census-pep-2024-age-sex
+dataset: census_pep_2024_age_sex
+source_page: https://www.census.gov/data/tables/time-series/demo/popest/2020s-national-detail.html
+state_source_page: https://www.census.gov/data/tables/time-series/demo/popest/2020s-state-detail.html
+vintage: Vintage 2024
+table: Census Population Estimates Program resident population by age and sex
+files:
+  national_age_sex:
+    filename: nc-est2024-agesex-res.csv
+    source_url: https://www2.census.gov/programs-surveys/popest/datasets/2020-2024/national/asrh/nc-est2024-agesex-res.csv
+    sha256: fbb151e8ae8554283dcbf192e6b420658ea444ee7d8849988aa1d5615183edf1
+    size_bytes: 16171
+    source_table: Annual Estimates of the Resident Population by Single Year of Age and Sex for the United States
+    years:
+      - 2020
+      - 2021
+      - 2022
+      - 2023
+      - 2024
+  state_age_sex_race_origin:
+    filename: sc-est2024-alldata6.csv
+    source_url: https://www2.census.gov/programs-surveys/popest/datasets/2020-2024/state/asrh/sc-est2024-alldata6.csv
+    sha256: 0e82431e3869554aff9541fcf00c22a8defc2af3c66fb0ec6bae094f23749230
+    size_bytes: 12740674
+    source_table: Annual State Resident Population Estimates by Single Year of Age, Sex, Race, and Hispanic Origin
+    years:
+      - 2020
+      - 2021
+      - 2022
+      - 2023
+      - 2024

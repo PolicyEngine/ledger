@@ -1,0 +1,278 @@
+schema_version: arch.source_package.v1
+package_id: soi-table-2-5-eitc-children-2020
+label: IRS SOI Publication 1304 Table 2.5 EITC by qualifying children 2020
+artifact:
+  source_name: irs_soi
+  source_table: Publication 1304 Table 2.5
+  resource_package: db
+  resource_directory: data/irs_soi/table_2_5
+  manifest: manifest.yaml
+  artifact_year: 2020
+  vintage: tax_year_2020
+  extracted_at: "2026-05-11"
+  extraction_method: xlrd whole-workbook used-range cell parse
+record_sets:
+  - record_set_id: irs_soi.ty2020.table_2_5.eitc_by_children.no_qualifying_children
+    record_set_spec_id: irs_soi.table_2_5.eitc_by_children.no_qualifying_children.v1
+    source_record_id_prefix: irs_soi.ty2020.table_2_5.eitc_by_children.no_qualifying_children
+    sheet_name: TBL25
+    period_type: tax_year
+    period: 2020
+    geography_id: 0100000US
+    geography_level: country
+    geography_name: United States
+    geography_vintage: 2020_census
+    entity: tax_unit
+    entity_role: filing_unit
+    domain: individual_income_tax_returns_with_earned_income_credit
+    groupby_dimension: us.tax.earned_income_credit_qualifying_children
+    rows:
+      - value_id: no_qualifying_children
+        label: No qualifying children
+        ordinal: 0
+        row_number: 9
+        expected_row_header_column: A
+        expected_row_header: Total
+        filters:
+          income_range: all
+        constraints:
+          - variable: us.tax.earned_income_credit_qualifying_children
+            operator: "=="
+            value: 0
+            unit: count
+            label: Earned income credit qualifying children
+        guard_cells:
+          - column: A
+            row: 1
+            expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted \nGross Income and Number of Qualifying Children, \nTax Year 2020 (Filing Year 2021)"
+            label: table title
+          - column: R
+            row: 3
+            expected_value: Returns with no qualifying children
+            label: qualifying-child column group
+          - column: Z
+            row: 4
+            expected_value: "Total earned\nincome credit"
+            label: EITC measure group
+    measures:
+      - measure_id: eitc_returns
+        label: Returns with total earned income credit
+        ordinal: 0
+        column: Z
+        source_column_id: total_earned_income_credit_returns
+        expected_column_header_row: 6
+        expected_column_header: "Number of\nreturns"
+        concept: irs_soi.returns_with_total_earned_income_credit
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+      - measure_id: eitc_total
+        label: Total earned income credit
+        ordinal: 1
+        column: AA
+        source_column_id: total_earned_income_credit_amount
+        expected_column_header_row: 6
+        expected_column_header: Amount
+        concept: irs_soi.total_earned_income_credit
+        unit: usd
+        aggregation: sum
+        value_scale: 1000
+        expected_cell_type: number
+  - record_set_id: irs_soi.ty2020.table_2_5.eitc_by_children.one_qualifying_child
+    record_set_spec_id: irs_soi.table_2_5.eitc_by_children.one_qualifying_child.v1
+    source_record_id_prefix: irs_soi.ty2020.table_2_5.eitc_by_children.one_qualifying_child
+    sheet_name: TBL25
+    period_type: tax_year
+    period: 2020
+    geography_id: 0100000US
+    geography_level: country
+    geography_name: United States
+    geography_vintage: 2020_census
+    entity: tax_unit
+    entity_role: filing_unit
+    domain: individual_income_tax_returns_with_earned_income_credit
+    groupby_dimension: us.tax.earned_income_credit_qualifying_children
+    rows:
+      - value_id: one_qualifying_child
+        label: One qualifying child
+        ordinal: 0
+        row_number: 9
+        expected_row_header_column: A
+        expected_row_header: Total
+        filters:
+          income_range: all
+        constraints:
+          - variable: us.tax.earned_income_credit_qualifying_children
+            operator: "=="
+            value: 1
+            unit: count
+            label: Earned income credit qualifying children
+        guard_cells:
+          - column: A
+            row: 1
+            expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted \nGross Income and Number of Qualifying Children, \nTax Year 2020 (Filing Year 2021)"
+            label: table title
+          - column: AH
+            row: 3
+            expected_value: Returns with one qualifying child
+            label: qualifying-child column group
+          - column: AP
+            row: 4
+            expected_value: "Total earned\nincome credit"
+            label: EITC measure group
+    measures:
+      - measure_id: eitc_returns
+        label: Returns with total earned income credit
+        ordinal: 0
+        column: AP
+        source_column_id: total_earned_income_credit_returns
+        expected_column_header_row: 6
+        expected_column_header: "Number of\nreturns"
+        concept: irs_soi.returns_with_total_earned_income_credit
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+      - measure_id: eitc_total
+        label: Total earned income credit
+        ordinal: 1
+        column: AQ
+        source_column_id: total_earned_income_credit_amount
+        expected_column_header_row: 6
+        expected_column_header: Amount
+        concept: irs_soi.total_earned_income_credit
+        unit: usd
+        aggregation: sum
+        value_scale: 1000
+        expected_cell_type: number
+  - record_set_id: irs_soi.ty2020.table_2_5.eitc_by_children.two_qualifying_children
+    record_set_spec_id: irs_soi.table_2_5.eitc_by_children.two_qualifying_children.v1
+    source_record_id_prefix: irs_soi.ty2020.table_2_5.eitc_by_children.two_qualifying_children
+    sheet_name: TBL25
+    period_type: tax_year
+    period: 2020
+    geography_id: 0100000US
+    geography_level: country
+    geography_name: United States
+    geography_vintage: 2020_census
+    entity: tax_unit
+    entity_role: filing_unit
+    domain: individual_income_tax_returns_with_earned_income_credit
+    groupby_dimension: us.tax.earned_income_credit_qualifying_children
+    rows:
+      - value_id: two_qualifying_children
+        label: Two qualifying children
+        ordinal: 0
+        row_number: 9
+        expected_row_header_column: A
+        expected_row_header: Total
+        filters:
+          income_range: all
+        constraints:
+          - variable: us.tax.earned_income_credit_qualifying_children
+            operator: "=="
+            value: 2
+            unit: count
+            label: Earned income credit qualifying children
+        guard_cells:
+          - column: A
+            row: 1
+            expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted \nGross Income and Number of Qualifying Children, \nTax Year 2020 (Filing Year 2021)"
+            label: table title
+          - column: AX
+            row: 3
+            expected_value: Returns with two qualifying children
+            label: qualifying-child column group
+          - column: BF
+            row: 4
+            expected_value: "Total earned\nincome credit"
+            label: EITC measure group
+    measures:
+      - measure_id: eitc_returns
+        label: Returns with total earned income credit
+        ordinal: 0
+        column: BF
+        source_column_id: total_earned_income_credit_returns
+        expected_column_header_row: 6
+        expected_column_header: "Number of\nreturns"
+        concept: irs_soi.returns_with_total_earned_income_credit
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+      - measure_id: eitc_total
+        label: Total earned income credit
+        ordinal: 1
+        column: BG
+        source_column_id: total_earned_income_credit_amount
+        expected_column_header_row: 6
+        expected_column_header: Amount
+        concept: irs_soi.total_earned_income_credit
+        unit: usd
+        aggregation: sum
+        value_scale: 1000
+        expected_cell_type: number
+  - record_set_id: irs_soi.ty2020.table_2_5.eitc_by_children.three_or_more_qualifying_children
+    record_set_spec_id: irs_soi.table_2_5.eitc_by_children.three_or_more_qualifying_children.v1
+    source_record_id_prefix: irs_soi.ty2020.table_2_5.eitc_by_children.three_or_more_qualifying_children
+    sheet_name: TBL25
+    period_type: tax_year
+    period: 2020
+    geography_id: 0100000US
+    geography_level: country
+    geography_name: United States
+    geography_vintage: 2020_census
+    entity: tax_unit
+    entity_role: filing_unit
+    domain: individual_income_tax_returns_with_earned_income_credit
+    groupby_dimension: us.tax.earned_income_credit_qualifying_children
+    rows:
+      - value_id: three_or_more_qualifying_children
+        label: Three or more qualifying children
+        ordinal: 0
+        row_number: 9
+        expected_row_header_column: A
+        expected_row_header: Total
+        filters:
+          income_range: all
+        constraints:
+          - variable: us.tax.earned_income_credit_qualifying_children
+            operator: ">="
+            value: 3
+            unit: count
+            label: Earned income credit qualifying children lower bound
+        guard_cells:
+          - column: A
+            row: 1
+            expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted \nGross Income and Number of Qualifying Children, \nTax Year 2020 (Filing Year 2021)"
+            label: table title
+          - column: BN
+            row: 3
+            expected_value: Returns with three or more qualifying children
+            label: qualifying-child column group
+          - column: BV
+            row: 4
+            expected_value: "Total earned\nincome credit"
+            label: EITC measure group
+    measures:
+      - measure_id: eitc_returns
+        label: Returns with total earned income credit
+        ordinal: 0
+        column: BV
+        source_column_id: total_earned_income_credit_returns
+        expected_column_header_row: 6
+        expected_column_header: "Number of\nreturns"
+        concept: irs_soi.returns_with_total_earned_income_credit
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+      - measure_id: eitc_total
+        label: Total earned income credit
+        ordinal: 1
+        column: BW
+        source_column_id: total_earned_income_credit_amount
+        expected_column_header_row: 6
+        expected_column_header: Amount
+        concept: irs_soi.total_earned_income_credit
+        unit: usd
+        aggregation: sum
+        value_scale: 1000
+        expected_cell_type: number

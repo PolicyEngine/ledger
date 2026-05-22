@@ -1,0 +1,18 @@
+source_id: hmrc_spi
+package_id: hmrc-spi-local-income-2022
+dataset: hmrc_spi_local_income_2022
+source_page: https://www.gov.uk/government/statistics/personal-incomes-statistics-for-the-tax-year-2021-to-2022
+table: HMRC SPI collated tables 3.12 to 3.15a 2021-22
+files:
+  2022:
+    filename: Collated_Tables_3_12_to_3_15a_2122.ods
+    source_url: https://assets.publishing.service.gov.uk/media/65de1425b8da630011c86323/Collated_Tables_3_12_to_3_15a_2122.ods
+    sha256: 7c26f432c754a8b48ee36eed03ea456cfc9010e0627d6768beac73f423e8f332
+    size_bytes: 630510
+    fetched_at: '2026-05-11T17:00:32+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/hmrc_spi/hmrc-spi-local-income-2022/2022/7c26f432c754a8b48ee36eed03ea456cfc9010e0627d6768beac73f423e8f332/Collated_Tables_3_12_to_3_15a_2122.ods
+        uri: r2://arch-raw/raw/hmrc_spi/hmrc-spi-local-income-2022/2022/7c26f432c754a8b48ee36eed03ea456cfc9010e0627d6768beac73f423e8f332/Collated_Tables_3_12_to_3_15a_2122.ods

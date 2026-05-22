@@ -1,0 +1,19 @@
+source_id: ons
+package_id: ons-small-area-income-local-authority-2020
+dataset: ons_small_area_income_2020
+source_page: https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/smallareaincomeestimatesformiddlelayersuperoutputareasenglandandwales
+table: ONS small area income estimates for MSOAs, England and Wales, financial year
+  ending 2020
+files:
+  2020:
+    filename: saiefy1920finalqaddownload280923.xlsx
+    source_url: https://www.ons.gov.uk/file?uri=/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/smallareaincomeestimatesformiddlelayersuperoutputareasenglandandwales/financialyearending2020/saiefy1920finalqaddownload280923.xlsx
+    sha256: d20ce599b6e0e23bfe7d3994110b65e2dbc903c7b2919b7dd6fc5bc121981fa5
+    size_bytes: 1590929
+    fetched_at: '2026-05-11T17:16:42+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/ons/ons-small-area-income-local-authority-2020/2020/d20ce599b6e0e23bfe7d3994110b65e2dbc903c7b2919b7dd6fc5bc121981fa5/saiefy1920finalqaddownload280923.xlsx
+        uri: r2://arch-raw/raw/ons/ons-small-area-income-local-authority-2020/2020/d20ce599b6e0e23bfe7d3994110b65e2dbc903c7b2919b7dd6fc5bc121981fa5/saiefy1920finalqaddownload280923.xlsx

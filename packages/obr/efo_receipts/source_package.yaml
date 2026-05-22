@@ -1,0 +1,347 @@
+schema_version: arch.source_package.v1
+package_id: obr-efo-receipts
+label: OBR March 2026 EFO receipts
+artifact:
+  source_name: obr
+  source_table: March 2026 Economic and fiscal outlook detailed forecast tables receipts
+  resource_package: db
+  resource_directory: data/obr/efo_receipts
+  manifest: manifest.yaml
+  vintage: march_2026
+  extracted_at: "2026-05-10"
+  extraction_method: openpyxl whole-workbook used-range cell parse
+  parser: xlsx_used_range
+record_sets:
+  - record_set_id: obr_efo.fy{year}.receipts.income_tax_gross_of_tax_credits
+    record_set_spec_id: obr_efo.receipts.income_tax_gross_of_tax_credits.v1
+    source_record_id_prefix: obr_efo.fy{year}.receipts.income_tax_gross_of_tax_credits
+    sheet_name: "3.4"
+    period_type: fiscal_year
+    period: "{year}"
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: government
+    entity_role: uk_public_sector
+    domain: uk_public_sector_receipts
+    groupby_dimension: obr.efo_receipts_line
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 6
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: Income tax (gross of tax credits)
+    measures:
+      - measure_id: amount
+        label: Income tax gross of tax credits
+        ordinal: 0
+        column: D
+        expected_column_header_row: 5
+        expected_column_header: 2025-26
+        concept: uk_public_sector.income_tax_receipts_accrued
+        source_concept: obr.income_tax_gross_of_tax_credits_accrued
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000000
+        expected_cell_type: number
+  - record_set_id: obr_efo.fy{year}.receipts.national_insurance_contributions
+    record_set_spec_id: obr_efo.receipts.national_insurance_contributions.v1
+    source_record_id_prefix: obr_efo.fy{year}.receipts.national_insurance_contributions
+    sheet_name: "3.4"
+    period_type: fiscal_year
+    period: "{year}"
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: government
+    entity_role: uk_public_sector
+    domain: uk_public_sector_receipts
+    groupby_dimension: obr.efo_receipts_line
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 15
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: National insurance contributions
+    measures:
+      - measure_id: amount
+        label: National insurance contributions
+        ordinal: 0
+        column: D
+        expected_column_header_row: 5
+        expected_column_header: 2025-26
+        concept: uk_public_sector.national_insurance_contributions_accrued
+        source_concept: obr.national_insurance_contributions_accrued
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000000
+        expected_cell_type: number
+  - record_set_id: obr_efo.fy{year}.receipts.class_1_employee_nics
+    record_set_spec_id: obr_efo.receipts.class_1_employee_nics.v1
+    source_record_id_prefix: obr_efo.fy{year}.receipts.class_1_employee_nics
+    sheet_name: "3.4"
+    period_type: fiscal_year
+    period: "{year}"
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: government
+    entity_role: uk_public_sector
+    domain: uk_public_sector_receipts
+    groupby_dimension: obr.efo_receipts_line
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 17
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: Class 1 Employee NICs
+    measures:
+      - measure_id: amount
+        label: Class 1 employee NICs
+        ordinal: 0
+        column: D
+        expected_column_header_row: 5
+        expected_column_header: 2025-26
+        concept: uk_public_sector.class_1_employee_nics_accrued
+        source_concept: obr.class_1_employee_nics_accrued
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000000
+        expected_cell_type: number
+  - record_set_id: obr_efo.fy{year}.receipts.class_1_employer_nics
+    record_set_spec_id: obr_efo.receipts.class_1_employer_nics.v1
+    source_record_id_prefix: obr_efo.fy{year}.receipts.class_1_employer_nics
+    sheet_name: "3.4"
+    period_type: fiscal_year
+    period: "{year}"
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: government
+    entity_role: uk_public_sector
+    domain: uk_public_sector_receipts
+    groupby_dimension: obr.efo_receipts_line
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 18
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: Class 1 Employer NICs
+    measures:
+      - measure_id: amount
+        label: Class 1 employer NICs
+        ordinal: 0
+        column: D
+        expected_column_header_row: 5
+        expected_column_header: 2025-26
+        concept: uk_public_sector.class_1_employer_nics_accrued
+        source_concept: obr.class_1_employer_nics_accrued
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000000
+        expected_cell_type: number
+  - record_set_id: obr_efo.fy{year}.receipts.class_2_4_self_employed_nics
+    record_set_spec_id: obr_efo.receipts.class_2_4_self_employed_nics.v1
+    source_record_id_prefix: obr_efo.fy{year}.receipts.class_2_4_self_employed_nics
+    sheet_name: "3.4"
+    period_type: fiscal_year
+    period: "{year}"
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: government
+    entity_role: uk_public_sector
+    domain: uk_public_sector_receipts
+    groupby_dimension: obr.efo_receipts_line
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 19
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: Class 4 and Class 2 Self employed NICs
+    measures:
+      - measure_id: amount
+        label: Class 2 and Class 4 self-employed NICs
+        ordinal: 0
+        column: D
+        expected_column_header_row: 5
+        expected_column_header: 2025-26
+        concept: uk_public_sector.class_2_and_class_4_self_employed_nics_accrued
+        source_concept: obr.class_2_and_class_4_self_employed_nics_accrued
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000000
+        expected_cell_type: number
+  - record_set_id: obr_efo.fy{year}.receipts.value_added_tax
+    record_set_spec_id: obr_efo.receipts.value_added_tax.v1
+    source_record_id_prefix: obr_efo.fy{year}.receipts.value_added_tax
+    sheet_name: "3.8"
+    period_type: fiscal_year
+    period: "{year}"
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: government
+    entity_role: uk_public_sector
+    domain: uk_public_sector_receipts
+    groupby_dimension: obr.efo_receipts_line
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 13
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: Value added tax
+    measures:
+      - measure_id: amount
+        label: Value added tax
+        ordinal: 0
+        column: E
+        expected_column_header_row: 5
+        expected_column_header: 2025-26
+        concept: uk_public_sector.value_added_tax_receipts_cash
+        source_concept: obr.value_added_tax_cash
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000000
+        expected_cell_type: number
+  - record_set_id: obr_efo.fy{year}.receipts.fuel_duties
+    record_set_spec_id: obr_efo.receipts.fuel_duties.v1
+    source_record_id_prefix: obr_efo.fy{year}.receipts.fuel_duties
+    sheet_name: "3.8"
+    period_type: fiscal_year
+    period: "{year}"
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: government
+    entity_role: uk_public_sector
+    domain: uk_public_sector_receipts
+    groupby_dimension: obr.efo_receipts_line
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 21
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: Fuel duties
+    measures:
+      - measure_id: amount
+        label: Fuel duties
+        ordinal: 0
+        column: E
+        expected_column_header_row: 5
+        expected_column_header: 2025-26
+        concept: uk_public_sector.fuel_duty_receipts_cash
+        source_concept: obr.fuel_duties_cash
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000000
+        expected_cell_type: number
+  - record_set_id: obr_efo.fy{year}.receipts.capital_gains_tax
+    record_set_spec_id: obr_efo.receipts.capital_gains_tax.v1
+    source_record_id_prefix: obr_efo.fy{year}.receipts.capital_gains_tax
+    sheet_name: "3.8"
+    period_type: fiscal_year
+    period: "{year}"
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: government
+    entity_role: uk_public_sector
+    domain: uk_public_sector_receipts
+    groupby_dimension: obr.efo_receipts_line
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 22
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: Capital gains tax
+    measures:
+      - measure_id: amount
+        label: Capital gains tax
+        ordinal: 0
+        column: E
+        expected_column_header_row: 5
+        expected_column_header: 2025-26
+        concept: uk_public_sector.capital_gains_tax_receipts_cash
+        source_concept: obr.capital_gains_tax_cash
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000000
+        expected_cell_type: number
+  - record_set_id: obr_efo.fy{year}.receipts.stamp_duty_land_tax
+    record_set_spec_id: obr_efo.receipts.stamp_duty_land_tax.v1
+    source_record_id_prefix: obr_efo.fy{year}.receipts.stamp_duty_land_tax
+    sheet_name: "3.8"
+    period_type: fiscal_year
+    period: "{year}"
+    geography_id: GBR
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: government
+    entity_role: uk_public_sector
+    domain: uk_public_sector_receipts
+    groupby_dimension: obr.efo_receipts_line
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 24
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: Stamp duty land tax
+    measures:
+      - measure_id: amount
+        label: Stamp duty land tax
+        ordinal: 0
+        column: E
+        expected_column_header_row: 5
+        expected_column_header: 2025-26
+        concept: uk_public_sector.stamp_duty_land_tax_receipts_cash
+        source_concept: obr.stamp_duty_land_tax_cash
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000000
+        expected_cell_type: number

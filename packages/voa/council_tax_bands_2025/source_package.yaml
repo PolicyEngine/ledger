@@ -1,0 +1,382 @@
+schema_version: arch.source_package.v1
+package_id: voa-council-tax-bands-2025
+label: VOA council tax chargeable dwellings by region and band 2025
+artifact:
+  source_name: voa
+  source_table: VOA Council Tax Stock of Properties 2025 summary tables
+  resource_package: db
+  resource_directory: data/voa/council_tax_bands_2025
+  manifest: manifest.yaml
+  vintage: council_tax_stock_of_properties_2025
+  extracted_at: '2026-05-10'
+  extraction_method: xlsx whole-workbook used-range cell parse
+  parser: xlsx_used_range
+record_sets:
+- record_set_id: voa.ctsop2025.table_2.region_council_tax_bands
+  record_set_spec_id: voa.ctsop.table_2.region_council_tax_bands.v1
+  source_record_id_prefix: voa.ctsop2025.table_2.region_council_tax_bands
+  sheet_name: CTSOP2.0
+  period_type: calendar_year
+  period: 2025
+  geography_id: GBR
+  geography_level: country
+  geography_name: United Kingdom
+  geography_vintage: current
+  entity: dwelling
+  entity_role: chargeable_council_tax_dwelling
+  domain: uk_council_tax_chargeable_dwellings
+  groupby_dimension: uk_region
+  rows:
+  - value_id: north_east
+    label: North East
+    ordinal: 0
+    row_number: 8
+    geography_id: E12000001
+    geography_level: region
+    geography_name: North East
+    geography_vintage: current
+    expected_row_header_column: D
+    expected_row_header: North East
+    filters:
+      uk_region: NORTH_EAST
+    constraints:
+    - variable: uk_region
+      operator: ==
+      value: NORTH_EAST
+      label: PolicyEngine UK region
+  - value_id: north_west
+    label: North West
+    ordinal: 1
+    row_number: 36
+    geography_id: E12000002
+    geography_level: region
+    geography_name: North West
+    geography_vintage: current
+    expected_row_header_column: D
+    expected_row_header: North West
+    filters:
+      uk_region: NORTH_WEST
+    constraints:
+    - variable: uk_region
+      operator: ==
+      value: NORTH_WEST
+      label: PolicyEngine UK region
+  - value_id: yorkshire
+    label: Yorkshire and The Humber
+    ordinal: 2
+    row_number: 110
+    geography_id: E12000003
+    geography_level: region
+    geography_name: Yorkshire and The Humber
+    geography_vintage: current
+    expected_row_header_column: D
+    expected_row_header: Yorkshire and The Humber
+    filters:
+      uk_region: YORKSHIRE
+    constraints:
+    - variable: uk_region
+      operator: ==
+      value: YORKSHIRE
+      label: PolicyEngine UK region
+  - value_id: east_midlands
+    label: East Midlands
+    ordinal: 3
+    row_number: 165
+    geography_id: E12000004
+    geography_level: region
+    geography_name: East Midlands
+    geography_vintage: current
+    expected_row_header_column: D
+    expected_row_header: East Midlands
+    filters:
+      uk_region: EAST_MIDLANDS
+    constraints:
+    - variable: uk_region
+      operator: ==
+      value: EAST_MIDLANDS
+      label: PolicyEngine UK region
+  - value_id: west_midlands
+    label: West Midlands
+    ordinal: 4
+    row_number: 213
+    geography_id: E12000005
+    geography_level: region
+    geography_name: West Midlands
+    geography_vintage: current
+    expected_row_header_column: D
+    expected_row_header: West Midlands
+    filters:
+      uk_region: WEST_MIDLANDS
+    constraints:
+    - variable: uk_region
+      operator: ==
+      value: WEST_MIDLANDS
+      label: PolicyEngine UK region
+  - value_id: east_of_england
+    label: East of England
+    ordinal: 5
+    row_number: 271
+    geography_id: E12000006
+    geography_level: region
+    geography_name: East of England
+    geography_vintage: current
+    expected_row_header_column: D
+    expected_row_header: East of England
+    filters:
+      uk_region: EAST_OF_ENGLAND
+    constraints:
+    - variable: uk_region
+      operator: ==
+      value: EAST_OF_ENGLAND
+      label: PolicyEngine UK region
+  - value_id: london
+    label: London
+    ordinal: 6
+    row_number: 333
+    geography_id: E12000007
+    geography_level: region
+    geography_name: London
+    geography_vintage: current
+    expected_row_header_column: D
+    expected_row_header: London
+    filters:
+      uk_region: LONDON
+    constraints:
+    - variable: uk_region
+      operator: ==
+      value: LONDON
+      label: PolicyEngine UK region
+  - value_id: south_east
+    label: South East
+    ordinal: 7
+    row_number: 409
+    geography_id: E12000008
+    geography_level: region
+    geography_name: South East
+    geography_vintage: current
+    expected_row_header_column: D
+    expected_row_header: South East
+    filters:
+      uk_region: SOUTH_EAST
+    constraints:
+    - variable: uk_region
+      operator: ==
+      value: SOUTH_EAST
+      label: PolicyEngine UK region
+  - value_id: south_west
+    label: South West
+    ordinal: 8
+    row_number: 501
+    geography_id: E12000009
+    geography_level: region
+    geography_name: South West
+    geography_vintage: current
+    expected_row_header_column: D
+    expected_row_header: South West
+    filters:
+      uk_region: SOUTH_WEST
+    constraints:
+    - variable: uk_region
+      operator: ==
+      value: SOUTH_WEST
+      label: PolicyEngine UK region
+  - value_id: wales
+    label: Wales
+    ordinal: 9
+    row_number: 560
+    geography_id: W92000004
+    geography_level: region
+    geography_name: Wales
+    geography_vintage: current
+    expected_row_header_column: D
+    expected_row_header: Wales
+    filters:
+      uk_region: WALES
+    constraints:
+    - variable: uk_region
+      operator: ==
+      value: WALES
+      label: PolicyEngine UK region
+  measures:
+  - measure_id: band_a
+    label: Band A chargeable dwellings
+    ordinal: 0
+    column: E
+    source_column_id: band_a
+    expected_column_header_row: 5
+    expected_column_header: A
+    concept: uk_housing.council_tax_chargeable_dwellings
+    source_concept: voa.council_tax_band_chargeable_properties
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+    filters:
+      council_tax_band: A
+    constraints:
+    - variable: council_tax_band
+      operator: ==
+      value: A
+      label: Council tax band
+  - measure_id: band_b
+    label: Band B chargeable dwellings
+    ordinal: 1
+    column: F
+    source_column_id: band_b
+    expected_column_header_row: 5
+    expected_column_header: B
+    concept: uk_housing.council_tax_chargeable_dwellings
+    source_concept: voa.council_tax_band_chargeable_properties
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+    filters:
+      council_tax_band: B
+    constraints:
+    - variable: council_tax_band
+      operator: ==
+      value: B
+      label: Council tax band
+  - measure_id: band_c
+    label: Band C chargeable dwellings
+    ordinal: 2
+    column: G
+    source_column_id: band_c
+    expected_column_header_row: 5
+    expected_column_header: C
+    concept: uk_housing.council_tax_chargeable_dwellings
+    source_concept: voa.council_tax_band_chargeable_properties
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+    filters:
+      council_tax_band: C
+    constraints:
+    - variable: council_tax_band
+      operator: ==
+      value: C
+      label: Council tax band
+  - measure_id: band_d
+    label: Band D chargeable dwellings
+    ordinal: 3
+    column: H
+    source_column_id: band_d
+    expected_column_header_row: 5
+    expected_column_header: D
+    concept: uk_housing.council_tax_chargeable_dwellings
+    source_concept: voa.council_tax_band_chargeable_properties
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+    filters:
+      council_tax_band: D
+    constraints:
+    - variable: council_tax_band
+      operator: ==
+      value: D
+      label: Council tax band
+  - measure_id: band_e
+    label: Band E chargeable dwellings
+    ordinal: 4
+    column: I
+    source_column_id: band_e
+    expected_column_header_row: 5
+    expected_column_header: E
+    concept: uk_housing.council_tax_chargeable_dwellings
+    source_concept: voa.council_tax_band_chargeable_properties
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+    filters:
+      council_tax_band: E
+    constraints:
+    - variable: council_tax_band
+      operator: ==
+      value: E
+      label: Council tax band
+  - measure_id: band_f
+    label: Band F chargeable dwellings
+    ordinal: 5
+    column: J
+    source_column_id: band_f
+    expected_column_header_row: 5
+    expected_column_header: F
+    concept: uk_housing.council_tax_chargeable_dwellings
+    source_concept: voa.council_tax_band_chargeable_properties
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+    filters:
+      council_tax_band: F
+    constraints:
+    - variable: council_tax_band
+      operator: ==
+      value: F
+      label: Council tax band
+  - measure_id: band_g
+    label: Band G chargeable dwellings
+    ordinal: 6
+    column: K
+    source_column_id: band_g
+    expected_column_header_row: 5
+    expected_column_header: G
+    concept: uk_housing.council_tax_chargeable_dwellings
+    source_concept: voa.council_tax_band_chargeable_properties
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+    filters:
+      council_tax_band: G
+    constraints:
+    - variable: council_tax_band
+      operator: ==
+      value: G
+      label: Council tax band
+  - measure_id: band_h
+    label: Band H chargeable dwellings
+    ordinal: 7
+    column: L
+    source_column_id: band_h
+    expected_column_header_row: 5
+    expected_column_header: H
+    concept: uk_housing.council_tax_chargeable_dwellings
+    source_concept: voa.council_tax_band_chargeable_properties
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+    filters:
+      council_tax_band: H
+    constraints:
+    - variable: council_tax_band
+      operator: ==
+      value: H
+      label: Council tax band
+  - measure_id: total
+    label: All chargeable dwellings
+    ordinal: 8
+    column: N
+    source_column_id: all_properties
+    expected_column_header_row: 5
+    expected_column_header: All properties
+    concept: uk_housing.council_tax_chargeable_dwellings
+    source_concept: voa.all_chargeable_properties
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: count
+    aggregation: count
+    expected_cell_type: number

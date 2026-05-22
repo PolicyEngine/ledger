@@ -1,0 +1,703 @@
+schema_version: arch.source_package.v1
+package_id: dwp-uc-national-payment-dist-2025
+label: DWP Stat-Xplore Universal Credit payment distribution May 2025
+artifact:
+  source_name: dwp
+  source_table: Stat-Xplore Households on Universal Credit by monthly award amount and family type
+  resource_package: db
+  resource_directory: data/dwp/uc_national_payment_dist_2025
+  manifest: manifest.yaml
+  vintage: may_2025
+  extracted_at: '2026-05-10'
+  extraction_method: Stat-Xplore workbook export, whole-workbook used-range cell parse
+  parser: xlsx_used_range
+record_sets:
+  - record_set_id: dwp_uc.month2025_05.households_by_monthly_award_band_and_family_type
+    record_set_spec_id: dwp_uc.households_by_monthly_award_band_and_family_type.v1
+    source_record_id_prefix: dwp_uc.month2025_05.households_by_monthly_award_band_and_family_type
+    sheet_name: Data Sheet 0
+    period_type: month
+    period: '2025-05'
+    geography_id: GBR
+    geography_level: country
+    geography_name: Great Britain
+    geography_vintage: current
+    entity: household
+    entity_role: universal_credit_household
+    domain: uk_universal_credit
+    groupby_dimension: uk_universal_credit.monthly_award_band
+    rows:
+      - value_id: 0_01_to_100
+        label: Monthly award amount GBP 0.01 to 100
+        ordinal: 0
+        row_number: 11
+        filters:
+          uk_universal_credit.monthly_award_band: 0_01_to_100
+        constraints:
+          - variable: uk_universal_credit.monthly_award_band
+            operator: "=="
+            value: 0_01_to_100
+            label: Universal Credit monthly award amount band
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: ">"
+            value: 0
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount lower bound
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: "<="
+            value: 100
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount upper bound
+        expected_row_header_column: B
+        expected_row_header: '£0.01 to £100.00'
+      - value_id: 100_01_to_200
+        label: Monthly award amount GBP 100.01 to 200
+        ordinal: 1
+        row_number: 12
+        filters:
+          uk_universal_credit.monthly_award_band: 100_01_to_200
+        constraints:
+          - variable: uk_universal_credit.monthly_award_band
+            operator: "=="
+            value: 100_01_to_200
+            label: Universal Credit monthly award amount band
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: ">"
+            value: 100
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount lower bound
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: "<="
+            value: 200
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount upper bound
+        expected_row_header_column: B
+        expected_row_header: '£100.01 to £200.00'
+      - value_id: 200_01_to_300
+        label: Monthly award amount GBP 200.01 to 300
+        ordinal: 2
+        row_number: 13
+        filters:
+          uk_universal_credit.monthly_award_band: 200_01_to_300
+        constraints:
+          - variable: uk_universal_credit.monthly_award_band
+            operator: "=="
+            value: 200_01_to_300
+            label: Universal Credit monthly award amount band
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: ">"
+            value: 200
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount lower bound
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: "<="
+            value: 300
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount upper bound
+        expected_row_header_column: B
+        expected_row_header: '£200.01 to £300.00'
+      - value_id: 300_01_to_400
+        label: Monthly award amount GBP 300.01 to 400
+        ordinal: 3
+        row_number: 14
+        filters:
+          uk_universal_credit.monthly_award_band: 300_01_to_400
+        constraints:
+          - variable: uk_universal_credit.monthly_award_band
+            operator: "=="
+            value: 300_01_to_400
+            label: Universal Credit monthly award amount band
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: ">"
+            value: 300
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount lower bound
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: "<="
+            value: 400
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount upper bound
+        expected_row_header_column: B
+        expected_row_header: '£300.01 to £400.00'
+      - value_id: 400_01_to_500
+        label: Monthly award amount GBP 400.01 to 500
+        ordinal: 4
+        row_number: 15
+        filters:
+          uk_universal_credit.monthly_award_band: 400_01_to_500
+        constraints:
+          - variable: uk_universal_credit.monthly_award_band
+            operator: "=="
+            value: 400_01_to_500
+            label: Universal Credit monthly award amount band
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: ">"
+            value: 400
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount lower bound
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: "<="
+            value: 500
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount upper bound
+        expected_row_header_column: B
+        expected_row_header: '£400.01 to £500.00'
+      - value_id: 500_01_to_600
+        label: Monthly award amount GBP 500.01 to 600
+        ordinal: 5
+        row_number: 16
+        filters:
+          uk_universal_credit.monthly_award_band: 500_01_to_600
+        constraints:
+          - variable: uk_universal_credit.monthly_award_band
+            operator: "=="
+            value: 500_01_to_600
+            label: Universal Credit monthly award amount band
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: ">"
+            value: 500
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount lower bound
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: "<="
+            value: 600
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount upper bound
+        expected_row_header_column: B
+        expected_row_header: '£500.01 to £600.00'
+      - value_id: 600_01_to_700
+        label: Monthly award amount GBP 600.01 to 700
+        ordinal: 6
+        row_number: 17
+        filters:
+          uk_universal_credit.monthly_award_band: 600_01_to_700
+        constraints:
+          - variable: uk_universal_credit.monthly_award_band
+            operator: "=="
+            value: 600_01_to_700
+            label: Universal Credit monthly award amount band
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: ">"
+            value: 600
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount lower bound
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: "<="
+            value: 700
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount upper bound
+        expected_row_header_column: B
+        expected_row_header: '£600.01 to £700.00'
+      - value_id: 700_01_to_800
+        label: Monthly award amount GBP 700.01 to 800
+        ordinal: 7
+        row_number: 18
+        filters:
+          uk_universal_credit.monthly_award_band: 700_01_to_800
+        constraints:
+          - variable: uk_universal_credit.monthly_award_band
+            operator: "=="
+            value: 700_01_to_800
+            label: Universal Credit monthly award amount band
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: ">"
+            value: 700
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount lower bound
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: "<="
+            value: 800
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount upper bound
+        expected_row_header_column: B
+        expected_row_header: '£700.01 to £800.00'
+      - value_id: 800_01_to_900
+        label: Monthly award amount GBP 800.01 to 900
+        ordinal: 8
+        row_number: 19
+        filters:
+          uk_universal_credit.monthly_award_band: 800_01_to_900
+        constraints:
+          - variable: uk_universal_credit.monthly_award_band
+            operator: "=="
+            value: 800_01_to_900
+            label: Universal Credit monthly award amount band
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: ">"
+            value: 800
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount lower bound
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: "<="
+            value: 900
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount upper bound
+        expected_row_header_column: B
+        expected_row_header: '£800.01 to £900.00'
+      - value_id: 900_01_to_1000
+        label: Monthly award amount GBP 900.01 to 1000
+        ordinal: 9
+        row_number: 20
+        filters:
+          uk_universal_credit.monthly_award_band: 900_01_to_1000
+        constraints:
+          - variable: uk_universal_credit.monthly_award_band
+            operator: "=="
+            value: 900_01_to_1000
+            label: Universal Credit monthly award amount band
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: ">"
+            value: 900
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount lower bound
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: "<="
+            value: 1000
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount upper bound
+        expected_row_header_column: B
+        expected_row_header: '£900.01 to £1000.00'
+      - value_id: 1000_01_to_1100
+        label: Monthly award amount GBP 1000.01 to 1100
+        ordinal: 10
+        row_number: 21
+        filters:
+          uk_universal_credit.monthly_award_band: 1000_01_to_1100
+        constraints:
+          - variable: uk_universal_credit.monthly_award_band
+            operator: "=="
+            value: 1000_01_to_1100
+            label: Universal Credit monthly award amount band
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: ">"
+            value: 1000
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount lower bound
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: "<="
+            value: 1100
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount upper bound
+        expected_row_header_column: B
+        expected_row_header: '£1000.01 to £1100.00'
+      - value_id: 1100_01_to_1200
+        label: Monthly award amount GBP 1100.01 to 1200
+        ordinal: 11
+        row_number: 22
+        filters:
+          uk_universal_credit.monthly_award_band: 1100_01_to_1200
+        constraints:
+          - variable: uk_universal_credit.monthly_award_band
+            operator: "=="
+            value: 1100_01_to_1200
+            label: Universal Credit monthly award amount band
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: ">"
+            value: 1100
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount lower bound
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: "<="
+            value: 1200
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount upper bound
+        expected_row_header_column: B
+        expected_row_header: '£1100.01 to £1200.00'
+      - value_id: 1200_01_to_1300
+        label: Monthly award amount GBP 1200.01 to 1300
+        ordinal: 12
+        row_number: 23
+        filters:
+          uk_universal_credit.monthly_award_band: 1200_01_to_1300
+        constraints:
+          - variable: uk_universal_credit.monthly_award_band
+            operator: "=="
+            value: 1200_01_to_1300
+            label: Universal Credit monthly award amount band
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: ">"
+            value: 1200
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount lower bound
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: "<="
+            value: 1300
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount upper bound
+        expected_row_header_column: B
+        expected_row_header: '£1200.01 to £1300.00'
+      - value_id: 1300_01_to_1400
+        label: Monthly award amount GBP 1300.01 to 1400
+        ordinal: 13
+        row_number: 24
+        filters:
+          uk_universal_credit.monthly_award_band: 1300_01_to_1400
+        constraints:
+          - variable: uk_universal_credit.monthly_award_band
+            operator: "=="
+            value: 1300_01_to_1400
+            label: Universal Credit monthly award amount band
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: ">"
+            value: 1300
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount lower bound
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: "<="
+            value: 1400
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount upper bound
+        expected_row_header_column: B
+        expected_row_header: '£1300.01 to £1400.00'
+      - value_id: 1400_01_to_1500
+        label: Monthly award amount GBP 1400.01 to 1500
+        ordinal: 14
+        row_number: 25
+        filters:
+          uk_universal_credit.monthly_award_band: 1400_01_to_1500
+        constraints:
+          - variable: uk_universal_credit.monthly_award_band
+            operator: "=="
+            value: 1400_01_to_1500
+            label: Universal Credit monthly award amount band
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: ">"
+            value: 1400
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount lower bound
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: "<="
+            value: 1500
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount upper bound
+        expected_row_header_column: B
+        expected_row_header: '£1400.01 to £1500.00'
+      - value_id: 1500_01_to_1600
+        label: Monthly award amount GBP 1500.01 to 1600
+        ordinal: 15
+        row_number: 27
+        filters:
+          uk_universal_credit.monthly_award_band: 1500_01_to_1600
+        constraints:
+          - variable: uk_universal_credit.monthly_award_band
+            operator: "=="
+            value: 1500_01_to_1600
+            label: Universal Credit monthly award amount band
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: ">"
+            value: 1500
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount lower bound
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: "<="
+            value: 1600
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount upper bound
+        expected_row_header_column: B
+        expected_row_header: '£1500.01 to £1600.00'
+      - value_id: 1600_01_to_1700
+        label: Monthly award amount GBP 1600.01 to 1700
+        ordinal: 16
+        row_number: 28
+        filters:
+          uk_universal_credit.monthly_award_band: 1600_01_to_1700
+        constraints:
+          - variable: uk_universal_credit.monthly_award_band
+            operator: "=="
+            value: 1600_01_to_1700
+            label: Universal Credit monthly award amount band
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: ">"
+            value: 1600
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount lower bound
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: "<="
+            value: 1700
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount upper bound
+        expected_row_header_column: B
+        expected_row_header: '£1600.01 to £1700.00'
+      - value_id: 1700_01_to_1800
+        label: Monthly award amount GBP 1700.01 to 1800
+        ordinal: 17
+        row_number: 29
+        filters:
+          uk_universal_credit.monthly_award_band: 1700_01_to_1800
+        constraints:
+          - variable: uk_universal_credit.monthly_award_band
+            operator: "=="
+            value: 1700_01_to_1800
+            label: Universal Credit monthly award amount band
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: ">"
+            value: 1700
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount lower bound
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: "<="
+            value: 1800
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount upper bound
+        expected_row_header_column: B
+        expected_row_header: '£1700.01 to £1800.00'
+      - value_id: 1800_01_to_1900
+        label: Monthly award amount GBP 1800.01 to 1900
+        ordinal: 18
+        row_number: 30
+        filters:
+          uk_universal_credit.monthly_award_band: 1800_01_to_1900
+        constraints:
+          - variable: uk_universal_credit.monthly_award_band
+            operator: "=="
+            value: 1800_01_to_1900
+            label: Universal Credit monthly award amount band
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: ">"
+            value: 1800
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount lower bound
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: "<="
+            value: 1900
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount upper bound
+        expected_row_header_column: B
+        expected_row_header: '£1800.01 to £1900.00'
+      - value_id: 1900_01_to_2000
+        label: Monthly award amount GBP 1900.01 to 2000
+        ordinal: 19
+        row_number: 31
+        filters:
+          uk_universal_credit.monthly_award_band: 1900_01_to_2000
+        constraints:
+          - variable: uk_universal_credit.monthly_award_band
+            operator: "=="
+            value: 1900_01_to_2000
+            label: Universal Credit monthly award amount band
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: ">"
+            value: 1900
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount lower bound
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: "<="
+            value: 2000
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount upper bound
+        expected_row_header_column: B
+        expected_row_header: '£1900.01 to £2000.00'
+      - value_id: 2000_01_to_2100
+        label: Monthly award amount GBP 2000.01 to 2100
+        ordinal: 20
+        row_number: 32
+        filters:
+          uk_universal_credit.monthly_award_band: 2000_01_to_2100
+        constraints:
+          - variable: uk_universal_credit.monthly_award_band
+            operator: "=="
+            value: 2000_01_to_2100
+            label: Universal Credit monthly award amount band
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: ">"
+            value: 2000
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount lower bound
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: "<="
+            value: 2100
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount upper bound
+        expected_row_header_column: B
+        expected_row_header: '£2000.01 to £2100.00'
+      - value_id: 2100_01_to_2200
+        label: Monthly award amount GBP 2100.01 to 2200
+        ordinal: 21
+        row_number: 33
+        filters:
+          uk_universal_credit.monthly_award_band: 2100_01_to_2200
+        constraints:
+          - variable: uk_universal_credit.monthly_award_band
+            operator: "=="
+            value: 2100_01_to_2200
+            label: Universal Credit monthly award amount band
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: ">"
+            value: 2100
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount lower bound
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: "<="
+            value: 2200
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount upper bound
+        expected_row_header_column: B
+        expected_row_header: '£2100.01 to £2200.00'
+      - value_id: 2200_01_to_2300
+        label: Monthly award amount GBP 2200.01 to 2300
+        ordinal: 22
+        row_number: 34
+        filters:
+          uk_universal_credit.monthly_award_band: 2200_01_to_2300
+        constraints:
+          - variable: uk_universal_credit.monthly_award_band
+            operator: "=="
+            value: 2200_01_to_2300
+            label: Universal Credit monthly award amount band
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: ">"
+            value: 2200
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount lower bound
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: "<="
+            value: 2300
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount upper bound
+        expected_row_header_column: B
+        expected_row_header: '£2200.01 to £2300.00'
+      - value_id: 2300_01_to_2400
+        label: Monthly award amount GBP 2300.01 to 2400
+        ordinal: 23
+        row_number: 35
+        filters:
+          uk_universal_credit.monthly_award_band: 2300_01_to_2400
+        constraints:
+          - variable: uk_universal_credit.monthly_award_band
+            operator: "=="
+            value: 2300_01_to_2400
+            label: Universal Credit monthly award amount band
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: ">"
+            value: 2300
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount lower bound
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: "<="
+            value: 2400
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount upper bound
+        expected_row_header_column: B
+        expected_row_header: '£2300.01 to £2400.00'
+      - value_id: 2400_01_to_2500
+        label: Monthly award amount GBP 2400.01 to 2500
+        ordinal: 24
+        row_number: 36
+        filters:
+          uk_universal_credit.monthly_award_band: 2400_01_to_2500
+        constraints:
+          - variable: uk_universal_credit.monthly_award_band
+            operator: "=="
+            value: 2400_01_to_2500
+            label: Universal Credit monthly award amount band
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: ">"
+            value: 2400
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount lower bound
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: "<="
+            value: 2500
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount upper bound
+        expected_row_header_column: B
+        expected_row_header: '£2400.01 to £2500.00'
+      - value_id: 2500_01_or_over
+        label: Monthly award amount GBP 2500.01 or over
+        ordinal: 25
+        row_number: 37
+        filters:
+          uk_universal_credit.monthly_award_band: 2500_01_or_over
+        constraints:
+          - variable: uk_universal_credit.monthly_award_band
+            operator: "=="
+            value: 2500_01_or_over
+            label: Universal Credit monthly award amount band
+          - variable: uk_universal_credit.monthly_award_amount
+            operator: ">"
+            value: 2500
+            unit: gbp_per_month
+            label: Universal Credit monthly award amount lower bound
+        expected_row_header_column: B
+        expected_row_header: '£2500.01 or over'
+    measures:
+      - measure_id: single_no_children
+        label: UC households, single no children
+        ordinal: 0
+        column: D
+        expected_column_header_row: 8
+        expected_column_header: Single, no children
+        concept: uk_universal_credit.households
+        source_concept: dwp.universal_credit_households_by_monthly_award_amount_and_family_type
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.family_type: single_no_children
+        constraints:
+          - variable: uk_universal_credit.family_type
+            operator: "=="
+            value: single_no_children
+            label: Universal Credit family type
+      - measure_id: single_with_children
+        label: UC households, single with children
+        ordinal: 1
+        column: E
+        expected_column_header_row: 8
+        expected_column_header: Single, with children
+        concept: uk_universal_credit.households
+        source_concept: dwp.universal_credit_households_by_monthly_award_amount_and_family_type
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.family_type: single_with_children
+        constraints:
+          - variable: uk_universal_credit.family_type
+            operator: "=="
+            value: single_with_children
+            label: Universal Credit family type
+      - measure_id: couple_no_children
+        label: UC households, couple no children
+        ordinal: 2
+        column: F
+        expected_column_header_row: 8
+        expected_column_header: Couple, no children
+        concept: uk_universal_credit.households
+        source_concept: dwp.universal_credit_households_by_monthly_award_amount_and_family_type
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.family_type: couple_no_children
+        constraints:
+          - variable: uk_universal_credit.family_type
+            operator: "=="
+            value: couple_no_children
+            label: Universal Credit family type
+      - measure_id: couple_with_children
+        label: UC households, couple with children
+        ordinal: 3
+        column: G
+        expected_column_header_row: 8
+        expected_column_header: Couple, with children
+        concept: uk_universal_credit.households
+        source_concept: dwp.universal_credit_households_by_monthly_award_amount_and_family_type
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        filters:
+          uk_universal_credit.family_type: couple_with_children
+        constraints:
+          - variable: uk_universal_credit.family_type
+            operator: "=="
+            value: couple_with_children
+            label: Universal Credit family type

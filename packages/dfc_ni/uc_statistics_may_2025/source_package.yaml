@@ -1,0 +1,897 @@
+schema_version: arch.source_package.v1
+package_id: dfc-ni-uc-statistics-may-2025
+label: DfC Northern Ireland Universal Credit statistics May 2025
+artifact:
+  source_name: dfc_ni
+  source_table: NI Universal Credit Statistics Supplementary Tables - May 2025
+  resource_package: db
+  resource_directory: data/dfc_ni/uc_statistics_may_2025
+  manifest: manifest.yaml
+  vintage: may_2025
+  extracted_at: '2026-05-11'
+  extraction_method: ODS used-range parse from official Department for Communities supplementary tables
+  parser: ods_used_range
+  artifact_year: 2025
+record_sets:
+  - record_set_id: dfc_ni_uc.month2025_05.n05000001_claimants
+    record_set_spec_id: dfc_ni_uc.parliamentary_constituency_claimants.v1
+    source_record_id_prefix: dfc_ni_uc.month2025_05.n05000001_claimants
+    sheet_name: 5b
+    period_type: month
+    period: 2025-05
+    geography_id: N05000001
+    geography_level: parliamentary_constituency
+    geography_name: Belfast East
+    geography_vintage: 2024
+    entity: person
+    entity_role: universal_credit_claimant
+    domain: social_security
+    groupby_dimension: benefit.program
+    rows: &may_2025_rows
+      - value_id: universal_credit
+        label: Universal Credit
+        ordinal: 0
+        row_number: 95
+        constraints: &uc_constraints
+          - variable: benefit.program
+            operator: ==
+            value: universal_credit
+            label: Benefit program
+        expected_row_header_column: A
+        expected_row_header: May 2025
+        table_record_kind: detail
+    measures:
+      - measure_id: claimant_count
+        label: Claimant count
+        ordinal: 0
+        column: B
+        source_column_id: Belfast East
+        expected_column_header_row: 3
+        expected_column_header: Belfast East
+        concept: uk_social_security.universal_credit_claimant_count
+        source_concept: dfc_ni.universal_credit_claimants_by_parliamentary_constituency
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: persons
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dfc_ni_uc.month2025_05.n05000002_claimants
+    record_set_spec_id: dfc_ni_uc.parliamentary_constituency_claimants.v1
+    source_record_id_prefix: dfc_ni_uc.month2025_05.n05000002_claimants
+    sheet_name: 5b
+    period_type: month
+    period: 2025-05
+    geography_id: N05000002
+    geography_level: parliamentary_constituency
+    geography_name: Belfast North
+    geography_vintage: 2024
+    entity: person
+    entity_role: universal_credit_claimant
+    domain: social_security
+    groupby_dimension: benefit.program
+    rows: *may_2025_rows
+    measures:
+      - measure_id: claimant_count
+        label: Claimant count
+        ordinal: 0
+        column: C
+        source_column_id: Belfast North
+        expected_column_header_row: 3
+        expected_column_header: Belfast North
+        concept: uk_social_security.universal_credit_claimant_count
+        source_concept: dfc_ni.universal_credit_claimants_by_parliamentary_constituency
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: persons
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dfc_ni_uc.month2025_05.n05000003_claimants
+    record_set_spec_id: dfc_ni_uc.parliamentary_constituency_claimants.v1
+    source_record_id_prefix: dfc_ni_uc.month2025_05.n05000003_claimants
+    sheet_name: 5b
+    period_type: month
+    period: 2025-05
+    geography_id: N05000003
+    geography_level: parliamentary_constituency
+    geography_name: Belfast South and Mid Down
+    geography_vintage: 2024
+    entity: person
+    entity_role: universal_credit_claimant
+    domain: social_security
+    groupby_dimension: benefit.program
+    rows: *may_2025_rows
+    measures:
+      - measure_id: claimant_count
+        label: Claimant count
+        ordinal: 0
+        column: D
+        source_column_id: Belfast South and Mid Down
+        expected_column_header_row: 3
+        expected_column_header: Belfast South and Mid Down
+        concept: uk_social_security.universal_credit_claimant_count
+        source_concept: dfc_ni.universal_credit_claimants_by_parliamentary_constituency
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: persons
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dfc_ni_uc.month2025_05.n05000004_claimants
+    record_set_spec_id: dfc_ni_uc.parliamentary_constituency_claimants.v1
+    source_record_id_prefix: dfc_ni_uc.month2025_05.n05000004_claimants
+    sheet_name: 5b
+    period_type: month
+    period: 2025-05
+    geography_id: N05000004
+    geography_level: parliamentary_constituency
+    geography_name: Belfast West
+    geography_vintage: 2024
+    entity: person
+    entity_role: universal_credit_claimant
+    domain: social_security
+    groupby_dimension: benefit.program
+    rows: *may_2025_rows
+    measures:
+      - measure_id: claimant_count
+        label: Claimant count
+        ordinal: 0
+        column: E
+        source_column_id: Belfast West
+        expected_column_header_row: 3
+        expected_column_header: Belfast West
+        concept: uk_social_security.universal_credit_claimant_count
+        source_concept: dfc_ni.universal_credit_claimants_by_parliamentary_constituency
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: persons
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dfc_ni_uc.month2025_05.n05000005_claimants
+    record_set_spec_id: dfc_ni_uc.parliamentary_constituency_claimants.v1
+    source_record_id_prefix: dfc_ni_uc.month2025_05.n05000005_claimants
+    sheet_name: 5b
+    period_type: month
+    period: 2025-05
+    geography_id: N05000005
+    geography_level: parliamentary_constituency
+    geography_name: East Antrim
+    geography_vintage: 2024
+    entity: person
+    entity_role: universal_credit_claimant
+    domain: social_security
+    groupby_dimension: benefit.program
+    rows: *may_2025_rows
+    measures:
+      - measure_id: claimant_count
+        label: Claimant count
+        ordinal: 0
+        column: F
+        source_column_id: East Antrim
+        expected_column_header_row: 3
+        expected_column_header: East Antrim
+        concept: uk_social_security.universal_credit_claimant_count
+        source_concept: dfc_ni.universal_credit_claimants_by_parliamentary_constituency
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: persons
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dfc_ni_uc.month2025_05.n05000006_claimants
+    record_set_spec_id: dfc_ni_uc.parliamentary_constituency_claimants.v1
+    source_record_id_prefix: dfc_ni_uc.month2025_05.n05000006_claimants
+    sheet_name: 5b
+    period_type: month
+    period: 2025-05
+    geography_id: N05000006
+    geography_level: parliamentary_constituency
+    geography_name: East Londonderry
+    geography_vintage: 2024
+    entity: person
+    entity_role: universal_credit_claimant
+    domain: social_security
+    groupby_dimension: benefit.program
+    rows: *may_2025_rows
+    measures:
+      - measure_id: claimant_count
+        label: Claimant count
+        ordinal: 0
+        column: G
+        source_column_id: East Londonderry
+        expected_column_header_row: 3
+        expected_column_header: East Londonderry
+        concept: uk_social_security.universal_credit_claimant_count
+        source_concept: dfc_ni.universal_credit_claimants_by_parliamentary_constituency
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: persons
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dfc_ni_uc.month2025_05.n05000007_claimants
+    record_set_spec_id: dfc_ni_uc.parliamentary_constituency_claimants.v1
+    source_record_id_prefix: dfc_ni_uc.month2025_05.n05000007_claimants
+    sheet_name: 5b
+    period_type: month
+    period: 2025-05
+    geography_id: N05000007
+    geography_level: parliamentary_constituency
+    geography_name: Fermanagh and South Tyrone
+    geography_vintage: 2024
+    entity: person
+    entity_role: universal_credit_claimant
+    domain: social_security
+    groupby_dimension: benefit.program
+    rows: *may_2025_rows
+    measures:
+      - measure_id: claimant_count
+        label: Claimant count
+        ordinal: 0
+        column: H
+        source_column_id: Fermanagh and South Tyrone
+        expected_column_header_row: 3
+        expected_column_header: Fermanagh and South Tyrone
+        concept: uk_social_security.universal_credit_claimant_count
+        source_concept: dfc_ni.universal_credit_claimants_by_parliamentary_constituency
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: persons
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dfc_ni_uc.month2025_05.n05000008_claimants
+    record_set_spec_id: dfc_ni_uc.parliamentary_constituency_claimants.v1
+    source_record_id_prefix: dfc_ni_uc.month2025_05.n05000008_claimants
+    sheet_name: 5b
+    period_type: month
+    period: 2025-05
+    geography_id: N05000008
+    geography_level: parliamentary_constituency
+    geography_name: Foyle
+    geography_vintage: 2024
+    entity: person
+    entity_role: universal_credit_claimant
+    domain: social_security
+    groupby_dimension: benefit.program
+    rows: *may_2025_rows
+    measures:
+      - measure_id: claimant_count
+        label: Claimant count
+        ordinal: 0
+        column: I
+        source_column_id: Foyle
+        expected_column_header_row: 3
+        expected_column_header: Foyle
+        concept: uk_social_security.universal_credit_claimant_count
+        source_concept: dfc_ni.universal_credit_claimants_by_parliamentary_constituency
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: persons
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dfc_ni_uc.month2025_05.n05000009_claimants
+    record_set_spec_id: dfc_ni_uc.parliamentary_constituency_claimants.v1
+    source_record_id_prefix: dfc_ni_uc.month2025_05.n05000009_claimants
+    sheet_name: 5b
+    period_type: month
+    period: 2025-05
+    geography_id: N05000009
+    geography_level: parliamentary_constituency
+    geography_name: Lagan Valley
+    geography_vintage: 2024
+    entity: person
+    entity_role: universal_credit_claimant
+    domain: social_security
+    groupby_dimension: benefit.program
+    rows: *may_2025_rows
+    measures:
+      - measure_id: claimant_count
+        label: Claimant count
+        ordinal: 0
+        column: J
+        source_column_id: Lagan Valley
+        expected_column_header_row: 3
+        expected_column_header: Lagan Valley
+        concept: uk_social_security.universal_credit_claimant_count
+        source_concept: dfc_ni.universal_credit_claimants_by_parliamentary_constituency
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: persons
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dfc_ni_uc.month2025_05.n05000010_claimants
+    record_set_spec_id: dfc_ni_uc.parliamentary_constituency_claimants.v1
+    source_record_id_prefix: dfc_ni_uc.month2025_05.n05000010_claimants
+    sheet_name: 5b
+    period_type: month
+    period: 2025-05
+    geography_id: N05000010
+    geography_level: parliamentary_constituency
+    geography_name: Mid Ulster
+    geography_vintage: 2024
+    entity: person
+    entity_role: universal_credit_claimant
+    domain: social_security
+    groupby_dimension: benefit.program
+    rows: *may_2025_rows
+    measures:
+      - measure_id: claimant_count
+        label: Claimant count
+        ordinal: 0
+        column: K
+        source_column_id: Mid Ulster
+        expected_column_header_row: 3
+        expected_column_header: Mid Ulster
+        concept: uk_social_security.universal_credit_claimant_count
+        source_concept: dfc_ni.universal_credit_claimants_by_parliamentary_constituency
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: persons
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dfc_ni_uc.month2025_05.n05000011_claimants
+    record_set_spec_id: dfc_ni_uc.parliamentary_constituency_claimants.v1
+    source_record_id_prefix: dfc_ni_uc.month2025_05.n05000011_claimants
+    sheet_name: 5b
+    period_type: month
+    period: 2025-05
+    geography_id: N05000011
+    geography_level: parliamentary_constituency
+    geography_name: Newry and Armagh
+    geography_vintage: 2024
+    entity: person
+    entity_role: universal_credit_claimant
+    domain: social_security
+    groupby_dimension: benefit.program
+    rows: *may_2025_rows
+    measures:
+      - measure_id: claimant_count
+        label: Claimant count
+        ordinal: 0
+        column: L
+        source_column_id: Newry and Armagh
+        expected_column_header_row: 3
+        expected_column_header: Newry and Armagh
+        concept: uk_social_security.universal_credit_claimant_count
+        source_concept: dfc_ni.universal_credit_claimants_by_parliamentary_constituency
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: persons
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dfc_ni_uc.month2025_05.n05000012_claimants
+    record_set_spec_id: dfc_ni_uc.parliamentary_constituency_claimants.v1
+    source_record_id_prefix: dfc_ni_uc.month2025_05.n05000012_claimants
+    sheet_name: 5b
+    period_type: month
+    period: 2025-05
+    geography_id: N05000012
+    geography_level: parliamentary_constituency
+    geography_name: North Antrim
+    geography_vintage: 2024
+    entity: person
+    entity_role: universal_credit_claimant
+    domain: social_security
+    groupby_dimension: benefit.program
+    rows: *may_2025_rows
+    measures:
+      - measure_id: claimant_count
+        label: Claimant count
+        ordinal: 0
+        column: M
+        source_column_id: North Antrim
+        expected_column_header_row: 3
+        expected_column_header: North Antrim
+        concept: uk_social_security.universal_credit_claimant_count
+        source_concept: dfc_ni.universal_credit_claimants_by_parliamentary_constituency
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: persons
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dfc_ni_uc.month2025_05.n05000013_claimants
+    record_set_spec_id: dfc_ni_uc.parliamentary_constituency_claimants.v1
+    source_record_id_prefix: dfc_ni_uc.month2025_05.n05000013_claimants
+    sheet_name: 5b
+    period_type: month
+    period: 2025-05
+    geography_id: N05000013
+    geography_level: parliamentary_constituency
+    geography_name: North Down
+    geography_vintage: 2024
+    entity: person
+    entity_role: universal_credit_claimant
+    domain: social_security
+    groupby_dimension: benefit.program
+    rows: *may_2025_rows
+    measures:
+      - measure_id: claimant_count
+        label: Claimant count
+        ordinal: 0
+        column: N
+        source_column_id: North Down
+        expected_column_header_row: 3
+        expected_column_header: North Down
+        concept: uk_social_security.universal_credit_claimant_count
+        source_concept: dfc_ni.universal_credit_claimants_by_parliamentary_constituency
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: persons
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dfc_ni_uc.month2025_05.n05000014_claimants
+    record_set_spec_id: dfc_ni_uc.parliamentary_constituency_claimants.v1
+    source_record_id_prefix: dfc_ni_uc.month2025_05.n05000014_claimants
+    sheet_name: 5b
+    period_type: month
+    period: 2025-05
+    geography_id: N05000014
+    geography_level: parliamentary_constituency
+    geography_name: South Antrim
+    geography_vintage: 2024
+    entity: person
+    entity_role: universal_credit_claimant
+    domain: social_security
+    groupby_dimension: benefit.program
+    rows: *may_2025_rows
+    measures:
+      - measure_id: claimant_count
+        label: Claimant count
+        ordinal: 0
+        column: O
+        source_column_id: South Antrim
+        expected_column_header_row: 3
+        expected_column_header: South Antrim
+        concept: uk_social_security.universal_credit_claimant_count
+        source_concept: dfc_ni.universal_credit_claimants_by_parliamentary_constituency
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: persons
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dfc_ni_uc.month2025_05.n05000015_claimants
+    record_set_spec_id: dfc_ni_uc.parliamentary_constituency_claimants.v1
+    source_record_id_prefix: dfc_ni_uc.month2025_05.n05000015_claimants
+    sheet_name: 5b
+    period_type: month
+    period: 2025-05
+    geography_id: N05000015
+    geography_level: parliamentary_constituency
+    geography_name: South Down
+    geography_vintage: 2024
+    entity: person
+    entity_role: universal_credit_claimant
+    domain: social_security
+    groupby_dimension: benefit.program
+    rows: *may_2025_rows
+    measures:
+      - measure_id: claimant_count
+        label: Claimant count
+        ordinal: 0
+        column: P
+        source_column_id: South Down
+        expected_column_header_row: 3
+        expected_column_header: South Down
+        concept: uk_social_security.universal_credit_claimant_count
+        source_concept: dfc_ni.universal_credit_claimants_by_parliamentary_constituency
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: persons
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dfc_ni_uc.month2025_05.n05000016_claimants
+    record_set_spec_id: dfc_ni_uc.parliamentary_constituency_claimants.v1
+    source_record_id_prefix: dfc_ni_uc.month2025_05.n05000016_claimants
+    sheet_name: 5b
+    period_type: month
+    period: 2025-05
+    geography_id: N05000016
+    geography_level: parliamentary_constituency
+    geography_name: Strangford
+    geography_vintage: 2024
+    entity: person
+    entity_role: universal_credit_claimant
+    domain: social_security
+    groupby_dimension: benefit.program
+    rows: *may_2025_rows
+    measures:
+      - measure_id: claimant_count
+        label: Claimant count
+        ordinal: 0
+        column: Q
+        source_column_id: Strangford
+        expected_column_header_row: 3
+        expected_column_header: Strangford
+        concept: uk_social_security.universal_credit_claimant_count
+        source_concept: dfc_ni.universal_credit_claimants_by_parliamentary_constituency
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: persons
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dfc_ni_uc.month2025_05.n05000017_claimants
+    record_set_spec_id: dfc_ni_uc.parliamentary_constituency_claimants.v1
+    source_record_id_prefix: dfc_ni_uc.month2025_05.n05000017_claimants
+    sheet_name: 5b
+    period_type: month
+    period: 2025-05
+    geography_id: N05000017
+    geography_level: parliamentary_constituency
+    geography_name: Upper Bann
+    geography_vintage: 2024
+    entity: person
+    entity_role: universal_credit_claimant
+    domain: social_security
+    groupby_dimension: benefit.program
+    rows: *may_2025_rows
+    measures:
+      - measure_id: claimant_count
+        label: Claimant count
+        ordinal: 0
+        column: R
+        source_column_id: Upper Bann
+        expected_column_header_row: 3
+        expected_column_header: Upper Bann
+        concept: uk_social_security.universal_credit_claimant_count
+        source_concept: dfc_ni.universal_credit_claimants_by_parliamentary_constituency
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: persons
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dfc_ni_uc.month2025_05.n05000018_claimants
+    record_set_spec_id: dfc_ni_uc.parliamentary_constituency_claimants.v1
+    source_record_id_prefix: dfc_ni_uc.month2025_05.n05000018_claimants
+    sheet_name: 5b
+    period_type: month
+    period: 2025-05
+    geography_id: N05000018
+    geography_level: parliamentary_constituency
+    geography_name: West Tyrone
+    geography_vintage: 2024
+    entity: person
+    entity_role: universal_credit_claimant
+    domain: social_security
+    groupby_dimension: benefit.program
+    rows: *may_2025_rows
+    measures:
+      - measure_id: claimant_count
+        label: Claimant count
+        ordinal: 0
+        column: S
+        source_column_id: West Tyrone
+        expected_column_header_row: 3
+        expected_column_header: West Tyrone
+        concept: uk_social_security.universal_credit_claimant_count
+        source_concept: dfc_ni.universal_credit_claimants_by_parliamentary_constituency
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: persons
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dfc_ni_uc.month2025_05.n09000001_claimants
+    record_set_spec_id: dfc_ni_uc.local_government_district_claimants.v1
+    source_record_id_prefix: dfc_ni_uc.month2025_05.n09000001_claimants
+    sheet_name: 5c
+    period_type: month
+    period: 2025-05
+    geography_id: N09000001
+    geography_level: local_authority
+    geography_name: Antrim and Newtownabbey
+    geography_vintage: 2021
+    entity: person
+    entity_role: universal_credit_claimant
+    domain: social_security
+    groupby_dimension: benefit.program
+    rows: *may_2025_rows
+    measures:
+      - measure_id: claimant_count
+        label: Claimant count
+        ordinal: 0
+        column: B
+        source_column_id: Antrim and Newtownabbey
+        expected_column_header_row: 3
+        expected_column_header: Antrim and Newtownabbey
+        concept: uk_social_security.universal_credit_claimant_count
+        source_concept: dfc_ni.universal_credit_claimants_by_local_government_district
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: persons
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dfc_ni_uc.month2025_05.n09000002_claimants
+    record_set_spec_id: dfc_ni_uc.local_government_district_claimants.v1
+    source_record_id_prefix: dfc_ni_uc.month2025_05.n09000002_claimants
+    sheet_name: 5c
+    period_type: month
+    period: 2025-05
+    geography_id: N09000002
+    geography_level: local_authority
+    geography_name: Armagh City, Banbridge and Craigavon
+    geography_vintage: 2021
+    entity: person
+    entity_role: universal_credit_claimant
+    domain: social_security
+    groupby_dimension: benefit.program
+    rows: *may_2025_rows
+    measures:
+      - measure_id: claimant_count
+        label: Claimant count
+        ordinal: 0
+        column: C
+        source_column_id: Armagh City, Banbridge and Craigavon
+        expected_column_header_row: 3
+        expected_column_header: Armagh City, Banbridge and Craigavon
+        concept: uk_social_security.universal_credit_claimant_count
+        source_concept: dfc_ni.universal_credit_claimants_by_local_government_district
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: persons
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dfc_ni_uc.month2025_05.n09000011_claimants
+    record_set_spec_id: dfc_ni_uc.local_government_district_claimants.v1
+    source_record_id_prefix: dfc_ni_uc.month2025_05.n09000011_claimants
+    sheet_name: 5c
+    period_type: month
+    period: 2025-05
+    geography_id: N09000011
+    geography_level: local_authority
+    geography_name: Ards and North Down
+    geography_vintage: 2021
+    entity: person
+    entity_role: universal_credit_claimant
+    domain: social_security
+    groupby_dimension: benefit.program
+    rows: *may_2025_rows
+    measures:
+      - measure_id: claimant_count
+        label: Claimant count
+        ordinal: 0
+        column: D
+        source_column_id: Ards and North Down
+        expected_column_header_row: 3
+        expected_column_header: Ards and North Down
+        concept: uk_social_security.universal_credit_claimant_count
+        source_concept: dfc_ni.universal_credit_claimants_by_local_government_district
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: persons
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dfc_ni_uc.month2025_05.n09000003_claimants
+    record_set_spec_id: dfc_ni_uc.local_government_district_claimants.v1
+    source_record_id_prefix: dfc_ni_uc.month2025_05.n09000003_claimants
+    sheet_name: 5c
+    period_type: month
+    period: 2025-05
+    geography_id: N09000003
+    geography_level: local_authority
+    geography_name: Belfast
+    geography_vintage: 2021
+    entity: person
+    entity_role: universal_credit_claimant
+    domain: social_security
+    groupby_dimension: benefit.program
+    rows: *may_2025_rows
+    measures:
+      - measure_id: claimant_count
+        label: Claimant count
+        ordinal: 0
+        column: E
+        source_column_id: Belfast
+        expected_column_header_row: 3
+        expected_column_header: Belfast
+        concept: uk_social_security.universal_credit_claimant_count
+        source_concept: dfc_ni.universal_credit_claimants_by_local_government_district
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: persons
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dfc_ni_uc.month2025_05.n09000004_claimants
+    record_set_spec_id: dfc_ni_uc.local_government_district_claimants.v1
+    source_record_id_prefix: dfc_ni_uc.month2025_05.n09000004_claimants
+    sheet_name: 5c
+    period_type: month
+    period: 2025-05
+    geography_id: N09000004
+    geography_level: local_authority
+    geography_name: Causeway Coast and Glens
+    geography_vintage: 2021
+    entity: person
+    entity_role: universal_credit_claimant
+    domain: social_security
+    groupby_dimension: benefit.program
+    rows: *may_2025_rows
+    measures:
+      - measure_id: claimant_count
+        label: Claimant count
+        ordinal: 0
+        column: F
+        source_column_id: Causeway Coast and Glens
+        expected_column_header_row: 3
+        expected_column_header: Causeway Coast and Glens
+        concept: uk_social_security.universal_credit_claimant_count
+        source_concept: dfc_ni.universal_credit_claimants_by_local_government_district
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: persons
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dfc_ni_uc.month2025_05.n09000005_claimants
+    record_set_spec_id: dfc_ni_uc.local_government_district_claimants.v1
+    source_record_id_prefix: dfc_ni_uc.month2025_05.n09000005_claimants
+    sheet_name: 5c
+    period_type: month
+    period: 2025-05
+    geography_id: N09000005
+    geography_level: local_authority
+    geography_name: Derry City and Strabane
+    geography_vintage: 2021
+    entity: person
+    entity_role: universal_credit_claimant
+    domain: social_security
+    groupby_dimension: benefit.program
+    rows: *may_2025_rows
+    measures:
+      - measure_id: claimant_count
+        label: Claimant count
+        ordinal: 0
+        column: G
+        source_column_id: Derry City and Strabane
+        expected_column_header_row: 3
+        expected_column_header: Derry City and Strabane
+        concept: uk_social_security.universal_credit_claimant_count
+        source_concept: dfc_ni.universal_credit_claimants_by_local_government_district
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: persons
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dfc_ni_uc.month2025_05.n09000006_claimants
+    record_set_spec_id: dfc_ni_uc.local_government_district_claimants.v1
+    source_record_id_prefix: dfc_ni_uc.month2025_05.n09000006_claimants
+    sheet_name: 5c
+    period_type: month
+    period: 2025-05
+    geography_id: N09000006
+    geography_level: local_authority
+    geography_name: Fermanagh and Omagh
+    geography_vintage: 2021
+    entity: person
+    entity_role: universal_credit_claimant
+    domain: social_security
+    groupby_dimension: benefit.program
+    rows: *may_2025_rows
+    measures:
+      - measure_id: claimant_count
+        label: Claimant count
+        ordinal: 0
+        column: H
+        source_column_id: Fermanagh and Omagh
+        expected_column_header_row: 3
+        expected_column_header: Fermanagh and Omagh
+        concept: uk_social_security.universal_credit_claimant_count
+        source_concept: dfc_ni.universal_credit_claimants_by_local_government_district
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: persons
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dfc_ni_uc.month2025_05.n09000007_claimants
+    record_set_spec_id: dfc_ni_uc.local_government_district_claimants.v1
+    source_record_id_prefix: dfc_ni_uc.month2025_05.n09000007_claimants
+    sheet_name: 5c
+    period_type: month
+    period: 2025-05
+    geography_id: N09000007
+    geography_level: local_authority
+    geography_name: Lisburn and Castlereagh
+    geography_vintage: 2021
+    entity: person
+    entity_role: universal_credit_claimant
+    domain: social_security
+    groupby_dimension: benefit.program
+    rows: *may_2025_rows
+    measures:
+      - measure_id: claimant_count
+        label: Claimant count
+        ordinal: 0
+        column: I
+        source_column_id: Lisburn and Castlereagh
+        expected_column_header_row: 3
+        expected_column_header: Lisburn and Castlereagh
+        concept: uk_social_security.universal_credit_claimant_count
+        source_concept: dfc_ni.universal_credit_claimants_by_local_government_district
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: persons
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dfc_ni_uc.month2025_05.n09000008_claimants
+    record_set_spec_id: dfc_ni_uc.local_government_district_claimants.v1
+    source_record_id_prefix: dfc_ni_uc.month2025_05.n09000008_claimants
+    sheet_name: 5c
+    period_type: month
+    period: 2025-05
+    geography_id: N09000008
+    geography_level: local_authority
+    geography_name: Mid and East Antrim
+    geography_vintage: 2021
+    entity: person
+    entity_role: universal_credit_claimant
+    domain: social_security
+    groupby_dimension: benefit.program
+    rows: *may_2025_rows
+    measures:
+      - measure_id: claimant_count
+        label: Claimant count
+        ordinal: 0
+        column: J
+        source_column_id: Mid and East Antrim
+        expected_column_header_row: 3
+        expected_column_header: Mid and East Antrim
+        concept: uk_social_security.universal_credit_claimant_count
+        source_concept: dfc_ni.universal_credit_claimants_by_local_government_district
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: persons
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dfc_ni_uc.month2025_05.n09000009_claimants
+    record_set_spec_id: dfc_ni_uc.local_government_district_claimants.v1
+    source_record_id_prefix: dfc_ni_uc.month2025_05.n09000009_claimants
+    sheet_name: 5c
+    period_type: month
+    period: 2025-05
+    geography_id: N09000009
+    geography_level: local_authority
+    geography_name: Mid Ulster
+    geography_vintage: 2021
+    entity: person
+    entity_role: universal_credit_claimant
+    domain: social_security
+    groupby_dimension: benefit.program
+    rows: *may_2025_rows
+    measures:
+      - measure_id: claimant_count
+        label: Claimant count
+        ordinal: 0
+        column: K
+        source_column_id: Mid Ulster
+        expected_column_header_row: 3
+        expected_column_header: Mid Ulster
+        concept: uk_social_security.universal_credit_claimant_count
+        source_concept: dfc_ni.universal_credit_claimants_by_local_government_district
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: persons
+        aggregation: count
+        expected_cell_type: number
+  - record_set_id: dfc_ni_uc.month2025_05.n09000010_claimants
+    record_set_spec_id: dfc_ni_uc.local_government_district_claimants.v1
+    source_record_id_prefix: dfc_ni_uc.month2025_05.n09000010_claimants
+    sheet_name: 5c
+    period_type: month
+    period: 2025-05
+    geography_id: N09000010
+    geography_level: local_authority
+    geography_name: Newry, Mourne and Down
+    geography_vintage: 2021
+    entity: person
+    entity_role: universal_credit_claimant
+    domain: social_security
+    groupby_dimension: benefit.program
+    rows: *may_2025_rows
+    measures:
+      - measure_id: claimant_count
+        label: Claimant count
+        ordinal: 0
+        column: L
+        source_column_id: Newry, Mourne and Down
+        expected_column_header_row: 3
+        expected_column_header: Newry, Mourne and Down
+        concept: uk_social_security.universal_credit_claimant_count
+        source_concept: dfc_ni.universal_credit_claimants_by_local_government_district
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: persons
+        aggregation: count
+        expected_cell_type: number

@@ -1,0 +1,18 @@
+source_id: ons
+package_id: ons-savings-interest-income
+dataset: ons_haxv_savings_interest_income
+source_page: https://www.ons.gov.uk/economy/grossdomesticproductgdp/timeseries/haxv/ukea
+table: ONS UKEA HAXV households interest resources
+files:
+  2026:
+    filename: ons_haxv_savings_interest_timeseries.json
+    source_url: https://www.ons.gov.uk/economy/grossdomesticproductgdp/timeseries/haxv/ukea/data
+    sha256: 9e5d1ca0efa14e0d6e3e229c28b4045495caac420f01207d14448d926ce8fb26
+    size_bytes: 36081
+    fetched_at: '2026-05-10T22:25:16+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/ons/ons-savings-interest-income/2026/9e5d1ca0efa14e0d6e3e229c28b4045495caac420f01207d14448d926ce8fb26/ons_haxv_savings_interest_timeseries.json
+        uri: r2://arch-raw/raw/ons/ons-savings-interest-income/2026/9e5d1ca0efa14e0d6e3e229c28b4045495caac420f01207d14448d926ce8fb26/ons_haxv_savings_interest_timeseries.json

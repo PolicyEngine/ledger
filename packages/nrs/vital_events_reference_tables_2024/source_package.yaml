@@ -1,0 +1,61 @@
+schema_version: arch.source_package.v1
+package_id: nrs-vital-events-reference-tables-2024
+label: NRS Scotland live births 2024
+artifact:
+  source_name: nrs
+  source_table: NRS vital events reference tables 2024 chapter 1 Table 1.01(b)
+  resource_package: db
+  resource_directory: data/nrs/vital_events_reference_tables_2024
+  manifest: manifest.yaml
+  vintage: vital_events_reference_tables_2024
+  extracted_at: '2026-05-11'
+  extraction_method: xlsx whole-workbook used-range cell parse
+  parser: xlsx_used_range
+  artifact_year: 2024
+record_sets:
+- record_set_id: nrs_vital_events.cy2024.table_1_01b.scotland_live_births
+  record_set_spec_id: nrs_vital_events.table_1_01b.scotland_live_births.v1
+  source_record_id_prefix: nrs_vital_events.cy2024.table_1_01b.scotland_live_births
+  sheet_name: Table_1.01b
+  period_type: calendar_year
+  period: 2024
+  geography_id: S92000003
+  geography_level: country
+  geography_name: Scotland
+  geography_vintage: current
+  entity: person
+  entity_role: live_birth
+  domain: uk_demographics
+  groupby_dimension: total
+  rows:
+  - value_id: scotland
+    label: Scotland
+    ordinal: 0
+    row_number: 60
+    table_record_kind: total
+    expected_row_header_column: A
+    expected_row_header: 2024
+    guard_cells:
+    - column: A
+      row: 1
+      expected_value: "Table 1.01(b): Population and vital events, Scotland, 1971 to 2024"
+      label: table title
+    - column: A
+      row: 6
+      expected_value: Year
+      label: year header
+  measures:
+  - measure_id: live_birth_count
+    label: Live births
+    ordinal: 0
+    column: E
+    source_column_id: live_births
+    expected_column_header_row: 6
+    expected_column_header: Live births
+    concept: uk_demographics.live_birth_count
+    source_concept: nrs.vital_events_live_births
+    concept_relation: source_label
+    concept_authority: arch-uk
+    unit: count
+    aggregation: count
+    expected_cell_type: number

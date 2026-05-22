@@ -1,0 +1,18 @@
+source_id: cmsny
+package_id: cmsny-undocumented-population-2023
+dataset: cmsny_undocumented_population_2023
+source_page: https://cmsny.org/publications/the-undocumented-population-in-the-united-states-increased-to-12-million-in-2023/
+table: The Undocumented Population in the United States Increased to 12.2 Million in 2023
+files:
+  2023:
+    filename: cmsny_undocumented_population_increased_to_12_million_2023.html
+    source_url: https://cmsny.org/publications/the-undocumented-population-in-the-united-states-increased-to-12-million-in-2023/
+    sha256: 0512418c197f590e2617ef6eb1fa647baf430146da287673874b5e709addc833
+    size_bytes: 80245
+    fetched_at: '2026-05-12T00:13:59+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/cmsny/cmsny-undocumented-population-2023/2023/0512418c197f590e2617ef6eb1fa647baf430146da287673874b5e709addc833/cmsny_undocumented_population_increased_to_12_million_2023.html
+        uri: r2://arch-raw/raw/cmsny/cmsny-undocumented-population-2023/2023/0512418c197f590e2617ef6eb1fa647baf430146da287673874b5e709addc833/cmsny_undocumented_population_increased_to_12_million_2023.html

@@ -1,0 +1,18 @@
+source_id: ssa
+package_id: ssa-population-projections-tr2024
+dataset: ssa_population_projections_tr2024
+source_page: https://www.ssa.gov/oact/HistEst/Population/2024/Population2024.html
+table: SSA Single Year Age demographic projections, mid-year population
+files:
+  2024:
+    filename: SSPopJul_TR2024.csv
+    source_url: https://www.ssa.gov/oact/HistEst/Population/2024/SSPopJul_TR2024.csv
+    sha256: cb6ab96eba35554e92e279e839662106602078ba7ff0dfaa306a8a0ca5a919e5
+    size_bytes: 1294096
+    fetched_at: '2026-05-11T20:17:16+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/ssa/ssa-population-projections-tr2024/2024/cb6ab96eba35554e92e279e839662106602078ba7ff0dfaa306a8a0ca5a919e5/SSPopJul_TR2024.csv
+        uri: r2://arch-raw/raw/ssa/ssa-population-projections-tr2024/2024/cb6ab96eba35554e92e279e839662106602078ba7ff0dfaa306a8a0ca5a919e5/SSPopJul_TR2024.csv

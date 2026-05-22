@@ -1,0 +1,20 @@
+source_id: cms_nhe
+package_id: cms-nhe-historical-service-source
+dataset: cms_nhe_historical_service_source
+source_page: https://www.cms.gov/data-research/statistics-trends-and-reports/national-health-expenditure-data/historical
+table: National Health Expenditures by type of service and source of funds, CY 1960-2024
+files:
+  2024:
+    filename: national-health-expenditures-type-service-source-funds-cy-1960-2024.zip
+    source_url: https://www.cms.gov/files/zip/national-health-expenditures-type-service-source-funds-cy-1960-2024.zip
+    sha256: b6a9e26774ca36931d42add46204947d6335fc4898011780563196898f964746
+    size_bytes: 123721
+    source_table: National Health Expenditures by type of service and source of funds,
+      CY 1960-2024
+    archive_member: NHE2024.xls
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/cms_nhe/cms-nhe-historical-service-source/2024/b6a9e26774ca36931d42add46204947d6335fc4898011780563196898f964746/national-health-expenditures-type-service-source-funds-cy-1960-2024.zip
+        uri: r2://arch-raw/raw/cms_nhe/cms-nhe-historical-service-source/2024/b6a9e26774ca36931d42add46204947d6335fc4898011780563196898f964746/national-health-expenditures-type-service-source-funds-cy-1960-2024.zip

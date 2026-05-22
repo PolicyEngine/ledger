@@ -1,0 +1,147 @@
+schema_version: arch.source_package.v1
+package_id: soi-table-2-5
+label: IRS SOI Publication 1304 Table 2.5 EITC all-return totals
+artifact:
+  source_name: irs_soi
+  source_table: Publication 1304 Table 2.5
+  resource_package: db
+  resource_directory: data/irs_soi/table_2_5
+  manifest: manifest.yaml
+  vintage: tax_year_{year}
+  extracted_at: "2026-05-11"
+  extraction_method: xlrd whole-workbook used-range cell parse
+record_sets:
+  - record_set_id: irs_soi.ty{year}.table_2_5.eitc_all_returns
+    record_set_spec_id: irs_soi.table_2_5.eitc_all_returns.v1
+    source_record_id_prefix: irs_soi.ty{year}.table_2_5.eitc_all_returns
+    sheet_name: TBL25
+    period_type: tax_year
+    period: "{year}"
+    geography_id: 0100000US
+    geography_level: country
+    geography_name: United States
+    geography_vintage: 2020_census
+    entity: tax_unit
+    entity_role: filing_unit
+    domain: individual_income_tax_returns_with_earned_income_credit
+    groupby_dimension: us:statutes/26/62#adjusted_gross_income
+    rows:
+      - value_id: total
+        label: Total
+        ordinal: 0
+        row_number: 9
+        expected_row_header_column: A
+        expected_row_header: Total
+        filters:
+          income_range: all
+          qualifying_children: all
+        guard_cells:
+          - column: A
+            row: 1
+            expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted \nGross Income and Number of Qualifying Children, \nTax Year {year} (Filing Year {filing_year})"
+            label: table title
+        table_record_kind: total
+    measures:
+      - measure_id: eitc_return_count
+        label: Returns with earned income credit
+        ordinal: 0
+        column: B
+        source_column_id: eitc_return_count
+        expected_column_header_row: 4
+        expected_column_header: "Number of\nreturns"
+        concept: irs_soi.returns_with_earned_income_credit
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+      - measure_id: adjusted_gross_income
+        label: Adjusted gross income
+        ordinal: 1
+        column: C
+        source_column_id: adjusted_gross_income
+        expected_column_header_row: 4
+        expected_column_header: "Adjusted\ngross income\nless deficit"
+        concept: us:statutes/26/62#adjusted_gross_income
+        source_concept: irs_soi.adjusted_gross_income
+        concept_relation: exact
+        concept_authority: arch-us
+        concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
+        concept_evidence_notes: >
+          IRS SOI Table 2.5 reports adjusted gross income less deficit for
+          individual income tax returns with earned income credit; IRC section
+          62 defines adjusted gross income. This Arch assertion treats the SOI
+          total-row AGI column as adopting that legal concept for the tax-year
+          source record.
+        legal_vintage: tax_year_{year}
+        unit: usd
+        aggregation: sum
+        value_scale: 1000
+        expected_cell_type: number
+      - measure_id: eic_earned_income_returns
+        label: Returns with EIC earned income
+        ordinal: 2
+        column: H
+        source_column_id: eic_earned_income_returns
+        expected_column_header_row: 6
+        expected_column_header: "Number of\nreturns"
+        concept: irs_soi.returns_with_eic_earned_income
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+      - measure_id: eic_earned_income_amount
+        label: EIC earned income
+        ordinal: 3
+        column: I
+        source_column_id: eic_earned_income_amount
+        expected_column_header_row: 6
+        expected_column_header: Amount
+        concept: irs_soi.eic_earned_income
+        unit: usd
+        aggregation: sum
+        value_scale: 1000
+        expected_cell_type: number
+      - measure_id: total_earned_income_credit_returns
+        label: Returns with total earned income credit
+        ordinal: 4
+        column: J
+        source_column_id: total_earned_income_credit_returns
+        expected_column_header_row: 6
+        expected_column_header: "Number of\nreturns"
+        concept: irs_soi.returns_with_total_earned_income_credit
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+      - measure_id: total_earned_income_credit_amount
+        label: Total earned income credit
+        ordinal: 5
+        column: K
+        source_column_id: total_earned_income_credit_amount
+        expected_column_header_row: 6
+        expected_column_header: Amount
+        concept: irs_soi.total_earned_income_credit
+        unit: usd
+        aggregation: sum
+        value_scale: 1000
+        expected_cell_type: number
+      - measure_id: eic_refundable_portion_returns
+        label: Returns with refundable EIC portion
+        ordinal: 6
+        column: P
+        source_column_id: eic_refundable_portion_returns
+        expected_column_header_row: 6
+        expected_column_header: "Number of\nreturns"
+        concept: irs_soi.returns_with_eic_refundable_portion
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+      - measure_id: eic_refundable_portion_amount
+        label: EIC refundable portion
+        ordinal: 7
+        column: Q
+        source_column_id: eic_refundable_portion_amount
+        expected_column_header_row: 6
+        expected_column_header: Amount
+        concept: irs_soi.eic_refundable_portion
+        unit: usd
+        aggregation: sum
+        value_scale: 1000
+        expected_cell_type: number

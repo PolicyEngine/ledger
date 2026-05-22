@@ -1,0 +1,228 @@
+schema_version: arch.source_package.v1
+package_id: slc-student-loan-repayments-england-2025
+label: SLC student loan repayments in England 2024-25
+artifact:
+  source_name: slc
+  source_table: Student Loans in England Financial Year 2024-25 Table 1A
+  resource_package: db
+  resource_directory: data/slc/student_loan_repayments_england_2025
+  manifest: manifest.yaml
+  vintage: student_loans_england_2024_25_corrected
+  extracted_at: '2026-05-10'
+  extraction_method: openpyxl whole-workbook used-range cell parse
+  parser: xlsx_used_range
+record_sets:
+  - record_set_id: slc_student_loans.fy2024_25.england_he_repayments_by_plan
+    record_set_spec_id: slc_student_loans.england_he_repayments_by_plan.v1
+    source_record_id_prefix: slc_student_loans.fy2024_25.england_he_repayments_by_plan
+    sheet_name: Table 1A
+    period_type: fiscal_year
+    period: '2024-25'
+    geography_id: E92000001
+    geography_level: country
+    geography_name: England
+    geography_vintage: current
+    entity: person
+    entity_role: student_loan_borrower
+    domain: uk_student_loans
+    groupby_dimension: uk_student_loans.repayment_plan
+    rows:
+      - value_id: all
+        label: All higher education ICR student loans
+        ordinal: 0
+        row_number: 27
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: Net repayments posted during the financial year [1][3]
+    measures:
+      - measure_id: plan_1
+        label: Plan 1 net repayments posted
+        ordinal: 0
+        column: BB
+        expected_column_header_row: 6
+        expected_column_header: Plan 1
+        concept: uk_student_loans.net_repayments_posted
+        source_concept: slc.net_repayments_posted_during_financial_year_by_repayment_plan
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000
+        expected_cell_type: number
+        filters:
+          uk_student_loans.repayment_plan: plan_1
+        constraints:
+          - variable: uk_student_loans.repayment_plan
+            operator: "=="
+            value: plan_1
+            label: Student loan repayment plan
+      - measure_id: plan_2_full_time
+        label: Plan 2 full-time net repayments posted
+        ordinal: 1
+        column: BC
+        expected_column_header_row: 6
+        expected_column_header: Plan 2 Full-time
+        concept: uk_student_loans.net_repayments_posted
+        source_concept: slc.net_repayments_posted_during_financial_year_by_repayment_plan
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000
+        expected_cell_type: number
+        filters:
+          uk_student_loans.repayment_plan: plan_2
+          uk_student_loans.course_mode: full_time
+        constraints:
+          - variable: uk_student_loans.repayment_plan
+            operator: "=="
+            value: plan_2
+            label: Student loan repayment plan
+          - variable: uk_student_loans.course_mode
+            operator: "=="
+            value: full_time
+            label: Student loan course mode
+      - measure_id: plan_2_part_time
+        label: Plan 2 part-time net repayments posted
+        ordinal: 2
+        column: BD
+        expected_column_header_row: 6
+        expected_column_header: Plan 2 Part-time
+        concept: uk_student_loans.net_repayments_posted
+        source_concept: slc.net_repayments_posted_during_financial_year_by_repayment_plan
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000
+        expected_cell_type: number
+        filters:
+          uk_student_loans.repayment_plan: plan_2
+          uk_student_loans.course_mode: part_time
+        constraints:
+          - variable: uk_student_loans.repayment_plan
+            operator: "=="
+            value: plan_2
+            label: Student loan repayment plan
+          - variable: uk_student_loans.course_mode
+            operator: "=="
+            value: part_time
+            label: Student loan course mode
+      - measure_id: postgraduate_masters
+        label: Postgraduate Masters net repayments posted
+        ordinal: 3
+        column: BE
+        expected_column_header_row: 6
+        expected_column_header: Plan 3 Postgraduate Masters
+        concept: uk_student_loans.net_repayments_posted
+        source_concept: slc.net_repayments_posted_during_financial_year_by_repayment_plan
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000
+        expected_cell_type: number
+        filters:
+          uk_student_loans.repayment_plan: postgraduate
+          uk_student_loans.postgraduate_loan_type: masters
+        constraints:
+          - variable: uk_student_loans.repayment_plan
+            operator: "=="
+            value: postgraduate
+            label: Student loan repayment plan
+          - variable: uk_student_loans.postgraduate_loan_type
+            operator: "=="
+            value: masters
+            label: Student loan postgraduate loan type
+      - measure_id: postgraduate_doctoral
+        label: Postgraduate Doctoral net repayments posted
+        ordinal: 4
+        column: BF
+        expected_column_header_row: 6
+        expected_column_header: Plan 3 Postgraduate Doctoral
+        concept: uk_student_loans.net_repayments_posted
+        source_concept: slc.net_repayments_posted_during_financial_year_by_repayment_plan
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000
+        expected_cell_type: number
+        filters:
+          uk_student_loans.repayment_plan: postgraduate
+          uk_student_loans.postgraduate_loan_type: doctoral
+        constraints:
+          - variable: uk_student_loans.repayment_plan
+            operator: "=="
+            value: postgraduate
+            label: Student loan repayment plan
+          - variable: uk_student_loans.postgraduate_loan_type
+            operator: "=="
+            value: doctoral
+            label: Student loan postgraduate loan type
+      - measure_id: plan_5_full_time
+        label: Plan 5 full-time net repayments posted
+        ordinal: 5
+        column: BG
+        expected_column_header_row: 6
+        expected_column_header: "Plan 5 Full-time\n[29]"
+        concept: uk_student_loans.net_repayments_posted
+        source_concept: slc.net_repayments_posted_during_financial_year_by_repayment_plan
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000
+        expected_cell_type: number
+        filters:
+          uk_student_loans.repayment_plan: plan_5
+          uk_student_loans.course_mode: full_time
+        constraints:
+          - variable: uk_student_loans.repayment_plan
+            operator: "=="
+            value: plan_5
+            label: Student loan repayment plan
+          - variable: uk_student_loans.course_mode
+            operator: "=="
+            value: full_time
+            label: Student loan course mode
+      - measure_id: plan_5_part_time
+        label: Plan 5 part-time net repayments posted
+        ordinal: 6
+        column: BH
+        expected_column_header_row: 6
+        expected_column_header: "Plan 5 Part-time\n[29]"
+        concept: uk_student_loans.net_repayments_posted
+        source_concept: slc.net_repayments_posted_during_financial_year_by_repayment_plan
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000
+        expected_cell_type: number
+        filters:
+          uk_student_loans.repayment_plan: plan_5
+          uk_student_loans.course_mode: part_time
+        constraints:
+          - variable: uk_student_loans.repayment_plan
+            operator: "=="
+            value: plan_5
+            label: Student loan repayment plan
+          - variable: uk_student_loans.course_mode
+            operator: "=="
+            value: part_time
+            label: Student loan course mode
+      - measure_id: total_higher_education
+        label: Total Higher Education net repayments posted
+        ordinal: 7
+        column: BI
+        expected_column_header_row: 6
+        expected_column_header: Total Higher Education
+        concept: uk_student_loans.net_repayments_posted
+        source_concept: slc.net_repayments_posted_during_financial_year
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000
+        expected_cell_type: number

@@ -1,0 +1,99 @@
+schema_version: arch.source_package.v1
+package_id: psca-67th-annual-401k-survey-roth-availability
+label: PSCA 67th Annual Survey Roth contribution availability
+artifact:
+  source_name: psca
+  source_table: PSCA 67th Annual Survey Roth availability press release
+  resource_package: db
+  resource_directory: data/psca/annual_401k_survey_roth_availability_2023
+  manifest: manifest.yaml
+  vintage: plan_year_2023
+  extracted_at: '2026-05-11'
+  extraction_method: HTML tables and numeric document text parse
+  parser: html_tables_and_text
+  artifact_year: 2023
+record_sets:
+- record_set_id: psca.py2023.annual_401k_survey.roth_after_tax_availability
+  record_set_spec_id: psca.annual_401k_survey.roth_after_tax_availability.v1
+  source_record_id_prefix: psca.py2023.annual_401k_survey.roth_after_tax_availability
+  sheet_name: document_numbers
+  period_type: calendar_year
+  period: 2023
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: pension_plan
+  entity_role: defined_contribution_401k_plan
+  domain: employer_retirement_plan_design
+  groupby_dimension: retirement_plan.feature
+  rows:
+  - value_id: roth_after_tax_contributions
+    label: Roth after-tax contributions
+    ordinal: 0
+    row_number: 37
+    filters:
+      retirement_plan.feature: roth_after_tax_contributions
+    constraints:
+    - variable: retirement_plan.feature
+      operator: ==
+      value: roth_after_tax_contributions
+      label: Retirement plan design feature
+    expected_row_header_column: C
+    expected_row_header: 'Roth: Roth after-tax contributions are now available at 93 percent of plans, up from 89 percent in 2022. Twenty-one percent of participants made Roth contributions when given the opportunity.'
+    table_record_kind: detail
+  measures:
+  - measure_id: plan_availability_share
+    label: Share of plans offering the feature
+    ordinal: 0
+    column: E
+    source_column_id: numeric_value
+    expected_column_header_row: 1
+    expected_column_header: numeric_value
+    concept: psca.roth_after_tax_contribution_plan_availability_rate
+    unit: share
+    aggregation: share
+    value_scale: 0.01
+    expected_cell_type: number
+- record_set_id: psca.py2022.annual_401k_survey.roth_after_tax_availability
+  record_set_spec_id: psca.annual_401k_survey.roth_after_tax_availability.v1
+  source_record_id_prefix: psca.py2022.annual_401k_survey.roth_after_tax_availability
+  sheet_name: document_numbers
+  period_type: calendar_year
+  period: 2022
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: pension_plan
+  entity_role: defined_contribution_401k_plan
+  domain: employer_retirement_plan_design
+  groupby_dimension: retirement_plan.feature
+  rows:
+  - value_id: roth_after_tax_contributions
+    label: Roth after-tax contributions
+    ordinal: 0
+    row_number: 38
+    filters:
+      retirement_plan.feature: roth_after_tax_contributions
+    constraints:
+    - variable: retirement_plan.feature
+      operator: ==
+      value: roth_after_tax_contributions
+      label: Retirement plan design feature
+    expected_row_header_column: C
+    expected_row_header: 'Roth: Roth after-tax contributions are now available at 93 percent of plans, up from 89 percent in 2022. Twenty-one percent of participants made Roth contributions when given the opportunity.'
+    table_record_kind: detail
+  measures:
+  - measure_id: plan_availability_share
+    label: Share of plans offering the feature
+    ordinal: 0
+    column: E
+    source_column_id: numeric_value
+    expected_column_header_row: 1
+    expected_column_header: numeric_value
+    concept: psca.roth_after_tax_contribution_plan_availability_rate
+    unit: share
+    aggregation: share
+    value_scale: 0.01
+    expected_cell_type: number

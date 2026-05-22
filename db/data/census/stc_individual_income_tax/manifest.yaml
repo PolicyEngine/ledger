@@ -1,0 +1,33 @@
+source_id: census_stc
+package_id: census-stc-individual-income-tax
+dataset: census_stc_individual_income_tax
+source_page: https://www.census.gov/programs-surveys/stc/data/datasets.html
+vintage: FY 2023-2024
+table: Annual Survey of State Government Tax Collections
+files:
+  2023:
+    filename: FY2023-Flat-File.txt
+    source_url: https://www2.census.gov/programs-surveys/stc/datasets/2023/FY2023-Flat-File.txt
+    sha256: 45b8c87870ad02e6015f89097b48786aa95ef6be1fae9e32a223e5cb62406623
+    size_bytes: 7923
+    source_table: FY2023 STC Flat File item T40 Individual Income Taxes
+    year: 2023
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/census_stc/census-stc-individual-income-tax/2023/45b8c87870ad02e6015f89097b48786aa95ef6be1fae9e32a223e5cb62406623/FY2023-Flat-File.txt
+        uri: r2://arch-raw/raw/census_stc/census-stc-individual-income-tax/2023/45b8c87870ad02e6015f89097b48786aa95ef6be1fae9e32a223e5cb62406623/FY2023-Flat-File.txt
+  2024:
+    filename: FY2024-Flat-File.txt
+    source_url: https://www2.census.gov/programs-surveys/stc/datasets/2024/FY2024-Flat-File.txt
+    sha256: ffe44ad5bdf003c54d2d283fa15d12ba853b5a7d7fcd7278d320b900ef081b84
+    size_bytes: 7966
+    source_table: FY2024 STC Flat File item T40 Individual Income Taxes
+    year: 2024
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/census_stc/census-stc-individual-income-tax/2024/ffe44ad5bdf003c54d2d283fa15d12ba853b5a7d7fcd7278d320b900ef081b84/FY2024-Flat-File.txt
+        uri: r2://arch-raw/raw/census_stc/census-stc-individual-income-tax/2024/ffe44ad5bdf003c54d2d283fa15d12ba853b5a7d7fcd7278d320b900ef081b84/FY2024-Flat-File.txt

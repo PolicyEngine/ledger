@@ -1,0 +1,130 @@
+schema_version: arch.source_package.v1
+package_id: scotgov-scottish-budget-social-security-assistance-2026
+label: Scottish Budget social security assistance 2026
+artifact:
+  source_name: scottish_government
+  source_table: Scottish Budget 2026 to 2027 Table 5.08 Social Security Assistance Level 3
+  resource_package: db
+  resource_directory: data/scottish_government/scottish_budget_social_security_assistance_2026
+  manifest: manifest.yaml
+  vintage: scottish_budget_2026_2027
+  extracted_at: '2026-05-10'
+  extraction_method: html table parse from official gov.scot publication page
+  parser: html_tables_and_text
+  artifact_year: 2026
+record_sets:
+  - record_set_id: scotgov_budget.fy{year}.social_security_assistance.scottish_child_payment
+    record_set_spec_id: scotgov_budget.social_security_assistance.scottish_child_payment.v1
+    source_record_id_prefix: scotgov_budget.fy{year}.social_security_assistance.scottish_child_payment
+    sheet_name: table_9
+    period_type: fiscal_year
+    period_by_year:
+      2024: 2024-25
+      2025: 2025-26
+      2026: 2026-27
+    geography_id: S92000003
+    geography_level: region
+    geography_name: Scotland
+    geography_vintage: current
+    entity: government
+    entity_role: scottish_devolved_government
+    domain: uk_social_security
+    groupby_dimension: uk_social_security.benefit
+    rows:
+      - value_id: scottish_child_payment
+        label: Scottish Child Payment
+        ordinal: 0
+        row_number: 16
+        filters:
+          uk_social_security.benefit: scottish_child_payment
+          uk_public_sector.budget_portfolio: social_justice
+          uk_public_sector.budget_level_2: social_security_assistance
+        constraints:
+          - variable: uk_social_security.benefit
+            operator: "=="
+            value: scottish_child_payment
+            label: Scottish social security benefit
+          - variable: uk_public_sector.budget_portfolio
+            operator: "=="
+            value: social_justice
+            label: Scottish Budget portfolio
+          - variable: uk_public_sector.budget_level_2
+            operator: "=="
+            value: social_security_assistance
+            label: Scottish Budget level 2
+        expected_row_header_column: A
+        expected_row_header: Scottish Child Payment
+    measures:
+      - measure_id: spend
+        label: Spend
+        ordinal: 0
+        column_by_year:
+          2024: B
+          2025: C
+          2026: D
+        expected_column_header_row: 1
+        expected_column_header_by_year:
+          2024: 2024-25 Outturn £m
+          2025: 2025-26 ABR Budget £m
+          2026: 2026-27 Budget £m
+        concept: uk_public_sector.scottish_child_payment_expenditure
+        source_concept: scottish_government.scottish_child_payment_spend
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000
+        expected_cell_type: number
+  - record_set_id: scotgov_budget.fy2027_28.social_security_assistance.scottish_child_payment_under_1_children
+    record_set_spec_id: scotgov_budget.social_security_assistance.scottish_child_payment_under_1_children.v1
+    source_record_id_prefix: scotgov_budget.fy2027_28.social_security_assistance.scottish_child_payment_under_1_children
+    sheet_name: document_numbers
+    period_type: fiscal_year
+    period: 2027-28
+    geography_id: S92000003
+    geography_level: region
+    geography_name: Scotland
+    geography_vintage: current
+    entity: person
+    entity_role: child_recipient
+    domain: uk_social_security
+    groupby_dimension: uk_social_security.benefit
+    rows:
+      - value_id: scottish_child_payment_under_1
+        label: Scottish Child Payment children under 1
+        ordinal: 0
+        row_number: 39
+        filters:
+          uk_social_security.benefit: scottish_child_payment
+        constraints:
+          - variable: uk_social_security.benefit
+            operator: "=="
+            value: scottish_child_payment
+            label: Scottish social security benefit
+          - variable: person.age
+            operator: <
+            value: 1
+            unit: years
+            label: Child age upper bound
+        expected_row_header_column: D
+        expected_row_header: "12,000"
+        guard_cells:
+          - column: B
+            row: start
+            expected_value: p
+            label: document paragraph
+    measures:
+      - measure_id: recipient_child_count
+        label: Recipient children
+        ordinal: 0
+        column: E
+        source_column_id: numeric_value
+        expected_column_header_row: 1
+        expected_column_header: numeric_value
+        concept: uk_social_security.scottish_child_payment_under_1_recipient_children
+        source_concept: scottish_government.scottish_child_payment_under_1_recipient_children_estimate
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        expected_cell_type: number

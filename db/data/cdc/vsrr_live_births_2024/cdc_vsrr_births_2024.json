@@ -1,0 +1,312 @@
+[{"state":"ALABAMA","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"4544"}
+,{"state":"ALASKA","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"704"}
+,{"state":"ARIZONA","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"6081"}
+,{"state":"ARKANSAS","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"2821"}
+,{"state":"CALIFORNIA","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"31787"}
+,{"state":"COLORADO","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"5167"}
+,{"state":"CONNECTICUT","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"2828"}
+,{"state":"DELAWARE","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"906"}
+,{"state":"DISTRICT OF COLUMBIA","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"598"}
+,{"state":"FLORIDA","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"17373"}
+,{"state":"GEORGIA","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"9851"}
+,{"state":"HAWAII","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"1211"}
+,{"state":"IDAHO","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"1954"}
+,{"state":"ILLINOIS","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"10200"}
+,{"state":"INDIANA","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"6517"}
+,{"state":"IOWA","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"2963"}
+,{"state":"KANSAS","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"2762"}
+,{"state":"KENTUCKY","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"4275"}
+,{"state":"LOUISIANA","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"4080"}
+,{"state":"MAINE","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"964"}
+,{"state":"MARYLAND","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"5244"}
+,{"state":"MASSACHUSETTS","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"5562"}
+,{"state":"MICHIGAN","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"8212"}
+,{"state":"MINNESOTA","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"5140"}
+,{"state":"MISSISSIPPI","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"2456"}
+,{"state":"MISSOURI","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"5447"}
+,{"state":"MONTANA","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"935"}
+,{"state":"NEBRASKA","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"2069"}
+,{"state":"NEVADA","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"2521"}
+,{"state":"NEW HAMPSHIRE","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"937"}
+,{"state":"NEW JERSEY","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"8156"}
+,{"state":"NEW MEXICO","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"1721"}
+,{"state":"NEW YORK","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"9200"}
+,{"state":"NORTH CAROLINA","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"9767"}
+,{"state":"NORTH DAKOTA","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"809"}
+,{"state":"OHIO","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"10328"}
+,{"state":"OKLAHOMA","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"3858"}
+,{"state":"OREGON","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"3201"}
+,{"state":"PENNSYLVANIA","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"10276"}
+,{"state":"PUERTO RICO","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"1441"}
+,{"state":"RHODE ISLAND","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"804"}
+,{"state":"SOUTH CAROLINA","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"4572"}
+,{"state":"SOUTH DAKOTA","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"979"}
+,{"state":"TENNESSEE","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"6562"}
+,{"state":"TEXAS","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"30016"}
+,{"state":"UTAH","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"3887"}
+,{"state":"VERMONT","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"428"}
+,{"state":"VIRGINIA","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"7565"}
+,{"state":"WASHINGTON","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"6649"}
+,{"state":"WEST VIRGINIA","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"1331"}
+,{"state":"WISCONSIN","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"4894"}
+,{"state":"WYOMING","year":"2024","month":"April","period":"Monthly","indicator":"Number of Live Births","data_value":"512"}
+,{"state":"ALABAMA","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"4485"}
+,{"state":"ALASKA","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"735"}
+,{"state":"ARIZONA","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"6120"}
+,{"state":"ARKANSAS","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"2790"}
+,{"state":"CALIFORNIA","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"31146"}
+,{"state":"COLORADO","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"5013"}
+,{"state":"CONNECTICUT","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"2732"}
+,{"state":"DELAWARE","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"802"}
+,{"state":"DISTRICT OF COLUMBIA","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"607"}
+,{"state":"FLORIDA","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"17527"}
+,{"state":"GEORGIA","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"9986"}
+,{"state":"HAWAII","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"1216"}
+,{"state":"IDAHO","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"1730"}
+,{"state":"ILLINOIS","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"9672"}
+,{"state":"INDIANA","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"6334"}
+,{"state":"IOWA","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"2733"}
+,{"state":"KANSAS","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"2652"}
+,{"state":"KENTUCKY","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"4167"}
+,{"state":"LOUISIANA","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"4252"}
+,{"state":"MAINE","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"901"}
+,{"state":"MARYLAND","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"5145"}
+,{"state":"MASSACHUSETTS","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"5326"}
+,{"state":"MICHIGAN","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"7707"}
+,{"state":"MINNESOTA","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"4861"}
+,{"state":"MISSISSIPPI","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"2684"}
+,{"state":"MISSOURI","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"5377"}
+,{"state":"MONTANA","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"916"}
+,{"state":"NEBRASKA","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"2012"}
+,{"state":"NEVADA","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"2587"}
+,{"state":"NEW HAMPSHIRE","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"991"}
+,{"state":"NEW JERSEY","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"7899"}
+,{"state":"NEW MEXICO","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"1664"}
+,{"state":"NEW YORK","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"8847"}
+,{"state":"NORTH CAROLINA","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"9504"}
+,{"state":"NORTH DAKOTA","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"734"}
+,{"state":"OHIO","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"9980"}
+,{"state":"OKLAHOMA","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"3703"}
+,{"state":"OREGON","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"2931"}
+,{"state":"PENNSYLVANIA","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"9817"}
+,{"state":"PUERTO RICO","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"1416"}
+,{"state":"RHODE ISLAND","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"738"}
+,{"state":"SOUTH CAROLINA","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"4496"}
+,{"state":"SOUTH DAKOTA","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"884"}
+,{"state":"TENNESSEE","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"6520"}
+,{"state":"TEXAS","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"30204"}
+,{"state":"UTAH","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"3620"}
+,{"state":"VERMONT","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"383"}
+,{"state":"VIRGINIA","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"7409"}
+,{"state":"WASHINGTON","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"6398"}
+,{"state":"WEST VIRGINIA","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"1338"}
+,{"state":"WISCONSIN","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"4747"}
+,{"state":"WYOMING","year":"2024","month":"February","period":"Monthly","indicator":"Number of Live Births","data_value":"470"}
+,{"state":"ALABAMA","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"4932"}
+,{"state":"ALASKA","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"753"}
+,{"state":"ARIZONA","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"6522"}
+,{"state":"ARKANSAS","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"2984"}
+,{"state":"CALIFORNIA","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"32790"}
+,{"state":"COLORADO","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"5123"}
+,{"state":"CONNECTICUT","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"2726"}
+,{"state":"DELAWARE","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"857"}
+,{"state":"DISTRICT OF COLUMBIA","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"625"}
+,{"state":"FLORIDA","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"18432"}
+,{"state":"GEORGIA","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"10496"}
+,{"state":"HAWAII","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"1233"}
+,{"state":"IDAHO","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"1803"}
+,{"state":"ILLINOIS","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"10210"}
+,{"state":"INDIANA","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"6422"}
+,{"state":"IOWA","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"3040"}
+,{"state":"KANSAS","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"2812"}
+,{"state":"KENTUCKY","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"4425"}
+,{"state":"LOUISIANA","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"4433"}
+,{"state":"MAINE","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"931"}
+,{"state":"MARYLAND","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"5473"}
+,{"state":"MASSACHUSETTS","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"5441"}
+,{"state":"MICHIGAN","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"7973"}
+,{"state":"MINNESOTA","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"4772"}
+,{"state":"MISSISSIPPI","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"2841"}
+,{"state":"MISSOURI","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"5691"}
+,{"state":"MONTANA","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"888"}
+,{"state":"NEBRASKA","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"2047"}
+,{"state":"NEVADA","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"2585"}
+,{"state":"NEW HAMPSHIRE","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"951"}
+,{"state":"NEW JERSEY","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"8298"}
+,{"state":"NEW MEXICO","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"1761"}
+,{"state":"NEW YORK","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"9150"}
+,{"state":"NORTH CAROLINA","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"10160"}
+,{"state":"NORTH DAKOTA","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"778"}
+,{"state":"OHIO","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"10219"}
+,{"state":"OKLAHOMA","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"3914"}
+,{"state":"OREGON","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"3107"}
+,{"state":"PENNSYLVANIA","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"10642"}
+,{"state":"PUERTO RICO","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"1582"}
+,{"state":"RHODE ISLAND","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"823"}
+,{"state":"SOUTH CAROLINA","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"4898"}
+,{"state":"SOUTH DAKOTA","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"960"}
+,{"state":"TENNESSEE","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"6724"}
+,{"state":"TEXAS","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"32376"}
+,{"state":"UTAH","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"3718"}
+,{"state":"VERMONT","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"403"}
+,{"state":"VIRGINIA","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"7719"}
+,{"state":"WASHINGTON","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"6623"}
+,{"state":"WEST VIRGINIA","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"1392"}
+,{"state":"WISCONSIN","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"4664"}
+,{"state":"WYOMING","year":"2024","month":"January","period":"Monthly","indicator":"Number of Live Births","data_value":"492"}
+,{"state":"ALABAMA","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"4518"}
+,{"state":"ALASKA","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"696"}
+,{"state":"ARIZONA","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"6045"}
+,{"state":"ARKANSAS","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"2748"}
+,{"state":"CALIFORNIA","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"32268"}
+,{"state":"COLORADO","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"5217"}
+,{"state":"CONNECTICUT","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"2689"}
+,{"state":"DELAWARE","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"889"}
+,{"state":"DISTRICT OF COLUMBIA","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"627"}
+,{"state":"FLORIDA","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"16949"}
+,{"state":"GEORGIA","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"9897"}
+,{"state":"HAWAII","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"1141"}
+,{"state":"IDAHO","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"1970"}
+,{"state":"ILLINOIS","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"10455"}
+,{"state":"INDIANA","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"6494"}
+,{"state":"IOWA","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"2979"}
+,{"state":"KANSAS","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"2681"}
+,{"state":"KENTUCKY","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"4329"}
+,{"state":"LOUISIANA","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"4060"}
+,{"state":"MAINE","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"933"}
+,{"state":"MARYLAND","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"5322"}
+,{"state":"MASSACHUSETTS","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"5652"}
+,{"state":"MICHIGAN","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"8526"}
+,{"state":"MINNESOTA","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"5083"}
+,{"state":"MISSISSIPPI","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"2705"}
+,{"state":"MISSOURI","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"5468"}
+,{"state":"MONTANA","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"933"}
+,{"state":"NEBRASKA","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"2024"}
+,{"state":"NEVADA","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"2633"}
+,{"state":"NEW HAMPSHIRE","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"1003"}
+,{"state":"NEW JERSEY","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"8094"}
+,{"state":"NEW MEXICO","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"1534"}
+,{"state":"NEW YORK","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"9197"}
+,{"state":"NORTH CAROLINA","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"9747"}
+,{"state":"NORTH DAKOTA","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"806"}
+,{"state":"OHIO","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"10574"}
+,{"state":"OKLAHOMA","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"3775"}
+,{"state":"OREGON","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"3235"}
+,{"state":"PENNSYLVANIA","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"10478"}
+,{"state":"PUERTO RICO","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"1255"}
+,{"state":"RHODE ISLAND","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"884"}
+,{"state":"SOUTH CAROLINA","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"4767"}
+,{"state":"SOUTH DAKOTA","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"930"}
+,{"state":"TENNESSEE","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"6837"}
+,{"state":"TEXAS","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"30467"}
+,{"state":"UTAH","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"3928"}
+,{"state":"VERMONT","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"413"}
+,{"state":"VIRGINIA","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"7471"}
+,{"state":"WASHINGTON","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"6906"}
+,{"state":"WEST VIRGINIA","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"1324"}
+,{"state":"WISCONSIN","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"5008"}
+,{"state":"WYOMING","year":"2024","month":"June","period":"Monthly","indicator":"Number of Live Births","data_value":"514"}
+,{"state":"ALABAMA","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"4640"}
+,{"state":"ALASKA","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"771"}
+,{"state":"ARIZONA","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"6669"}
+,{"state":"ARKANSAS","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"2764"}
+,{"state":"CALIFORNIA","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"33199"}
+,{"state":"COLORADO","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"5311"}
+,{"state":"CONNECTICUT","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"2865"}
+,{"state":"DELAWARE","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"841"}
+,{"state":"DISTRICT OF COLUMBIA","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"647"}
+,{"state":"FLORIDA","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"17953"}
+,{"state":"GEORGIA","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"10456"}
+,{"state":"HAWAII","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"1201"}
+,{"state":"IDAHO","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"1880"}
+,{"state":"ILLINOIS","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"10257"}
+,{"state":"INDIANA","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"6738"}
+,{"state":"IOWA","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"3113"}
+,{"state":"KANSAS","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"2820"}
+,{"state":"KENTUCKY","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"4300"}
+,{"state":"LOUISIANA","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"4281"}
+,{"state":"MAINE","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"973"}
+,{"state":"MARYLAND","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"5526"}
+,{"state":"MASSACHUSETTS","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"5688"}
+,{"state":"MICHIGAN","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"8378"}
+,{"state":"MINNESOTA","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"5067"}
+,{"state":"MISSISSIPPI","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"2731"}
+,{"state":"MISSOURI","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"5498"}
+,{"state":"MONTANA","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"955"}
+,{"state":"NEBRASKA","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"2001"}
+,{"state":"NEVADA","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"2637"}
+,{"state":"NEW HAMPSHIRE","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"965"}
+,{"state":"NEW JERSEY","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"8463"}
+,{"state":"NEW MEXICO","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"1770"}
+,{"state":"NEW YORK","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"9297"}
+,{"state":"NORTH CAROLINA","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"9988"}
+,{"state":"NORTH DAKOTA","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"816"}
+,{"state":"OHIO","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"10445"}
+,{"state":"OKLAHOMA","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"3900"}
+,{"state":"OREGON","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"3269"}
+,{"state":"PENNSYLVANIA","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"10727"}
+,{"state":"PUERTO RICO","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"1429"}
+,{"state":"RHODE ISLAND","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"855"}
+,{"state":"SOUTH CAROLINA","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"4746"}
+,{"state":"SOUTH DAKOTA","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"959"}
+,{"state":"TENNESSEE","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"6816"}
+,{"state":"TEXAS","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"30759"}
+,{"state":"UTAH","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"3909"}
+,{"state":"VERMONT","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"436"}
+,{"state":"VIRGINIA","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"7814"}
+,{"state":"WASHINGTON","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"6964"}
+,{"state":"WEST VIRGINIA","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"1381"}
+,{"state":"WISCONSIN","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"4941"}
+,{"state":"WYOMING","year":"2024","month":"March","period":"Monthly","indicator":"Number of Live Births","data_value":"522"}
+,{"state":"ALABAMA","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"4752"}
+,{"state":"ALASKA","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"767"}
+,{"state":"ARIZONA","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"6182"}
+,{"state":"ARKANSAS","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"2875"}
+,{"state":"CALIFORNIA","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"32892"}
+,{"state":"COLORADO","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"5495"}
+,{"state":"CONNECTICUT","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"3049"}
+,{"state":"DELAWARE","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"890"}
+,{"state":"DISTRICT OF COLUMBIA","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"662"}
+,{"state":"FLORIDA","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"17826"}
+,{"state":"GEORGIA","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"10275"}
+,{"state":"HAWAII","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"1224"}
+,{"state":"IDAHO","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"2094"}
+,{"state":"ILLINOIS","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"10698"}
+,{"state":"INDIANA","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"6666"}
+,{"state":"IOWA","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"3104"}
+,{"state":"KANSAS","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"2801"}
+,{"state":"KENTUCKY","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"4462"}
+,{"state":"LOUISIANA","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"4186"}
+,{"state":"MAINE","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"975"}
+,{"state":"MARYLAND","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"5558"}
+,{"state":"MASSACHUSETTS","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"5858"}
+,{"state":"MICHIGAN","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"8701"}
+,{"state":"MINNESOTA","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"5393"}
+,{"state":"MISSISSIPPI","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"2666"}
+,{"state":"MISSOURI","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"5685"}
+,{"state":"MONTANA","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"1048"}
+,{"state":"NEBRASKA","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"2206"}
+,{"state":"NEVADA","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"2583"}
+,{"state":"NEW HAMPSHIRE","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"994"}
+,{"state":"NEW JERSEY","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"8554"}
+,{"state":"NEW MEXICO","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"1636"}
+,{"state":"NEW YORK","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"9687"}
+,{"state":"NORTH CAROLINA","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"10222"}
+,{"state":"NORTH DAKOTA","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"856"}
+,{"state":"OHIO","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"10809"}
+,{"state":"OKLAHOMA","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"3981"}
+,{"state":"OREGON","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"3338"}
+,{"state":"PENNSYLVANIA","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"10727"}
+,{"state":"PUERTO RICO","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"1354"}
+,{"state":"RHODE ISLAND","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"879"}
+,{"state":"SOUTH CAROLINA","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"4831"}
+,{"state":"SOUTH DAKOTA","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"1025"}
+,{"state":"TENNESSEE","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"7082"}
+,{"state":"TEXAS","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"31507"}
+,{"state":"UTAH","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"3976"}
+,{"state":"VERMONT","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"451"}
+,{"state":"VIRGINIA","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"7870"}
+,{"state":"WASHINGTON","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"7207"}
+,{"state":"WEST VIRGINIA","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"1384"}
+,{"state":"WISCONSIN","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"5233"}
+,{"state":"WYOMING","year":"2024","month":"May","period":"Monthly","indicator":"Number of Live Births","data_value":"512"}]

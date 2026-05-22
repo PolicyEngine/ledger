@@ -1,6 +1,7 @@
 """CLI for managing Arch target input data."""
 
 import argparse
+import json
 from pathlib import Path
 
 from sqlalchemy import func
@@ -43,6 +44,15 @@ def cmd_load(args):
             load_soi_state_targets(session, years=years)
             print(f"Loaded state-level SOI targets for years: {years or 'all available'}")
 
+        if args.source == "soi-historic-table-2" or args.source == "all":
+            from .etl_soi_historic_table_2 import load_soi_historic_table_2_targets
+            years = [int(y) for y in args.years.split(",")] if args.years else None
+            load_soi_historic_table_2_targets(session, years=years)
+            print(
+                "Loaded SOI Historic Table 2 targets for years: "
+                f"{years or 'all available'}"
+            )
+
         if args.source == "soi-credits" or args.source == "all":
             from .etl_soi_credits import load_soi_credits_targets
             years = [int(y) for y in args.years.split(",")] if args.years else None
@@ -55,6 +65,24 @@ def cmd_load(args):
             load_soi_income_sources_targets(session, years=years)
             print(f"Loaded SOI income sources targets for years: {years or 'all available'}")
 
+        if args.source == "soi-w2" or args.source == "all":
+            from .etl_soi_w2 import load_soi_w2_targets
+            years = [int(y) for y in args.years.split(",")] if args.years else None
+            load_soi_w2_targets(session, years=years)
+            print(
+                "Loaded SOI Form W-2 statistics targets for years: "
+                f"{years or 'all available'}"
+            )
+
+        if args.source == "soi-ira" or args.source == "all":
+            from .etl_soi_ira import load_soi_ira_targets
+            years = [int(y) for y in args.years.split(",")] if args.years else None
+            load_soi_ira_targets(session, years=years)
+            print(
+                "Loaded SOI IRA contribution targets for years: "
+                f"{years or 'all available'}"
+            )
+
         if args.source == "soi-deductions" or args.source == "all":
             from .etl_soi_deductions import load_soi_deductions_targets
             years = [int(y) for y in args.years.split(",")] if args.years else None
@@ -64,7 +92,7 @@ def cmd_load(args):
         if args.source == "snap" or args.source == "all":
             from .etl_snap import load_snap_targets
             years = [int(y) for y in args.years.split(",")] if args.years else None
-            load_snap_targets(session, years=years)
+            load_snap_targets(session, years=years, source_zip=args.snap_fns_zip)
             print(f"Loaded SNAP targets for years: {years or 'all available'}")
 
         if args.source == "medicaid" or args.source == "all":
@@ -73,11 +101,26 @@ def cmd_load(args):
             load_medicaid_targets(session, years=years)
             print(f"Loaded Medicaid targets for years: {years or 'all available'}")
 
+        if args.source == "cms-nhe" or args.source == "all":
+            from .etl_cms_nhe import load_cms_nhe_targets
+            years = [int(y) for y in args.years.split(",")] if args.years else None
+            load_cms_nhe_targets(session, years=years)
+            print(f"Loaded CMS NHE targets for years: {years or 'all available'}")
+
         if args.source == "aca" or args.source == "all":
             from .etl_aca_enrollment import load_aca_enrollment_targets
             years = [int(y) for y in args.years.split(",")] if args.years else None
             load_aca_enrollment_targets(session, years=years)
             print(f"Loaded ACA Marketplace targets for years: {years or 'all available'}")
+
+        if args.source == "aca-oep-state" or args.source == "all":
+            from .etl_cms_aca_oep import load_cms_aca_oep_targets
+            years = [int(y) for y in args.years.split(",")] if args.years else None
+            load_cms_aca_oep_targets(session, years=years)
+            print(
+                "Loaded CMS ACA OEP state-level targets for years: "
+                f"{years or 'all available'}"
+            )
 
         if args.source == "hmrc" or args.source == "all":
             from .etl_hmrc import load_hmrc_targets
@@ -91,17 +134,50 @@ def cmd_load(args):
             load_census_targets(session, years=years)
             print(f"Loaded Census targets for years: {years or 'all available'}")
 
+        if args.source == "census-pep" or args.source == "all":
+            from .etl_census_pep import load_census_pep_population_targets
+            years = [int(y) for y in args.years.split(",")] if args.years else None
+            load_census_pep_population_targets(session, years=years)
+            print(
+                "Loaded Census PEP population targets for years: "
+                f"{years or 'all available'}"
+            )
+
+        if args.source == "census-stc" or args.source == "all":
+            from .etl_census_stc import load_census_stc_income_tax_targets
+            years = [int(y) for y in args.years.split(",")] if args.years else None
+            load_census_stc_income_tax_targets(session, years=years)
+            print(
+                "Loaded Census STC state income-tax targets for years: "
+                f"{years or 'all available'}"
+            )
+
         if args.source == "ssa" or args.source == "all":
             from .etl_ssa import load_ssa_targets
             years = [int(y) for y in args.years.split(",")] if args.years else None
             load_ssa_targets(session, years=years)
             print(f"Loaded SSA targets for years: {years or 'all available'}")
 
+        if args.source == "ssa-supplement" or args.source == "all":
+            from .etl_ssa_supplement import load_ssa_supplement_targets
+            years = [int(y) for y in args.years.split(",")] if args.years else None
+            load_ssa_supplement_targets(session, years=years)
+            print(
+                "Loaded SSA Annual Statistical Supplement targets for years: "
+                f"{years or 'all available'}"
+            )
+
         if args.source == "ssi" or args.source == "all":
             from .etl_ssi import load_ssi_targets
             years = [int(y) for y in args.years.split(",")] if args.years else None
             load_ssi_targets(session, years=years)
             print(f"Loaded SSI targets for years: {years or 'all available'}")
+
+        if args.source == "tanf" or args.source == "all":
+            from .etl_tanf import load_tanf_targets
+            years = [int(y) for y in args.years.split(",")] if args.years else None
+            load_tanf_targets(session, years=years)
+            print(f"Loaded TANF targets for years: {years or 'all available'}")
 
         if args.source == "bls" or args.source == "all":
             from .etl_bls import load_bls_targets
@@ -182,6 +258,7 @@ def cmd_load_source_files(args):
         pe_uk_root=Path(args.pe_uk_root),
         include_us=include_us,
         include_uk=include_uk,
+        include_missing_local=False,
     )
     if args.limit:
         specs = specs[: args.limit]
@@ -237,6 +314,69 @@ def cmd_source_stats(args):
         print(f"  {source_id}: {count:,}")
 
 
+def cmd_source_manifest(args):
+    """Export a checklist of PolicyEngine source artifacts."""
+    db_path = Path(args.db) if args.db else DEFAULT_DB_PATH
+
+    if args.inventory != "pe":
+        raise ValueError(f"Unsupported source-file inventory: {args.inventory}")
+
+    from .pe_source_inventory import (
+        pe_source_manifest_rows,
+        pe_source_specs,
+        write_pe_source_manifest_csv,
+        write_pe_source_manifest_markdown,
+    )
+
+    include_us = args.jurisdiction in {"all", "us"}
+    include_uk = args.jurisdiction in {"all", "uk"}
+    specs = pe_source_specs(
+        pe_us_root=Path(args.pe_us_root),
+        pe_uk_root=Path(args.pe_uk_root),
+        include_us=include_us,
+        include_uk=include_uk,
+    )
+    rows = pe_source_manifest_rows(
+        specs,
+        arch_db_path=db_path,
+        pe_us_root=Path(args.pe_us_root),
+        pe_uk_root=Path(args.pe_uk_root),
+    )
+
+    output = Path(args.output or f"docs/pe-{args.jurisdiction}-source-manifest.csv")
+    markdown = Path(
+        args.markdown or f"docs/pe-{args.jurisdiction}-source-manifest.md"
+    )
+    write_pe_source_manifest_csv(rows, output)
+    write_pe_source_manifest_markdown(rows, markdown)
+
+    done = sum(row["status"] == "done" for row in rows)
+    print(f"Wrote {len(rows)} source manifest rows to {output}")
+    print(f"Wrote Markdown checklist to {markdown}")
+    print(f"Parsed in Arch: {done}/{len(rows)}")
+
+
+def cmd_rollup_state_to_national(args):
+    """Create national target rows from complete state-level target rows."""
+    db_path = Path(args.db) if args.db else DEFAULT_DB_PATH
+    engine = get_engine(db_path)
+
+    from .rollups import roll_up_state_targets_to_national
+
+    variables = [variable.strip() for variable in args.variables.split(",")]
+    years = [int(year) for year in args.years.split(",")] if args.years else None
+    with Session(engine) as session:
+        results = roll_up_state_targets_to_national(
+            session,
+            source=args.source,
+            variables=variables,
+            years=years,
+            min_state_count=args.min_state_count,
+        )
+
+    print(json.dumps([result.to_dict() for result in results], indent=2))
+
+
 def cmd_query(args):
     """Query targets."""
     db_path = Path(args.db) if args.db else DEFAULT_DB_PATH
@@ -290,16 +430,25 @@ def main():
         choices=[
             "soi",
             "soi-state",
+            "soi-historic-table-2",
             "soi-credits",
             "soi-income-sources",
+            "soi-w2",
+            "soi-ira",
             "soi-deductions",
             "snap",
             "medicaid",
+            "cms-nhe",
             "aca",
+            "aca-oep-state",
             "hmrc",
             "census",
+            "census-pep",
+            "census-stc",
             "ssa",
+            "ssa-supplement",
             "ssi",
+            "tanf",
             "bls",
             "cps",
             "cbo",
@@ -312,6 +461,11 @@ def main():
     load_parser.add_argument(
         "--years",
         help="Comma-separated years to load (default: all)"
+    )
+    load_parser.add_argument(
+        "--snap-fns-zip",
+        type=Path,
+        help="USDA FNS SNAP FY workbook ZIP to use when loading SNAP",
     )
     load_parser.set_defaults(func=cmd_load)
 
@@ -357,6 +511,71 @@ def main():
         "source-stats", help="Show source artifact statistics"
     )
     source_stats_parser.set_defaults(func=cmd_source_stats)
+
+    # source-manifest
+    manifest_parser = subparsers.add_parser(
+        "source-manifest",
+        help="Export a PolicyEngine source-artifact checklist",
+    )
+    manifest_parser.add_argument(
+        "inventory",
+        choices=["pe"],
+        help="Source-file inventory to export",
+    )
+    manifest_parser.add_argument(
+        "--jurisdiction",
+        choices=["all", "us", "uk"],
+        default="all",
+        help="Limit the source-file inventory",
+    )
+    manifest_parser.add_argument(
+        "--pe-us-root",
+        default="/Users/maxghenis/PolicyEngine/policyengine-us-data",
+        help="Path to the policyengine-us-data checkout",
+    )
+    manifest_parser.add_argument(
+        "--pe-uk-root",
+        default="/Users/maxghenis/PolicyEngine/policyengine-uk-data",
+        help="Path to the policyengine-uk-data checkout",
+    )
+    manifest_parser.add_argument(
+        "--output",
+        default=None,
+        help="CSV path to write",
+    )
+    manifest_parser.add_argument(
+        "--markdown",
+        default=None,
+        help="Markdown checklist path to write",
+    )
+    manifest_parser.set_defaults(func=cmd_source_manifest)
+
+    # rollup-state-to-national
+    rollup_parser = subparsers.add_parser(
+        "rollup-state-to-national",
+        help="Create national target rows by summing state target rows",
+    )
+    rollup_parser.add_argument(
+        "--source",
+        required=True,
+        help="Target source enum name or value, e.g. IRS_SOI or irs-soi",
+    )
+    rollup_parser.add_argument(
+        "--variables",
+        required=True,
+        help="Comma-separated target variables to roll up",
+    )
+    rollup_parser.add_argument(
+        "--years",
+        help="Comma-separated years to roll up (default: all)",
+    )
+    rollup_parser.add_argument(
+        "--min-state-count",
+        type=int,
+        default=50,
+        help="Minimum distinct state_fips rows required for a rollup",
+    )
+    rollup_parser.set_defaults(func=cmd_rollup_state_to_national)
 
     # query
     query_parser = subparsers.add_parser("query", help="Query targets")

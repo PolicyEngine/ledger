@@ -1,0 +1,200 @@
+schema_version: arch.source_package.v1
+package_id: slc-student-support-england-2025
+label: SLC student support for higher education in England 2025
+artifact:
+  source_name: slc
+  source_table: Student support for higher education in England 2025
+  resource_package: db
+  resource_directory: data/slc/student_support_england_2025
+  manifest: manifest.yaml
+  vintage: student_support_england_2025
+  extracted_at: '2026-05-10'
+  extraction_method: openpyxl whole-workbook used-range cell parse
+  parser: xlsx_used_range
+record_sets:
+  - record_set_id: slc_student_support.cy{year}.maintenance_loan_recipients
+    record_set_spec_id: slc_student_support.maintenance_loan_recipients.v1
+    source_record_id_prefix: slc_student_support.cy{year}.maintenance_loan_recipients
+    sheet_name: Table 3A
+    period_type: calendar_year
+    period: '{year}'
+    geography_id: E92000001
+    geography_level: country
+    geography_name: England
+    geography_vintage: current
+    entity: person
+    entity_role: full_time_undergraduate_student
+    domain: uk_student_support
+    groupby_dimension: slc.student_support_line
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 13
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: "Grand total "
+    measures:
+      - measure_id: recipients
+        label: Maintenance loan recipients
+        ordinal: 0
+        column: P
+        expected_column_header_row: 8
+        expected_column_header: 2024/25
+        concept: uk_student_support.maintenance_loan_recipients
+        source_concept: slc.maintenance_loans_full_time_undergraduate_students_paid
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        value_scale: 1000
+        expected_cell_type: number
+  - record_set_id: slc_student_support.cy{year}.maintenance_loan_amount_paid
+    record_set_spec_id: slc_student_support.maintenance_loan_amount_paid.v1
+    source_record_id_prefix: slc_student_support.cy{year}.maintenance_loan_amount_paid
+    sheet_name: Table 3A
+    period_type: calendar_year
+    period: '{year}'
+    geography_id: E92000001
+    geography_level: country
+    geography_name: England
+    geography_vintage: current
+    entity: person
+    entity_role: full_time_undergraduate_student
+    domain: uk_student_support
+    groupby_dimension: slc.student_support_line
+    rows:
+      - value_id: all
+        label: All
+        ordinal: 0
+        row_number: 22
+        table_record_kind: total
+        expected_row_header_column: B
+        expected_row_header: "Grand total "
+    measures:
+      - measure_id: amount_paid
+        label: Maintenance loan amount paid
+        ordinal: 0
+        column: P
+        expected_column_header_row: 17
+        expected_column_header: 2024/25
+        concept: uk_student_support.maintenance_loan_amount_paid
+        source_concept: slc.maintenance_loans_full_time_undergraduate_amount_paid
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000
+        expected_cell_type: number
+  - record_set_id: slc_student_support.cy{year}.targeted_support_recipients
+    record_set_spec_id: slc_student_support.targeted_support_recipients.v1
+    source_record_id_prefix: slc_student_support.cy{year}.targeted_support_recipients
+    sheet_name: Table 4C (i)(ii)
+    period_type: calendar_year
+    period: '{year}'
+    geography_id: E92000001
+    geography_level: country
+    geography_name: England
+    geography_vintage: current
+    entity: person
+    entity_role: full_time_applicant
+    domain: uk_student_support
+    groupby_dimension: uk_student_support.product
+    rows:
+      - value_id: adult_dependants_grant
+        label: Adult Dependants Grant
+        ordinal: 0
+        row_number: 10
+        filters:
+          uk_student_support.product: adult_dependants_grant
+        constraints:
+          - variable: uk_student_support.product
+            operator: "=="
+            value: adult_dependants_grant
+            label: SLC student support product
+        expected_row_header_column: B
+        expected_row_header: Adult Dependents Grant
+      - value_id: parents_learning_allowance
+        label: Parents' Learning Allowance
+        ordinal: 1
+        row_number: 11
+        filters:
+          uk_student_support.product: parents_learning_allowance
+        constraints:
+          - variable: uk_student_support.product
+            operator: "=="
+            value: parents_learning_allowance
+            label: SLC student support product
+        expected_row_header_column: B
+        expected_row_header: Parents Learning Allowance
+    measures:
+      - measure_id: recipients
+        label: Targeted support recipients
+        ordinal: 0
+        column: O
+        expected_column_header_row: 8
+        expected_column_header: 2024/25
+        concept: uk_student_support.targeted_support_recipients
+        source_concept: slc.other_targeted_support_applicants_awarded
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: count
+        aggregation: count
+        value_scale: 1000
+        expected_cell_type: number
+  - record_set_id: slc_student_support.cy{year}.targeted_support_amount_awarded
+    record_set_spec_id: slc_student_support.targeted_support_amount_awarded.v1
+    source_record_id_prefix: slc_student_support.cy{year}.targeted_support_amount_awarded
+    sheet_name: Table 4C (i)(ii)
+    period_type: calendar_year
+    period: '{year}'
+    geography_id: E92000001
+    geography_level: country
+    geography_name: England
+    geography_vintage: current
+    entity: person
+    entity_role: full_time_applicant
+    domain: uk_student_support
+    groupby_dimension: uk_student_support.product
+    rows:
+      - value_id: adult_dependants_grant
+        label: Adult Dependants Grant
+        ordinal: 0
+        row_number: 20
+        filters:
+          uk_student_support.product: adult_dependants_grant
+        constraints:
+          - variable: uk_student_support.product
+            operator: "=="
+            value: adult_dependants_grant
+            label: SLC student support product
+        expected_row_header_column: B
+        expected_row_header: Adult Dependents Grant
+      - value_id: parents_learning_allowance
+        label: Parents' Learning Allowance
+        ordinal: 1
+        row_number: 21
+        filters:
+          uk_student_support.product: parents_learning_allowance
+        constraints:
+          - variable: uk_student_support.product
+            operator: "=="
+            value: parents_learning_allowance
+            label: SLC student support product
+        expected_row_header_column: B
+        expected_row_header: Parents Learning Allowance
+    measures:
+      - measure_id: amount_awarded
+        label: Targeted support amount awarded
+        ordinal: 0
+        column: O
+        expected_column_header_row: 18
+        expected_column_header: 2024/25
+        concept: uk_student_support.targeted_support_amount_awarded
+        source_concept: slc.other_targeted_support_amount_awarded
+        concept_relation: source_label
+        concept_authority: arch-uk
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000
+        expected_cell_type: number
