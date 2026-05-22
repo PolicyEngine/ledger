@@ -200,14 +200,18 @@ Each completed item should have:
     through 2029 remains downstream target construction.
 
 - [x] VOA council tax bands
-  - PE module: `sources/voa_council_tax.py`.
-  - Current PE targets: regional band A-H and total counts, plus Scotland.
+  - PE modules: `sources/voa_council_tax.py` and
+    `sources/la_council_tax.py`.
+  - Current PE targets: regional band A-H and total counts, Scotland, and
+    local-authority band A-H/I counts for England and Wales.
   - Sources: VOA 2025 stock-of-properties workbook and Scottish Government
     chargeable dwellings workbook.
   - Arch packages: `voa-council-tax-bands-2025` and
     `scotgov-council-tax-bands-2025`.
-  - Covers the 2025 regional A-H and total chargeable-dwelling facts used by
-    PE, with explicit `uk_region` and `council_tax_band` constraints.
+  - Covers the 2025 regional A-H and total chargeable-dwelling facts, plus
+    the 2,563 source-numeric local-authority band facts from `CTSOP1.0` used
+    by PE. Suppressed cells such as English Band I, City of London Band A, and
+    two Welsh Band H cells are omitted rather than fabricated.
   - Caveat: Arch keeps VOA and Scottish Government provenance separate.
     Downstream target construction can present the combined PE target family.
 
