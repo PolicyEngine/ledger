@@ -195,7 +195,7 @@ def test_source_package_path_builds_valid_soi_table_1_4_facts():
 
     assert package.package_id == "soi-table-1-4"
     assert len(cells) == 8109
-    assert len(facts) == 240
+    assert len(facts) == 260
     assert validate_facts(facts).valid
     assert facts[0].source.source_table == "Publication 1304 Table 1.4"
 
@@ -420,7 +420,7 @@ def test_source_package_builds_soi_table_1_4_2021_layout():
     facts = package.build_facts(2021)
     values_by_record = {fact.source_record_id: fact.value for fact in facts}
 
-    assert len(facts) == 240
+    assert len(facts) == 260
     assert (
         values_by_record[
             "irs_soi.ty2021.table_1_4.all.taxable_ira_distributions_amount"
@@ -430,6 +430,13 @@ def test_source_package_builds_soi_table_1_4_2021_layout():
     assert (
         values_by_record["irs_soi.ty2021.table_1_4.all.taxable_social_security_amount"]
         == 412_830_233_000
+    )
+    assert (
+        values_by_record[
+            "irs_soi.ty2021.table_1_4.all."
+            "self_employed_pension_contribution_ald"
+        ]
+        == 28_919_016_000
     )
 
 
@@ -463,7 +470,7 @@ def test_source_package_builds_soi_table_1_4_2021_layout():
             "soi-table-1-4",
             2021,
             "irs_soi.ty2021.table_1_4.all.wages_salaries_amount",
-            240,
+            260,
             "21in14ar.xls",
             9_022_352_941_000,
         ),
@@ -471,7 +478,7 @@ def test_source_package_builds_soi_table_1_4_2021_layout():
             "soi-table-1-4",
             2022,
             "irs_soi.ty2022.table_1_4.all.taxable_social_security_amount",
-            240,
+            260,
             "22in14ar.xls",
             458_513_595_000,
         ),
@@ -3380,7 +3387,7 @@ def test_source_package_alias_builds_soi_w2_statistics_2020_facts():
     assert validate_source_cells(cells).valid
     assert validate_facts(facts).valid
     assert len(cells) == 1_650
-    assert len(facts) == 3
+    assert len(facts) == 5
     assert all(fact.source.raw_r2_uri for fact in facts)
     assert (
         values_by_record[
@@ -3395,6 +3402,20 @@ def test_source_package_alias_builds_soi_w2_statistics_2020_facts():
             "box_7_social_security_tips.return_count"
         ].value
         == 6_038_613
+    )
+    assert (
+        values_by_record[
+            "irs_soi.ty2020.form_w2_401k_elective_deferrals."
+            "box_12_d_401k_elective_deferrals.amount"
+        ].value
+        == 277_859_181_000
+    )
+    assert (
+        values_by_record[
+            "irs_soi.ty2020.form_w2_designated_roth_401k_contributions."
+            "box_12_aa_designated_roth_401k_contributions.amount"
+        ].value
+        == 32_302_509_000
     )
 
 
@@ -5212,10 +5233,10 @@ def test_validate_source_package_reports_kff_marketplace_enrollment_counts():
         (
             "soi-w2-statistics-2020",
             {
-                "measure_count": 3,
-                "record_set_count": 1,
-                "row_count": 1,
-                "source_record_count": 3,
+                "measure_count": 5,
+                "record_set_count": 3,
+                "row_count": 3,
+                "source_record_count": 5,
                 "source_region_count": 1,
             },
         ),
@@ -6096,7 +6117,7 @@ def test_source_package_cli_commands_emit_json(tmp_path, capsys):
 
     assert exit_code == 0
     assert validate_payload["valid"]
-    assert validate_payload["counts"]["source_record_count"] == 240
+    assert validate_payload["counts"]["source_record_count"] == 260
 
     exit_code = harness_main(
         [

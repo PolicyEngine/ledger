@@ -544,3 +544,24 @@ record_sets:
         unit: usd
         aggregation: sum
         value_scale: 1000
+      - measure_id: self_employed_pension_contribution_ald
+        label: Payments to a Keogh plan
+        ordinal: 12
+        column: DM
+        column_by_year:
+          2021: DA
+          2022: DM
+          2023: DM
+        concept: irs_soi.payments_to_keogh_plan
+        unit: usd
+        aggregation: sum
+        source_concept: irs_soi.payments_to_keogh_plan
+        concept_relation: broad_match
+        concept_authority: arch-us
+        concept_evidence_url: https://www.irs.gov/statistics/soi-tax-stats-individual-income-tax-returns-complete-report-publication-1304-basic-tables-part-1
+        concept_evidence_notes: >
+          IRS SOI Table 1.4 labels this statutory-adjustments measure
+          Payments to a Keogh plan. PolicyEngine-US uses this SOI line as the
+          national calibration source for self_employed_pension_contribution_ald.
+        legal_vintage: tax_year_{year}
+        value_scale: 1000

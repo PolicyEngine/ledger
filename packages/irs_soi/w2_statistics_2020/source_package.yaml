@@ -75,3 +75,83 @@ record_sets:
     aggregation: sum
     value_scale: 1000
     expected_cell_type: number
+- record_set_id: irs_soi.ty{year}.form_w2_401k_elective_deferrals
+  record_set_spec_id: irs_soi.form_w2_401k_elective_deferrals.v1
+  source_record_id_prefix: irs_soi.ty{year}.form_w2_401k_elective_deferrals
+  sheet_name: Table 4.B
+  period_type: tax_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: tax_unit
+  entity_role: filing_unit_with_form_w2
+  domain: form_w2_items
+  groupby_dimension: irs_soi.form_w2_item
+  rows:
+  - value_id: box_12_d_401k_elective_deferrals
+    label: 'Box 12 D: 401(k) elective deferrals'
+    ordinal: 0
+    row_number: 22
+    expected_row_header_column: A
+    expected_row_header: D. 401(k) elective deferrals
+    table_record_kind: total
+    guard_cells:
+    - column: B
+      row: 3
+      expected_value: All taxpayers
+      label: all taxpayers block
+  measures:
+  - measure_id: amount
+    label: Amount
+    ordinal: 0
+    column: D
+    source_column_id: amount
+    expected_column_header_row: 4
+    expected_column_header: Amount
+    concept: irs_soi.form_w2_401k_elective_deferrals
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: irs_soi.ty{year}.form_w2_designated_roth_401k_contributions
+  record_set_spec_id: irs_soi.form_w2_designated_roth_401k_contributions.v1
+  source_record_id_prefix: irs_soi.ty{year}.form_w2_designated_roth_401k_contributions
+  sheet_name: Table 4.B
+  period_type: tax_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: tax_unit
+  entity_role: filing_unit_with_form_w2
+  domain: form_w2_items
+  groupby_dimension: irs_soi.form_w2_item
+  rows:
+  - value_id: box_12_aa_designated_roth_401k_contributions
+    label: 'Box 12 AA: Designated Roth 401(k) contributions'
+    ordinal: 0
+    row_number: 41
+    expected_row_header_column: A
+    expected_row_header: AA. Designated Roth 401(k) contributions
+    table_record_kind: total
+    guard_cells:
+    - column: B
+      row: 3
+      expected_value: All taxpayers
+      label: all taxpayers block
+  measures:
+  - measure_id: amount
+    label: Amount
+    ordinal: 0
+    column: D
+    source_column_id: amount
+    expected_column_header_row: 4
+    expected_column_header: Amount
+    concept: irs_soi.form_w2_designated_roth_401k_contributions
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
