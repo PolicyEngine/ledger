@@ -5,7 +5,7 @@ fact keys or letting agents populate many new source packages.
 
 ## Context
 
-Arch is Cosilico's source-data foundation. It should preserve publisher source
+Arch is PolicyEngine's source-data foundation. It should preserve publisher source
 artifacts, parsed source rows/cells, source-backed aggregate facts, dimensions,
 constraints, concept alignments, and provenance. Microplex should consume Arch
 through downstream adapters and own source selection, aging, reconciliation,
@@ -149,7 +149,7 @@ Introduce a v2 identity split:
 ## Paste-Ready ChatGPT Pro Prompt
 
 ```text
-We are building Arch as Cosilico's standalone source-data registry and build
+We are building Arch as PolicyEngine's standalone source-data registry and build
 harness. Arch should store publisher/source facts with provenance, source-row or
 source-cell lineage, dimensions, constraints, concept alignments, and stable
 keys. Microplex consumes Arch through downstream adapters and owns source
