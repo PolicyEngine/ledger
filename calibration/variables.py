@@ -1,5 +1,5 @@
 """
-Variable entity resolution using cosilico-engine.
+Variable entity resolution using a RuleSpec engine package when available.
 
 Resolves fully qualified variable references to their entity type
 (person, tax_unit, household, family) by parsing the source .rac file.
@@ -15,19 +15,19 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Optional
 
-# Try to import from cosilico-engine
+# Try to import a legacy RuleSpec engine API.
 try:
-    from cosilico.dependency_resolver import PackageRegistry, ModuleResolver
-    from cosilico.dsl_parser import parse_file
-    COSILICO_AVAILABLE = True
+    from policyengine.dependency_resolver import PackageRegistry, ModuleResolver
+    from policyengine.dsl_parser import parse_file
+    POLICYENGINE_AVAILABLE = True
 except ImportError:
-    COSILICO_AVAILABLE = False
+    POLICYENGINE_AVAILABLE = False
 
 
 # Default workspace path (can be overridden)
-DEFAULT_WORKSPACE = Path.home() / "CosilicoAI"
+DEFAULT_WORKSPACE = Path.home() / "PolicyEngine"
 
-# Fallback entity mapping for common variables when cosilico-engine not available
+# Fallback entity mapping for common variables when a RuleSpec engine is not available.
 FALLBACK_ENTITIES = {
     # Person-level
     "age": "person",
@@ -110,7 +110,7 @@ def get_entity(
 
     Args:
         variable_ref: Fully qualified reference like "us:statute/26/32#eitc"
-        workspace: Optional workspace path (defaults to ~/CosilicoAI)
+        workspace: Optional workspace path (defaults to ~/PolicyEngine)
 
     Returns:
         Entity type: "person", "tax_unit", "household", or "family"
@@ -125,8 +125,8 @@ def get_entity(
     """
     package, path, var_name = parse_variable_ref(variable_ref)
 
-    # Try cosilico-engine first
-    if COSILICO_AVAILABLE:
+    # Try the RuleSpec engine first.
+    if POLICYENGINE_AVAILABLE:
         try:
             return _get_entity_from_rac(package, path, var_name, workspace)
         except Exception:
@@ -150,14 +150,14 @@ def _get_entity_from_rac(
     """
     Get entity by parsing the actual .rac file.
 
-    Uses cosilico-engine's PackageRegistry to resolve paths.
+    Uses the legacy RuleSpec engine's PackageRegistry to resolve paths.
     """
     if workspace is None:
         workspace = DEFAULT_WORKSPACE
 
     # Map short package name to repo name
-    # us → cosilico-us, us-ca → cosilico-us-ca, uk → cosilico-uk
-    repo_name = f"cosilico-{package}"
+    # us → policyengine-us, us-ca → policyengine-us-ca, uk → policyengine-uk
+    repo_name = f"policyengine-{package}"
 
     # Get package registry
     registry = PackageRegistry.from_workspace(workspace)

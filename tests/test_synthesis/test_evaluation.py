@@ -3,7 +3,7 @@ Tests for synthetic data evaluation metrics.
 
 TDD: Write tests first, then implement to pass.
 
-Compares Cosilico synthesis vs PolicyEngine Enhanced CPS vs IRS SOI ground truth.
+Compares PolicyEngine synthesis vs PolicyEngine Enhanced CPS vs IRS SOI ground truth.
 """
 
 import pytest
@@ -205,47 +205,47 @@ class TestPolicyUtility:
 # =============================================================================
 
 class TestVsPolicyEngineECPS:
-    """Compare Cosilico synthesis vs PolicyEngine Enhanced CPS."""
+    """Compare PolicyEngine synthesis vs PolicyEngine Enhanced CPS."""
 
-    def test_correlation_preservation_vs_pe(self, cosilico_data, pe_ecps_data, puf_data, tax_vars):
-        """Cosilico should have better correlation preservation than PE ECPS."""
+    def test_correlation_preservation_vs_pe(self, policyengine_data, pe_ecps_data, puf_data, tax_vars):
+        """PolicyEngine should have better correlation preservation than PE ECPS."""
         from micro.us.synthesis.evaluation import compute_weighted_correlation_matrix
 
         puf_corr = compute_weighted_correlation_matrix(puf_data[tax_vars], puf_data['weight'])
-        cosilico_corr = compute_weighted_correlation_matrix(cosilico_data[tax_vars], cosilico_data['weight'])
+        policyengine_corr = compute_weighted_correlation_matrix(policyengine_data[tax_vars], policyengine_data['weight'])
         pe_corr = compute_weighted_correlation_matrix(pe_ecps_data[tax_vars], pe_ecps_data['weight'])
 
-        cosilico_dist = np.linalg.norm(cosilico_corr - puf_corr, 'fro')
+        policyengine_dist = np.linalg.norm(policyengine_corr - puf_corr, 'fro')
         pe_dist = np.linalg.norm(pe_corr - puf_corr, 'fro')
 
-        # Cosilico should be at least as good as PE
-        assert cosilico_dist <= pe_dist * 1.1, \
-            f"Cosilico correlation dist {cosilico_dist:.2f} worse than PE {pe_dist:.2f}"
+        # PolicyEngine should be at least as good as PE
+        assert policyengine_dist <= pe_dist * 1.1, \
+            f"PolicyEngine correlation dist {policyengine_dist:.2f} worse than PE {pe_dist:.2f}"
 
-    def test_joint_distribution_quality_vs_pe(self, cosilico_data, pe_ecps_data, puf_data):
-        """Cosilico should have better joint distribution fidelity."""
+    def test_joint_distribution_quality_vs_pe(self, policyengine_data, pe_ecps_data, puf_data):
+        """PolicyEngine should have better joint distribution fidelity."""
         from micro.us.synthesis.evaluation import compute_joint_distribution_score
 
-        cosilico_score = compute_joint_distribution_score(cosilico_data, puf_data)
+        policyengine_score = compute_joint_distribution_score(policyengine_data, puf_data)
         pe_score = compute_joint_distribution_score(pe_ecps_data, puf_data)
 
         # Higher score = better joint distribution match
-        assert cosilico_score >= pe_score * 0.9, \
-            f"Cosilico joint score {cosilico_score:.3f} vs PE {pe_score:.3f}"
+        assert policyengine_score >= pe_score * 0.9, \
+            f"PolicyEngine joint score {policyengine_score:.3f} vs PE {pe_score:.3f}"
 
-    def test_calibration_parity(self, cosilico_data, pe_ecps_data, irs_soi_targets):
+    def test_calibration_parity(self, policyengine_data, pe_ecps_data, irs_soi_targets):
         """Both should match IRS SOI calibration targets similarly."""
         from micro.us.synthesis.evaluation import compute_calibration_errors
 
-        cosilico_errors = compute_calibration_errors(cosilico_data, irs_soi_targets)
+        policyengine_errors = compute_calibration_errors(policyengine_data, irs_soi_targets)
         pe_errors = compute_calibration_errors(pe_ecps_data, irs_soi_targets)
 
-        # Cosilico should match calibration at least as well as PE
-        cosilico_max_error = max(abs(e) for e in cosilico_errors.values())
+        # PolicyEngine should match calibration at least as well as PE
+        policyengine_max_error = max(abs(e) for e in policyengine_errors.values())
         pe_max_error = max(abs(e) for e in pe_errors.values())
 
-        assert cosilico_max_error <= pe_max_error * 1.2, \
-            f"Cosilico max calibration error {cosilico_max_error:.1%} worse than PE {pe_max_error:.1%}"
+        assert policyengine_max_error <= pe_max_error * 1.2, \
+            f"PolicyEngine max calibration error {policyengine_max_error:.1%} worse than PE {pe_max_error:.1%}"
 
 
 # =============================================================================
@@ -324,10 +324,10 @@ def pe_ecps_data():
 
 
 @pytest.fixture
-def cosilico_data():
-    """Load Cosilico synthetic data."""
+def policyengine_data():
+    """Load PolicyEngine synthetic data."""
     # TODO: Implement after synthesis is complete
-    pytest.skip("Cosilico synthesis not yet implemented")
+    pytest.skip("PolicyEngine synthesis not yet implemented")
 
 
 @pytest.fixture

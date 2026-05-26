@@ -281,7 +281,7 @@ wheels = [
 ]
 
 [[package]]
-name = "cosilico-arch"
+name = "policyengine-arch-data"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [

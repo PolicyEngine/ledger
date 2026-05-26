@@ -1,7 +1,7 @@
 """
 Supabase client for Arch.
 
-Provides connection to Cosilico Supabase database for:
+Provides connection to PolicyEngine Supabase database for:
 - Source metadata and dataset registries
 - Raw microdata tables (e.g., microdata.us_census_cps_asec_2024_person)
 - Target inputs
@@ -22,9 +22,9 @@ import pandas as pd
 from supabase import create_client, Client
 
 
-ARCH_SCHEMA = os.environ.get("COSILICO_ARCH_SCHEMA", "arch")
-MICRODATA_SCHEMA = os.environ.get("COSILICO_MICRODATA_SCHEMA", "microdata")
-TARGETS_SCHEMA = os.environ.get("COSILICO_TARGETS_SCHEMA", "targets")
+ARCH_SCHEMA = os.environ.get("POLICYENGINE_ARCH_SCHEMA", "arch")
+MICRODATA_SCHEMA = os.environ.get("POLICYENGINE_MICRODATA_SCHEMA", "microdata")
+TARGETS_SCHEMA = os.environ.get("POLICYENGINE_TARGETS_SCHEMA", "targets")
 
 
 @dataclass
@@ -40,23 +40,23 @@ class SupabaseConfig:
         Load configuration from environment variables.
 
         Required:
-            COSILICO_SUPABASE_URL: Supabase project URL
-            COSILICO_SUPABASE_SECRET_KEY: Service role key for full access
+            POLICYENGINE_SUPABASE_URL: Supabase project URL
+            POLICYENGINE_SUPABASE_SECRET_KEY: Service role key for full access
 
         Raises:
             ValueError: If required environment variables are missing
         """
-        url = os.environ.get("COSILICO_SUPABASE_URL")
+        url = os.environ.get("POLICYENGINE_SUPABASE_URL")
         if not url:
             raise ValueError(
-                "COSILICO_SUPABASE_URL not set. "
+                "POLICYENGINE_SUPABASE_URL not set. "
                 "Set this to your Supabase project URL."
             )
 
-        secret_key = os.environ.get("COSILICO_SUPABASE_SECRET_KEY")
+        secret_key = os.environ.get("POLICYENGINE_SUPABASE_SECRET_KEY")
         if not secret_key:
             raise ValueError(
-                "COSILICO_SUPABASE_SECRET_KEY not set. "
+                "POLICYENGINE_SUPABASE_SECRET_KEY not set. "
                 "Set this to your service role key."
             )
 

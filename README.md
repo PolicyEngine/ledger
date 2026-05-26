@@ -1,6 +1,6 @@
 # Arch
 
-Arch is Cosilico's source-data foundation for social simulation. It captures
+Arch is PolicyEngine's source-data foundation for social simulation. It captures
 source publications, preserves provenance, and represents published values as
 structured, queryable facts.
 
@@ -29,7 +29,7 @@ This repository provides:
   FRS, and related datasets.
 - **Jurisdiction loaders**: US and UK source-specific ETL.
 
-Arch facts are not Cosilico's assertion that a source claim is ultimately true.
+Arch facts are not PolicyEngine's assertion that a source claim is ultimately true.
 They are source-backed claims with provenance.
 
 ## Boundary
@@ -77,9 +77,9 @@ and calibration code belongs under `micro/`.
 ### 1. Install
 
 ```bash
-pip install cosilico-arch
+pip install policyengine-arch-data
 # Or for development:
-git clone https://github.com/CosilicoAI/arch-data arch
+git clone https://github.com/PolicyEngine/arch-data arch
 cd arch
 pip install -e ".[dev]"
 ```
@@ -194,7 +194,7 @@ target_input = as_target(
 
 ## Related Repositories
 
-- [microplex](https://github.com/CosilicoAI/microplex) - Core microsimulation
+- [microplex](https://github.com/PolicyEngine/microplex) - Core microsimulation
   abstractions and calibration interfaces.
-- [microplex-us](https://github.com/CosilicoAI/microplex-us) - US-specific
+- [microplex-us](https://github.com/PolicyEngine/microplex-us) - US-specific
   simulation adapters and calibration profiles.

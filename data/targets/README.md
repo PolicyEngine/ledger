@@ -1,6 +1,6 @@
 # State-Level Calibration Targets
 
-This directory contains state-level calibration targets for use with the Cosilico microsimulation system. Targets are used to calibrate (reweight) microdata samples to match official administrative statistics.
+This directory contains state-level calibration targets for use with the PolicyEngine microsimulation system. Targets are used to calibrate (reweight) microdata samples to match official administrative statistics.
 
 ## Data Files
 
@@ -16,7 +16,7 @@ This directory contains state-level calibration targets for use with the Cosilic
 Run the build script to generate/update all target files:
 
 ```bash
-cd cosilico-data-sources
+cd arch-data
 python data/targets/build_state_targets.py
 ```
 

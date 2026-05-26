@@ -94,7 +94,7 @@ def _fetch_url(url: str) -> tuple[bytes, str | None, str]:
     request = Request(
         url,
         headers={
-            "User-Agent": "cosilico-arch/0.1",
+            "User-Agent": "policyengine-arch-data/0.1",
             "Accept": "*/*",
         },
     )

@@ -1,5 +1,5 @@
 """
-Export calibration results to JSON for the cosilico.ai dashboard.
+Export calibration results to JSON for the policyengine.org dashboard.
 """
 
 import json
