@@ -7,7 +7,7 @@ from Census Bureau and caches raw data locally for efficient variable extraction
 DESIGN PRINCIPLES:
 1. Cache Full Raw Data: Download once, extract any variables later
 2. Primary Inputs Only: Extract only raw survey responses, not derived values
-3. Derive in Rules Engine: Qualifying children, tax liability, etc. computed in cosilico-us
+3. Derive in Rules Engine: Qualifying children, tax liability, etc. computed in policyengine-us
 
 The raw CPS is cached as HDF5 with all person/household/family tables.
 This allows adding new variables without re-downloading (~200MB per year).

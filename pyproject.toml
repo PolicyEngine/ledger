@@ -1,12 +1,12 @@
 [project]
-name = "cosilico-arch"
+name = "policyengine-arch-data"
 version = "0.1.0"
-description = "Cosilico Arch source-data foundation: source facts, microdata, and target inputs"
+description = "PolicyEngine Arch source-data foundation: source facts, microdata, and target inputs"
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.11"
 authors = [
-    { name = "Cosilico", email = "hello@cosilico.ai" }
+    { name = "PolicyEngine", email = "hello@policyengine.org" }
 ]
 
 dependencies = [

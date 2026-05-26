@@ -1,7 +1,7 @@
 """
 Validation framework for synthetic microdata.
 
-Compares Cosilico synthesis against:
+Compares PolicyEngine synthesis against:
 1. PolicyEngine Enhanced CPS (baseline)
 2. IRS SOI targets (ground truth)
 3. PUF (if available, for joint distribution)
@@ -449,7 +449,7 @@ class SynthesisValidator:
         pe_ecps: pd.DataFrame,
         puf: pd.DataFrame,
     ) -> List[ValidationMetric]:
-        """Compare Cosilico synthesis to PE ECPS using PUF as ground truth."""
+        """Compare PolicyEngine synthesis to PE ECPS using PUF as ground truth."""
         metrics = []
 
         available_vars = [v for v in self.continuous_vars
@@ -461,11 +461,11 @@ class SynthesisValidator:
             synth_corr = synthetic[available_vars].corr().values
             pe_corr = pe_ecps[available_vars].corr().values
 
-            cosilico_dist = np.linalg.norm(synth_corr - puf_corr, 'fro')
+            policyengine_dist = np.linalg.norm(synth_corr - puf_corr, 'fro')
             pe_dist = np.linalg.norm(pe_corr - puf_corr, 'fro')
 
-            # Improvement ratio (< 1 means Cosilico is better)
-            improvement = cosilico_dist / (pe_dist + 1e-8)
+            # Improvement ratio (< 1 means PolicyEngine is better)
+            improvement = policyengine_dist / (pe_dist + 1e-8)
 
             metrics.append(ValidationMetric(
                 name="correlation_vs_pe",
@@ -475,7 +475,7 @@ class SynthesisValidator:
                 threshold=1.0,  # Should be <= 1.0 (at least as good as PE)
                 direction="lower",
                 details={
-                    "cosilico_distance": cosilico_dist,
+                    "policyengine_distance": policyengine_dist,
                     "pe_distance": pe_dist,
                     "n_vars": len(available_vars),
                 }

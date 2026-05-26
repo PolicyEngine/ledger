@@ -1,5 +1,5 @@
 """
-Run Cosilico encodings on CPS microdata.
+Run PolicyEngine encodings on CPS microdata.
 
 Applies statute-based tax calculations to tax unit data.
 """
@@ -542,12 +542,12 @@ def calculate_standard_deduction(df: pd.DataFrame, params: dict) -> np.ndarray:
 
 def run_all_calculations(df: pd.DataFrame, year: int = 2024) -> pd.DataFrame:
     """
-    Run all Cosilico tax calculations on tax unit data.
+    Run all PolicyEngine tax calculations on tax unit data.
 
     This is where POLICY is executed. The tax_unit_builder provides only
     raw data; all calculations per statute belong here.
 
-    Output column names match statute variable definitions in cosilico-us.
+    Output column names match statute variable definitions in policyengine-us.
 
     Args:
         df: Tax unit DataFrame from tax_unit_builder (raw data only)
@@ -619,10 +619,10 @@ if __name__ == "__main__":
     print("Loading tax units...")
     df = load_and_build_tax_units(2024)
 
-    print("Running Cosilico calculations...")
+    print("Running PolicyEngine calculations...")
     df = run_all_calculations(df)
 
-    print("\n=== Cosilico Calculation Results ===")
+    print("\n=== PolicyEngine Calculation Results ===")
     print(f"Tax units: {len(df):,}")
 
     # Weighted totals
@@ -641,9 +641,9 @@ if __name__ == "__main__":
     print(f"NIIT:           ${wtotal('niit'):>20,.0f}")
 
     # Compare to CPS reported values
-    print("\n--- CPS Reported vs Cosilico ---")
-    print(f"EITC: CPS=${wtotal('cps_eitc'):,.0f}, Cosilico=${wtotal('eitc'):,.0f}")
-    print(f"CTC:  CPS=${wtotal('cps_ctc'):,.0f}, Cosilico=${wtotal('total_child_tax_credit'):,.0f}")
+    print("\n--- CPS Reported vs PolicyEngine ---")
+    print(f"EITC: CPS=${wtotal('cps_eitc'):,.0f}, PolicyEngine=${wtotal('eitc'):,.0f}")
+    print(f"CTC:  CPS=${wtotal('cps_ctc'):,.0f}, PolicyEngine=${wtotal('total_child_tax_credit'):,.0f}")
 
     # Recipients
     print("\n--- Recipients (unweighted) ---")

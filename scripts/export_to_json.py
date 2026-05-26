@@ -18,7 +18,7 @@ def export_targets_summary(output_path: Path | None = None):
     """Export summary statistics for the calibration dashboard."""
 
     if output_path is None:
-        output_path = Path(__file__).parent.parent.parent / "cosilico.ai" / "public" / "data" / "targets_summary.json"
+        output_path = Path(__file__).parent.parent.parent / "policyengine.org" / "public" / "data" / "targets_summary.json"
 
     engine = get_engine(DEFAULT_DB_PATH)
 

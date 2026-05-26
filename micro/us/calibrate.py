@@ -342,7 +342,7 @@ def calibrate_and_run(year: int = 2024, filer_threshold: float = 0) -> pd.DataFr
     from tax_unit_builder import load_and_build_tax_units
 
     print("=" * 60)
-    print("COSILICO MICRODATA CALIBRATION (Entropy Method)")
+    print("POLICYENGINE MICRODATA CALIBRATION (Entropy Method)")
     print("=" * 60)
 
     print("\n1. Loading tax unit data...")

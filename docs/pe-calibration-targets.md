@@ -227,7 +227,7 @@ PolicyEngine-US-Data uses a three-table schema:
 
 ## Target Count Comparison
 
-| Category | PolicyEngine (est.) | cosilico (current) | Gap |
+| Category | PolicyEngine (est.) | policyengine (current) | Gap |
 |----------|---------------------|-------------------|-----|
 | IRS SOI Tax | ~500 | ~80 | ~420 |
 | Demographics | ~900 | ~50 | ~850 |

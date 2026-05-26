@@ -10,11 +10,11 @@ import pandas as pd
 from pathlib import Path
 import sys
 
-# Add cosilico-engine to path
-engine_path = Path(__file__).parents[3] / "cosilico-engine" / "src"
+# Add the legacy RuleSpec engine to the path when checked out next to this repo.
+engine_path = Path.home() / "TheAxiomFoundation" / "axiom-rules-engine" / "python"
 sys.path.insert(0, str(engine_path))
 
-from cosilico.brackets import marginal_agg  # noqa: E402
+from policyengine.brackets import marginal_agg  # noqa: E402
 
 
 def load_tax_units() -> pd.DataFrame:
