@@ -37,11 +37,14 @@ class DataSource(str, Enum):
     # US sources
     IRS_SOI = "irs-soi"
     CENSUS_ACS = "census-acs"
+    CENSUS_PEP = "census-pep"
+    CENSUS_STC = "census-stc"
     USDA_SNAP = "usda-snap"
     SSA = "ssa"
     BLS = "bls"
     CMS_MEDICAID = "cms-medicaid"
     CMS_ACA = "cms-aca"  # ACA Marketplace enrollment data
+    HHS_ACF_TANF = "hhs-acf-tanf"
     CBO = "cbo"  # Congressional Budget Office projections
 
     # UK sources

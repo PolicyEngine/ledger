@@ -1,3 +1,5 @@
+source_id: irs_soi
+package_id: soi-table-1-1
 dataset: irs_soi_publication_1304_table_1_1
 source_page: https://www.irs.gov/statistics/soi-tax-stats-individual-income-tax-returns-complete-report-publication-1304-basic-tables-part-1
 table: Table 1.1
@@ -6,15 +8,43 @@ files:
     filename: 20in11si.xls
     source_url: https://www.irs.gov/pub/irs-soi/20in11si.xls
     sha256: 9ade112c36a0b6b81b539524537d0fbfbf5c34c611d10da700f82b87a2e81cb0
+    size_bytes: 61440
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/irs_soi/soi-table-1-1/2020/9ade112c36a0b6b81b539524537d0fbfbf5c34c611d10da700f82b87a2e81cb0/20in11si.xls
+        uri: r2://arch-raw/raw/irs_soi/soi-table-1-1/2020/9ade112c36a0b6b81b539524537d0fbfbf5c34c611d10da700f82b87a2e81cb0/20in11si.xls
   2021:
     filename: 21in11si.xls
     source_url: https://www.irs.gov/pub/irs-soi/21in11si.xls
     sha256: 2c325fb48fe5bc72fdf339aba40da47d4c8285384ba1b7efe26762008a31d2ce
+    size_bytes: 54784
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/irs_soi/soi-table-1-1/2021/2c325fb48fe5bc72fdf339aba40da47d4c8285384ba1b7efe26762008a31d2ce/21in11si.xls
+        uri: r2://arch-raw/raw/irs_soi/soi-table-1-1/2021/2c325fb48fe5bc72fdf339aba40da47d4c8285384ba1b7efe26762008a31d2ce/21in11si.xls
   2022:
     filename: 22in11si.xls
     source_url: https://www.irs.gov/pub/irs-soi/22in11si.xls
     sha256: 31e0203ded16576bad0e3042916a134161a3671405f6be494fbb927acecb8fe5
+    size_bytes: 56320
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/irs_soi/soi-table-1-1/2022/31e0203ded16576bad0e3042916a134161a3671405f6be494fbb927acecb8fe5/22in11si.xls
+        uri: r2://arch-raw/raw/irs_soi/soi-table-1-1/2022/31e0203ded16576bad0e3042916a134161a3671405f6be494fbb927acecb8fe5/22in11si.xls
   2023:
     filename: 23in11si.xls
     source_url: https://www.irs.gov/pub/irs-soi/23in11si.xls
     sha256: 842da11fe09123796c861e919d16011ef161338de1c172d39064bdfa666aca17
+    size_bytes: 54272
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/irs_soi/soi-table-1-1/2023/842da11fe09123796c861e919d16011ef161338de1c172d39064bdfa666aca17/23in11si.xls
+        uri: r2://arch-raw/raw/irs_soi/soi-table-1-1/2023/842da11fe09123796c861e919d16011ef161338de1c172d39064bdfa666aca17/23in11si.xls
