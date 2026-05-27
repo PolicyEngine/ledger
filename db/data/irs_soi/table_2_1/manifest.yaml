@@ -1,0 +1,42 @@
+source_id: irs_soi
+package_id: soi-table-2-1
+dataset: irs_soi_soi-table-2-1
+source_page: https://www.irs.gov/statistics/soi-tax-stats-individual-income-tax-returns-complete-report-publication-1304-basic-tables-part-2
+table: Publication 1304 Table 2.1
+files:
+  2023:
+    filename: 23in21id.xls
+    source_url: https://www.irs.gov/pub/irs-soi/23in21id.xls
+    sha256: df6cf04ed3b716dd670db055755528916ef02d59967e1af3ead59cc48bd4de80
+    size_bytes: 75776
+    fetched_at: '2026-05-11T11:44:21+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/irs_soi/soi-table-2-1/2023/df6cf04ed3b716dd670db055755528916ef02d59967e1af3ead59cc48bd4de80/23in21id.xls
+        uri: r2://arch-raw/raw/irs_soi/soi-table-2-1/2023/df6cf04ed3b716dd670db055755528916ef02d59967e1af3ead59cc48bd4de80/23in21id.xls
+  2021:
+    filename: 21in21id.xls
+    source_url: https://www.irs.gov/pub/irs-soi/21in21id.xls
+    sha256: 726318d6f72f11aa9b948a3c33fa99099fe0f856c106dfd2be76b9bcc06ed5f3
+    size_bytes: 73216
+    fetched_at: '2026-05-11T12:24:07+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/irs_soi/soi-table-2-1/2021/726318d6f72f11aa9b948a3c33fa99099fe0f856c106dfd2be76b9bcc06ed5f3/21in21id.xls
+        uri: r2://arch-raw/raw/irs_soi/soi-table-2-1/2021/726318d6f72f11aa9b948a3c33fa99099fe0f856c106dfd2be76b9bcc06ed5f3/21in21id.xls
+  2022:
+    filename: 22in21id.xls
+    source_url: https://www.irs.gov/pub/irs-soi/22in21id.xls
+    sha256: 0ebe525448c24c3a8fb99ca57136be27a97dcea24c04230670886c00b1db7ed9
+    size_bytes: 77312
+    fetched_at: '2026-05-11T12:24:07+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/irs_soi/soi-table-2-1/2022/0ebe525448c24c3a8fb99ca57136be27a97dcea24c04230670886c00b1db7ed9/22in21id.xls
+        uri: r2://arch-raw/raw/irs_soi/soi-table-2-1/2022/0ebe525448c24c3a8fb99ca57136be27a97dcea24c04230670886c00b1db7ed9/22in21id.xls

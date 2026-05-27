@@ -1,0 +1,20 @@
+source_id: irs_soi
+package_id: soi-ira-roth-contributions-2022
+dataset: irs_soi_roth_ira_contributions_2022
+source_page: https://www.irs.gov/statistics/soi-tax-stats-accumulation-and-distribution-of-individual-retirement-arrangements
+table: Table 6. Taxpayers with Roth Individual Retirement Arrangement (IRA) Plan Contributions,
+  by Size of Contribution and Age of Taxpayer
+files:
+  2022:
+    filename: 22in06ira.xlsx
+    source_url: https://www.irs.gov/pub/irs-soi/22in06ira.xlsx
+    sha256: c1fb0894cb09d2486be4510b7e6ce0b8597787725b928ab8813f577d9fb13183
+    size_bytes: 13617
+    source_table: Table 6. Taxpayers with Roth Individual Retirement Arrangement (IRA)
+      Plan Contributions, by Size of Contribution and Age of Taxpayer
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/irs_soi/soi-ira-roth-contributions-2022/2022/c1fb0894cb09d2486be4510b7e6ce0b8597787725b928ab8813f577d9fb13183/22in06ira.xlsx
+        uri: r2://arch-raw/raw/irs_soi/soi-ira-roth-contributions-2022/2022/c1fb0894cb09d2486be4510b7e6ce0b8597787725b928ab8813f577d9fb13183/22in06ira.xlsx
