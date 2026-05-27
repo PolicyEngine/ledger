@@ -16,6 +16,7 @@ from arch.jurisdictions.us.soi import (
 )
 from arch.sources.cells import (
     load_source_cells_jsonl,
+    source_cells_from_delimited_text,
     source_cells_from_html_tables_and_text,
     validate_source_cells,
 )
@@ -107,6 +108,39 @@ def test_delimited_source_row_selection_requires_exact_match():
             rows,
             selected_rows=({"SeriesCode": "Y351RC", "Period": "2022"},),
         )
+
+
+def test_delimited_text_selected_rows_preserves_requested_order_with_shared_keys():
+    artifact = SourceArtifactMetadata(
+        source_name="census_pep",
+        source_table="test",
+        source_file="test.csv",
+        url="https://example.test/test.csv",
+        vintage="test",
+        sha256="abc123",
+        size_bytes=10,
+        extracted_at="2026-05-27",
+        extraction_method="test",
+    )
+    content = b"STATE,RACE,AGE,VALUE\n06,1,0,10\n06,1,1,11\n06,2,0,20\n"
+
+    cells = source_cells_from_delimited_text(
+        content,
+        artifact,
+        sheet_name="test",
+        selected_rows=(
+            {"STATE": "06", "RACE": "2", "AGE": "0"},
+            {"STATE": "06", "RACE": "1", "AGE": "0"},
+        ),
+    )
+    values = {
+        (cell.row_number, cell.column_number): cell.raw_value
+        for cell in cells
+        if cell.row_number > 1
+    }
+
+    assert values[(2, 4)] == 20
+    assert values[(3, 4)] == 10
 
 
 def test_html_tables_and_text_parser_preserves_tables_and_document_numbers():

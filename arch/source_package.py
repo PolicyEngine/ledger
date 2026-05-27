@@ -67,6 +67,7 @@ from arch.sources.specs import (
 SOURCE_PACKAGE_RESOURCE_PACKAGE = "packages"
 SOURCE_PACKAGE_ALIASES = {
     "census-pep-2024-national-age-sex": Path("census/pep_2024_national_age_sex"),
+    "census-pep-2024-state-age-sex": Path("census/pep_2024_state_age_sex"),
     "soi-table-1-1": Path("irs_soi/table_1_1"),
     "soi-table-1-2": Path("irs_soi/table_1_2"),
     "soi-table-1-4": Path("irs_soi/table_1_4"),
@@ -1541,7 +1542,9 @@ def _optional_rendered_string(value: Any, *, year: int) -> str | None:
 def _render_value(value: Any, *, year: int) -> Any:
     if isinstance(value, str):
         rendered = _render_string(value, year=year)
-        return int(rendered) if rendered.isdigit() else rendered
+        if rendered.isdigit() and not (len(rendered) > 1 and rendered.startswith("0")):
+            return int(rendered)
+        return rendered
     if isinstance(value, list):
         return [_render_value(item, year=year) for item in value]
     if isinstance(value, dict):

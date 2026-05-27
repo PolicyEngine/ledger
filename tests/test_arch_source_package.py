@@ -367,3 +367,16 @@ def test_census_pep_source_package_alias_validates_fixture_counts():
         "source_record_count": 19,
         "source_region_count": 1,
     }
+
+
+def test_census_pep_state_source_package_alias_validates_fixture_counts():
+    report = validate_source_package("census-pep-2024-state-age-sex", year=2023)
+
+    assert report.valid
+    assert report.counts == {
+        "record_set_count": 51,
+        "row_count": 969,
+        "measure_count": 51,
+        "source_record_count": 969,
+        "source_region_count": 51,
+    }
