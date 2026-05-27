@@ -29,27 +29,32 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "aggregate_duplicate_key_count": 0,
         "entity_count": 2,
         "error_count": 0,
-        "fact_count": 1649,
+        "fact_count": 1668,
         "geography_count": 52,
         "period_count": 3,
         "semantic_duplicate_key_count": 3,
         "skipped_source_count": 0,
-        "source_count": 2,
-        "source_package_count": 13,
+        "source_count": 3,
+        "source_package_count": 14,
         "warning_count": 1,
     }
-    assert len(rows) == 1649
+    assert len(rows) == 1668
     assert rows[0]["aggregate_fact_key"].startswith("arch.aggregate_fact.v2:")
     assert rows[0]["semantic_fact_key"].startswith("arch.semantic_fact.v2:")
-    assert source_packages["source_package_count"] == 13
+    assert source_packages["source_package_count"] == 14
     assert source_packages["skipped_source_count"] == 0
     assert not source_packages["skipped_sources"]
-    assert coverage["fact_count"] == 1649
+    assert coverage["fact_count"] == 1668
     assert coverage["counts"]["by_source"] == {
+        "census_pep": 19,
         "irs_soi": 1643,
         "ssa": 6,
     }
     assert coverage["counts"]["by_source_table"] == {
+        (
+            "census_pep:Annual Estimates of the Resident Population by Single Year "
+            "of Age and Sex for the United States"
+        ): 19,
         "irs_soi:Historic Table 2 state AGI facts": 918,
         "irs_soi:Historic Table 2 state EITC totals": 102,
         "irs_soi:Publication 1304 Table 1.1": 80,
@@ -76,15 +81,15 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "ssa:SSA Annual Statistical Supplement 2025 extracted OASDI and SSI target rows": 6,
     }
     assert coverage["counts"]["by_period"] == {
-        "calendar_year:2024": 6,
+        "calendar_year:2024": 25,
         "tax_year:2022": 1244,
         "tax_year:2023": 399,
     }
-    assert coverage["counts"]["by_geography"]["country:0100000US"] == 629
+    assert coverage["counts"]["by_geography"]["country:0100000US"] == 648
     assert coverage["counts"]["by_geography"]["state:0400000US06"] == 20
     assert len(coverage["counts"]["by_geography"]) == 52
     assert coverage["counts"]["by_entity"] == {
-        "person": 6,
+        "person": 25,
         "tax_unit": 1643,
     }
     assert not coverage["duplicates"]["aggregate_fact_keys"]
