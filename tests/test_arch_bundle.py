@@ -27,26 +27,27 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
     assert summary["valid"]
     assert summary["counts"] == {
         "aggregate_duplicate_key_count": 0,
-        "entity_count": 1,
+        "entity_count": 2,
         "error_count": 0,
-        "fact_count": 1643,
+        "fact_count": 1649,
         "geography_count": 52,
-        "period_count": 2,
+        "period_count": 3,
         "semantic_duplicate_key_count": 3,
         "skipped_source_count": 0,
-        "source_count": 1,
-        "source_package_count": 12,
+        "source_count": 2,
+        "source_package_count": 13,
         "warning_count": 1,
     }
-    assert len(rows) == 1643
+    assert len(rows) == 1649
     assert rows[0]["aggregate_fact_key"].startswith("arch.aggregate_fact.v2:")
     assert rows[0]["semantic_fact_key"].startswith("arch.semantic_fact.v2:")
-    assert source_packages["source_package_count"] == 12
+    assert source_packages["source_package_count"] == 13
     assert source_packages["skipped_source_count"] == 0
     assert not source_packages["skipped_sources"]
-    assert coverage["fact_count"] == 1643
+    assert coverage["fact_count"] == 1649
     assert coverage["counts"]["by_source"] == {
         "irs_soi": 1643,
+        "ssa": 6,
     }
     assert coverage["counts"]["by_source_table"] == {
         "irs_soi:Historic Table 2 state AGI facts": 918,
@@ -72,15 +73,18 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
             "Arrangement (IRA) Plan Contributions, by Size of Contribution and "
             "Age of Taxpayer"
         ): 2,
+        "ssa:SSA Annual Statistical Supplement 2025 extracted OASDI and SSI target rows": 6,
     }
     assert coverage["counts"]["by_period"] == {
+        "calendar_year:2024": 6,
         "tax_year:2022": 1244,
         "tax_year:2023": 399,
     }
-    assert coverage["counts"]["by_geography"]["country:0100000US"] == 623
+    assert coverage["counts"]["by_geography"]["country:0100000US"] == 629
     assert coverage["counts"]["by_geography"]["state:0400000US06"] == 20
     assert len(coverage["counts"]["by_geography"]) == 52
     assert coverage["counts"]["by_entity"] == {
+        "person": 6,
         "tax_unit": 1643,
     }
     assert not coverage["duplicates"]["aggregate_fact_keys"]
@@ -136,6 +140,44 @@ def test_build_bundle_cli_supports_explicit_sources(tmp_path, capsys):
     assert payload["coverage"]["counts"]["by_source_table"] == {
         "irs_soi:Publication 1304 Table 1.1": 80
     }
+
+
+def test_build_bundle_cli_supports_ssa_supplement_source(tmp_path, capsys):
+    output_dir = tmp_path / "bundle"
+
+    exit_code = harness_main(
+        [
+            "build-bundle",
+            "--year",
+            "2024",
+            "--source",
+            "ssa-annual-statistical-supplement-2025",
+            "--out",
+            str(output_dir),
+        ]
+    )
+    payload = json.loads(capsys.readouterr().out)
+    rows = _load_jsonl(output_dir / "consumer_facts.jsonl")
+
+    assert exit_code == 0
+    assert payload["valid"]
+    assert payload["counts"]["source_package_count"] == 1
+    assert payload["counts"]["fact_count"] == 6
+    assert payload["coverage"]["counts"]["by_source"] == {"ssa": 6}
+    assert payload["coverage"]["counts"]["by_entity"] == {"person": 6}
+    assert {
+        row["universe_constraints"]["constraints"][0]["value"]
+        for row in rows
+    } == {
+        "social_security_benefits",
+        "social_security_retirement_benefits",
+        "social_security_survivors_benefits",
+        "social_security_disability_benefits",
+        "social_security_dependents_benefits",
+        "ssi_payments",
+    }
+
+
 def test_build_bundle_coverage_reports_duplicate_keys():
     rows = [
         {

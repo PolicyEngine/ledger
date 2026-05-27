@@ -1,0 +1,192 @@
+schema_version: arch.source_package.v1
+package_id: ssa-annual-statistical-supplement-2025
+label: SSA Annual Statistical Supplement 2025 national OASDI and SSI payments
+artifact:
+  source_name: ssa
+  source_table: SSA Annual Statistical Supplement 2025 extracted OASDI and SSI target rows
+  resource_package: db
+  resource_directory: data/ssa/annual_statistical_supplement_2025
+  manifest: manifest.yaml
+  vintage: annual_statistical_supplement_2025
+  extracted_at: "2026-05-10"
+  extraction_method: delimited text full-row parse from SSA Annual Statistical Supplement tables 4.A5, 4.A6, and 7.B1
+  parser: delimited_text_full_rows
+  artifact_year: 2024
+  sheet_name: ssa_oasdi_ssi_2024
+  selected_rows:
+    - variable: social_security_benefits
+      period: 2024
+    - variable: social_security_retirement_benefits
+      period: 2024
+    - variable: social_security_survivors_benefits
+      period: 2024
+    - variable: social_security_disability_benefits
+      period: 2024
+    - variable: social_security_dependents_benefits
+      period: 2024
+    - variable: ssi_payments
+      period: 2024
+record_sets:
+  - record_set_id: ssa_supplement.cy2024.oasdi_ssi_payments
+    record_set_spec_id: ssa_supplement.oasdi_ssi_payments.v1
+    source_record_id_prefix: ssa_supplement.cy2024.oasdi_ssi_payments
+    sheet_name: ssa_oasdi_ssi_2024
+    period_type: calendar_year
+    period: 2024
+    geography_id: 0100000US
+    geography_level: country
+    geography_name: United States
+    geography_vintage: current
+    entity: person
+    entity_role: beneficiary
+    domain: social_security_and_ssi_payments
+    groupby_dimension: us_social_security_and_ssi.program_payment_type
+    rows:
+      - value_id: social_security_benefits
+        label: Total Social Security benefits
+        ordinal: 0
+        row_number: 2
+        expected_row_header_column: A
+        expected_row_header: social_security_benefits
+        filters:
+          us_social_security_and_ssi.program_payment_type: social_security_benefits
+        constraints:
+          - variable: us_social_security_and_ssi.program_payment_type
+            operator: "=="
+            value: social_security_benefits
+            label: SSA payment type
+        guard_cells:
+          - column: B
+            row: start
+            expected_value: 2024
+            label: calendar year
+          - column: D
+            row: start
+            expected_value: dollars
+            label: unit
+        table_record_kind: total
+      - value_id: social_security_retirement_benefits
+        label: Social Security retired-worker benefits
+        ordinal: 1
+        row_number: 3
+        expected_row_header_column: A
+        expected_row_header: social_security_retirement_benefits
+        filters:
+          us_social_security_and_ssi.program_payment_type: social_security_retirement_benefits
+        constraints:
+          - variable: us_social_security_and_ssi.program_payment_type
+            operator: "=="
+            value: social_security_retirement_benefits
+            label: SSA payment type
+        guard_cells:
+          - column: B
+            row: start
+            expected_value: 2024
+            label: calendar year
+          - column: D
+            row: start
+            expected_value: dollars
+            label: unit
+      - value_id: social_security_survivors_benefits
+        label: Social Security survivor benefits
+        ordinal: 2
+        row_number: 4
+        expected_row_header_column: A
+        expected_row_header: social_security_survivors_benefits
+        filters:
+          us_social_security_and_ssi.program_payment_type: social_security_survivors_benefits
+        constraints:
+          - variable: us_social_security_and_ssi.program_payment_type
+            operator: "=="
+            value: social_security_survivors_benefits
+            label: SSA payment type
+        guard_cells:
+          - column: B
+            row: start
+            expected_value: 2024
+            label: calendar year
+          - column: D
+            row: start
+            expected_value: dollars
+            label: unit
+      - value_id: social_security_disability_benefits
+        label: Social Security disabled-worker benefits
+        ordinal: 3
+        row_number: 5
+        expected_row_header_column: A
+        expected_row_header: social_security_disability_benefits
+        filters:
+          us_social_security_and_ssi.program_payment_type: social_security_disability_benefits
+        constraints:
+          - variable: us_social_security_and_ssi.program_payment_type
+            operator: "=="
+            value: social_security_disability_benefits
+            label: SSA payment type
+        guard_cells:
+          - column: B
+            row: start
+            expected_value: 2024
+            label: calendar year
+          - column: D
+            row: start
+            expected_value: dollars
+            label: unit
+      - value_id: social_security_dependents_benefits
+        label: Social Security spouse and child benefits
+        ordinal: 4
+        row_number: 6
+        expected_row_header_column: A
+        expected_row_header: social_security_dependents_benefits
+        filters:
+          us_social_security_and_ssi.program_payment_type: social_security_dependents_benefits
+        constraints:
+          - variable: us_social_security_and_ssi.program_payment_type
+            operator: "=="
+            value: social_security_dependents_benefits
+            label: SSA payment type
+        guard_cells:
+          - column: B
+            row: start
+            expected_value: 2024
+            label: calendar year
+          - column: D
+            row: start
+            expected_value: dollars
+            label: unit
+      - value_id: ssi_payments
+        label: SSI federally administered payments
+        ordinal: 5
+        row_number: 7
+        expected_row_header_column: A
+        expected_row_header: ssi_payments
+        filters:
+          us_social_security_and_ssi.program_payment_type: ssi_payments
+        constraints:
+          - variable: us_social_security_and_ssi.program_payment_type
+            operator: "=="
+            value: ssi_payments
+            label: SSA payment type
+        guard_cells:
+          - column: B
+            row: start
+            expected_value: 2024
+            label: calendar year
+          - column: D
+            row: start
+            expected_value: dollars
+            label: unit
+    measures:
+      - measure_id: payment_amount
+        label: Payment amount
+        ordinal: 0
+        column: C
+        source_column_id: value
+        expected_column_header_row: 1
+        expected_column_header: value
+        concept: ssa.annual_oasdi_or_ssi_payment_amount
+        source_concept: ssa.annual_statistical_supplement_payment_amount
+        concept_relation: source_label
+        concept_authority: arch-us
+        unit: usd
+        aggregation: sum
+        expected_cell_type: number
