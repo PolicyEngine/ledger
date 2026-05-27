@@ -131,9 +131,9 @@ The ETL pipeline (`db/etl_soi.py`) loads IRS SOI targets for calibration:
 python micro/us/census/download_cps.py --year 2024
 ```
 
-### 2. Convert to Cosilico Format
+### 2. Convert to PolicyEngine Format
 ```bash
-python scripts/cps_to_cosilico.py --year 2024 --calibrate --summary
+python scripts/cps_to_policyengine.py --year 2024 --calibrate --summary
 ```
 
 ### 3. Validate Against Targets
@@ -149,8 +149,8 @@ with Session(get_engine()) as session:
 
 ### 4. Run Microsimulation
 ```bash
-# In cosilico-us repository
-python -m cosilico_us.microsim --input cosilico_input_2024.parquet
+# In policyengine-us repository
+python -m policyengine_us.microsim --input policyengine_input_2024.parquet
 ```
 
 ## Data Quality Recommendations
@@ -199,7 +199,7 @@ definition: "What this variable measures"
 maps_to:
   - jurisdiction: us
     statute: "26 USC section"
-    variable: cosilico_variable_name
+    variable: policyengine_variable_name
     coverage: full | partial
     notes: "Mapping notes"
 
@@ -244,7 +244,7 @@ db/
 
 ```
 scripts/
-├── cps_to_cosilico.py      # Main conversion script
+├── cps_to_policyengine.py      # Main conversion script
 └── export_to_json.py       # JSON export utility
 
 micro/us/

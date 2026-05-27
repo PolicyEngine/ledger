@@ -474,7 +474,7 @@ def calibrate_and_run(year: int = 2024) -> pd.DataFrame:
     from tax_unit_builder import load_and_build_tax_units
 
     print("=" * 70)
-    print("COSILICO MICRODATA CALIBRATION (Gradient Descent)")
+    print("POLICYENGINE MICRODATA CALIBRATION (Gradient Descent)")
     print("=" * 70)
 
     print("\n1. Loading tax unit data...")

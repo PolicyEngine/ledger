@@ -34,8 +34,7 @@ def _env(name: str, legacy_name: str | None = None) -> str | None:
 
 ARCH_SCHEMA = _env("POLICYENGINE_ARCH_SCHEMA", "COSILICO_ARCH_SCHEMA") or "arch"
 MICRODATA_SCHEMA = (
-    _env("POLICYENGINE_MICRODATA_SCHEMA", "COSILICO_MICRODATA_SCHEMA")
-    or "microdata"
+    _env("POLICYENGINE_MICRODATA_SCHEMA", "COSILICO_MICRODATA_SCHEMA") or "microdata"
 )
 TARGETS_SCHEMA = (
     _env("POLICYENGINE_TARGETS_SCHEMA", "COSILICO_TARGETS_SCHEMA") or "targets"
@@ -103,6 +102,7 @@ def get_supabase_client() -> Client:
 # Table naming helpers
 # =============================================================================
 
+
 def get_table_name(
     jurisdiction: str,
     institution: str,
@@ -136,6 +136,7 @@ def _table(client: Client, schema: str, table_name: str):
 # =============================================================================
 # Sources and datasets
 # =============================================================================
+
 
 def query_sources(
     jurisdiction: Optional[str] = None,
@@ -240,13 +241,18 @@ def register_dataset(
     if source_url:
         data["source_url"] = source_url
 
-    result = _table(client, ARCH_SCHEMA, "datasets").upsert(data, on_conflict="jurisdiction,institution,dataset,year,table_type").execute()
+    result = (
+        _table(client, ARCH_SCHEMA, "datasets")
+        .upsert(data, on_conflict="jurisdiction,institution,dataset,year,table_type")
+        .execute()
+    )
     return result.data[0] if result.data else {}
 
 
 # =============================================================================
 # Raw microdata queries
 # =============================================================================
+
 
 def query_microdata(
     jurisdiction: str,
@@ -363,6 +369,7 @@ def query_cps(
 # Targets and strata
 # =============================================================================
 
+
 def query_strata(
     jurisdiction: Optional[str] = None,
 ) -> List[Dict[str, Any]]:
@@ -405,7 +412,9 @@ def query_targets(
     """
     client = get_supabase_client()
     # Nested join: strata with their stratum_constraints
-    query = _table(client, TARGETS_SCHEMA, "targets").select("*, strata(*, stratum_constraints(*)), sources(*)")
+    query = _table(client, TARGETS_SCHEMA, "targets").select(
+        "*, strata(*, stratum_constraints(*)), sources(*)"
+    )
 
     if year:
         query = query.eq("period", year)
@@ -419,7 +428,9 @@ def query_targets(
     # Filter by jurisdiction if specified (post-query since it's on joined table)
     data = result.data
     if jurisdiction:
-        data = [t for t in data if t.get("strata", {}).get("jurisdiction") == jurisdiction]
+        data = [
+            t for t in data if t.get("strata", {}).get("jurisdiction") == jurisdiction
+        ]
 
     return data
 
@@ -427,6 +438,7 @@ def query_targets(
 # =============================================================================
 # Insert operations
 # =============================================================================
+
 
 def insert_microdata_batch(
     jurisdiction: str,
@@ -457,7 +469,7 @@ def insert_microdata_batch(
     total = 0
 
     for i in range(0, len(records), chunk_size):
-        chunk = records[i:i + chunk_size]
+        chunk = records[i : i + chunk_size]
         _table(client, MICRODATA_SCHEMA, table_name).insert(chunk).execute()
         total += len(chunk)
 
@@ -482,7 +494,7 @@ def insert_targets_batch(
     total = 0
 
     for i in range(0, len(targets), chunk_size):
-        chunk = targets[i:i + chunk_size]
+        chunk = targets[i : i + chunk_size]
         _table(client, TARGETS_SCHEMA, "targets").insert(chunk).execute()
         total += len(chunk)
 

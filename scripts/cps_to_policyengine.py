@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-CPS to Cosilico Converter
+CPS to PolicyEngine Converter
 
-Converts CPS ASEC microdata to the Cosilico input format for microsimulation.
-Maps CPS survey variables to statute input variables used by cosilico-us.
+Converts CPS ASEC microdata to the PolicyEngine input format for microsimulation.
+Maps CPS survey variables to statute input variables used by policyengine-us.
 
 Usage:
-    python cps_to_cosilico.py --year 2024 --output microsim_2024.parquet
-    python cps_to_cosilico.py --year 2024 --calibrate --output microsim_2024_calibrated.parquet
+    python cps_to_policyengine.py --year 2024 --output microsim_2024.parquet
+    python cps_to_policyengine.py --year 2024 --calibrate --output microsim_2024_calibrated.parquet
 
 Output format:
     - Person-level records with unique IDs
@@ -24,10 +24,10 @@ import pandas as pd
 
 
 # =============================================================================
-# CPS Variable to Cosilico Statute Variable Mappings
+# CPS Variable to PolicyEngine Statute Variable Mappings
 # =============================================================================
 
-# Income variables: CPS variable -> Cosilico statute variable
+# Income variables: CPS variable -> PolicyEngine statute variable
 INCOME_MAPPINGS = {
     # Earned income (IRC 32(c)(2))
     "WSAL_VAL": "wages",
@@ -149,7 +149,7 @@ def load_cps_from_cache(year: int, cache_dir: Optional[Path] = None) -> pd.DataF
 
 
 def transform_income_variables(df: pd.DataFrame) -> pd.DataFrame:
-    """Transform CPS income variables to Cosilico format."""
+    """Transform CPS income variables to PolicyEngine format."""
     result = pd.DataFrame(index=df.index)
 
     for cps_var, cos_var in INCOME_MAPPINGS.items():
@@ -174,7 +174,7 @@ def transform_income_variables(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def transform_tax_variables(df: pd.DataFrame) -> pd.DataFrame:
-    """Transform CPS tax unit variables to Cosilico format."""
+    """Transform CPS tax unit variables to PolicyEngine format."""
     result = pd.DataFrame(index=df.index)
 
     for cps_var, cos_var in TAX_UNIT_MAPPINGS.items():
@@ -187,7 +187,7 @@ def transform_tax_variables(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def transform_demographics(df: pd.DataFrame) -> pd.DataFrame:
-    """Transform CPS demographic variables to Cosilico format."""
+    """Transform CPS demographic variables to PolicyEngine format."""
     result = pd.DataFrame(index=df.index)
 
     for cps_var, cos_var in DEMOGRAPHIC_MAPPINGS.items():
@@ -253,14 +253,14 @@ def transform_weights(df: pd.DataFrame) -> pd.DataFrame:
     return result
 
 
-def convert_cps_to_cosilico(
+def convert_cps_to_policyengine(
     year: int,
     output_path: Optional[Path] = None,
     calibrate: bool = False,
     cache_dir: Optional[Path] = None,
 ) -> pd.DataFrame:
     """
-    Convert CPS microdata to Cosilico input format.
+    Convert CPS microdata to PolicyEngine input format.
 
     Args:
         year: Tax year (e.g., 2024)
@@ -269,12 +269,12 @@ def convert_cps_to_cosilico(
         cache_dir: Override default cache directory
 
     Returns:
-        DataFrame in Cosilico input format
+        DataFrame in PolicyEngine input format
     """
     # Load raw CPS data
     cps = load_cps_from_cache(year, cache_dir)
 
-    print("Transforming to Cosilico format...")
+    print("Transforming to PolicyEngine format...")
 
     # Transform all variable groups
     income = transform_income_variables(cps)
@@ -309,7 +309,7 @@ def convert_cps_to_cosilico(
     # Save output
     if output_path is None:
         output_dir = Path(__file__).parent.parent / "micro" / "us"
-        output_path = output_dir / f"cosilico_input_{year}.parquet"
+        output_path = output_dir / f"policyengine_input_{year}.parquet"
 
     output_path = Path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -384,7 +384,7 @@ def generate_summary(df: pd.DataFrame, year: int) -> dict:
 def print_summary(summary: dict) -> None:
     """Print formatted summary statistics."""
     print("\n" + "=" * 60)
-    print(f"COSILICO INPUT SUMMARY - {summary['year']}")
+    print(f"POLICYENGINE INPUT SUMMARY - {summary['year']}")
     print("=" * 60)
     print(f"Records: {summary['record_count']:,}")
     print(f"Weighted population: {summary['weighted_population']:,.0f}")
@@ -399,7 +399,7 @@ def print_summary(summary: dict) -> None:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Convert CPS ASEC microdata to Cosilico input format"
+        description="Convert CPS ASEC microdata to PolicyEngine input format"
     )
     parser.add_argument(
         "--year",
@@ -433,7 +433,7 @@ def main():
     output_path = Path(args.output) if args.output else None
     cache_dir = Path(args.cache_dir) if args.cache_dir else None
 
-    df = convert_cps_to_cosilico(
+    df = convert_cps_to_policyengine(
         year=args.year,
         output_path=output_path,
         calibrate=args.calibrate,

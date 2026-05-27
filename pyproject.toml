@@ -1,5 +1,5 @@
 [project]
-name = "cosilico-arch"
+name = "policyengine-arch-data"
 version = "0.1.0"
 description = "PolicyEngine Arch source-data foundation: source facts, microdata, and target inputs"
 readme = "README.md"

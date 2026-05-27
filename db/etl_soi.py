@@ -231,7 +231,7 @@ def _table_content(year: int, file_spec_fn, package_dir: str) -> bytes:
     else:
         request = Request(
             spec["source_url"],
-            headers={"User-Agent": "cosilico-arch/0.1", "Accept": "*/*"},
+            headers={"User-Agent": "policyengine-arch-data/0.1", "Accept": "*/*"},
         )
         with urlopen(request, timeout=120) as response:
             content = response.read()

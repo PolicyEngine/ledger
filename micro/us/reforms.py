@@ -1,5 +1,5 @@
 """
-Cosilico Reform System.
+PolicyEngine Reform System.
 
 Supports both parametric and structural reforms for tax/benefit analysis.
 
@@ -11,7 +11,7 @@ from dataclasses import dataclass
 from typing import Callable
 from copy import deepcopy
 
-from cosilico_runner import PARAMS_2024, run_all_calculations
+from policyengine_runner import PARAMS_2024, run_all_calculations
 from tax_unit_builder import load_and_build_tax_units
 
 
@@ -157,13 +157,13 @@ def run_reform_analysis(
 
     # Need to modify run_all_calculations to accept params
     # For now, monkey-patch
-    import cosilico_runner
-    original_params = cosilico_runner.PARAMS_2024
-    cosilico_runner.PARAMS_2024 = reformed_params
+    import policyengine_runner
+    original_params = policyengine_runner.PARAMS_2024
+    policyengine_runner.PARAMS_2024 = reformed_params
 
     reform_df = run_all_calculations(df.copy(), year)
 
-    cosilico_runner.PARAMS_2024 = original_params
+    policyengine_runner.PARAMS_2024 = original_params
 
     # Calculate differences
     weight = df['weight'].values
@@ -263,11 +263,11 @@ def run_calibrated_reform_analysis(
     baseline_df = run_all_calculations(df.copy(), year)
 
     # Apply reform
-    import cosilico_runner
-    original_params = cosilico_runner.PARAMS_2024
-    cosilico_runner.PARAMS_2024 = reform.apply(baseline_params)
+    import policyengine_runner
+    original_params = policyengine_runner.PARAMS_2024
+    policyengine_runner.PARAMS_2024 = reform.apply(baseline_params)
     reform_df = run_all_calculations(df.copy(), year)
-    cosilico_runner.PARAMS_2024 = original_params
+    policyengine_runner.PARAMS_2024 = original_params
 
     # Calculate differences
     weight = df['weight'].values
@@ -319,7 +319,7 @@ if __name__ == "__main__":
     import sys
 
     print("=" * 70)
-    print("COSILICO REFORM ANALYSIS")
+    print("POLICYENGINE REFORM ANALYSIS")
     print("=" * 70)
 
     # Check for calibrated flag

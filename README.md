@@ -113,7 +113,7 @@ and calibration code belongs under `micro/`.
 ### 1. Install
 
 ```bash
-pip install cosilico-arch
+pip install policyengine-arch-data
 # Or for development:
 git clone https://github.com/PolicyEngine/arch-data arch
 cd arch

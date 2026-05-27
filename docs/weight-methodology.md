@@ -2,7 +2,7 @@
 
 ## Overview
 
-Cosilico calibrates microdata weights to match administrative targets using gradient descent on squared relative error. This approach:
+PolicyEngine calibrates microdata weights to match administrative targets using gradient descent on squared relative error. This approach:
 
 1. **No prior dependence**: Weights are determined purely by targets, not by arbitrary demographic calibration choices
 2. **Soft constraints**: Handles conflicting or infeasible targets gracefully

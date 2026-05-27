@@ -88,7 +88,7 @@ def add_synthetic_high_income(df, pareto_alpha=1.5):
 If IRS PUF license obtained:
 
 ```python
-class CosilicoPUF:
+class PolicyEnginePUF:
     """Load and process IRS PUF."""
 
     def __init__(self, puf_path: str):
@@ -96,7 +96,7 @@ class CosilicoPUF:
         self.records = self._build_tax_units()
 
     def _build_tax_units(self):
-        """Map PUF variables to Cosilico schema."""
+        """Map PUF variables to PolicyEngine schema."""
         return pd.DataFrame({
             'weight': self.raw['S006'] / 100,  # PUF weights are x100
             'adjusted_gross_income': self.raw['E00100'],

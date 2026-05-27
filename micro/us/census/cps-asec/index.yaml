@@ -18,7 +18,7 @@ years_available: [2018, 2019, 2020, 2021, 2022, 2023, 2024]
 # 3. CPS-derived counts may not match statutory definitions
 #
 # Qualifying children, tax liability, benefit amounts, etc. should be computed
-# in the rules engine (cosilico-us) from primary inputs.
+# in the rules engine (policyengine-us) from primary inputs.
 
 entities:
   - person
