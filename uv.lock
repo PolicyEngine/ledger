@@ -292,6 +292,7 @@ dependencies = [
     { name = "openpyxl" },
     { name = "pandas" },
     { name = "pyarrow" },
+    { name = "pypdf" },
     { name = "pyyaml" },
     { name = "scipy" },
     { name = "sqlmodel" },
@@ -323,6 +324,7 @@ requires-dist = [
     { name = "pandas", specifier = ">=2.0.0" },
     { name = "policyengine-us", marker = "extra == 'policyengine'", specifier = ">=1.670.2" },
     { name = "pyarrow", specifier = ">=22.0.0" },
+    { name = "pypdf", specifier = ">=6.0.0" },
     { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0.0,<9" },
     { name = "pyyaml", specifier = ">=6.0" },
     { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.5.0" },
@@ -2138,6 +2140,15 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/33/c1/1d9de9aeaa1b89b0186e5fe23294ff6517fce1bc69149185577cd31016b2/pyparsing-3.3.1.tar.gz", hash = "sha256:47fad0f17ac1e2cad3de3b458570fbc9b03560aa029ed5e16ee5554da9a2251c", size = 1550512, upload-time = "2025-12-23T03:14:04.391Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/8b/40/2614036cdd416452f5bf98ec037f38a1afb17f327cb8e6b652d4729e0af8/pyparsing-3.3.1-py3-none-any.whl", hash = "sha256:023b5e7e5520ad96642e2c6db4cb683d3970bd640cdf7115049a6e9c3682df82", size = 121793, upload-time = "2025-12-23T03:14:02.103Z" },
+]
+
+[[package]]
+name = "pypdf"
+version = "6.11.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/bf/58/6dd97d78a4b17a7a6b9d1c6ad23895abc41f0fdc49c553cc05bdfdcc36d0/pypdf-6.11.0.tar.gz", hash = "sha256:062b51c81b0910e6d2755e99e1c5547a0a23b7d0a32322af66240d8edcfabe87", size = 6453975, upload-time = "2026-05-09T13:26:48.955Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/07/b1/68feb7eb3b99f0c020b414234825f4a5d70e0126c18d933770e8c93a35fc/pypdf-6.11.0-py3-none-any.whl", hash = "sha256:769394d5756d5b304c9b6bef88b54b1816b328e7e6fc9254e625529a15ed4ab8", size = 338819, upload-time = "2026-05-09T13:26:46.904Z" },
 ]
 
 [[package]]

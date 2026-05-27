@@ -22,9 +22,22 @@ import pandas as pd
 from supabase import create_client, Client
 
 
-ARCH_SCHEMA = os.environ.get("POLICYENGINE_ARCH_SCHEMA", "arch")
-MICRODATA_SCHEMA = os.environ.get("POLICYENGINE_MICRODATA_SCHEMA", "microdata")
-TARGETS_SCHEMA = os.environ.get("POLICYENGINE_TARGETS_SCHEMA", "targets")
+def _env(*names: str) -> str | None:
+    """Read PolicyEngine-owned storage config."""
+    for name in names:
+        value = os.environ.get(name)
+        if value:
+            return value
+    return None
+
+
+ARCH_SCHEMA = _env("POLICYENGINE_ARCH_SCHEMA") or "arch"
+MICRODATA_SCHEMA = (
+    _env("POLICYENGINE_MICRODATA_SCHEMA") or "microdata"
+)
+TARGETS_SCHEMA = (
+    _env("POLICYENGINE_TARGETS_SCHEMA") or "targets"
+)
 
 
 @dataclass
@@ -41,22 +54,25 @@ class SupabaseConfig:
 
         Required:
             POLICYENGINE_SUPABASE_URL: Supabase project URL
-            POLICYENGINE_SUPABASE_SECRET_KEY: Service role key for full access
+            POLICYENGINE_SUPABASE_SERVICE_KEY: Service role key for full access
 
         Raises:
             ValueError: If required environment variables are missing
         """
-        url = os.environ.get("POLICYENGINE_SUPABASE_URL")
+        url = _env("POLICYENGINE_SUPABASE_URL")
         if not url:
             raise ValueError(
                 "POLICYENGINE_SUPABASE_URL not set. "
                 "Set this to your Supabase project URL."
             )
 
-        secret_key = os.environ.get("POLICYENGINE_SUPABASE_SECRET_KEY")
+        secret_key = _env(
+            "POLICYENGINE_SUPABASE_SERVICE_KEY",
+            "POLICYENGINE_SUPABASE_SECRET_KEY",
+        )
         if not secret_key:
             raise ValueError(
-                "POLICYENGINE_SUPABASE_SECRET_KEY not set. "
+                "POLICYENGINE_SUPABASE_SERVICE_KEY not set. "
                 "Set this to your service role key."
             )
 
@@ -84,6 +100,7 @@ def get_supabase_client() -> Client:
 # =============================================================================
 # Table naming helpers
 # =============================================================================
+
 
 def get_table_name(
     jurisdiction: str,
@@ -118,6 +135,7 @@ def _table(client: Client, schema: str, table_name: str):
 # =============================================================================
 # Sources and datasets
 # =============================================================================
+
 
 def query_sources(
     jurisdiction: Optional[str] = None,
@@ -222,13 +240,18 @@ def register_dataset(
     if source_url:
         data["source_url"] = source_url
 
-    result = _table(client, ARCH_SCHEMA, "datasets").upsert(data, on_conflict="jurisdiction,institution,dataset,year,table_type").execute()
+    result = (
+        _table(client, ARCH_SCHEMA, "datasets")
+        .upsert(data, on_conflict="jurisdiction,institution,dataset,year,table_type")
+        .execute()
+    )
     return result.data[0] if result.data else {}
 
 
 # =============================================================================
 # Raw microdata queries
 # =============================================================================
+
 
 def query_microdata(
     jurisdiction: str,
@@ -345,6 +368,7 @@ def query_cps(
 # Targets and strata
 # =============================================================================
 
+
 def query_strata(
     jurisdiction: Optional[str] = None,
 ) -> List[Dict[str, Any]]:
@@ -387,7 +411,9 @@ def query_targets(
     """
     client = get_supabase_client()
     # Nested join: strata with their stratum_constraints
-    query = _table(client, TARGETS_SCHEMA, "targets").select("*, strata(*, stratum_constraints(*)), sources(*)")
+    query = _table(client, TARGETS_SCHEMA, "targets").select(
+        "*, strata(*, stratum_constraints(*)), sources(*)"
+    )
 
     if year:
         query = query.eq("period", year)
@@ -401,7 +427,9 @@ def query_targets(
     # Filter by jurisdiction if specified (post-query since it's on joined table)
     data = result.data
     if jurisdiction:
-        data = [t for t in data if t.get("strata", {}).get("jurisdiction") == jurisdiction]
+        data = [
+            t for t in data if t.get("strata", {}).get("jurisdiction") == jurisdiction
+        ]
 
     return data
 
@@ -409,6 +437,7 @@ def query_targets(
 # =============================================================================
 # Insert operations
 # =============================================================================
+
 
 def insert_microdata_batch(
     jurisdiction: str,
@@ -439,7 +468,7 @@ def insert_microdata_batch(
     total = 0
 
     for i in range(0, len(records), chunk_size):
-        chunk = records[i:i + chunk_size]
+        chunk = records[i : i + chunk_size]
         _table(client, MICRODATA_SCHEMA, table_name).insert(chunk).execute()
         total += len(chunk)
 
@@ -464,7 +493,7 @@ def insert_targets_batch(
     total = 0
 
     for i in range(0, len(targets), chunk_size):
-        chunk = targets[i:i + chunk_size]
+        chunk = targets[i : i + chunk_size]
         _table(client, TARGETS_SCHEMA, "targets").insert(chunk).execute()
         total += len(chunk)
 

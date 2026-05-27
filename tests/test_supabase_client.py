@@ -19,8 +19,11 @@ class TestSupabaseClient:
         # Skip if no real credentials
         if not os.environ.get("POLICYENGINE_SUPABASE_URL"):
             pytest.skip("POLICYENGINE_SUPABASE_URL not set")
-        if not os.environ.get("POLICYENGINE_SUPABASE_SECRET_KEY"):
-            pytest.skip("POLICYENGINE_SUPABASE_SECRET_KEY not set")
+        if not (
+            os.environ.get("POLICYENGINE_SUPABASE_SERVICE_KEY")
+            or os.environ.get("POLICYENGINE_SUPABASE_SECRET_KEY")
+        ):
+            pytest.skip("POLICYENGINE_SUPABASE_SERVICE_KEY not set")
 
         # Clear the lru_cache to ensure fresh client
         get_supabase_client.cache_clear()
@@ -31,10 +34,29 @@ class TestSupabaseClient:
         """SupabaseConfig loads from environment variables."""
         from db.supabase_client import SupabaseConfig
 
-        with patch.dict(os.environ, {
-            "POLICYENGINE_SUPABASE_URL": "https://test.supabase.co",
-            "POLICYENGINE_SUPABASE_SECRET_KEY": "test-secret-key",
-        }):
+        with patch.dict(
+            os.environ,
+            {
+                "POLICYENGINE_SUPABASE_URL": "https://test.supabase.co",
+                "POLICYENGINE_SUPABASE_SERVICE_KEY": "test-secret-key",
+            },
+        ):
+            config = SupabaseConfig.from_env()
+            assert config.url == "https://test.supabase.co"
+            assert config.secret_key == "test-secret-key"
+
+    def test_config_uses_policyengine_secret_key_as_fallback(self):
+        """PolicyEngine SECRET_KEY keeps existing deployments working."""
+        from db.supabase_client import SupabaseConfig
+
+        with patch.dict(
+            os.environ,
+            {
+                "POLICYENGINE_SUPABASE_URL": "https://test.supabase.co",
+                "POLICYENGINE_SUPABASE_SECRET_KEY": "test-secret-key",
+            },
+            clear=True,
+        ):
             config = SupabaseConfig.from_env()
             assert config.url == "https://test.supabase.co"
             assert config.secret_key == "test-secret-key"
@@ -51,10 +73,14 @@ class TestSupabaseClient:
         """Missing secret key raises ValueError."""
         from db.supabase_client import SupabaseConfig
 
-        with patch.dict(os.environ, {
-            "POLICYENGINE_SUPABASE_URL": "https://test.supabase.co",
-        }, clear=True):
-            with pytest.raises(ValueError, match="POLICYENGINE_SUPABASE_SECRET_KEY"):
+        with patch.dict(
+            os.environ,
+            {
+                "POLICYENGINE_SUPABASE_URL": "https://test.supabase.co",
+            },
+            clear=True,
+        ):
+            with pytest.raises(ValueError, match="POLICYENGINE_SUPABASE_SERVICE_KEY"):
                 SupabaseConfig.from_env()
 
 
@@ -105,7 +131,7 @@ class TestSupabaseQueries:
                 "jurisdiction": "us",
                 "constraints": [
                     {"variable": "state_fips", "operator": "==", "value": "06"}
-                ]
+                ],
             }
         ]
 
@@ -145,7 +171,9 @@ class TestSupabaseMicrodata:
 
         with patch("db.supabase_client.get_supabase_client", return_value=mock_client):
             query_cps(year=2021)
-            mock_client.table.return_value.select.return_value.eq.assert_called_with("year", 2021)
+            mock_client.table.return_value.select.return_value.eq.assert_called_with(
+                "year", 2021
+            )
 
     def test_query_cps_filters_by_state(self, mock_client):
         """CPS query can filter by state."""

@@ -1,3 +1,5 @@
+source_id: irs_soi
+package_id: soi-table-1-4
 dataset: irs_soi_publication_1304_table_1_4
 source_page: https://www.irs.gov/statistics/soi-tax-stats-individual-income-tax-returns-complete-report-publication-1304-basic-tables-part-1
 table: Table 1.4
@@ -6,11 +8,32 @@ files:
     filename: 21in14ar.xls
     source_url: https://www.irs.gov/pub/irs-soi/21in14ar.xls
     sha256: b2c44704feb0ce4ad7d544e1ac12dc0943a10eefa0a8523f578a0f3fe8552682
+    size_bytes: 105984
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/irs_soi/soi-table-1-4/2021/b2c44704feb0ce4ad7d544e1ac12dc0943a10eefa0a8523f578a0f3fe8552682/21in14ar.xls
+        uri: r2://arch-raw/raw/irs_soi/soi-table-1-4/2021/b2c44704feb0ce4ad7d544e1ac12dc0943a10eefa0a8523f578a0f3fe8552682/21in14ar.xls
   2022:
     filename: 22in14ar.xls
     source_url: https://www.irs.gov/pub/irs-soi/22in14ar.xls
     sha256: 93811f816933d4ac3250c402f7ddae5989a145b60ce47db413d0f19c71af6617
+    size_bytes: 115712
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/irs_soi/soi-table-1-4/2022/93811f816933d4ac3250c402f7ddae5989a145b60ce47db413d0f19c71af6617/22in14ar.xls
+        uri: r2://arch-raw/raw/irs_soi/soi-table-1-4/2022/93811f816933d4ac3250c402f7ddae5989a145b60ce47db413d0f19c71af6617/22in14ar.xls
   2023:
     filename: 23in14ar.xls
     source_url: https://www.irs.gov/pub/irs-soi/23in14ar.xls
     sha256: b6c1f87fbb5533417e195f6938538e5de09b6a0825a6a54346bf9363a18d96af
+    size_bytes: 115712
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/irs_soi/soi-table-1-4/2023/b6c1f87fbb5533417e195f6938538e5de09b6a0825a6a54346bf9363a18d96af/23in14ar.xls
+        uri: r2://arch-raw/raw/irs_soi/soi-table-1-4/2023/b6c1f87fbb5533417e195f6938538e5de09b6a0825a6a54346bf9363a18d96af/23in14ar.xls
