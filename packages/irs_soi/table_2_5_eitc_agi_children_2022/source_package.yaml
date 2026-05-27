@@ -1,0 +1,4442 @@
+schema_version: arch.source_package.v1
+package_id: soi-table-2-5-eitc-agi-children-2022
+label: IRS SOI Publication 1304 Table 2.5 EITC by AGI and qualifying children 2022
+artifact:
+  source_name: irs_soi
+  source_table: Publication 1304 Table 2.5 EITC by AGI and qualifying children
+  resource_package: db
+  resource_directory: data/irs_soi/table_2_5
+  manifest: manifest.yaml
+  artifact_year: 2022
+  vintage: tax_year_2022
+  extracted_at: '2026-05-11'
+  extraction_method: xlrd whole-workbook used-range cell parse
+record_sets:
+- record_set_id: irs_soi.ty2022.table_2_5.eitc_by_agi_children.no_qualifying_children
+  record_set_spec_id: irs_soi.table_2_5.eitc_by_agi_children.no_qualifying_children.v1
+  source_record_id_prefix: irs_soi.ty2022.table_2_5.eitc_by_agi_children.no_qualifying_children
+  sheet_name: TBL25
+  period_type: tax_year
+  period: 2022
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: 2020_census
+  entity: tax_unit
+  entity_role: filing_unit
+  domain: individual_income_tax_returns_with_earned_income_credit
+  groupby_dimension: us:statutes/26/62#adjusted_gross_income
+  rows:
+  - value_id: under_1
+    label: No adjusted gross income
+    ordinal: 0
+    row_number: 10
+    expected_row_header_column: A
+    expected_row_header: No adjusted gross income
+    filters:
+      income_range: under_1
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 1
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: No adjusted gross income
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: R
+      row: 3
+      expected_value: Returns with no qualifying children
+      label: qualifying-child column group
+    - column: Z
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 1_to_1k
+    label: $1 under $1,000
+    ordinal: 1
+    row_number: 11
+    expected_row_header_column: A
+    expected_row_header: $1 under $1,000
+    filters:
+      income_range: 1_to_1k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 1
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 1000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $1 under $1,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: R
+      row: 3
+      expected_value: Returns with no qualifying children
+      label: qualifying-child column group
+    - column: Z
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 1k_to_2k
+    label: $1,000 under $2,000
+    ordinal: 2
+    row_number: 12
+    expected_row_header_column: A
+    expected_row_header: $1,000 under $2,000
+    filters:
+      income_range: 1k_to_2k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 1000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 2000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $1,000 under $2,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: R
+      row: 3
+      expected_value: Returns with no qualifying children
+      label: qualifying-child column group
+    - column: Z
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 2k_to_3k
+    label: $2,000 under $3,000
+    ordinal: 3
+    row_number: 13
+    expected_row_header_column: A
+    expected_row_header: $2,000 under $3,000
+    filters:
+      income_range: 2k_to_3k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 2000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 3000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $2,000 under $3,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: R
+      row: 3
+      expected_value: Returns with no qualifying children
+      label: qualifying-child column group
+    - column: Z
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 3k_to_4k
+    label: $3,000 under $4,000
+    ordinal: 4
+    row_number: 14
+    expected_row_header_column: A
+    expected_row_header: $3,000 under $4,000
+    filters:
+      income_range: 3k_to_4k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 3000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 4000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $3,000 under $4,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: R
+      row: 3
+      expected_value: Returns with no qualifying children
+      label: qualifying-child column group
+    - column: Z
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 4k_to_5k
+    label: $4,000 under $5,000
+    ordinal: 5
+    row_number: 15
+    expected_row_header_column: A
+    expected_row_header: $4,000 under $5,000
+    filters:
+      income_range: 4k_to_5k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 4000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 5000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $4,000 under $5,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: R
+      row: 3
+      expected_value: Returns with no qualifying children
+      label: qualifying-child column group
+    - column: Z
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 5k_to_6k
+    label: $5,000 under $6,000
+    ordinal: 6
+    row_number: 16
+    expected_row_header_column: A
+    expected_row_header: $5,000 under $6,000
+    filters:
+      income_range: 5k_to_6k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 5000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 6000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $5,000 under $6,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: R
+      row: 3
+      expected_value: Returns with no qualifying children
+      label: qualifying-child column group
+    - column: Z
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 6k_to_7k
+    label: $6,000 under $7,000
+    ordinal: 7
+    row_number: 17
+    expected_row_header_column: A
+    expected_row_header: $6,000 under $7,000
+    filters:
+      income_range: 6k_to_7k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 6000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 7000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $6,000 under $7,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: R
+      row: 3
+      expected_value: Returns with no qualifying children
+      label: qualifying-child column group
+    - column: Z
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 7k_to_8k
+    label: $7,000 under $8,000
+    ordinal: 8
+    row_number: 18
+    expected_row_header_column: A
+    expected_row_header: $7,000 under $8,000
+    filters:
+      income_range: 7k_to_8k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 7000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 8000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $7,000 under $8,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: R
+      row: 3
+      expected_value: Returns with no qualifying children
+      label: qualifying-child column group
+    - column: Z
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 8k_to_9k
+    label: $8,000 under $9,000
+    ordinal: 9
+    row_number: 19
+    expected_row_header_column: A
+    expected_row_header: $8,000 under $9,000
+    filters:
+      income_range: 8k_to_9k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 8000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 9000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $8,000 under $9,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: R
+      row: 3
+      expected_value: Returns with no qualifying children
+      label: qualifying-child column group
+    - column: Z
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 9k_to_10k
+    label: $9,000 under $10,000
+    ordinal: 10
+    row_number: 20
+    expected_row_header_column: A
+    expected_row_header: $9,000 under $10,000
+    filters:
+      income_range: 9k_to_10k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 9000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 10000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $9,000 under $10,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: R
+      row: 3
+      expected_value: Returns with no qualifying children
+      label: qualifying-child column group
+    - column: Z
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 10k_to_11k
+    label: $10,000 under $11,000
+    ordinal: 11
+    row_number: 21
+    expected_row_header_column: A
+    expected_row_header: $10,000 under $11,000
+    filters:
+      income_range: 10k_to_11k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 10000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 11000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $10,000 under $11,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: R
+      row: 3
+      expected_value: Returns with no qualifying children
+      label: qualifying-child column group
+    - column: Z
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 11k_to_12k
+    label: $11,000 under $12,000
+    ordinal: 12
+    row_number: 22
+    expected_row_header_column: A
+    expected_row_header: $11,000 under $12,000
+    filters:
+      income_range: 11k_to_12k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 11000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 12000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $11,000 under $12,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: R
+      row: 3
+      expected_value: Returns with no qualifying children
+      label: qualifying-child column group
+    - column: Z
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 12k_to_13k
+    label: $12,000 under $13,000
+    ordinal: 13
+    row_number: 23
+    expected_row_header_column: A
+    expected_row_header: $12,000 under $13,000
+    filters:
+      income_range: 12k_to_13k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 12000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 13000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $12,000 under $13,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: R
+      row: 3
+      expected_value: Returns with no qualifying children
+      label: qualifying-child column group
+    - column: Z
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 13k_to_14k
+    label: $13,000 under $14,000
+    ordinal: 14
+    row_number: 24
+    expected_row_header_column: A
+    expected_row_header: $13,000 under $14,000
+    filters:
+      income_range: 13k_to_14k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 13000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 14000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $13,000 under $14,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: R
+      row: 3
+      expected_value: Returns with no qualifying children
+      label: qualifying-child column group
+    - column: Z
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 14k_to_15k
+    label: $14,000 under $15,000
+    ordinal: 15
+    row_number: 25
+    expected_row_header_column: A
+    expected_row_header: $14,000 under $15,000
+    filters:
+      income_range: 14k_to_15k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 14000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 15000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $14,000 under $15,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: R
+      row: 3
+      expected_value: Returns with no qualifying children
+      label: qualifying-child column group
+    - column: Z
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 15k_to_16k
+    label: $15,000 under $16,000
+    ordinal: 16
+    row_number: 26
+    expected_row_header_column: A
+    expected_row_header: $15,000 under $16,000
+    filters:
+      income_range: 15k_to_16k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 15000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 16000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $15,000 under $16,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: R
+      row: 3
+      expected_value: Returns with no qualifying children
+      label: qualifying-child column group
+    - column: Z
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 16k_to_17k
+    label: $16,000 under $17,000
+    ordinal: 17
+    row_number: 27
+    expected_row_header_column: A
+    expected_row_header: $16,000 under $17,000
+    filters:
+      income_range: 16k_to_17k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 16000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 17000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $16,000 under $17,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: R
+      row: 3
+      expected_value: Returns with no qualifying children
+      label: qualifying-child column group
+    - column: Z
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 17k_to_18k
+    label: $17,000 under $18,000
+    ordinal: 18
+    row_number: 28
+    expected_row_header_column: A
+    expected_row_header: $17,000 under $18,000
+    filters:
+      income_range: 17k_to_18k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 17000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 18000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $17,000 under $18,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: R
+      row: 3
+      expected_value: Returns with no qualifying children
+      label: qualifying-child column group
+    - column: Z
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 18k_to_19k
+    label: $18,000 under $19,000
+    ordinal: 19
+    row_number: 29
+    expected_row_header_column: A
+    expected_row_header: $18,000 under $19,000
+    filters:
+      income_range: 18k_to_19k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 18000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 19000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $18,000 under $19,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: R
+      row: 3
+      expected_value: Returns with no qualifying children
+      label: qualifying-child column group
+    - column: Z
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 19k_to_20k
+    label: $19,000 under $20,000
+    ordinal: 20
+    row_number: 30
+    expected_row_header_column: A
+    expected_row_header: $19,000 under $20,000
+    filters:
+      income_range: 19k_to_20k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 19000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 20000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $19,000 under $20,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: R
+      row: 3
+      expected_value: Returns with no qualifying children
+      label: qualifying-child column group
+    - column: Z
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 20k_to_25k
+    label: $20,000 under $25,000
+    ordinal: 21
+    row_number: 31
+    expected_row_header_column: A
+    expected_row_header: $20,000 under $25,000
+    filters:
+      income_range: 20k_to_25k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 20000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 25000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $20,000 under $25,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: R
+      row: 3
+      expected_value: Returns with no qualifying children
+      label: qualifying-child column group
+    - column: Z
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 25k_to_30k
+    label: $25,000 under $30,000
+    ordinal: 22
+    row_number: 32
+    expected_row_header_column: A
+    expected_row_header: $25,000 under $30,000
+    filters:
+      income_range: 25k_to_30k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 25000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 30000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $25,000 under $30,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: R
+      row: 3
+      expected_value: Returns with no qualifying children
+      label: qualifying-child column group
+    - column: Z
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 30k_to_35k
+    label: $30,000 under $35,000
+    ordinal: 23
+    row_number: 33
+    expected_row_header_column: A
+    expected_row_header: $30,000 under $35,000
+    filters:
+      income_range: 30k_to_35k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 30000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 35000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $30,000 under $35,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: R
+      row: 3
+      expected_value: Returns with no qualifying children
+      label: qualifying-child column group
+    - column: Z
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 35k_to_40k
+    label: $35,000 under $40,000
+    ordinal: 24
+    row_number: 34
+    expected_row_header_column: A
+    expected_row_header: $35,000 under $40,000
+    filters:
+      income_range: 35k_to_40k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 35000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 40000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $35,000 under $40,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: R
+      row: 3
+      expected_value: Returns with no qualifying children
+      label: qualifying-child column group
+    - column: Z
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 40k_to_45k
+    label: $40,000 under $45,000
+    ordinal: 25
+    row_number: 35
+    expected_row_header_column: A
+    expected_row_header: $40,000 under $45,000
+    filters:
+      income_range: 40k_to_45k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 40000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 45000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $40,000 under $45,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: R
+      row: 3
+      expected_value: Returns with no qualifying children
+      label: qualifying-child column group
+    - column: Z
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 45k_to_50k
+    label: $45,000 under $50,000
+    ordinal: 26
+    row_number: 36
+    expected_row_header_column: A
+    expected_row_header: $45,000 under $50,000
+    filters:
+      income_range: 45k_to_50k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 45000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 50000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $45,000 under $50,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: R
+      row: 3
+      expected_value: Returns with no qualifying children
+      label: qualifying-child column group
+    - column: Z
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 50k_plus
+    label: $50,000 and over
+    ordinal: 27
+    row_number: 37
+    expected_row_header_column: A
+    expected_row_header: $50,000 and over
+    filters:
+      income_range: 50k_plus
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 50000
+      unit: usd
+      label: Adjusted gross income lower bound
+    guard_cells:
+    - column: A
+      expected_value: $50,000 and over
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: R
+      row: 3
+      expected_value: Returns with no qualifying children
+      label: qualifying-child column group
+    - column: Z
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  measures:
+  - measure_id: eitc_returns
+    label: Returns with total earned income credit
+    ordinal: 0
+    column: Z
+    source_column_id: total_earned_income_credit_returns
+    expected_column_header_row: 6
+    expected_column_header: 'Number of
+
+      returns'
+    concept: irs_soi.returns_with_total_earned_income_credit
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+    constraints:
+    - variable: us.tax.earned_income_credit_qualifying_children
+      operator: ==
+      value: 0
+      unit: count
+      label: Earned income credit qualifying children
+  - measure_id: eitc_total
+    label: Total earned income credit
+    ordinal: 1
+    column: AA
+    source_column_id: total_earned_income_credit_amount
+    expected_column_header_row: 6
+    expected_column_header: Amount
+    concept: irs_soi.total_earned_income_credit
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+    constraints:
+    - variable: us.tax.earned_income_credit_qualifying_children
+      operator: ==
+      value: 0
+      unit: count
+      label: Earned income credit qualifying children
+- record_set_id: irs_soi.ty2022.table_2_5.eitc_by_agi_children.one_qualifying_child
+  record_set_spec_id: irs_soi.table_2_5.eitc_by_agi_children.one_qualifying_child.v1
+  source_record_id_prefix: irs_soi.ty2022.table_2_5.eitc_by_agi_children.one_qualifying_child
+  sheet_name: TBL25
+  period_type: tax_year
+  period: 2022
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: 2020_census
+  entity: tax_unit
+  entity_role: filing_unit
+  domain: individual_income_tax_returns_with_earned_income_credit
+  groupby_dimension: us:statutes/26/62#adjusted_gross_income
+  rows:
+  - value_id: under_1
+    label: No adjusted gross income
+    ordinal: 0
+    row_number: 10
+    expected_row_header_column: A
+    expected_row_header: No adjusted gross income
+    filters:
+      income_range: under_1
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 1
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: No adjusted gross income
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AH
+      row: 3
+      expected_value: Returns with one qualifying child
+      label: qualifying-child column group
+    - column: AP
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 1_to_1k
+    label: $1 under $1,000
+    ordinal: 1
+    row_number: 11
+    expected_row_header_column: A
+    expected_row_header: $1 under $1,000
+    filters:
+      income_range: 1_to_1k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 1
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 1000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $1 under $1,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AH
+      row: 3
+      expected_value: Returns with one qualifying child
+      label: qualifying-child column group
+    - column: AP
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 1k_to_2k
+    label: $1,000 under $2,000
+    ordinal: 2
+    row_number: 12
+    expected_row_header_column: A
+    expected_row_header: $1,000 under $2,000
+    filters:
+      income_range: 1k_to_2k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 1000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 2000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $1,000 under $2,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AH
+      row: 3
+      expected_value: Returns with one qualifying child
+      label: qualifying-child column group
+    - column: AP
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 2k_to_3k
+    label: $2,000 under $3,000
+    ordinal: 3
+    row_number: 13
+    expected_row_header_column: A
+    expected_row_header: $2,000 under $3,000
+    filters:
+      income_range: 2k_to_3k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 2000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 3000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $2,000 under $3,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AH
+      row: 3
+      expected_value: Returns with one qualifying child
+      label: qualifying-child column group
+    - column: AP
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 3k_to_4k
+    label: $3,000 under $4,000
+    ordinal: 4
+    row_number: 14
+    expected_row_header_column: A
+    expected_row_header: $3,000 under $4,000
+    filters:
+      income_range: 3k_to_4k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 3000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 4000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $3,000 under $4,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AH
+      row: 3
+      expected_value: Returns with one qualifying child
+      label: qualifying-child column group
+    - column: AP
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 4k_to_5k
+    label: $4,000 under $5,000
+    ordinal: 5
+    row_number: 15
+    expected_row_header_column: A
+    expected_row_header: $4,000 under $5,000
+    filters:
+      income_range: 4k_to_5k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 4000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 5000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $4,000 under $5,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AH
+      row: 3
+      expected_value: Returns with one qualifying child
+      label: qualifying-child column group
+    - column: AP
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 5k_to_6k
+    label: $5,000 under $6,000
+    ordinal: 6
+    row_number: 16
+    expected_row_header_column: A
+    expected_row_header: $5,000 under $6,000
+    filters:
+      income_range: 5k_to_6k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 5000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 6000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $5,000 under $6,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AH
+      row: 3
+      expected_value: Returns with one qualifying child
+      label: qualifying-child column group
+    - column: AP
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 6k_to_7k
+    label: $6,000 under $7,000
+    ordinal: 7
+    row_number: 17
+    expected_row_header_column: A
+    expected_row_header: $6,000 under $7,000
+    filters:
+      income_range: 6k_to_7k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 6000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 7000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $6,000 under $7,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AH
+      row: 3
+      expected_value: Returns with one qualifying child
+      label: qualifying-child column group
+    - column: AP
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 7k_to_8k
+    label: $7,000 under $8,000
+    ordinal: 8
+    row_number: 18
+    expected_row_header_column: A
+    expected_row_header: $7,000 under $8,000
+    filters:
+      income_range: 7k_to_8k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 7000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 8000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $7,000 under $8,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AH
+      row: 3
+      expected_value: Returns with one qualifying child
+      label: qualifying-child column group
+    - column: AP
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 8k_to_9k
+    label: $8,000 under $9,000
+    ordinal: 9
+    row_number: 19
+    expected_row_header_column: A
+    expected_row_header: $8,000 under $9,000
+    filters:
+      income_range: 8k_to_9k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 8000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 9000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $8,000 under $9,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AH
+      row: 3
+      expected_value: Returns with one qualifying child
+      label: qualifying-child column group
+    - column: AP
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 9k_to_10k
+    label: $9,000 under $10,000
+    ordinal: 10
+    row_number: 20
+    expected_row_header_column: A
+    expected_row_header: $9,000 under $10,000
+    filters:
+      income_range: 9k_to_10k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 9000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 10000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $9,000 under $10,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AH
+      row: 3
+      expected_value: Returns with one qualifying child
+      label: qualifying-child column group
+    - column: AP
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 10k_to_11k
+    label: $10,000 under $11,000
+    ordinal: 11
+    row_number: 21
+    expected_row_header_column: A
+    expected_row_header: $10,000 under $11,000
+    filters:
+      income_range: 10k_to_11k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 10000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 11000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $10,000 under $11,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AH
+      row: 3
+      expected_value: Returns with one qualifying child
+      label: qualifying-child column group
+    - column: AP
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 11k_to_12k
+    label: $11,000 under $12,000
+    ordinal: 12
+    row_number: 22
+    expected_row_header_column: A
+    expected_row_header: $11,000 under $12,000
+    filters:
+      income_range: 11k_to_12k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 11000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 12000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $11,000 under $12,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AH
+      row: 3
+      expected_value: Returns with one qualifying child
+      label: qualifying-child column group
+    - column: AP
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 12k_to_13k
+    label: $12,000 under $13,000
+    ordinal: 13
+    row_number: 23
+    expected_row_header_column: A
+    expected_row_header: $12,000 under $13,000
+    filters:
+      income_range: 12k_to_13k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 12000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 13000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $12,000 under $13,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AH
+      row: 3
+      expected_value: Returns with one qualifying child
+      label: qualifying-child column group
+    - column: AP
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 13k_to_14k
+    label: $13,000 under $14,000
+    ordinal: 14
+    row_number: 24
+    expected_row_header_column: A
+    expected_row_header: $13,000 under $14,000
+    filters:
+      income_range: 13k_to_14k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 13000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 14000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $13,000 under $14,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AH
+      row: 3
+      expected_value: Returns with one qualifying child
+      label: qualifying-child column group
+    - column: AP
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 14k_to_15k
+    label: $14,000 under $15,000
+    ordinal: 15
+    row_number: 25
+    expected_row_header_column: A
+    expected_row_header: $14,000 under $15,000
+    filters:
+      income_range: 14k_to_15k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 14000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 15000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $14,000 under $15,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AH
+      row: 3
+      expected_value: Returns with one qualifying child
+      label: qualifying-child column group
+    - column: AP
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 15k_to_16k
+    label: $15,000 under $16,000
+    ordinal: 16
+    row_number: 26
+    expected_row_header_column: A
+    expected_row_header: $15,000 under $16,000
+    filters:
+      income_range: 15k_to_16k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 15000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 16000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $15,000 under $16,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AH
+      row: 3
+      expected_value: Returns with one qualifying child
+      label: qualifying-child column group
+    - column: AP
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 16k_to_17k
+    label: $16,000 under $17,000
+    ordinal: 17
+    row_number: 27
+    expected_row_header_column: A
+    expected_row_header: $16,000 under $17,000
+    filters:
+      income_range: 16k_to_17k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 16000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 17000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $16,000 under $17,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AH
+      row: 3
+      expected_value: Returns with one qualifying child
+      label: qualifying-child column group
+    - column: AP
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 17k_to_18k
+    label: $17,000 under $18,000
+    ordinal: 18
+    row_number: 28
+    expected_row_header_column: A
+    expected_row_header: $17,000 under $18,000
+    filters:
+      income_range: 17k_to_18k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 17000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 18000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $17,000 under $18,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AH
+      row: 3
+      expected_value: Returns with one qualifying child
+      label: qualifying-child column group
+    - column: AP
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 18k_to_19k
+    label: $18,000 under $19,000
+    ordinal: 19
+    row_number: 29
+    expected_row_header_column: A
+    expected_row_header: $18,000 under $19,000
+    filters:
+      income_range: 18k_to_19k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 18000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 19000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $18,000 under $19,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AH
+      row: 3
+      expected_value: Returns with one qualifying child
+      label: qualifying-child column group
+    - column: AP
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 19k_to_20k
+    label: $19,000 under $20,000
+    ordinal: 20
+    row_number: 30
+    expected_row_header_column: A
+    expected_row_header: $19,000 under $20,000
+    filters:
+      income_range: 19k_to_20k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 19000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 20000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $19,000 under $20,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AH
+      row: 3
+      expected_value: Returns with one qualifying child
+      label: qualifying-child column group
+    - column: AP
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 20k_to_25k
+    label: $20,000 under $25,000
+    ordinal: 21
+    row_number: 31
+    expected_row_header_column: A
+    expected_row_header: $20,000 under $25,000
+    filters:
+      income_range: 20k_to_25k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 20000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 25000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $20,000 under $25,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AH
+      row: 3
+      expected_value: Returns with one qualifying child
+      label: qualifying-child column group
+    - column: AP
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 25k_to_30k
+    label: $25,000 under $30,000
+    ordinal: 22
+    row_number: 32
+    expected_row_header_column: A
+    expected_row_header: $25,000 under $30,000
+    filters:
+      income_range: 25k_to_30k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 25000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 30000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $25,000 under $30,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AH
+      row: 3
+      expected_value: Returns with one qualifying child
+      label: qualifying-child column group
+    - column: AP
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 30k_to_35k
+    label: $30,000 under $35,000
+    ordinal: 23
+    row_number: 33
+    expected_row_header_column: A
+    expected_row_header: $30,000 under $35,000
+    filters:
+      income_range: 30k_to_35k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 30000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 35000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $30,000 under $35,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AH
+      row: 3
+      expected_value: Returns with one qualifying child
+      label: qualifying-child column group
+    - column: AP
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 35k_to_40k
+    label: $35,000 under $40,000
+    ordinal: 24
+    row_number: 34
+    expected_row_header_column: A
+    expected_row_header: $35,000 under $40,000
+    filters:
+      income_range: 35k_to_40k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 35000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 40000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $35,000 under $40,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AH
+      row: 3
+      expected_value: Returns with one qualifying child
+      label: qualifying-child column group
+    - column: AP
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 40k_to_45k
+    label: $40,000 under $45,000
+    ordinal: 25
+    row_number: 35
+    expected_row_header_column: A
+    expected_row_header: $40,000 under $45,000
+    filters:
+      income_range: 40k_to_45k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 40000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 45000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $40,000 under $45,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AH
+      row: 3
+      expected_value: Returns with one qualifying child
+      label: qualifying-child column group
+    - column: AP
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 45k_to_50k
+    label: $45,000 under $50,000
+    ordinal: 26
+    row_number: 36
+    expected_row_header_column: A
+    expected_row_header: $45,000 under $50,000
+    filters:
+      income_range: 45k_to_50k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 45000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 50000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $45,000 under $50,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AH
+      row: 3
+      expected_value: Returns with one qualifying child
+      label: qualifying-child column group
+    - column: AP
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 50k_plus
+    label: $50,000 and over
+    ordinal: 27
+    row_number: 37
+    expected_row_header_column: A
+    expected_row_header: $50,000 and over
+    filters:
+      income_range: 50k_plus
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 50000
+      unit: usd
+      label: Adjusted gross income lower bound
+    guard_cells:
+    - column: A
+      expected_value: $50,000 and over
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AH
+      row: 3
+      expected_value: Returns with one qualifying child
+      label: qualifying-child column group
+    - column: AP
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  measures:
+  - measure_id: eitc_returns
+    label: Returns with total earned income credit
+    ordinal: 0
+    column: AP
+    source_column_id: total_earned_income_credit_returns
+    expected_column_header_row: 6
+    expected_column_header: 'Number of
+
+      returns'
+    concept: irs_soi.returns_with_total_earned_income_credit
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+    constraints:
+    - variable: us.tax.earned_income_credit_qualifying_children
+      operator: ==
+      value: 1
+      unit: count
+      label: Earned income credit qualifying children
+  - measure_id: eitc_total
+    label: Total earned income credit
+    ordinal: 1
+    column: AQ
+    source_column_id: total_earned_income_credit_amount
+    expected_column_header_row: 6
+    expected_column_header: Amount
+    concept: irs_soi.total_earned_income_credit
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+    constraints:
+    - variable: us.tax.earned_income_credit_qualifying_children
+      operator: ==
+      value: 1
+      unit: count
+      label: Earned income credit qualifying children
+- record_set_id: irs_soi.ty2022.table_2_5.eitc_by_agi_children.two_qualifying_children
+  record_set_spec_id: irs_soi.table_2_5.eitc_by_agi_children.two_qualifying_children.v1
+  source_record_id_prefix: irs_soi.ty2022.table_2_5.eitc_by_agi_children.two_qualifying_children
+  sheet_name: TBL25
+  period_type: tax_year
+  period: 2022
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: 2020_census
+  entity: tax_unit
+  entity_role: filing_unit
+  domain: individual_income_tax_returns_with_earned_income_credit
+  groupby_dimension: us:statutes/26/62#adjusted_gross_income
+  rows:
+  - value_id: under_1
+    label: No adjusted gross income
+    ordinal: 0
+    row_number: 10
+    expected_row_header_column: A
+    expected_row_header: No adjusted gross income
+    filters:
+      income_range: under_1
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 1
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: No adjusted gross income
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AX
+      row: 3
+      expected_value: Returns with two qualifying children
+      label: qualifying-child column group
+    - column: BF
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 1_to_1k
+    label: $1 under $1,000
+    ordinal: 1
+    row_number: 11
+    expected_row_header_column: A
+    expected_row_header: $1 under $1,000
+    filters:
+      income_range: 1_to_1k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 1
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 1000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $1 under $1,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AX
+      row: 3
+      expected_value: Returns with two qualifying children
+      label: qualifying-child column group
+    - column: BF
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 1k_to_2k
+    label: $1,000 under $2,000
+    ordinal: 2
+    row_number: 12
+    expected_row_header_column: A
+    expected_row_header: $1,000 under $2,000
+    filters:
+      income_range: 1k_to_2k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 1000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 2000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $1,000 under $2,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AX
+      row: 3
+      expected_value: Returns with two qualifying children
+      label: qualifying-child column group
+    - column: BF
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 2k_to_3k
+    label: $2,000 under $3,000
+    ordinal: 3
+    row_number: 13
+    expected_row_header_column: A
+    expected_row_header: $2,000 under $3,000
+    filters:
+      income_range: 2k_to_3k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 2000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 3000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $2,000 under $3,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AX
+      row: 3
+      expected_value: Returns with two qualifying children
+      label: qualifying-child column group
+    - column: BF
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 3k_to_4k
+    label: $3,000 under $4,000
+    ordinal: 4
+    row_number: 14
+    expected_row_header_column: A
+    expected_row_header: $3,000 under $4,000
+    filters:
+      income_range: 3k_to_4k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 3000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 4000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $3,000 under $4,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AX
+      row: 3
+      expected_value: Returns with two qualifying children
+      label: qualifying-child column group
+    - column: BF
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 4k_to_5k
+    label: $4,000 under $5,000
+    ordinal: 5
+    row_number: 15
+    expected_row_header_column: A
+    expected_row_header: $4,000 under $5,000
+    filters:
+      income_range: 4k_to_5k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 4000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 5000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $4,000 under $5,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AX
+      row: 3
+      expected_value: Returns with two qualifying children
+      label: qualifying-child column group
+    - column: BF
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 5k_to_6k
+    label: $5,000 under $6,000
+    ordinal: 6
+    row_number: 16
+    expected_row_header_column: A
+    expected_row_header: $5,000 under $6,000
+    filters:
+      income_range: 5k_to_6k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 5000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 6000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $5,000 under $6,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AX
+      row: 3
+      expected_value: Returns with two qualifying children
+      label: qualifying-child column group
+    - column: BF
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 6k_to_7k
+    label: $6,000 under $7,000
+    ordinal: 7
+    row_number: 17
+    expected_row_header_column: A
+    expected_row_header: $6,000 under $7,000
+    filters:
+      income_range: 6k_to_7k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 6000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 7000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $6,000 under $7,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AX
+      row: 3
+      expected_value: Returns with two qualifying children
+      label: qualifying-child column group
+    - column: BF
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 7k_to_8k
+    label: $7,000 under $8,000
+    ordinal: 8
+    row_number: 18
+    expected_row_header_column: A
+    expected_row_header: $7,000 under $8,000
+    filters:
+      income_range: 7k_to_8k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 7000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 8000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $7,000 under $8,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AX
+      row: 3
+      expected_value: Returns with two qualifying children
+      label: qualifying-child column group
+    - column: BF
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 8k_to_9k
+    label: $8,000 under $9,000
+    ordinal: 9
+    row_number: 19
+    expected_row_header_column: A
+    expected_row_header: $8,000 under $9,000
+    filters:
+      income_range: 8k_to_9k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 8000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 9000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $8,000 under $9,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AX
+      row: 3
+      expected_value: Returns with two qualifying children
+      label: qualifying-child column group
+    - column: BF
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 9k_to_10k
+    label: $9,000 under $10,000
+    ordinal: 10
+    row_number: 20
+    expected_row_header_column: A
+    expected_row_header: $9,000 under $10,000
+    filters:
+      income_range: 9k_to_10k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 9000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 10000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $9,000 under $10,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AX
+      row: 3
+      expected_value: Returns with two qualifying children
+      label: qualifying-child column group
+    - column: BF
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 10k_to_11k
+    label: $10,000 under $11,000
+    ordinal: 11
+    row_number: 21
+    expected_row_header_column: A
+    expected_row_header: $10,000 under $11,000
+    filters:
+      income_range: 10k_to_11k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 10000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 11000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $10,000 under $11,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AX
+      row: 3
+      expected_value: Returns with two qualifying children
+      label: qualifying-child column group
+    - column: BF
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 11k_to_12k
+    label: $11,000 under $12,000
+    ordinal: 12
+    row_number: 22
+    expected_row_header_column: A
+    expected_row_header: $11,000 under $12,000
+    filters:
+      income_range: 11k_to_12k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 11000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 12000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $11,000 under $12,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AX
+      row: 3
+      expected_value: Returns with two qualifying children
+      label: qualifying-child column group
+    - column: BF
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 12k_to_13k
+    label: $12,000 under $13,000
+    ordinal: 13
+    row_number: 23
+    expected_row_header_column: A
+    expected_row_header: $12,000 under $13,000
+    filters:
+      income_range: 12k_to_13k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 12000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 13000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $12,000 under $13,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AX
+      row: 3
+      expected_value: Returns with two qualifying children
+      label: qualifying-child column group
+    - column: BF
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 13k_to_14k
+    label: $13,000 under $14,000
+    ordinal: 14
+    row_number: 24
+    expected_row_header_column: A
+    expected_row_header: $13,000 under $14,000
+    filters:
+      income_range: 13k_to_14k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 13000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 14000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $13,000 under $14,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AX
+      row: 3
+      expected_value: Returns with two qualifying children
+      label: qualifying-child column group
+    - column: BF
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 14k_to_15k
+    label: $14,000 under $15,000
+    ordinal: 15
+    row_number: 25
+    expected_row_header_column: A
+    expected_row_header: $14,000 under $15,000
+    filters:
+      income_range: 14k_to_15k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 14000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 15000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $14,000 under $15,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AX
+      row: 3
+      expected_value: Returns with two qualifying children
+      label: qualifying-child column group
+    - column: BF
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 15k_to_16k
+    label: $15,000 under $16,000
+    ordinal: 16
+    row_number: 26
+    expected_row_header_column: A
+    expected_row_header: $15,000 under $16,000
+    filters:
+      income_range: 15k_to_16k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 15000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 16000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $15,000 under $16,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AX
+      row: 3
+      expected_value: Returns with two qualifying children
+      label: qualifying-child column group
+    - column: BF
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 16k_to_17k
+    label: $16,000 under $17,000
+    ordinal: 17
+    row_number: 27
+    expected_row_header_column: A
+    expected_row_header: $16,000 under $17,000
+    filters:
+      income_range: 16k_to_17k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 16000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 17000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $16,000 under $17,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AX
+      row: 3
+      expected_value: Returns with two qualifying children
+      label: qualifying-child column group
+    - column: BF
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 17k_to_18k
+    label: $17,000 under $18,000
+    ordinal: 18
+    row_number: 28
+    expected_row_header_column: A
+    expected_row_header: $17,000 under $18,000
+    filters:
+      income_range: 17k_to_18k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 17000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 18000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $17,000 under $18,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AX
+      row: 3
+      expected_value: Returns with two qualifying children
+      label: qualifying-child column group
+    - column: BF
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 18k_to_19k
+    label: $18,000 under $19,000
+    ordinal: 19
+    row_number: 29
+    expected_row_header_column: A
+    expected_row_header: $18,000 under $19,000
+    filters:
+      income_range: 18k_to_19k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 18000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 19000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $18,000 under $19,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AX
+      row: 3
+      expected_value: Returns with two qualifying children
+      label: qualifying-child column group
+    - column: BF
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 19k_to_20k
+    label: $19,000 under $20,000
+    ordinal: 20
+    row_number: 30
+    expected_row_header_column: A
+    expected_row_header: $19,000 under $20,000
+    filters:
+      income_range: 19k_to_20k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 19000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 20000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $19,000 under $20,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AX
+      row: 3
+      expected_value: Returns with two qualifying children
+      label: qualifying-child column group
+    - column: BF
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 20k_to_25k
+    label: $20,000 under $25,000
+    ordinal: 21
+    row_number: 31
+    expected_row_header_column: A
+    expected_row_header: $20,000 under $25,000
+    filters:
+      income_range: 20k_to_25k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 20000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 25000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $20,000 under $25,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AX
+      row: 3
+      expected_value: Returns with two qualifying children
+      label: qualifying-child column group
+    - column: BF
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 25k_to_30k
+    label: $25,000 under $30,000
+    ordinal: 22
+    row_number: 32
+    expected_row_header_column: A
+    expected_row_header: $25,000 under $30,000
+    filters:
+      income_range: 25k_to_30k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 25000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 30000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $25,000 under $30,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AX
+      row: 3
+      expected_value: Returns with two qualifying children
+      label: qualifying-child column group
+    - column: BF
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 30k_to_35k
+    label: $30,000 under $35,000
+    ordinal: 23
+    row_number: 33
+    expected_row_header_column: A
+    expected_row_header: $30,000 under $35,000
+    filters:
+      income_range: 30k_to_35k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 30000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 35000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $30,000 under $35,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AX
+      row: 3
+      expected_value: Returns with two qualifying children
+      label: qualifying-child column group
+    - column: BF
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 35k_to_40k
+    label: $35,000 under $40,000
+    ordinal: 24
+    row_number: 34
+    expected_row_header_column: A
+    expected_row_header: $35,000 under $40,000
+    filters:
+      income_range: 35k_to_40k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 35000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 40000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $35,000 under $40,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AX
+      row: 3
+      expected_value: Returns with two qualifying children
+      label: qualifying-child column group
+    - column: BF
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 40k_to_45k
+    label: $40,000 under $45,000
+    ordinal: 25
+    row_number: 35
+    expected_row_header_column: A
+    expected_row_header: $40,000 under $45,000
+    filters:
+      income_range: 40k_to_45k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 40000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 45000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $40,000 under $45,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AX
+      row: 3
+      expected_value: Returns with two qualifying children
+      label: qualifying-child column group
+    - column: BF
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 45k_to_50k
+    label: $45,000 under $50,000
+    ordinal: 26
+    row_number: 36
+    expected_row_header_column: A
+    expected_row_header: $45,000 under $50,000
+    filters:
+      income_range: 45k_to_50k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 45000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 50000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $45,000 under $50,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AX
+      row: 3
+      expected_value: Returns with two qualifying children
+      label: qualifying-child column group
+    - column: BF
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 50k_plus
+    label: $50,000 and over
+    ordinal: 27
+    row_number: 37
+    expected_row_header_column: A
+    expected_row_header: $50,000 and over
+    filters:
+      income_range: 50k_plus
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 50000
+      unit: usd
+      label: Adjusted gross income lower bound
+    guard_cells:
+    - column: A
+      expected_value: $50,000 and over
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AX
+      row: 3
+      expected_value: Returns with two qualifying children
+      label: qualifying-child column group
+    - column: BF
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  measures:
+  - measure_id: eitc_returns
+    label: Returns with total earned income credit
+    ordinal: 0
+    column: BF
+    source_column_id: total_earned_income_credit_returns
+    expected_column_header_row: 6
+    expected_column_header: 'Number of
+
+      returns'
+    concept: irs_soi.returns_with_total_earned_income_credit
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+    constraints:
+    - variable: us.tax.earned_income_credit_qualifying_children
+      operator: ==
+      value: 2
+      unit: count
+      label: Earned income credit qualifying children
+  - measure_id: eitc_total
+    label: Total earned income credit
+    ordinal: 1
+    column: BG
+    source_column_id: total_earned_income_credit_amount
+    expected_column_header_row: 6
+    expected_column_header: Amount
+    concept: irs_soi.total_earned_income_credit
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+    constraints:
+    - variable: us.tax.earned_income_credit_qualifying_children
+      operator: ==
+      value: 2
+      unit: count
+      label: Earned income credit qualifying children
+- record_set_id: irs_soi.ty2022.table_2_5.eitc_by_agi_children.three_or_more_qualifying_children
+  record_set_spec_id: irs_soi.table_2_5.eitc_by_agi_children.three_or_more_qualifying_children.v1
+  source_record_id_prefix: irs_soi.ty2022.table_2_5.eitc_by_agi_children.three_or_more_qualifying_children
+  sheet_name: TBL25
+  period_type: tax_year
+  period: 2022
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: 2020_census
+  entity: tax_unit
+  entity_role: filing_unit
+  domain: individual_income_tax_returns_with_earned_income_credit
+  groupby_dimension: us:statutes/26/62#adjusted_gross_income
+  rows:
+  - value_id: under_1
+    label: No adjusted gross income
+    ordinal: 0
+    row_number: 10
+    expected_row_header_column: A
+    expected_row_header: No adjusted gross income
+    filters:
+      income_range: under_1
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 1
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: No adjusted gross income
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: BN
+      row: 3
+      expected_value: Returns with three or more qualifying children
+      label: qualifying-child column group
+    - column: BV
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 1_to_1k
+    label: $1 under $1,000
+    ordinal: 1
+    row_number: 11
+    expected_row_header_column: A
+    expected_row_header: $1 under $1,000
+    filters:
+      income_range: 1_to_1k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 1
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 1000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $1 under $1,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: BN
+      row: 3
+      expected_value: Returns with three or more qualifying children
+      label: qualifying-child column group
+    - column: BV
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 1k_to_2k
+    label: $1,000 under $2,000
+    ordinal: 2
+    row_number: 12
+    expected_row_header_column: A
+    expected_row_header: $1,000 under $2,000
+    filters:
+      income_range: 1k_to_2k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 1000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 2000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $1,000 under $2,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: BN
+      row: 3
+      expected_value: Returns with three or more qualifying children
+      label: qualifying-child column group
+    - column: BV
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 2k_to_3k
+    label: $2,000 under $3,000
+    ordinal: 3
+    row_number: 13
+    expected_row_header_column: A
+    expected_row_header: $2,000 under $3,000
+    filters:
+      income_range: 2k_to_3k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 2000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 3000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $2,000 under $3,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: BN
+      row: 3
+      expected_value: Returns with three or more qualifying children
+      label: qualifying-child column group
+    - column: BV
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 3k_to_4k
+    label: $3,000 under $4,000
+    ordinal: 4
+    row_number: 14
+    expected_row_header_column: A
+    expected_row_header: $3,000 under $4,000
+    filters:
+      income_range: 3k_to_4k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 3000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 4000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $3,000 under $4,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: BN
+      row: 3
+      expected_value: Returns with three or more qualifying children
+      label: qualifying-child column group
+    - column: BV
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 4k_to_5k
+    label: $4,000 under $5,000
+    ordinal: 5
+    row_number: 15
+    expected_row_header_column: A
+    expected_row_header: $4,000 under $5,000
+    filters:
+      income_range: 4k_to_5k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 4000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 5000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $4,000 under $5,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: BN
+      row: 3
+      expected_value: Returns with three or more qualifying children
+      label: qualifying-child column group
+    - column: BV
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 5k_to_6k
+    label: $5,000 under $6,000
+    ordinal: 6
+    row_number: 16
+    expected_row_header_column: A
+    expected_row_header: $5,000 under $6,000
+    filters:
+      income_range: 5k_to_6k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 5000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 6000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $5,000 under $6,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: BN
+      row: 3
+      expected_value: Returns with three or more qualifying children
+      label: qualifying-child column group
+    - column: BV
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 6k_to_7k
+    label: $6,000 under $7,000
+    ordinal: 7
+    row_number: 17
+    expected_row_header_column: A
+    expected_row_header: $6,000 under $7,000
+    filters:
+      income_range: 6k_to_7k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 6000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 7000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $6,000 under $7,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: BN
+      row: 3
+      expected_value: Returns with three or more qualifying children
+      label: qualifying-child column group
+    - column: BV
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 7k_to_8k
+    label: $7,000 under $8,000
+    ordinal: 8
+    row_number: 18
+    expected_row_header_column: A
+    expected_row_header: $7,000 under $8,000
+    filters:
+      income_range: 7k_to_8k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 7000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 8000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $7,000 under $8,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: BN
+      row: 3
+      expected_value: Returns with three or more qualifying children
+      label: qualifying-child column group
+    - column: BV
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 8k_to_9k
+    label: $8,000 under $9,000
+    ordinal: 9
+    row_number: 19
+    expected_row_header_column: A
+    expected_row_header: $8,000 under $9,000
+    filters:
+      income_range: 8k_to_9k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 8000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 9000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $8,000 under $9,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: BN
+      row: 3
+      expected_value: Returns with three or more qualifying children
+      label: qualifying-child column group
+    - column: BV
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 9k_to_10k
+    label: $9,000 under $10,000
+    ordinal: 10
+    row_number: 20
+    expected_row_header_column: A
+    expected_row_header: $9,000 under $10,000
+    filters:
+      income_range: 9k_to_10k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 9000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 10000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $9,000 under $10,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: BN
+      row: 3
+      expected_value: Returns with three or more qualifying children
+      label: qualifying-child column group
+    - column: BV
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 10k_to_11k
+    label: $10,000 under $11,000
+    ordinal: 11
+    row_number: 21
+    expected_row_header_column: A
+    expected_row_header: $10,000 under $11,000
+    filters:
+      income_range: 10k_to_11k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 10000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 11000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $10,000 under $11,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: BN
+      row: 3
+      expected_value: Returns with three or more qualifying children
+      label: qualifying-child column group
+    - column: BV
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 11k_to_12k
+    label: $11,000 under $12,000
+    ordinal: 12
+    row_number: 22
+    expected_row_header_column: A
+    expected_row_header: $11,000 under $12,000
+    filters:
+      income_range: 11k_to_12k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 11000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 12000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $11,000 under $12,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: BN
+      row: 3
+      expected_value: Returns with three or more qualifying children
+      label: qualifying-child column group
+    - column: BV
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 12k_to_13k
+    label: $12,000 under $13,000
+    ordinal: 13
+    row_number: 23
+    expected_row_header_column: A
+    expected_row_header: $12,000 under $13,000
+    filters:
+      income_range: 12k_to_13k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 12000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 13000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $12,000 under $13,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: BN
+      row: 3
+      expected_value: Returns with three or more qualifying children
+      label: qualifying-child column group
+    - column: BV
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 13k_to_14k
+    label: $13,000 under $14,000
+    ordinal: 14
+    row_number: 24
+    expected_row_header_column: A
+    expected_row_header: $13,000 under $14,000
+    filters:
+      income_range: 13k_to_14k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 13000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 14000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $13,000 under $14,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: BN
+      row: 3
+      expected_value: Returns with three or more qualifying children
+      label: qualifying-child column group
+    - column: BV
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 14k_to_15k
+    label: $14,000 under $15,000
+    ordinal: 15
+    row_number: 25
+    expected_row_header_column: A
+    expected_row_header: $14,000 under $15,000
+    filters:
+      income_range: 14k_to_15k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 14000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 15000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $14,000 under $15,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: BN
+      row: 3
+      expected_value: Returns with three or more qualifying children
+      label: qualifying-child column group
+    - column: BV
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 15k_to_16k
+    label: $15,000 under $16,000
+    ordinal: 16
+    row_number: 26
+    expected_row_header_column: A
+    expected_row_header: $15,000 under $16,000
+    filters:
+      income_range: 15k_to_16k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 15000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 16000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $15,000 under $16,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: BN
+      row: 3
+      expected_value: Returns with three or more qualifying children
+      label: qualifying-child column group
+    - column: BV
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 16k_to_17k
+    label: $16,000 under $17,000
+    ordinal: 17
+    row_number: 27
+    expected_row_header_column: A
+    expected_row_header: $16,000 under $17,000
+    filters:
+      income_range: 16k_to_17k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 16000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 17000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $16,000 under $17,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: BN
+      row: 3
+      expected_value: Returns with three or more qualifying children
+      label: qualifying-child column group
+    - column: BV
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 17k_to_18k
+    label: $17,000 under $18,000
+    ordinal: 18
+    row_number: 28
+    expected_row_header_column: A
+    expected_row_header: $17,000 under $18,000
+    filters:
+      income_range: 17k_to_18k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 17000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 18000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $17,000 under $18,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: BN
+      row: 3
+      expected_value: Returns with three or more qualifying children
+      label: qualifying-child column group
+    - column: BV
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 18k_to_19k
+    label: $18,000 under $19,000
+    ordinal: 19
+    row_number: 29
+    expected_row_header_column: A
+    expected_row_header: $18,000 under $19,000
+    filters:
+      income_range: 18k_to_19k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 18000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 19000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $18,000 under $19,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: BN
+      row: 3
+      expected_value: Returns with three or more qualifying children
+      label: qualifying-child column group
+    - column: BV
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 19k_to_20k
+    label: $19,000 under $20,000
+    ordinal: 20
+    row_number: 30
+    expected_row_header_column: A
+    expected_row_header: $19,000 under $20,000
+    filters:
+      income_range: 19k_to_20k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 19000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 20000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $19,000 under $20,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: BN
+      row: 3
+      expected_value: Returns with three or more qualifying children
+      label: qualifying-child column group
+    - column: BV
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 20k_to_25k
+    label: $20,000 under $25,000
+    ordinal: 21
+    row_number: 31
+    expected_row_header_column: A
+    expected_row_header: $20,000 under $25,000
+    filters:
+      income_range: 20k_to_25k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 20000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 25000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $20,000 under $25,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: BN
+      row: 3
+      expected_value: Returns with three or more qualifying children
+      label: qualifying-child column group
+    - column: BV
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 25k_to_30k
+    label: $25,000 under $30,000
+    ordinal: 22
+    row_number: 32
+    expected_row_header_column: A
+    expected_row_header: $25,000 under $30,000
+    filters:
+      income_range: 25k_to_30k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 25000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 30000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $25,000 under $30,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: BN
+      row: 3
+      expected_value: Returns with three or more qualifying children
+      label: qualifying-child column group
+    - column: BV
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 30k_to_35k
+    label: $30,000 under $35,000
+    ordinal: 23
+    row_number: 33
+    expected_row_header_column: A
+    expected_row_header: $30,000 under $35,000
+    filters:
+      income_range: 30k_to_35k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 30000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 35000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $30,000 under $35,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: BN
+      row: 3
+      expected_value: Returns with three or more qualifying children
+      label: qualifying-child column group
+    - column: BV
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 35k_to_40k
+    label: $35,000 under $40,000
+    ordinal: 24
+    row_number: 34
+    expected_row_header_column: A
+    expected_row_header: $35,000 under $40,000
+    filters:
+      income_range: 35k_to_40k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 35000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 40000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $35,000 under $40,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: BN
+      row: 3
+      expected_value: Returns with three or more qualifying children
+      label: qualifying-child column group
+    - column: BV
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 40k_to_45k
+    label: $40,000 under $45,000
+    ordinal: 25
+    row_number: 35
+    expected_row_header_column: A
+    expected_row_header: $40,000 under $45,000
+    filters:
+      income_range: 40k_to_45k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 40000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 45000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $40,000 under $45,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: BN
+      row: 3
+      expected_value: Returns with three or more qualifying children
+      label: qualifying-child column group
+    - column: BV
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 45k_to_50k
+    label: $45,000 under $50,000
+    ordinal: 26
+    row_number: 36
+    expected_row_header_column: A
+    expected_row_header: $45,000 under $50,000
+    filters:
+      income_range: 45k_to_50k
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 45000
+      unit: usd
+      label: Adjusted gross income lower bound
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: <
+      value: 50000
+      unit: usd
+      label: Adjusted gross income upper bound
+    guard_cells:
+    - column: A
+      expected_value: $45,000 under $50,000
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: BN
+      row: 3
+      expected_value: Returns with three or more qualifying children
+      label: qualifying-child column group
+    - column: BV
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  - value_id: 50k_plus
+    label: $50,000 and over
+    ordinal: 27
+    row_number: 37
+    expected_row_header_column: A
+    expected_row_header: $50,000 and over
+    filters:
+      income_range: 50k_plus
+    constraints:
+    - variable: us:statutes/26/62#adjusted_gross_income
+      operator: '>='
+      value: 50000
+      unit: usd
+      label: Adjusted gross income lower bound
+    guard_cells:
+    - column: A
+      expected_value: $50,000 and over
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: BN
+      row: 3
+      expected_value: Returns with three or more qualifying children
+      label: qualifying-child column group
+    - column: BV
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+  measures:
+  - measure_id: eitc_returns
+    label: Returns with total earned income credit
+    ordinal: 0
+    column: BV
+    source_column_id: total_earned_income_credit_returns
+    expected_column_header_row: 6
+    expected_column_header: 'Number of
+
+      returns'
+    concept: irs_soi.returns_with_total_earned_income_credit
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+    constraints:
+    - variable: us.tax.earned_income_credit_qualifying_children
+      operator: '>='
+      value: 3
+      unit: count
+      label: Earned income credit qualifying children lower bound
+  - measure_id: eitc_total
+    label: Total earned income credit
+    ordinal: 1
+    column: BW
+    source_column_id: total_earned_income_credit_amount
+    expected_column_header_row: 6
+    expected_column_header: Amount
+    concept: irs_soi.total_earned_income_credit
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+    constraints:
+    - variable: us.tax.earned_income_credit_qualifying_children
+      operator: '>='
+      value: 3
+      unit: count
+      label: Earned income credit qualifying children lower bound

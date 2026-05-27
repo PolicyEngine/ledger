@@ -1,0 +1,39 @@
+source_id: irs_soi
+package_id: soi-historic-table-2
+dataset: irs_soi_historic_table_2
+source_page: https://www.irs.gov/statistics/soi-tax-stats-historic-table-2
+table: Historic Table 2
+files:
+  2020:
+    filename: 20in55cmcsv.csv
+    source_url: https://www.irs.gov/pub/irs-soi/20in55cmcsv.csv
+    sha256: 01da5c0e510685d19fe47fe1c960f217d20208f31f66c7dbd2892feba7d2ace2
+    size_bytes: 753468
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/irs_soi/soi-historic-table-2/2020/01da5c0e510685d19fe47fe1c960f217d20208f31f66c7dbd2892feba7d2ace2/20in55cmcsv.csv
+        uri: r2://arch-raw/raw/irs_soi/soi-historic-table-2/2020/01da5c0e510685d19fe47fe1c960f217d20208f31f66c7dbd2892feba7d2ace2/20in55cmcsv.csv
+  2021:
+    filename: 21in55cmcsv.csv
+    source_url: https://www.irs.gov/pub/irs-soi/21in55cmcsv.csv
+    sha256: eb12920d565b773d895e84cb4188119f13ffd664c04579ed6e7ccc7d298a0a2d
+    size_bytes: 761050
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/irs_soi/soi-historic-table-2/2021/eb12920d565b773d895e84cb4188119f13ffd664c04579ed6e7ccc7d298a0a2d/21in55cmcsv.csv
+        uri: r2://arch-raw/raw/irs_soi/soi-historic-table-2/2021/eb12920d565b773d895e84cb4188119f13ffd664c04579ed6e7ccc7d298a0a2d/21in55cmcsv.csv
+  2022:
+    filename: 22in55cmcsv.csv
+    source_url: https://www.irs.gov/pub/irs-soi/22in55cmcsv.csv
+    sha256: f72f83339c36af889cf0ba98acdfab8e3d18051f88cb181f46db2ddc4ae498bb
+    size_bytes: 749827
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/irs_soi/soi-historic-table-2/2022/f72f83339c36af889cf0ba98acdfab8e3d18051f88cb181f46db2ddc4ae498bb/22in55cmcsv.csv
+        uri: r2://arch-raw/raw/irs_soi/soi-historic-table-2/2022/f72f83339c36af889cf0ba98acdfab8e3d18051f88cb181f46db2ddc4ae498bb/22in55cmcsv.csv
