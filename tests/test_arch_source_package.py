@@ -283,12 +283,33 @@ def test_national_soi_source_package_aliases_validate_fixture_counts():
             "source_record_count": 8,
             "source_region_count": 1,
         },
+        "soi-table-2-5-eitc-agi-children-2022": {
+            "record_set_count": 4,
+            "row_count": 112,
+            "measure_count": 8,
+            "source_record_count": 224,
+            "source_region_count": 4,
+        },
         "soi-table-4-3": {
             "record_set_count": 1,
             "row_count": 1,
             "measure_count": 18,
             "source_record_count": 18,
             "source_region_count": 1,
+        },
+        "soi-historic-table-2-state-agi-2022": {
+            "record_set_count": 51,
+            "row_count": 459,
+            "measure_count": 102,
+            "source_record_count": 918,
+            "source_region_count": 51,
+        },
+        "soi-historic-table-2-state-eitc-2022": {
+            "record_set_count": 51,
+            "row_count": 51,
+            "measure_count": 102,
+            "source_record_count": 102,
+            "source_region_count": 51,
         },
         "soi-w2-statistics-2020": {
             "record_set_count": 3,

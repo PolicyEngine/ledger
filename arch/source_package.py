@@ -71,7 +71,16 @@ SOURCE_PACKAGE_ALIASES = {
     "soi-table-1-4": Path("irs_soi/table_1_4"),
     "soi-table-2-1": Path("irs_soi/table_2_1"),
     "soi-table-2-5": Path("irs_soi/table_2_5"),
+    "soi-table-2-5-eitc-agi-children-2022": Path(
+        "irs_soi/table_2_5_eitc_agi_children_2022"
+    ),
     "soi-table-4-3": Path("irs_soi/table_4_3"),
+    "soi-historic-table-2-state-agi-2022": Path(
+        "irs_soi/historic_table_2_state_agi_2022"
+    ),
+    "soi-historic-table-2-state-eitc-2022": Path(
+        "irs_soi/historic_table_2_state_eitc_2022"
+    ),
     "soi-w2-statistics-2020": Path("irs_soi/w2_statistics_2020"),
     "soi-ira-traditional-contributions-2022": Path(
         "irs_soi/ira_traditional_contributions_2022"
