@@ -1,0 +1,19 @@
+source_id: census_pep
+package_id: census-pep-2024-state-age-sex
+dataset: census_pep_2024_age_sex
+source_page: https://www.census.gov/data/tables/time-series/demo/popest/2020s-state-detail.html
+table: Annual State Resident Population Estimates by Single Year of Age, Sex, Race, and Hispanic
+  Origin
+files:
+  2024:
+    filename: sc-est2024-alldata6.csv
+    source_url: https://www2.census.gov/programs-surveys/popest/datasets/2020-2024/state/asrh/sc-est2024-alldata6.csv
+    sha256: 0e82431e3869554aff9541fcf00c22a8defc2af3c66fb0ec6bae094f23749230
+    size_bytes: 12740674
+    fetched_at: '2026-05-08T00:00:00+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/census_pep/census-pep-2024-state-age-sex/2024/0e82431e3869554aff9541fcf00c22a8defc2af3c66fb0ec6bae094f23749230/sc-est2024-alldata6.csv
+        uri: r2://arch-raw/raw/census_pep/census-pep-2024-state-age-sex/2024/0e82431e3869554aff9541fcf00c22a8defc2af3c66fb0ec6bae094f23749230/sc-est2024-alldata6.csv

@@ -326,6 +326,16 @@ def source_cells_from_delimited_text(
 
     normalized_header = [_normalize_header_cell(item) for item in header]
     selected_by_index: dict[int, tuple[int, list[str]]] = {}
+    selected_indices_by_key_tuple: dict[
+        tuple[str, ...], dict[tuple[str, ...], list[int]]
+    ] = {}
+    if selected_rows:
+        for selection_index, criteria in enumerate(selected_rows):
+            key_tuple = tuple(criteria)
+            value_tuple = tuple(criteria.values())
+            selected_indices_by_key_tuple.setdefault(key_tuple, {}).setdefault(
+                value_tuple, []
+            ).append(selection_index)
     for source_line_number, row in enumerate(reader, start=2):
         row_by_header = {
             normalized_header[index]: row[index] if index < len(row) else ""
@@ -334,11 +344,11 @@ def source_cells_from_delimited_text(
         if not selected_rows:
             selected_by_index[len(selected_by_index)] = (source_line_number, row)
             continue
-        for selection_index, criteria in enumerate(selected_rows):
-            if selection_index in selected_by_index:
-                continue
-            if all(row_by_header.get(key, "") == value for key, value in criteria.items()):
-                selected_by_index[selection_index] = (source_line_number, row)
+        for key_tuple, indices_by_value_tuple in selected_indices_by_key_tuple.items():
+            value_tuple = tuple(row_by_header.get(key, "") for key in key_tuple)
+            for selection_index in indices_by_value_tuple.get(value_tuple, ()):
+                if selection_index not in selected_by_index:
+                    selected_by_index[selection_index] = (source_line_number, row)
 
     cells = [
         _delimited_cell(
