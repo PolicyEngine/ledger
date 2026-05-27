@@ -339,3 +339,18 @@ def test_national_soi_source_package_aliases_validate_fixture_counts():
 
         assert report.valid, package_id
         assert report.counts == counts
+
+
+def test_ssa_supplement_source_package_alias_validates_fixture_counts():
+    report = validate_source_package(
+        "ssa-annual-statistical-supplement-2025", year=2023
+    )
+
+    assert report.valid
+    assert report.counts == {
+        "record_set_count": 1,
+        "row_count": 6,
+        "measure_count": 1,
+        "source_record_count": 6,
+        "source_region_count": 1,
+    }

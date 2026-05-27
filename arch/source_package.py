@@ -86,6 +86,9 @@ SOURCE_PACKAGE_ALIASES = {
         "irs_soi/ira_traditional_contributions_2022"
     ),
     "soi-ira-roth-contributions-2022": Path("irs_soi/ira_roth_contributions_2022"),
+    "ssa-annual-statistical-supplement-2025": Path(
+        "ssa/annual_statistical_supplement_2025"
+    ),
 }
 SOURCE_ARTIFACT_CACHE_ENV = "ARCH_SOURCE_ARTIFACT_CACHE_DIR"
 SOURCE_ARTIFACT_FETCH_ENV = "ARCH_SOURCE_ARTIFACT_FETCH"
