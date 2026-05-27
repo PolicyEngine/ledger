@@ -7,12 +7,12 @@ files:
   2023:
     filename: psca_67th_annual_401k_survey_roth_participation.html
     source_url: https://www.psca.org/news/psca-news/2024/12/401k-savings-and-participation-rates-rise/
-    sha256: f65087e3d565230b1715d428138272680c0ab4ff75f3b0d8e7a28765ac71e8a2
-    size_bytes: 109351
+    sha256: 497a2e4ef5c4b373c32995906dabe9a7dc63cd2eae9820a17190cd55a1981164
+    size_bytes: 109328
     fetched_at: '2026-05-11T13:35:05+00:00'
     storage:
       r2:
         provider: r2
         bucket: arch-raw
-        key: raw/psca/psca-67th-annual-401k-survey-roth-availability/2023/f65087e3d565230b1715d428138272680c0ab4ff75f3b0d8e7a28765ac71e8a2/psca_67th_annual_401k_survey_roth_participation.html
-        uri: r2://arch-raw/raw/psca/psca-67th-annual-401k-survey-roth-availability/2023/f65087e3d565230b1715d428138272680c0ab4ff75f3b0d8e7a28765ac71e8a2/psca_67th_annual_401k_survey_roth_participation.html
+        key: raw/psca/psca-67th-annual-401k-survey-roth-availability/2023/497a2e4ef5c4b373c32995906dabe9a7dc63cd2eae9820a17190cd55a1981164/psca_67th_annual_401k_survey_roth_participation.html
+        uri: r2://arch-raw/raw/psca/psca-67th-annual-401k-survey-roth-availability/2023/497a2e4ef5c4b373c32995906dabe9a7dc63cd2eae9820a17190cd55a1981164/psca_67th_annual_401k_survey_roth_participation.html

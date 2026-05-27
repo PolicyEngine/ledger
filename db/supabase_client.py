@@ -22,22 +22,21 @@ import pandas as pd
 from supabase import create_client, Client
 
 
-def _env(name: str, legacy_name: str | None = None) -> str | None:
-    """Read PolicyEngine-owned storage config with legacy fallback."""
-    value = os.environ.get(name)
-    if value:
-        return value
-    if legacy_name:
-        return os.environ.get(legacy_name)
+def _env(*names: str) -> str | None:
+    """Read PolicyEngine-owned storage config."""
+    for name in names:
+        value = os.environ.get(name)
+        if value:
+            return value
     return None
 
 
-ARCH_SCHEMA = _env("POLICYENGINE_ARCH_SCHEMA", "COSILICO_ARCH_SCHEMA") or "arch"
+ARCH_SCHEMA = _env("POLICYENGINE_ARCH_SCHEMA") or "arch"
 MICRODATA_SCHEMA = (
-    _env("POLICYENGINE_MICRODATA_SCHEMA", "COSILICO_MICRODATA_SCHEMA") or "microdata"
+    _env("POLICYENGINE_MICRODATA_SCHEMA") or "microdata"
 )
 TARGETS_SCHEMA = (
-    _env("POLICYENGINE_TARGETS_SCHEMA", "COSILICO_TARGETS_SCHEMA") or "targets"
+    _env("POLICYENGINE_TARGETS_SCHEMA") or "targets"
 )
 
 
@@ -60,7 +59,7 @@ class SupabaseConfig:
         Raises:
             ValueError: If required environment variables are missing
         """
-        url = _env("POLICYENGINE_SUPABASE_URL", "COSILICO_SUPABASE_URL")
+        url = _env("POLICYENGINE_SUPABASE_URL")
         if not url:
             raise ValueError(
                 "POLICYENGINE_SUPABASE_URL not set. "
@@ -70,7 +69,7 @@ class SupabaseConfig:
         secret_key = _env(
             "POLICYENGINE_SUPABASE_SERVICE_KEY",
             "POLICYENGINE_SUPABASE_SECRET_KEY",
-        ) or os.environ.get("COSILICO_SUPABASE_SECRET_KEY")
+        )
         if not secret_key:
             raise ValueError(
                 "POLICYENGINE_SUPABASE_SERVICE_KEY not set. "

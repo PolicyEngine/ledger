@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://cosilico.ai/arch/schemas/consumer_fact.v1.schema.json",
+  "$id": "https://policyengine.org/arch/schemas/consumer_fact.v1.schema.json",
   "title": "Arch consumer fact contract row",
   "type": "object",
   "additionalProperties": false,

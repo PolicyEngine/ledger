@@ -7,12 +7,12 @@ files:
   2024:
     filename: nts_2024_household_car_availability.html
     source_url: https://www.gov.uk/government/statistics/national-travel-survey-2024/nts-2024-household-car-availability-and-trends-in-car-trips
-    sha256: 5c312c031c4516a855128421a8a83d86f609254557fa767d5d5d32a95314261e
-    size_bytes: 102942
+    sha256: 917998fcab1e137bf9326d1c9b2b9d9a9123f68ff63c74e4f8488e232f1180b6
+    size_bytes: 102875
     fetched_at: '2026-05-11T14:31:42+00:00'
     storage:
       r2:
         provider: r2
         bucket: arch-raw
-        key: raw/dft/dft-nts-household-car-availability-2024/2024/5c312c031c4516a855128421a8a83d86f609254557fa767d5d5d32a95314261e/nts_2024_household_car_availability.html
-        uri: r2://arch-raw/raw/dft/dft-nts-household-car-availability-2024/2024/5c312c031c4516a855128421a8a83d86f609254557fa767d5d5d32a95314261e/nts_2024_household_car_availability.html
+        key: raw/dft/dft-nts-household-car-availability-2024/2024/917998fcab1e137bf9326d1c9b2b9d9a9123f68ff63c74e4f8488e232f1180b6/nts_2024_household_car_availability.html
+        uri: r2://arch-raw/raw/dft/dft-nts-household-car-availability-2024/2024/917998fcab1e137bf9326d1c9b2b9d9a9123f68ff63c74e4f8488e232f1180b6/nts_2024_household_car_availability.html

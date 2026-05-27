@@ -67,9 +67,9 @@ GitHub repositories:
   PolicyEngine/arch-uk   # UK source parsers/specs; emits Arch records
 
 Python distributions:
-  cosilico-arch
-  cosilico-arch-us
-  cosilico-arch-uk
+  policyengine-arch-data
+  policyengine-arch-us
+  policyengine-arch-uk
 
 Python imports:
   arch

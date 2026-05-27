@@ -13,9 +13,9 @@ GitHub repositories:
   PolicyEngine/arch-uk
 
 Python distributions:
-  cosilico-arch
-  cosilico-arch-us
-  cosilico-arch-uk
+  policyengine-arch-data
+  policyengine-arch-us
+  policyengine-arch-uk
 
 Python imports:
   arch
@@ -23,8 +23,8 @@ Python imports:
   arch_uk
 ```
 
-The `cosilico-` prefix belongs in published distribution names, where generic
-names collide. Repository names and import namespaces should stay short.
+The `policyengine-` prefix belongs in published distribution names, where
+generic names collide. Repository names and import namespaces should stay short.
 
 ## Ownership
 

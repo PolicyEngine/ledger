@@ -64,17 +64,17 @@ The `db` package contains the current SQLModel persistence and loader
 implementation behind the public `arch` namespace.
 
 Jurisdiction source packages should use short import namespaces and published
-distribution names with a Cosilico prefix:
+distribution names with a PolicyEngine prefix:
 
 ```text
 repo: PolicyEngine/arch-us
-distribution: cosilico-arch-us
+distribution: policyengine-arch-us
 import: arch_us
 ```
 
-They should depend on `cosilico-arch` and emit shared `arch` objects rather than
-redefining source rows/cells, source-row values, aggregate facts, aggregate
-constraints, stable keys, or DB tables.
+They should depend on `policyengine-arch-data` and emit shared `arch` objects
+rather than redefining source rows/cells, source-row values, aggregate facts,
+aggregate constraints, stable keys, or DB tables.
 
 ## Data Flow
 

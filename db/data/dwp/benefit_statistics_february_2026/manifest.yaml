@@ -7,12 +7,12 @@ files:
   2025:
     filename: dwp-benefit-statistics-february-2026.html
     source_url: https://www.gov.uk/government/statistics/dwp-benefit-statistics-february-2026/dwp-benefit-statistics-february-2026
-    sha256: 1e893cf9fff87c82aabfc22ff4ce29847471f8fe712016eb9c2907aa76e3e7a8
-    size_bytes: 200559
+    sha256: 88d762134b444468e20e716af8347a625bfdfc326e29fa4d31871f2794fdc04f
+    size_bytes: 200492
     fetched_at: '2026-05-10T16:03:41+00:00'
     storage:
       r2:
         provider: r2
         bucket: arch-raw
-        key: raw/dwp/dwp-benefit-statistics-february-2026/2025/1e893cf9fff87c82aabfc22ff4ce29847471f8fe712016eb9c2907aa76e3e7a8/dwp-benefit-statistics-february-2026.html
-        uri: r2://arch-raw/raw/dwp/dwp-benefit-statistics-february-2026/2025/1e893cf9fff87c82aabfc22ff4ce29847471f8fe712016eb9c2907aa76e3e7a8/dwp-benefit-statistics-february-2026.html
+        key: raw/dwp/dwp-benefit-statistics-february-2026/2025/88d762134b444468e20e716af8347a625bfdfc326e29fa4d31871f2794fdc04f/dwp-benefit-statistics-february-2026.html
+        uri: r2://arch-raw/raw/dwp/dwp-benefit-statistics-february-2026/2025/88d762134b444468e20e716af8347a625bfdfc326e29fa4d31871f2794fdc04f/dwp-benefit-statistics-february-2026.html
