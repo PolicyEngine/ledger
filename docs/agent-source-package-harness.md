@@ -456,8 +456,8 @@ uv run arch load-supabase-mirror \
   --build-artifacts /tmp/arch-build-artifacts.jsonl
 ```
 
-The live load requires `COSILICO_SUPABASE_URL` and
-`COSILICO_SUPABASE_SECRET_KEY`, the Arch mirror migration applied, and the
+The live load requires `POLICYENGINE_SUPABASE_URL` and
+`POLICYENGINE_SUPABASE_SERVICE_KEY`, the Arch mirror migration applied, and the
 `arch` schema exposed by the Supabase Data API.
 
 ## Declarative Authoring Contract

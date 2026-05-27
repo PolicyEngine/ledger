@@ -1,6 +1,6 @@
 # Arch
 
-Arch is Cosilico's source-data foundation for social simulation. It captures
+Arch is PolicyEngine's source-data foundation for social simulation. It captures
 source publications, preserves provenance, and represents published values as
 structured, queryable facts.
 
@@ -30,7 +30,7 @@ This repository provides:
 - **Jurisdiction loaders**: Source-specific ETL that emits the shared Arch
   schema.
 
-Arch facts are not Cosilico's assertion that a source claim is ultimately true.
+Arch facts are not PolicyEngine's assertion that a source claim is ultimately true.
 They are source-backed claims with provenance.
 
 ## Boundary
@@ -62,9 +62,9 @@ objects.
 
 ```text
 GitHub repositories:
-  CosilicoAI/arch       # Core schema, validation, harness, DB schema
-  CosilicoAI/arch-us    # US source parsers/specs; emits Arch records
-  CosilicoAI/arch-uk    # UK source parsers/specs; emits Arch records
+  PolicyEngine/arch-data # Core schema, validation, harness, DB schema
+  PolicyEngine/arch-us   # US source parsers/specs; emits Arch records
+  PolicyEngine/arch-uk   # UK source parsers/specs; emits Arch records
 
 Python distributions:
   cosilico-arch
@@ -115,7 +115,7 @@ and calibration code belongs under `micro/`.
 ```bash
 pip install cosilico-arch
 # Or for development:
-git clone https://github.com/CosilicoAI/arch arch
+git clone https://github.com/PolicyEngine/arch-data arch
 cd arch
 pip install -e ".[dev]"
 ```
@@ -312,7 +312,7 @@ files should live in private Cloudflare R2 buckets, with `manifest.yaml` and the
 hosted database carrying the queryable provenance:
 
 ```bash
-# One-time after creating the Cosilico Cloudflare account and running
+# One-time after creating the PolicyEngine Cloudflare account and running
 # `npx wrangler login`:
 uv run arch bootstrap-r2 --raw-bucket arch-raw --derived-bucket arch-derived
 
@@ -556,7 +556,7 @@ target_input = as_target(
 
 ## Related Repositories
 
-- [microplex](https://github.com/CosilicoAI/microplex) - Core microsimulation
+- [microplex](https://github.com/PolicyEngine/microplex) - Core microsimulation
   abstractions and calibration interfaces.
-- [microplex-us](https://github.com/CosilicoAI/microplex-us) - US-specific
+- [microplex-us](https://github.com/PolicyEngine/microplex-us) - US-specific
   simulation adapters and calibration profiles.

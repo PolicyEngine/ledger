@@ -2,7 +2,7 @@
 
 ## Overview
 
-Arch is Cosilico's source-data foundation for social simulation. It captures
+Arch is PolicyEngine's source-data foundation for social simulation. It captures
 source publications, preserves provenance, and represents published values as
 structured, queryable facts. Microplex consumes Arch facts to produce final
 calibrated simulation inputs.
@@ -67,7 +67,7 @@ Jurisdiction source packages should use short import namespaces and published
 distribution names with a Cosilico prefix:
 
 ```text
-repo: CosilicoAI/arch-us
+repo: PolicyEngine/arch-us
 distribution: cosilico-arch-us
 import: arch_us
 ```
@@ -166,7 +166,7 @@ target_input = as_target(
 ```
 
 Projection facts from official sources such as CBO, OBR, and ONS can be loaded
-as source facts directly. Cosilico-owned inflation, aging, projection, or
+as source facts directly. PolicyEngine-owned inflation, aging, projection, or
 cross-source reconciliation assumptions belong in Microplex Targets, not Arch.
 
 ### Downstream Adapter Aliases

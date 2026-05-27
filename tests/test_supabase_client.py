@@ -17,10 +17,10 @@ class TestSupabaseClient:
         from db.supabase_client import get_supabase_client
 
         # Skip if no real credentials
-        if not os.environ.get("COSILICO_SUPABASE_URL"):
-            pytest.skip("COSILICO_SUPABASE_URL not set")
-        if not os.environ.get("COSILICO_SUPABASE_SECRET_KEY"):
-            pytest.skip("COSILICO_SUPABASE_SECRET_KEY not set")
+        if not os.environ.get("POLICYENGINE_SUPABASE_URL"):
+            pytest.skip("POLICYENGINE_SUPABASE_URL not set")
+        if not os.environ.get("POLICYENGINE_SUPABASE_SERVICE_KEY"):
+            pytest.skip("POLICYENGINE_SUPABASE_SERVICE_KEY not set")
 
         # Clear the lru_cache to ensure fresh client
         get_supabase_client.cache_clear()
@@ -32,19 +32,31 @@ class TestSupabaseClient:
         from db.supabase_client import SupabaseConfig
 
         with patch.dict(os.environ, {
-            "COSILICO_SUPABASE_URL": "https://test.supabase.co",
-            "COSILICO_SUPABASE_SECRET_KEY": "test-secret-key",
+            "POLICYENGINE_SUPABASE_URL": "https://test.supabase.co",
+            "POLICYENGINE_SUPABASE_SERVICE_KEY": "test-secret-key",
         }):
             config = SupabaseConfig.from_env()
             assert config.url == "https://test.supabase.co"
             assert config.secret_key == "test-secret-key"
+
+    def test_config_uses_legacy_env_as_fallback(self):
+        """Legacy Cosilico env names keep existing deployments working."""
+        from db.supabase_client import SupabaseConfig
+
+        with patch.dict(os.environ, {
+            "COSILICO_SUPABASE_URL": "https://legacy.supabase.co",
+            "COSILICO_SUPABASE_SECRET_KEY": "legacy-secret-key",
+        }, clear=True):
+            config = SupabaseConfig.from_env()
+            assert config.url == "https://legacy.supabase.co"
+            assert config.secret_key == "legacy-secret-key"
 
     def test_config_missing_url_raises(self):
         """Missing URL raises ValueError."""
         from db.supabase_client import SupabaseConfig
 
         with patch.dict(os.environ, {}, clear=True):
-            with pytest.raises(ValueError, match="COSILICO_SUPABASE_URL"):
+            with pytest.raises(ValueError, match="POLICYENGINE_SUPABASE_URL"):
                 SupabaseConfig.from_env()
 
     def test_config_missing_key_raises(self):
@@ -52,9 +64,9 @@ class TestSupabaseClient:
         from db.supabase_client import SupabaseConfig
 
         with patch.dict(os.environ, {
-            "COSILICO_SUPABASE_URL": "https://test.supabase.co",
+            "POLICYENGINE_SUPABASE_URL": "https://test.supabase.co",
         }, clear=True):
-            with pytest.raises(ValueError, match="COSILICO_SUPABASE_SECRET_KEY"):
+            with pytest.raises(ValueError, match="POLICYENGINE_SUPABASE_SERVICE_KEY"):
                 SupabaseConfig.from_env()
 
 

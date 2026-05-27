@@ -753,7 +753,7 @@ def bootstrap_r2_buckets(
             authenticated=False,
             errors=(
                 "wrangler_not_authenticated: run `npx wrangler login` in the "
-                "Cosilico Cloudflare account, then rerun this command.",
+                "PolicyEngine Cloudflare account, then rerun this command.",
             ),
         )
 

@@ -8,9 +8,9 @@ family.
 
 ```text
 GitHub repositories:
-  CosilicoAI/arch
-  CosilicoAI/arch-us
-  CosilicoAI/arch-uk
+  PolicyEngine/arch-data
+  PolicyEngine/arch-us
+  PolicyEngine/arch-uk
 
 Python distributions:
   cosilico-arch
