@@ -258,3 +258,63 @@ def test_validate_source_package_reports_fixture_counts():
         "source_record_count": 80,
         "source_region_count": 1,
     }
+
+
+def test_national_soi_source_package_aliases_validate_fixture_counts():
+    expected_counts = {
+        "soi-table-1-2": {
+            "record_set_count": 1,
+            "row_count": 1,
+            "measure_count": 7,
+            "source_record_count": 7,
+            "source_region_count": 1,
+        },
+        "soi-table-2-1": {
+            "record_set_count": 1,
+            "row_count": 1,
+            "measure_count": 17,
+            "source_record_count": 17,
+            "source_region_count": 1,
+        },
+        "soi-table-2-5": {
+            "record_set_count": 1,
+            "row_count": 1,
+            "measure_count": 8,
+            "source_record_count": 8,
+            "source_region_count": 1,
+        },
+        "soi-table-4-3": {
+            "record_set_count": 1,
+            "row_count": 1,
+            "measure_count": 18,
+            "source_record_count": 18,
+            "source_region_count": 1,
+        },
+        "soi-w2-statistics-2020": {
+            "record_set_count": 3,
+            "row_count": 3,
+            "measure_count": 5,
+            "source_record_count": 5,
+            "source_region_count": 3,
+        },
+        "soi-ira-traditional-contributions-2022": {
+            "record_set_count": 1,
+            "row_count": 1,
+            "measure_count": 2,
+            "source_record_count": 2,
+            "source_region_count": 1,
+        },
+        "soi-ira-roth-contributions-2022": {
+            "record_set_count": 1,
+            "row_count": 1,
+            "measure_count": 2,
+            "source_record_count": 2,
+            "source_region_count": 1,
+        },
+    }
+
+    for package_id, counts in expected_counts.items():
+        report = validate_source_package(package_id, year=2023)
+
+        assert report.valid, package_id
+        assert report.counts == counts

@@ -29,40 +29,67 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "aggregate_duplicate_key_count": 0,
         "entity_count": 1,
         "error_count": 0,
-        "fact_count": 340,
+        "fact_count": 399,
         "geography_count": 1,
         "period_count": 1,
-        "semantic_duplicate_key_count": 0,
+        "semantic_duplicate_key_count": 3,
         "skipped_source_count": 0,
         "source_count": 1,
-        "source_package_count": 2,
-        "warning_count": 0,
+        "source_package_count": 9,
+        "warning_count": 1,
     }
-    assert len(rows) == 340
+    assert len(rows) == 399
     assert rows[0]["aggregate_fact_key"].startswith("arch.aggregate_fact.v2:")
     assert rows[0]["semantic_fact_key"].startswith("arch.semantic_fact.v2:")
-    assert source_packages["source_package_count"] == 2
+    assert source_packages["source_package_count"] == 9
     assert source_packages["skipped_source_count"] == 0
     assert not source_packages["skipped_sources"]
-    assert coverage["fact_count"] == 340
+    assert coverage["fact_count"] == 399
     assert coverage["counts"]["by_source"] == {
-        "irs_soi": 340,
+        "irs_soi": 399,
     }
     assert coverage["counts"]["by_source_table"] == {
         "irs_soi:Publication 1304 Table 1.1": 80,
+        "irs_soi:Publication 1304 Table 1.2": 7,
         "irs_soi:Publication 1304 Table 1.4": 260,
+        "irs_soi:Publication 1304 Table 2.1": 17,
+        "irs_soi:Publication 1304 Table 2.5": 8,
+        "irs_soi:Publication 1304 Table 4.3": 18,
+        (
+            "irs_soi:Table 4.B. Summary of Items for Taxpayers with Form W-2, "
+            "by Return and Earner Type, Tax Year 2020"
+        ): 5,
+        (
+            "irs_soi:Table 5. Taxpayers with Traditional Individual Retirement "
+            "Arrangement (IRA) Plan Contributions, by Size of Contribution and "
+            "Age of Taxpayer"
+        ): 2,
+        (
+            "irs_soi:Table 6. Taxpayers with Roth Individual Retirement "
+            "Arrangement (IRA) Plan Contributions, by Size of Contribution and "
+            "Age of Taxpayer"
+        ): 2,
     }
     assert coverage["counts"]["by_period"] == {
-        "tax_year:2023": 340,
+        "tax_year:2023": 399,
     }
     assert coverage["counts"]["by_geography"] == {
-        "country:0100000US": 340,
+        "country:0100000US": 399,
     }
     assert coverage["counts"]["by_entity"] == {
-        "tax_unit": 340,
+        "tax_unit": 399,
     }
     assert not coverage["duplicates"]["aggregate_fact_keys"]
-    assert not coverage["duplicates"]["semantic_fact_keys"]
+    assert len(coverage["duplicates"]["semantic_fact_keys"]) == 3
+    assert summary["warnings"] == [
+        {
+            "code": "duplicate_semantic_fact_key",
+            "message": (
+                "One or more semantic facts appear in multiple rows; downstream "
+                "consumers should reconcile or select sources."
+            ),
+        }
+    ]
     assert (output_dir / "sources" / "soi-table-1-1" / "consumer_facts.jsonl").exists()
     assert (
         output_dir
@@ -70,6 +97,12 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         / "soi-table-1-4"
         / "reports"
         / "build_summary.json"
+    ).exists()
+    assert (
+        output_dir
+        / "sources"
+        / "soi-ira-roth-contributions-2022"
+        / "consumer_facts.jsonl"
     ).exists()
 
 

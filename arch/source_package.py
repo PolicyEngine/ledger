@@ -67,7 +67,16 @@ from arch.sources.specs import (
 SOURCE_PACKAGE_RESOURCE_PACKAGE = "packages"
 SOURCE_PACKAGE_ALIASES = {
     "soi-table-1-1": Path("irs_soi/table_1_1"),
+    "soi-table-1-2": Path("irs_soi/table_1_2"),
     "soi-table-1-4": Path("irs_soi/table_1_4"),
+    "soi-table-2-1": Path("irs_soi/table_2_1"),
+    "soi-table-2-5": Path("irs_soi/table_2_5"),
+    "soi-table-4-3": Path("irs_soi/table_4_3"),
+    "soi-w2-statistics-2020": Path("irs_soi/w2_statistics_2020"),
+    "soi-ira-traditional-contributions-2022": Path(
+        "irs_soi/ira_traditional_contributions_2022"
+    ),
+    "soi-ira-roth-contributions-2022": Path("irs_soi/ira_roth_contributions_2022"),
 }
 SOURCE_ARTIFACT_CACHE_ENV = "ARCH_SOURCE_ARTIFACT_CACHE_DIR"
 SOURCE_ARTIFACT_FETCH_ENV = "ARCH_SOURCE_ARTIFACT_FETCH"

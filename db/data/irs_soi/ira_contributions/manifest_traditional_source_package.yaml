@@ -1,0 +1,20 @@
+source_id: irs_soi
+package_id: soi-ira-traditional-contributions-2022
+dataset: irs_soi_traditional_ira_contributions_2022
+source_page: https://www.irs.gov/statistics/soi-tax-stats-accumulation-and-distribution-of-individual-retirement-arrangements
+table: Table 5. Taxpayers with Traditional Individual Retirement Arrangement (IRA)
+  Plan Contributions, by Size of Contribution and Age of Taxpayer
+files:
+  2022:
+    filename: 22in05ira.xlsx
+    source_url: https://www.irs.gov/pub/irs-soi/22in05ira.xlsx
+    sha256: 31ce9dd2fe631b336170af339bd7e9de86901cd20dbfd4cb8fb1c9a1d55cd90f
+    size_bytes: 13932
+    source_table: Table 5. Taxpayers with Traditional Individual Retirement Arrangement
+      (IRA) Plan Contributions, by Size of Contribution and Age of Taxpayer
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/irs_soi/soi-ira-traditional-contributions-2022/2022/31ce9dd2fe631b336170af339bd7e9de86901cd20dbfd4cb8fb1c9a1d55cd90f/22in05ira.xlsx
+        uri: r2://arch-raw/raw/irs_soi/soi-ira-traditional-contributions-2022/2022/31ce9dd2fe631b336170af339bd7e9de86901cd20dbfd4cb8fb1c9a1d55cd90f/22in05ira.xlsx
