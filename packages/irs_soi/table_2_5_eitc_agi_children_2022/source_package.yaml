@@ -1081,6 +1081,34 @@ record_sets:
 
         income credit'
       label: EITC measure group
+  - value_id: total
+    label: Total
+    ordinal: 99
+    row_number: 9
+    expected_row_header_column: A
+    expected_row_header: Total
+    filters:
+      income_range: all
+    guard_cells:
+    - column: A
+      expected_value: Total
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: R
+      row: 3
+      expected_value: Returns with no qualifying children
+      label: qualifying-child column group
+    - column: Z
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+    table_record_kind: total
   measures:
   - measure_id: eitc_returns
     label: Returns with total earned income credit
@@ -2188,6 +2216,34 @@ record_sets:
 
         income credit'
       label: EITC measure group
+  - value_id: total
+    label: Total
+    ordinal: 99
+    row_number: 9
+    expected_row_header_column: A
+    expected_row_header: Total
+    filters:
+      income_range: all
+    guard_cells:
+    - column: A
+      expected_value: Total
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AH
+      row: 3
+      expected_value: Returns with one qualifying child
+      label: qualifying-child column group
+    - column: AP
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+    table_record_kind: total
   measures:
   - measure_id: eitc_returns
     label: Returns with total earned income credit
@@ -3295,6 +3351,34 @@ record_sets:
 
         income credit'
       label: EITC measure group
+  - value_id: total
+    label: Total
+    ordinal: 99
+    row_number: 9
+    expected_row_header_column: A
+    expected_row_header: Total
+    filters:
+      income_range: all
+    guard_cells:
+    - column: A
+      expected_value: Total
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: AX
+      row: 3
+      expected_value: Returns with two qualifying children
+      label: qualifying-child column group
+    - column: BF
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+    table_record_kind: total
   measures:
   - measure_id: eitc_returns
     label: Returns with total earned income credit
@@ -4402,6 +4486,34 @@ record_sets:
 
         income credit'
       label: EITC measure group
+  - value_id: total
+    label: Total
+    ordinal: 99
+    row_number: 9
+    expected_row_header_column: A
+    expected_row_header: Total
+    filters:
+      income_range: all
+    guard_cells:
+    - column: A
+      expected_value: Total
+      label: AGI bracket label
+    - column: A
+      row: 1
+      expected_value: "Table 2.5.  Returns with Earned Income Credit, by Size of Adjusted\
+        \ \nGross Income and Number of Qualifying Children, \nTax Year 2022 (Filing Year 2023)"
+      label: table title
+    - column: BN
+      row: 3
+      expected_value: Returns with three or more qualifying children
+      label: qualifying-child column group
+    - column: BV
+      row: 4
+      expected_value: 'Total earned
+
+        income credit'
+      label: EITC measure group
+    table_record_kind: total
   measures:
   - measure_id: eitc_returns
     label: Returns with total earned income credit
