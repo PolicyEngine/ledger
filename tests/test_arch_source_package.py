@@ -309,8 +309,8 @@ def test_national_soi_source_package_aliases_validate_fixture_counts():
         "soi-historic-table-2-state-broad-2022": {
             "record_set_count": 51,
             "row_count": 51,
-            "measure_count": 2295,
-            "source_record_count": 2295,
+            "measure_count": 2397,
+            "source_record_count": 2397,
             "source_region_count": 51,
         },
         "soi-historic-table-2-state-eitc-2022": {
@@ -489,8 +489,8 @@ def test_soi_historic_table_2_source_package_alias_validates_fixture_counts():
     assert report.counts == {
         "record_set_count": 1,
         "row_count": 11,
-        "measure_count": 47,
-        "source_record_count": 517,
+        "measure_count": 49,
+        "source_record_count": 539,
         "source_region_count": 1,
     }
 
@@ -510,7 +510,7 @@ def test_soi_historic_table_2_package_builds_2022_national_facts():
     assert validate_source_cells(cells).valid
     assert validate_facts(facts).valid
     assert len(cells) == 1_956
-    assert len(facts) == 517
+    assert len(facts) == 539
     assert all(fact.source_row_keys for fact in facts)
 
     tax_filers = values_by_record[
@@ -537,6 +537,9 @@ def test_soi_historic_table_2_package_builds_2022_national_facts():
     medical_dental = values_by_record[
         "irs_soi.ty2022.historic_table_2.us.all.medical_dental_expense_amount"
     ]
+    qbi = values_by_record[
+        "irs_soi.ty2022.historic_table_2.us.all.qbi_amount"
+    ]
     agi_bracket_eitc_claims = values_by_record[
         "irs_soi.ty2022.historic_table_2.us.1_to_10k.eitc_claims"
     ]
@@ -549,6 +552,7 @@ def test_soi_historic_table_2_package_builds_2022_national_facts():
     assert schedule_c_returns.value == 30_354_680
     assert partnership_scorp.value == 1_033_254_282_000
     assert medical_dental.value == 80_235_875_000
+    assert qbi.value == 31_307_205_000
     assert agi_bracket_eitc_claims.value == 5_013_220
     assert {constraint.operator for constraint in agi_bracket_eitc_claims.constraints} == {
         "<",
@@ -569,7 +573,7 @@ def test_soi_historic_table_2_state_broad_package_builds_2022_state_facts():
     assert validate_source_cells(cells).valid
     assert validate_facts(facts).valid
     assert len(cells) == 8_476
-    assert len(facts) == 2_295
+    assert len(facts) == 2_397
 
     ca_returns = values_by_record[
         "irs_soi.ty2022.historic_table_2.state_broad.ca.all.return_count"
@@ -586,12 +590,16 @@ def test_soi_historic_table_2_state_broad_package_builds_2022_state_facts():
     ca_medical = values_by_record[
         "irs_soi.ty2022.historic_table_2.state_broad.ca.all.medical_dental_expense_amount"
     ]
+    ca_qbi = values_by_record[
+        "irs_soi.ty2022.historic_table_2.state_broad.ca.all.qbi_amount"
+    ]
 
     assert ca_returns.value == 18_487_690
     assert ca_agi.value == 1_987_000_701_000
     assert ca_ptc.value == 6_379_623_000
     assert ca_partnership.value == 125_930_370_000
     assert ca_medical.value == 11_456_144_000
+    assert ca_qbi.value == 4_400_400_000
     assert ca_returns.geography.id == "0400000US06"
     assert ca_partnership.layout.source_column_id == "A26270"
 
