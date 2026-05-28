@@ -241,12 +241,23 @@ def test_source_package_path_builds_valid_soi_table_1_4_facts():
     package = load_source_package(package_path)
     cells = package.build_source_cells(2023)
     facts = package.build_facts(2023, cells=cells)
+    values_by_record = {fact.source_record_id: fact for fact in facts}
 
     assert package.package_id == "soi-table-1-4"
     assert len(cells) == 8109
-    assert len(facts) == 260
+    assert len(facts) == 340
     assert validate_facts(facts).valid
     assert facts[0].source.source_table == "Publication 1304 Table 1.4"
+    assert (
+        values_by_record[
+            "irs_soi.ty2023.table_1_4.all.alimony_received_amount"
+        ].value
+        == 6_686_429_000
+    )
+    assert (
+        values_by_record["irs_soi.ty2023.table_1_4.all.alimony_paid_amount"].value
+        == 7_497_135_000
+    )
 
 
 def test_validate_source_package_reports_fixture_counts():
