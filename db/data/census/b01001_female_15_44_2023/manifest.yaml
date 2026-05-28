@@ -1,0 +1,20 @@
+source_id: census_acs
+package_id: census-b01001-female-age-2023
+dataset: census_acs_b01001_female_age_2023
+source_page: https://api.census.gov/data/2023/acs/acs1.html
+vintage: 2023 ACS 1-year detailed tables
+table: B01001 Sex by Age
+files:
+  2023:
+    filename: census_b01001_female_15_44_2023.json
+    source_url: https://api.census.gov/data/2023/acs/acs1?get=B01001_030E,B01001_031E,B01001_032E,B01001_033E,B01001_034E,B01001_035E,B01001_036E,B01001_037E,B01001_038E&for=state:*
+    sha256: c10ca541169da92627cc643d01a3436cfdba43a93059dbf1411c99eb71ab5bc9
+    size_bytes: 4953
+    source_table: ACS 2023 1-year detailed table B01001 female age bands 15-44 by state
+    year: 2023
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/census_acs/census-b01001-female-age-2023/2023/c10ca541169da92627cc643d01a3436cfdba43a93059dbf1411c99eb71ab5bc9/census_b01001_female_15_44_2023.json
+        uri: r2://arch-raw/raw/census_acs/census-b01001-female-age-2023/2023/c10ca541169da92627cc643d01a3436cfdba43a93059dbf1411c99eb71ab5bc9/census_b01001_female_15_44_2023.json

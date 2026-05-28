@@ -986,6 +986,57 @@ def test_census_acs_s0101_congressional_district_package_builds_age_facts():
     )
 
 
+def test_census_b01001_female_age_source_package_builds_state_facts():
+    package = load_source_package("census-b01001-female-age-2023")
+    rows = package.build_source_rows(2023)
+    cells = package.build_source_cells(2023, source_rows=rows)
+    facts = package.build_facts(2023, cells=cells, source_rows=rows)
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "census-b01001-female-age-2023"
+    assert len(rows) == 468
+    assert validate_source_rows(rows).valid
+    assert validate_source_cells(cells).valid
+    assert validate_facts(facts).valid
+    assert len(cells) == 3_752
+    assert len(facts) == 468
+    assert {fact.geography.level for fact in facts} == {"state"}
+    assert all(fact.source_row_keys for fact in facts)
+    assert all(fact.source.raw_r2_uri for fact in facts)
+
+    al_age_15_to_17 = values_by_record[
+        "census_acs.acs1_2023.b01001.female_age.01."
+        "age_15_to_17.female_population"
+    ]
+    ca_age_40_to_44 = values_by_record[
+        "census_acs.acs1_2023.b01001.female_age.06."
+        "age_40_to_44.female_population"
+    ]
+    pr_age_40_to_44 = values_by_record[
+        "census_acs.acs1_2023.b01001.female_age.72."
+        "age_40_to_44.female_population"
+    ]
+
+    assert al_age_15_to_17.value == 100_354
+    assert al_age_15_to_17.filters == {"sex": "female"}
+    assert al_age_15_to_17.geography.id == "0400000US01"
+    assert al_age_15_to_17.source.source_file == (
+        "census_b01001_female_15_44_2023.json"
+    )
+    assert {
+        (constraint.variable, constraint.operator, constraint.value)
+        for constraint in al_age_15_to_17.constraints
+    } == {
+        ("age", ">=", 15),
+        ("age", "<", 18),
+        ("sex", "==", "female"),
+    }
+    assert ca_age_40_to_44.value == 1_300_307
+    assert ca_age_40_to_44.geography.name == "California"
+    assert pr_age_40_to_44.value == 110_768
+    assert pr_age_40_to_44.geography.id == "0400000US72"
+
+
 def test_census_acs_s2201_source_package_alias_validates_fixture_counts():
     report = validate_source_package(
         "census-acs-s2201-congressional-district-snap-2024",
