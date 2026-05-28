@@ -1,0 +1,1373 @@
+schema_version: arch.source_package.v1
+package_id: cms-medicaid-chip-monthly-enrollment-dataset
+label: CMS Medicaid and CHIP December 2025 final monthly state enrollment
+artifact:
+  source_name: cms_medicaid
+  source_table: State Medicaid and CHIP Applications, Eligibility Determinations, and Enrollment Data
+  resource_package: db
+  resource_directory: data/cms_medicaid/chip_monthly_enrollment_dataset
+  manifest: manifest.yaml
+  vintage: april_2026_release
+  extracted_at: '2026-05-11'
+  extraction_method: CMS CSV full-row parse with selected final monthly source-row cells
+  parser: delimited_text_full_rows
+  sheet_name: pi-dataset-april-2026-release.csv
+  artifact_year: 2026
+  selected_rows:
+  - State Abbreviation: AK
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: AL
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: AR
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: AZ
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: CA
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: CO
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: CT
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: DC
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: DE
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: FL
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: GA
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: HI
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: IA
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: ID
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: IL
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: IN
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: KS
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: KY
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: LA
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: MA
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: MD
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: ME
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: MI
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: MN
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: MO
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: MS
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: MT
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: NC
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: ND
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: NE
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: NH
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: NJ
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: NM
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: NV
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: NY
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: OH
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: OK
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: OR
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: PA
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: RI
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: SC
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: SD
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: TN
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: TX
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: UT
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: VA
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: VT
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: WA
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: WI
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: WV
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+  - State Abbreviation: WY
+    Reporting Period: '202512'
+    Preliminary or Updated: U
+    Final Report: Y
+record_sets:
+- record_set_id: cms_medicaid.month2025_12.state_enrollment
+  record_set_spec_id: cms_medicaid.state_monthly_enrollment.v1
+  source_record_id_prefix: cms_medicaid.month2025_12.state_enrollment
+  sheet_name: pi-dataset-april-2026-release.csv
+  period_type: month
+  period: 2025-12
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: medicaid_or_chip_enrollee
+  domain: medicaid_chip_enrollment
+  groupby_dimension: cms_medicaid.state_abbreviation
+  rows:
+  - value_id: ak
+    label: Alaska
+    ordinal: 0
+    row_number: 2
+    geography_id: 0400000US02
+    geography_level: state
+    geography_name: Alaska
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: AK
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: al
+    label: Alabama
+    ordinal: 1
+    row_number: 3
+    geography_id: 0400000US01
+    geography_level: state
+    geography_name: Alabama
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: AL
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: ar
+    label: Arkansas
+    ordinal: 2
+    row_number: 4
+    geography_id: 0400000US05
+    geography_level: state
+    geography_name: Arkansas
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: AR
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: az
+    label: Arizona
+    ordinal: 3
+    row_number: 5
+    geography_id: 0400000US04
+    geography_level: state
+    geography_name: Arizona
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: AZ
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: ca
+    label: California
+    ordinal: 4
+    row_number: 6
+    geography_id: 0400000US06
+    geography_level: state
+    geography_name: California
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: CA
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: co
+    label: Colorado
+    ordinal: 5
+    row_number: 7
+    geography_id: 0400000US08
+    geography_level: state
+    geography_name: Colorado
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: CO
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: ct
+    label: Connecticut
+    ordinal: 6
+    row_number: 8
+    geography_id: 0400000US09
+    geography_level: state
+    geography_name: Connecticut
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: CT
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: dc
+    label: District of Columbia
+    ordinal: 7
+    row_number: 9
+    geography_id: 0400000US11
+    geography_level: state
+    geography_name: District of Columbia
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: DC
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: de
+    label: Delaware
+    ordinal: 8
+    row_number: 10
+    geography_id: 0400000US10
+    geography_level: state
+    geography_name: Delaware
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: DE
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: fl
+    label: Florida
+    ordinal: 9
+    row_number: 11
+    geography_id: 0400000US12
+    geography_level: state
+    geography_name: Florida
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: FL
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: ga
+    label: Georgia
+    ordinal: 10
+    row_number: 12
+    geography_id: 0400000US13
+    geography_level: state
+    geography_name: Georgia
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: GA
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: hi
+    label: Hawaii
+    ordinal: 11
+    row_number: 13
+    geography_id: 0400000US15
+    geography_level: state
+    geography_name: Hawaii
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: HI
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: ia
+    label: Iowa
+    ordinal: 12
+    row_number: 14
+    geography_id: 0400000US19
+    geography_level: state
+    geography_name: Iowa
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: IA
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: id
+    label: Idaho
+    ordinal: 13
+    row_number: 15
+    geography_id: 0400000US16
+    geography_level: state
+    geography_name: Idaho
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: ID
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: il
+    label: Illinois
+    ordinal: 14
+    row_number: 16
+    geography_id: 0400000US17
+    geography_level: state
+    geography_name: Illinois
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: IL
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: in
+    label: Indiana
+    ordinal: 15
+    row_number: 17
+    geography_id: 0400000US18
+    geography_level: state
+    geography_name: Indiana
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: IN
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: ks
+    label: Kansas
+    ordinal: 16
+    row_number: 18
+    geography_id: 0400000US20
+    geography_level: state
+    geography_name: Kansas
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: KS
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: ky
+    label: Kentucky
+    ordinal: 17
+    row_number: 19
+    geography_id: 0400000US21
+    geography_level: state
+    geography_name: Kentucky
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: KY
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: la
+    label: Louisiana
+    ordinal: 18
+    row_number: 20
+    geography_id: 0400000US22
+    geography_level: state
+    geography_name: Louisiana
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: LA
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: ma
+    label: Massachusetts
+    ordinal: 19
+    row_number: 21
+    geography_id: 0400000US25
+    geography_level: state
+    geography_name: Massachusetts
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: MA
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: md
+    label: Maryland
+    ordinal: 20
+    row_number: 22
+    geography_id: 0400000US24
+    geography_level: state
+    geography_name: Maryland
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: MD
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: me
+    label: Maine
+    ordinal: 21
+    row_number: 23
+    geography_id: 0400000US23
+    geography_level: state
+    geography_name: Maine
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: ME
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: mi
+    label: Michigan
+    ordinal: 22
+    row_number: 24
+    geography_id: 0400000US26
+    geography_level: state
+    geography_name: Michigan
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: MI
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: mn
+    label: Minnesota
+    ordinal: 23
+    row_number: 25
+    geography_id: 0400000US27
+    geography_level: state
+    geography_name: Minnesota
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: MN
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: mo
+    label: Missouri
+    ordinal: 24
+    row_number: 26
+    geography_id: 0400000US29
+    geography_level: state
+    geography_name: Missouri
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: MO
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: ms
+    label: Mississippi
+    ordinal: 25
+    row_number: 27
+    geography_id: 0400000US28
+    geography_level: state
+    geography_name: Mississippi
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: MS
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: mt
+    label: Montana
+    ordinal: 26
+    row_number: 28
+    geography_id: 0400000US30
+    geography_level: state
+    geography_name: Montana
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: MT
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: nc
+    label: North Carolina
+    ordinal: 27
+    row_number: 29
+    geography_id: 0400000US37
+    geography_level: state
+    geography_name: North Carolina
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: NC
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: nd
+    label: North Dakota
+    ordinal: 28
+    row_number: 30
+    geography_id: 0400000US38
+    geography_level: state
+    geography_name: North Dakota
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: ND
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: ne
+    label: Nebraska
+    ordinal: 29
+    row_number: 31
+    geography_id: 0400000US31
+    geography_level: state
+    geography_name: Nebraska
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: NE
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: nh
+    label: New Hampshire
+    ordinal: 30
+    row_number: 32
+    geography_id: 0400000US33
+    geography_level: state
+    geography_name: New Hampshire
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: NH
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: nj
+    label: New Jersey
+    ordinal: 31
+    row_number: 33
+    geography_id: 0400000US34
+    geography_level: state
+    geography_name: New Jersey
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: NJ
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: nm
+    label: New Mexico
+    ordinal: 32
+    row_number: 34
+    geography_id: 0400000US35
+    geography_level: state
+    geography_name: New Mexico
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: NM
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: nv
+    label: Nevada
+    ordinal: 33
+    row_number: 35
+    geography_id: 0400000US32
+    geography_level: state
+    geography_name: Nevada
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: NV
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: ny
+    label: New York
+    ordinal: 34
+    row_number: 36
+    geography_id: 0400000US36
+    geography_level: state
+    geography_name: New York
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: NY
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: oh
+    label: Ohio
+    ordinal: 35
+    row_number: 37
+    geography_id: 0400000US39
+    geography_level: state
+    geography_name: Ohio
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: OH
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: ok
+    label: Oklahoma
+    ordinal: 36
+    row_number: 38
+    geography_id: 0400000US40
+    geography_level: state
+    geography_name: Oklahoma
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: OK
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: or
+    label: Oregon
+    ordinal: 37
+    row_number: 39
+    geography_id: 0400000US41
+    geography_level: state
+    geography_name: Oregon
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: OR
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: pa
+    label: Pennsylvania
+    ordinal: 38
+    row_number: 40
+    geography_id: 0400000US42
+    geography_level: state
+    geography_name: Pennsylvania
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: PA
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: ri
+    label: Rhode Island
+    ordinal: 39
+    row_number: 41
+    geography_id: 0400000US44
+    geography_level: state
+    geography_name: Rhode Island
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: RI
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: sc
+    label: South Carolina
+    ordinal: 40
+    row_number: 42
+    geography_id: 0400000US45
+    geography_level: state
+    geography_name: South Carolina
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: SC
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: sd
+    label: South Dakota
+    ordinal: 41
+    row_number: 43
+    geography_id: 0400000US46
+    geography_level: state
+    geography_name: South Dakota
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: SD
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: tn
+    label: Tennessee
+    ordinal: 42
+    row_number: 44
+    geography_id: 0400000US47
+    geography_level: state
+    geography_name: Tennessee
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: TN
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: tx
+    label: Texas
+    ordinal: 43
+    row_number: 45
+    geography_id: 0400000US48
+    geography_level: state
+    geography_name: Texas
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: TX
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: ut
+    label: Utah
+    ordinal: 44
+    row_number: 46
+    geography_id: 0400000US49
+    geography_level: state
+    geography_name: Utah
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: UT
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: va
+    label: Virginia
+    ordinal: 45
+    row_number: 47
+    geography_id: 0400000US51
+    geography_level: state
+    geography_name: Virginia
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: VA
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: vt
+    label: Vermont
+    ordinal: 46
+    row_number: 48
+    geography_id: 0400000US50
+    geography_level: state
+    geography_name: Vermont
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: VT
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: wa
+    label: Washington
+    ordinal: 47
+    row_number: 49
+    geography_id: 0400000US53
+    geography_level: state
+    geography_name: Washington
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: WA
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: wi
+    label: Wisconsin
+    ordinal: 48
+    row_number: 50
+    geography_id: 0400000US55
+    geography_level: state
+    geography_name: Wisconsin
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: WI
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: wv
+    label: West Virginia
+    ordinal: 49
+    row_number: 51
+    geography_id: 0400000US54
+    geography_level: state
+    geography_name: West Virginia
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: WV
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  - value_id: wy
+    label: Wyoming
+    ordinal: 50
+    row_number: 52
+    geography_id: 0400000US56
+    geography_level: state
+    geography_name: Wyoming
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: WY
+    guard_cells:
+    - column: C
+      expected_value: 202512
+      label: reporting period
+    - column: E
+      expected_value: U
+      label: updated report
+    - column: F
+      expected_value: Y
+      label: final report
+    table_record_kind: total
+  measures:
+  - measure_id: total_medicaid_chip_enrollment
+    label: Total Medicaid and CHIP enrollment
+    ordinal: 0
+    column: U
+    source_column_id: total_medicaid_chip_enrollment
+    expected_column_header_row: 1
+    expected_column_header: Total Medicaid and CHIP Enrollment
+    concept: cms_medicaid.total_medicaid_chip_enrollment
+    source_concept: cms_medicaid.total_medicaid_chip_enrollment
+    concept_relation: source_label
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+  - measure_id: total_medicaid_enrollment
+    label: Total Medicaid enrollment
+    ordinal: 1
+    column: W
+    source_column_id: total_medicaid_enrollment
+    expected_column_header_row: 1
+    expected_column_header: Total Medicaid Enrollment
+    concept: cms_medicaid.total_medicaid_enrollment
+    source_concept: cms_medicaid.total_medicaid_enrollment
+    concept_relation: source_label
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+  - measure_id: total_chip_enrollment
+    label: Total CHIP enrollment
+    ordinal: 2
+    column: Y
+    source_column_id: total_chip_enrollment
+    expected_column_header_row: 1
+    expected_column_header: Total CHIP Enrollment
+    concept: cms_medicaid.total_chip_enrollment
+    source_concept: cms_medicaid.total_chip_enrollment
+    concept_relation: source_label
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+  - measure_id: medicaid_chip_child_enrollment
+    label: Medicaid and CHIP child enrollment
+    ordinal: 3
+    column: S
+    source_column_id: medicaid_chip_child_enrollment
+    expected_column_header_row: 1
+    expected_column_header: Medicaid and CHIP Child Enrollment
+    concept: cms_medicaid.medicaid_chip_child_enrollment
+    source_concept: cms_medicaid.medicaid_chip_child_enrollment
+    concept_relation: source_label
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+  - measure_id: total_adult_medicaid_enrollment
+    label: Total adult Medicaid enrollment
+    ordinal: 4
+    column: AA
+    source_column_id: total_adult_medicaid_enrollment
+    expected_column_header_row: 1
+    expected_column_header: Total Adult Medicaid Enrollment
+    concept: cms_medicaid.total_adult_medicaid_enrollment
+    source_concept: cms_medicaid.total_adult_medicaid_enrollment
+    concept_relation: source_label
+    unit: count
+    aggregation: count
+    expected_cell_type: number
