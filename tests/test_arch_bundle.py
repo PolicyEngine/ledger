@@ -29,26 +29,27 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "aggregate_duplicate_key_count": 0,
         "entity_count": 5,
         "error_count": 0,
-        "fact_count": 2963,
+        "fact_count": 3014,
         "geography_count": 54,
         "period_count": 4,
         "semantic_duplicate_key_count": 3,
         "skipped_source_count": 0,
-        "source_count": 5,
-        "source_package_count": 18,
+        "source_count": 6,
+        "source_package_count": 19,
         "warning_count": 1,
     }
-    assert len(rows) == 2963
+    assert len(rows) == 3014
     assert rows[0]["aggregate_fact_key"].startswith("arch.aggregate_fact.v2:")
     assert rows[0]["semantic_fact_key"].startswith("arch.semantic_fact.v2:")
-    assert source_packages["source_package_count"] == 18
+    assert source_packages["source_package_count"] == 19
     assert source_packages["skipped_source_count"] == 0
     assert not source_packages["skipped_sources"]
-    assert coverage["fact_count"] == 2963
+    assert coverage["fact_count"] == 3014
     assert coverage["counts"]["by_source"] == {
         "census_pep": 988,
         "hhs_acf_tanf": 110,
         "irs_soi": 1643,
+        "kff": 51,
         "ssa": 6,
         "usda_snap": 216,
     }
@@ -86,23 +87,24 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
             "Arrangement (IRA) Plan Contributions, by Size of Contribution and "
             "Age of Taxpayer"
         ): 2,
+        "kff:Full Year Average Marketplace Effectuated Enrollment, 2017-2024": 51,
         "ssa:SSA Annual Statistical Supplement 2025 extracted OASDI and SSI target rows": 6,
         "usda_snap:SNAP Monthly State Participation and Benefit Summary FY69 to current": 216,
     }
     assert coverage["counts"]["by_period"] == {
-        "calendar_year:2024": 994,
+        "calendar_year:2024": 1045,
         "fiscal_year:2024": 326,
         "tax_year:2022": 1244,
         "tax_year:2023": 399,
     }
     assert coverage["counts"]["by_geography"]["country:0100000US"] == 660
-    assert coverage["counts"]["by_geography"]["state:0400000US06"] == 45
+    assert coverage["counts"]["by_geography"]["state:0400000US06"] == 46
     assert len(coverage["counts"]["by_geography"]) == 54
     assert coverage["counts"]["by_entity"] == {
         "family": 107,
         "government": 54,
         "household": 54,
-        "person": 1105,
+        "person": 1156,
         "tax_unit": 1643,
     }
     assert not coverage["duplicates"]["aggregate_fact_keys"]
@@ -138,6 +140,12 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
     ).exists()
     assert (
         output_dir / "sources" / "hhs-acf-tanf-financial-2024" / "consumer_facts.jsonl"
+    ).exists()
+    assert (
+        output_dir
+        / "sources"
+        / "kff-marketplace-effectuated-enrollment"
+        / "consumer_facts.jsonl"
     ).exists()
 
 

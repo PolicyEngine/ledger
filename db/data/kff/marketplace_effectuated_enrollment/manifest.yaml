@@ -1,0 +1,18 @@
+source_id: kff
+package_id: kff-marketplace-effectuated-enrollment
+dataset: kff_state_health_facts_marketplace_effectuated_enrollment
+source_page: https://www.kff.org/affordable-care-act/state-indicator/full-year-average-marketplace-effectuated-enrollment/
+table: Full Year Average Marketplace Effectuated Enrollment, 2017-2024
+files:
+  2024:
+    filename: full-year-average-marketplace-effectuated-enrollment.html
+    source_url: https://www.kff.org/affordable-care-act/state-indicator/full-year-average-marketplace-effectuated-enrollment/
+    sha256: 26e35115f59ce4dc105d33272784e4b26ec7bd2e5569ebfcecc70f3af08bc748
+    size_bytes: 120020
+    fetched_at: '2026-05-11T22:17:13+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/kff/kff-marketplace-effectuated-enrollment/2024/26e35115f59ce4dc105d33272784e4b26ec7bd2e5569ebfcecc70f3af08bc748/full-year-average-marketplace-effectuated-enrollment.html
+        uri: r2://arch-raw/raw/kff/kff-marketplace-effectuated-enrollment/2024/26e35115f59ce4dc105d33272784e4b26ec7bd2e5569ebfcecc70f3af08bc748/full-year-average-marketplace-effectuated-enrollment.html
