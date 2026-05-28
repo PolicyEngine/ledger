@@ -489,8 +489,8 @@ def test_soi_historic_table_2_source_package_alias_validates_fixture_counts():
     assert report.counts == {
         "record_set_count": 1,
         "row_count": 11,
-        "measure_count": 51,
-        "source_record_count": 561,
+        "measure_count": 55,
+        "source_record_count": 605,
         "source_region_count": 1,
     }
 
@@ -510,7 +510,7 @@ def test_soi_historic_table_2_package_builds_2022_national_facts():
     assert validate_source_cells(cells).valid
     assert validate_facts(facts).valid
     assert len(cells) == 1_956
-    assert len(facts) == 561
+    assert len(facts) == 605
     assert all(fact.source_row_keys for fact in facts)
 
     tax_filers = values_by_record[
@@ -543,6 +543,12 @@ def test_soi_historic_table_2_package_builds_2022_national_facts():
     rental = values_by_record[
         "irs_soi.ty2022.historic_table_2.us.all.rental_royalty_income_amount"
     ]
+    ctc = values_by_record[
+        "irs_soi.ty2022.historic_table_2.us.all.ctc_amount"
+    ]
+    actc = values_by_record[
+        "irs_soi.ty2022.historic_table_2.us.all.actc_amount"
+    ]
     agi_bracket_eitc_claims = values_by_record[
         "irs_soi.ty2022.historic_table_2.us.1_to_10k.eitc_claims"
     ]
@@ -557,6 +563,8 @@ def test_soi_historic_table_2_package_builds_2022_national_facts():
     assert medical_dental.value == 80_235_875_000
     assert qbi.value == 31_307_205_000
     assert rental.value == 85_642_801_000
+    assert ctc.value == 82_862_736_000
+    assert actc.value == 33_857_987_000
     assert agi_bracket_eitc_claims.value == 5_013_220
     assert {constraint.operator for constraint in agi_bracket_eitc_claims.constraints} == {
         "<",
@@ -577,7 +585,7 @@ def test_soi_historic_table_2_state_broad_package_builds_2022_state_facts():
     assert validate_source_cells(cells).valid
     assert validate_facts(facts).valid
     assert len(cells) == 8_476
-    assert len(facts) == 2_499
+    assert len(facts) == 2_703
 
     ca_returns = values_by_record[
         "irs_soi.ty2022.historic_table_2.state_broad.ca.all.return_count"
@@ -600,6 +608,12 @@ def test_soi_historic_table_2_state_broad_package_builds_2022_state_facts():
     ca_rental = values_by_record[
         "irs_soi.ty2022.historic_table_2.state_broad.ca.all.rental_royalty_income_amount"
     ]
+    ca_ctc = values_by_record[
+        "irs_soi.ty2022.historic_table_2.state_broad.ca.all.ctc_amount"
+    ]
+    ca_actc = values_by_record[
+        "irs_soi.ty2022.historic_table_2.state_broad.ca.all.actc_amount"
+    ]
 
     assert ca_returns.value == 18_487_690
     assert ca_agi.value == 1_987_000_701_000
@@ -608,6 +622,8 @@ def test_soi_historic_table_2_state_broad_package_builds_2022_state_facts():
     assert ca_medical.value == 11_456_144_000
     assert ca_qbi.value == 4_400_400_000
     assert ca_rental.value == 14_331_993_000
+    assert ca_ctc.value == 9_724_583_000
+    assert ca_actc.value == 3_605_628_000
     assert ca_returns.geography.id == "0400000US06"
     assert ca_partnership.layout.source_column_id == "A26270"
 

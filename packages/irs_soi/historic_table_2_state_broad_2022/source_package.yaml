@@ -725,6 +725,52 @@ record_sets:
     expected_column_header_row: 1
     expected_column_header: A25870
     value_scale: 1000
+  - measure_id: ctc_claims
+    label: Returns with child tax credit
+    ordinal: 49
+    column: DN
+    source_column_id: N07225
+    concept: irs_soi.returns_with_child_tax_credit
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+    expected_column_header_row: 1
+    expected_column_header: N07225
+  - measure_id: ctc_amount
+    label: Child tax credit
+    ordinal: 50
+    column: DO
+    source_column_id: A07225
+    concept: irs_soi.child_tax_credit
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+    expected_column_header_row: 1
+    expected_column_header: A07225
+    value_scale: 1000
+  - measure_id: actc_claims
+    label: Returns with additional child tax credit
+    ordinal: 51
+    column: EL
+    source_column_id: N11070
+    concept: irs_soi.returns_with_additional_child_tax_credit
+    unit: count
+    aggregation: count
+    expected_cell_type: number
+    expected_column_header_row: 1
+    expected_column_header: N11070
+  - measure_id: actc_amount
+    label: Additional child tax credit
+    ordinal: 52
+    column: EM
+    source_column_id: A11070
+    concept: irs_soi.additional_child_tax_credit
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+    expected_column_header_row: 1
+    expected_column_header: A11070
+    value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.ak
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.ak
