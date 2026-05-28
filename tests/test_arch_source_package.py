@@ -306,6 +306,13 @@ def test_national_soi_source_package_aliases_validate_fixture_counts():
             "source_record_count": 918,
             "source_region_count": 51,
         },
+        "soi-historic-table-2-state-broad-2022": {
+            "record_set_count": 51,
+            "row_count": 51,
+            "measure_count": 2295,
+            "source_record_count": 2295,
+            "source_region_count": 51,
+        },
         "soi-historic-table-2-state-eitc-2022": {
             "record_set_count": 51,
             "row_count": 51,
@@ -531,6 +538,46 @@ def test_soi_historic_table_2_package_builds_2022_national_facts():
         "<",
         ">=",
     }
+
+
+def test_soi_historic_table_2_state_broad_package_builds_2022_state_facts():
+    package = load_source_package("soi-historic-table-2-state-broad-2022")
+    rows = package.build_source_rows(2023)
+    cells = package.build_source_cells(2023, source_rows=rows)
+    facts = package.build_facts(2023, cells=cells, source_rows=rows)
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "soi-historic-table-2-state-broad-2022"
+    assert len(rows) == 594
+    assert validate_source_rows(rows).valid
+    assert validate_source_cells(cells).valid
+    assert validate_facts(facts).valid
+    assert len(cells) == 8_476
+    assert len(facts) == 2_295
+
+    ca_returns = values_by_record[
+        "irs_soi.ty2022.historic_table_2.state_broad.ca.all.return_count"
+    ]
+    ca_agi = values_by_record[
+        "irs_soi.ty2022.historic_table_2.state_broad.ca.all.adjusted_gross_income"
+    ]
+    ca_ptc = values_by_record[
+        "irs_soi.ty2022.historic_table_2.state_broad.ca.all.premium_tax_credit_amount"
+    ]
+    ca_partnership = values_by_record[
+        "irs_soi.ty2022.historic_table_2.state_broad.ca.all.partnership_scorp_income_amount"
+    ]
+    ca_medical = values_by_record[
+        "irs_soi.ty2022.historic_table_2.state_broad.ca.all.medical_dental_expense_amount"
+    ]
+
+    assert ca_returns.value == 18_487_690
+    assert ca_agi.value == 1_987_000_701_000
+    assert ca_ptc.value == 6_379_623_000
+    assert ca_partnership.value == 125_930_370_000
+    assert ca_medical.value == 11_456_144_000
+    assert ca_returns.geography.id == "0400000US06"
+    assert ca_partnership.layout.source_column_id == "A26270"
 
 
 def test_usda_snap_source_package_builds_fy24_national_and_state_facts():
