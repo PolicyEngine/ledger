@@ -236,6 +236,98 @@ record_sets:
   domain: medicaid_chip_enrollment
   groupby_dimension: cms_medicaid.state_abbreviation
   rows:
+  - value_id: us
+    label: United States
+    ordinal: -1
+    row_number: 2
+    row_end_number: 52
+    geography_id: 0100000US
+    geography_level: country
+    geography_name: United States
+    geography_vintage: current
+    expected_row_header_column: A
+    expected_row_header: AK
+    guard_cells:
+    - column: C
+      expected_value: 202412
+      row: start
+      label: first reporting period
+    - column: E
+      expected_value: U
+      row: start
+      label: first updated report
+    - column: F
+      expected_value: Y
+      row: start
+      label: first final report
+    - column: C
+      expected_value: 202412
+      row: end
+      label: last reporting period
+    - column: E
+      expected_value: U
+      row: end
+      label: last updated report
+    - column: F
+      expected_value: Y
+      row: end
+      label: last final report
+    range_label_guards:
+    - column: A
+      label: state abbreviation
+      expected_values:
+      - AK
+      - AL
+      - AR
+      - AZ
+      - CA
+      - CO
+      - CT
+      - DC
+      - DE
+      - FL
+      - GA
+      - HI
+      - IA
+      - ID
+      - IL
+      - IN
+      - KS
+      - KY
+      - LA
+      - MA
+      - MD
+      - ME
+      - MI
+      - MN
+      - MO
+      - MS
+      - MT
+      - NC
+      - ND
+      - NE
+      - NH
+      - NJ
+      - NM
+      - NV
+      - NY
+      - OH
+      - OK
+      - OR
+      - PA
+      - RI
+      - SC
+      - SD
+      - TN
+      - TX
+      - UT
+      - VA
+      - VT
+      - WA
+      - WI
+      - WV
+      - WY
+    table_record_kind: total
   - value_id: ak
     label: Alaska
     ordinal: 0

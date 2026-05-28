@@ -29,7 +29,7 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "aggregate_duplicate_key_count": 0,
         "entity_count": 6,
         "error_count": 0,
-        "fact_count": 7043,
+        "fact_count": 7048,
         "geography_count": 54,
         "period_count": 7,
         "semantic_duplicate_key_count": 3,
@@ -38,17 +38,17 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "source_package_count": 27,
         "warning_count": 1,
     }
-    assert len(rows) == 7043
+    assert len(rows) == 7048
     assert rows[0]["aggregate_fact_key"].startswith("arch.aggregate_fact.v2:")
     assert rows[0]["semantic_fact_key"].startswith("arch.semantic_fact.v2:")
     assert source_packages["source_package_count"] == 27
     assert source_packages["skipped_source_count"] == 0
     assert not source_packages["skipped_sources"]
-    assert coverage["fact_count"] == 7043
+    assert coverage["fact_count"] == 7048
     assert coverage["counts"]["by_source"] == {
         "census_pep": 988,
         "census_stc": 46,
-        "cms_medicaid": 255,
+        "cms_medicaid": 260,
         "cms_medicare": 1,
         "cms_nhe": 1,
         "federal_reserve": 1,
@@ -72,7 +72,7 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         (
             "cms_medicaid:State Medicaid and CHIP Applications, Eligibility "
             "Determinations, and Enrollment Data"
-        ): 255,
+        ): 260,
         "cms_medicare:2025 Medicare Trustees Report Table III.C3": 1,
         (
             "cms_nhe:National Health Expenditures by type of service and source "
@@ -116,11 +116,11 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "calendar_year:2024": 1046,
         "fiscal_year:2023": 46,
         "fiscal_year:2024": 327,
-        "month:2024-12": 255,
+        "month:2024-12": 260,
         "tax_year:2022": 4968,
         "tax_year:2023": 399,
     }
-    assert coverage["counts"]["by_geography"]["country:0100000US"] == 1278
+    assert coverage["counts"]["by_geography"]["country:0100000US"] == 1283
     assert coverage["counts"]["by_geography"]["state:0400000US06"] == 113
     assert len(coverage["counts"]["by_geography"]) == 54
     assert coverage["counts"]["by_entity"] == {
@@ -128,7 +128,7 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "government": 101,
         "household": 55,
         "institutional_sector": 1,
-        "person": 1412,
+        "person": 1417,
         "tax_unit": 5367,
     }
     assert not coverage["duplicates"]["aggregate_fact_keys"]
