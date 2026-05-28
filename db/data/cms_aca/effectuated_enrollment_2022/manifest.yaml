@@ -1,0 +1,18 @@
+source_id: cms_aca
+package_id: cms-aca-effectuated-enrollment-2022
+dataset: cms_marketplace_full_year_effectuated_enrollment_2022
+source_page: https://www.cms.gov/marketplace/resources/forms-reports-other
+table: 'Effectuated Enrollment: Early Snapshot 2023 and Full Year 2022 Average'
+files:
+  2022:
+    filename: full-year-effectuated-enrollment.xlsx
+    source_url: https://www.cms.gov/files/document/full-year-effectuated-enrollment.xlsx
+    sha256: 4cac1e6bf60ad58cbe75706d4398763bca5897c3088056770b30873d42bd06d1
+    size_bytes: 126487
+    fetched_at: '2026-05-12T01:38:25+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/cms_aca/cms-aca-effectuated-enrollment-2022/2022/4cac1e6bf60ad58cbe75706d4398763bca5897c3088056770b30873d42bd06d1/full-year-effectuated-enrollment.xlsx
+        uri: r2://arch-raw/raw/cms_aca/cms-aca-effectuated-enrollment-2022/2022/4cac1e6bf60ad58cbe75706d4398763bca5897c3088056770b30873d42bd06d1/full-year-effectuated-enrollment.xlsx
