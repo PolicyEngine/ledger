@@ -74,6 +74,14 @@ SOURCE_PACKAGE_ALIASES = {
     "cbo-revenue-projections-income-by-source-2026-02": Path(
         "cbo/revenue_projections_income_by_source_2026_02"
     ),
+    "census-acs-s0101-congressional-district-age-2024": Path(
+        "census/acs_s0101_district_2024"
+    ),
+    "census-acs-s0101-national-age-2024": Path("census/acs_s0101_national_2024"),
+    "census-acs-s0101-state-age-2024": Path("census/acs_s0101_state_2024"),
+    "census-acs-s2201-congressional-district-snap-2024": Path(
+        "census/acs_s2201_district_2024"
+    ),
     "census-pep-2024-national-age-sex": Path("census/pep_2024_national_age_sex"),
     "census-pep-2024-state-age-sex": Path("census/pep_2024_state_age_sex"),
     "census-stc-individual-income-tax": Path(

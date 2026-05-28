@@ -1,0 +1,345 @@
+schema_version: arch.source_package.v1
+package_id: census-acs-s0101-national-age-2024
+label: Census ACS 2024 S0101 national population by age band
+artifact:
+  source_name: census_acs
+  source_table: ACS 2024 1-year subject table S0101 national age bands
+  resource_package: db
+  resource_directory: data/census/acs_s0101_national_2024
+  manifest: manifest.yaml
+  vintage: acs_1_year_{year}
+  extracted_at: '2026-05-11'
+  extraction_method: Census API JSON table parsed and unpivoted to age-band rows
+  parser: census_acs_s0101_age_json_rows
+  sheet_name: api_response
+record_sets:
+- record_set_id: census_acs.acs1_{year}.s0101.national_age
+  record_set_spec_id: census_acs.s0101.national_age.v1
+  source_record_id_prefix: census_acs.acs1_{year}.s0101.national_age
+  sheet_name: api_response
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: resident_population
+  domain: total_population
+  groupby_dimension: age
+  rows:
+  - value_id: age_0_to_4
+    label: Age 0 to 4
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: E
+    expected_row_header: Aged 0-4
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 0
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 5
+      unit: years
+      label: Age upper bound
+  - value_id: age_5_to_9
+    label: Age 5 to 9
+    ordinal: 1
+    row_number: 3
+    expected_row_header_column: E
+    expected_row_header: Aged 5-9
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 5
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 10
+      unit: years
+      label: Age upper bound
+  - value_id: age_10_to_14
+    label: Age 10 to 14
+    ordinal: 2
+    row_number: 4
+    expected_row_header_column: E
+    expected_row_header: Aged 10-14
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 10
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 15
+      unit: years
+      label: Age upper bound
+  - value_id: age_15_to_19
+    label: Age 15 to 19
+    ordinal: 3
+    row_number: 5
+    expected_row_header_column: E
+    expected_row_header: Aged 15-19
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 15
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 20
+      unit: years
+      label: Age upper bound
+  - value_id: age_20_to_24
+    label: Age 20 to 24
+    ordinal: 4
+    row_number: 6
+    expected_row_header_column: E
+    expected_row_header: Aged 20-24
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 20
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 25
+      unit: years
+      label: Age upper bound
+  - value_id: age_25_to_29
+    label: Age 25 to 29
+    ordinal: 5
+    row_number: 7
+    expected_row_header_column: E
+    expected_row_header: Aged 25-29
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 25
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 30
+      unit: years
+      label: Age upper bound
+  - value_id: age_30_to_34
+    label: Age 30 to 34
+    ordinal: 6
+    row_number: 8
+    expected_row_header_column: E
+    expected_row_header: Aged 30-34
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 30
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 35
+      unit: years
+      label: Age upper bound
+  - value_id: age_35_to_39
+    label: Age 35 to 39
+    ordinal: 7
+    row_number: 9
+    expected_row_header_column: E
+    expected_row_header: Aged 35-39
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 35
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 40
+      unit: years
+      label: Age upper bound
+  - value_id: age_40_to_44
+    label: Age 40 to 44
+    ordinal: 8
+    row_number: 10
+    expected_row_header_column: E
+    expected_row_header: Aged 40-44
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 40
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 45
+      unit: years
+      label: Age upper bound
+  - value_id: age_45_to_49
+    label: Age 45 to 49
+    ordinal: 9
+    row_number: 11
+    expected_row_header_column: E
+    expected_row_header: Aged 45-49
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 45
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 50
+      unit: years
+      label: Age upper bound
+  - value_id: age_50_to_54
+    label: Age 50 to 54
+    ordinal: 10
+    row_number: 12
+    expected_row_header_column: E
+    expected_row_header: Aged 50-54
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 50
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 55
+      unit: years
+      label: Age upper bound
+  - value_id: age_55_to_59
+    label: Age 55 to 59
+    ordinal: 11
+    row_number: 13
+    expected_row_header_column: E
+    expected_row_header: Aged 55-59
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 55
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 60
+      unit: years
+      label: Age upper bound
+  - value_id: age_60_to_64
+    label: Age 60 to 64
+    ordinal: 12
+    row_number: 14
+    expected_row_header_column: E
+    expected_row_header: Aged 60-64
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 60
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 65
+      unit: years
+      label: Age upper bound
+  - value_id: age_65_to_69
+    label: Age 65 to 69
+    ordinal: 13
+    row_number: 15
+    expected_row_header_column: E
+    expected_row_header: Aged 65-69
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 65
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 70
+      unit: years
+      label: Age upper bound
+  - value_id: age_70_to_74
+    label: Age 70 to 74
+    ordinal: 14
+    row_number: 16
+    expected_row_header_column: E
+    expected_row_header: Aged 70-74
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 70
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 75
+      unit: years
+      label: Age upper bound
+  - value_id: age_75_to_79
+    label: Age 75 to 79
+    ordinal: 15
+    row_number: 17
+    expected_row_header_column: E
+    expected_row_header: Aged 75-79
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 75
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 80
+      unit: years
+      label: Age upper bound
+  - value_id: age_80_to_84
+    label: Age 80 to 84
+    ordinal: 16
+    row_number: 18
+    expected_row_header_column: E
+    expected_row_header: Aged 80-84
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 80
+      unit: years
+      label: Age lower bound
+    - variable: age
+      operator: <
+      value: 85
+      unit: years
+      label: Age upper bound
+  - value_id: age_85_plus
+    label: Age 85 and over
+    ordinal: 17
+    row_number: 19
+    expected_row_header_column: E
+    expected_row_header: Aged 85 and over
+    constraints:
+    - variable: age
+      operator: '>='
+      value: 85
+      unit: years
+      label: Age lower bound
+  measures:
+  - measure_id: population
+    label: Population
+    ordinal: 0
+    column: F
+    source_column_id: value
+    expected_column_header_row: 1
+    expected_column_header: value
+    concept: census_acs.person_count
+    source_concept: ACS S0101 total population age-band estimate
+    concept_relation: source_label
+    unit: count
+    aggregation: count
+    expected_cell_type: number
