@@ -260,6 +260,84 @@ def test_source_package_path_builds_valid_soi_table_1_4_facts():
     )
 
 
+def test_bea_nipa_total_wages_package_preserves_bea_concept():
+    package = load_source_package("bea-nipa-total-wages-salaries")
+    rows = package.build_source_rows(2024)
+    cells = package.build_source_cells(2024, source_rows=rows)
+    records = package.build_source_records(2024, cells=cells, source_rows=rows)
+    facts = package.build_facts(2024, cells=cells, source_rows=rows)
+    records_by_id = {record.source_record_id: record for record in records}
+    facts_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert len(rows) == 559_069
+    assert validate_source_rows(rows).valid
+    assert validate_source_cells(cells).valid
+    assert validate_facts(facts).valid
+    assert len(cells) == 12
+    assert len(facts) == 3
+    assert all(fact.source_row_keys for fact in facts)
+    assert all(fact.source.source_name == "bea" for fact in facts)
+    assert all(fact.source.raw_r2_uri for fact in facts)
+
+    value_2018 = "bea_nipa.cy2018.total_wages_salaries.a034rc.wages_salaries_amount"
+    value_2024 = "bea_nipa.cy2024.total_wages_salaries.a034rc.wages_salaries_amount"
+    assert records_by_id[value_2018].source_cell_addresses == ("C2", "C1", "B2")
+    assert records_by_id[value_2024].source_cell_addresses == ("C4", "C1", "B4")
+    assert facts_by_record[value_2018].value == 8_899_824_000_000
+    assert facts_by_record[value_2024].value == 12_387_929_000_000
+    assert facts_by_record[value_2024].measure.concept == (
+        "bea_nipa.wages_and_salaries"
+    )
+    assert facts_by_record[value_2024].measure.source_concept == (
+        "bea_nipa.a034rc_wages_and_salaries"
+    )
+
+
+def test_bea_nipa_personal_income_components_keep_broad_concepts_namespaced():
+    package = load_source_package("bea-nipa-personal-income-components")
+    facts = package.build_facts(2024)
+    facts_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert len(facts) == 18
+    assert validate_facts(facts).valid
+    proprietors = facts_by_record["bea_nipa.cy2024.proprietors_income.a041rc.amount"]
+    interest = facts_by_record["bea_nipa.cy2024.personal_interest_income.a064rc.amount"]
+    dividends = facts_by_record[
+        "bea_nipa.cy2024.personal_dividend_income.b703rc.amount"
+    ]
+
+    assert proprietors.value == 2_023_080_000_000
+    assert proprietors.measure.concept == (
+        "bea_nipa.proprietors_income_with_inventory_valuation_and_capital_"
+        "consumption_adjustments"
+    )
+    assert proprietors.measure.concept != "self_employment_income"
+    assert interest.value == 1_926_644_000_000
+    assert interest.measure.concept == "bea_nipa.personal_interest_income"
+    assert dividends.value == 2_218_700_000_000
+    assert dividends.measure.concept == "bea_nipa.personal_dividend_income"
+
+
+def test_bea_nipa_personal_income_disposition_builds_amounts_and_rates():
+    package = load_source_package("bea-nipa-personal-income-disposition")
+    facts = package.build_facts(2024)
+    facts_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert len(facts) == 6
+    assert validate_facts(facts).valid
+    assert (
+        facts_by_record["bea_nipa.cy2024.personal_income.a065rc.amount"].value
+        == 24_905_900_000_000
+    )
+    assert (
+        facts_by_record["bea_nipa.cy2024.personal_current_taxes.w055rc.amount"].value
+        == 2_988_243_000_000
+    )
+    saving_rate = facts_by_record["bea_nipa.cy2024.personal_saving_rate.a072rc.rate"]
+    assert saving_rate.value == 5.4
+    assert saving_rate.measure.unit == "percent"
+
+
 def test_validate_source_package_reports_fixture_counts():
     report = validate_source_package("soi-table-1-1", year=2023)
 

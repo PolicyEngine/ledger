@@ -66,6 +66,11 @@ from arch.sources.specs import (
 
 SOURCE_PACKAGE_RESOURCE_PACKAGE = "packages"
 SOURCE_PACKAGE_ALIASES = {
+    "bea-nipa-personal-income-components": Path("bea/nipa_personal_income_components"),
+    "bea-nipa-personal-income-disposition": Path(
+        "bea/nipa_personal_income_disposition"
+    ),
+    "bea-nipa-total-wages-salaries": Path("bea/nipa_total_wages_salaries"),
     "census-pep-2024-national-age-sex": Path("census/pep_2024_national_age_sex"),
     "census-pep-2024-state-age-sex": Path("census/pep_2024_state_age_sex"),
     "census-stc-individual-income-tax": Path(
