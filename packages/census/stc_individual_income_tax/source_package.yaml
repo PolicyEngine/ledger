@@ -1,0 +1,1627 @@
+schema_version: arch.source_package.v1
+package_id: census-stc-individual-income-tax
+label: Census State Tax Collections individual income tax collections
+artifact:
+  source_name: census_stc
+  source_table: FY{year} STC Flat File item T40 Individual Income Taxes
+  resource_package: db
+  resource_directory: data/census/stc_individual_income_tax
+  manifest: manifest.yaml
+  vintage: fiscal_year_{year}
+  extracted_at: '2026-05-08'
+  extraction_method: delimited text full-row parse with selected source-row cells
+  parser: delimited_text_full_rows
+  sheet_name: FY{year}-Flat-File
+  selected_rows:
+  - ITEM: T40
+record_sets:
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.us
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.us
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: B
+    source_column_id: us
+    expected_column_header_row: 1
+    expected_column_header: US
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.al
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.al
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US01
+  geography_level: state
+  geography_name: Alabama
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: C
+    source_column_id: al
+    expected_column_header_row: 1
+    expected_column_header: AL
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.az
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.az
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US04
+  geography_level: state
+  geography_name: Arizona
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: E
+    source_column_id: az
+    expected_column_header_row: 1
+    expected_column_header: AZ
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.ar
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.ar
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US05
+  geography_level: state
+  geography_name: Arkansas
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: F
+    source_column_id: ar
+    expected_column_header_row: 1
+    expected_column_header: AR
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.ca
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.ca
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US06
+  geography_level: state
+  geography_name: California
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: G
+    source_column_id: ca
+    expected_column_header_row: 1
+    expected_column_header: CA
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.co
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.co
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US08
+  geography_level: state
+  geography_name: Colorado
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: H
+    source_column_id: co
+    expected_column_header_row: 1
+    expected_column_header: CO
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.ct
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.ct
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US09
+  geography_level: state
+  geography_name: Connecticut
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: I
+    source_column_id: ct
+    expected_column_header_row: 1
+    expected_column_header: CT
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.de
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.de
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US10
+  geography_level: state
+  geography_name: Delaware
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: J
+    source_column_id: de
+    expected_column_header_row: 1
+    expected_column_header: DE
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.dc
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.dc
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US11
+  geography_level: state
+  geography_name: District of Columbia
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: K
+    source_column_id: dc
+    expected_column_header_row: 1
+    expected_column_header: DC
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.ga
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.ga
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US13
+  geography_level: state
+  geography_name: Georgia
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: M
+    source_column_id: ga
+    expected_column_header_row: 1
+    expected_column_header: GA
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.hi
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.hi
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US15
+  geography_level: state
+  geography_name: Hawaii
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: N
+    source_column_id: hi
+    expected_column_header_row: 1
+    expected_column_header: HI
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.id
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.id
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US16
+  geography_level: state
+  geography_name: Idaho
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: O
+    source_column_id: id
+    expected_column_header_row: 1
+    expected_column_header: ID
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.il
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.il
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US17
+  geography_level: state
+  geography_name: Illinois
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: P
+    source_column_id: il
+    expected_column_header_row: 1
+    expected_column_header: IL
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.in
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.in
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US18
+  geography_level: state
+  geography_name: Indiana
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: Q
+    source_column_id: in
+    expected_column_header_row: 1
+    expected_column_header: IN
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.ia
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.ia
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US19
+  geography_level: state
+  geography_name: Iowa
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: R
+    source_column_id: ia
+    expected_column_header_row: 1
+    expected_column_header: IA
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.ks
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.ks
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US20
+  geography_level: state
+  geography_name: Kansas
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: S
+    source_column_id: ks
+    expected_column_header_row: 1
+    expected_column_header: KS
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.ky
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.ky
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US21
+  geography_level: state
+  geography_name: Kentucky
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: T
+    source_column_id: ky
+    expected_column_header_row: 1
+    expected_column_header: KY
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.la
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.la
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US22
+  geography_level: state
+  geography_name: Louisiana
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: U
+    source_column_id: la
+    expected_column_header_row: 1
+    expected_column_header: LA
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.me
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.me
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US23
+  geography_level: state
+  geography_name: Maine
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: V
+    source_column_id: me
+    expected_column_header_row: 1
+    expected_column_header: ME
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.md
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.md
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US24
+  geography_level: state
+  geography_name: Maryland
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: W
+    source_column_id: md
+    expected_column_header_row: 1
+    expected_column_header: MD
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.ma
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.ma
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US25
+  geography_level: state
+  geography_name: Massachusetts
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: X
+    source_column_id: ma
+    expected_column_header_row: 1
+    expected_column_header: MA
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.mi
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.mi
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US26
+  geography_level: state
+  geography_name: Michigan
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: Y
+    source_column_id: mi
+    expected_column_header_row: 1
+    expected_column_header: MI
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.mn
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.mn
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US27
+  geography_level: state
+  geography_name: Minnesota
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: Z
+    source_column_id: mn
+    expected_column_header_row: 1
+    expected_column_header: MN
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.ms
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.ms
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US28
+  geography_level: state
+  geography_name: Mississippi
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: AA
+    source_column_id: ms
+    expected_column_header_row: 1
+    expected_column_header: MS
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.mo
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.mo
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US29
+  geography_level: state
+  geography_name: Missouri
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: AB
+    source_column_id: mo
+    expected_column_header_row: 1
+    expected_column_header: MO
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.mt
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.mt
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US30
+  geography_level: state
+  geography_name: Montana
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: AC
+    source_column_id: mt
+    expected_column_header_row: 1
+    expected_column_header: MT
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.ne
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.ne
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US31
+  geography_level: state
+  geography_name: Nebraska
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: AD
+    source_column_id: ne
+    expected_column_header_row: 1
+    expected_column_header: NE
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.nh
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.nh
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US33
+  geography_level: state
+  geography_name: New Hampshire
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: AF
+    source_column_id: nh
+    expected_column_header_row: 1
+    expected_column_header: NH
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.nj
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.nj
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US34
+  geography_level: state
+  geography_name: New Jersey
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: AG
+    source_column_id: nj
+    expected_column_header_row: 1
+    expected_column_header: NJ
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.nm
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.nm
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US35
+  geography_level: state
+  geography_name: New Mexico
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: AH
+    source_column_id: nm
+    expected_column_header_row: 1
+    expected_column_header: NM
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.ny
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.ny
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US36
+  geography_level: state
+  geography_name: New York
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: AI
+    source_column_id: ny
+    expected_column_header_row: 1
+    expected_column_header: NY
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.nc
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.nc
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US37
+  geography_level: state
+  geography_name: North Carolina
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: AJ
+    source_column_id: nc
+    expected_column_header_row: 1
+    expected_column_header: NC
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.nd
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.nd
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US38
+  geography_level: state
+  geography_name: North Dakota
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: AK
+    source_column_id: nd
+    expected_column_header_row: 1
+    expected_column_header: ND
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.oh
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.oh
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US39
+  geography_level: state
+  geography_name: Ohio
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: AL
+    source_column_id: oh
+    expected_column_header_row: 1
+    expected_column_header: OH
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.ok
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.ok
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US40
+  geography_level: state
+  geography_name: Oklahoma
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: AM
+    source_column_id: ok
+    expected_column_header_row: 1
+    expected_column_header: OK
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.or
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.or
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US41
+  geography_level: state
+  geography_name: Oregon
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: AN
+    source_column_id: or
+    expected_column_header_row: 1
+    expected_column_header: OR
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.pa
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.pa
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US42
+  geography_level: state
+  geography_name: Pennsylvania
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: AO
+    source_column_id: pa
+    expected_column_header_row: 1
+    expected_column_header: PA
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.ri
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.ri
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US44
+  geography_level: state
+  geography_name: Rhode Island
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: AP
+    source_column_id: ri
+    expected_column_header_row: 1
+    expected_column_header: RI
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.sc
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.sc
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US45
+  geography_level: state
+  geography_name: South Carolina
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: AQ
+    source_column_id: sc
+    expected_column_header_row: 1
+    expected_column_header: SC
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.tn
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.tn
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US47
+  geography_level: state
+  geography_name: Tennessee
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: AS
+    source_column_id: tn
+    expected_column_header_row: 1
+    expected_column_header: TN
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.ut
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.ut
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US49
+  geography_level: state
+  geography_name: Utah
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: AU
+    source_column_id: ut
+    expected_column_header_row: 1
+    expected_column_header: UT
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.vt
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.vt
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US50
+  geography_level: state
+  geography_name: Vermont
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: AV
+    source_column_id: vt
+    expected_column_header_row: 1
+    expected_column_header: VT
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.va
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.va
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US51
+  geography_level: state
+  geography_name: Virginia
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: AW
+    source_column_id: va
+    expected_column_header_row: 1
+    expected_column_header: VA
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.wa
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.wa
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US53
+  geography_level: state
+  geography_name: Washington
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: AX
+    source_column_id: wa
+    expected_column_header_row: 1
+    expected_column_header: WA
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.wv
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.wv
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US54
+  geography_level: state
+  geography_name: West Virginia
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: AY
+    source_column_id: wv
+    expected_column_header_row: 1
+    expected_column_header: WV
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: census_stc.fy{year}.individual_income_tax_collections.wi
+  record_set_spec_id: census_stc.individual_income_tax_collections.v1
+  source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.wi
+  sheet_name: FY{year}-Flat-File
+  period_type: fiscal_year
+  period: '{year}'
+  geography_id: 0400000US55
+  geography_level: state
+  geography_name: Wisconsin
+  geography_vintage: current
+  entity: government
+  entity_role: tax_collecting_government
+  domain: state_government_tax_collections
+  groupby_dimension: census_stc.item
+  rows:
+  - value_id: t40
+    label: T40 Individual income taxes
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: T40
+    table_record_kind: total
+  measures:
+  - measure_id: collections
+    label: Individual income tax collections
+    ordinal: 0
+    column: AZ
+    source_column_id: wi
+    expected_column_header_row: 1
+    expected_column_header: WI
+    concept: census_stc.individual_income_tax_collections
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
