@@ -112,6 +112,7 @@ SOURCE_PACKAGE_ALIASES = {
         "irs_soi/table_2_5_eitc_agi_children_2022"
     ),
     "soi-table-4-3": Path("irs_soi/table_4_3"),
+    "soi-state-2022": Path("irs_soi/state_2022"),
     "soi-historic-table-2": Path("irs_soi/historic_table_2"),
     "soi-historic-table-2-state-agi-2022": Path(
         "irs_soi/historic_table_2_state_agi_2022"
