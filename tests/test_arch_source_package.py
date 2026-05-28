@@ -1133,9 +1133,9 @@ def test_kff_marketplace_effectuated_enrollment_alias_validates_fixture_counts()
     assert report.valid
     assert report.counts == {
         "record_set_count": 1,
-        "row_count": 51,
+        "row_count": 52,
         "measure_count": 1,
-        "source_record_count": 51,
+        "source_record_count": 52,
         "source_region_count": 1,
     }
 
@@ -1162,12 +1162,16 @@ def test_kff_marketplace_effectuated_enrollment_builds_2024_state_facts():
     assert validate_source_cells(cells).valid
     assert validate_facts(facts).valid
     assert len(cells) == 260
-    assert len(facts) == 51
+    assert len(facts) == 52
     assert all(fact.source_row_keys for fact in facts)
     assert all(fact.source.source_name == "kff" for fact in facts)
     assert all(fact.source.source_file.endswith(".html") for fact in facts)
     assert all(fact.source.raw_r2_uri for fact in facts)
 
+    us = (
+        "kff.marketplace_effectuated_enrollment.2024.state.us."
+        "total_effectuated_marketplace_enrollment"
+    )
     al = (
         "kff.marketplace_effectuated_enrollment.2024.state.al."
         "total_effectuated_marketplace_enrollment"
@@ -1177,6 +1181,14 @@ def test_kff_marketplace_effectuated_enrollment_builds_2024_state_facts():
         "total_effectuated_marketplace_enrollment"
     )
 
+    assert records_by_id[us].source_cell_addresses[:3] == ("C2", "C3", "C4")
+    assert "C52" in records_by_id[us].source_cell_addresses
+    assert "C1" in records_by_id[us].source_cell_addresses
+    assert "B2" in records_by_id[us].source_cell_addresses
+    assert "B52" in records_by_id[us].source_cell_addresses
     assert records_by_id[al].source_cell_addresses == ("C2", "C1")
+    assert values_by_record[us].value == 20_968_847
+    assert values_by_record[us].geography.id == "0100000US"
+    assert values_by_record[us].geography.level == "country"
     assert values_by_record[al].value == 396_750
     assert values_by_record[ca].value == 1_795_695
