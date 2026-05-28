@@ -1239,6 +1239,22 @@ def test_cms_medicaid_source_package_alias_validates_fixture_counts():
     }
 
 
+def test_cms_medicaid_monthly_dataset_source_package_alias_validates_counts():
+    report = validate_source_package(
+        "cms-medicaid-chip-monthly-enrollment-dataset",
+        year=2026,
+    )
+
+    assert report.valid
+    assert report.counts == {
+        "record_set_count": 1,
+        "row_count": 51,
+        "measure_count": 5,
+        "source_record_count": 255,
+        "source_region_count": 1,
+    }
+
+
 def test_validate_source_package_reports_cms_aca_oep_counts():
     report = validate_source_package("cms-aca-oep-state-level", year=2024)
 
@@ -1357,6 +1373,89 @@ def test_cms_medicaid_package_builds_december_2024_state_enrollment_facts():
     assert values_by_record[fl_child].value == 2_423_453
     assert not values_by_record[ca_medicaid].filters
     assert not values_by_record[ca_medicaid].constraints
+
+
+def test_cms_medicaid_monthly_dataset_builds_december_2025_state_enrollment_facts():
+    package = load_source_package("cms-medicaid-chip-monthly-enrollment-dataset")
+    rows = package.build_source_rows(2026)
+    cells = package.build_source_cells(2026, source_rows=rows)
+    records = package.build_source_records(2026, cells=cells, source_rows=rows)
+    facts = package.build_facts(2026, cells=cells, source_rows=rows)
+    records_by_id = {record.source_record_id: record for record in records}
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "cms-medicaid-chip-monthly-enrollment-dataset"
+    assert len(rows) == 10_608
+    assert validate_source_rows(rows).valid
+    assert rows[0].values["State Abbreviation"] == "AK"
+    assert rows[0].values["Reporting Period"] == 201309
+    assert validate_source_cells(cells).valid
+    assert len(cells) == 2_288
+    assert len(facts) == 255
+    assert validate_facts(facts).valid
+    assert all(fact.source_row_keys for fact in facts)
+    assert all(fact.source.source_name == "cms_medicaid" for fact in facts)
+    assert all(
+        fact.source.source_file == "pi-dataset-april-2026-release.csv"
+        for fact in facts
+    )
+    assert all(fact.source.raw_r2_uri for fact in facts)
+    assert {f"{fact.period.type}:{fact.period.value}" for fact in facts} == {
+        "month:2025-12"
+    }
+
+    ca_total = (
+        "cms_medicaid.month2025_12.state_enrollment.ca."
+        "total_medicaid_chip_enrollment"
+    )
+    ca_medicaid = (
+        "cms_medicaid.month2025_12.state_enrollment.ca."
+        "total_medicaid_enrollment"
+    )
+    ca_chip = (
+        "cms_medicaid.month2025_12.state_enrollment.ca.total_chip_enrollment"
+    )
+    ca_child = (
+        "cms_medicaid.month2025_12.state_enrollment.ca."
+        "medicaid_chip_child_enrollment"
+    )
+    ca_adult = (
+        "cms_medicaid.month2025_12.state_enrollment.ca."
+        "total_adult_medicaid_enrollment"
+    )
+    tx_total = (
+        "cms_medicaid.month2025_12.state_enrollment.tx."
+        "total_medicaid_chip_enrollment"
+    )
+    ny_total = (
+        "cms_medicaid.month2025_12.state_enrollment.ny."
+        "total_medicaid_chip_enrollment"
+    )
+
+    assert records_by_id[ca_total].source_cell_addresses == (
+        "U6",
+        "U1",
+        "C6",
+        "E6",
+        "F6",
+    )
+    assert records_by_id[ca_adult].source_cell_addresses == (
+        "AA6",
+        "AA1",
+        "C6",
+        "E6",
+        "F6",
+    )
+    assert values_by_record[ca_total].value == 12_731_627
+    assert values_by_record[ca_medicaid].value == 11_498_458
+    assert values_by_record[ca_chip].value == 1_233_169
+    assert values_by_record[ca_child].value == 4_628_424
+    assert values_by_record[ca_adult].value == 8_103_203
+    assert values_by_record[ca_total].geography.id == "0400000US06"
+    assert values_by_record[tx_total].value == 4_111_374
+    assert values_by_record[tx_total].geography.id == "0400000US48"
+    assert values_by_record[ny_total].value == 6_550_143
+    assert values_by_record[ny_total].geography.id == "0400000US36"
 
 
 def test_usda_snap_source_package_alias_validates_fixture_counts():
