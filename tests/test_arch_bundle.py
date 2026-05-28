@@ -29,24 +29,25 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "aggregate_duplicate_key_count": 0,
         "entity_count": 5,
         "error_count": 0,
-        "fact_count": 3014,
+        "fact_count": 3269,
         "geography_count": 54,
-        "period_count": 4,
+        "period_count": 5,
         "semantic_duplicate_key_count": 3,
         "skipped_source_count": 0,
-        "source_count": 6,
-        "source_package_count": 19,
+        "source_count": 7,
+        "source_package_count": 20,
         "warning_count": 1,
     }
-    assert len(rows) == 3014
+    assert len(rows) == 3269
     assert rows[0]["aggregate_fact_key"].startswith("arch.aggregate_fact.v2:")
     assert rows[0]["semantic_fact_key"].startswith("arch.semantic_fact.v2:")
-    assert source_packages["source_package_count"] == 19
+    assert source_packages["source_package_count"] == 20
     assert source_packages["skipped_source_count"] == 0
     assert not source_packages["skipped_sources"]
-    assert coverage["fact_count"] == 3014
+    assert coverage["fact_count"] == 3269
     assert coverage["counts"]["by_source"] == {
         "census_pep": 988,
+        "cms_medicaid": 255,
         "hhs_acf_tanf": 110,
         "irs_soi": 1643,
         "kff": 51,
@@ -62,6 +63,10 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
             "census_pep:Annual State Resident Population Estimates by Single Year "
             "of Age, Sex, Race, and Hispanic Origin"
         ): 969,
+        (
+            "cms_medicaid:State Medicaid and CHIP Applications, Eligibility "
+            "Determinations, and Enrollment Data"
+        ): 255,
         "hhs_acf_tanf:FY 2024 Federal TANF and State MOE Financial Data": 52,
         "hhs_acf_tanf:TANF Caseload Data 2024": 58,
         "irs_soi:Historic Table 2 state AGI facts": 918,
@@ -94,17 +99,18 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
     assert coverage["counts"]["by_period"] == {
         "calendar_year:2024": 1045,
         "fiscal_year:2024": 326,
+        "month:2024-12": 255,
         "tax_year:2022": 1244,
         "tax_year:2023": 399,
     }
     assert coverage["counts"]["by_geography"]["country:0100000US"] == 660
-    assert coverage["counts"]["by_geography"]["state:0400000US06"] == 46
+    assert coverage["counts"]["by_geography"]["state:0400000US06"] == 51
     assert len(coverage["counts"]["by_geography"]) == 54
     assert coverage["counts"]["by_entity"] == {
         "family": 107,
         "government": 54,
         "household": 54,
-        "person": 1156,
+        "person": 1411,
         "tax_unit": 1643,
     }
     assert not coverage["duplicates"]["aggregate_fact_keys"]
@@ -140,6 +146,12 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
     ).exists()
     assert (
         output_dir / "sources" / "hhs-acf-tanf-financial-2024" / "consumer_facts.jsonl"
+    ).exists()
+    assert (
+        output_dir
+        / "sources"
+        / "cms-medicaid-chip-monthly-enrollment-december-2024"
+        / "consumer_facts.jsonl"
     ).exists()
     assert (
         output_dir

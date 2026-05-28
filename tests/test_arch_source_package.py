@@ -384,6 +384,84 @@ def test_census_pep_state_source_package_alias_validates_fixture_counts():
     }
 
 
+def test_cms_medicaid_source_package_alias_validates_fixture_counts():
+    report = validate_source_package(
+        "cms-medicaid-chip-monthly-enrollment-december-2024",
+        year=2023,
+    )
+
+    assert report.valid
+    assert report.counts == {
+        "record_set_count": 1,
+        "row_count": 51,
+        "measure_count": 5,
+        "source_record_count": 255,
+        "source_region_count": 1,
+    }
+
+
+def test_cms_medicaid_package_builds_december_2024_state_enrollment_facts():
+    package = load_source_package(
+        "cms-medicaid-chip-monthly-enrollment-december-2024"
+    )
+    cells = package.build_source_cells(2023)
+    records = package.build_source_records(2023, cells=cells)
+    facts = package.build_facts(2023, cells=cells)
+    records_by_id = {record.source_record_id: record for record in records}
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "cms-medicaid-chip-monthly-enrollment-december-2024"
+    assert validate_source_cells(cells).valid
+    assert validate_facts(facts).valid
+    assert len(cells) == 2_288
+    assert len(facts) == 255
+    assert all(fact.source.raw_r2_uri for fact in facts)
+
+    ca_medicaid = (
+        "cms_medicaid.month2024_12.state_enrollment.ca."
+        "total_medicaid_enrollment"
+    )
+    tx_medicaid_chip = (
+        "cms_medicaid.month2024_12.state_enrollment.tx."
+        "total_medicaid_chip_enrollment"
+    )
+    ny_adult = (
+        "cms_medicaid.month2024_12.state_enrollment.ny."
+        "total_adult_medicaid_enrollment"
+    )
+    fl_child = (
+        "cms_medicaid.month2024_12.state_enrollment.fl."
+        "medicaid_chip_child_enrollment"
+    )
+
+    assert records_by_id[ca_medicaid].source_cell_addresses == (
+        "W6",
+        "W1",
+        "C6",
+        "E6",
+        "F6",
+    )
+    assert records_by_id[tx_medicaid_chip].source_cell_addresses == (
+        "U45",
+        "U1",
+        "C45",
+        "E45",
+        "F45",
+    )
+    assert values_by_record[ca_medicaid].value == 12_254_163
+    assert values_by_record[ca_medicaid].geography.id == "0400000US06"
+    assert values_by_record[ca_medicaid].domain == "medicaid_chip_enrollment"
+    assert values_by_record[ca_medicaid].entity.name == "person"
+    assert values_by_record[ca_medicaid].source.source_file == (
+        "pi-dataset-april-2026-release.csv"
+    )
+    assert values_by_record[tx_medicaid_chip].value == 4_214_876
+    assert values_by_record[ny_adult].value == 4_183_435
+    assert values_by_record[fl_child].value == 2_423_453
+    assert not values_by_record[ca_medicaid].filters
+    assert not values_by_record[ca_medicaid].constraints
+
+
 def test_usda_snap_source_package_alias_validates_fixture_counts():
     report = validate_source_package("usda-snap-fy69-to-current", year=2023)
 
