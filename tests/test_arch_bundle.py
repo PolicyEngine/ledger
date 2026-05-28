@@ -29,7 +29,7 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "aggregate_duplicate_key_count": 0,
         "entity_count": 5,
         "error_count": 0,
-        "fact_count": 6329,
+        "fact_count": 6577,
         "geography_count": 54,
         "period_count": 5,
         "semantic_duplicate_key_count": 3,
@@ -38,18 +38,18 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "source_package_count": 22,
         "warning_count": 1,
     }
-    assert len(rows) == 6329
+    assert len(rows) == 6577
     assert rows[0]["aggregate_fact_key"].startswith("arch.aggregate_fact.v2:")
     assert rows[0]["semantic_fact_key"].startswith("arch.semantic_fact.v2:")
     assert source_packages["source_package_count"] == 22
     assert source_packages["skipped_source_count"] == 0
     assert not source_packages["skipped_sources"]
-    assert coverage["fact_count"] == 6329
+    assert coverage["fact_count"] == 6577
     assert coverage["counts"]["by_source"] == {
         "census_pep": 988,
         "cms_medicaid": 255,
         "hhs_acf_tanf": 110,
-        "irs_soi": 4703,
+        "irs_soi": 4951,
         "kff": 51,
         "ssa": 6,
         "usda_snap": 216,
@@ -69,9 +69,9 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         ): 255,
         "hhs_acf_tanf:FY 2024 Federal TANF and State MOE Financial Data": 52,
         "hhs_acf_tanf:TANF Caseload Data 2024": 58,
-        "irs_soi:Historic Table 2": 561,
+        "irs_soi:Historic Table 2": 605,
         "irs_soi:Historic Table 2 state AGI facts": 918,
-        "irs_soi:Historic Table 2 state broad totals": 2499,
+        "irs_soi:Historic Table 2 state broad totals": 2703,
         "irs_soi:Historic Table 2 state EITC totals": 102,
         "irs_soi:Publication 1304 Table 1.1": 80,
         "irs_soi:Publication 1304 Table 1.2": 7,
@@ -102,18 +102,18 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "calendar_year:2024": 1045,
         "fiscal_year:2024": 326,
         "month:2024-12": 255,
-        "tax_year:2022": 4304,
+        "tax_year:2022": 4552,
         "tax_year:2023": 399,
     }
-    assert coverage["counts"]["by_geography"]["country:0100000US"] == 1221
-    assert coverage["counts"]["by_geography"]["state:0400000US06"] == 100
+    assert coverage["counts"]["by_geography"]["country:0100000US"] == 1265
+    assert coverage["counts"]["by_geography"]["state:0400000US06"] == 104
     assert len(coverage["counts"]["by_geography"]) == 54
     assert coverage["counts"]["by_entity"] == {
         "family": 107,
         "government": 54,
         "household": 54,
         "person": 1411,
-        "tax_unit": 4703,
+        "tax_unit": 4951,
     }
     assert not coverage["duplicates"]["aggregate_fact_keys"]
     assert len(coverage["duplicates"]["semantic_fact_keys"]) == 3
