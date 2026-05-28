@@ -74,6 +74,9 @@ SOURCE_PACKAGE_ALIASES = {
     "cms-medicaid-chip-monthly-enrollment-december-2024": Path(
         "cms_medicaid/chip_monthly_enrollment_december_2024"
     ),
+    "cms-medicare-trustees-report-2025-part-b-premium-income": Path(
+        "cms_medicare/medicare_trustees_report_2025"
+    ),
     "cms-nhe-historical-service-source": Path("cms_nhe/historical_service_source"),
     "federal-reserve-z1-household-net-worth": Path(
         "federal_reserve/z1_household_net_worth"

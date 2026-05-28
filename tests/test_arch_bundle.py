@@ -29,26 +29,27 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "aggregate_duplicate_key_count": 0,
         "entity_count": 6,
         "error_count": 0,
-        "fact_count": 7041,
+        "fact_count": 7042,
         "geography_count": 54,
         "period_count": 7,
         "semantic_duplicate_key_count": 3,
         "skipped_source_count": 0,
-        "source_count": 10,
-        "source_package_count": 25,
+        "source_count": 11,
+        "source_package_count": 26,
         "warning_count": 1,
     }
-    assert len(rows) == 7041
+    assert len(rows) == 7042
     assert rows[0]["aggregate_fact_key"].startswith("arch.aggregate_fact.v2:")
     assert rows[0]["semantic_fact_key"].startswith("arch.semantic_fact.v2:")
-    assert source_packages["source_package_count"] == 25
+    assert source_packages["source_package_count"] == 26
     assert source_packages["skipped_source_count"] == 0
     assert not source_packages["skipped_sources"]
-    assert coverage["fact_count"] == 7041
+    assert coverage["fact_count"] == 7042
     assert coverage["counts"]["by_source"] == {
         "census_pep": 988,
         "census_stc": 46,
         "cms_medicaid": 255,
+        "cms_medicare": 1,
         "cms_nhe": 1,
         "federal_reserve": 1,
         "hhs_acf_tanf": 110,
@@ -71,6 +72,7 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
             "cms_medicaid:State Medicaid and CHIP Applications, Eligibility "
             "Determinations, and Enrollment Data"
         ): 255,
+        "cms_medicare:2025 Medicare Trustees Report Table III.C3": 1,
         (
             "cms_nhe:National Health Expenditures by type of service and source "
             "of funds, CY 1960-2024"
@@ -109,19 +111,19 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
     }
     assert coverage["counts"]["by_period"] == {
         "calendar_year:2023": 2,
-        "calendar_year:2024": 1045,
+        "calendar_year:2024": 1046,
         "fiscal_year:2023": 46,
         "fiscal_year:2024": 326,
         "month:2024-12": 255,
         "tax_year:2022": 4968,
         "tax_year:2023": 399,
     }
-    assert coverage["counts"]["by_geography"]["country:0100000US"] == 1276
+    assert coverage["counts"]["by_geography"]["country:0100000US"] == 1277
     assert coverage["counts"]["by_geography"]["state:0400000US06"] == 113
     assert len(coverage["counts"]["by_geography"]) == 54
     assert coverage["counts"]["by_entity"] == {
         "family": 107,
-        "government": 100,
+        "government": 101,
         "household": 54,
         "institutional_sector": 1,
         "person": 1412,
@@ -154,6 +156,12 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
     ).exists()
     assert (
         output_dir / "sources" / "census-stc-individual-income-tax" / "consumer_facts.jsonl"
+    ).exists()
+    assert (
+        output_dir
+        / "sources"
+        / "cms-medicare-trustees-report-2025-part-b-premium-income"
+        / "consumer_facts.jsonl"
     ).exists()
     assert (
         output_dir
