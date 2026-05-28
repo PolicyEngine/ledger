@@ -810,3 +810,26 @@ record_sets:
         expected_column_header_row: 1
         expected_column_header: A03270
         value_scale: 1000
+      - measure_id: rental_royalty_income_returns
+        label: Returns with rental and royalty net income less loss
+        ordinal: 49
+        column: AX
+        source_column_id: N25870
+        concept: irs_soi.returns_with_rental_royalty_income
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+        expected_column_header_row: 1
+        expected_column_header: N25870
+      - measure_id: rental_royalty_income_amount
+        label: Rental and royalty net income less loss
+        ordinal: 50
+        column: AY
+        source_column_id: A25870
+        concept: irs_soi.rental_royalty_income
+        unit: usd
+        aggregation: sum
+        expected_cell_type: number
+        expected_column_header_row: 1
+        expected_column_header: A25870
+        value_scale: 1000
