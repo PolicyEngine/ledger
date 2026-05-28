@@ -1,0 +1,18 @@
+source_id: cms_aca
+package_id: cms-aca-oep-state-level-2025
+dataset: cms_marketplace_oep_state_level_2025_puf
+source_page: https://www.cms.gov/data-research/statistics-trends-reports/marketplace-products/2025-marketplace-open-enrollment-period-public-use-files
+table: 2025 OEP State-Level Public Use File
+files:
+  2025:
+    filename: 2025-oep-state-level-public-use-file.zip
+    source_url: https://www.cms.gov/files/zip/2025-oep-state-level-public-use-file.zip
+    sha256: 4538f7f8797b1957fe50fa8834fc5eb5c6816ea5ea5d0acf74e84bdbf563c5c3
+    size_bytes: 99029
+    fetched_at: '2026-05-11T22:35:24+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/cms_aca/cms-aca-oep-state-level-2025/2025/4538f7f8797b1957fe50fa8834fc5eb5c6816ea5ea5d0acf74e84bdbf563c5c3/2025-oep-state-level-public-use-file.zip
+        uri: r2://arch-raw/raw/cms_aca/cms-aca-oep-state-level-2025/2025/4538f7f8797b1957fe50fa8834fc5eb5c6816ea5ea5d0acf74e84bdbf563c5c3/2025-oep-state-level-public-use-file.zip
