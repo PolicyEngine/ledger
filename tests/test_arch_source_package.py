@@ -1684,6 +1684,58 @@ def test_soi_state_2022_source_package_alias_builds_us_totals():
     }
 
 
+def test_soi_congressional_district_2022_builds_all_return_facts():
+    package = load_source_package("soi-congressional-district-2022")
+    rows = package.build_source_rows(2022)
+    cells = package.build_source_cells(2022, source_rows=rows)
+    facts = package.build_facts(2022, cells=cells, source_rows=rows)
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "soi-congressional-district-2022"
+    assert len(rows) == 4_791
+    assert len(cells) == 79_365
+    assert len(facts) == 1_440
+    assert validate_source_rows(rows).valid
+    assert validate_source_cells(cells).valid
+    assert validate_facts(facts).valid
+    assert {fact.geography.level for fact in facts} == {
+        "country",
+        "state",
+        "congressional_district",
+    }
+    assert all(fact.source_row_keys for fact in facts)
+    assert all(fact.source.raw_r2_uri for fact in facts)
+
+    assert (
+        values_by_record[
+            "irs_soi.ty2022.congressional_district_2022.all_returns."
+            "us.adjusted_gross_income"
+        ].value
+        == 14_424_810_411_000
+    )
+    assert (
+        values_by_record[
+            "irs_soi.ty2022.congressional_district_2022.all_returns."
+            "al_total.return_count"
+        ].value
+        == 2_104_760
+    )
+    al_01_agi = values_by_record[
+        "irs_soi.ty2022.congressional_district_2022.all_returns."
+        "al_01.adjusted_gross_income"
+    ]
+    ca_53_returns = values_by_record[
+        "irs_soi.ty2022.congressional_district_2022.all_returns."
+        "ca_53.return_count"
+    ]
+
+    assert al_01_agi.value == 22_915_824_000
+    assert al_01_agi.geography.id == "5001700US0101"
+    assert al_01_agi.geography.name == "Alabama Congressional District 1"
+    assert ca_53_returns.value == 383_160
+    assert ca_53_returns.geography.id == "5001700US0653"
+
+
 def test_soi_historic_table_2_package_builds_2022_national_facts():
     package = load_source_package("soi-historic-table-2")
     rows = package.build_source_rows(2023)

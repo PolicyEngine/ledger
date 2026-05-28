@@ -1,0 +1,18 @@
+source_id: irs_soi
+package_id: soi-congressional-district-2022
+dataset: irs_soi_congressional_district_2022
+source_page: https://www.irs.gov/statistics/soi-tax-stats-county-data-2022
+table: IRS SOI Congressional District Data 2022
+files:
+  2022:
+    filename: 22incd.csv
+    source_url: https://www.irs.gov/pub/irs-soi/22incd.csv
+    sha256: 137522878af78d624cfddc0e17cd36ae76a21b7bed166c7bb96ad3243a18a668
+    size_bytes: 7710982
+    fetched_at: '2026-05-11T12:41:32+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/irs_soi/soi-congressional-district-2022/2022/137522878af78d624cfddc0e17cd36ae76a21b7bed166c7bb96ad3243a18a668/22incd.csv
+        uri: r2://arch-raw/raw/irs_soi/soi-congressional-district-2022/2022/137522878af78d624cfddc0e17cd36ae76a21b7bed166c7bb96ad3243a18a668/22incd.csv
