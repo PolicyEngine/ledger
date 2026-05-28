@@ -90,6 +90,9 @@ SOURCE_PACKAGE_ALIASES = {
     ),
     "census-pep-2024-national-age-sex": Path("census/pep_2024_national_age_sex"),
     "census-pep-2024-state-age-sex": Path("census/pep_2024_state_age_sex"),
+    "census-population-projections-2023": Path(
+        "census/population_projections_2023"
+    ),
     "census-stc-individual-income-tax": Path(
         "census/stc_individual_income_tax"
     ),
