@@ -412,6 +412,54 @@ def test_census_stc_income_tax_package_builds_state_tax_facts():
     )
 
 
+def test_federal_reserve_z1_package_builds_net_worth_fact():
+    report = validate_source_package(
+        "federal-reserve-z1-household-net-worth",
+        year=2024,
+    )
+    package = load_source_package("federal-reserve-z1-household-net-worth")
+    cells = package.build_source_cells(2024)
+    records = package.build_source_records(2024, cells=cells)
+    facts = package.build_facts(2024, cells=cells)
+    records_by_id = {record.source_record_id: record for record in records}
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "federal-reserve-z1-household-net-worth"
+    assert report.valid
+    assert report.counts == {
+        "record_set_count": 1,
+        "row_count": 1,
+        "measure_count": 1,
+        "source_record_count": 1,
+        "source_region_count": 1,
+    }
+    assert len(cells) == 709
+    assert validate_source_cells(cells).valid
+    assert len(facts) == 1
+    assert validate_facts(facts).valid
+    assert all(fact.source.source_name == "federal_reserve" for fact in facts)
+    assert all("fred" not in (fact.source.url or "") for fact in facts)
+    assert all(fact.source.raw_r2_uri for fact in facts)
+
+    record_id = (
+        "federal_reserve_z1.cy2024.households_nonprofits_balance_sheet."
+        "net_worth.fl152090005.amount_outstanding"
+    )
+
+    assert records_by_id[record_id].source_cell_addresses == (
+        "E41",
+        "E1",
+        "A41",
+        "C41",
+    )
+    assert values_by_record[record_id].value == 169_619_200_000_000
+    assert values_by_record[record_id].period.value == 2024
+    assert values_by_record[record_id].geography.id == "0100000US"
+    assert values_by_record[record_id].entity.name == "institutional_sector"
+    assert not values_by_record[record_id].filters
+    assert not values_by_record[record_id].constraints
+
+
 def test_soi_table_2_5_eitc_child_totals_build_2022_facts():
     package = load_source_package("soi-table-2-5-eitc-agi-children-2022")
     cells = package.build_source_cells(2023)

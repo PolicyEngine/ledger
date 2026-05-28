@@ -1,0 +1,68 @@
+schema_version: arch.source_package.v1
+package_id: federal-reserve-z1-household-net-worth
+label: Federal Reserve Z.1 household and nonprofit net worth
+artifact:
+  source_name: federal_reserve
+  source_table: Z.1 B.101 Households and nonprofit organizations
+  resource_package: db
+  resource_directory: data/federal_reserve/z1_household_net_worth_2026
+  manifest: manifest.yaml
+  vintage: z1_2026_03_19
+  extracted_at: '2026-05-11'
+  extraction_method: html table parse from official Federal Reserve Z.1 release
+  parser: html_tables_and_text
+  artifact_year: 2026
+record_sets:
+  - record_set_id: federal_reserve_z1.cy{year}.households_nonprofits_balance_sheet.net_worth
+    record_set_spec_id: federal_reserve_z1.households_nonprofits_balance_sheet.net_worth.v1
+    source_record_id_prefix: federal_reserve_z1.cy{year}.households_nonprofits_balance_sheet.net_worth
+    sheet_name: table_1
+    period_type: calendar_year
+    period: '{year}'
+    geography_id: 0100000US
+    geography_level: country
+    geography_name: United States
+    geography_vintage: current
+    entity: institutional_sector
+    entity_role: households_and_nonprofit_organizations
+    domain: household_balance_sheet
+    groupby_dimension: federal_reserve.z1_series_code
+    rows:
+      - value_id: fl152090005
+        label: Net worth (assets minus liabilities)
+        ordinal: 0
+        row_number: 41
+        expected_row_header_column: B
+        expected_row_header: Net worth (assets minus liabilities)
+        guard_cells:
+          - column: A
+            row: start
+            expected_value: Line 40
+            label: source line number
+          - column: C
+            row: start
+            expected_value: FL152090005
+            label: source series code
+        table_record_kind: total
+    measures:
+      - measure_id: amount_outstanding
+        label: Amount outstanding
+        ordinal: 0
+        column_by_year:
+          2023: D
+          2024: E
+          2025: F
+        source_column_id: amount_outstanding_billions
+        expected_column_header_row: 1
+        expected_column_header_by_year:
+          2023: 2023
+          2024: 2024
+          2025: 2025
+        concept: federal_reserve.z1.households_nonprofits_net_worth
+        source_concept: federal_reserve.z1.fl152090005
+        concept_relation: source_label
+        concept_authority: arch-us
+        unit: usd
+        aggregation: sum
+        value_scale: 1000000000
+        expected_cell_type: number

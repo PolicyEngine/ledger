@@ -27,28 +27,29 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
     assert summary["valid"]
     assert summary["counts"] == {
         "aggregate_duplicate_key_count": 0,
-        "entity_count": 5,
+        "entity_count": 6,
         "error_count": 0,
-        "fact_count": 7039,
+        "fact_count": 7040,
         "geography_count": 54,
-        "period_count": 6,
+        "period_count": 7,
         "semantic_duplicate_key_count": 3,
         "skipped_source_count": 0,
-        "source_count": 8,
-        "source_package_count": 23,
+        "source_count": 9,
+        "source_package_count": 24,
         "warning_count": 1,
     }
-    assert len(rows) == 7039
+    assert len(rows) == 7040
     assert rows[0]["aggregate_fact_key"].startswith("arch.aggregate_fact.v2:")
     assert rows[0]["semantic_fact_key"].startswith("arch.semantic_fact.v2:")
-    assert source_packages["source_package_count"] == 23
+    assert source_packages["source_package_count"] == 24
     assert source_packages["skipped_source_count"] == 0
     assert not source_packages["skipped_sources"]
-    assert coverage["fact_count"] == 7039
+    assert coverage["fact_count"] == 7040
     assert coverage["counts"]["by_source"] == {
         "census_pep": 988,
         "census_stc": 46,
         "cms_medicaid": 255,
+        "federal_reserve": 1,
         "hhs_acf_tanf": 110,
         "irs_soi": 5367,
         "kff": 51,
@@ -69,6 +70,7 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
             "cms_medicaid:State Medicaid and CHIP Applications, Eligibility "
             "Determinations, and Enrollment Data"
         ): 255,
+        "federal_reserve:Z.1 B.101 Households and nonprofit organizations": 1,
         "hhs_acf_tanf:FY 2024 Federal TANF and State MOE Financial Data": 52,
         "hhs_acf_tanf:TANF Caseload Data 2024": 58,
         "irs_soi:Historic Table 2": 605,
@@ -101,6 +103,7 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "usda_snap:SNAP Monthly State Participation and Benefit Summary FY69 to current": 216,
     }
     assert coverage["counts"]["by_period"] == {
+        "calendar_year:2023": 1,
         "calendar_year:2024": 1045,
         "fiscal_year:2023": 46,
         "fiscal_year:2024": 326,
@@ -108,13 +111,14 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "tax_year:2022": 4968,
         "tax_year:2023": 399,
     }
-    assert coverage["counts"]["by_geography"]["country:0100000US"] == 1274
+    assert coverage["counts"]["by_geography"]["country:0100000US"] == 1275
     assert coverage["counts"]["by_geography"]["state:0400000US06"] == 113
     assert len(coverage["counts"]["by_geography"]) == 54
     assert coverage["counts"]["by_entity"] == {
         "family": 107,
         "government": 100,
         "household": 54,
+        "institutional_sector": 1,
         "person": 1411,
         "tax_unit": 5367,
     }
@@ -145,6 +149,12 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
     ).exists()
     assert (
         output_dir / "sources" / "census-stc-individual-income-tax" / "consumer_facts.jsonl"
+    ).exists()
+    assert (
+        output_dir
+        / "sources"
+        / "federal-reserve-z1-household-net-worth"
+        / "consumer_facts.jsonl"
     ).exists()
     assert (
         output_dir / "sources" / "usda-snap-fy69-to-current" / "consumer_facts.jsonl"
