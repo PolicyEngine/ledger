@@ -71,6 +71,9 @@ SOURCE_PACKAGE_ALIASES = {
         "bea/nipa_personal_income_disposition"
     ),
     "bea-nipa-total-wages-salaries": Path("bea/nipa_total_wages_salaries"),
+    "bea-regional-state-personal-income-components-2024": Path(
+        "bea/regional_personal_income_state"
+    ),
     "cbo-revenue-projections-income-by-source-2026-02": Path(
         "cbo/revenue_projections_income_by_source_2026_02"
     ),
