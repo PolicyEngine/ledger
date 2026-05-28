@@ -9,6 +9,7 @@ from pathlib import Path
 from zipfile import ZipFile
 
 import openpyxl
+import pytest
 import yaml
 
 from arch.core import validate_facts
@@ -21,7 +22,7 @@ from arch.source_package import (
     load_source_package,
     validate_source_package,
 )
-from arch.sources.cells import build_source_cell_key
+from arch.sources.cells import build_source_cell_key, validate_source_cells
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 
@@ -380,3 +381,94 @@ def test_census_pep_state_source_package_alias_validates_fixture_counts():
         "source_record_count": 969,
         "source_region_count": 51,
     }
+
+
+def test_usda_snap_source_package_alias_validates_fixture_counts():
+    report = validate_source_package("usda-snap-fy69-to-current", year=2023)
+
+    assert report.valid
+    assert report.counts == {
+        "record_set_count": 24,
+        "row_count": 162,
+        "measure_count": 32,
+        "source_record_count": 216,
+        "source_region_count": 24,
+    }
+
+
+def test_usda_snap_source_package_builds_fy24_national_and_state_facts():
+    package = load_source_package("usda-snap-fy69-to-current")
+    cells = package.build_source_cells(2023)
+    records = package.build_source_records(2023, cells=cells)
+    facts = package.build_facts(2023, cells=cells)
+    records_by_id = {record.source_record_id: record for record in records}
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "usda-snap-fy69-to-current"
+    assert validate_source_cells(cells).valid
+    assert validate_facts(facts).valid
+    assert len(cells) == 6_288
+    assert len(facts) == 216
+    assert all(fact.source.raw_r2_uri for fact in facts)
+
+    households = (
+        "usda_snap.fy2024.national_average_monthly_households."
+        "national_total.average_monthly_households"
+    )
+    persons = (
+        "usda_snap.fy2024.national_average_monthly_persons."
+        "national_total.average_monthly_persons"
+    )
+    per_person = (
+        "usda_snap.fy2024.national_average_monthly_persons."
+        "national_total.average_monthly_benefit_per_person"
+    )
+    benefits = "usda_snap.fy2024.national_benefits.national_total.total_benefits"
+    ca_households = (
+        "usda_snap.fy2024.state_average_monthly_households."
+        "wro.ca.average_monthly_households"
+    )
+    tx_persons = (
+        "usda_snap.fy2024.state_average_monthly_persons.swro.tx.average_monthly_persons"
+    )
+    fl_benefits = "usda_snap.fy2024.state_benefits.sero.fl.total_benefits"
+
+    assert records_by_id[households].source_cell_addresses == (
+        "B21",
+        "B7",
+        "A2",
+        "A8",
+    )
+    assert records_by_id[benefits].source_cell_addresses == (
+        "D21",
+        "D6",
+        "A2",
+        "A8",
+    )
+    assert records_by_id[ca_households].source_cell_addresses == (
+        "B51",
+        "B7",
+        "A2",
+        "A38",
+    )
+    assert records_by_id[tx_persons].source_cell_addresses == (
+        "C96",
+        "C7",
+        "A2",
+        "A83",
+    )
+
+    assert values_by_record[households].value == pytest.approx(22_200_091.5833)
+    assert values_by_record[persons].value == pytest.approx(41_690_237.75)
+    assert values_by_record[per_person].value == pytest.approx(187.5886)
+    assert values_by_record[benefits].value == 93_847_365_890
+    assert values_by_record[ca_households].value == pytest.approx(3_128_639.6667)
+    assert values_by_record[tx_persons].value == pytest.approx(3_193_008.5833)
+    assert values_by_record[fl_benefits].value == 6_604_797_454
+    assert values_by_record[ca_households].geography.id == "0400000US06"
+    assert values_by_record[tx_persons].geography.id == "0400000US48"
+    assert values_by_record[fl_benefits].geography.id == "0400000US12"
+    assert values_by_record[benefits].source.source_file == (
+        "snap-zip-fy69tocurrent-6.zip!FY24.xlsx"
+    )
+    assert not values_by_record[benefits].constraints
