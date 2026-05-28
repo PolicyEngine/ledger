@@ -487,6 +487,50 @@ def test_cms_nhe_package_builds_medicaid_expenditure_fact():
     assert not fact.constraints
 
 
+def test_cms_medicare_trustees_package_builds_part_b_premium_fact():
+    package = load_source_package(
+        "cms-medicare-trustees-report-2025-part-b-premium-income"
+    )
+    cells = package.build_source_cells(2025)
+    records = package.build_source_records(2025, cells=cells)
+    facts = package.build_facts(2025, cells=cells)
+    records_by_id = {record.source_record_id: record for record in records}
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert (
+        package.package_id
+        == "cms-medicare-trustees-report-2025-part-b-premium-income"
+    )
+    assert len(cells) == 93_486
+    assert validate_source_cells(cells).valid
+    assert len(facts) == 1
+    assert validate_facts(facts).valid
+    assert all(fact.source.source_name == "cms_medicare" for fact in facts)
+    assert all(fact.source.raw_r2_uri for fact in facts)
+
+    record_id = (
+        "cms_medicare.cy2024.part_b_premium_income."
+        "premiums_from_enrollees.actual_amount"
+    )
+    assert records_by_id[record_id].source_cell_addresses == (
+        "E3356",
+        "E1",
+        "A3356",
+        "B3356",
+        "D3356",
+        "F3356",
+    )
+    assert values_by_record[record_id].value == 139_837_000_000
+    assert values_by_record[record_id].measure.concept == (
+        "cms_medicare.part_b_premium_income"
+    )
+    assert values_by_record[record_id].period.value == 2024
+    assert values_by_record[record_id].geography.id == "0100000US"
+    assert values_by_record[record_id].entity.name == "government"
+    assert values_by_record[record_id].filters["amount_basis"] == "actual"
+    assert values_by_record[record_id].measure.unit == "usd"
+
+
 def test_soi_table_2_5_eitc_child_totals_build_2022_facts():
     package = load_source_package("soi-table-2-5-eitc-agi-children-2022")
     cells = package.build_source_cells(2023)
