@@ -27,26 +27,27 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
     assert summary["valid"]
     assert summary["counts"] == {
         "aggregate_duplicate_key_count": 0,
-        "entity_count": 4,
+        "entity_count": 5,
         "error_count": 0,
-        "fact_count": 2853,
+        "fact_count": 2963,
         "geography_count": 54,
         "period_count": 4,
         "semantic_duplicate_key_count": 3,
         "skipped_source_count": 0,
-        "source_count": 4,
-        "source_package_count": 16,
+        "source_count": 5,
+        "source_package_count": 18,
         "warning_count": 1,
     }
-    assert len(rows) == 2853
+    assert len(rows) == 2963
     assert rows[0]["aggregate_fact_key"].startswith("arch.aggregate_fact.v2:")
     assert rows[0]["semantic_fact_key"].startswith("arch.semantic_fact.v2:")
-    assert source_packages["source_package_count"] == 16
+    assert source_packages["source_package_count"] == 18
     assert source_packages["skipped_source_count"] == 0
     assert not source_packages["skipped_sources"]
-    assert coverage["fact_count"] == 2853
+    assert coverage["fact_count"] == 2963
     assert coverage["counts"]["by_source"] == {
         "census_pep": 988,
+        "hhs_acf_tanf": 110,
         "irs_soi": 1643,
         "ssa": 6,
         "usda_snap": 216,
@@ -60,6 +61,8 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
             "census_pep:Annual State Resident Population Estimates by Single Year "
             "of Age, Sex, Race, and Hispanic Origin"
         ): 969,
+        "hhs_acf_tanf:FY 2024 Federal TANF and State MOE Financial Data": 52,
+        "hhs_acf_tanf:TANF Caseload Data 2024": 58,
         "irs_soi:Historic Table 2 state AGI facts": 918,
         "irs_soi:Historic Table 2 state EITC totals": 102,
         "irs_soi:Publication 1304 Table 1.1": 80,
@@ -88,17 +91,18 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
     }
     assert coverage["counts"]["by_period"] == {
         "calendar_year:2024": 994,
-        "fiscal_year:2024": 216,
+        "fiscal_year:2024": 326,
         "tax_year:2022": 1244,
         "tax_year:2023": 399,
     }
-    assert coverage["counts"]["by_geography"]["country:0100000US"] == 652
-    assert coverage["counts"]["by_geography"]["state:0400000US06"] == 43
+    assert coverage["counts"]["by_geography"]["country:0100000US"] == 660
+    assert coverage["counts"]["by_geography"]["state:0400000US06"] == 45
     assert len(coverage["counts"]["by_geography"]) == 54
     assert coverage["counts"]["by_entity"] == {
+        "family": 107,
         "government": 54,
         "household": 54,
-        "person": 1102,
+        "person": 1105,
         "tax_unit": 1643,
     }
     assert not coverage["duplicates"]["aggregate_fact_keys"]
@@ -128,6 +132,12 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
     ).exists()
     assert (
         output_dir / "sources" / "usda-snap-fy69-to-current" / "consumer_facts.jsonl"
+    ).exists()
+    assert (
+        output_dir / "sources" / "hhs-acf-tanf-caseload-2024" / "consumer_facts.jsonl"
+    ).exists()
+    assert (
+        output_dir / "sources" / "hhs-acf-tanf-financial-2024" / "consumer_facts.jsonl"
     ).exists()
 
 

@@ -472,3 +472,105 @@ def test_usda_snap_source_package_builds_fy24_national_and_state_facts():
         "snap-zip-fy69tocurrent-6.zip!FY24.xlsx"
     )
     assert not values_by_record[benefits].constraints
+
+
+def test_hhs_acf_tanf_source_package_aliases_validate_fixture_counts():
+    expected_counts = {
+        "hhs-acf-tanf-financial-2024": {
+            "record_set_count": 52,
+            "row_count": 52,
+            "measure_count": 52,
+            "source_record_count": 52,
+            "source_region_count": 52,
+        },
+        "hhs-acf-tanf-caseload-2024": {
+            "record_set_count": 3,
+            "row_count": 53,
+            "measure_count": 8,
+            "source_record_count": 58,
+            "source_region_count": 3,
+        },
+    }
+
+    for package_id, counts in expected_counts.items():
+        report = validate_source_package(package_id, year=2023)
+
+        assert report.valid, package_id
+        assert report.counts == counts
+
+
+def test_hhs_acf_tanf_financial_package_builds_fy24_cash_assistance_facts():
+    package = load_source_package("hhs-acf-tanf-financial-2024")
+    cells = package.build_source_cells(2023)
+    facts = package.build_facts(2023, cells=cells)
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "hhs-acf-tanf-financial-2024"
+    assert validate_source_cells(cells).valid
+    assert validate_facts(facts).valid
+    assert len(cells) == 41_390
+    assert len(facts) == 52
+    assert all(fact.source.raw_r2_uri for fact in facts)
+
+    national_fact = values_by_record[
+        "hhs_acf_tanf.fy2024.cash_assistance.us."
+        "basic_assistance_excluding_relative_foster_care_and_adoption_guardianship."
+        "all_funds"
+    ]
+    ca_fact = values_by_record[
+        "hhs_acf_tanf.fy2024.cash_assistance.ca."
+        "basic_assistance_excluding_relative_foster_care_and_adoption_guardianship."
+        "all_funds"
+    ]
+
+    assert national_fact.value == pytest.approx(7_788_317_474.55)
+    assert ca_fact.value == pytest.approx(3_742_540_224.36)
+    assert ca_fact.geography.id == "0400000US06"
+    assert not ca_fact.filters
+    assert not ca_fact.constraints
+
+
+def test_hhs_acf_tanf_caseload_package_builds_fy24_family_and_recipient_facts():
+    package = load_source_package("hhs-acf-tanf-caseload-2024")
+    cells = package.build_source_cells(2023)
+    records = package.build_source_records(2023, cells=cells)
+    facts = package.build_facts(2023, cells=cells)
+    records_by_id = {record.source_record_id: record for record in records}
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "hhs-acf-tanf-caseload-2024"
+    assert validate_source_cells(cells).valid
+    assert validate_facts(facts).valid
+    assert len(cells) == 91_748
+    assert len(facts) == 58
+    assert all(fact.source.raw_r2_uri for fact in facts)
+
+    total_families = (
+        "hhs_acf_tanf.fy2024.average_monthly_families.us.us_total.total_families"
+    )
+    child_recipients = (
+        "hhs_acf_tanf.fy2024.average_monthly_recipients.us.us_total.child_recipients"
+    )
+    ca_total_families = (
+        "hhs_acf_tanf.fy2024.average_monthly_families.state.ca.total_families"
+    )
+
+    assert records_by_id[total_families].source_cell_addresses == (
+        "D6",
+        "D5",
+        "C6",
+        "C3",
+    )
+    assert records_by_id[ca_total_families].source_cell_addresses == (
+        "D11",
+        "D5",
+    )
+    assert values_by_record[total_families].value == pytest.approx(841_208.6666666666)
+    assert values_by_record[ca_total_families].value == pytest.approx(290_247.75)
+    assert values_by_record[ca_total_families].geography.id == "0400000US06"
+    assert values_by_record[ca_total_families].geography.level == "state"
+    assert values_by_record[child_recipients].value == pytest.approx(1_500_843.75)
+    assert values_by_record[child_recipients].entity.name == "person"
+    assert values_by_record[child_recipients].geography.id == "0100000US"
+    assert not values_by_record[child_recipients].filters
+    assert not values_by_record[child_recipients].constraints

@@ -1,0 +1,2043 @@
+schema_version: arch.source_package.v1
+package_id: hhs-acf-tanf-financial-2024
+label: HHS ACF FY 2024 TANF financial data cash assistance
+artifact:
+  source_name: hhs_acf_tanf
+  source_table: FY 2024 Federal TANF and State MOE Financial Data
+  resource_package: db
+  resource_directory: data/hhs_acf/tanf_financial_2024
+  manifest: manifest.yaml
+  vintage: fiscal_year_2024
+  extracted_at: '2026-05-08'
+  extraction_method: xlsx whole-workbook used-range cell parse
+  parser: xlsx_used_range
+  artifact_year: 2024
+record_sets:
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.us
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.us
+  sheet_name: A.1 Fed & State by Category
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.ak
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.ak
+  sheet_name: Alaska
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US02
+  geography_level: state
+  geography_name: Alaska
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.al
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.al
+  sheet_name: Alabama
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US01
+  geography_level: state
+  geography_name: Alabama
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.ar
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.ar
+  sheet_name: Arkansas
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US05
+  geography_level: state
+  geography_name: Arkansas
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.az
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.az
+  sheet_name: Arizona
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US04
+  geography_level: state
+  geography_name: Arizona
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.ca
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.ca
+  sheet_name: California
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US06
+  geography_level: state
+  geography_name: California
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.co
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.co
+  sheet_name: Colorado
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US08
+  geography_level: state
+  geography_name: Colorado
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.ct
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.ct
+  sheet_name: Connecticut
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US09
+  geography_level: state
+  geography_name: Connecticut
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.dc
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.dc
+  sheet_name: DC
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US11
+  geography_level: state
+  geography_name: District of Columbia
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.de
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.de
+  sheet_name: Delaware
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US10
+  geography_level: state
+  geography_name: Delaware
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.fl
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.fl
+  sheet_name: Florida
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US12
+  geography_level: state
+  geography_name: Florida
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.ga
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.ga
+  sheet_name: Georgia
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US13
+  geography_level: state
+  geography_name: Georgia
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.hi
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.hi
+  sheet_name: Hawaii
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US15
+  geography_level: state
+  geography_name: Hawaii
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.ia
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.ia
+  sheet_name: Iowa
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US19
+  geography_level: state
+  geography_name: Iowa
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.id
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.id
+  sheet_name: Idaho
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US16
+  geography_level: state
+  geography_name: Idaho
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.il
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.il
+  sheet_name: Illinois
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US17
+  geography_level: state
+  geography_name: Illinois
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.in
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.in
+  sheet_name: Indiana
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US18
+  geography_level: state
+  geography_name: Indiana
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.ks
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.ks
+  sheet_name: Kansas
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US20
+  geography_level: state
+  geography_name: Kansas
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.ky
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.ky
+  sheet_name: Kentucky
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US21
+  geography_level: state
+  geography_name: Kentucky
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.la
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.la
+  sheet_name: Louisiana
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US22
+  geography_level: state
+  geography_name: Louisiana
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.ma
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.ma
+  sheet_name: Massachusetts
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US25
+  geography_level: state
+  geography_name: Massachusetts
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.md
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.md
+  sheet_name: Maryland
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US24
+  geography_level: state
+  geography_name: Maryland
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.me
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.me
+  sheet_name: Maine
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US23
+  geography_level: state
+  geography_name: Maine
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.mi
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.mi
+  sheet_name: Michigan
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US26
+  geography_level: state
+  geography_name: Michigan
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.mn
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.mn
+  sheet_name: Minnesota
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US27
+  geography_level: state
+  geography_name: Minnesota
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.mo
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.mo
+  sheet_name: Missouri
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US29
+  geography_level: state
+  geography_name: Missouri
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.ms
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.ms
+  sheet_name: Mississippi
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US28
+  geography_level: state
+  geography_name: Mississippi
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.mt
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.mt
+  sheet_name: Montana
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US30
+  geography_level: state
+  geography_name: Montana
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.nc
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.nc
+  sheet_name: North Carolina
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US37
+  geography_level: state
+  geography_name: North Carolina
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.nd
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.nd
+  sheet_name: North Dakota
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US38
+  geography_level: state
+  geography_name: North Dakota
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.ne
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.ne
+  sheet_name: Nebraska
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US31
+  geography_level: state
+  geography_name: Nebraska
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.nh
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.nh
+  sheet_name: New Hampshire
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US33
+  geography_level: state
+  geography_name: New Hampshire
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.nj
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.nj
+  sheet_name: New Jersey
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US34
+  geography_level: state
+  geography_name: New Jersey
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.nm
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.nm
+  sheet_name: New Mexico
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US35
+  geography_level: state
+  geography_name: New Mexico
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.nv
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.nv
+  sheet_name: Nevada
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US32
+  geography_level: state
+  geography_name: Nevada
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.ny
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.ny
+  sheet_name: New York
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US36
+  geography_level: state
+  geography_name: New York
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.oh
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.oh
+  sheet_name: Ohio
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US39
+  geography_level: state
+  geography_name: Ohio
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.ok
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.ok
+  sheet_name: Oklahoma
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US40
+  geography_level: state
+  geography_name: Oklahoma
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.or
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.or
+  sheet_name: Oregon
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US41
+  geography_level: state
+  geography_name: Oregon
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.pa
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.pa
+  sheet_name: Pennsylvania
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US42
+  geography_level: state
+  geography_name: Pennsylvania
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.ri
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.ri
+  sheet_name: Rhode Island
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US44
+  geography_level: state
+  geography_name: Rhode Island
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.sc
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.sc
+  sheet_name: South Carolina
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US45
+  geography_level: state
+  geography_name: South Carolina
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.sd
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.sd
+  sheet_name: South Dakota
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US46
+  geography_level: state
+  geography_name: South Dakota
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.tn
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.tn
+  sheet_name: Tennessee
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US47
+  geography_level: state
+  geography_name: Tennessee
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.tx
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.tx
+  sheet_name: Texas
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US48
+  geography_level: state
+  geography_name: Texas
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.ut
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.ut
+  sheet_name: Utah
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US49
+  geography_level: state
+  geography_name: Utah
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.va
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.va
+  sheet_name: Virginia
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US51
+  geography_level: state
+  geography_name: Virginia
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.vt
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.vt
+  sheet_name: Vermont
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US50
+  geography_level: state
+  geography_name: Vermont
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.wa
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.wa
+  sheet_name: Washington
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US53
+  geography_level: state
+  geography_name: Washington
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.wi
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.wi
+  sheet_name: Wisconsin
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US55
+  geography_level: state
+  geography_name: Wisconsin
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.wv
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.wv
+  sheet_name: West Virginia
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US54
+  geography_level: state
+  geography_name: West Virginia
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hhs_acf_tanf.fy2024.cash_assistance.wy
+  record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
+  source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.wy
+  sheet_name: Wyoming
+  period_type: fiscal_year
+  period: '2024'
+  geography_id: 0400000US56
+  geography_level: state
+  geography_name: Wyoming
+  geography_vintage: current
+  entity: family
+  entity_role: tanf_assistance_unit
+  domain: tanf_cash_assistance
+  groupby_dimension: hhs_acf_tanf.spending_category
+  rows:
+  - value_id: basic_assistance_excluding_relative_foster_care_and_adoption_guardianship
+    label: Basic Assistance excluding relative foster care and adoption/guardianship subsidies
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: Basic Assistance (excluding Relative Foster Care Maintenance Payments and Adoption and Guardianship Subsidies)
+    guard_cells:
+    - column: A
+      row: 3
+      expected_value: Basic Assistance
+      label: parent category
+    table_record_kind: total
+  measures:
+  - measure_id: all_funds
+    label: All funds
+    ordinal: 0
+    column: D
+    source_column_id: all_funds
+    expected_column_header_row: 2
+    expected_column_header: All Funds
+    concept: hhs_acf_tanf.cash_assistance_expenditures
+    unit: usd
+    aggregation: sum
+    expected_cell_type: number
