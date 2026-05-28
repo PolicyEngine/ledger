@@ -1094,6 +1094,88 @@ def test_census_pep_state_source_package_alias_validates_fixture_counts():
     }
 
 
+def test_census_population_projections_source_package_alias_validates_counts():
+    report = validate_source_package("census-population-projections-2023", year=2025)
+
+    assert report.valid
+    assert report.counts == {
+        "record_set_count": 86,
+        "row_count": 86,
+        "measure_count": 86,
+        "source_record_count": 86,
+        "source_region_count": 86,
+    }
+
+
+def test_source_package_alias_builds_census_population_projection_age_facts():
+    package = load_source_package("census-population-projections-2023")
+    rows = package.build_source_rows(2025)
+    cells = package.build_source_cells(2025, source_rows=rows)
+    records = package.build_source_records(2025, cells=cells, source_rows=rows)
+    facts = package.build_facts(2025, cells=cells, source_rows=rows)
+    records_by_id = {record.source_record_id: record for record in records}
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "census-population-projections-2023"
+    assert len(rows) == 2_580
+    assert validate_source_rows(rows).valid
+    assert validate_source_cells(cells).valid
+    assert len(cells) == 273
+    assert len(facts) == 86
+    assert validate_facts(facts).valid
+    assert all(fact.source_row_keys for fact in facts)
+    assert all(
+        fact.source.source_name == "census_population_projections" for fact in facts
+    )
+    assert all(fact.source.source_file == "np2023_d5_mid.csv" for fact in facts)
+    assert all(fact.source.raw_r2_uri for fact in facts)
+    assert all(fact.geography.id == "0100000US" for fact in facts)
+    assert {f"{fact.period.type}:{fact.period.value}" for fact in facts} == {
+        "calendar_year:2025"
+    }
+
+    age_0 = "census.popproj2023.cy2025.national_population.age_0.population"
+    age_85_plus = (
+        "census.popproj2023.cy2025.national_population.age_85_plus.population"
+    )
+    assert records_by_id[age_0].source_cell_addresses == (
+        "F2",
+        "F3",
+        "F1",
+        "A2",
+        "A3",
+        "B2",
+        "B3",
+        "C2",
+        "C3",
+        "D2",
+        "D3",
+    )
+    assert records_by_id[age_85_plus].source_cell_addresses == (
+        "CM2",
+        "CM3",
+        "CM1",
+        "A2",
+        "A3",
+        "B2",
+        "B3",
+        "C2",
+        "C3",
+        "D2",
+        "D3",
+    )
+    assert values_by_record[age_0].value == 3_641_659
+    assert values_by_record[age_85_plus].value == 7_047_043
+    assert {
+        (constraint.variable, constraint.operator, constraint.value)
+        for constraint in values_by_record[age_0].constraints
+    } == {("age", ">=", 0), ("age", "<", 1)}
+    assert {
+        (constraint.variable, constraint.operator, constraint.value)
+        for constraint in values_by_record[age_85_plus].constraints
+    } == {("age", ">=", 85)}
+
+
 def test_census_acs_s0101_source_package_aliases_validate_fixture_counts():
     expected_counts = {
         "census-acs-s0101-national-age-2024": {
