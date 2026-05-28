@@ -1156,6 +1156,53 @@ def test_soi_historic_table_2_source_package_alias_validates_fixture_counts():
     }
 
 
+def test_soi_state_2022_source_package_alias_builds_us_totals():
+    package = load_source_package("soi-state-2022")
+    cells = package.build_source_cells(2022)
+    facts = package.build_facts(2022, cells=cells)
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "soi-state-2022"
+    assert len(cells) == 668_304
+    assert validate_source_cells(cells).valid
+    assert len(facts) == 4
+    assert validate_facts(facts).valid
+    assert all(fact.source_cell_keys for fact in facts)
+    assert all(fact.source.raw_r2_uri for fact in facts)
+    assert (
+        values_by_record[
+            "irs_soi.ty2022.state_2022.us.return_count.all_returns.return_count"
+        ].value
+        == 159_651_330
+    )
+    assert (
+        values_by_record[
+            "irs_soi.ty2022.state_2022.us.adjusted_gross_income.all_returns.amount"
+        ].value
+        == 14_782_492_151_000
+    )
+
+    eitc_returns_record = (
+        "irs_soi.ty2022.state_2022.us."
+        "eitc_three_or_more_children_returns."
+        "three_or_more_qualifying_children.return_count"
+    )
+    eitc_amount_record = (
+        "irs_soi.ty2022.state_2022.us."
+        "eitc_three_or_more_children_amount."
+        "three_or_more_qualifying_children.amount"
+    )
+
+    assert values_by_record[eitc_returns_record].value == 3_080_790
+    assert values_by_record[eitc_amount_record].value == 13_861_484_000
+    assert {
+        (constraint.variable, constraint.operator, constraint.value)
+        for constraint in values_by_record[eitc_returns_record].constraints
+    } == {
+        ("us.tax.earned_income_credit_qualifying_children", ">=", 3),
+    }
+
+
 def test_soi_historic_table_2_package_builds_2022_national_facts():
     package = load_source_package("soi-historic-table-2")
     rows = package.build_source_rows(2023)
