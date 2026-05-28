@@ -1,0 +1,18 @@
+source_id: bea
+package_id: bea-nipa-total-wages-salaries
+dataset: bea_nipa_total_wages_salaries
+source_page: https://www.bea.gov/open-data
+table: NIPA Annual Data Flat File
+files:
+  2024:
+    filename: NipaDataA.txt
+    source_url: https://apps.bea.gov/national/Release/TXT/NipaDataA.txt
+    sha256: b4e985b133e21f099eb538c89263b27632751b7041e79d6a5f5bac4aa54fab81
+    size_bytes: 12032724
+    fetched_at: '2026-05-11T13:59:30+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/bea/bea-nipa-total-wages-salaries/2024/b4e985b133e21f099eb538c89263b27632751b7041e79d6a5f5bac4aa54fab81/NipaDataA.txt
+        uri: r2://arch-raw/raw/bea/bea-nipa-total-wages-salaries/2024/b4e985b133e21f099eb538c89263b27632751b7041e79d6a5f5bac4aa54fab81/NipaDataA.txt
