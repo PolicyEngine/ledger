@@ -489,8 +489,8 @@ def test_soi_historic_table_2_source_package_alias_validates_fixture_counts():
     assert report.counts == {
         "record_set_count": 1,
         "row_count": 11,
-        "measure_count": 13,
-        "source_record_count": 143,
+        "measure_count": 47,
+        "source_record_count": 517,
         "source_region_count": 1,
     }
 
@@ -510,7 +510,7 @@ def test_soi_historic_table_2_package_builds_2022_national_facts():
     assert validate_source_cells(cells).valid
     assert validate_facts(facts).valid
     assert len(cells) == 1_956
-    assert len(facts) == 143
+    assert len(facts) == 517
     assert all(fact.source_row_keys for fact in facts)
 
     tax_filers = values_by_record[
@@ -525,6 +525,18 @@ def test_soi_historic_table_2_package_builds_2022_national_facts():
     real_estate_taxes = values_by_record[
         "irs_soi.ty2022.historic_table_2.us.all.real_estate_taxes_amount"
     ]
+    qualified_dividends = values_by_record[
+        "irs_soi.ty2022.historic_table_2.us.all.qualified_dividends_amount"
+    ]
+    schedule_c_returns = values_by_record[
+        "irs_soi.ty2022.historic_table_2.us.all.schedule_c_income_returns"
+    ]
+    partnership_scorp = values_by_record[
+        "irs_soi.ty2022.historic_table_2.us.all.partnership_scorp_income_amount"
+    ]
+    medical_dental = values_by_record[
+        "irs_soi.ty2022.historic_table_2.us.all.medical_dental_expense_amount"
+    ]
     agi_bracket_eitc_claims = values_by_record[
         "irs_soi.ty2022.historic_table_2.us.1_to_10k.eitc_claims"
     ]
@@ -533,6 +545,10 @@ def test_soi_historic_table_2_package_builds_2022_national_facts():
     assert ptc_returns.value == 7_841_370
     assert eitc_amount.value == 59_204_588_000
     assert real_estate_taxes.value == 106_195_956_000
+    assert qualified_dividends.value == 309_355_739_000
+    assert schedule_c_returns.value == 30_354_680
+    assert partnership_scorp.value == 1_033_254_282_000
+    assert medical_dental.value == 80_235_875_000
     assert agi_bracket_eitc_claims.value == 5_013_220
     assert {constraint.operator for constraint in agi_bracket_eitc_claims.constraints} == {
         "<",
