@@ -753,6 +753,142 @@ def test_cms_nhe_package_builds_medicaid_expenditure_fact():
     assert not fact.constraints
 
 
+def test_source_package_alias_builds_cms_aca_oep_state_level_facts():
+    package = load_source_package("cms-aca-oep-state-level")
+    rows = package.build_source_rows(2024)
+    cells = package.build_source_cells(2024, source_rows=rows)
+    records = package.build_source_records(2024, cells=cells, source_rows=rows)
+    facts = package.build_facts(2024, cells=cells, source_rows=rows)
+    records_by_id = {record.source_record_id: record for record in records}
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "cms-aca-oep-state-level"
+    assert len(rows) == 54
+    assert validate_source_rows(rows).valid
+    assert rows[0].values["State_Abrvtn"] == "AK"
+    assert rows[0].values["APTC_Cnsmr_Avg_APTC"] == 865
+    assert validate_source_cells(cells).valid
+    assert len(cells) == 5_610
+    assert len(facts) == 153
+    assert validate_facts(facts).valid
+    assert all(fact.source_row_keys for fact in facts)
+    assert all(fact.source.source_name == "cms_aca" for fact in facts)
+    assert all(fact.source.source_file.endswith(".zip") for fact in facts)
+    assert all(fact.source.raw_r2_uri for fact in facts)
+    assert records_by_id[
+        "cms_aca.oep2024.state_marketplace.ca.marketplace_enrollment"
+    ].source_cell_addresses == ("H6", "H1")
+    assert (
+        values_by_record[
+            "cms_aca.oep2024.state_marketplace.ca.marketplace_enrollment"
+        ].value
+        == 1_784_653
+    )
+    assert (
+        values_by_record["cms_aca.oep2024.state_marketplace.ca.aptc_recipients"].value
+        == 1_554_271
+    )
+    ca_avg_aptc = values_by_record[
+        "cms_aca.oep2024.state_marketplace.ca.average_monthly_aptc"
+    ]
+    assert ca_avg_aptc.value == 526
+    assert ca_avg_aptc.geography.id == "0400000US06"
+    assert ca_avg_aptc.geography.level == "state"
+    assert not ca_avg_aptc.constraints
+
+
+def test_source_package_alias_builds_cms_aca_oep_state_level_2022_facts():
+    package = load_source_package("cms-aca-oep-state-level-2022")
+    rows = package.build_source_rows(2022)
+    cells = package.build_source_cells(2022, source_rows=rows)
+    records = package.build_source_records(2022, cells=cells, source_rows=rows)
+    facts = package.build_facts(2022, cells=cells, source_rows=rows)
+    records_by_id = {record.source_record_id: record for record in records}
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "cms-aca-oep-state-level-2022"
+    assert len(rows) == 54
+    assert validate_source_rows(rows).valid
+    assert rows[0].values["State_Abrvtn"] == "AK"
+    assert rows[0].values["APTC_Cnsmr_Avg_APTC"] == 692
+    assert validate_source_cells(cells).valid
+    assert len(cells) == 5_555
+    assert len(facts) == 151
+    assert validate_facts(facts).valid
+    assert all(fact.source_row_keys for fact in facts)
+    assert all(fact.source.source_name == "cms_aca" for fact in facts)
+    assert all(fact.source.source_file.endswith(".zip") for fact in facts)
+    assert all(fact.source.raw_r2_uri for fact in facts)
+    assert records_by_id[
+        "cms_aca.oep2022.state_marketplace.ca.average_monthly_aptc"
+    ].source_cell_addresses == ("AJ6", "AJ1")
+    assert (
+        values_by_record[
+            "cms_aca.oep2022.state_marketplace.ca.average_monthly_aptc"
+        ].value
+        == 459
+    )
+    assert (
+        values_by_record[
+            "cms_aca.oep2022.state_marketplace.al.average_monthly_aptc"
+        ].value
+        == 710
+    )
+    assert (
+        "cms_aca.oep2022.state_marketplace.nv.average_monthly_aptc"
+        not in values_by_record
+    )
+
+
+def test_source_package_alias_builds_cms_aca_effectuated_enrollment_2022_facts():
+    package = load_source_package("cms-aca-effectuated-enrollment-2022")
+    rows = package.build_source_rows(2022)
+    cells = package.build_source_cells(2022, source_rows=rows)
+    records = package.build_source_records(2022, cells=cells, source_rows=rows)
+    facts = package.build_facts(2022, cells=cells, source_rows=rows)
+    records_by_id = {record.source_record_id: record for record in records}
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "cms-aca-effectuated-enrollment-2022"
+    assert rows == []
+    assert validate_source_cells(cells).valid
+    assert len(cells) == 15_397
+    assert len(records) == 408
+    assert len(facts) == 408
+    assert validate_facts(facts).valid
+    assert all(fact.source.source_name == "cms_aca" for fact in facts)
+    assert all(fact.source.source_file.endswith(".xlsx") for fact in facts)
+    assert all(fact.source.raw_r2_uri for fact in facts)
+    assert records_by_id[
+        "cms_aca.effectuated_enrollment.2022.state_marketplace.nv.average_monthly_aptc"
+    ].source_cell_addresses == ("I39", "I2")
+    nv_avg_aptc = values_by_record[
+        "cms_aca.effectuated_enrollment.2022.state_marketplace.nv.average_monthly_aptc"
+    ]
+    assert nv_avg_aptc.value == 429.75
+    assert nv_avg_aptc.geography.id == "0400000US32"
+    assert not nv_avg_aptc.filters
+    assert (
+        values_by_record[
+            "cms_aca.effectuated_enrollment.2022.state_marketplace.nv.total_enrollment"
+        ].value
+        == 90_397
+    )
+    assert (
+        values_by_record[
+            "cms_aca.effectuated_enrollment.2022.state_marketplace.nv.total_enrollment"
+        ].measure.concept
+        == "cms_aca.marketplace_effectuated_enrollment"
+    )
+    assert (
+        values_by_record[
+            "cms_aca.effectuated_enrollment.2022.state_marketplace.ca."
+            "average_monthly_aptc"
+        ].value
+        == 469.44
+    )
+
+
 def test_cms_medicare_trustees_package_builds_part_b_premium_fact():
     package = load_source_package(
         "cms-medicare-trustees-report-2025-part-b-premium-income"
@@ -1099,6 +1235,48 @@ def test_cms_medicaid_source_package_alias_validates_fixture_counts():
         "row_count": 52,
         "measure_count": 5,
         "source_record_count": 260,
+        "source_region_count": 1,
+    }
+
+
+def test_validate_source_package_reports_cms_aca_oep_counts():
+    report = validate_source_package("cms-aca-oep-state-level", year=2024)
+
+    assert report.valid
+    assert report.counts == {
+        "record_set_count": 1,
+        "row_count": 51,
+        "measure_count": 3,
+        "source_record_count": 153,
+        "source_region_count": 1,
+    }
+
+
+def test_validate_source_package_reports_cms_aca_oep_2022_counts():
+    report = validate_source_package("cms-aca-oep-state-level-2022", year=2022)
+
+    assert report.valid
+    assert report.counts == {
+        "record_set_count": 2,
+        "row_count": 101,
+        "measure_count": 3,
+        "source_record_count": 151,
+        "source_region_count": 2,
+    }
+
+
+def test_validate_source_package_reports_cms_aca_effectuated_enrollment_2022_counts():
+    report = validate_source_package(
+        "cms-aca-effectuated-enrollment-2022",
+        year=2022,
+    )
+
+    assert report.valid
+    assert report.counts == {
+        "record_set_count": 1,
+        "row_count": 51,
+        "measure_count": 8,
+        "source_record_count": 408,
         "source_region_count": 1,
     }
 

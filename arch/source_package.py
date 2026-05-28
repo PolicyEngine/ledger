@@ -96,6 +96,11 @@ SOURCE_PACKAGE_ALIASES = {
     "cms-medicaid-chip-monthly-enrollment-december-2024": Path(
         "cms_medicaid/chip_monthly_enrollment_december_2024"
     ),
+    "cms-aca-oep-state-level": Path("cms_aca/oep_state_level"),
+    "cms-aca-oep-state-level-2022": Path("cms_aca/oep_state_level_2022"),
+    "cms-aca-effectuated-enrollment-2022": Path(
+        "cms_aca/effectuated_enrollment_2022"
+    ),
     "cms-medicare-trustees-report-2025-part-b-premium-income": Path(
         "cms_medicare/medicare_trustees_report_2025"
     ),
