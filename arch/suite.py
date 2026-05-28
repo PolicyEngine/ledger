@@ -60,6 +60,16 @@ SOI_HISTORIC_TABLE_2_AGI_STUB_RANGES = {
     9: ("500k_to_1m", 500_000, 1_000_000),
     10: ("1m_plus", 1_000_000, None),
 }
+SOI_EITC_CHILD_COUNT_COLUMN_VALUES = {
+    "N59661": 0,
+    "A59661": 0,
+    "N59662": 1,
+    "A59662": 1,
+    "N59663": 2,
+    "A59663": 2,
+    "N59664": 3,
+    "A59664": 3,
+}
 
 
 @dataclass(frozen=True)
@@ -941,6 +951,8 @@ def _row_semantic_evidence_issues(
             continue
         matched_values = _source_row_values(rows, variable)
         if not matched_values:
+            if _filter_evidenced_by_source_cells(cells, variable, value):
+                continue
             issues.append(
                 AgentAcceptanceIssue(
                     code="row_filter_not_evidenced",
@@ -1006,6 +1018,12 @@ def _constraint_evidenced_by_source_cells(
     cells: list[SourceCell],
     constraint: Any,
 ) -> bool:
+    if _is_eitc_qualifying_children_variable(str(constraint.variable)):
+        return _eitc_child_count_constraint_matches_cells(
+            cells,
+            constraint.operator,
+            constraint.value,
+        )
     if not _is_age_variable(str(constraint.variable)):
         return False
     ranges = [
@@ -1225,6 +1243,55 @@ def _age_band_constraint_range_matches(
     return False
 
 
+def _filter_evidenced_by_source_cells(
+    cells: list[SourceCell],
+    variable: str,
+    expected: Any,
+) -> bool:
+    if _normalize_semantic_name(variable) != "eitcchildcount":
+        return False
+    expected_count = _eitc_child_count_filter_value(expected)
+    if expected_count is None:
+        return False
+    return any(
+        source_count == expected_count
+        for source_count in _source_cell_eitc_child_count_values(cells)
+    )
+
+
+def _eitc_child_count_constraint_matches_cells(
+    cells: list[SourceCell],
+    operator: str,
+    expected: Any,
+) -> bool:
+    values = _source_cell_eitc_child_count_values(cells)
+    return bool(values) and any(
+        _constraint_matches_source_value(value, operator, expected)
+        for value in values
+    )
+
+
+def _source_cell_eitc_child_count_values(cells: list[SourceCell]) -> list[int]:
+    values = []
+    for cell in cells:
+        for value in (cell.raw_value, cell.display_value):
+            if value is None:
+                continue
+            code = str(value).strip().upper()
+            if code in SOI_EITC_CHILD_COUNT_COLUMN_VALUES:
+                values.append(SOI_EITC_CHILD_COUNT_COLUMN_VALUES[code])
+    return values
+
+
+def _eitc_child_count_filter_value(value: Any) -> int | None:
+    if isinstance(value, str) and value.strip().lower() in {"3plus", "3+"}:
+        return 3
+    number = _number_or_none(value)
+    if number is None:
+        return None
+    return int(number)
+
+
 def _source_cell_age_range(cell: SourceCell) -> tuple[int, int | None] | None:
     for value in (cell.raw_value, cell.display_value):
         if value is None:
@@ -1320,6 +1387,13 @@ def _is_age_variable(variable: str) -> bool:
     return any(candidate in {
         "age",
         "personage",
+    } for candidate in _semantic_name_candidates(variable))
+
+
+def _is_eitc_qualifying_children_variable(variable: str) -> bool:
+    return any(candidate in {
+        "earnedincomecreditqualifyingchildren",
+        "eitcqualifyingchildren",
     } for candidate in _semantic_name_candidates(variable))
 
 

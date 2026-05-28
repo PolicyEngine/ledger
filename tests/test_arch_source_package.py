@@ -316,8 +316,8 @@ def test_national_soi_source_package_aliases_validate_fixture_counts():
         "soi-historic-table-2-state-eitc-2022": {
             "record_set_count": 51,
             "row_count": 51,
-            "measure_count": 102,
-            "source_record_count": 102,
+            "measure_count": 510,
+            "source_record_count": 510,
             "source_region_count": 51,
         },
         "soi-w2-statistics-2020": {
@@ -666,6 +666,45 @@ def test_soi_historic_table_2_state_broad_package_builds_2022_state_facts():
     assert ca_actc.value == 3_605_628_000
     assert ca_returns.geography.id == "0400000US06"
     assert ca_partnership.layout.source_column_id == "A26270"
+
+
+def test_soi_historic_table_2_state_eitc_package_builds_child_count_facts():
+    package = load_source_package("soi-historic-table-2-state-eitc-2022")
+    rows = package.build_source_rows(2023)
+    cells = package.build_source_cells(2023, source_rows=rows)
+    facts = package.build_facts(2023, cells=cells, source_rows=rows)
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "soi-historic-table-2-state-eitc-2022"
+    assert validate_source_rows(rows).valid
+    assert validate_source_cells(cells).valid
+    assert validate_facts(facts).valid
+    assert len(facts) == 510
+
+    ca_one_child_amount = values_by_record[
+        "irs_soi.ty2022.historic_table_2.state_eitc.ca.ca."
+        "eitc_one_child_amount"
+    ]
+    ca_two_children_claims = values_by_record[
+        "irs_soi.ty2022.historic_table_2.state_eitc.ca.ca."
+        "eitc_two_children_claims"
+    ]
+    ca_three_or_more_amount = values_by_record[
+        "irs_soi.ty2022.historic_table_2.state_eitc.ca.ca."
+        "eitc_three_or_more_children_amount"
+    ]
+
+    assert ca_one_child_amount.value == 2_117_692_000
+    assert ca_two_children_claims.value == 550_910
+    assert ca_three_or_more_amount.value == 1_266_651_000
+    assert ca_one_child_amount.filters["eitc_child_count"] == 1
+    assert {
+        constraint.variable for constraint in ca_one_child_amount.constraints
+    } == {"us.tax.earned_income_credit_qualifying_children"}
+    assert {
+        constraint.operator for constraint in ca_three_or_more_amount.constraints
+    } == {">="}
+    assert ca_one_child_amount.geography.id == "0400000US06"
 
 
 def test_usda_snap_source_package_builds_fy24_national_and_state_facts():

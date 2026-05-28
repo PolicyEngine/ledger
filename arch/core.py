@@ -313,6 +313,30 @@ def build_aggregate_constraints(
         "filing_status",
         "income_range",
     }
+    child_count = fact.filters.get("eitc_child_count")
+    if child_count not in (None, "all"):
+        if child_count == "3plus":
+            constraints.append(
+                AggregateConstraint(
+                    variable="us.tax.earned_income_credit_qualifying_children",
+                    operator=">=",
+                    value=3,
+                    unit="count",
+                    label="EITC qualifying children",
+                )
+            )
+        else:
+            constraints.append(
+                AggregateConstraint(
+                    variable="us.tax.earned_income_credit_qualifying_children",
+                    operator="==",
+                    value=child_count,
+                    unit="count",
+                    label="EITC qualifying children",
+                )
+            )
+        handled_filters.add("eitc_child_count")
+
     for key, value in sorted(fact.filters.items()):
         if key in handled_filters or value in (None, "all"):
             continue
