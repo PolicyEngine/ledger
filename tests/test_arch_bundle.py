@@ -29,7 +29,7 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "aggregate_duplicate_key_count": 0,
         "entity_count": 5,
         "error_count": 0,
-        "fact_count": 6577,
+        "fact_count": 6585,
         "geography_count": 54,
         "period_count": 5,
         "semantic_duplicate_key_count": 3,
@@ -38,18 +38,18 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "source_package_count": 22,
         "warning_count": 1,
     }
-    assert len(rows) == 6577
+    assert len(rows) == 6585
     assert rows[0]["aggregate_fact_key"].startswith("arch.aggregate_fact.v2:")
     assert rows[0]["semantic_fact_key"].startswith("arch.semantic_fact.v2:")
     assert source_packages["source_package_count"] == 22
     assert source_packages["skipped_source_count"] == 0
     assert not source_packages["skipped_sources"]
-    assert coverage["fact_count"] == 6577
+    assert coverage["fact_count"] == 6585
     assert coverage["counts"]["by_source"] == {
         "census_pep": 988,
         "cms_medicaid": 255,
         "hhs_acf_tanf": 110,
-        "irs_soi": 4951,
+        "irs_soi": 4959,
         "kff": 51,
         "ssa": 6,
         "usda_snap": 216,
@@ -78,7 +78,7 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "irs_soi:Publication 1304 Table 1.4": 260,
         "irs_soi:Publication 1304 Table 2.1": 17,
         "irs_soi:Publication 1304 Table 2.5": 8,
-        "irs_soi:Publication 1304 Table 2.5 EITC by AGI and qualifying children": 224,
+        "irs_soi:Publication 1304 Table 2.5 EITC by AGI and qualifying children": 232,
         "irs_soi:Publication 1304 Table 4.3": 18,
         (
             "irs_soi:Table 4.B. Summary of Items for Taxpayers with Form W-2, "
@@ -102,10 +102,10 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "calendar_year:2024": 1045,
         "fiscal_year:2024": 326,
         "month:2024-12": 255,
-        "tax_year:2022": 4552,
+        "tax_year:2022": 4560,
         "tax_year:2023": 399,
     }
-    assert coverage["counts"]["by_geography"]["country:0100000US"] == 1265
+    assert coverage["counts"]["by_geography"]["country:0100000US"] == 1273
     assert coverage["counts"]["by_geography"]["state:0400000US06"] == 104
     assert len(coverage["counts"]["by_geography"]) == 54
     assert coverage["counts"]["by_entity"] == {
@@ -113,7 +113,7 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "government": 54,
         "household": 54,
         "person": 1411,
-        "tax_unit": 4951,
+        "tax_unit": 4959,
     }
     assert not coverage["duplicates"]["aggregate_fact_keys"]
     assert len(coverage["duplicates"]["semantic_fact_keys"]) == 3
