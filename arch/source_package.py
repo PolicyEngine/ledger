@@ -68,6 +68,9 @@ SOURCE_PACKAGE_RESOURCE_PACKAGE = "packages"
 SOURCE_PACKAGE_ALIASES = {
     "census-pep-2024-national-age-sex": Path("census/pep_2024_national_age_sex"),
     "census-pep-2024-state-age-sex": Path("census/pep_2024_state_age_sex"),
+    "cms-medicaid-chip-monthly-enrollment-december-2024": Path(
+        "cms_medicaid/chip_monthly_enrollment_december_2024"
+    ),
     "soi-table-1-1": Path("irs_soi/table_1_1"),
     "soi-table-1-2": Path("irs_soi/table_1_2"),
     "soi-table-1-4": Path("irs_soi/table_1_4"),
