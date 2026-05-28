@@ -91,6 +91,8 @@ SOURCE_PACKAGE_ALIASES = {
     "ssa-annual-statistical-supplement-2025": Path(
         "ssa/annual_statistical_supplement_2025"
     ),
+    "hhs-acf-tanf-caseload-2024": Path("hhs_acf/tanf_caseload_2024"),
+    "hhs-acf-tanf-financial-2024": Path("hhs_acf/tanf_financial_2024"),
     "usda-snap-fy69-to-current": Path("usda_snap/fy69_to_current"),
 }
 SOURCE_ARTIFACT_CACHE_ENV = "ARCH_SOURCE_ARTIFACT_CACHE_DIR"
