@@ -12,6 +12,10 @@ import openpyxl
 import pytest
 import yaml
 
+from arch.consumer_contract import (
+    consumer_fact_rows,
+    validate_consumer_fact_contract,
+)
 from arch.core import validate_facts
 from arch.source_package import (
     SOURCE_ARTIFACT_CACHE_ENV,
@@ -336,6 +340,65 @@ def test_bea_nipa_personal_income_disposition_builds_amounts_and_rates():
     saving_rate = facts_by_record["bea_nipa.cy2024.personal_saving_rate.a072rc.rate"]
     assert saving_rate.value == 5.4
     assert saving_rate.measure.unit == "percent"
+
+
+def test_cbo_income_by_source_package_preserves_cbo_projection_concepts():
+    package = load_source_package("cbo-revenue-projections-income-by-source-2026-02")
+    rows = package.build_source_rows(2024)
+    cells = package.build_source_cells(2024, source_rows=rows)
+    records = package.build_source_records(2024, cells=cells, source_rows=rows)
+    facts = package.build_facts(2024, cells=cells, source_rows=rows)
+    facts_by_income_source = {fact.layout.groupby_value_id: fact for fact in facts}
+    expected_sha = "8cd8edee3e76258aa67153adff9dc0dc9b9738ace426eceebcc8d5b26d319bb8"
+    expected_r2_uri = (
+        "r2://arch-raw/raw/cbo/"
+        "cbo-revenue-projections-income-by-source-2026-02/2026/"
+        f"{expected_sha}/cbo_revenue_projections_income_by_source_2026_02.csv"
+    )
+
+    assert len(rows) == 6
+    assert validate_source_rows(rows).valid
+    assert validate_source_cells(cells).valid
+    assert validate_facts(facts).valid
+    assert validate_consumer_fact_contract(facts).valid
+    assert len(cells) == 126
+    assert len(records) == 6
+    assert len(facts) == 6
+    assert all(fact.source.source_name == "cbo" for fact in facts)
+    assert {fact.source.source_sha256 for fact in facts} == {expected_sha}
+    assert {fact.source.source_size_bytes for fact in facts} == {2502}
+    assert {fact.source.raw_r2_uri for fact in facts} == {expected_r2_uri}
+    assert all(not fact.constraints for fact in facts)
+    assert all(fact.layout.table_record_kind == "total" for fact in facts)
+
+    wages = facts_by_income_source["wages_and_salaries"]
+    capital_gains = facts_by_income_source["net_capital_gain"]
+    qualified_dividends = facts_by_income_source["qualified_dividend_income"]
+    net_business = facts_by_income_source["net_business_income"]
+
+    assert wages.value == 10_832_700_000_000
+    assert wages.measure.concept == "cbo.wages_and_salaries_projection"
+    assert capital_gains.value == 1_290_900_000_000
+    assert capital_gains.measure.concept == "cbo.net_capital_gain_projection"
+    assert qualified_dividends.value == 354_300_000_000
+    assert qualified_dividends.measure.concept == (
+        "cbo.qualified_dividend_income_projection"
+    )
+    assert net_business.value == 1_916_000_000_000
+    assert net_business.measure.concept == "cbo.net_business_income_projection"
+    assert net_business.measure.concept != "self_employment_income"
+    assert net_business.measure.source_concept == "cbo.net_business_income"
+
+    consumer_rows_by_source_concept = {
+        row["concept_alignment"]["source_concept"]: row
+        for row in consumer_fact_rows(facts)
+    }
+    assert consumer_rows_by_source_concept["cbo.net_capital_gain"][
+        "concept_alignment"
+    ]["canonical_concept"] == "cbo.net_capital_gain_projection"
+    assert consumer_rows_by_source_concept["cbo.net_business_income"][
+        "concept_alignment"
+    ]["canonical_concept"] == "cbo.net_business_income_projection"
 
 
 def test_validate_source_package_reports_fixture_counts():
