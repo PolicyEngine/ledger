@@ -68,6 +68,9 @@ SOURCE_PACKAGE_RESOURCE_PACKAGE = "packages"
 SOURCE_PACKAGE_ALIASES = {
     "census-pep-2024-national-age-sex": Path("census/pep_2024_national_age_sex"),
     "census-pep-2024-state-age-sex": Path("census/pep_2024_state_age_sex"),
+    "census-stc-individual-income-tax": Path(
+        "census/stc_individual_income_tax"
+    ),
     "cms-medicaid-chip-monthly-enrollment-december-2024": Path(
         "cms_medicaid/chip_monthly_enrollment_december_2024"
     ),

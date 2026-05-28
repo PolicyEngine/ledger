@@ -350,6 +350,68 @@ def test_national_soi_source_package_aliases_validate_fixture_counts():
         assert report.counts == counts
 
 
+def test_census_stc_income_tax_package_builds_state_tax_facts():
+    report = validate_source_package(
+        "census-stc-individual-income-tax",
+        year=2024,
+    )
+    package = load_source_package("census-stc-individual-income-tax")
+    rows = package.build_source_rows(2024)
+    cells = package.build_source_cells(2024, source_rows=rows)
+    facts = package.build_facts(2024, cells=cells, source_rows=rows)
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "census-stc-individual-income-tax"
+    assert report.valid
+    assert report.counts == {
+        "record_set_count": 46,
+        "row_count": 46,
+        "measure_count": 46,
+        "source_record_count": 46,
+        "source_region_count": 46,
+    }
+    assert len(rows) == 25
+    assert validate_source_rows(rows).valid
+    assert validate_source_cells(cells).valid
+    assert validate_facts(facts).valid
+    assert len(cells) == 106
+    assert len(facts) == 46
+    assert all(fact.source_row_keys for fact in facts)
+    assert all(fact.source.raw_r2_uri for fact in facts)
+
+    ca_fact = values_by_record[
+        "census_stc.fy2024.individual_income_tax_collections.ca.t40.collections"
+    ]
+
+    assert ca_fact.value == 123_101_651_000
+    assert ca_fact.entity.name == "government"
+    assert ca_fact.geography.id == "0400000US06"
+    assert ca_fact.source.source_file == "FY2024-Flat-File.txt"
+    assert not ca_fact.constraints
+
+    rows_2023 = package.build_source_rows(2023)
+    cells_2023 = package.build_source_cells(2023, source_rows=rows_2023)
+    facts_2023 = package.build_facts(
+        2023,
+        cells=cells_2023,
+        source_rows=rows_2023,
+    )
+    values_by_record_2023 = {fact.source_record_id: fact for fact in facts_2023}
+    ca_fact_2023 = values_by_record_2023[
+        "census_stc.fy2023.individual_income_tax_collections.ca.t40.collections"
+    ]
+
+    assert len(rows_2023) == 25
+    assert validate_source_rows(rows_2023).valid
+    assert validate_source_cells(cells_2023).valid
+    assert validate_facts(facts_2023).valid
+    assert len(facts_2023) == 46
+    assert ca_fact_2023.value == 96_379_294_000
+    assert ca_fact_2023.source.source_table == (
+        "FY2023 STC Flat File item T40 Individual Income Taxes"
+    )
+
+
 def test_soi_table_2_5_eitc_child_totals_build_2022_facts():
     package = load_source_package("soi-table-2-5-eitc-agi-children-2022")
     cells = package.build_source_cells(2023)

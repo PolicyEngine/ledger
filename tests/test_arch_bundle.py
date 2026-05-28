@@ -29,24 +29,25 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "aggregate_duplicate_key_count": 0,
         "entity_count": 5,
         "error_count": 0,
-        "fact_count": 6993,
+        "fact_count": 7039,
         "geography_count": 54,
-        "period_count": 5,
+        "period_count": 6,
         "semantic_duplicate_key_count": 3,
         "skipped_source_count": 0,
-        "source_count": 7,
-        "source_package_count": 22,
+        "source_count": 8,
+        "source_package_count": 23,
         "warning_count": 1,
     }
-    assert len(rows) == 6993
+    assert len(rows) == 7039
     assert rows[0]["aggregate_fact_key"].startswith("arch.aggregate_fact.v2:")
     assert rows[0]["semantic_fact_key"].startswith("arch.semantic_fact.v2:")
-    assert source_packages["source_package_count"] == 22
+    assert source_packages["source_package_count"] == 23
     assert source_packages["skipped_source_count"] == 0
     assert not source_packages["skipped_sources"]
-    assert coverage["fact_count"] == 6993
+    assert coverage["fact_count"] == 7039
     assert coverage["counts"]["by_source"] == {
         "census_pep": 988,
+        "census_stc": 46,
         "cms_medicaid": 255,
         "hhs_acf_tanf": 110,
         "irs_soi": 5367,
@@ -63,6 +64,7 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
             "census_pep:Annual State Resident Population Estimates by Single Year "
             "of Age, Sex, Race, and Hispanic Origin"
         ): 969,
+        "census_stc:FY2023 STC Flat File item T40 Individual Income Taxes": 46,
         (
             "cms_medicaid:State Medicaid and CHIP Applications, Eligibility "
             "Determinations, and Enrollment Data"
@@ -100,17 +102,18 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
     }
     assert coverage["counts"]["by_period"] == {
         "calendar_year:2024": 1045,
+        "fiscal_year:2023": 46,
         "fiscal_year:2024": 326,
         "month:2024-12": 255,
         "tax_year:2022": 4968,
         "tax_year:2023": 399,
     }
-    assert coverage["counts"]["by_geography"]["country:0100000US"] == 1273
-    assert coverage["counts"]["by_geography"]["state:0400000US06"] == 112
+    assert coverage["counts"]["by_geography"]["country:0100000US"] == 1274
+    assert coverage["counts"]["by_geography"]["state:0400000US06"] == 113
     assert len(coverage["counts"]["by_geography"]) == 54
     assert coverage["counts"]["by_entity"] == {
         "family": 107,
-        "government": 54,
+        "government": 100,
         "household": 54,
         "person": 1411,
         "tax_unit": 5367,
@@ -139,6 +142,9 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         / "sources"
         / "soi-ira-roth-contributions-2022"
         / "consumer_facts.jsonl"
+    ).exists()
+    assert (
+        output_dir / "sources" / "census-stc-individual-income-tax" / "consumer_facts.jsonl"
     ).exists()
     assert (
         output_dir / "sources" / "usda-snap-fy69-to-current" / "consumer_facts.jsonl"
@@ -219,9 +225,9 @@ def test_build_bundle_cli_supports_historic_table_2_source(tmp_path, capsys):
     assert exit_code == 0
     assert payload["valid"]
     assert payload["counts"]["source_package_count"] == 1
-    assert payload["counts"]["fact_count"] == 143
+    assert payload["counts"]["fact_count"] == 605
     assert payload["coverage"]["counts"]["by_source_table"] == {
-        "irs_soi:Historic Table 2": 143
+        "irs_soi:Historic Table 2": 605
     }
     assert (
         output_dir / "sources" / "soi-historic-table-2" / "source_rows.jsonl"
