@@ -1,0 +1,20 @@
+source_id: census_acs
+package_id: census-acs-s2201-congressional-district-snap-2024
+dataset: census_acs_s2201_congressional_district_snap_2024
+source_page: https://api.census.gov/data/2024/acs/acs1/subject.html
+vintage: 2024 ACS 1-year subject tables
+table: S2201 Food Stamps/SNAP
+files:
+  2024:
+    filename: acs_S2201_district_2024.json
+    source_url: https://api.census.gov/data/2024/acs/acs1/subject?get=group(S2201)&for=congressional%20district:*&in=state:*
+    sha256: 573d35691231fd1d0213929cd58cc37a8edea1e4dba06a58b62d4bda23b283d3
+    size_bytes: 2901605
+    source_table: ACS 2024 1-year subject table S2201 congressional district SNAP household counts
+    year: 2024
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/census_acs/census-acs-s2201-congressional-district-snap-2024/2024/573d35691231fd1d0213929cd58cc37a8edea1e4dba06a58b62d4bda23b283d3/acs_S2201_district_2024.json
+        uri: r2://arch-raw/raw/census_acs/census-acs-s2201-congressional-district-snap-2024/2024/573d35691231fd1d0213929cd58cc37a8edea1e4dba06a58b62d4bda23b283d3/acs_S2201_district_2024.json

@@ -1,0 +1,20 @@
+source_id: census_acs
+package_id: census-acs-s0101-congressional-district-age-2024
+dataset: census_acs_s0101_congressional_district_age_2024
+source_page: https://api.census.gov/data/2024/acs/acs1/subject.html
+vintage: 2024 ACS 1-year subject tables
+table: S0101 Age by Sex
+files:
+  2024:
+    filename: acs_S0101_district_2024.json
+    source_url: https://api.census.gov/data/2024/acs/acs1/subject?get=group(S0101)&for=congressional%20district:*&in=state:*
+    sha256: 8baf964d1b3389fea3393ff898d8ffad16d9cf2234349584f082b97674670f81
+    size_bytes: 3050512
+    source_table: ACS 2024 1-year subject table S0101 congressional district age bands
+    year: 2024
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/census_acs/census-acs-s0101-congressional-district-age-2024/2024/8baf964d1b3389fea3393ff898d8ffad16d9cf2234349584f082b97674670f81/acs_S0101_district_2024.json
+        uri: r2://arch-raw/raw/census_acs/census-acs-s0101-congressional-district-age-2024/2024/8baf964d1b3389fea3393ff898d8ffad16d9cf2234349584f082b97674670f81/acs_S0101_district_2024.json

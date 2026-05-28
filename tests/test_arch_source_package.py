@@ -866,6 +866,124 @@ def test_census_pep_state_source_package_alias_validates_fixture_counts():
     }
 
 
+def test_census_acs_s0101_source_package_aliases_validate_fixture_counts():
+    expected_counts = {
+        "census-acs-s0101-national-age-2024": {
+            "record_set_count": 1,
+            "row_count": 18,
+            "measure_count": 1,
+            "source_record_count": 18,
+            "source_region_count": 1,
+        },
+        "census-acs-s0101-state-age-2024": {
+            "record_set_count": 52,
+            "row_count": 936,
+            "measure_count": 52,
+            "source_record_count": 936,
+            "source_region_count": 52,
+        },
+        "census-acs-s0101-congressional-district-age-2024": {
+            "record_set_count": 437,
+            "row_count": 7_866,
+            "measure_count": 437,
+            "source_record_count": 7_866,
+            "source_region_count": 437,
+        },
+    }
+
+    for package_id, counts in expected_counts.items():
+        report = validate_source_package(package_id, year=2024)
+
+        assert report.valid
+        assert report.counts == counts
+
+
+def test_census_acs_s0101_congressional_district_package_builds_age_facts():
+    package = load_source_package(
+        "census-acs-s0101-congressional-district-age-2024"
+    )
+    rows = package.build_source_rows(2024)
+    cells = package.build_source_cells(2024, source_rows=rows)
+    facts = package.build_facts(2024, cells=cells, source_rows=rows)
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert validate_source_rows(rows).valid
+    assert validate_source_cells(cells).valid
+    assert validate_facts(facts).valid
+    assert len(facts) == 7_866
+
+    al01_under_5 = values_by_record[
+        "census_acs.acs1_2024.s0101.congressional_district_age.0101."
+        "age_0_to_4.population"
+    ]
+    ca52_age_85_plus = values_by_record[
+        "census_acs.acs1_2024.s0101.congressional_district_age.0652."
+        "age_85_plus.population"
+    ]
+
+    assert al01_under_5.value == 39_908
+    assert al01_under_5.geography.id == "5001900US0101"
+    assert al01_under_5.source.source_file == "acs_S0101_district_2024.json"
+    assert {
+        (constraint.variable, constraint.operator, constraint.value)
+        for constraint in al01_under_5.constraints
+    } == {("age", ">=", 0), ("age", "<", 5)}
+    assert ca52_age_85_plus.value == 14_396
+    assert ca52_age_85_plus.geography.name == (
+        "Congressional District 52 (119th Congress), California"
+    )
+
+
+def test_census_acs_s2201_source_package_alias_validates_fixture_counts():
+    report = validate_source_package(
+        "census-acs-s2201-congressional-district-snap-2024",
+        year=2024,
+    )
+
+    assert report.valid
+    assert report.counts == {
+        "record_set_count": 437,
+        "row_count": 1_311,
+        "measure_count": 437,
+        "source_record_count": 1_311,
+        "source_region_count": 437,
+    }
+
+
+def test_census_acs_s2201_congressional_district_package_builds_snap_facts():
+    package = load_source_package(
+        "census-acs-s2201-congressional-district-snap-2024"
+    )
+    rows = package.build_source_rows(2024)
+    cells = package.build_source_cells(2024, source_rows=rows)
+    facts = package.build_facts(2024, cells=cells, source_rows=rows)
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert validate_source_rows(rows).valid
+    assert validate_source_cells(cells).valid
+    assert validate_facts(facts).valid
+    assert len(facts) == 1_311
+
+    al01_total = values_by_record[
+        "census_acs.acs1_2024.s2201.congressional_district_snap.0101."
+        "all_households.household_count"
+    ]
+    al01_snap = values_by_record[
+        "census_acs.acs1_2024.s2201.congressional_district_snap.0101."
+        "receiving_food_stamps_snap.household_count"
+    ]
+
+    assert al01_total.value == 300_636
+    assert al01_total.constraints == ()
+    assert al01_total.geography.id == "5001900US0101"
+    assert al01_total.source.source_file == "acs_S2201_district_2024.json"
+    assert al01_snap.value == 34_742
+    assert {
+        (constraint.variable, constraint.operator, constraint.value)
+        for constraint in al01_snap.constraints
+    } == {("snap_receipt_status", "==", "receiving_food_stamps_snap")}
+
+
 def test_cms_medicaid_source_package_alias_validates_fixture_counts():
     report = validate_source_package(
         "cms-medicaid-chip-monthly-enrollment-december-2024",
