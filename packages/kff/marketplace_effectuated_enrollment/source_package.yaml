@@ -133,6 +133,82 @@ record_sets:
   domain: aca_marketplace_effectuated_enrollment
   groupby_dimension: kff.state
   rows:
+  - value_id: us
+    label: United States
+    ordinal: -1
+    row_number: 2
+    row_end_number: 52
+    geography_id: 0100000US
+    geography_level: country
+    geography_name: United States
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Alabama
+    guard_cells:
+    - column: A
+      expected_value: 2024
+      row: start
+      label: first year
+    - column: A
+      expected_value: 2024
+      row: end
+      label: last year
+    range_label_guards:
+    - column: B
+      label: state name
+      expected_values:
+      - Alabama
+      - Alaska
+      - Arizona
+      - Arkansas
+      - California
+      - Colorado
+      - Connecticut
+      - Delaware
+      - District of Columbia
+      - Florida
+      - Georgia
+      - Hawaii
+      - Idaho
+      - Illinois
+      - Indiana
+      - Iowa
+      - Kansas
+      - Kentucky
+      - Louisiana
+      - Maine
+      - Maryland
+      - Massachusetts
+      - Michigan
+      - Minnesota
+      - Mississippi
+      - Missouri
+      - Montana
+      - Nebraska
+      - Nevada
+      - New Hampshire
+      - New Jersey
+      - New Mexico
+      - New York
+      - North Carolina
+      - North Dakota
+      - Ohio
+      - Oklahoma
+      - Oregon
+      - Pennsylvania
+      - Rhode Island
+      - South Carolina
+      - South Dakota
+      - Tennessee
+      - Texas
+      - Utah
+      - Vermont
+      - Virginia
+      - Washington
+      - West Virginia
+      - Wisconsin
+      - Wyoming
+    table_record_kind: total
   - value_id: al
     label: Alabama
     ordinal: 0
