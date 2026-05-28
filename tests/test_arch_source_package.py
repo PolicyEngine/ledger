@@ -661,9 +661,9 @@ def test_cms_medicaid_source_package_alias_validates_fixture_counts():
     assert report.valid
     assert report.counts == {
         "record_set_count": 1,
-        "row_count": 51,
+        "row_count": 52,
         "measure_count": 5,
-        "source_record_count": 255,
+        "source_record_count": 260,
         "source_region_count": 1,
     }
 
@@ -682,9 +682,13 @@ def test_cms_medicaid_package_builds_december_2024_state_enrollment_facts():
     assert validate_source_cells(cells).valid
     assert validate_facts(facts).valid
     assert len(cells) == 2_288
-    assert len(facts) == 255
+    assert len(facts) == 260
     assert all(fact.source.raw_r2_uri for fact in facts)
 
+    us_medicaid = (
+        "cms_medicaid.month2024_12.state_enrollment.us."
+        "total_medicaid_enrollment"
+    )
     ca_medicaid = (
         "cms_medicaid.month2024_12.state_enrollment.ca."
         "total_medicaid_enrollment"
@@ -702,6 +706,15 @@ def test_cms_medicaid_package_builds_december_2024_state_enrollment_facts():
         "medicaid_chip_child_enrollment"
     )
 
+    assert records_by_id[us_medicaid].source_cell_addresses[:3] == (
+        "W2",
+        "W3",
+        "W4",
+    )
+    assert "W52" in records_by_id[us_medicaid].source_cell_addresses
+    assert "W1" in records_by_id[us_medicaid].source_cell_addresses
+    assert "A2" in records_by_id[us_medicaid].source_cell_addresses
+    assert "A52" in records_by_id[us_medicaid].source_cell_addresses
     assert records_by_id[ca_medicaid].source_cell_addresses == (
         "W6",
         "W1",
@@ -716,6 +729,9 @@ def test_cms_medicaid_package_builds_december_2024_state_enrollment_facts():
         "E45",
         "F45",
     )
+    assert values_by_record[us_medicaid].value == 71_841_081
+    assert values_by_record[us_medicaid].geography.id == "0100000US"
+    assert values_by_record[us_medicaid].geography.level == "country"
     assert values_by_record[ca_medicaid].value == 12_254_163
     assert values_by_record[ca_medicaid].geography.id == "0400000US06"
     assert values_by_record[ca_medicaid].domain == "medicaid_chip_enrollment"
