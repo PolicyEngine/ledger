@@ -342,6 +342,58 @@ def test_bea_nipa_personal_income_disposition_builds_amounts_and_rates():
     assert saving_rate.measure.unit == "percent"
 
 
+def test_bea_regional_state_personal_income_components_build_2024_facts():
+    package = load_source_package("bea-regional-state-personal-income-components-2024")
+    facts = package.build_facts(2024)
+    facts_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert len(facts) == 312
+    assert validate_facts(facts).valid
+    california_wages = facts_by_record[
+        "bea_regional.cy2024.state_wages_salaries.ca.amount"
+    ]
+    assert california_wages.value == 1_769_665_607_000
+    assert california_wages.geography.id == "0400000US06"
+    assert california_wages.measure.concept == "bea_regional.wages_and_salaries"
+    assert {
+        (constraint.variable, constraint.operator, constraint.value)
+        for constraint in california_wages.constraints
+    } == {
+        ("bea_regional.table_name", "==", "SAINC5N"),
+        ("bea_regional.geo_name", "==", "California"),
+        ("bea_regional.line_code", "==", 50),
+    }
+    assert california_wages.source.source_file == "SAINC.zip"
+    assert california_wages.source.raw_r2_uri
+    assert (
+        facts_by_record[
+            "bea_regional.cy2024.state_personal_current_transfer_receipts.us.amount"
+        ].value
+        == 4_555_385_000_000
+    )
+    assert (
+        facts_by_record["bea_regional.cy2024.state_proprietors_income.tx.amount"].value
+        == 273_877_560_000
+    )
+    assert validate_consumer_fact_contract(facts).valid
+
+
+def test_bea_regional_state_personal_income_components_validate_counts():
+    report = validate_source_package(
+        "bea-regional-state-personal-income-components-2024",
+        year=2024,
+    )
+
+    assert report.valid
+    assert report.counts == {
+        "measure_count": 6,
+        "record_set_count": 6,
+        "row_count": 312,
+        "source_record_count": 312,
+        "source_region_count": 6,
+    }
+
+
 def test_cbo_income_by_source_package_preserves_cbo_projection_concepts():
     package = load_source_package("cbo-revenue-projections-income-by-source-2026-02")
     rows = package.build_source_rows(2024)

@@ -1,0 +1,18 @@
+source_id: bea
+package_id: bea-regional-state-personal-income-components-2024
+dataset: bea_regional_state_personal_income
+source_page: https://apps.bea.gov/regional/downloadzip.htm
+table: Annual Personal Income by State
+files:
+  2024:
+    filename: SAINC.zip
+    source_url: https://apps.bea.gov/regional/zip/SAINC.zip
+    sha256: 339a3d3d6a283eea3f5647ea5b33570da73801d4248c5e2209c1e196428d9a9a
+    size_bytes: 17478048
+    fetched_at: '2026-05-17T15:00:39+00:00'
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/bea/bea-regional-state-personal-income-components-2024/2024/339a3d3d6a283eea3f5647ea5b33570da73801d4248c5e2209c1e196428d9a9a/SAINC.zip
+        uri: r2://arch-raw/raw/bea/bea-regional-state-personal-income-components-2024/2024/339a3d3d6a283eea3f5647ea5b33570da73801d4248c5e2209c1e196428d9a9a/SAINC.zip
