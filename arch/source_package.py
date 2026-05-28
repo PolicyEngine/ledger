@@ -115,6 +115,9 @@ SOURCE_PACKAGE_ALIASES = {
     "federal-reserve-z1-household-net-worth": Path(
         "federal_reserve/z1_household_net_worth"
     ),
+    "hhs-acf-liheap-fy2023-national-profile": Path(
+        "hhs_acf_liheap/fy2023_national_profile"
+    ),
     "hhs-acf-liheap-fy2024-national-profile": Path(
         "hhs_acf_liheap/fy2024_national_profile"
     ),
