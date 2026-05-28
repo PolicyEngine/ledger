@@ -29,22 +29,22 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "aggregate_duplicate_key_count": 0,
         "entity_count": 6,
         "error_count": 0,
-        "fact_count": 7042,
+        "fact_count": 7043,
         "geography_count": 54,
         "period_count": 7,
         "semantic_duplicate_key_count": 3,
         "skipped_source_count": 0,
-        "source_count": 11,
-        "source_package_count": 26,
+        "source_count": 12,
+        "source_package_count": 27,
         "warning_count": 1,
     }
-    assert len(rows) == 7042
+    assert len(rows) == 7043
     assert rows[0]["aggregate_fact_key"].startswith("arch.aggregate_fact.v2:")
     assert rows[0]["semantic_fact_key"].startswith("arch.semantic_fact.v2:")
-    assert source_packages["source_package_count"] == 26
+    assert source_packages["source_package_count"] == 27
     assert source_packages["skipped_source_count"] == 0
     assert not source_packages["skipped_sources"]
-    assert coverage["fact_count"] == 7042
+    assert coverage["fact_count"] == 7043
     assert coverage["counts"]["by_source"] == {
         "census_pep": 988,
         "census_stc": 46,
@@ -52,6 +52,7 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "cms_medicare": 1,
         "cms_nhe": 1,
         "federal_reserve": 1,
+        "hhs_acf_liheap": 1,
         "hhs_acf_tanf": 110,
         "irs_soi": 5367,
         "kff": 51,
@@ -78,6 +79,7 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
             "of funds, CY 1960-2024"
         ): 1,
         "federal_reserve:Z.1 B.101 Households and nonprofit organizations": 1,
+        "hhs_acf_liheap:LIHEAP FY2024 National Profile (All States)": 1,
         "hhs_acf_tanf:FY 2024 Federal TANF and State MOE Financial Data": 52,
         "hhs_acf_tanf:TANF Caseload Data 2024": 58,
         "irs_soi:Historic Table 2": 605,
@@ -113,18 +115,18 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "calendar_year:2023": 2,
         "calendar_year:2024": 1046,
         "fiscal_year:2023": 46,
-        "fiscal_year:2024": 326,
+        "fiscal_year:2024": 327,
         "month:2024-12": 255,
         "tax_year:2022": 4968,
         "tax_year:2023": 399,
     }
-    assert coverage["counts"]["by_geography"]["country:0100000US"] == 1277
+    assert coverage["counts"]["by_geography"]["country:0100000US"] == 1278
     assert coverage["counts"]["by_geography"]["state:0400000US06"] == 113
     assert len(coverage["counts"]["by_geography"]) == 54
     assert coverage["counts"]["by_entity"] == {
         "family": 107,
         "government": 101,
-        "household": 54,
+        "household": 55,
         "institutional_sector": 1,
         "person": 1412,
         "tax_unit": 5367,
@@ -147,6 +149,12 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         / "soi-table-1-4"
         / "reports"
         / "build_summary.json"
+    ).exists()
+    assert (
+        output_dir
+        / "sources"
+        / "hhs-acf-liheap-fy2024-national-profile"
+        / "consumer_facts.jsonl"
     ).exists()
     assert (
         output_dir

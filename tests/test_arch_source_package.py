@@ -531,6 +531,46 @@ def test_cms_medicare_trustees_package_builds_part_b_premium_fact():
     assert values_by_record[record_id].measure.unit == "usd"
 
 
+def test_hhs_acf_liheap_package_builds_household_count_fact():
+    package = load_source_package("hhs-acf-liheap-fy2024-national-profile")
+    cells = package.build_source_cells(2024)
+    records = package.build_source_records(2024, cells=cells)
+    facts = package.build_facts(2024, cells=cells)
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "hhs-acf-liheap-fy2024-national-profile"
+    assert validate_source_cells(cells).valid
+    assert validate_facts(facts).valid
+    assert len(cells) == 348
+    assert len(facts) == 1
+    assert all(fact.source.raw_r2_uri for fact in facts)
+
+    record_id = (
+        "hhs_acf_liheap.fy2024.national_profile."
+        "state_programs.households_served"
+    )
+    assert records[0].source_cell_addresses == (
+        "E3",
+        "E1",
+        "A3",
+        "B3",
+        "D3",
+        "F3",
+    )
+    assert values_by_record[record_id].value == 5_876_646
+    assert values_by_record[record_id].measure.concept == (
+        "hhs_acf_liheap.households_served_by_state_programs"
+    )
+    assert values_by_record[record_id].period.value == 2024
+    assert values_by_record[record_id].geography.id == "0100000US"
+    assert values_by_record[record_id].entity.name == "household"
+    assert (
+        values_by_record[record_id].source.source_file
+        == "acf_liheap_fy2024_all_states_national_profile.pdf"
+    )
+    assert values_by_record[record_id].constraints
+
+
 def test_soi_table_2_5_eitc_child_totals_build_2022_facts():
     package = load_source_package("soi-table-2-5-eitc-agi-children-2022")
     cells = package.build_source_cells(2023)
