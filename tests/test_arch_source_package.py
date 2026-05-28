@@ -840,6 +840,46 @@ def test_source_package_alias_builds_cms_aca_oep_state_level_2022_facts():
     )
 
 
+def test_source_package_alias_builds_cms_aca_oep_state_level_2025_facts():
+    package = load_source_package("cms-aca-oep-state-level-2025")
+    rows = package.build_source_rows(2025)
+    cells = package.build_source_cells(2025, source_rows=rows)
+    records = package.build_source_records(2025, cells=cells, source_rows=rows)
+    facts = package.build_facts(2025, cells=cells, source_rows=rows)
+    records_by_id = {record.source_record_id: record for record in records}
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "cms-aca-oep-state-level-2025"
+    assert len(rows) == 54
+    assert validate_source_rows(rows).valid
+    assert rows[0].values["State_Abrvtn"] == "AK"
+    assert rows[0].values["APTC_Cnsmr_Avg_APTC"] == 1_008
+    assert validate_source_cells(cells).valid
+    assert len(cells) == 5_610
+    assert len(facts) == 153
+    assert validate_facts(facts).valid
+    assert all(fact.source_row_keys for fact in facts)
+    assert all(fact.source.source_name == "cms_aca" for fact in facts)
+    assert all(fact.source.source_file.endswith(".zip") for fact in facts)
+    assert all(fact.source.raw_r2_uri for fact in facts)
+    assert records_by_id[
+        "cms_aca.oep2025.state_marketplace.ca.average_monthly_aptc"
+    ].source_cell_addresses == ("AK6", "AK1")
+    assert (
+        values_by_record[
+            "cms_aca.oep2025.state_marketplace.ca.marketplace_enrollment"
+        ].value
+        == 1_979_504
+    )
+    ca_average_aptc = values_by_record[
+        "cms_aca.oep2025.state_marketplace.ca.average_monthly_aptc"
+    ]
+    assert ca_average_aptc.value == 562
+    assert ca_average_aptc.geography.id == "0400000US06"
+    assert ca_average_aptc.geography.level == "state"
+    assert not ca_average_aptc.constraints
+
+
 def test_source_package_alias_builds_cms_aca_effectuated_enrollment_2022_facts():
     package = load_source_package("cms-aca-effectuated-enrollment-2022")
     rows = package.build_source_rows(2022)
@@ -1278,6 +1318,19 @@ def test_validate_source_package_reports_cms_aca_oep_2022_counts():
         "measure_count": 3,
         "source_record_count": 151,
         "source_region_count": 2,
+    }
+
+
+def test_validate_source_package_reports_cms_aca_oep_2025_counts():
+    report = validate_source_package("cms-aca-oep-state-level-2025", year=2025)
+
+    assert report.valid
+    assert report.counts == {
+        "record_set_count": 1,
+        "row_count": 51,
+        "measure_count": 3,
+        "source_record_count": 153,
+        "source_region_count": 1,
     }
 
 

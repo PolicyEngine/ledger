@@ -101,6 +101,7 @@ SOURCE_PACKAGE_ALIASES = {
     ),
     "cms-aca-oep-state-level": Path("cms_aca/oep_state_level"),
     "cms-aca-oep-state-level-2022": Path("cms_aca/oep_state_level_2022"),
+    "cms-aca-oep-state-level-2025": Path("cms_aca/oep_state_level_2025"),
     "cms-aca-effectuated-enrollment-2022": Path(
         "cms_aca/effectuated_enrollment_2022"
     ),
