@@ -71,6 +71,9 @@ SOURCE_PACKAGE_ALIASES = {
         "bea/nipa_personal_income_disposition"
     ),
     "bea-nipa-total-wages-salaries": Path("bea/nipa_total_wages_salaries"),
+    "cbo-revenue-projections-income-by-source-2026-02": Path(
+        "cbo/revenue_projections_income_by_source_2026_02"
+    ),
     "census-pep-2024-national-age-sex": Path("census/pep_2024_national_age_sex"),
     "census-pep-2024-state-age-sex": Path("census/pep_2024_state_age_sex"),
     "census-stc-individual-income-tax": Path(
