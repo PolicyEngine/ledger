@@ -460,6 +460,33 @@ def test_federal_reserve_z1_package_builds_net_worth_fact():
     assert not values_by_record[record_id].constraints
 
 
+def test_cms_nhe_package_builds_medicaid_expenditure_fact():
+    package = load_source_package("cms-nhe-historical-service-source")
+    cells = package.build_source_cells(2024)
+    facts = package.build_facts(2024, cells=cells)
+
+    assert package.package_id == "cms-nhe-historical-service-source"
+    assert validate_source_cells(cells).valid
+    assert validate_facts(facts).valid
+    assert len(cells) == 35_970
+    assert len(facts) == 1
+
+    fact = facts[0]
+    assert fact.source_record_id == (
+        "cms_nhe.cy2024.medicaid_title_xix_expenditures."
+        "medicaid_title_xix.expenditure_amount"
+    )
+    assert fact.value == 931_692_000_000
+    assert fact.measure.concept == "cms_nhe.medicaid_title_xix_expenditures"
+    assert fact.period.value == 2024
+    assert fact.geography.id == "0100000US"
+    assert fact.entity.name == "person"
+    assert fact.source.source_file.endswith(".zip!NHE2024.xls")
+    assert fact.source.raw_r2_uri
+    assert not fact.filters
+    assert not fact.constraints
+
+
 def test_soi_table_2_5_eitc_child_totals_build_2022_facts():
     package = load_source_package("soi-table-2-5-eitc-agi-children-2022")
     cells = package.build_source_cells(2023)
