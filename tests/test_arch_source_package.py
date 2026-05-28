@@ -274,8 +274,8 @@ def test_national_soi_source_package_aliases_validate_fixture_counts():
         "soi-table-2-1": {
             "record_set_count": 1,
             "row_count": 1,
-            "measure_count": 17,
-            "source_record_count": 17,
+            "measure_count": 37,
+            "source_record_count": 37,
             "source_region_count": 1,
         },
         "soi-table-2-5": {
@@ -348,6 +348,68 @@ def test_national_soi_source_package_aliases_validate_fixture_counts():
 
         assert report.valid, package_id
         assert report.counts == counts
+
+
+def test_soi_table_2_1_package_builds_itemized_deduction_details():
+    package = load_source_package("soi-table-2-1")
+    rows = package.build_source_rows(2023)
+    cells = package.build_source_cells(2023, source_rows=rows)
+    facts = package.build_facts(2023, cells=cells, source_rows=rows)
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "soi-table-2-1"
+    assert validate_source_rows(rows).valid
+    assert validate_source_cells(cells).valid
+    assert validate_facts(facts).valid
+    assert len(facts) == 37
+
+    charitable = values_by_record[
+        "irs_soi.ty2023.table_2_1.itemized_all_returns.all.charitable_amount"
+    ]
+    interest = values_by_record[
+        "irs_soi.ty2023.table_2_1.itemized_all_returns.all."
+        "interest_paid_deduction_amount"
+    ]
+    mortgage_financial = values_by_record[
+        "irs_soi.ty2023.table_2_1.itemized_all_returns.all."
+        "mortgage_interest_paid_amount"
+    ]
+    mortgage_individual = values_by_record[
+        "irs_soi.ty2023.table_2_1.itemized_all_returns.all."
+        "home_mortgage_personal_seller_amount"
+    ]
+    deductible_points = values_by_record[
+        "irs_soi.ty2023.table_2_1.itemized_all_returns.all."
+        "deductible_points_amount"
+    ]
+    limited_salt = values_by_record[
+        "irs_soi.ty2023.table_2_1.itemized_all_returns.all."
+        "limited_state_local_taxes_amount"
+    ]
+    raw_state_local = values_by_record[
+        "irs_soi.ty2023.table_2_1.itemized_all_returns.all."
+        "total_state_local_taxes_amount"
+    ]
+    income_or_sales = values_by_record[
+        "irs_soi.ty2023.table_2_1.itemized_all_returns.all."
+        "state_local_income_or_sales_tax_amount"
+    ]
+    real_estate_taxes = values_by_record[
+        "irs_soi.ty2023.table_2_1.itemized_all_returns.all."
+        "real_estate_taxes_amount"
+    ]
+
+    assert charitable.value == 211_975_123_000
+    assert charitable.measure.concept == "irs_soi.contributions_deduction"
+    assert interest.value == 208_176_768_000
+    assert mortgage_financial.value == 167_675_863_000
+    assert mortgage_individual.value == 3_688_924_000
+    assert deductible_points.value == 1_027_127_000
+    assert limited_salt.value == 121_050_787_000
+    assert raw_state_local.value == 331_823_221_000
+    assert income_or_sales.value == 218_543_083_000
+    assert real_estate_taxes.value == 108_606_373_000
+    assert raw_state_local.source.raw_r2_uri
 
 
 def test_census_stc_income_tax_package_builds_state_tax_facts():

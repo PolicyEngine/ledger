@@ -256,3 +256,313 @@ record_sets:
         aggregation: sum
         value_scale: 1000
         expected_cell_type: number
+      - measure_id: total_state_local_taxes_returns
+        label: Returns with state and local taxes
+        ordinal: 17
+        column: CC
+        column_by_year:
+          2021: BQ
+          2022: CC
+          2023: CC
+        source_column_id: total_state_local_taxes_returns
+        expected_column_header_row: 8
+        expected_column_header: Number of returns
+        concept: irs_soi.returns_with_state_and_local_taxes
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+      - measure_id: total_state_local_taxes_amount
+        label: State and local taxes amount
+        ordinal: 18
+        column: CD
+        column_by_year:
+          2021: BR
+          2022: CD
+          2023: CD
+        source_column_id: total_state_local_taxes_amount
+        expected_column_header_row: 8
+        expected_column_header: Amount
+        concept: irs_soi.state_and_local_taxes
+        unit: usd
+        aggregation: sum
+        value_scale: 1000
+        expected_cell_type: number
+      - measure_id: state_local_income_or_sales_tax_returns
+        label: Returns with state and local income or general sales taxes
+        ordinal: 19
+        column: CE
+        column_by_year:
+          2021: BS
+          2022: CE
+          2023: CE
+        source_column_id: state_local_income_or_sales_tax_returns
+        expected_column_header_row: 8
+        expected_column_header: Number of returns
+        concept: irs_soi.returns_with_state_local_income_or_sales_taxes
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+      - measure_id: state_local_income_or_sales_tax_amount
+        label: State and local income or general sales taxes amount
+        ordinal: 20
+        column: CF
+        column_by_year:
+          2021: BT
+          2022: CF
+          2023: CF
+        source_column_id: state_local_income_or_sales_tax_amount
+        expected_column_header_row: 8
+        expected_column_header: Amount
+        concept: irs_soi.state_local_income_or_sales_taxes
+        unit: usd
+        aggregation: sum
+        value_scale: 1000
+        expected_cell_type: number
+      - measure_id: real_estate_taxes_claims
+        label: Returns with real estate taxes
+        ordinal: 21
+        column: CK
+        column_by_year:
+          2021: BY
+          2022: CK
+          2023: CK
+        source_column_id: real_estate_taxes_claims
+        expected_column_header_row: 8
+        expected_column_header: Number of returns
+        concept: irs_soi.returns_with_real_estate_taxes
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+      - measure_id: real_estate_taxes_amount
+        label: Real estate taxes amount
+        ordinal: 22
+        column: CL
+        column_by_year:
+          2021: BZ
+          2022: CL
+          2023: CL
+        source_column_id: real_estate_taxes_amount
+        expected_column_header_row: 8
+        expected_column_header: Amount
+        concept: irs_soi.real_estate_taxes
+        unit: usd
+        aggregation: sum
+        value_scale: 1000
+        expected_cell_type: number
+      - measure_id: limited_state_local_taxes_returns
+        label: Returns with limited state and local taxes
+        ordinal: 23
+        column: CO
+        column_by_year:
+          2021: CC
+          2022: CO
+          2023: CO
+        source_column_id: limited_state_local_taxes_returns
+        expected_column_header_row: 7
+        expected_column_header: "Number of\nreturns"
+        concept: irs_soi.returns_with_limited_state_local_taxes
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+      - measure_id: limited_state_local_taxes_amount
+        label: Limited state and local taxes amount
+        ordinal: 24
+        column: CP
+        column_by_year:
+          2021: CD
+          2022: CP
+          2023: CP
+        source_column_id: limited_state_local_taxes_amount
+        expected_column_header_row: 7
+        expected_column_header: Amount
+        concept: irs_soi.limited_state_local_taxes
+        unit: usd
+        aggregation: sum
+        value_scale: 1000
+        expected_cell_type: number
+      - measure_id: interest_paid_deduction_returns
+        label: Returns with interest paid deduction
+        ordinal: 25
+        column: CS
+        column_by_year:
+          2021: CG
+          2022: CS
+          2023: CS
+        source_column_id: interest_paid_deduction_returns
+        expected_column_header_row: 7
+        expected_column_header: "Number of\nreturns"
+        concept: irs_soi.returns_with_interest_paid_deduction
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+      - measure_id: interest_paid_deduction_amount
+        label: Interest paid deduction amount
+        ordinal: 26
+        column: CT
+        column_by_year:
+          2021: CH
+          2022: CT
+          2023: CT
+        source_column_id: interest_paid_deduction_amount
+        expected_column_header_row: 7
+        expected_column_header: Amount
+        concept: irs_soi.interest_paid_deduction
+        unit: usd
+        aggregation: sum
+        value_scale: 1000
+        expected_cell_type: number
+      - measure_id: mortgage_interest_paid_returns
+        label: Returns with home mortgage interest paid to financial institutions
+        ordinal: 27
+        column: CY
+        column_by_year:
+          2021: CM
+          2022: CY
+          2023: CY
+        source_column_id: mortgage_interest_paid_returns
+        expected_column_header_row: 8
+        expected_column_header: Number of returns
+        concept: irs_soi.returns_with_home_mortgage_interest_paid_to_financial_institutions
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+      - measure_id: mortgage_interest_paid_amount
+        label: Home mortgage interest paid to financial institutions amount
+        ordinal: 28
+        column: CZ
+        column_by_year:
+          2021: CN
+          2022: CZ
+          2023: CZ
+        source_column_id: mortgage_interest_paid_amount
+        expected_column_header_row: 8
+        expected_column_header: Amount
+        concept: irs_soi.home_mortgage_interest_paid_to_financial_institutions
+        unit: usd
+        aggregation: sum
+        value_scale: 1000
+        expected_cell_type: number
+      - measure_id: home_mortgage_personal_seller_returns
+        label: Returns with home mortgage interest paid to individuals
+        ordinal: 29
+        column: DA
+        column_by_year:
+          2021: CO
+          2022: DA
+          2023: DA
+        source_column_id: home_mortgage_personal_seller_returns
+        expected_column_header_row: 8
+        expected_column_header: Number of returns
+        concept: irs_soi.returns_with_home_mortgage_interest_paid_to_individuals
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+      - measure_id: home_mortgage_personal_seller_amount
+        label: Home mortgage interest paid to individuals amount
+        ordinal: 30
+        column: DB
+        column_by_year:
+          2021: CP
+          2022: DB
+          2023: DB
+        source_column_id: home_mortgage_personal_seller_amount
+        expected_column_header_row: 8
+        expected_column_header: Amount
+        concept: irs_soi.home_mortgage_interest_paid_to_individuals
+        unit: usd
+        aggregation: sum
+        value_scale: 1000
+        expected_cell_type: number
+      - measure_id: deductible_points_returns
+        label: Returns with deductible points
+        ordinal: 31
+        column: DC
+        column_by_year:
+          2021: CQ
+          2022: DC
+          2023: DC
+        source_column_id: deductible_points_returns
+        expected_column_header_row: 8
+        expected_column_header: Number of returns
+        concept: irs_soi.returns_with_deductible_points
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+      - measure_id: deductible_points_amount
+        label: Deductible points amount
+        ordinal: 32
+        column: DD
+        column_by_year:
+          2021: CR
+          2022: DD
+          2023: DD
+        source_column_id: deductible_points_amount
+        expected_column_header_row: 8
+        expected_column_header: Amount
+        concept: irs_soi.deductible_points
+        unit: usd
+        aggregation: sum
+        value_scale: 1000
+        expected_cell_type: number
+      - measure_id: investment_interest_paid_returns
+        label: Returns with investment interest expense deduction
+        ordinal: 33
+        column: DE
+        column_by_year:
+          2021: CU
+          2022: DE
+          2023: DE
+        source_column_id: investment_interest_paid_returns
+        expected_column_header_row: 7
+        expected_column_header: "Number of\nreturns"
+        concept: irs_soi.returns_with_investment_interest_expense_deduction
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+      - measure_id: investment_interest_paid_amount
+        label: Investment interest expense deduction amount
+        ordinal: 34
+        column: DF
+        column_by_year:
+          2021: CV
+          2022: DF
+          2023: DF
+        source_column_id: investment_interest_paid_amount
+        expected_column_header_row: 7
+        expected_column_header: Amount
+        concept: irs_soi.investment_interest_expense_deduction
+        unit: usd
+        aggregation: sum
+        value_scale: 1000
+        expected_cell_type: number
+      - measure_id: charitable_returns
+        label: Returns with contributions deduction
+        ordinal: 35
+        column: DG
+        column_by_year:
+          2021: CW
+          2022: DG
+          2023: DG
+        source_column_id: charitable_returns
+        expected_column_header_row: 7
+        expected_column_header: "Number of\nreturns"
+        concept: irs_soi.returns_with_contributions_deduction
+        unit: count
+        aggregation: count
+        expected_cell_type: number
+      - measure_id: charitable_amount
+        label: Contributions deduction amount
+        ordinal: 36
+        column: DH
+        column_by_year:
+          2021: CX
+          2022: DH
+          2023: DH
+        source_column_id: charitable_amount
+        expected_column_header_row: 7
+        expected_column_header: Amount
+        concept: irs_soi.contributions_deduction
+        unit: usd
+        aggregation: sum
+        value_scale: 1000
+        expected_cell_type: number
