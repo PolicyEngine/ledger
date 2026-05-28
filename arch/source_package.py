@@ -91,6 +91,7 @@ SOURCE_PACKAGE_ALIASES = {
     "ssa-annual-statistical-supplement-2025": Path(
         "ssa/annual_statistical_supplement_2025"
     ),
+    "usda-snap-fy69-to-current": Path("usda_snap/fy69_to_current"),
 }
 SOURCE_ARTIFACT_CACHE_ENV = "ARCH_SOURCE_ARTIFACT_CACHE_DIR"
 SOURCE_ARTIFACT_FETCH_ENV = "ARCH_SOURCE_ARTIFACT_FETCH"

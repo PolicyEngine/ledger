@@ -27,28 +27,29 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
     assert summary["valid"]
     assert summary["counts"] == {
         "aggregate_duplicate_key_count": 0,
-        "entity_count": 2,
+        "entity_count": 4,
         "error_count": 0,
-        "fact_count": 2637,
-        "geography_count": 52,
-        "period_count": 3,
+        "fact_count": 2853,
+        "geography_count": 54,
+        "period_count": 4,
         "semantic_duplicate_key_count": 3,
         "skipped_source_count": 0,
-        "source_count": 3,
-        "source_package_count": 15,
+        "source_count": 4,
+        "source_package_count": 16,
         "warning_count": 1,
     }
-    assert len(rows) == 2637
+    assert len(rows) == 2853
     assert rows[0]["aggregate_fact_key"].startswith("arch.aggregate_fact.v2:")
     assert rows[0]["semantic_fact_key"].startswith("arch.semantic_fact.v2:")
-    assert source_packages["source_package_count"] == 15
+    assert source_packages["source_package_count"] == 16
     assert source_packages["skipped_source_count"] == 0
     assert not source_packages["skipped_sources"]
-    assert coverage["fact_count"] == 2637
+    assert coverage["fact_count"] == 2853
     assert coverage["counts"]["by_source"] == {
         "census_pep": 988,
         "irs_soi": 1643,
         "ssa": 6,
+        "usda_snap": 216,
     }
     assert coverage["counts"]["by_source_table"] == {
         (
@@ -83,17 +84,21 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
             "Age of Taxpayer"
         ): 2,
         "ssa:SSA Annual Statistical Supplement 2025 extracted OASDI and SSI target rows": 6,
+        "usda_snap:SNAP Monthly State Participation and Benefit Summary FY69 to current": 216,
     }
     assert coverage["counts"]["by_period"] == {
         "calendar_year:2024": 994,
+        "fiscal_year:2024": 216,
         "tax_year:2022": 1244,
         "tax_year:2023": 399,
     }
-    assert coverage["counts"]["by_geography"]["country:0100000US"] == 648
-    assert coverage["counts"]["by_geography"]["state:0400000US06"] == 39
-    assert len(coverage["counts"]["by_geography"]) == 52
+    assert coverage["counts"]["by_geography"]["country:0100000US"] == 652
+    assert coverage["counts"]["by_geography"]["state:0400000US06"] == 43
+    assert len(coverage["counts"]["by_geography"]) == 54
     assert coverage["counts"]["by_entity"] == {
-        "person": 994,
+        "government": 54,
+        "household": 54,
+        "person": 1102,
         "tax_unit": 1643,
     }
     assert not coverage["duplicates"]["aggregate_fact_keys"]
@@ -120,6 +125,9 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         / "sources"
         / "soi-ira-roth-contributions-2022"
         / "consumer_facts.jsonl"
+    ).exists()
+    assert (
+        output_dir / "sources" / "usda-snap-fy69-to-current" / "consumer_facts.jsonl"
     ).exists()
 
 
