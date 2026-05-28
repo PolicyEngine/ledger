@@ -29,26 +29,27 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "aggregate_duplicate_key_count": 0,
         "entity_count": 6,
         "error_count": 0,
-        "fact_count": 7040,
+        "fact_count": 7041,
         "geography_count": 54,
         "period_count": 7,
         "semantic_duplicate_key_count": 3,
         "skipped_source_count": 0,
-        "source_count": 9,
-        "source_package_count": 24,
+        "source_count": 10,
+        "source_package_count": 25,
         "warning_count": 1,
     }
-    assert len(rows) == 7040
+    assert len(rows) == 7041
     assert rows[0]["aggregate_fact_key"].startswith("arch.aggregate_fact.v2:")
     assert rows[0]["semantic_fact_key"].startswith("arch.semantic_fact.v2:")
-    assert source_packages["source_package_count"] == 24
+    assert source_packages["source_package_count"] == 25
     assert source_packages["skipped_source_count"] == 0
     assert not source_packages["skipped_sources"]
-    assert coverage["fact_count"] == 7040
+    assert coverage["fact_count"] == 7041
     assert coverage["counts"]["by_source"] == {
         "census_pep": 988,
         "census_stc": 46,
         "cms_medicaid": 255,
+        "cms_nhe": 1,
         "federal_reserve": 1,
         "hhs_acf_tanf": 110,
         "irs_soi": 5367,
@@ -70,6 +71,10 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
             "cms_medicaid:State Medicaid and CHIP Applications, Eligibility "
             "Determinations, and Enrollment Data"
         ): 255,
+        (
+            "cms_nhe:National Health Expenditures by type of service and source "
+            "of funds, CY 1960-2024"
+        ): 1,
         "federal_reserve:Z.1 B.101 Households and nonprofit organizations": 1,
         "hhs_acf_tanf:FY 2024 Federal TANF and State MOE Financial Data": 52,
         "hhs_acf_tanf:TANF Caseload Data 2024": 58,
@@ -103,7 +108,7 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "usda_snap:SNAP Monthly State Participation and Benefit Summary FY69 to current": 216,
     }
     assert coverage["counts"]["by_period"] == {
-        "calendar_year:2023": 1,
+        "calendar_year:2023": 2,
         "calendar_year:2024": 1045,
         "fiscal_year:2023": 46,
         "fiscal_year:2024": 326,
@@ -111,7 +116,7 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "tax_year:2022": 4968,
         "tax_year:2023": 399,
     }
-    assert coverage["counts"]["by_geography"]["country:0100000US"] == 1275
+    assert coverage["counts"]["by_geography"]["country:0100000US"] == 1276
     assert coverage["counts"]["by_geography"]["state:0400000US06"] == 113
     assert len(coverage["counts"]["by_geography"]) == 54
     assert coverage["counts"]["by_entity"] == {
@@ -119,7 +124,7 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "government": 100,
         "household": 54,
         "institutional_sector": 1,
-        "person": 1411,
+        "person": 1412,
         "tax_unit": 5367,
     }
     assert not coverage["duplicates"]["aggregate_fact_keys"]
@@ -149,6 +154,12 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
     ).exists()
     assert (
         output_dir / "sources" / "census-stc-individual-income-tax" / "consumer_facts.jsonl"
+    ).exists()
+    assert (
+        output_dir
+        / "sources"
+        / "cms-nhe-historical-service-source"
+        / "consumer_facts.jsonl"
     ).exists()
     assert (
         output_dir
