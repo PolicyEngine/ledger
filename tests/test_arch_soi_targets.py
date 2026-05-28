@@ -139,7 +139,7 @@ def test_build_soi_table_1_4_wage_facts_from_packaged_source():
     }
 
     assert validate_facts(facts).valid
-    assert len(facts) == 260
+    assert len(facts) == 340
     assert facts_by_concept_and_range[
         ("irs_soi.returns_with_total_wages", "all")
     ].value == 128_591_050
@@ -164,6 +164,12 @@ def test_build_soi_table_1_4_wage_facts_from_packaged_source():
     assert facts_by_concept_and_range[
         ("irs_soi.taxable_social_security_benefits", "all")
     ].value == 527_072_873_000
+    assert facts_by_concept_and_range[
+        ("irs_soi.alimony_received", "all")
+    ].value == 6_686_429_000
+    assert facts_by_concept_and_range[
+        ("irs_soi.alimony_paid", "all")
+    ].value == 7_497_135_000
     assert {fact.source.url for fact in facts} == {
         "https://www.irs.gov/pub/irs-soi/23in14ar.xls"
     }
@@ -180,4 +186,4 @@ def test_soi_table_1_4_source_region_spec_covers_wage_record_set():
     assert regions[0].top_row == 9
     assert regions[0].bottom_row == 28
     assert regions[0].left_column == 1
-    assert regions[0].right_column == 117
+    assert regions[0].right_column == 123

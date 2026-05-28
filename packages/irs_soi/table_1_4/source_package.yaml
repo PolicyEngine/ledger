@@ -544,9 +544,55 @@ record_sets:
         unit: usd
         aggregation: sum
         value_scale: 1000
+      - measure_id: alimony_received_returns
+        label: Returns with alimony received
+        ordinal: 12
+        column: AD
+        column_by_year:
+          2021: R
+          2022: AD
+          2023: AD
+        concept: irs_soi.returns_with_alimony_received
+        unit: count
+        aggregation: count
+      - measure_id: alimony_received_amount
+        label: Alimony received
+        ordinal: 13
+        column: AE
+        column_by_year:
+          2021: S
+          2022: AE
+          2023: AE
+        concept: irs_soi.alimony_received
+        unit: usd
+        aggregation: sum
+        value_scale: 1000
+      - measure_id: alimony_paid_returns
+        label: Returns with alimony paid
+        ordinal: 14
+        column: DR
+        column_by_year:
+          2021: DF
+          2022: DR
+          2023: DR
+        concept: irs_soi.returns_with_alimony_paid
+        unit: count
+        aggregation: count
+      - measure_id: alimony_paid_amount
+        label: Alimony paid
+        ordinal: 15
+        column: DS
+        column_by_year:
+          2021: DG
+          2022: DS
+          2023: DS
+        concept: irs_soi.alimony_paid
+        unit: usd
+        aggregation: sum
+        value_scale: 1000
       - measure_id: self_employed_pension_contribution_ald
         label: Payments to a Keogh plan
-        ordinal: 12
+        ordinal: 16
         column: DM
         column_by_year:
           2021: DA
