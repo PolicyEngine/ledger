@@ -81,6 +81,9 @@ SOURCE_PACKAGE_ALIASES = {
     "federal-reserve-z1-household-net-worth": Path(
         "federal_reserve/z1_household_net_worth"
     ),
+    "hhs-acf-liheap-fy2024-national-profile": Path(
+        "hhs_acf_liheap/fy2024_national_profile"
+    ),
     "soi-table-1-1": Path("irs_soi/table_1_1"),
     "soi-table-1-2": Path("irs_soi/table_1_2"),
     "soi-table-1-4": Path("irs_soi/table_1_4"),
