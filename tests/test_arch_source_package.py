@@ -23,6 +23,7 @@ from arch.source_package import (
     validate_source_package,
 )
 from arch.sources.cells import build_source_cell_key, validate_source_cells
+from arch.sources.rows import validate_source_rows
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 
@@ -574,3 +575,61 @@ def test_hhs_acf_tanf_caseload_package_builds_fy24_family_and_recipient_facts():
     assert values_by_record[child_recipients].geography.id == "0100000US"
     assert not values_by_record[child_recipients].filters
     assert not values_by_record[child_recipients].constraints
+
+
+def test_kff_marketplace_effectuated_enrollment_alias_validates_fixture_counts():
+    report = validate_source_package(
+        "kff-marketplace-effectuated-enrollment",
+        year=2023,
+    )
+
+    assert report.valid
+    assert report.counts == {
+        "record_set_count": 1,
+        "row_count": 51,
+        "measure_count": 1,
+        "source_record_count": 51,
+        "source_region_count": 1,
+    }
+
+
+def test_kff_marketplace_effectuated_enrollment_builds_2024_state_facts():
+    package = load_source_package("kff-marketplace-effectuated-enrollment")
+    rows = package.build_source_rows(2023)
+    cells = package.build_source_cells(2023, source_rows=rows)
+    records = package.build_source_records(2023, cells=cells, source_rows=rows)
+    facts = package.build_facts(2023, cells=cells, source_rows=rows)
+    records_by_id = {record.source_record_id: record for record in records}
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "kff-marketplace-effectuated-enrollment"
+    assert len(rows) == 416
+    assert validate_source_rows(rows).valid
+    assert rows[0].values == {
+        "Year": 2024,
+        "Geography": "United States",
+        "Total Effectuated Marketplace Enrollment": 20_968_847,
+        "Unit": "Number",
+        "KFF table row": 3,
+    }
+    assert validate_source_cells(cells).valid
+    assert validate_facts(facts).valid
+    assert len(cells) == 260
+    assert len(facts) == 51
+    assert all(fact.source_row_keys for fact in facts)
+    assert all(fact.source.source_name == "kff" for fact in facts)
+    assert all(fact.source.source_file.endswith(".html") for fact in facts)
+    assert all(fact.source.raw_r2_uri for fact in facts)
+
+    al = (
+        "kff.marketplace_effectuated_enrollment.2024.state.al."
+        "total_effectuated_marketplace_enrollment"
+    )
+    ca = (
+        "kff.marketplace_effectuated_enrollment.2024.state.ca."
+        "total_effectuated_marketplace_enrollment"
+    )
+
+    assert records_by_id[al].source_cell_addresses == ("C2", "C1")
+    assert values_by_record[al].value == 396_750
+    assert values_by_record[ca].value == 1_795_695
