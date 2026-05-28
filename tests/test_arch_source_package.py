@@ -475,6 +475,64 @@ def test_usda_snap_source_package_alias_validates_fixture_counts():
     }
 
 
+def test_soi_historic_table_2_source_package_alias_validates_fixture_counts():
+    report = validate_source_package("soi-historic-table-2", year=2023)
+
+    assert report.valid
+    assert report.counts == {
+        "record_set_count": 1,
+        "row_count": 11,
+        "measure_count": 13,
+        "source_record_count": 143,
+        "source_region_count": 1,
+    }
+
+
+def test_soi_historic_table_2_package_builds_2022_national_facts():
+    package = load_source_package("soi-historic-table-2")
+    rows = package.build_source_rows(2023)
+    cells = package.build_source_cells(2023, source_rows=rows)
+    facts = package.build_facts(2023, cells=cells, source_rows=rows)
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "soi-historic-table-2"
+    assert len(rows) == 594
+    assert validate_source_rows(rows).valid
+    assert rows[0].values["STATE"] == "US"
+    assert rows[0].values["AGI_STUB"] == 0
+    assert validate_source_cells(cells).valid
+    assert validate_facts(facts).valid
+    assert len(cells) == 1_956
+    assert len(facts) == 143
+    assert all(fact.source_row_keys for fact in facts)
+
+    tax_filers = values_by_record[
+        "irs_soi.ty2022.historic_table_2.us.all.tax_filer_individual_count"
+    ]
+    ptc_returns = values_by_record[
+        "irs_soi.ty2022.historic_table_2.us.all.premium_tax_credit_returns"
+    ]
+    eitc_amount = values_by_record[
+        "irs_soi.ty2022.historic_table_2.us.all.eitc_amount"
+    ]
+    real_estate_taxes = values_by_record[
+        "irs_soi.ty2022.historic_table_2.us.all.real_estate_taxes_amount"
+    ]
+    agi_bracket_eitc_claims = values_by_record[
+        "irs_soi.ty2022.historic_table_2.us.1_to_10k.eitc_claims"
+    ]
+
+    assert tax_filers.value == 293_617_150
+    assert ptc_returns.value == 7_841_370
+    assert eitc_amount.value == 59_204_588_000
+    assert real_estate_taxes.value == 106_195_956_000
+    assert agi_bracket_eitc_claims.value == 5_013_220
+    assert {constraint.operator for constraint in agi_bracket_eitc_claims.constraints} == {
+        "<",
+        ">=",
+    }
+
+
 def test_usda_snap_source_package_builds_fy24_national_and_state_facts():
     package = load_source_package("usda-snap-fy69-to-current")
     cells = package.build_source_cells(2023)

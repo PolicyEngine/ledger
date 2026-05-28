@@ -29,27 +29,27 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "aggregate_duplicate_key_count": 0,
         "entity_count": 5,
         "error_count": 0,
-        "fact_count": 3269,
+        "fact_count": 3412,
         "geography_count": 54,
         "period_count": 5,
         "semantic_duplicate_key_count": 3,
         "skipped_source_count": 0,
         "source_count": 7,
-        "source_package_count": 20,
+        "source_package_count": 21,
         "warning_count": 1,
     }
-    assert len(rows) == 3269
+    assert len(rows) == 3412
     assert rows[0]["aggregate_fact_key"].startswith("arch.aggregate_fact.v2:")
     assert rows[0]["semantic_fact_key"].startswith("arch.semantic_fact.v2:")
-    assert source_packages["source_package_count"] == 20
+    assert source_packages["source_package_count"] == 21
     assert source_packages["skipped_source_count"] == 0
     assert not source_packages["skipped_sources"]
-    assert coverage["fact_count"] == 3269
+    assert coverage["fact_count"] == 3412
     assert coverage["counts"]["by_source"] == {
         "census_pep": 988,
         "cms_medicaid": 255,
         "hhs_acf_tanf": 110,
-        "irs_soi": 1643,
+        "irs_soi": 1786,
         "kff": 51,
         "ssa": 6,
         "usda_snap": 216,
@@ -69,6 +69,7 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         ): 255,
         "hhs_acf_tanf:FY 2024 Federal TANF and State MOE Financial Data": 52,
         "hhs_acf_tanf:TANF Caseload Data 2024": 58,
+        "irs_soi:Historic Table 2": 143,
         "irs_soi:Historic Table 2 state AGI facts": 918,
         "irs_soi:Historic Table 2 state EITC totals": 102,
         "irs_soi:Publication 1304 Table 1.1": 80,
@@ -100,10 +101,10 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "calendar_year:2024": 1045,
         "fiscal_year:2024": 326,
         "month:2024-12": 255,
-        "tax_year:2022": 1244,
+        "tax_year:2022": 1387,
         "tax_year:2023": 399,
     }
-    assert coverage["counts"]["by_geography"]["country:0100000US"] == 660
+    assert coverage["counts"]["by_geography"]["country:0100000US"] == 803
     assert coverage["counts"]["by_geography"]["state:0400000US06"] == 51
     assert len(coverage["counts"]["by_geography"]) == 54
     assert coverage["counts"]["by_entity"] == {
@@ -111,7 +112,7 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "government": 54,
         "household": 54,
         "person": 1411,
-        "tax_unit": 1643,
+        "tax_unit": 1786,
     }
     assert not coverage["duplicates"]["aggregate_fact_keys"]
     assert len(coverage["duplicates"]["semantic_fact_keys"]) == 3
@@ -140,6 +141,9 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
     ).exists()
     assert (
         output_dir / "sources" / "usda-snap-fy69-to-current" / "consumer_facts.jsonl"
+    ).exists()
+    assert (
+        output_dir / "sources" / "soi-historic-table-2" / "consumer_facts.jsonl"
     ).exists()
     assert (
         output_dir / "sources" / "hhs-acf-tanf-caseload-2024" / "consumer_facts.jsonl"
@@ -187,6 +191,34 @@ def test_build_bundle_cli_supports_explicit_sources(tmp_path, capsys):
     assert payload["coverage"]["counts"]["by_source_table"] == {
         "irs_soi:Publication 1304 Table 1.1": 80
     }
+
+
+def test_build_bundle_cli_supports_historic_table_2_source(tmp_path, capsys):
+    output_dir = tmp_path / "bundle"
+
+    exit_code = harness_main(
+        [
+            "build-bundle",
+            "--year",
+            "2023",
+            "--source",
+            "soi-historic-table-2",
+            "--out",
+            str(output_dir),
+        ]
+    )
+    payload = json.loads(capsys.readouterr().out)
+
+    assert exit_code == 0
+    assert payload["valid"]
+    assert payload["counts"]["source_package_count"] == 1
+    assert payload["counts"]["fact_count"] == 143
+    assert payload["coverage"]["counts"]["by_source_table"] == {
+        "irs_soi:Historic Table 2": 143
+    }
+    assert (
+        output_dir / "sources" / "soi-historic-table-2" / "source_rows.jsonl"
+    ).exists()
 
 
 def test_build_bundle_cli_supports_ssa_supplement_source(tmp_path, capsys):
