@@ -1118,6 +1118,61 @@ def test_ssa_supplement_source_package_alias_validates_fixture_counts():
     }
 
 
+def test_ssa_ssi_table_7b1_source_package_alias_validates_fixture_counts():
+    report = validate_source_package("ssa-ssi-table-7b1-2024", year=2024)
+
+    assert report.valid
+    assert report.counts == {
+        "record_set_count": 2,
+        "row_count": 416,
+        "measure_count": 2,
+        "source_record_count": 416,
+        "source_region_count": 2,
+    }
+
+
+def test_ssa_ssi_table_7b1_source_package_builds_area_category_facts():
+    package = load_source_package("ssa-ssi-table-7b1-2024")
+    cells = package.build_source_cells(2024)
+    facts = package.build_facts(2024, cells=cells)
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "ssa-ssi-table-7b1-2024"
+    assert validate_source_cells(cells).valid
+    assert validate_facts(facts).valid
+    assert len(cells) == 1_672
+    assert len(facts) == 416
+    assert all(fact.source.raw_r2_uri for fact in facts)
+
+    us_payments = values_by_record[
+        "ssa_supplement.cy2024.ssi_payments.by_area_category."
+        "all_areas_total.payment_amount"
+    ]
+    ca_disabled_recipients = values_by_record[
+        "ssa_supplement.cy2024.ssi_recipients.by_area_category."
+        "california_disabled.recipient_count"
+    ]
+    ca_disabled_payments = values_by_record[
+        "ssa_supplement.cy2024.ssi_payments.by_area_category."
+        "california_disabled.payment_amount"
+    ]
+
+    assert us_payments.value == 63_079_493_000
+    assert us_payments.measure.concept == "ssa.ssi_payment_amount"
+    assert us_payments.constraints == ()
+
+    assert ca_disabled_recipients.value == 849_834
+    assert ca_disabled_recipients.geography.id == "0400000US06"
+    assert ca_disabled_recipients.measure.concept == "ssa.ssi_recipient_count"
+    assert {
+        (constraint.variable, constraint.operator, constraint.value)
+        for constraint in ca_disabled_recipients.constraints
+    } == {("ssi_category", "==", "disabled")}
+
+    assert ca_disabled_payments.value == 9_834_761_000
+    assert ca_disabled_payments.geography.id == "0400000US06"
+
+
 def test_census_pep_source_package_alias_validates_fixture_counts():
     report = validate_source_package("census-pep-2024-national-age-sex", year=2023)
 
