@@ -347,7 +347,7 @@ def test_bea_regional_state_personal_income_components_build_2024_facts():
     facts = package.build_facts(2024)
     facts_by_record = {fact.source_record_id: fact for fact in facts}
 
-    assert len(facts) == 312
+    assert len(facts) == 416
     assert validate_facts(facts).valid
     california_wages = facts_by_record[
         "bea_regional.cy2024.state_wages_salaries.ca.amount"
@@ -375,6 +375,38 @@ def test_bea_regional_state_personal_income_components_build_2024_facts():
         facts_by_record["bea_regional.cy2024.state_proprietors_income.tx.amount"].value
         == 273_877_560_000
     )
+    california_contributions = facts_by_record[
+        "bea_regional.cy2024.state_contributions_for_government_social_insurance.ca.amount"
+    ]
+    assert california_contributions.value == 257_766_765_000
+    assert (
+        california_contributions.measure.concept
+        == "bea_regional.contributions_for_government_social_insurance"
+    )
+    assert {
+        (constraint.variable, constraint.operator, constraint.value)
+        for constraint in california_contributions.constraints
+    } == {
+        ("bea_regional.table_name", "==", "SAINC5N"),
+        ("bea_regional.geo_name", "==", "California"),
+        ("bea_regional.line_code", "==", 36),
+    }
+    california_residence_adjustment = facts_by_record[
+        "bea_regional.cy2024.state_residence_adjustment.ca.amount"
+    ]
+    assert california_residence_adjustment.value == -2_475_104_000
+    assert (
+        california_residence_adjustment.measure.concept
+        == "bea_regional.residence_adjustment"
+    )
+    assert {
+        (constraint.variable, constraint.operator, constraint.value)
+        for constraint in california_residence_adjustment.constraints
+    } == {
+        ("bea_regional.table_name", "==", "SAINC5N"),
+        ("bea_regional.geo_name", "==", "California"),
+        ("bea_regional.line_code", "==", 42),
+    }
     assert validate_consumer_fact_contract(facts).valid
 
 
@@ -386,11 +418,11 @@ def test_bea_regional_state_personal_income_components_validate_counts():
 
     assert report.valid
     assert report.counts == {
-        "measure_count": 6,
-        "record_set_count": 6,
-        "row_count": 312,
-        "source_record_count": 312,
-        "source_region_count": 6,
+        "measure_count": 8,
+        "record_set_count": 8,
+        "row_count": 416,
+        "source_record_count": 416,
+        "source_region_count": 8,
     }
 
 
