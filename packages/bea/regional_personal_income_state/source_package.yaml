@@ -951,6 +951,318 @@ artifact:
   - GeoName: Wyoming
     TableName: SAINC5N
     LineCode: 70
+  - GeoName: United States
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Alabama
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Alaska
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Arizona
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Arkansas
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: California
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Colorado
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Connecticut
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Delaware
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: District of Columbia
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Florida
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Georgia
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Hawaii
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Idaho
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Illinois
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Indiana
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Iowa
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Kansas
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Kentucky
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Louisiana
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Maine
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Maryland
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Massachusetts
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Michigan
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Minnesota
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Mississippi
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Missouri
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Montana
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Nebraska
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Nevada
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: New Hampshire
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: New Jersey
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: New Mexico
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: New York
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: North Carolina
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: North Dakota
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Ohio
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Oklahoma
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Oregon
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Pennsylvania
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Rhode Island
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: South Carolina
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: South Dakota
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Tennessee
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Texas
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Utah
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Vermont
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Virginia
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Washington
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: West Virginia
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Wisconsin
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: Wyoming
+    TableName: SAINC5N
+    LineCode: 36
+  - GeoName: United States
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Alabama
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Alaska
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Arizona
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Arkansas
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: California
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Colorado
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Connecticut
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Delaware
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: District of Columbia
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Florida
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Georgia
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Hawaii
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Idaho
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Illinois
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Indiana
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Iowa
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Kansas
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Kentucky
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Louisiana
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Maine
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Maryland
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Massachusetts
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Michigan
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Minnesota
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Mississippi
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Missouri
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Montana
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Nebraska
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Nevada
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: New Hampshire
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: New Jersey
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: New Mexico
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: New York
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: North Carolina
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: North Dakota
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Ohio
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Oklahoma
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Oregon
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Pennsylvania
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Rhode Island
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: South Carolina
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: South Dakota
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Tennessee
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Texas
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Utah
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Vermont
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Virginia
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Washington
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: West Virginia
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Wisconsin
+    TableName: SAINC5N
+    LineCode: 42
+  - GeoName: Wyoming
+    TableName: SAINC5N
+    LineCode: 42
 record_sets:
 - record_set_id: bea_regional.cy{year}.state_personal_income
   record_set_spec_id: bea_regional.state_personal_income.v1
@@ -12374,6 +12686,3814 @@ record_sets:
     source_column_id: '2024'
     concept: bea_regional.proprietors_income
     source_concept: bea_regional.sainc5n_line_70_proprietors_income
+    concept_relation: source_label
+    concept_authority: bea
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: bea_regional.cy{year}.state_contributions_for_government_social_insurance
+  record_set_spec_id: bea_regional.state_contributions_for_government_social_insurance.v1
+  source_record_id_prefix: bea_regional.cy{year}.state_contributions_for_government_social_insurance
+  sheet_name: SAINC5N__ALL_AREAS_1998_2025.csv
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: income_recipient
+  domain: personal_income
+  groupby_dimension: bea_regional.geography
+  shared_filters:
+    bea_regional.table_name: SAINC5N
+  shared_constraints: *bea_regional_sainc5n_constraints
+  rows:
+  - value_id: us
+    label: United States
+    ordinal: 0
+    row_number: 314
+    geography_id: 0100000US
+    geography_level: country
+    geography_name: United States
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: United States
+    filters:
+      bea_regional.geo_name: United States
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: total
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: United States
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: al
+    label: Alabama
+    ordinal: 1
+    row_number: 315
+    geography_id: 0400000US01
+    geography_level: state
+    geography_name: Alabama
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Alabama
+    filters:
+      bea_regional.geo_name: Alabama
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Alabama
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: ak
+    label: Alaska
+    ordinal: 2
+    row_number: 316
+    geography_id: 0400000US02
+    geography_level: state
+    geography_name: Alaska
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Alaska
+    filters:
+      bea_regional.geo_name: Alaska
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Alaska
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: az
+    label: Arizona
+    ordinal: 3
+    row_number: 317
+    geography_id: 0400000US04
+    geography_level: state
+    geography_name: Arizona
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Arizona
+    filters:
+      bea_regional.geo_name: Arizona
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Arizona
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: ar
+    label: Arkansas
+    ordinal: 4
+    row_number: 318
+    geography_id: 0400000US05
+    geography_level: state
+    geography_name: Arkansas
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Arkansas
+    filters:
+      bea_regional.geo_name: Arkansas
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Arkansas
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: ca
+    label: California
+    ordinal: 5
+    row_number: 319
+    geography_id: 0400000US06
+    geography_level: state
+    geography_name: California
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: California
+    filters:
+      bea_regional.geo_name: California
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: California
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: co
+    label: Colorado
+    ordinal: 6
+    row_number: 320
+    geography_id: 0400000US08
+    geography_level: state
+    geography_name: Colorado
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Colorado
+    filters:
+      bea_regional.geo_name: Colorado
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Colorado
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: ct
+    label: Connecticut
+    ordinal: 7
+    row_number: 321
+    geography_id: 0400000US09
+    geography_level: state
+    geography_name: Connecticut
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Connecticut
+    filters:
+      bea_regional.geo_name: Connecticut
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Connecticut
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: de
+    label: Delaware
+    ordinal: 8
+    row_number: 322
+    geography_id: 0400000US10
+    geography_level: state
+    geography_name: Delaware
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Delaware
+    filters:
+      bea_regional.geo_name: Delaware
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Delaware
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: dc
+    label: District of Columbia
+    ordinal: 9
+    row_number: 323
+    geography_id: 0400000US11
+    geography_level: state
+    geography_name: District of Columbia
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: District of Columbia
+    filters:
+      bea_regional.geo_name: District of Columbia
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: District of Columbia
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: fl
+    label: Florida
+    ordinal: 10
+    row_number: 324
+    geography_id: 0400000US12
+    geography_level: state
+    geography_name: Florida
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Florida
+    filters:
+      bea_regional.geo_name: Florida
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Florida
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: ga
+    label: Georgia
+    ordinal: 11
+    row_number: 325
+    geography_id: 0400000US13
+    geography_level: state
+    geography_name: Georgia
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Georgia
+    filters:
+      bea_regional.geo_name: Georgia
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Georgia
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: hi
+    label: Hawaii
+    ordinal: 12
+    row_number: 326
+    geography_id: 0400000US15
+    geography_level: state
+    geography_name: Hawaii
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Hawaii
+    filters:
+      bea_regional.geo_name: Hawaii
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Hawaii
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: id
+    label: Idaho
+    ordinal: 13
+    row_number: 327
+    geography_id: 0400000US16
+    geography_level: state
+    geography_name: Idaho
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Idaho
+    filters:
+      bea_regional.geo_name: Idaho
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Idaho
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: il
+    label: Illinois
+    ordinal: 14
+    row_number: 328
+    geography_id: 0400000US17
+    geography_level: state
+    geography_name: Illinois
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Illinois
+    filters:
+      bea_regional.geo_name: Illinois
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Illinois
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: in
+    label: Indiana
+    ordinal: 15
+    row_number: 329
+    geography_id: 0400000US18
+    geography_level: state
+    geography_name: Indiana
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Indiana
+    filters:
+      bea_regional.geo_name: Indiana
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Indiana
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: ia
+    label: Iowa
+    ordinal: 16
+    row_number: 330
+    geography_id: 0400000US19
+    geography_level: state
+    geography_name: Iowa
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Iowa
+    filters:
+      bea_regional.geo_name: Iowa
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Iowa
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: ks
+    label: Kansas
+    ordinal: 17
+    row_number: 331
+    geography_id: 0400000US20
+    geography_level: state
+    geography_name: Kansas
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Kansas
+    filters:
+      bea_regional.geo_name: Kansas
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Kansas
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: ky
+    label: Kentucky
+    ordinal: 18
+    row_number: 332
+    geography_id: 0400000US21
+    geography_level: state
+    geography_name: Kentucky
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Kentucky
+    filters:
+      bea_regional.geo_name: Kentucky
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Kentucky
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: la
+    label: Louisiana
+    ordinal: 19
+    row_number: 333
+    geography_id: 0400000US22
+    geography_level: state
+    geography_name: Louisiana
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Louisiana
+    filters:
+      bea_regional.geo_name: Louisiana
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Louisiana
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: me
+    label: Maine
+    ordinal: 20
+    row_number: 334
+    geography_id: 0400000US23
+    geography_level: state
+    geography_name: Maine
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Maine
+    filters:
+      bea_regional.geo_name: Maine
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Maine
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: md
+    label: Maryland
+    ordinal: 21
+    row_number: 335
+    geography_id: 0400000US24
+    geography_level: state
+    geography_name: Maryland
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Maryland
+    filters:
+      bea_regional.geo_name: Maryland
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Maryland
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: ma
+    label: Massachusetts
+    ordinal: 22
+    row_number: 336
+    geography_id: 0400000US25
+    geography_level: state
+    geography_name: Massachusetts
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Massachusetts
+    filters:
+      bea_regional.geo_name: Massachusetts
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Massachusetts
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: mi
+    label: Michigan
+    ordinal: 23
+    row_number: 337
+    geography_id: 0400000US26
+    geography_level: state
+    geography_name: Michigan
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Michigan
+    filters:
+      bea_regional.geo_name: Michigan
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Michigan
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: mn
+    label: Minnesota
+    ordinal: 24
+    row_number: 338
+    geography_id: 0400000US27
+    geography_level: state
+    geography_name: Minnesota
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Minnesota
+    filters:
+      bea_regional.geo_name: Minnesota
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Minnesota
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: ms
+    label: Mississippi
+    ordinal: 25
+    row_number: 339
+    geography_id: 0400000US28
+    geography_level: state
+    geography_name: Mississippi
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Mississippi
+    filters:
+      bea_regional.geo_name: Mississippi
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Mississippi
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: mo
+    label: Missouri
+    ordinal: 26
+    row_number: 340
+    geography_id: 0400000US29
+    geography_level: state
+    geography_name: Missouri
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Missouri
+    filters:
+      bea_regional.geo_name: Missouri
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Missouri
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: mt
+    label: Montana
+    ordinal: 27
+    row_number: 341
+    geography_id: 0400000US30
+    geography_level: state
+    geography_name: Montana
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Montana
+    filters:
+      bea_regional.geo_name: Montana
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Montana
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: ne
+    label: Nebraska
+    ordinal: 28
+    row_number: 342
+    geography_id: 0400000US31
+    geography_level: state
+    geography_name: Nebraska
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Nebraska
+    filters:
+      bea_regional.geo_name: Nebraska
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Nebraska
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: nv
+    label: Nevada
+    ordinal: 29
+    row_number: 343
+    geography_id: 0400000US32
+    geography_level: state
+    geography_name: Nevada
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Nevada
+    filters:
+      bea_regional.geo_name: Nevada
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Nevada
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: nh
+    label: New Hampshire
+    ordinal: 30
+    row_number: 344
+    geography_id: 0400000US33
+    geography_level: state
+    geography_name: New Hampshire
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: New Hampshire
+    filters:
+      bea_regional.geo_name: New Hampshire
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: New Hampshire
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: nj
+    label: New Jersey
+    ordinal: 31
+    row_number: 345
+    geography_id: 0400000US34
+    geography_level: state
+    geography_name: New Jersey
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: New Jersey
+    filters:
+      bea_regional.geo_name: New Jersey
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: New Jersey
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: nm
+    label: New Mexico
+    ordinal: 32
+    row_number: 346
+    geography_id: 0400000US35
+    geography_level: state
+    geography_name: New Mexico
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: New Mexico
+    filters:
+      bea_regional.geo_name: New Mexico
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: New Mexico
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: ny
+    label: New York
+    ordinal: 33
+    row_number: 347
+    geography_id: 0400000US36
+    geography_level: state
+    geography_name: New York
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: New York
+    filters:
+      bea_regional.geo_name: New York
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: New York
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: nc
+    label: North Carolina
+    ordinal: 34
+    row_number: 348
+    geography_id: 0400000US37
+    geography_level: state
+    geography_name: North Carolina
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: North Carolina
+    filters:
+      bea_regional.geo_name: North Carolina
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: North Carolina
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: nd
+    label: North Dakota
+    ordinal: 35
+    row_number: 349
+    geography_id: 0400000US38
+    geography_level: state
+    geography_name: North Dakota
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: North Dakota
+    filters:
+      bea_regional.geo_name: North Dakota
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: North Dakota
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: oh
+    label: Ohio
+    ordinal: 36
+    row_number: 350
+    geography_id: 0400000US39
+    geography_level: state
+    geography_name: Ohio
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Ohio
+    filters:
+      bea_regional.geo_name: Ohio
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Ohio
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: ok
+    label: Oklahoma
+    ordinal: 37
+    row_number: 351
+    geography_id: 0400000US40
+    geography_level: state
+    geography_name: Oklahoma
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Oklahoma
+    filters:
+      bea_regional.geo_name: Oklahoma
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Oklahoma
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: or
+    label: Oregon
+    ordinal: 38
+    row_number: 352
+    geography_id: 0400000US41
+    geography_level: state
+    geography_name: Oregon
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Oregon
+    filters:
+      bea_regional.geo_name: Oregon
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Oregon
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: pa
+    label: Pennsylvania
+    ordinal: 39
+    row_number: 353
+    geography_id: 0400000US42
+    geography_level: state
+    geography_name: Pennsylvania
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Pennsylvania
+    filters:
+      bea_regional.geo_name: Pennsylvania
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Pennsylvania
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: ri
+    label: Rhode Island
+    ordinal: 40
+    row_number: 354
+    geography_id: 0400000US44
+    geography_level: state
+    geography_name: Rhode Island
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Rhode Island
+    filters:
+      bea_regional.geo_name: Rhode Island
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Rhode Island
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: sc
+    label: South Carolina
+    ordinal: 41
+    row_number: 355
+    geography_id: 0400000US45
+    geography_level: state
+    geography_name: South Carolina
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: South Carolina
+    filters:
+      bea_regional.geo_name: South Carolina
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: South Carolina
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: sd
+    label: South Dakota
+    ordinal: 42
+    row_number: 356
+    geography_id: 0400000US46
+    geography_level: state
+    geography_name: South Dakota
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: South Dakota
+    filters:
+      bea_regional.geo_name: South Dakota
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: South Dakota
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: tn
+    label: Tennessee
+    ordinal: 43
+    row_number: 357
+    geography_id: 0400000US47
+    geography_level: state
+    geography_name: Tennessee
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Tennessee
+    filters:
+      bea_regional.geo_name: Tennessee
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Tennessee
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: tx
+    label: Texas
+    ordinal: 44
+    row_number: 358
+    geography_id: 0400000US48
+    geography_level: state
+    geography_name: Texas
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Texas
+    filters:
+      bea_regional.geo_name: Texas
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Texas
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: ut
+    label: Utah
+    ordinal: 45
+    row_number: 359
+    geography_id: 0400000US49
+    geography_level: state
+    geography_name: Utah
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Utah
+    filters:
+      bea_regional.geo_name: Utah
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Utah
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: vt
+    label: Vermont
+    ordinal: 46
+    row_number: 360
+    geography_id: 0400000US50
+    geography_level: state
+    geography_name: Vermont
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Vermont
+    filters:
+      bea_regional.geo_name: Vermont
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Vermont
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: va
+    label: Virginia
+    ordinal: 47
+    row_number: 361
+    geography_id: 0400000US51
+    geography_level: state
+    geography_name: Virginia
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Virginia
+    filters:
+      bea_regional.geo_name: Virginia
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Virginia
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: wa
+    label: Washington
+    ordinal: 48
+    row_number: 362
+    geography_id: 0400000US53
+    geography_level: state
+    geography_name: Washington
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Washington
+    filters:
+      bea_regional.geo_name: Washington
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Washington
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: wv
+    label: West Virginia
+    ordinal: 49
+    row_number: 363
+    geography_id: 0400000US54
+    geography_level: state
+    geography_name: West Virginia
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: West Virginia
+    filters:
+      bea_regional.geo_name: West Virginia
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: West Virginia
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: wi
+    label: Wisconsin
+    ordinal: 50
+    row_number: 364
+    geography_id: 0400000US55
+    geography_level: state
+    geography_name: Wisconsin
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Wisconsin
+    filters:
+      bea_regional.geo_name: Wisconsin
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Wisconsin
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  - value_id: wy
+    label: Wyoming
+    ordinal: 51
+    row_number: 365
+    geography_id: 0400000US56
+    geography_level: state
+    geography_name: Wyoming
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Wyoming
+    filters:
+      bea_regional.geo_name: Wyoming
+      bea_regional.line_code: 36
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 36
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Wyoming
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 36
+      label: BEA Regional line code
+  measures:
+  - measure_id: amount
+    label: Contributions for government social insurance
+    ordinal: 0
+    column: AI
+    source_column_id: value
+    concept: bea_regional.contributions_for_government_social_insurance
+    source_concept: bea_regional.sainc5n_line_36_contributions_for_government_social_insurance
+    concept_relation: source_label
+    concept_authority: bea
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
+- record_set_id: bea_regional.cy{year}.state_residence_adjustment
+  record_set_spec_id: bea_regional.state_residence_adjustment.v1
+  source_record_id_prefix: bea_regional.cy{year}.state_residence_adjustment
+  sheet_name: SAINC5N__ALL_AREAS_1998_2025.csv
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: income_recipient
+  domain: personal_income
+  groupby_dimension: bea_regional.geography
+  shared_filters:
+    bea_regional.table_name: SAINC5N
+  shared_constraints: *bea_regional_sainc5n_constraints
+  rows:
+  - value_id: us
+    label: United States
+    ordinal: 0
+    row_number: 366
+    geography_id: 0100000US
+    geography_level: country
+    geography_name: United States
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: United States
+    filters:
+      bea_regional.geo_name: United States
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: total
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: United States
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: al
+    label: Alabama
+    ordinal: 1
+    row_number: 367
+    geography_id: 0400000US01
+    geography_level: state
+    geography_name: Alabama
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Alabama
+    filters:
+      bea_regional.geo_name: Alabama
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Alabama
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: ak
+    label: Alaska
+    ordinal: 2
+    row_number: 368
+    geography_id: 0400000US02
+    geography_level: state
+    geography_name: Alaska
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Alaska
+    filters:
+      bea_regional.geo_name: Alaska
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Alaska
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: az
+    label: Arizona
+    ordinal: 3
+    row_number: 369
+    geography_id: 0400000US04
+    geography_level: state
+    geography_name: Arizona
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Arizona
+    filters:
+      bea_regional.geo_name: Arizona
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Arizona
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: ar
+    label: Arkansas
+    ordinal: 4
+    row_number: 370
+    geography_id: 0400000US05
+    geography_level: state
+    geography_name: Arkansas
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Arkansas
+    filters:
+      bea_regional.geo_name: Arkansas
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Arkansas
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: ca
+    label: California
+    ordinal: 5
+    row_number: 371
+    geography_id: 0400000US06
+    geography_level: state
+    geography_name: California
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: California
+    filters:
+      bea_regional.geo_name: California
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: California
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: co
+    label: Colorado
+    ordinal: 6
+    row_number: 372
+    geography_id: 0400000US08
+    geography_level: state
+    geography_name: Colorado
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Colorado
+    filters:
+      bea_regional.geo_name: Colorado
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Colorado
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: ct
+    label: Connecticut
+    ordinal: 7
+    row_number: 373
+    geography_id: 0400000US09
+    geography_level: state
+    geography_name: Connecticut
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Connecticut
+    filters:
+      bea_regional.geo_name: Connecticut
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Connecticut
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: de
+    label: Delaware
+    ordinal: 8
+    row_number: 374
+    geography_id: 0400000US10
+    geography_level: state
+    geography_name: Delaware
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Delaware
+    filters:
+      bea_regional.geo_name: Delaware
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Delaware
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: dc
+    label: District of Columbia
+    ordinal: 9
+    row_number: 375
+    geography_id: 0400000US11
+    geography_level: state
+    geography_name: District of Columbia
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: District of Columbia
+    filters:
+      bea_regional.geo_name: District of Columbia
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: District of Columbia
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: fl
+    label: Florida
+    ordinal: 10
+    row_number: 376
+    geography_id: 0400000US12
+    geography_level: state
+    geography_name: Florida
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Florida
+    filters:
+      bea_regional.geo_name: Florida
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Florida
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: ga
+    label: Georgia
+    ordinal: 11
+    row_number: 377
+    geography_id: 0400000US13
+    geography_level: state
+    geography_name: Georgia
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Georgia
+    filters:
+      bea_regional.geo_name: Georgia
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Georgia
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: hi
+    label: Hawaii
+    ordinal: 12
+    row_number: 378
+    geography_id: 0400000US15
+    geography_level: state
+    geography_name: Hawaii
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Hawaii
+    filters:
+      bea_regional.geo_name: Hawaii
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Hawaii
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: id
+    label: Idaho
+    ordinal: 13
+    row_number: 379
+    geography_id: 0400000US16
+    geography_level: state
+    geography_name: Idaho
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Idaho
+    filters:
+      bea_regional.geo_name: Idaho
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Idaho
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: il
+    label: Illinois
+    ordinal: 14
+    row_number: 380
+    geography_id: 0400000US17
+    geography_level: state
+    geography_name: Illinois
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Illinois
+    filters:
+      bea_regional.geo_name: Illinois
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Illinois
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: in
+    label: Indiana
+    ordinal: 15
+    row_number: 381
+    geography_id: 0400000US18
+    geography_level: state
+    geography_name: Indiana
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Indiana
+    filters:
+      bea_regional.geo_name: Indiana
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Indiana
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: ia
+    label: Iowa
+    ordinal: 16
+    row_number: 382
+    geography_id: 0400000US19
+    geography_level: state
+    geography_name: Iowa
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Iowa
+    filters:
+      bea_regional.geo_name: Iowa
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Iowa
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: ks
+    label: Kansas
+    ordinal: 17
+    row_number: 383
+    geography_id: 0400000US20
+    geography_level: state
+    geography_name: Kansas
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Kansas
+    filters:
+      bea_regional.geo_name: Kansas
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Kansas
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: ky
+    label: Kentucky
+    ordinal: 18
+    row_number: 384
+    geography_id: 0400000US21
+    geography_level: state
+    geography_name: Kentucky
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Kentucky
+    filters:
+      bea_regional.geo_name: Kentucky
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Kentucky
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: la
+    label: Louisiana
+    ordinal: 19
+    row_number: 385
+    geography_id: 0400000US22
+    geography_level: state
+    geography_name: Louisiana
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Louisiana
+    filters:
+      bea_regional.geo_name: Louisiana
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Louisiana
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: me
+    label: Maine
+    ordinal: 20
+    row_number: 386
+    geography_id: 0400000US23
+    geography_level: state
+    geography_name: Maine
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Maine
+    filters:
+      bea_regional.geo_name: Maine
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Maine
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: md
+    label: Maryland
+    ordinal: 21
+    row_number: 387
+    geography_id: 0400000US24
+    geography_level: state
+    geography_name: Maryland
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Maryland
+    filters:
+      bea_regional.geo_name: Maryland
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Maryland
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: ma
+    label: Massachusetts
+    ordinal: 22
+    row_number: 388
+    geography_id: 0400000US25
+    geography_level: state
+    geography_name: Massachusetts
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Massachusetts
+    filters:
+      bea_regional.geo_name: Massachusetts
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Massachusetts
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: mi
+    label: Michigan
+    ordinal: 23
+    row_number: 389
+    geography_id: 0400000US26
+    geography_level: state
+    geography_name: Michigan
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Michigan
+    filters:
+      bea_regional.geo_name: Michigan
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Michigan
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: mn
+    label: Minnesota
+    ordinal: 24
+    row_number: 390
+    geography_id: 0400000US27
+    geography_level: state
+    geography_name: Minnesota
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Minnesota
+    filters:
+      bea_regional.geo_name: Minnesota
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Minnesota
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: ms
+    label: Mississippi
+    ordinal: 25
+    row_number: 391
+    geography_id: 0400000US28
+    geography_level: state
+    geography_name: Mississippi
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Mississippi
+    filters:
+      bea_regional.geo_name: Mississippi
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Mississippi
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: mo
+    label: Missouri
+    ordinal: 26
+    row_number: 392
+    geography_id: 0400000US29
+    geography_level: state
+    geography_name: Missouri
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Missouri
+    filters:
+      bea_regional.geo_name: Missouri
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Missouri
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: mt
+    label: Montana
+    ordinal: 27
+    row_number: 393
+    geography_id: 0400000US30
+    geography_level: state
+    geography_name: Montana
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Montana
+    filters:
+      bea_regional.geo_name: Montana
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Montana
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: ne
+    label: Nebraska
+    ordinal: 28
+    row_number: 394
+    geography_id: 0400000US31
+    geography_level: state
+    geography_name: Nebraska
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Nebraska
+    filters:
+      bea_regional.geo_name: Nebraska
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Nebraska
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: nv
+    label: Nevada
+    ordinal: 29
+    row_number: 395
+    geography_id: 0400000US32
+    geography_level: state
+    geography_name: Nevada
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Nevada
+    filters:
+      bea_regional.geo_name: Nevada
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Nevada
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: nh
+    label: New Hampshire
+    ordinal: 30
+    row_number: 396
+    geography_id: 0400000US33
+    geography_level: state
+    geography_name: New Hampshire
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: New Hampshire
+    filters:
+      bea_regional.geo_name: New Hampshire
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: New Hampshire
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: nj
+    label: New Jersey
+    ordinal: 31
+    row_number: 397
+    geography_id: 0400000US34
+    geography_level: state
+    geography_name: New Jersey
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: New Jersey
+    filters:
+      bea_regional.geo_name: New Jersey
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: New Jersey
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: nm
+    label: New Mexico
+    ordinal: 32
+    row_number: 398
+    geography_id: 0400000US35
+    geography_level: state
+    geography_name: New Mexico
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: New Mexico
+    filters:
+      bea_regional.geo_name: New Mexico
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: New Mexico
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: ny
+    label: New York
+    ordinal: 33
+    row_number: 399
+    geography_id: 0400000US36
+    geography_level: state
+    geography_name: New York
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: New York
+    filters:
+      bea_regional.geo_name: New York
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: New York
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: nc
+    label: North Carolina
+    ordinal: 34
+    row_number: 400
+    geography_id: 0400000US37
+    geography_level: state
+    geography_name: North Carolina
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: North Carolina
+    filters:
+      bea_regional.geo_name: North Carolina
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: North Carolina
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: nd
+    label: North Dakota
+    ordinal: 35
+    row_number: 401
+    geography_id: 0400000US38
+    geography_level: state
+    geography_name: North Dakota
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: North Dakota
+    filters:
+      bea_regional.geo_name: North Dakota
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: North Dakota
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: oh
+    label: Ohio
+    ordinal: 36
+    row_number: 402
+    geography_id: 0400000US39
+    geography_level: state
+    geography_name: Ohio
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Ohio
+    filters:
+      bea_regional.geo_name: Ohio
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Ohio
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: ok
+    label: Oklahoma
+    ordinal: 37
+    row_number: 403
+    geography_id: 0400000US40
+    geography_level: state
+    geography_name: Oklahoma
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Oklahoma
+    filters:
+      bea_regional.geo_name: Oklahoma
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Oklahoma
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: or
+    label: Oregon
+    ordinal: 38
+    row_number: 404
+    geography_id: 0400000US41
+    geography_level: state
+    geography_name: Oregon
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Oregon
+    filters:
+      bea_regional.geo_name: Oregon
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Oregon
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: pa
+    label: Pennsylvania
+    ordinal: 39
+    row_number: 405
+    geography_id: 0400000US42
+    geography_level: state
+    geography_name: Pennsylvania
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Pennsylvania
+    filters:
+      bea_regional.geo_name: Pennsylvania
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Pennsylvania
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: ri
+    label: Rhode Island
+    ordinal: 40
+    row_number: 406
+    geography_id: 0400000US44
+    geography_level: state
+    geography_name: Rhode Island
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Rhode Island
+    filters:
+      bea_regional.geo_name: Rhode Island
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Rhode Island
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: sc
+    label: South Carolina
+    ordinal: 41
+    row_number: 407
+    geography_id: 0400000US45
+    geography_level: state
+    geography_name: South Carolina
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: South Carolina
+    filters:
+      bea_regional.geo_name: South Carolina
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: South Carolina
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: sd
+    label: South Dakota
+    ordinal: 42
+    row_number: 408
+    geography_id: 0400000US46
+    geography_level: state
+    geography_name: South Dakota
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: South Dakota
+    filters:
+      bea_regional.geo_name: South Dakota
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: South Dakota
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: tn
+    label: Tennessee
+    ordinal: 43
+    row_number: 409
+    geography_id: 0400000US47
+    geography_level: state
+    geography_name: Tennessee
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Tennessee
+    filters:
+      bea_regional.geo_name: Tennessee
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Tennessee
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: tx
+    label: Texas
+    ordinal: 44
+    row_number: 410
+    geography_id: 0400000US48
+    geography_level: state
+    geography_name: Texas
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Texas
+    filters:
+      bea_regional.geo_name: Texas
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Texas
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: ut
+    label: Utah
+    ordinal: 45
+    row_number: 411
+    geography_id: 0400000US49
+    geography_level: state
+    geography_name: Utah
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Utah
+    filters:
+      bea_regional.geo_name: Utah
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Utah
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: vt
+    label: Vermont
+    ordinal: 46
+    row_number: 412
+    geography_id: 0400000US50
+    geography_level: state
+    geography_name: Vermont
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Vermont
+    filters:
+      bea_regional.geo_name: Vermont
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Vermont
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: va
+    label: Virginia
+    ordinal: 47
+    row_number: 413
+    geography_id: 0400000US51
+    geography_level: state
+    geography_name: Virginia
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Virginia
+    filters:
+      bea_regional.geo_name: Virginia
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Virginia
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: wa
+    label: Washington
+    ordinal: 48
+    row_number: 414
+    geography_id: 0400000US53
+    geography_level: state
+    geography_name: Washington
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Washington
+    filters:
+      bea_regional.geo_name: Washington
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Washington
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: wv
+    label: West Virginia
+    ordinal: 49
+    row_number: 415
+    geography_id: 0400000US54
+    geography_level: state
+    geography_name: West Virginia
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: West Virginia
+    filters:
+      bea_regional.geo_name: West Virginia
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: West Virginia
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: wi
+    label: Wisconsin
+    ordinal: 50
+    row_number: 416
+    geography_id: 0400000US55
+    geography_level: state
+    geography_name: Wisconsin
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Wisconsin
+    filters:
+      bea_regional.geo_name: Wisconsin
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Wisconsin
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  - value_id: wy
+    label: Wyoming
+    ordinal: 51
+    row_number: 417
+    geography_id: 0400000US56
+    geography_level: state
+    geography_name: Wyoming
+    geography_vintage: current
+    expected_row_header_column: B
+    expected_row_header: Wyoming
+    filters:
+      bea_regional.geo_name: Wyoming
+      bea_regional.line_code: 42
+    guard_cells:
+    - column: D
+      row: start
+      expected_value: SAINC5N
+      label: BEA regional table name
+    - column: E
+      row: start
+      expected_value: 42
+      label: BEA regional line code
+    - column: H
+      row: start
+      expected_value: Thousands of dollars
+      label: source unit
+    table_record_kind: detail
+    constraints:
+    - variable: bea_regional.geo_name
+      operator: ==
+      value: Wyoming
+      label: BEA Regional geography name
+    - variable: bea_regional.line_code
+      operator: ==
+      value: 42
+      label: BEA Regional line code
+  measures:
+  - measure_id: amount
+    label: Residence adjustment
+    ordinal: 0
+    column: AI
+    source_column_id: value
+    concept: bea_regional.residence_adjustment
+    source_concept: bea_regional.sainc5n_line_42_residence_adjustment
     concept_relation: source_label
     concept_authority: bea
     unit: usd
