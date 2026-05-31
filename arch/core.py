@@ -12,12 +12,37 @@ import json
 import re
 from collections import Counter
 from dataclasses import asdict, dataclass, field
+from datetime import date
 from decimal import Decimal
 from typing import Any
 
 Scalar = str | int | float | bool | None
 
 ALLOWED_PERIOD_TYPES = {"calendar_year", "tax_year", "fiscal_year", "month"}
+ALLOWED_PERIOD_BASES = {
+    "calendar_year",
+    "tax_year",
+    "fiscal_year",
+    "us_federal_fiscal_year",
+    "uk_fiscal_year",
+    "state_fiscal_year",
+    "reference_month",
+    "benefit_month",
+    "payment_month",
+    "payment_date_fiscal_year",
+    "statistical_annual",
+    "projection_year",
+}
+ALLOWED_ACCOUNTING_BASES = {
+    "accrual",
+    "cash",
+    "cash_outlay",
+    "cash_payment",
+    "benefit_month",
+    "payment_date",
+    "statistical_total",
+    "projection",
+}
 ALLOWED_GEOGRAPHY_LEVELS = {
     "country",
     "region",
@@ -70,6 +95,12 @@ class PeriodDimension:
 
     type: str
     value: int | str
+    start_date: str | None = None
+    end_date: str | None = None
+    basis: str | None = None
+    authority: str | None = None
+    source_label: str | None = None
+    accounting_basis: str | None = None
 
 
 @dataclass(frozen=True)
@@ -247,7 +278,9 @@ def build_label(fact: AggregateFact) -> str:
     concept = _humanize(fact.measure.concept)
     aggregation = _humanize(fact.aggregation.method)
     entity = _humanize(fact.entity.name)
-    period = f"{fact.period.value} {_humanize(fact.period.type)}"
+    period = fact.period.source_label or (
+        f"{fact.period.value} {_humanize(fact.period.type)}"
+    )
     geography = fact.geography.name or fact.geography.id
     source = _source_label(fact.source)
 
@@ -373,6 +406,7 @@ def validate_fact(fact: AggregateFact) -> tuple[ValidationIssue, ...]:
         errors.append(
             _issue("missing_period", "Period value is required", "period.value")
         )
+    _validate_period_semantics(errors, fact.period)
 
     if fact.geography.level not in ALLOWED_GEOGRAPHY_LEVELS:
         errors.append(
@@ -500,7 +534,7 @@ def fact_counts(facts: list[AggregateFact]) -> dict[str, dict[str, int]]:
 
 def _canonical_key_payload(fact: AggregateFact) -> dict[str, Any]:
     payload = {
-        "period": asdict(fact.period),
+        "period": _period_key_payload(fact.period),
         "geography": {
             "level": fact.geography.level,
             "id": fact.geography.id,
@@ -525,6 +559,95 @@ def _canonical_key_payload(fact: AggregateFact) -> dict[str, Any]:
     if fact.constraints:
         payload["constraints"] = [asdict(constraint) for constraint in fact.constraints]
     return payload
+
+
+def _period_key_payload(period: PeriodDimension) -> dict[str, Any]:
+    return {key: value for key, value in asdict(period).items() if value is not None}
+
+
+def _validate_period_semantics(
+    errors: list[ValidationIssue],
+    period: PeriodDimension,
+) -> None:
+    if period.basis is not None and period.basis not in ALLOWED_PERIOD_BASES:
+        errors.append(
+            _issue(
+                "malformed_period",
+                f"Unsupported period basis: {period.basis!r}",
+                "period.basis",
+            )
+        )
+    if (
+        period.accounting_basis is not None
+        and period.accounting_basis not in ALLOWED_ACCOUNTING_BASES
+    ):
+        errors.append(
+            _issue(
+                "malformed_period",
+                f"Unsupported accounting basis: {period.accounting_basis!r}",
+                "period.accounting_basis",
+            )
+        )
+    if period.authority is not None and not period.authority.strip():
+        errors.append(
+            _issue(
+                "missing_period",
+                "Period authority must be nonempty when provided",
+                "period.authority",
+            )
+        )
+    if period.source_label is not None and not period.source_label.strip():
+        errors.append(
+            _issue(
+                "missing_period",
+                "Period source label must be nonempty when provided",
+                "period.source_label",
+            )
+        )
+
+    parsed_start = _parse_iso_date(errors, period.start_date, "period.start_date")
+    parsed_end = _parse_iso_date(errors, period.end_date, "period.end_date")
+    if (
+        parsed_start is not None
+        and parsed_end is not None
+        and parsed_start > parsed_end
+    ):
+        errors.append(
+            _issue(
+                "malformed_period",
+                "Period start_date must be on or before end_date",
+                "period.start_date",
+            )
+        )
+
+
+def _parse_iso_date(
+    errors: list[ValidationIssue],
+    value: str | None,
+    field_name: str,
+) -> date | None:
+    if value is None:
+        return None
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
+        errors.append(
+            _issue(
+                "malformed_period",
+                f"Period date must use ISO YYYY-MM-DD format: {value!r}",
+                field_name,
+            )
+        )
+        return None
+    try:
+        return date.fromisoformat(value)
+    except ValueError:
+        errors.append(
+            _issue(
+                "malformed_period",
+                f"Period date must use ISO YYYY-MM-DD format: {value!r}",
+                field_name,
+            )
+        )
+        return None
 
 
 def _validate_value(errors: list[ValidationIssue], value: Any) -> None:

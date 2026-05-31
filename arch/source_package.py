@@ -85,17 +85,11 @@ SOURCE_PACKAGE_ALIASES = {
     "census-acs-s2201-congressional-district-snap-2024": Path(
         "census/acs_s2201_district_2024"
     ),
-    "census-b01001-female-age-2023": Path(
-        "census/b01001_female_15_44_2023"
-    ),
+    "census-b01001-female-age-2023": Path("census/b01001_female_15_44_2023"),
     "census-pep-2024-national-age-sex": Path("census/pep_2024_national_age_sex"),
     "census-pep-2024-state-age-sex": Path("census/pep_2024_state_age_sex"),
-    "census-population-projections-2023": Path(
-        "census/population_projections_2023"
-    ),
-    "census-stc-individual-income-tax": Path(
-        "census/stc_individual_income_tax"
-    ),
+    "census-population-projections-2023": Path("census/population_projections_2023"),
+    "census-stc-individual-income-tax": Path("census/stc_individual_income_tax"),
     "cms-medicaid-chip-monthly-enrollment-december-2024": Path(
         "cms_medicaid/chip_monthly_enrollment_december_2024"
     ),
@@ -105,9 +99,7 @@ SOURCE_PACKAGE_ALIASES = {
     "cms-aca-oep-state-level": Path("cms_aca/oep_state_level"),
     "cms-aca-oep-state-level-2022": Path("cms_aca/oep_state_level_2022"),
     "cms-aca-oep-state-level-2025": Path("cms_aca/oep_state_level_2025"),
-    "cms-aca-effectuated-enrollment-2022": Path(
-        "cms_aca/effectuated_enrollment_2022"
-    ),
+    "cms-aca-effectuated-enrollment-2022": Path("cms_aca/effectuated_enrollment_2022"),
     "cms-medicare-trustees-report-2025-part-b-premium-income": Path(
         "cms_medicare/medicare_trustees_report_2025"
     ),
@@ -131,9 +123,7 @@ SOURCE_PACKAGE_ALIASES = {
     ),
     "soi-table-4-3": Path("irs_soi/table_4_3"),
     "soi-state-2022": Path("irs_soi/state_2022"),
-    "soi-congressional-district-2022": Path(
-        "irs_soi/congressional_district_2022"
-    ),
+    "soi-congressional-district-2022": Path("irs_soi/congressional_district_2022"),
     "soi-historic-table-2": Path("irs_soi/historic_table_2"),
     "soi-historic-table-2-state-agi-2022": Path(
         "irs_soi/historic_table_2_state_agi_2022"
@@ -711,6 +701,30 @@ class DeclarativeRecordSet:
             ),
             period_type=_required(self.payload, "period_type", "record_set"),
             period=_record_set_period_from_mapping(self.payload, year=year),
+            period_start_date=_optional_rendered_string(
+                self.payload.get("period_start_date"),
+                year=year,
+            ),
+            period_end_date=_optional_rendered_string(
+                self.payload.get("period_end_date"),
+                year=year,
+            ),
+            period_basis=_optional_rendered_string(
+                self.payload.get("period_basis"),
+                year=year,
+            ),
+            period_authority=_optional_rendered_string(
+                self.payload.get("period_authority"),
+                year=year,
+            ),
+            period_source_label=_optional_rendered_string(
+                self.payload.get("period_source_label"),
+                year=year,
+            ),
+            accounting_basis=_optional_rendered_string(
+                self.payload.get("accounting_basis"),
+                year=year,
+            ),
             geography_id=_required(self.payload, "geography_id", "record_set"),
             geography_level=_required(
                 self.payload,
@@ -1536,7 +1550,16 @@ def _fact_from_source_record(
     spec = record.spec
     return AggregateFact(
         value=record.value,
-        period=PeriodDimension(type=spec.period_type, value=spec.period),
+        period=PeriodDimension(
+            type=spec.period_type,
+            value=spec.period,
+            start_date=spec.period_start_date,
+            end_date=spec.period_end_date,
+            basis=spec.period_basis,
+            authority=spec.period_authority,
+            source_label=spec.period_source_label,
+            accounting_basis=spec.accounting_basis,
+        ),
         geography=GeographyDimension(
             level=spec.geography_level,
             id=spec.geography_id,
@@ -1761,6 +1784,13 @@ record_sets:
     sheet_name: TODO
     period_type: tax_year
     period: "{{year}}"
+    # Optional period metadata:
+    # period_start_date: "{{year}}-01-01"
+    # period_end_date: "{{year}}-12-31"
+    # period_basis: tax_year
+    # period_authority: TODO
+    # period_source_label: Tax year {{year}}
+    # accounting_basis: cash
     geography_id: TODO
     geography_level: country
     geography_name: TODO

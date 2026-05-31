@@ -74,6 +74,63 @@ def test_valid_fact_passes_validation():
     assert validate_facts([_fact()]).valid
 
 
+def test_period_metadata_passes_validation_and_updates_label():
+    fact = _fact(
+        label=None,
+        period=PeriodDimension(
+            type="tax_year",
+            value=2023,
+            start_date="2023-01-01",
+            end_date="2023-12-31",
+            basis="tax_year",
+            authority="26 USC 441",
+            source_label="IRS tax year 2023",
+            accounting_basis="cash",
+        ),
+    )
+
+    assert validate_fact(fact) == ()
+    assert "IRS tax year 2023" in build_label(fact)
+
+
+def test_period_metadata_validation_reports_bad_values():
+    fact = _fact(
+        period=PeriodDimension(
+            type="tax_year",
+            value=2023,
+            start_date="2023-12-31",
+            end_date="2023-01-01",
+            basis="publication_year",
+            authority=" ",
+            source_label=" ",
+            accounting_basis="magic",
+        ),
+    )
+
+    errors = validate_fact(fact)
+    fields_by_code = {(error.code, error.field) for error in errors}
+
+    assert ("malformed_period", "period.basis") in fields_by_code
+    assert ("malformed_period", "period.accounting_basis") in fields_by_code
+    assert ("missing_period", "period.authority") in fields_by_code
+    assert ("missing_period", "period.source_label") in fields_by_code
+    assert ("malformed_period", "period.start_date") in fields_by_code
+
+
+def test_period_date_validation_requires_iso_yyyy_mm_dd():
+    fact = _fact(
+        period=PeriodDimension(
+            type="tax_year",
+            value=2023,
+            start_date="2023/01/01",
+        )
+    )
+
+    assert ("malformed_period", "period.start_date") in {
+        (error.code, error.field) for error in validate_fact(fact)
+    }
+
+
 def test_stable_key_ignores_human_label():
     fact = _fact()
     relabeled = _fact(label="A different display label")

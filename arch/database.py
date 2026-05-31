@@ -33,7 +33,7 @@ from arch.sources.rows import (
     source_row_to_mapping,
 )
 
-ARCH_DB_SCHEMA_VERSION = "arch.relational.v1"
+ARCH_DB_SCHEMA_VERSION = "arch.relational.v2"
 
 
 @dataclass(frozen=True)
@@ -77,9 +77,7 @@ def build_arch_db(
     columns = source_columns_from_source_rows(rows)
     source_row_values_count = sum(len(row.values) for row in rows)
     resolved_build_id = build_id or _build_id(facts, cells, rows)
-    fact_constraints = [
-        (fact, build_aggregate_constraints(fact)) for fact in facts
-    ]
+    fact_constraints = [(fact, build_aggregate_constraints(fact)) for fact in facts]
     source_record_ids = {
         fact.source_record_id for fact in facts if fact.source_record_id is not None
     }
@@ -117,9 +115,7 @@ def build_arch_db(
     return ArchDbBuildReport(
         build_id=resolved_build_id,
         facts_count=len(facts),
-        constraints_count=sum(
-            len(constraints) for _, constraints in fact_constraints
-        ),
+        constraints_count=sum(len(constraints) for _, constraints in fact_constraints),
         source_records_count=len(source_record_ids),
         source_rows_count=len(rows),
         source_columns_count=len(columns),
@@ -244,13 +240,25 @@ def _create_schema(connection: sqlite3.Connection) -> None:
             legal_vintage TEXT,
             period_type TEXT,
             period_value TEXT,
+            period_start_date TEXT,
+            period_end_date TEXT,
+            period_basis TEXT,
+            period_authority TEXT,
+            period_source_label TEXT,
+            period_accounting_basis TEXT,
             PRIMARY KEY (
                 source_concept,
                 canonical_concept,
                 relation,
                 legal_vintage,
                 period_type,
-                period_value
+                period_value,
+                period_start_date,
+                period_end_date,
+                period_basis,
+                period_authority,
+                period_source_label,
+                period_accounting_basis
             )
         );
 
@@ -278,6 +286,12 @@ def _create_schema(connection: sqlite3.Connection) -> None:
             value_numeric REAL,
             period_type TEXT NOT NULL,
             period_value TEXT NOT NULL,
+            period_start_date TEXT,
+            period_end_date TEXT,
+            period_basis TEXT,
+            period_authority TEXT,
+            period_source_label TEXT,
+            period_accounting_basis TEXT,
             geography_level TEXT NOT NULL,
             geography_id TEXT NOT NULL,
             geography_vintage TEXT,
@@ -740,7 +754,7 @@ def _insert_concept_alignments(
     facts: list[AggregateFact],
     build_id: str,
 ) -> None:
-    seen: set[tuple[str, str, str, str | None, str, str]] = set()
+    seen: set[tuple[Any, ...]] = set()
     for fact in facts:
         measure = fact.measure
         if not measure.source_concept or not measure.concept_relation:
@@ -752,6 +766,12 @@ def _insert_concept_alignments(
             measure.legal_vintage,
             fact.period.type,
             str(fact.period.value),
+            fact.period.start_date,
+            fact.period.end_date,
+            fact.period.basis,
+            fact.period.authority,
+            fact.period.source_label,
+            fact.period.accounting_basis,
         )
         if key in seen:
             continue
@@ -768,9 +788,15 @@ def _insert_concept_alignments(
                 evidence_notes,
                 legal_vintage,
                 period_type,
-                period_value
+                period_value,
+                period_start_date,
+                period_end_date,
+                period_basis,
+                period_authority,
+                period_source_label,
+                period_accounting_basis
             )
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 measure.source_concept,
@@ -783,6 +809,12 @@ def _insert_concept_alignments(
                 measure.legal_vintage,
                 fact.period.type,
                 str(fact.period.value),
+                fact.period.start_date,
+                fact.period.end_date,
+                fact.period.basis,
+                fact.period.authority,
+                fact.period.source_label,
+                fact.period.accounting_basis,
             ),
         )
 
@@ -820,6 +852,12 @@ def _insert_aggregate_fact(
             value_numeric,
             period_type,
             period_value,
+            period_start_date,
+            period_end_date,
+            period_basis,
+            period_authority,
+            period_source_label,
+            period_accounting_basis,
             geography_level,
             geography_id,
             geography_vintage,
@@ -849,7 +887,7 @@ def _insert_aggregate_fact(
             source_extraction_method,
             source_method_notes
         )
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """,
         (
             fact_key,
@@ -875,6 +913,12 @@ def _insert_aggregate_fact(
             _numeric_value(fact.value),
             fact.period.type,
             str(fact.period.value),
+            fact.period.start_date,
+            fact.period.end_date,
+            fact.period.basis,
+            fact.period.authority,
+            fact.period.source_label,
+            fact.period.accounting_basis,
             fact.geography.level,
             fact.geography.id,
             fact.geography.vintage,

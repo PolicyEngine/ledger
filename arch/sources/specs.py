@@ -81,6 +81,12 @@ class SourceRecordSpec:
     entity_role: str | None
     aggregation: str
     domain: str
+    period_start_date: str | None = None
+    period_end_date: str | None = None
+    period_basis: str | None = None
+    period_authority: str | None = None
+    period_source_label: str | None = None
+    accounting_basis: str | None = None
     filters: dict[str, Scalar] = field(default_factory=dict)
     constraints: tuple[AggregateConstraint, ...] = ()
     value_scale: int | float = 1
@@ -182,6 +188,12 @@ class SourceRecordSetSpec:
     groupby_dimension: str
     rows: tuple[SourceRecordSetRow, ...]
     measures: tuple[SourceRecordSetMeasure, ...]
+    period_start_date: str | None = None
+    period_end_date: str | None = None
+    period_basis: str | None = None
+    period_authority: str | None = None
+    period_source_label: str | None = None
+    accounting_basis: str | None = None
     shared_filters: dict[str, Scalar] = field(default_factory=dict)
     shared_constraints: tuple[AggregateConstraint, ...] = ()
 
@@ -244,6 +256,12 @@ def compile_source_record_set_specs(
                     unit=measure.unit,
                     period_type=spec.period_type,
                     period=spec.period,
+                    period_start_date=spec.period_start_date,
+                    period_end_date=spec.period_end_date,
+                    period_basis=spec.period_basis,
+                    period_authority=spec.period_authority,
+                    period_source_label=spec.period_source_label,
+                    accounting_basis=spec.accounting_basis,
                     geography_id=row.geography_id or spec.geography_id,
                     geography_level=row.geography_level or spec.geography_level,
                     geography_name=(
@@ -713,6 +731,16 @@ def _record_set_spec_hash(spec: SourceRecordSetSpec) -> str:
     payload = asdict(spec)
     if not payload.get("shared_constraints"):
         payload.pop("shared_constraints", None)
+    for key in (
+        "period_start_date",
+        "period_end_date",
+        "period_basis",
+        "period_authority",
+        "period_source_label",
+        "accounting_basis",
+    ):
+        if payload.get(key) is None:
+            payload.pop(key, None)
     for row in payload["rows"]:
         if row.get("row_end_number") is None:
             row.pop("row_end_number", None)

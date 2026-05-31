@@ -115,6 +115,34 @@ def test_empty_guard_cells_do_not_change_legacy_single_cell_hash(tmp_path):
     assert specs[0].layout.record_set_spec_hash == "d606c87f11948c197386dfa4"
 
 
+def test_record_set_period_metadata_compiles_to_facts(tmp_path):
+    source_path = REPO_ROOT / "packages" / "irs_soi" / "table_1_1"
+    payload = yaml.safe_load((source_path / "source_package.yaml").read_text())
+    record_set = payload["record_sets"][0]
+    record_set["period_start_date"] = "{year}-01-01"
+    record_set["period_end_date"] = "{year}-12-31"
+    record_set["period_basis"] = "tax_year"
+    record_set["period_authority"] = "26 USC 441"
+    record_set["period_source_label"] = "IRS tax year {year}"
+    record_set["accounting_basis"] = "cash"
+
+    package_dir = tmp_path / "soi-with-period-metadata"
+    package_dir.mkdir()
+    (package_dir / "source_package.yaml").write_text(yaml.safe_dump(payload))
+
+    package = load_source_package(package_dir)
+    facts = package.build_facts(2023)
+
+    assert validate_facts(facts).valid
+    assert facts[0].period.start_date == "2023-01-01"
+    assert facts[0].period.end_date == "2023-12-31"
+    assert facts[0].period.basis == "tax_year"
+    assert facts[0].period.authority == "26 USC 441"
+    assert facts[0].period.source_label == "IRS tax year 2023"
+    assert facts[0].period.accounting_basis == "cash"
+    assert "IRS tax year 2023" in facts[0].label
+
+
 def test_guard_cell_order_does_not_change_record_set_spec_hash(tmp_path):
     source_path = REPO_ROOT / "packages" / "irs_soi" / "table_1_1"
     payload = yaml.safe_load((source_path / "source_package.yaml").read_text())
@@ -153,9 +181,9 @@ def test_guard_cell_expected_value_changes_record_set_spec_hash(tmp_path):
         {"column": "A", "expected_value": "All returns"},
     ]
     changed = deepcopy(payload)
-    changed["record_sets"][0]["rows"][0]["guard_cells"][0][
-        "expected_value"
-    ] = "Different label"
+    changed["record_sets"][0]["rows"][0]["guard_cells"][0]["expected_value"] = (
+        "Different label"
+    )
 
     package_dir = tmp_path / "soi-original"
     changed_dir = tmp_path / "soi-changed-guard"
@@ -253,9 +281,7 @@ def test_source_package_path_builds_valid_soi_table_1_4_facts():
     assert validate_facts(facts).valid
     assert facts[0].source.source_table == "Publication 1304 Table 1.4"
     assert (
-        values_by_record[
-            "irs_soi.ty2023.table_1_4.all.alimony_received_amount"
-        ].value
+        values_by_record["irs_soi.ty2023.table_1_4.all.alimony_received_amount"].value
         == 6_686_429_000
     )
     assert (
@@ -477,12 +503,18 @@ def test_cbo_income_by_source_package_preserves_cbo_projection_concepts():
         row["concept_alignment"]["source_concept"]: row
         for row in consumer_fact_rows(facts)
     }
-    assert consumer_rows_by_source_concept["cbo.net_capital_gain"][
-        "concept_alignment"
-    ]["canonical_concept"] == "cbo.net_capital_gain_projection"
-    assert consumer_rows_by_source_concept["cbo.net_business_income"][
-        "concept_alignment"
-    ]["canonical_concept"] == "cbo.net_business_income_projection"
+    assert (
+        consumer_rows_by_source_concept["cbo.net_capital_gain"]["concept_alignment"][
+            "canonical_concept"
+        ]
+        == "cbo.net_capital_gain_projection"
+    )
+    assert (
+        consumer_rows_by_source_concept["cbo.net_business_income"]["concept_alignment"][
+            "canonical_concept"
+        ]
+        == "cbo.net_business_income_projection"
+    )
 
 
 def test_validate_source_package_reports_fixture_counts():
@@ -615,8 +647,7 @@ def test_soi_table_2_1_package_builds_itemized_deduction_details():
         "home_mortgage_personal_seller_amount"
     ]
     deductible_points = values_by_record[
-        "irs_soi.ty2023.table_2_1.itemized_all_returns.all."
-        "deductible_points_amount"
+        "irs_soi.ty2023.table_2_1.itemized_all_returns.all.deductible_points_amount"
     ]
     limited_salt = values_by_record[
         "irs_soi.ty2023.table_2_1.itemized_all_returns.all."
@@ -631,8 +662,7 @@ def test_soi_table_2_1_package_builds_itemized_deduction_details():
         "state_local_income_or_sales_tax_amount"
     ]
     real_estate_taxes = values_by_record[
-        "irs_soi.ty2023.table_2_1.itemized_all_returns.all."
-        "real_estate_taxes_amount"
+        "irs_soi.ty2023.table_2_1.itemized_all_returns.all.real_estate_taxes_amount"
     ]
 
     assert charitable.value == 211_975_123_000
@@ -972,8 +1002,7 @@ def test_cms_medicare_trustees_package_builds_part_b_premium_fact():
     values_by_record = {fact.source_record_id: fact for fact in facts}
 
     assert (
-        package.package_id
-        == "cms-medicare-trustees-report-2025-part-b-premium-income"
+        package.package_id == "cms-medicare-trustees-report-2025-part-b-premium-income"
     )
     assert len(cells) == 93_486
     assert validate_source_cells(cells).valid
@@ -1048,8 +1077,7 @@ def test_hhs_acf_liheap_package_builds_household_count_fact(
     assert all(fact.source.raw_r2_uri for fact in facts)
 
     record_id = (
-        f"hhs_acf_liheap.fy{year}.national_profile."
-        "state_programs.households_served"
+        f"hhs_acf_liheap.fy{year}.national_profile.state_programs.households_served"
     )
     assert records[0].source_cell_addresses == addresses
     assert values_by_record[record_id].value == households
@@ -1095,12 +1123,12 @@ def test_soi_table_2_5_eitc_child_totals_build_2022_facts():
     assert three_child_amount.value == 14_000_930_000
     assert no_child_returns.filters == {"income_range": "all"}
     assert no_child_returns.layout.table_record_kind == "total"
-    assert {
-        constraint.variable for constraint in no_child_returns.constraints
-    } == {"us.tax.earned_income_credit_qualifying_children"}
-    assert {
-        constraint.operator for constraint in three_child_amount.constraints
-    } == {">="}
+    assert {constraint.variable for constraint in no_child_returns.constraints} == {
+        "us.tax.earned_income_credit_qualifying_children"
+    }
+    assert {constraint.operator for constraint in three_child_amount.constraints} == {
+        ">="
+    }
 
 
 def test_ssa_supplement_source_package_alias_validates_fixture_counts():
@@ -1240,9 +1268,7 @@ def test_source_package_alias_builds_census_population_projection_age_facts():
     }
 
     age_0 = "census.popproj2023.cy2025.national_population.age_0.population"
-    age_85_plus = (
-        "census.popproj2023.cy2025.national_population.age_85_plus.population"
-    )
+    age_85_plus = "census.popproj2023.cy2025.national_population.age_85_plus.population"
     assert records_by_id[age_0].source_cell_addresses == (
         "F2",
         "F3",
@@ -1314,9 +1340,7 @@ def test_census_acs_s0101_source_package_aliases_validate_fixture_counts():
 
 
 def test_census_acs_s0101_congressional_district_package_builds_age_facts():
-    package = load_source_package(
-        "census-acs-s0101-congressional-district-age-2024"
-    )
+    package = load_source_package("census-acs-s0101-congressional-district-age-2024")
     rows = package.build_source_rows(2024)
     cells = package.build_source_cells(2024, source_rows=rows)
     facts = package.build_facts(2024, cells=cells, source_rows=rows)
@@ -1368,16 +1392,13 @@ def test_census_b01001_female_age_source_package_builds_state_facts():
     assert all(fact.source.raw_r2_uri for fact in facts)
 
     al_age_15_to_17 = values_by_record[
-        "census_acs.acs1_2023.b01001.female_age.01."
-        "age_15_to_17.female_population"
+        "census_acs.acs1_2023.b01001.female_age.01.age_15_to_17.female_population"
     ]
     ca_age_40_to_44 = values_by_record[
-        "census_acs.acs1_2023.b01001.female_age.06."
-        "age_40_to_44.female_population"
+        "census_acs.acs1_2023.b01001.female_age.06.age_40_to_44.female_population"
     ]
     pr_age_40_to_44 = values_by_record[
-        "census_acs.acs1_2023.b01001.female_age.72."
-        "age_40_to_44.female_population"
+        "census_acs.acs1_2023.b01001.female_age.72.age_40_to_44.female_population"
     ]
 
     assert al_age_15_to_17.value == 100_354
@@ -1417,9 +1438,7 @@ def test_census_acs_s2201_source_package_alias_validates_fixture_counts():
 
 
 def test_census_acs_s2201_congressional_district_package_builds_snap_facts():
-    package = load_source_package(
-        "census-acs-s2201-congressional-district-snap-2024"
-    )
+    package = load_source_package("census-acs-s2201-congressional-district-snap-2024")
     rows = package.build_source_rows(2024)
     cells = package.build_source_cells(2024, source_rows=rows)
     facts = package.build_facts(2024, cells=cells, source_rows=rows)
@@ -1538,9 +1557,7 @@ def test_validate_source_package_reports_cms_aca_effectuated_enrollment_2022_cou
 
 
 def test_cms_medicaid_package_builds_december_2024_state_enrollment_facts():
-    package = load_source_package(
-        "cms-medicaid-chip-monthly-enrollment-december-2024"
-    )
+    package = load_source_package("cms-medicaid-chip-monthly-enrollment-december-2024")
     cells = package.build_source_cells(2023)
     records = package.build_source_records(2023, cells=cells)
     facts = package.build_facts(2023, cells=cells)
@@ -1555,24 +1572,19 @@ def test_cms_medicaid_package_builds_december_2024_state_enrollment_facts():
     assert all(fact.source.raw_r2_uri for fact in facts)
 
     us_medicaid = (
-        "cms_medicaid.month2024_12.state_enrollment.us."
-        "total_medicaid_enrollment"
+        "cms_medicaid.month2024_12.state_enrollment.us.total_medicaid_enrollment"
     )
     ca_medicaid = (
-        "cms_medicaid.month2024_12.state_enrollment.ca."
-        "total_medicaid_enrollment"
+        "cms_medicaid.month2024_12.state_enrollment.ca.total_medicaid_enrollment"
     )
     tx_medicaid_chip = (
-        "cms_medicaid.month2024_12.state_enrollment.tx."
-        "total_medicaid_chip_enrollment"
+        "cms_medicaid.month2024_12.state_enrollment.tx.total_medicaid_chip_enrollment"
     )
     ny_adult = (
-        "cms_medicaid.month2024_12.state_enrollment.ny."
-        "total_adult_medicaid_enrollment"
+        "cms_medicaid.month2024_12.state_enrollment.ny.total_adult_medicaid_enrollment"
     )
     fl_child = (
-        "cms_medicaid.month2024_12.state_enrollment.fl."
-        "medicaid_chip_child_enrollment"
+        "cms_medicaid.month2024_12.state_enrollment.fl.medicaid_chip_child_enrollment"
     )
 
     assert records_by_id[us_medicaid].source_cell_addresses[:3] == (
@@ -1636,8 +1648,7 @@ def test_cms_medicaid_monthly_dataset_builds_december_2025_state_enrollment_fact
     assert all(fact.source_row_keys for fact in facts)
     assert all(fact.source.source_name == "cms_medicaid" for fact in facts)
     assert all(
-        fact.source.source_file == "pi-dataset-april-2026-release.csv"
-        for fact in facts
+        fact.source.source_file == "pi-dataset-april-2026-release.csv" for fact in facts
     )
     assert all(fact.source.raw_r2_uri for fact in facts)
     assert {f"{fact.period.type}:{fact.period.value}" for fact in facts} == {
@@ -1645,31 +1656,23 @@ def test_cms_medicaid_monthly_dataset_builds_december_2025_state_enrollment_fact
     }
 
     ca_total = (
-        "cms_medicaid.month2025_12.state_enrollment.ca."
-        "total_medicaid_chip_enrollment"
+        "cms_medicaid.month2025_12.state_enrollment.ca.total_medicaid_chip_enrollment"
     )
     ca_medicaid = (
-        "cms_medicaid.month2025_12.state_enrollment.ca."
-        "total_medicaid_enrollment"
+        "cms_medicaid.month2025_12.state_enrollment.ca.total_medicaid_enrollment"
     )
-    ca_chip = (
-        "cms_medicaid.month2025_12.state_enrollment.ca.total_chip_enrollment"
-    )
+    ca_chip = "cms_medicaid.month2025_12.state_enrollment.ca.total_chip_enrollment"
     ca_child = (
-        "cms_medicaid.month2025_12.state_enrollment.ca."
-        "medicaid_chip_child_enrollment"
+        "cms_medicaid.month2025_12.state_enrollment.ca.medicaid_chip_child_enrollment"
     )
     ca_adult = (
-        "cms_medicaid.month2025_12.state_enrollment.ca."
-        "total_adult_medicaid_enrollment"
+        "cms_medicaid.month2025_12.state_enrollment.ca.total_adult_medicaid_enrollment"
     )
     tx_total = (
-        "cms_medicaid.month2025_12.state_enrollment.tx."
-        "total_medicaid_chip_enrollment"
+        "cms_medicaid.month2025_12.state_enrollment.tx.total_medicaid_chip_enrollment"
     )
     ny_total = (
-        "cms_medicaid.month2025_12.state_enrollment.ny."
-        "total_medicaid_chip_enrollment"
+        "cms_medicaid.month2025_12.state_enrollment.ny.total_medicaid_chip_enrollment"
     )
 
     assert records_by_id[ca_total].source_cell_addresses == (
@@ -1812,8 +1815,7 @@ def test_soi_congressional_district_2022_builds_all_return_facts():
         "al_01.adjusted_gross_income"
     ]
     ca_53_returns = values_by_record[
-        "irs_soi.ty2022.congressional_district_2022.all_returns."
-        "ca_53.return_count"
+        "irs_soi.ty2022.congressional_district_2022.all_returns.ca_53.return_count"
     ]
 
     assert al_01_agi.value == 22_915_824_000
@@ -1847,9 +1849,7 @@ def test_soi_historic_table_2_package_builds_2022_national_facts():
     ptc_returns = values_by_record[
         "irs_soi.ty2022.historic_table_2.us.all.premium_tax_credit_returns"
     ]
-    eitc_amount = values_by_record[
-        "irs_soi.ty2022.historic_table_2.us.all.eitc_amount"
-    ]
+    eitc_amount = values_by_record["irs_soi.ty2022.historic_table_2.us.all.eitc_amount"]
     real_estate_taxes = values_by_record[
         "irs_soi.ty2022.historic_table_2.us.all.real_estate_taxes_amount"
     ]
@@ -1865,18 +1865,12 @@ def test_soi_historic_table_2_package_builds_2022_national_facts():
     medical_dental = values_by_record[
         "irs_soi.ty2022.historic_table_2.us.all.medical_dental_expense_amount"
     ]
-    qbi = values_by_record[
-        "irs_soi.ty2022.historic_table_2.us.all.qbi_amount"
-    ]
+    qbi = values_by_record["irs_soi.ty2022.historic_table_2.us.all.qbi_amount"]
     rental = values_by_record[
         "irs_soi.ty2022.historic_table_2.us.all.rental_royalty_income_amount"
     ]
-    ctc = values_by_record[
-        "irs_soi.ty2022.historic_table_2.us.all.ctc_amount"
-    ]
-    actc = values_by_record[
-        "irs_soi.ty2022.historic_table_2.us.all.actc_amount"
-    ]
+    ctc = values_by_record["irs_soi.ty2022.historic_table_2.us.all.ctc_amount"]
+    actc = values_by_record["irs_soi.ty2022.historic_table_2.us.all.actc_amount"]
     agi_bracket_eitc_claims = values_by_record[
         "irs_soi.ty2022.historic_table_2.us.1_to_10k.eitc_claims"
     ]
@@ -1894,7 +1888,9 @@ def test_soi_historic_table_2_package_builds_2022_national_facts():
     assert ctc.value == 82_862_736_000
     assert actc.value == 33_857_987_000
     assert agi_bracket_eitc_claims.value == 5_013_220
-    assert {constraint.operator for constraint in agi_bracket_eitc_claims.constraints} == {
+    assert {
+        constraint.operator for constraint in agi_bracket_eitc_claims.constraints
+    } == {
         "<",
         ">=",
     }
@@ -1970,12 +1966,10 @@ def test_soi_historic_table_2_state_eitc_package_builds_child_count_facts():
     assert len(facts) == 510
 
     ca_one_child_amount = values_by_record[
-        "irs_soi.ty2022.historic_table_2.state_eitc.ca.ca."
-        "eitc_one_child_amount"
+        "irs_soi.ty2022.historic_table_2.state_eitc.ca.ca.eitc_one_child_amount"
     ]
     ca_two_children_claims = values_by_record[
-        "irs_soi.ty2022.historic_table_2.state_eitc.ca.ca."
-        "eitc_two_children_claims"
+        "irs_soi.ty2022.historic_table_2.state_eitc.ca.ca.eitc_two_children_claims"
     ]
     ca_three_or_more_amount = values_by_record[
         "irs_soi.ty2022.historic_table_2.state_eitc.ca.ca."
@@ -1986,9 +1980,9 @@ def test_soi_historic_table_2_state_eitc_package_builds_child_count_facts():
     assert ca_two_children_claims.value == 550_910
     assert ca_three_or_more_amount.value == 1_266_651_000
     assert ca_one_child_amount.filters["eitc_child_count"] == 1
-    assert {
-        constraint.variable for constraint in ca_one_child_amount.constraints
-    } == {"us.tax.earned_income_credit_qualifying_children"}
+    assert {constraint.variable for constraint in ca_one_child_amount.constraints} == {
+        "us.tax.earned_income_credit_qualifying_children"
+    }
     assert {
         constraint.operator for constraint in ca_three_or_more_amount.constraints
     } == {">="}
