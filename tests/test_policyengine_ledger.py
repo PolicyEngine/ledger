@@ -69,6 +69,7 @@ def test_official_observation_ledger_contains_facts_not_predictions():
         assert "prediction" not in json.dumps(row).lower()
         assert "forecast" not in json.dumps(row).lower()
         assert row["source_record_id"]
+        assert row["observed_at"] == "2026-06-05"
         assert row["source"]["url"].startswith("https://")
         assert row["source"]["vintage"] == "may_2026_first_print"
 
