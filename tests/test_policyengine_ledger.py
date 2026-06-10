@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 from arch.core import (
@@ -26,6 +27,14 @@ EXPECTED_SOURCE_RECORD_IDS = {
     "bls.ces.average_hourly_earnings_private.may_2026.first_print",
     "statcan.lfs.unemployment_rate.canada.may_2026.first_print",
     "statcan.lfs.employment_change.canada.may_2026.first_print",
+    "fns.snap.total_payment_error_rate.us.fy2024.official_release",
+    "fns.snap.overpayment_payment_error_rate.us.fy2024.official_release",
+    "fns.snap.underpayment_payment_error_rate.us.fy2024.official_release",
+    "fns.snap.application_processing_timeliness.california.fy2024.official_release",
+    "cms.medicaid_pi.beneficiaries_renewed_total.california.feb_2026.original_submission",
+    "cms.medicaid_pi.beneficiaries_renewed_ex_parte.california.feb_2026.original_submission",
+    "cms.medicaid_pi.beneficiaries_disenrolled_total.california.feb_2026.original_submission",
+    "cms.medicaid_pi.beneficiaries_disenrolled_procedural.california.feb_2026.original_submission",
 }
 
 
@@ -69,9 +78,9 @@ def test_official_observation_ledger_contains_facts_not_predictions():
         assert "prediction" not in json.dumps(row).lower()
         assert "forecast" not in json.dumps(row).lower()
         assert row["source_record_id"]
-        assert row["observed_at"] == "2026-06-05"
+        assert re.fullmatch(r"\d{4}-\d{2}-\d{2}", row["observed_at"])
         assert row["source"]["url"].startswith("https://")
-        assert row["source"]["vintage"] == "may_2026_first_print"
+        assert row["source"]["vintage"]
 
 
 def test_official_observations_validate_as_aggregate_facts():
@@ -80,5 +89,5 @@ def test_official_observations_validate_as_aggregate_facts():
     report = validate_facts(facts)
 
     assert report.valid, report.to_dict()
-    assert report.counts["by_source"] == {"bls": 3, "statcan": 2}
+    assert report.counts["by_source"] == {"bls": 3, "statcan": 2, "fns": 4, "cms": 4}
     assert report.counts["missing_lineage"]["count"] == 0
