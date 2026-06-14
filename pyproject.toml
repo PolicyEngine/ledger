@@ -36,13 +36,14 @@ policyengine = [
 
 [project.scripts]
 arch = "arch.cli:main"
+ledger = "policyengine_ledger.cli:main"
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["arch", "db", "micro", "calibration", "packages"]
+packages = ["arch", "db", "micro", "calibration", "packages", "policyengine_ledger"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
