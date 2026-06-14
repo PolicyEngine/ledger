@@ -1,17 +1,24 @@
-# Arch
+# PolicyEngine Ledger
 
-Arch is PolicyEngine's source-data foundation for social simulation. It captures
-source publications, preserves provenance, and represents published values as
-structured, queryable facts.
+PolicyEngine Ledger is the public name for the source-backed fact store
+currently implemented in the historical `arch` Python namespace and
+`PolicyEngine/arch-data` repository. New consumers should use the
+`policyengine_ledger` import path; existing `arch` imports remain supported
+during the rename.
 
-Arch may normalize structure: parse files, type values, declare units and
+Ledger is PolicyEngine's source-data foundation for social simulation. It
+captures source publications, preserves provenance, and represents published
+values as structured, queryable facts.
+
+Ledger may normalize structure: parse files, type values, declare units and
 scales, assign geography and period identifiers, and preserve lineage back to
-source artifacts. Arch does not choose among sources, reconcile inconsistent
+source artifacts. Ledger does not choose among sources, reconcile inconsistent
 sources, age values, impute missing data, select active calibration targets, or
 apply simulator-specific mappings.
 
-Microplex consumes Arch facts to build simulation datasets and Microplex
-Targets. Modeling choices live in Microplex, not Arch.
+Populace consumes Ledger facts to build simulation datasets and Populace
+targets. Thesis can consume the same facts as official observations. Modeling
+choices live in those consumers, not Ledger.
 
 ## Purpose
 
@@ -24,29 +31,29 @@ This repository provides:
 - **Normalization**: Low-assumption representation changes such as unit/scale
   conversion and source-published total/share arithmetic.
 - **Target inputs**: Source-published aggregates, projections, rates, counts,
-  and metadata that Microplex may use to compose calibration targets.
+  and metadata that Populace may use to compose calibration targets.
 - **Microdata**: Survey and administrative microdata ingestion for CPS, PUF,
   FRS, and related datasets.
 - **Jurisdiction loaders**: Source-specific ETL that emits the shared Arch
   schema.
 
-Arch facts are not PolicyEngine's assertion that a source claim is ultimately true.
+Ledger facts are not PolicyEngine's assertion that a source claim is ultimately true.
 They are source-backed claims with provenance.
 
 ## Boundary
 
 The load-bearing rule:
 
-> Arch may re-express a published value, but may not choose among, reconcile,
+> Ledger may re-express a published value, but may not choose among, reconcile,
 > age, impute, or transform published values in ways that change their meaning.
 
 | Layer | Owns | Examples |
 |-------|------|----------|
-| Arch Sources | Source artifacts and provenance | URLs, checksums, source files, parsed tables/cells |
-| Arch Facts | Structured source claims | SOI cells, ACS estimates, CPI values, CBO-published projections |
-| Arch Normalization | Representation changes | Unit scales, typed values, geography/date identifiers |
-| Arch Target Inputs | Source facts shaped for calibration | SOI EITC totals, CBO baselines, source-published growth factors |
-| Microplex Targets | Model-ready target sets | Source selection, reconciliation, aging, activation profiles |
+| Ledger Sources | Source artifacts and provenance | URLs, checksums, source files, parsed tables/cells |
+| Ledger Facts | Structured source claims | SOI cells, ACS estimates, CPI values, CBO-published projections |
+| Ledger Normalization | Representation changes | Unit scales, typed values, geography/date identifiers |
+| Ledger Target Inputs | Source facts shaped for calibration | SOI EITC totals, CBO baselines, source-published growth factors |
+| Populace Targets | Model-ready target sets | Source selection, reconciliation, aging, activation profiles |
 
 The storage split is documented in
 [`docs/storage-architecture.md`](docs/storage-architecture.md): `arch-raw`
@@ -56,7 +63,7 @@ mirrored from accepted builds.
 
 ## Repository Model
 
-Arch is global at the schema, validation, database, and build-harness layer.
+Ledger is global at the schema, validation, database, and build-harness layer.
 Jurisdiction packages are modular source packages that emit the same Arch
 objects.
 
@@ -72,6 +79,7 @@ Python distributions:
   policyengine-arch-uk
 
 Python imports:
+  policyengine_ledger # New public API
   arch
   arch_us
   arch_uk
@@ -98,15 +106,17 @@ arch/
 │   ├── schema.py            # SQLModel: Target, Stratum, StratumConstraint
 │   ├── supabase_client.py   # Supabase client helpers
 │   └── etl_*.py             # Source-specific ETL pipelines
-├── micro/                   # Microplex consumers of Arch records
+├── micro/                   # Legacy simulation consumer prototypes
 ├── calibration/             # Calibration target adapters and constraints
 ├── data/                    # Cached data files
 └── docs/                    # Architecture and source documentation
 ```
 
-New code should prefer `arch.sources`, `arch.facts`, `arch.normalization`,
-`arch.targets`, and `arch.microdata`. Microplex-specific target composition
-and calibration code belongs under `micro/`.
+New code should prefer `policyengine_ledger` for source-backed fact and target
+input consumers. Existing in-repo implementation code may continue using
+`arch.sources`, `arch.facts`, `arch.normalization`, `arch.targets`, and
+`arch.microdata` while the rename is phased in. Populace-specific target
+composition and calibration code belongs in Populace.
 
 ## Quick Start
 
@@ -137,6 +147,8 @@ JSON report with fact counts, QA counts, warnings, and validation errors:
 uv run python -m arch.harness validate-facts --fixture
 # Equivalent when the console script is installed:
 uv run arch validate-facts --fixture
+# Equivalent public command once installed:
+uv run ledger validate-facts --fixture
 ```
 
 To build a tiny source-backed fixture from the packaged IRS SOI Table 1.1
@@ -258,7 +270,7 @@ expected first-class constraints, row-backed filter/constraint evidence,
 concept alignment evidence, Axiom concept validation status, and stage-report
 validity.
 
-To build the downstream integration artifact Microplex should consume, merge
+To build the downstream integration artifact Populace can inspect, merge
 available source-package suites for a year into one bundle:
 
 ```bash
@@ -481,20 +493,20 @@ Target inputs use a three-table schema:
 - **stratum_constraints**: Rules defining each stratum.
 - **targets**: Source-published aggregate values linked to strata.
 
-These are inputs to Microplex target composition. Microplex owns the active,
+These are inputs to Populace target composition. Populace owns the active,
 reconciled, aged target sets used for calibration.
 
-## Arch Facts And Microplex Targets
+## Ledger Facts And Populace Targets
 
-Source facts should be structurally normalized before Microplex considers them
+Source facts should be structurally normalized before Populace considers them
 as calibration target candidates.
 Normalization is about representation, not modeling: units, scales, typed
 values, geography IDs, period IDs, and same-source arithmetic where the source
 publishes the total/share relationship.
 
 Inflation, aging, cross-source reconciliation, source selection, and target
-activation belong in Microplex Targets unless the source itself publishes the
-adjusted or projected series.
+activation belong in Populace unless the source itself publishes the adjusted
+or projected series.
 
 ```python
 from arch.facts import SourceFact
@@ -542,21 +554,21 @@ target_input = as_target(
 
 ## Boundaries
 
-- **Arch** owns source data, provenance, source facts, aggregate facts, and
+- **Ledger** owns source data, provenance, source facts, aggregate facts, and
   microdata ingestion.
-- **Microplex Targets** owns source selection, reconciliation, aging, imputation,
+- **Populace Targets** owns source selection, reconciliation, aging, imputation,
   active target sets, and calibration profiles.
-- **Microplex** owns simulation interfaces, entity modeling, weights, and
+- **Populace** owns simulation interfaces, entity modeling, weights, and
   calibration execution.
 - **Jurisdiction source packages** such as `arch-us` and `arch-uk` own
   source-specific parsers and specs that emit shared Arch records.
-- **Jurisdiction simulation packages** such as `microplex-us` own
-  simulation-specific variable mappings and target recipes.
+- **Jurisdiction simulation packages** own simulation-specific variable
+  mappings and target recipes.
 - **PolicyEngine** owns policy-facing tools and analysis workflows.
 
 ## Related Repositories
 
-- [microplex](https://github.com/PolicyEngine/microplex) - Core microsimulation
-  abstractions and calibration interfaces.
-- [microplex-us](https://github.com/PolicyEngine/microplex-us) - US-specific
-  simulation adapters and calibration profiles.
+- [populace](https://github.com/PolicyEngine/populace) - Simulation data builds,
+  target selection, and calibration execution.
+- [thesis](https://github.com/PolicyEngine/thesis) - Public-facing official
+  observations and analysis surfaces backed by Ledger facts.
