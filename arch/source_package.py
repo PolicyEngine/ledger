@@ -70,6 +70,7 @@ SOURCE_PACKAGE_ALIASES = {
     "bea-nipa-personal-income-disposition": Path(
         "bea/nipa_personal_income_disposition"
     ),
+    "bea-nipa-pension-contributions": Path("bea/nipa_pension_contributions"),
     "bea-nipa-total-wages-salaries": Path("bea/nipa_total_wages_salaries"),
     "bea-regional-state-personal-income-components-2024": Path(
         "bea/regional_personal_income_state"
