@@ -16,9 +16,7 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
     output_dir = tmp_path / "bundle"
 
     report = build_bundle(output_dir, year=2023)
-    summary = json.loads(
-        (output_dir / "reports" / "build_bundle.json").read_text()
-    )
+    summary = json.loads((output_dir / "reports" / "build_bundle.json").read_text())
     rows = _load_jsonl(output_dir / "consumer_facts.jsonl")
     source_packages = json.loads((output_dir / "source_packages.json").read_text())
     coverage = json.loads((output_dir / "coverage.json").read_text())
@@ -144,11 +142,7 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
     ]
     assert (output_dir / "sources" / "soi-table-1-1" / "consumer_facts.jsonl").exists()
     assert (
-        output_dir
-        / "sources"
-        / "soi-table-1-4"
-        / "reports"
-        / "build_summary.json"
+        output_dir / "sources" / "soi-table-1-4" / "reports" / "build_summary.json"
     ).exists()
     assert (
         output_dir
@@ -163,7 +157,10 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         / "consumer_facts.jsonl"
     ).exists()
     assert (
-        output_dir / "sources" / "census-stc-individual-income-tax" / "consumer_facts.jsonl"
+        output_dir
+        / "sources"
+        / "census-stc-individual-income-tax"
+        / "consumer_facts.jsonl"
     ).exists()
     assert (
         output_dir
@@ -294,16 +291,45 @@ def test_build_bundle_cli_supports_ssa_supplement_source(tmp_path, capsys):
     assert payload["counts"]["fact_count"] == 6
     assert payload["coverage"]["counts"]["by_source"] == {"ssa": 6}
     assert payload["coverage"]["counts"]["by_entity"] == {"person": 6}
-    assert {
-        row["universe_constraints"]["constraints"][0]["value"]
-        for row in rows
-    } == {
+    assert {row["universe_constraints"]["constraints"][0]["value"] for row in rows} == {
         "social_security_benefits",
         "social_security_retirement_benefits",
         "social_security_survivors_benefits",
         "social_security_disability_benefits",
         "social_security_dependents_benefits",
         "ssi_payments",
+    }
+
+
+def test_build_bundle_cli_supports_jct_tax_expenditure_source(tmp_path, capsys):
+    output_dir = tmp_path / "bundle"
+
+    exit_code = harness_main(
+        [
+            "build-bundle",
+            "--year",
+            "2024",
+            "--source",
+            "jct-tax-expenditures-2024",
+            "--out",
+            str(output_dir),
+        ]
+    )
+    payload = json.loads(capsys.readouterr().out)
+    rows = _load_jsonl(output_dir / "consumer_facts.jsonl")
+
+    assert exit_code == 0
+    assert payload["valid"]
+    assert payload["counts"]["source_package_count"] == 1
+    assert payload["counts"]["fact_count"] == 5
+    assert payload["coverage"]["counts"]["by_source"] == {"jct": 5}
+    assert payload["coverage"]["counts"]["by_entity"] == {"tax_unit": 5}
+    assert {row["lineage"]["source_record_id"] for row in rows} == {
+        "jct.tax_expenditures.cy2024.salt_deduction.revenue_loss",
+        "jct.tax_expenditures.cy2024.medical_expense_deduction.revenue_loss",
+        "jct.tax_expenditures.cy2024.charitable_deduction.revenue_loss",
+        "jct.tax_expenditures.cy2024.deductible_mortgage_interest.revenue_loss",
+        "jct.tax_expenditures.cy2024.qualified_business_income_deduction.revenue_loss",
     }
 
 

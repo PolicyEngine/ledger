@@ -1,0 +1,6 @@
+tax_expenditure,label,jct_line_label,individual_revenue_loss_2024,definition_note
+salt_deduction,State and local tax deduction,Taxes paid deduction,21700000000,Individual income tax revenue loss for itemized state and local tax deduction.
+medical_expense_deduction,Medical expense deduction,Medical expenses deduction,11400000000,Individual income tax revenue loss for itemized medical expense deduction.
+charitable_deduction,Charitable contribution deduction,"Charitable contributions, other than education and health; charitable contributions, education; charitable contributions, health",60400000000,Sum of individual income tax revenue-loss rows for charitable contributions excluding corporate income tax estimates.
+deductible_mortgage_interest,Deductible mortgage interest,Deductibility of mortgage interest on owner-occupied homes,24800000000,Individual income tax revenue loss for deductible mortgage interest on owner-occupied homes.
+qualified_business_income_deduction,Qualified business income deduction,20-percent deduction for qualified business income,63100000000,Individual income tax revenue loss for qualified business income deduction.
