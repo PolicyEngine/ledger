@@ -1,0 +1,23 @@
+source_id: cbo
+package_id: cbo-individual-income-tax-receipts-2026-02
+dataset: cbo_individual_income_tax_receipts_2026_02
+source_page: https://www.cbo.gov/data/budget-economic-data
+table: CBO budget and economic data, individual income tax receipts
+notes: >-
+  Curated Arch extract of CBO federal individual income tax receipts from the
+  February 2026 Historical Budget Data workbook. Values mirror the CBO receipts
+  series used by PolicyEngine-US calibration parameters and are stored as a
+  source-backed Ledger package for Populace fiscal targeting.
+files:
+  2026:
+    filename: cbo_individual_income_tax_receipts_2026_02.csv
+    source_url: https://www.cbo.gov/system/files/2026-02/51134-2026-02-Historical-Budget-Data.xlsx
+    source_table: CBO budget and economic data, individual income tax receipts
+    sha256: 9cd016b7b3ed0c9602b8ad9f75f859c13e2636fb7c2e16a678b388b0fd17aeea
+    size_bytes: 251
+    storage:
+      r2:
+        provider: r2
+        bucket: arch-raw
+        key: raw/cbo/cbo-individual-income-tax-receipts-2026-02/2026/9cd016b7b3ed0c9602b8ad9f75f859c13e2636fb7c2e16a678b388b0fd17aeea/cbo_individual_income_tax_receipts_2026_02.csv
+        uri: r2://arch-raw/raw/cbo/cbo-individual-income-tax-receipts-2026-02/2026/9cd016b7b3ed0c9602b8ad9f75f859c13e2636fb7c2e16a678b388b0fd17aeea/cbo_individual_income_tax_receipts_2026_02.csv

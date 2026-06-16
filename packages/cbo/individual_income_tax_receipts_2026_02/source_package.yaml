@@ -1,0 +1,74 @@
+schema_version: arch.source_package.v1
+package_id: cbo-individual-income-tax-receipts-2026-02
+label: CBO federal individual income tax receipts
+artifact:
+  source_name: cbo
+  source_table: CBO budget and economic data, individual income tax receipts
+  resource_package: db
+  resource_directory: data/cbo/individual_income_tax_receipts_2026_02
+  manifest: manifest.yaml
+  vintage: cbo_2026_02_budget_projections
+  extracted_at: "2026-06-16"
+  extraction_method: >-
+    curated CSV extract from CBO February 2026 Historical Budget Data workbook.
+    Values mirror CBO individual income tax receipts used in PolicyEngine-US
+    calibration parameters and are stored here as source-backed Ledger facts
+    for Populace fiscal targeting.
+  parser: delimited_text_full_rows
+  sheet_name: income_tax_receipts
+  artifact_year: 2026
+  selected_rows:
+    - source_concept_id: individual_income_taxes
+record_sets:
+  - record_set_id: cbo.fy{year}.revenues
+    record_set_spec_id: cbo.individual_income_tax_receipts.v1
+    source_record_id_prefix: cbo.fy{year}.revenues
+    sheet_name: income_tax_receipts
+    period_type: fiscal_year
+    period: "{year}"
+    geography_id: 0100000US
+    geography_level: country
+    geography_name: United States
+    geography_vintage: current
+    entity: government
+    entity_role: federal_government
+    domain: federal_receipts
+    groupby_dimension: cbo.revenue_source
+    rows:
+      - value_id: individual_income_taxes
+        label: Individual income taxes
+        ordinal: 0
+        row_number: 2
+        table_record_kind: total
+        expected_row_header_column: A
+        expected_row_header: individual_income_taxes
+        guard_cells:
+          - column: B
+            expected_value: Individual income taxes
+            label: CBO row label
+    measures:
+      - measure_id: actual_amount
+        label: CBO individual income tax receipts
+        ordinal: 0
+        column_by_year:
+          2021: D
+          2022: E
+          2023: F
+          2024: G
+        source_column_id: year_{year}
+        expected_column_header_row: 1
+        expected_column_header: year_{year}
+        concept: cbo.individual_income_tax_receipts
+        source_concept: cbo.individual_income_tax_receipts
+        concept_relation: exact
+        concept_authority: cbo
+        concept_evidence_url: https://www.cbo.gov/system/files/2026-02/51134-2026-02-Historical-Budget-Data.xlsx
+        concept_evidence_notes: >-
+          CBO reports federal individual income tax receipts in budget and
+          economic data historical and projection tables. Populace maps this
+          fiscal-year receipts aggregate to its federal income_tax macro
+          calibration control; IRS SOI liability totals are distributional
+          controls and do not replace this row.
+        unit: usd
+        aggregation: sum
+        expected_cell_type: number

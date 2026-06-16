@@ -489,6 +489,54 @@ def test_cbo_income_by_source_package_preserves_cbo_projection_concepts():
     )
 
 
+def test_cbo_individual_income_tax_receipts_package_builds_fy2024_fact():
+    package = load_source_package("cbo-individual-income-tax-receipts-2026-02")
+    cells = package.build_source_cells(2024)
+    records = package.build_source_records(2024, cells=cells)
+    facts = package.build_facts(2024, cells=cells)
+    consumer_rows = consumer_fact_rows(facts)
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+    expected_record_id = "cbo.fy2024.revenues.individual_income_taxes.actual_amount"
+    expected_sha = "9cd016b7b3ed0c9602b8ad9f75f859c13e2636fb7c2e16a678b388b0fd17aeea"
+    expected_url = (
+        "https://www.cbo.gov/system/files/2026-02/"
+        "51134-2026-02-Historical-Budget-Data.xlsx"
+    )
+    expected_r2_uri = (
+        "r2://arch-raw/raw/cbo/"
+        "cbo-individual-income-tax-receipts-2026-02/2026/"
+        f"{expected_sha}/cbo_individual_income_tax_receipts_2026_02.csv"
+    )
+
+    assert package.package_id == "cbo-individual-income-tax-receipts-2026-02"
+    assert len(cells) == 14
+    assert validate_source_cells(cells).valid
+    assert len(records) == 1
+    assert len(facts) == 1
+    assert validate_facts(facts).valid
+    assert validate_consumer_fact_contract(facts).valid
+    assert len(consumer_rows) == 1
+    assert {record.source_record_id for record in records} == {expected_record_id}
+    assert all(fact.source.source_name == "cbo" for fact in facts)
+    assert {fact.source.source_sha256 for fact in facts} == {expected_sha}
+    assert {fact.source.source_size_bytes for fact in facts} == {251}
+    assert {fact.source.url for fact in facts} == {expected_url}
+    assert {fact.source.raw_r2_uri for fact in facts} == {expected_r2_uri}
+
+    fact = values_by_record[expected_record_id]
+    assert fact.value == 2_426_067_000_000
+    assert fact.period.type == "fiscal_year"
+    assert fact.period.value == 2024
+    assert fact.geography.id == "0100000US"
+    assert fact.entity.name == "government"
+    assert fact.measure.concept == "cbo.individual_income_tax_receipts"
+    assert fact.measure.source_concept == "cbo.individual_income_tax_receipts"
+    assert fact.measure.unit == "usd"
+    assert fact.layout.groupby_value_id == "individual_income_taxes"
+    assert fact.layout.measure_id == "actual_amount"
+    assert consumer_rows[0]["lineage"]["source_record_id"] == expected_record_id
+
+
 def test_validate_source_package_reports_fixture_counts():
     report = validate_source_package("soi-table-1-1", year=2023)
 
