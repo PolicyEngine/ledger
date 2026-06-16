@@ -86,17 +86,11 @@ SOURCE_PACKAGE_ALIASES = {
     "census-acs-s2201-congressional-district-snap-2024": Path(
         "census/acs_s2201_district_2024"
     ),
-    "census-b01001-female-age-2023": Path(
-        "census/b01001_female_15_44_2023"
-    ),
+    "census-b01001-female-age-2023": Path("census/b01001_female_15_44_2023"),
     "census-pep-2024-national-age-sex": Path("census/pep_2024_national_age_sex"),
     "census-pep-2024-state-age-sex": Path("census/pep_2024_state_age_sex"),
-    "census-population-projections-2023": Path(
-        "census/population_projections_2023"
-    ),
-    "census-stc-individual-income-tax": Path(
-        "census/stc_individual_income_tax"
-    ),
+    "census-population-projections-2023": Path("census/population_projections_2023"),
+    "census-stc-individual-income-tax": Path("census/stc_individual_income_tax"),
     "cms-medicaid-chip-monthly-enrollment-december-2024": Path(
         "cms_medicaid/chip_monthly_enrollment_december_2024"
     ),
@@ -106,9 +100,7 @@ SOURCE_PACKAGE_ALIASES = {
     "cms-aca-oep-state-level": Path("cms_aca/oep_state_level"),
     "cms-aca-oep-state-level-2022": Path("cms_aca/oep_state_level_2022"),
     "cms-aca-oep-state-level-2025": Path("cms_aca/oep_state_level_2025"),
-    "cms-aca-effectuated-enrollment-2022": Path(
-        "cms_aca/effectuated_enrollment_2022"
-    ),
+    "cms-aca-effectuated-enrollment-2022": Path("cms_aca/effectuated_enrollment_2022"),
     "cms-medicare-trustees-report-2025-part-b-premium-income": Path(
         "cms_medicare/medicare_trustees_report_2025"
     ),
@@ -122,6 +114,7 @@ SOURCE_PACKAGE_ALIASES = {
     "hhs-acf-liheap-fy2024-national-profile": Path(
         "hhs_acf_liheap/fy2024_national_profile"
     ),
+    "jct-tax-expenditures-2024": Path("jct/tax_expenditures_2024"),
     "soi-table-1-1": Path("irs_soi/table_1_1"),
     "soi-table-1-2": Path("irs_soi/table_1_2"),
     "soi-table-1-4": Path("irs_soi/table_1_4"),
@@ -132,9 +125,7 @@ SOURCE_PACKAGE_ALIASES = {
     ),
     "soi-table-4-3": Path("irs_soi/table_4_3"),
     "soi-state-2022": Path("irs_soi/state_2022"),
-    "soi-congressional-district-2022": Path(
-        "irs_soi/congressional_district_2022"
-    ),
+    "soi-congressional-district-2022": Path("irs_soi/congressional_district_2022"),
     "soi-historic-table-2": Path("irs_soi/historic_table_2"),
     "soi-historic-table-2-state-agi-2022": Path(
         "irs_soi/historic_table_2_state_agi_2022"
