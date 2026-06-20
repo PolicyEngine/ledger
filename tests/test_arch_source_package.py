@@ -580,6 +580,13 @@ def test_national_soi_source_package_aliases_validate_fixture_counts():
             "source_record_count": 232,
             "source_region_count": 4,
         },
+        "soi-table-2-5-eitc-agi-children-2023": {
+            "record_set_count": 4,
+            "row_count": 116,
+            "measure_count": 8,
+            "source_record_count": 232,
+            "source_region_count": 4,
+        },
         "soi-table-4-3": {
             "record_set_count": 1,
             "row_count": 1,
@@ -1191,6 +1198,46 @@ def test_soi_table_2_5_eitc_child_totals_build_2022_facts():
     assert one_child_amount.value == 21_182_747_000
     assert two_child_returns.value == 5_628_089
     assert three_child_amount.value == 14_000_930_000
+    assert no_child_returns.filters == {"income_range": "all"}
+    assert no_child_returns.layout.table_record_kind == "total"
+    assert {constraint.variable for constraint in no_child_returns.constraints} == {
+        "us.tax.earned_income_credit_qualifying_children"
+    }
+    assert {constraint.operator for constraint in three_child_amount.constraints} == {
+        ">="
+    }
+
+
+def test_soi_table_2_5_eitc_child_totals_build_2023_facts():
+    package = load_source_package("soi-table-2-5-eitc-agi-children-2023")
+    cells = package.build_source_cells(2024)
+    facts = package.build_facts(2024, cells=cells)
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert validate_source_cells(cells).valid
+    assert validate_facts(facts).valid
+
+    no_child_returns = values_by_record[
+        "irs_soi.ty2023.table_2_5.eitc_by_agi_children."
+        "no_qualifying_children.total.eitc_returns"
+    ]
+    one_child_amount = values_by_record[
+        "irs_soi.ty2023.table_2_5.eitc_by_agi_children."
+        "one_qualifying_child.total.eitc_total"
+    ]
+    two_child_returns = values_by_record[
+        "irs_soi.ty2023.table_2_5.eitc_by_agi_children."
+        "two_qualifying_children.total.eitc_returns"
+    ]
+    three_child_amount = values_by_record[
+        "irs_soi.ty2023.table_2_5.eitc_by_agi_children."
+        "three_or_more_qualifying_children.total.eitc_total"
+    ]
+
+    assert no_child_returns.value == 6_777_377
+    assert one_child_amount.value == 23_426_708_000
+    assert two_child_returns.value == 5_785_581
+    assert three_child_amount.value == 15_481_363_000
     assert no_child_returns.filters == {"income_range": "all"}
     assert no_child_returns.layout.table_record_kind == "total"
     assert {constraint.variable for constraint in no_child_returns.constraints} == {
