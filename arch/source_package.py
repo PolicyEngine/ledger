@@ -1061,6 +1061,17 @@ def _validate_record_set_authoring(
     for index, row in enumerate(record_set.rows):
         row_ids.setdefault(row.value_id, []).append(index)
         row_ordinals.setdefault(row.ordinal, []).append(index)
+        if row.column is not None and not EXCEL_COLUMN_RE.match(row.column):
+            errors.append(
+                SourcePackageIssue(
+                    code="malformed_row_column",
+                    message=(
+                        "Row column must be an Excel column name like B or AA."
+                    ),
+                    record_set_id=record_set.record_set_id,
+                    row_id=row.value_id,
+                )
+            )
         if _row_needs_constraints(row) and not row.constraints:
             errors.append(
                 SourcePackageIssue(
@@ -1266,6 +1277,7 @@ def _artifact_from_mapping(payload: dict[str, Any]) -> SourceArtifactSpec:
 
 
 def _row_from_mapping(payload: dict[str, Any], *, year: int) -> SourceRecordSetRow:
+    row_column = _optional_excel_column_from_mapping(payload, "column", year=year)
     return SourceRecordSetRow(
         value_id=_required(payload, "value_id", "row"),
         label=_required(payload, "label", "row"),
@@ -1276,6 +1288,26 @@ def _row_from_mapping(payload: dict[str, Any], *, year: int) -> SourceRecordSetR
             if payload.get("row_end_number") is not None
             else None
         ),
+        column=row_column,
+        source_column_id=(
+            str(_render_value(payload["source_column_id"], year=year))
+            if payload.get("source_column_id") is not None
+            else None
+        ),
+        expected_column_header_row=(
+            int(payload["expected_column_header_row"])
+            if payload.get("expected_column_header_row") is not None
+            else None
+        ),
+        expected_column_header=_render_value(
+            _year_mapping(payload["expected_column_header_by_year"], year)
+            if "expected_column_header_by_year" in payload
+            else payload["expected_column_header"],
+            year=year,
+        )
+        if "expected_column_header" in payload
+        or "expected_column_header_by_year" in payload
+        else None,
         geography_id=payload.get("geography_id"),
         geography_level=payload.get("geography_level"),
         geography_name=payload.get("geography_name"),
@@ -1475,6 +1507,24 @@ def _measure_column_from_mapping(payload: dict[str, Any], *, year: int) -> str:
     if "column_by_year" in payload:
         return str(_year_mapping(payload["column_by_year"], year))
     return str(_required(payload, "column", "measure"))
+
+
+def _optional_excel_column_from_mapping(
+    payload: dict[str, Any],
+    field: str,
+    *,
+    year: int,
+) -> str | None:
+    by_year_field = f"{field}_by_year"
+    if by_year_field in payload:
+        value = str(_year_mapping(payload[by_year_field], year)).upper()
+    elif payload.get(field) is not None:
+        value = str(_render_value(payload[field], year=year)).upper()
+    else:
+        return None
+    if EXCEL_COLUMN_RE.fullmatch(value) is None:
+        raise ValueError(f"Malformed row {field}: {value!r}")
+    return value
 
 
 def _record_set_period_from_mapping(

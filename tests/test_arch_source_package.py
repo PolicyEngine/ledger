@@ -588,11 +588,11 @@ def test_national_soi_source_package_aliases_validate_fixture_counts():
             "source_region_count": 4,
         },
         "soi-filing-season-week47-2024-eitc-total": {
-            "record_set_count": 2,
-            "row_count": 2,
-            "measure_count": 2,
-            "source_record_count": 2,
-            "source_region_count": 2,
+            "record_set_count": 4,
+            "row_count": 34,
+            "measure_count": 4,
+            "source_record_count": 34,
+            "source_region_count": 4,
         },
         "soi-table-4-3": {
             "record_set_count": 1,
@@ -1272,10 +1272,40 @@ def test_soi_filing_season_week47_2024_eitc_total_builds_facts():
         "irs_soi.ty2024.filing_season_week47.eitc_all_returns."
         "earned_income_credit.total_earned_income_credit_amount"
     ]
+    low_agi_returns = values_by_record[
+        "irs_soi.ty2024.filing_season_week47.eitc_by_agi."
+        "1_to_5k.total_earned_income_credit_returns"
+    ]
+    low_agi_amount = values_by_record[
+        "irs_soi.ty2024.filing_season_week47.eitc_by_agi."
+        "1_to_5k.total_earned_income_credit_amount"
+    ]
+    mid_agi_amount = values_by_record[
+        "irs_soi.ty2024.filing_season_week47.eitc_by_agi."
+        "50k_to_75k.total_earned_income_credit_amount"
+    ]
+    high_agi_returns = values_by_record[
+        "irs_soi.ty2024.filing_season_week47.eitc_by_agi."
+        "75k_to_100k.total_earned_income_credit_returns"
+    ]
 
     assert returns.value == 23_837_149
     assert amount.value == 69_041_649_000
+    assert low_agi_returns.value == 1_587_131
+    assert low_agi_amount.value == 695_555_000
+    assert mid_agi_amount.value == 1_575_950_000
+    assert high_agi_returns.value == 0
     assert returns.layout.source_column_id == "total_returns"
+    assert low_agi_returns.layout.groupby_dimension == (
+        "us:statutes/26/62#adjusted_gross_income"
+    )
+    assert low_agi_returns.layout.groupby_value_id == "1_to_5k"
+    assert low_agi_returns.layout.source_column_id == "1_to_5k"
+    assert low_agi_returns.filters == {"income_range": "1_to_5k"}
+    assert {constraint.operator for constraint in low_agi_returns.constraints} == {
+        ">=",
+        "<",
+    }
     assert amount.source.source_file == "25inweek47.xlsx"
     assert amount.source.url == "https://www.irs.gov/pub/irs-soi/25inweek47.xlsx"
     assert amount.source.source_sha256 == (
