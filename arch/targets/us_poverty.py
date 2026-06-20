@@ -81,7 +81,7 @@ US_POVERTY_NONFILER_TARGET_COVERAGE: tuple[TargetSourceCoverage, ...] = (
             "soi-table-1-4",
             "soi-table-2-1",
             "soi-table-2-5",
-            "soi-table-2-5-eitc-agi-children-2022",
+            "soi-table-2-5-eitc-agi-children-2023",
             "soi-table-4-3",
             "soi-state-2022",
             "soi-historic-table-2",
