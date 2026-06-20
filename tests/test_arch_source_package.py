@@ -587,6 +587,13 @@ def test_national_soi_source_package_aliases_validate_fixture_counts():
             "source_record_count": 232,
             "source_region_count": 4,
         },
+        "soi-filing-season-week47-2024-eitc-total": {
+            "record_set_count": 2,
+            "row_count": 2,
+            "measure_count": 2,
+            "source_record_count": 2,
+            "source_region_count": 2,
+        },
         "soi-table-4-3": {
             "record_set_count": 1,
             "row_count": 1,
@@ -1246,6 +1253,34 @@ def test_soi_table_2_5_eitc_child_totals_build_2023_facts():
     assert {constraint.operator for constraint in three_child_amount.constraints} == {
         ">="
     }
+
+
+def test_soi_filing_season_week47_2024_eitc_total_builds_facts():
+    package = load_source_package("soi-filing-season-week47-2024-eitc-total")
+    cells = package.build_source_cells(2024)
+    facts = package.build_facts(2024, cells=cells)
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert validate_source_cells(cells).valid
+    assert validate_facts(facts).valid
+
+    returns = values_by_record[
+        "irs_soi.ty2024.filing_season_week47.eitc_all_returns."
+        "earned_income_credit.total_earned_income_credit_returns"
+    ]
+    amount = values_by_record[
+        "irs_soi.ty2024.filing_season_week47.eitc_all_returns."
+        "earned_income_credit.total_earned_income_credit_amount"
+    ]
+
+    assert returns.value == 23_837_149
+    assert amount.value == 69_041_649_000
+    assert returns.layout.source_column_id == "total_returns"
+    assert amount.source.source_file == "25inweek47.xlsx"
+    assert amount.source.url == "https://www.irs.gov/pub/irs-soi/25inweek47.xlsx"
+    assert amount.source.source_sha256 == (
+        "5b8f05734ec3f4ad68c51ee8add91510ce209492c301786f17f50b22cc00adb3"
+    )
 
 
 def test_ssa_supplement_source_package_alias_validates_fixture_counts():
