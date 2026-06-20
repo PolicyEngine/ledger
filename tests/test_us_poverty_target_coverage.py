@@ -31,12 +31,13 @@ def test_us_poverty_all_named_package_aliases_are_registered():
     assert aliases <= set(SOURCE_PACKAGE_ALIASES)
 
 
-def test_us_poverty_hard_target_aliases_cover_non_soi_sources():
+def test_us_poverty_hard_target_aliases_cover_required_sources():
     aliases = set(hard_target_package_aliases())
 
     assert "bea-nipa-personal-income-components" in aliases
     assert "bea-nipa-personal-income-disposition" in aliases
     assert "bea-nipa-pension-contributions" in aliases
+    assert "soi-filing-season-week47-2024-eitc-total" in aliases
     assert "usda-snap-fy69-to-current" in aliases
     assert "ssa-ssi-table-7b1-2024" in aliases
     assert "hhs-acf-tanf-financial-2024" in aliases

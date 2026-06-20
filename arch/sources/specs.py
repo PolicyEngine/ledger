@@ -121,6 +121,10 @@ class SourceRecordSetRow:
     ordinal: int
     row_number: int
     row_end_number: int | None = None
+    column: str | None = None
+    source_column_id: str | None = None
+    expected_column_header_row: int | None = None
+    expected_column_header: Scalar = None
     geography_id: str | None = None
     geography_level: str | None = None
     geography_name: str | None = None
@@ -206,6 +210,17 @@ def compile_source_record_set_specs(
     source_specs: list[SourceRecordSpec] = []
     for row in sorted(spec.rows, key=lambda item: item.ordinal):
         for measure in sorted(spec.measures, key=lambda item: item.ordinal):
+            source_column = row.column or measure.column
+            column_header_row = (
+                row.expected_column_header_row
+                if row.expected_column_header_row is not None
+                else measure.expected_column_header_row
+            )
+            column_header = (
+                row.expected_column_header
+                if row.expected_column_header is not None
+                else measure.expected_column_header
+            )
             source_record_id = (
                 f"{spec.source_record_id_prefix}.{row.value_id}.{measure.measure_id}"
             )
@@ -216,9 +231,9 @@ def compile_source_record_set_specs(
                     selector=CellSelectorSpec(
                         selector_id=f"{source_record_id}.selector",
                         sheet_name=spec.sheet_name,
-                        address=f"{measure.column}{row.row_number}",
+                        address=f"{source_column}{row.row_number}",
                         end_address=(
-                            f"{measure.column}{row.row_end_number}"
+                            f"{source_column}{row.row_end_number}"
                             if row.row_end_number is not None
                             else None
                         ),
@@ -232,11 +247,11 @@ def compile_source_record_set_specs(
                             else row.label
                         ),
                         expected_column_header_address=(
-                            f"{measure.column}{measure.expected_column_header_row}"
-                            if measure.expected_column_header_row is not None
+                            f"{source_column}{column_header_row}"
+                            if column_header_row is not None
                             else None
                         ),
-                        expected_column_header=measure.expected_column_header,
+                        expected_column_header=column_header,
                         guard_cells=_row_guard_cells(row),
                         range_label_guards=_row_range_label_guards(row),
                     ),
@@ -286,7 +301,9 @@ def compile_source_record_set_specs(
                         measure_ordinal=measure.ordinal,
                         source_row_id=row.source_row_id or row.value_id,
                         source_column_id=(
-                            measure.source_column_id or measure.measure_id
+                            row.source_column_id
+                            or measure.source_column_id
+                            or measure.measure_id
                         ),
                         table_record_kind=row.table_record_kind,
                     ),
@@ -308,6 +325,11 @@ def source_regions_from_record_set_spec(
     columns = [
         1,
         *(_excel_column_number(measure.column) for measure in spec.measures),
+        *(
+            _excel_column_number(row.column)
+            for row in spec.rows
+            if row.column is not None
+        ),
     ]
     return (
         SourceRegionSpec(
@@ -716,6 +738,14 @@ def _record_set_spec_hash(spec: SourceRecordSetSpec) -> str:
     for row in payload["rows"]:
         if row.get("row_end_number") is None:
             row.pop("row_end_number", None)
+        if row.get("column") is None:
+            row.pop("column", None)
+        if row.get("source_column_id") is None:
+            row.pop("source_column_id", None)
+        if row.get("expected_column_header_row") is None:
+            row.pop("expected_column_header_row", None)
+        if row.get("expected_column_header") is None:
+            row.pop("expected_column_header", None)
         if row.get("expected_row_header") is None:
             row.pop("expected_row_header", None)
         if row.get("expected_row_header_column") is None:
