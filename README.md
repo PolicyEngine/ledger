@@ -11,14 +11,15 @@ captures source publications, preserves provenance, and represents published
 values as structured, queryable facts.
 
 Ledger may normalize structure: parse files, type values, declare units and
-scales, assign geography and period identifiers, and preserve lineage back to
-source artifacts. Ledger does not choose among sources, reconcile inconsistent
-sources, age values, impute missing data, select active calibration targets, or
-apply simulator-specific mappings.
+scales, assign geography and period identifiers, preserve lineage back to
+source artifacts, and publish target profiles that identify source-backed facts
+and measurement contracts. Ledger does not reconcile inconsistent sources,
+impute missing data, or execute simulator-specific calibration.
 
-Populace consumes Ledger facts to build simulation datasets and Populace
-targets. Thesis can consume the same facts as official observations. Modeling
-choices live in those consumers, not Ledger.
+Populace consumes Ledger facts and target profiles, selects the subset its
+current support universe can target, applies minimal period alignment when
+declared, and runs calibration. Thesis can consume the same facts and
+measurement contracts as official observations.
 
 ## Purpose
 
@@ -30,8 +31,8 @@ This repository provides:
   geography, period, source table, and lineage.
 - **Normalization**: Low-assumption representation changes such as unit/scale
   conversion and source-published total/share arithmetic.
-- **Target inputs**: Source-published aggregates, projections, rates, counts,
-  and metadata that Populace may use to compose calibration targets.
+- **Target profiles**: Source-backed target contracts and model-measurement
+  bindings that Populace, Thesis, and future rule engines can consume.
 - **Microdata**: Survey and administrative microdata ingestion for CPS, PUF,
   FRS, and related datasets.
 - **Jurisdiction loaders**: Source-specific ETL that emits the shared Arch
@@ -44,16 +45,17 @@ They are source-backed claims with provenance.
 
 The load-bearing rule:
 
-> Ledger may re-express a published value, but may not choose among, reconcile,
-> age, impute, or transform published values in ways that change their meaning.
+> Ledger may re-express a published value and declare target contracts, but may
+> not reconcile, impute, or transform published values in ways that change their
+> meaning.
 
 | Layer | Owns | Examples |
 |-------|------|----------|
 | Ledger Sources | Source artifacts and provenance | URLs, checksums, source files, parsed tables/cells |
 | Ledger Facts | Structured source claims | SOI cells, ACS estimates, CPI values, CBO-published projections |
 | Ledger Normalization | Representation changes | Unit scales, typed values, geography/date identifiers |
-| Ledger Target Inputs | Source facts shaped for calibration | SOI EITC totals, CBO baselines, source-published growth factors |
-| Populace Targets | Model-ready target sets | Source selection, reconciliation, aging, activation profiles |
+| Ledger Target Profiles | Source-backed calibration contracts | SOI EITC totals, CBO baselines, source-published growth factors, measurement bindings |
+| Populace Targets | Build-ready active subset | Support-aware activation, solver inputs, diagnostics |
 
 The storage split is documented in
 [`docs/storage-architecture.md`](docs/storage-architecture.md): `arch-raw`
@@ -113,10 +115,10 @@ arch/
 ```
 
 New code should prefer `policyengine_ledger` for source-backed fact and target
-input consumers. Existing in-repo implementation code may continue using
+profile consumers. Existing in-repo implementation code may continue using
 `arch.sources`, `arch.facts`, `arch.normalization`, `arch.targets`, and
-`arch.microdata` while the rename is phased in. Populace-specific target
-composition and calibration code belongs in Populace.
+`arch.microdata` while the rename is phased in. Solver execution and calibrated
+dataset construction belong in Populace.
 
 ## Quick Start
 
@@ -493,8 +495,8 @@ Target inputs use a three-table schema:
 - **stratum_constraints**: Rules defining each stratum.
 - **targets**: Source-published aggregate values linked to strata.
 
-These are inputs to Populace target composition. Populace owns the active,
-reconciled, aged target sets used for calibration.
+These are inputs to Ledger target profiles. Populace owns the active
+support-aware subset and calibrated solver execution.
 
 ## Ledger Facts And Populace Targets
 
@@ -504,9 +506,10 @@ Normalization is about representation, not modeling: units, scales, typed
 values, geography IDs, period IDs, and same-source arithmetic where the source
 publishes the total/share relationship.
 
-Inflation, aging, cross-source reconciliation, source selection, and target
-activation belong in Populace unless the source itself publishes the adjusted
-or projected series.
+Inflation, cross-source reconciliation, and support-aware activation belong in
+Populace unless the source itself publishes the adjusted or projected series.
+Target profiles in Ledger may declare the source-backed rows and measurement
+bindings Populace is allowed to activate.
 
 ```python
 from arch.facts import SourceFact
@@ -554,12 +557,11 @@ target_input = as_target(
 
 ## Boundaries
 
-- **Ledger** owns source data, provenance, source facts, aggregate facts, and
-  microdata ingestion.
-- **Populace Targets** owns source selection, reconciliation, aging, imputation,
-  active target sets, and calibration profiles.
-- **Populace** owns simulation interfaces, entity modeling, weights, and
-  calibration execution.
+- **Ledger** owns source data, provenance, source facts, aggregate facts,
+  microdata ingestion, target profiles, and measurement contracts.
+- **Populace** owns support-aware target activation, minimal period alignment,
+  simulation interfaces, entity modeling, weights, diagnostics, and calibration
+  execution.
 - **Jurisdiction source packages** such as `arch-us` and `arch-uk` own
   source-specific parsers and specs that emit shared Arch records.
 - **Jurisdiction simulation packages** own simulation-specific variable

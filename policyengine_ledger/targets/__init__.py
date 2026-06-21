@@ -1,8 +1,8 @@
 """Ledger target-input helpers.
 
-Ledger owns source-backed facts and target-eligible source inputs. Consumers
-such as Populace decide which subset is active and how those facts map to model
-variables.
+Ledger owns source-backed facts, target-eligible source inputs, and target
+profiles. Consumers such as Populace decide which profile rows their support
+universe can activate and how to execute calibration.
 """
 
 from arch.targets import *  # noqa: F403
