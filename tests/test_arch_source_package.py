@@ -604,8 +604,8 @@ def test_national_soi_source_package_aliases_validate_fixture_counts():
         "soi-historic-table-2-state-agi-2022": {
             "record_set_count": 51,
             "row_count": 459,
-            "measure_count": 102,
-            "source_record_count": 918,
+            "measure_count": 204,
+            "source_record_count": 1836,
             "source_region_count": 51,
         },
         "soi-historic-table-2-state-broad-2022": {
@@ -2132,6 +2132,51 @@ def test_soi_historic_table_2_state_broad_package_builds_2022_state_facts():
     assert ca_actc.value == 3_605_628_000
     assert ca_returns.geography.id == "0400000US06"
     assert ca_partnership.layout.source_column_id == "A26270"
+
+
+def test_soi_historic_table_2_state_agi_package_builds_taxable_interest_facts():
+    package = load_source_package("soi-historic-table-2-state-agi-2022")
+    rows = package.build_source_rows(2023)
+    cells = package.build_source_cells(2023, source_rows=rows)
+    facts = package.build_facts(2023, cells=cells, source_rows=rows)
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "soi-historic-table-2-state-agi-2022"
+    assert validate_source_rows(rows).valid
+    assert validate_source_cells(cells).valid
+    assert validate_facts(facts).valid
+    assert len(facts) == 1_836
+
+    ca_interest_amount = values_by_record[
+        "irs_soi.ty2022.historic_table_2.state_agi.ca.200k_to_500k."
+        "taxable_interest_amount"
+    ]
+    ca_interest_returns = values_by_record[
+        "irs_soi.ty2022.historic_table_2.state_agi.ca.200k_to_500k."
+        "taxable_interest_returns"
+    ]
+    ca_high_income_interest = values_by_record[
+        "irs_soi.ty2022.historic_table_2.state_agi.ca.500k_plus.taxable_interest_amount"
+    ]
+
+    assert ca_interest_amount.value == 2_934_819_000
+    assert ca_interest_returns.value == 1_201_840
+    assert ca_high_income_interest.value == 9_762_338_000
+    assert ca_interest_amount.geography.id == "0400000US06"
+    assert ca_interest_amount.layout.source_column_id == "A00300"
+    assert ca_interest_returns.layout.source_column_id == "N00300"
+    assert ca_interest_amount.filters["income_range"] == "200k_to_500k"
+    assert ca_high_income_interest.filters["income_range"] == "500k_plus"
+    assert {constraint.operator for constraint in ca_interest_amount.constraints} == {
+        "<",
+        ">=",
+    }
+    assert {
+        constraint.operator for constraint in ca_high_income_interest.constraints
+    } == {">="}
+    assert {constraint.variable for constraint in ca_interest_amount.constraints} == {
+        "us:statutes/26/62#adjusted_gross_income"
+    }
 
 
 def test_soi_historic_table_2_state_eitc_package_builds_child_count_facts():
