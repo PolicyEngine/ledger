@@ -28,6 +28,7 @@ from arch.source_package import (
 )
 from arch.sources.cells import build_source_cell_key, validate_source_cells
 from arch.sources.rows import validate_source_rows
+from arch.suite import build_source_suite
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 
@@ -2134,7 +2135,9 @@ def test_soi_historic_table_2_state_broad_package_builds_2022_state_facts():
     assert ca_partnership.layout.source_column_id == "A26270"
 
 
-def test_soi_historic_table_2_state_agi_package_builds_taxable_interest_facts():
+def test_soi_historic_table_2_state_agi_package_builds_taxable_interest_facts(
+    tmp_path,
+):
     package = load_source_package("soi-historic-table-2-state-agi-2022")
     rows = package.build_source_rows(2023)
     cells = package.build_source_cells(2023, source_rows=rows)
@@ -2177,6 +2180,13 @@ def test_soi_historic_table_2_state_agi_package_builds_taxable_interest_facts():
     assert {constraint.variable for constraint in ca_interest_amount.constraints} == {
         "us:statutes/26/62#adjusted_gross_income"
     }
+    suite = build_source_suite(
+        "soi-historic-table-2-state-agi-2022",
+        tmp_path / "soi-historic-table-2-state-agi-2022",
+        year=2023,
+    )
+    assert suite.agent_acceptance.valid
+    assert suite.agent_acceptance.counts["row_semantic_error_count"] == 0
 
 
 def test_soi_historic_table_2_state_eitc_package_builds_child_count_facts():

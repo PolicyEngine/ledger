@@ -963,7 +963,11 @@ def _row_semantic_evidence_issues(
             )
             continue
         for matched_value in matched_values:
-            if not _values_equal(matched_value, value):
+            if not _filter_value_matches_source_value(
+                variable,
+                value,
+                matched_value,
+            ):
                 issues.append(
                     AgentAcceptanceIssue(
                         code="row_filter_value_mismatch",
@@ -1065,6 +1069,67 @@ def _source_row_value(row: SourceRow, variable: str) -> tuple[bool, Any]:
         if candidate in values_by_column:
             return True, values_by_column[candidate]
     return False, None
+
+
+def _filter_value_matches_source_value(
+    variable: str,
+    expected: Any,
+    source_value: Any,
+) -> bool:
+    if _values_equal(source_value, expected):
+        return True
+    if _normalize_semantic_name(variable) != "incomerange":
+        return False
+    return _income_range_contains(expected, source_value)
+
+
+def _income_range_contains(expected: Any, source_value: Any) -> bool:
+    expected_bounds = _income_range_bounds(expected)
+    source_bounds = _income_range_bounds(source_value)
+    if expected_bounds is None or source_bounds is None:
+        return False
+    expected_lower, expected_upper = expected_bounds
+    source_lower, source_upper = source_bounds
+    if expected_lower is not None:
+        if source_lower is None or source_lower < expected_lower:
+            return False
+    if expected_upper is not None:
+        if source_upper is None or source_upper > expected_upper:
+            return False
+    return True
+
+
+def _income_range_bounds(value: Any) -> tuple[float | None, float | None] | None:
+    text = str(value).strip().lower()
+    if text == "all":
+        return (None, None)
+    if text.startswith("under_"):
+        upper = _income_range_number(text.removeprefix("under_"))
+        return (None, upper) if upper is not None else None
+    if text.endswith("_plus"):
+        lower = _income_range_number(text.removesuffix("_plus"))
+        return (lower, None) if lower is not None else None
+    if "_to_" in text:
+        lower_text, upper_text = text.split("_to_", 1)
+        lower = _income_range_number(lower_text)
+        upper = _income_range_number(upper_text)
+        if lower is None or upper is None:
+            return None
+        return (lower, upper)
+    return None
+
+
+def _income_range_number(text: str) -> float | None:
+    match = re.fullmatch(r"(\d+(?:\.\d+)?)([km])?", text)
+    if match is None:
+        return None
+    value = float(match.group(1))
+    suffix = match.group(2)
+    if suffix == "k":
+        return value * 1_000
+    if suffix == "m":
+        return value * 1_000_000
+    return value
 
 
 def _constraint_evidenced_by_source_rows(
