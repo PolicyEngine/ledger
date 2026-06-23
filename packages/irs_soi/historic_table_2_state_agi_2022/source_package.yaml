@@ -1237,7 +1237,8 @@ record_sets:
     row_number: 10
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -1278,6 +1279,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -1483,7 +1501,8 @@ record_sets:
     row_number: 20
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -1524,6 +1543,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -1729,7 +1765,8 @@ record_sets:
     row_number: 30
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -1770,6 +1807,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -1975,7 +2029,8 @@ record_sets:
     row_number: 40
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -2016,6 +2071,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -2221,7 +2293,8 @@ record_sets:
     row_number: 50
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -2262,6 +2335,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -2467,7 +2557,8 @@ record_sets:
     row_number: 60
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -2508,6 +2599,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -2713,7 +2821,8 @@ record_sets:
     row_number: 70
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -2754,6 +2863,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -2959,7 +3085,8 @@ record_sets:
     row_number: 80
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -3000,6 +3127,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -3205,7 +3349,8 @@ record_sets:
     row_number: 90
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -3246,6 +3391,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -3451,7 +3613,8 @@ record_sets:
     row_number: 100
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -3492,6 +3655,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -3697,7 +3877,8 @@ record_sets:
     row_number: 110
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -3738,6 +3919,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -3943,7 +4141,8 @@ record_sets:
     row_number: 120
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -3984,6 +4183,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -4189,7 +4405,8 @@ record_sets:
     row_number: 130
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -4230,6 +4447,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -4435,7 +4669,8 @@ record_sets:
     row_number: 140
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -4476,6 +4711,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -4681,7 +4933,8 @@ record_sets:
     row_number: 150
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -4722,6 +4975,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -4927,7 +5197,8 @@ record_sets:
     row_number: 160
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -4968,6 +5239,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -5173,7 +5461,8 @@ record_sets:
     row_number: 170
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -5214,6 +5503,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -5419,7 +5725,8 @@ record_sets:
     row_number: 180
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -5460,6 +5767,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -5665,7 +5989,8 @@ record_sets:
     row_number: 190
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -5706,6 +6031,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -5911,7 +6253,8 @@ record_sets:
     row_number: 200
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -5952,6 +6295,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -6157,7 +6517,8 @@ record_sets:
     row_number: 210
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -6198,6 +6559,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -6403,7 +6781,8 @@ record_sets:
     row_number: 220
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -6444,6 +6823,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -6649,7 +7045,8 @@ record_sets:
     row_number: 230
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -6690,6 +7087,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -6895,7 +7309,8 @@ record_sets:
     row_number: 240
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -6936,6 +7351,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -7141,7 +7573,8 @@ record_sets:
     row_number: 250
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -7182,6 +7615,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -7387,7 +7837,8 @@ record_sets:
     row_number: 260
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -7428,6 +7879,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -7633,7 +8101,8 @@ record_sets:
     row_number: 270
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -7674,6 +8143,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -7879,7 +8365,8 @@ record_sets:
     row_number: 280
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -7920,6 +8407,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -8125,7 +8629,8 @@ record_sets:
     row_number: 290
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -8166,6 +8671,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -8371,7 +8893,8 @@ record_sets:
     row_number: 300
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -8412,6 +8935,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -8617,7 +9157,8 @@ record_sets:
     row_number: 310
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -8658,6 +9199,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -8863,7 +9421,8 @@ record_sets:
     row_number: 320
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -8904,6 +9463,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -9109,7 +9685,8 @@ record_sets:
     row_number: 330
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -9150,6 +9727,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -9355,7 +9949,8 @@ record_sets:
     row_number: 340
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -9396,6 +9991,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -9601,7 +10213,8 @@ record_sets:
     row_number: 350
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -9642,6 +10255,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -9847,7 +10477,8 @@ record_sets:
     row_number: 360
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -9888,6 +10519,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -10093,7 +10741,8 @@ record_sets:
     row_number: 370
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -10134,6 +10783,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -10339,7 +11005,8 @@ record_sets:
     row_number: 380
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -10380,6 +11047,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -10585,7 +11269,8 @@ record_sets:
     row_number: 390
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -10626,6 +11311,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -10831,7 +11533,8 @@ record_sets:
     row_number: 400
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -10872,6 +11575,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -11077,7 +11797,8 @@ record_sets:
     row_number: 410
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -11118,6 +11839,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -11323,7 +12061,8 @@ record_sets:
     row_number: 420
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -11364,6 +12103,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -11569,7 +12325,8 @@ record_sets:
     row_number: 430
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -11610,6 +12367,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -11815,7 +12589,8 @@ record_sets:
     row_number: 440
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -11856,6 +12631,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -12061,7 +12853,8 @@ record_sets:
     row_number: 450
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -12102,6 +12895,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -12307,7 +13117,8 @@ record_sets:
     row_number: 460
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -12348,6 +13159,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -12553,7 +13381,8 @@ record_sets:
     row_number: 470
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -12594,6 +13423,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -12799,7 +13645,8 @@ record_sets:
     row_number: 480
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -12840,6 +13687,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -13045,7 +13909,8 @@ record_sets:
     row_number: 490
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -13086,6 +13951,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -13291,7 +14173,8 @@ record_sets:
     row_number: 500
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -13332,6 +14215,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
@@ -13537,7 +14437,8 @@ record_sets:
     row_number: 510
     expected_row_header_column: B
     expected_row_header: 9
-    filters: {}
+    filters:
+      income_range: 500k_plus
     constraints:
     - variable: us:statutes/26/62#adjusted_gross_income
       operator: '>='
@@ -13578,6 +14479,23 @@ record_sets:
     concept_evidence_url: https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)
     concept_evidence_notes: IRS SOI Historic Table 2 reports adjusted gross income for individual income tax returns; IRC section 62 defines adjusted gross income. This Arch assertion treats the SOI AGI column as exactly adopting that legal concept for the tax-year source record.
     legal_vintage: tax_year_{year}
+    unit: usd
+    aggregation: sum
+    value_scale: 1000
+  - measure_id: taxable_interest_returns
+    label: Returns with taxable interest
+    ordinal: 2
+    column: Y
+    source_column_id: N00300
+    concept: irs_soi.returns_with_taxable_interest
+    unit: count
+    aggregation: count
+  - measure_id: taxable_interest_amount
+    label: Taxable interest
+    ordinal: 3
+    column: Z
+    source_column_id: A00300
+    concept: irs_soi.taxable_interest
     unit: usd
     aggregation: sum
     value_scale: 1000
