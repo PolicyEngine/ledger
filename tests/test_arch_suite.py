@@ -158,6 +158,131 @@ def test_build_source_suite_supports_soi_table_1_4(tmp_path):
     assert (output_dir / "arch.db").exists()
 
 
+def test_agent_acceptance_accepts_aggregate_income_range_source_rows():
+    artifact = SourceArtifactMetadata(
+        source_name="irs_soi",
+        source_table="Historic Table 2 state AGI facts",
+        source_file="test.csv",
+        url="https://example.test/test.csv",
+        vintage="tax_year_2022",
+        sha256="abc123",
+        size_bytes=10,
+        extracted_at="2026-05-06",
+        extraction_method="test",
+        raw_r2_bucket="arch-raw",
+        raw_r2_key="raw/irs_soi/test.csv",
+        raw_r2_uri="r2://arch-raw/raw/irs_soi/test.csv",
+    )
+    row_500k_to_1m = SourceRow(
+        artifact=artifact,
+        sheet_name="in55cmcsv",
+        row_number=10,
+        values={"AGI_STUB": 9},
+    )
+    row_1m_plus = SourceRow(
+        artifact=artifact,
+        sheet_name="in55cmcsv",
+        row_number=11,
+        values={"AGI_STUB": 10},
+    )
+    row_keys = (
+        build_source_row_key(row_500k_to_1m),
+        build_source_row_key(row_1m_plus),
+    )
+    cells = [
+        SourceCell(
+            artifact=artifact,
+            sheet_name="in55cmcsv",
+            row_number=10,
+            column_number=1,
+            address="A10",
+            cell_type="number",
+            raw_value=1,
+            display_value="1",
+            source_row_key=row_keys[0],
+        ),
+        SourceCell(
+            artifact=artifact,
+            sheet_name="in55cmcsv",
+            row_number=11,
+            column_number=1,
+            address="A11",
+            cell_type="number",
+            raw_value=2,
+            display_value="2",
+            source_row_key=row_keys[1],
+        ),
+    ]
+    fact = AggregateFact(
+        value=3,
+        period=PeriodDimension(type="tax_year", value=2022),
+        geography=GeographyDimension(
+            level="country",
+            id="0100000US",
+            vintage="current",
+            name="United States",
+        ),
+        entity=EntityDimension(name="tax_unit"),
+        measure=Measure(concept="irs_soi.taxable_interest", unit="usd"),
+        aggregation=Aggregation(method="sum"),
+        source=SourceProvenance(
+            source_name="irs_soi",
+            source_table="test",
+            source_file="test.csv",
+            url="https://example.test/test.csv",
+            vintage="test",
+            extracted_at="2026-05-06",
+            extraction_method="test",
+        ),
+        filters={"income_range": "500k_plus"},
+        source_record_id="irs_soi.test.500k_plus.taxable_interest",
+        source_cell_keys=tuple(build_source_cell_key(cell) for cell in cells),
+        source_row_keys=row_keys,
+        constraints=(
+            AggregateConstraint(
+                variable="us:statutes/26/62#adjusted_gross_income",
+                operator=">=",
+                value=500_000,
+                unit="usd",
+            ),
+        ),
+        layout=SourceRecordLayout(
+            groupby_dimension="income_range",
+            groupby_value_id="500k_plus",
+            table_record_kind="detail",
+        ),
+    )
+
+    report = build_agent_acceptance_report(
+        [fact],
+        [row_500k_to_1m, row_1m_plus],
+        cells,
+        source_rows=validate_source_rows([row_500k_to_1m, row_1m_plus]),
+        source_cells=validate_source_cells(cells),
+        source_regions=SourceRegionSuiteReport(
+            region_count=0,
+            covered_cell_count=0,
+            errors=(),
+        ),
+        source_records=SourceRecordSuiteReport(
+            spec_count=1,
+            resolved_count=1,
+            lineaged_count=1,
+            errors=(),
+        ),
+        fact_report=validate_facts([fact]),
+        concept_alignments=ConceptAlignmentReport(
+            alignment_count=0,
+            checked_count=0,
+            alignments=(),
+            errors=(),
+        ),
+    )
+
+    assert report.valid
+    assert report.counts["row_semantic_error_count"] == 0
+
+
 def test_agent_acceptance_rejects_row_constraints_without_source_evidence():
     artifact = SourceArtifactMetadata(
         source_name="bea",
