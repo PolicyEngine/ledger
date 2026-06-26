@@ -157,7 +157,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -180,7 +180,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -219,7 +219,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -258,7 +258,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -297,7 +297,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -369,7 +369,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -392,7 +392,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -431,7 +431,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -470,7 +470,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -509,7 +509,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -581,7 +581,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -604,7 +604,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -643,7 +643,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -682,7 +682,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -721,7 +721,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -793,7 +793,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -816,7 +816,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -855,7 +855,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -894,7 +894,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -933,7 +933,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -1005,7 +1005,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -1028,7 +1028,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -1067,7 +1067,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -1106,7 +1106,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -1145,7 +1145,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -1217,7 +1217,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -1240,7 +1240,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -1279,7 +1279,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -1318,7 +1318,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -1357,7 +1357,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -1429,7 +1429,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -1452,7 +1452,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -1491,7 +1491,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -1530,7 +1530,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -1569,7 +1569,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -1641,7 +1641,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -1664,7 +1664,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -1703,7 +1703,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -1742,7 +1742,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -1781,7 +1781,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -1853,7 +1853,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -1876,7 +1876,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -1915,7 +1915,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -1954,7 +1954,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -1993,7 +1993,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -2065,7 +2065,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -2088,7 +2088,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -2127,7 +2127,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -2166,7 +2166,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -2205,7 +2205,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -2277,7 +2277,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -2300,7 +2300,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -2339,7 +2339,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -2378,7 +2378,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -2417,7 +2417,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -2489,7 +2489,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -2512,7 +2512,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -2551,7 +2551,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -2590,7 +2590,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -2629,7 +2629,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -2701,7 +2701,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -2724,7 +2724,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -2763,7 +2763,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -2802,7 +2802,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -2841,7 +2841,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -2913,7 +2913,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -2936,7 +2936,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -2975,7 +2975,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -3014,7 +3014,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -3053,7 +3053,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -3125,7 +3125,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -3148,7 +3148,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -3187,7 +3187,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -3226,7 +3226,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -3265,7 +3265,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -3337,7 +3337,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -3360,7 +3360,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -3399,7 +3399,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -3438,7 +3438,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -3477,7 +3477,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -3549,7 +3549,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -3572,7 +3572,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -3611,7 +3611,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -3650,7 +3650,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -3689,7 +3689,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -3761,7 +3761,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -3784,7 +3784,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -3823,7 +3823,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -3862,7 +3862,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -3901,7 +3901,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -3973,7 +3973,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -3996,7 +3996,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -4035,7 +4035,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -4074,7 +4074,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -4113,7 +4113,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -4185,7 +4185,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -4208,7 +4208,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -4247,7 +4247,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -4286,7 +4286,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -4325,7 +4325,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -4397,7 +4397,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -4420,7 +4420,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -4459,7 +4459,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -4498,7 +4498,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -4537,7 +4537,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -4609,7 +4609,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -4632,7 +4632,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -4671,7 +4671,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -4710,7 +4710,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -4749,7 +4749,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -4821,7 +4821,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -4844,7 +4844,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -4883,7 +4883,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -4922,7 +4922,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -4961,7 +4961,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -5033,7 +5033,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -5056,7 +5056,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -5095,7 +5095,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -5134,7 +5134,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -5173,7 +5173,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -5245,7 +5245,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -5268,7 +5268,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -5307,7 +5307,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -5346,7 +5346,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -5385,7 +5385,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -5457,7 +5457,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -5480,7 +5480,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -5519,7 +5519,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -5558,7 +5558,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -5597,7 +5597,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -5669,7 +5669,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -5692,7 +5692,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -5731,7 +5731,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -5770,7 +5770,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -5809,7 +5809,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -5881,7 +5881,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -5904,7 +5904,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -5943,7 +5943,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -5982,7 +5982,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -6021,7 +6021,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -6093,7 +6093,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -6116,7 +6116,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -6155,7 +6155,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -6194,7 +6194,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -6233,7 +6233,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -6305,7 +6305,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -6328,7 +6328,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -6367,7 +6367,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -6406,7 +6406,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -6445,7 +6445,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -6517,7 +6517,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -6540,7 +6540,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -6579,7 +6579,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -6618,7 +6618,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -6657,7 +6657,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -6729,7 +6729,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -6752,7 +6752,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -6791,7 +6791,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -6830,7 +6830,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -6869,7 +6869,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -6941,7 +6941,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -6964,7 +6964,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -7003,7 +7003,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -7042,7 +7042,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -7081,7 +7081,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -7153,7 +7153,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -7176,7 +7176,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -7215,7 +7215,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -7254,7 +7254,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -7293,7 +7293,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -7365,7 +7365,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -7388,7 +7388,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -7427,7 +7427,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -7466,7 +7466,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -7505,7 +7505,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -7577,7 +7577,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -7600,7 +7600,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -7639,7 +7639,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -7678,7 +7678,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -7717,7 +7717,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -7789,7 +7789,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -7812,7 +7812,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -7851,7 +7851,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -7890,7 +7890,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -7929,7 +7929,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -8001,7 +8001,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -8024,7 +8024,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -8063,7 +8063,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -8102,7 +8102,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -8141,7 +8141,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -8213,7 +8213,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -8236,7 +8236,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -8275,7 +8275,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -8314,7 +8314,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -8353,7 +8353,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -8425,7 +8425,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -8448,7 +8448,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -8487,7 +8487,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -8526,7 +8526,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -8565,7 +8565,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -8637,7 +8637,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -8660,7 +8660,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -8699,7 +8699,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -8738,7 +8738,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -8777,7 +8777,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -8849,7 +8849,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -8872,7 +8872,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -8911,7 +8911,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -8950,7 +8950,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -8989,7 +8989,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -9061,7 +9061,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -9084,7 +9084,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -9123,7 +9123,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -9162,7 +9162,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -9201,7 +9201,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -9273,7 +9273,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -9296,7 +9296,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -9335,7 +9335,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -9374,7 +9374,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -9413,7 +9413,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -9485,7 +9485,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -9508,7 +9508,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -9547,7 +9547,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -9586,7 +9586,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -9625,7 +9625,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -9697,7 +9697,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -9720,7 +9720,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -9759,7 +9759,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -9798,7 +9798,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -9837,7 +9837,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -9909,7 +9909,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -9932,7 +9932,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -9971,7 +9971,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -10010,7 +10010,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -10049,7 +10049,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -10121,7 +10121,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -10144,7 +10144,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -10183,7 +10183,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -10222,7 +10222,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -10261,7 +10261,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -10333,7 +10333,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -10356,7 +10356,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -10395,7 +10395,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -10434,7 +10434,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -10473,7 +10473,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -10545,7 +10545,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -10568,7 +10568,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -10607,7 +10607,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -10646,7 +10646,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -10685,7 +10685,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664
@@ -10757,7 +10757,7 @@ record_sets:
     source_column_id: N59660
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59660
@@ -10780,7 +10780,7 @@ record_sets:
     source_column_id: N59661
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59661
@@ -10819,7 +10819,7 @@ record_sets:
     source_column_id: N59662
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59662
@@ -10858,7 +10858,7 @@ record_sets:
     source_column_id: N59663
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59663
@@ -10897,7 +10897,7 @@ record_sets:
     source_column_id: N59664
     concept: irs_soi.returns_with_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: N59664

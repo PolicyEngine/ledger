@@ -51,7 +51,7 @@ record_sets:
         expected_column_header: "Number\nof\nreturns"
         concept: irs_soi.individual_income_tax_returns
         unit: count
-        aggregation: count
+        aggregation: sum
         expected_cell_type: number
       - measure_id: adjusted_gross_income
         label: Adjusted gross income

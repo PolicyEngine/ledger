@@ -409,7 +409,7 @@ record_sets:
         column: B
         concept: irs_soi.individual_income_tax_returns
         unit: count
-        aggregation: count
+        aggregation: sum
       - measure_id: adjusted_gross_income
         label: Adjusted gross income
         ordinal: 1
@@ -442,4 +442,4 @@ record_sets:
         column: N
         concept: irs_soi.returns_with_income_tax_after_credits
         unit: count
-        aggregation: count
+        aggregation: sum

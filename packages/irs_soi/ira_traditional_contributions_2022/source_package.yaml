@@ -50,7 +50,7 @@ record_sets:
     expected_column_header: "Number of \ntaxpayers"
     concept: irs_soi.traditional_ira_contributors
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
   - measure_id: amount
     label: Contribution amount

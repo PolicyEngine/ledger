@@ -1121,7 +1121,7 @@ record_sets:
       returns'
     concept: irs_soi.returns_with_total_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     constraints:
     - variable: us.tax.earned_income_credit_qualifying_children
@@ -2256,7 +2256,7 @@ record_sets:
       returns'
     concept: irs_soi.returns_with_total_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     constraints:
     - variable: us.tax.earned_income_credit_qualifying_children
@@ -3391,7 +3391,7 @@ record_sets:
       returns'
     concept: irs_soi.returns_with_total_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     constraints:
     - variable: us.tax.earned_income_credit_qualifying_children
@@ -4526,7 +4526,7 @@ record_sets:
       returns'
     concept: irs_soi.returns_with_total_earned_income_credit
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     constraints:
     - variable: us.tax.earned_income_credit_qualifying_children

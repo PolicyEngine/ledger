@@ -133189,7 +133189,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.02
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -134783,7 +134783,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.04
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -136377,7 +136377,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.05
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -137971,7 +137971,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.06
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -139565,7 +139565,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.08
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -141159,7 +141159,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.09
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -142753,7 +142753,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.10
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -144347,7 +144347,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.11
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -145941,7 +145941,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.12
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -147535,7 +147535,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.13
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -149129,7 +149129,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.15
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -150723,7 +150723,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.16
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -152317,7 +152317,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.17
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -153911,7 +153911,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.18
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -155505,7 +155505,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.19
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -157099,7 +157099,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.20
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -158693,7 +158693,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.21
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -160287,7 +160287,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.22
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -161881,7 +161881,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.23
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -163475,7 +163475,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.24
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -165069,7 +165069,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.25
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -166663,7 +166663,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.26
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -168257,7 +168257,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.27
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -169851,7 +169851,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.28
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -171445,7 +171445,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.29
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -173039,7 +173039,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.30
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -174633,7 +174633,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.31
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -176227,7 +176227,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.32
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -177821,7 +177821,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.33
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -179415,7 +179415,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.34
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -181009,7 +181009,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.35
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -182603,7 +182603,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.36
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -184197,7 +184197,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.37
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -185791,7 +185791,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.38
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -187385,7 +187385,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.39
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -188979,7 +188979,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.40
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -190573,7 +190573,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.41
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -192167,7 +192167,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.42
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -193761,7 +193761,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.44
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -195355,7 +195355,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.45
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -196949,7 +196949,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.46
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -198543,7 +198543,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.47
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -200137,7 +200137,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.48
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -201731,7 +201731,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.49
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -203325,7 +203325,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.50
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -204919,7 +204919,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.51
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -206513,7 +206513,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.53
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -208107,7 +208107,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.54
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -209701,7 +209701,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.55
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -211295,7 +211295,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.56
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
@@ -212889,5 +212889,5 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number

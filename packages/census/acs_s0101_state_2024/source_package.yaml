@@ -467,7 +467,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.02
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -923,7 +923,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.04
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -1379,7 +1379,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.05
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -1835,7 +1835,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.06
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -2291,7 +2291,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.08
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -2747,7 +2747,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.09
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -3203,7 +3203,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.10
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -3659,7 +3659,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.11
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -4115,7 +4115,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.12
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -4571,7 +4571,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.13
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -5027,7 +5027,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.15
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -5483,7 +5483,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.16
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -5939,7 +5939,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.17
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -6395,7 +6395,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.18
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -6851,7 +6851,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.19
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -7307,7 +7307,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.20
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -7763,7 +7763,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.21
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -8219,7 +8219,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.22
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -8675,7 +8675,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.23
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -9131,7 +9131,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.24
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -9587,7 +9587,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.25
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -10043,7 +10043,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.26
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -10499,7 +10499,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.27
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -10955,7 +10955,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.28
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -11411,7 +11411,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.29
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -11867,7 +11867,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.30
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -12323,7 +12323,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.31
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -12779,7 +12779,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.32
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -13235,7 +13235,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.33
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -13691,7 +13691,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.34
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -14147,7 +14147,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.35
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -14603,7 +14603,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.36
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -15059,7 +15059,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.37
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -15515,7 +15515,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.38
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -15971,7 +15971,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.39
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -16427,7 +16427,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.40
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -16883,7 +16883,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.41
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -17339,7 +17339,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.42
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -17795,7 +17795,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.44
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -18251,7 +18251,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.45
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -18707,7 +18707,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.46
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -19163,7 +19163,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.47
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -19619,7 +19619,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.48
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -20075,7 +20075,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.49
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -20531,7 +20531,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.50
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -20987,7 +20987,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.51
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -21443,7 +21443,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.53
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -21899,7 +21899,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.54
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -22355,7 +22355,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.55
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -22811,7 +22811,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.56
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -23267,7 +23267,7 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s0101.state_age.72
   record_set_spec_id: census_acs.s0101.state_age.v1
@@ -23723,5 +23723,5 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number

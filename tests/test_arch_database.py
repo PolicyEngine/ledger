@@ -21,13 +21,14 @@ def test_build_aggregate_constraints_lifts_agi_filters():
     fact = next(
         fact
         for fact in build_soi_table_1_1_facts(2023)
-        if fact.source_record_id
-        == "irs_soi.ty2023.table_1_1.100k_to_200k.return_count"
+        if fact.source_record_id == "irs_soi.ty2023.table_1_1.100k_to_200k.return_count"
     )
 
     constraints = build_aggregate_constraints(fact)
 
-    assert [(item.variable, item.operator, item.value, item.unit) for item in constraints] == [
+    assert [
+        (item.variable, item.operator, item.value, item.unit) for item in constraints
+    ] == [
         (AXIOM_IRC_AGI_CONCEPT, ">=", 100_000, "usd"),
         (AXIOM_IRC_AGI_CONCEPT, "<", 200_000, "usd"),
     ]
@@ -68,14 +69,12 @@ def test_build_arch_db_writes_aggregate_fact_constraints_and_lineage(tmp_path):
         ).fetchone()
 
         assert all_returns["measure_concept"] == "irs_soi.individual_income_tax_returns"
-        assert all_returns["aggregation_method"] == "count"
+        assert all_returns["aggregation_method"] == "sum"
         assert all_returns["entity_name"] == "tax_unit"
         assert all_returns["value_numeric"] == 160_602_107
         assert all_returns["domain"] == "all_individual_income_tax_returns"
         assert artifact["raw_r2_bucket"] == "arch-raw"
-        assert artifact["raw_r2_key"].startswith(
-            "raw/irs_soi/soi-table-1-1/2023/"
-        )
+        assert artifact["raw_r2_key"].startswith("raw/irs_soi/soi-table-1-1/2023/")
         assert artifact["raw_r2_uri"].startswith("r2://arch-raw/")
         assert build_artifact_count == 0
 
@@ -196,7 +195,9 @@ def test_build_arch_db_file_uses_fixture_facts_and_cells(tmp_path):
         facts_count = connection.execute(
             "SELECT COUNT(*) FROM aggregate_facts"
         ).fetchone()[0]
-        cells_count = connection.execute("SELECT COUNT(*) FROM source_cells").fetchone()[0]
+        cells_count = connection.execute(
+            "SELECT COUNT(*) FROM source_cells"
+        ).fetchone()[0]
 
     assert facts_count == 80
     assert cells_count == 1932

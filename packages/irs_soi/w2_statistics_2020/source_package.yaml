@@ -50,7 +50,7 @@ record_sets:
     expected_column_header: Number of returns
     concept: irs_soi.form_w2_social_security_tip_returns
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
   - measure_id: taxpayer_count
     label: Number of taxpayers
@@ -61,7 +61,7 @@ record_sets:
     expected_column_header: Number of taxpayers
     concept: irs_soi.form_w2_social_security_tip_taxpayers
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
   - measure_id: amount
     label: Amount

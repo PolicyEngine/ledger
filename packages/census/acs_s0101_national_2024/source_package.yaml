@@ -341,5 +341,5 @@ record_sets:
     source_concept: ACS S0101 total population age-band estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
