@@ -45,7 +45,6 @@ ALLOWED_ENTITIES = {
     "institutional_sector",
 }
 ALLOWED_AGGREGATIONS = {
-    "count",
     "sum",
     "mean",
     "median",
@@ -245,7 +244,7 @@ def build_fact_key(fact: AggregateFact) -> str:
 def build_label(fact: AggregateFact) -> str:
     """Build a human-readable label from fact metadata."""
     concept = _humanize(fact.measure.concept)
-    aggregation = _humanize(fact.aggregation.method)
+    aggregation = _aggregation_label(fact)
     entity = _humanize(fact.entity.name)
     period = f"{fact.period.value} {_humanize(fact.period.type)}"
     geography = fact.geography.name or fact.geography.id
@@ -257,6 +256,12 @@ def build_label(fact: AggregateFact) -> str:
     if source:
         label = f"{label} [{source}]"
     return label
+
+
+def _aggregation_label(fact: AggregateFact) -> str:
+    if fact.aggregation.method == "sum" and fact.measure.unit == "count":
+        return "count"
+    return _humanize(fact.aggregation.method)
 
 
 def build_aggregate_constraints(

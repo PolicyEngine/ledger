@@ -20,7 +20,7 @@ def test__given_ledger_import_path__then_it_reexports_arch_fact_schema() -> None
         geography=GeographyDimension(level="country", id="0100000US"),
         entity=EntityDimension(name="person"),
         measure=Measure(concept="test.people", unit="count"),
-        aggregation=Aggregation(method="count"),
+        aggregation=Aggregation(method="sum"),
         source=SourceProvenance(
             source_name="test",
             source_table="Fixture",

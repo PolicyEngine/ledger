@@ -17,6 +17,7 @@ import httpx
 import yaml
 
 from arch.core import (
+    ALLOWED_AGGREGATIONS,
     Aggregation,
     AggregateConstraint,
     EntityDimension,
@@ -1065,9 +1066,7 @@ def _validate_record_set_authoring(
             errors.append(
                 SourcePackageIssue(
                     code="malformed_row_column",
-                    message=(
-                        "Row column must be an Excel column name like B or AA."
-                    ),
+                    message=("Row column must be an Excel column name like B or AA."),
                     record_set_id=record_set.record_set_id,
                     row_id=row.value_id,
                 )
@@ -1095,6 +1094,18 @@ def _validate_record_set_authoring(
                     code="malformed_measure_column",
                     message=(
                         "Measure column must be an Excel column name like B or AA."
+                    ),
+                    record_set_id=record_set.record_set_id,
+                    measure_id=measure.measure_id,
+                )
+            )
+        if measure.aggregation not in ALLOWED_AGGREGATIONS:
+            errors.append(
+                SourcePackageIssue(
+                    code="malformed_measure_aggregation",
+                    message=(
+                        "Measure aggregation must be one of "
+                        f"{sorted(ALLOWED_AGGREGATIONS)!r}."
                     ),
                     record_set_id=record_set.record_set_id,
                     measure_id=measure.measure_id,
@@ -1835,5 +1846,5 @@ record_sets:
         column: B
         concept: TODO_concept
         unit: count
-        aggregation: count
+        aggregation: sum
 """

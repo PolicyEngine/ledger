@@ -83,12 +83,8 @@ def test_build_source_suite_writes_artifacts_and_reports(tmp_path):
     )
 
     assert len(consumer_facts) == 80
-    assert consumer_facts[0]["aggregate_fact_key"].startswith(
-        "arch.aggregate_fact.v2:"
-    )
-    assert consumer_facts[0]["semantic_fact_key"].startswith(
-        "arch.semantic_fact.v2:"
-    )
+    assert consumer_facts[0]["aggregate_fact_key"].startswith("arch.aggregate_fact.v2:")
+    assert consumer_facts[0]["semantic_fact_key"].startswith("arch.semantic_fact.v2:")
     assert datapackage["profile"] == "data-package"
     assert {resource["path"] for resource in datapackage["resources"]} >= {
         "source_cells.jsonl",
@@ -385,9 +381,7 @@ def test_agent_acceptance_rejects_row_constraints_without_source_evidence():
     )
 
     assert not report.valid
-    assert "row_constraint_not_evidenced" in {
-        error.code for error in report.errors
-    }
+    assert "row_constraint_not_evidenced" in {error.code for error in report.errors}
 
 
 def test_agent_acceptance_accepts_source_row_bound_constraints():
@@ -560,7 +554,7 @@ def test_agent_acceptance_accepts_age_constraints_from_source_cell_header():
             concept="census.population_projection",
             unit="count",
         ),
-        aggregation=Aggregation(method="count"),
+        aggregation=Aggregation(method="sum"),
         source=SourceProvenance(
             source_name="census_population_projections",
             source_table="test",
@@ -624,9 +618,7 @@ def test_agent_acceptance_accepts_age_constraints_from_source_cell_header():
 
     assert report.valid
     assert report.checks["row_lineage_semantics_evidenced"]
-    assert "row_constraint_not_evidenced" not in {
-        error.code for error in report.errors
-    }
+    assert "row_constraint_not_evidenced" not in {error.code for error in report.errors}
 
 
 def test_build_suite_cli_emits_json_summary(tmp_path, capsys):

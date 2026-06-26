@@ -259,14 +259,14 @@ record_sets:
         column: C
         concept: irs_soi.individual_income_tax_returns
         unit: count
-        aggregation: count
+        aggregation: sum
       - measure_id: tax_filer_individual_count
         label: Number of individuals
         ordinal: 1
         column: L
         concept: irs_soi.tax_filer_individuals
         unit: count
-        aggregation: count
+        aggregation: sum
       - measure_id: adjusted_gross_income
         label: Adjusted gross income
         ordinal: 2
@@ -287,7 +287,7 @@ record_sets:
         column: CX
         concept: irs_soi.returns_with_income_tax_before_credits
         unit: count
-        aggregation: count
+        aggregation: sum
       - measure_id: income_tax_before_credits_amount
         label: Income tax before credits
         ordinal: 4
@@ -302,7 +302,7 @@ record_sets:
         column: DT
         concept: irs_soi.returns_with_premium_tax_credit
         unit: count
-        aggregation: count
+        aggregation: sum
       - measure_id: premium_tax_credit_amount
         label: Premium tax credit
         ordinal: 6
@@ -317,7 +317,7 @@ record_sets:
         column: DZ
         concept: irs_soi.returns_with_earned_income_credit
         unit: count
-        aggregation: count
+        aggregation: sum
       - measure_id: eitc_amount
         label: Earned income credit
         ordinal: 8
@@ -332,7 +332,7 @@ record_sets:
         column: BZ
         concept: irs_soi.returns_with_real_estate_taxes
         unit: count
-        aggregation: count
+        aggregation: sum
       - measure_id: real_estate_taxes_amount
         label: Real estate taxes
         ordinal: 10
@@ -347,7 +347,7 @@ record_sets:
         column: CB
         concept: irs_soi.returns_with_limited_state_local_taxes
         unit: count
-        aggregation: count
+        aggregation: sum
       - measure_id: limited_state_local_taxes_amount
         label: Limited state and local taxes
         ordinal: 12
@@ -364,7 +364,7 @@ record_sets:
         source_column_id: N02650
         concept: irs_soi.returns_with_total_income
         unit: count
-        aggregation: count
+        aggregation: sum
         expected_cell_type: number
         expected_column_header_row: 1
         expected_column_header: N02650
@@ -389,7 +389,7 @@ record_sets:
         source_column_id: N00200
         concept: irs_soi.returns_with_total_wages
         unit: count
-        aggregation: count
+        aggregation: sum
         expected_cell_type: number
         expected_column_header_row: 1
         expected_column_header: N00200
@@ -420,7 +420,7 @@ record_sets:
         source_column_id: N00300
         concept: irs_soi.returns_with_taxable_interest
         unit: count
-        aggregation: count
+        aggregation: sum
         expected_cell_type: number
         expected_column_header_row: 1
         expected_column_header: N00300
@@ -445,7 +445,7 @@ record_sets:
         source_column_id: N00400
         concept: irs_soi.returns_with_tax_exempt_interest
         unit: count
-        aggregation: count
+        aggregation: sum
         expected_cell_type: number
         expected_column_header_row: 1
         expected_column_header: N00400
@@ -470,7 +470,7 @@ record_sets:
         source_column_id: N00600
         concept: irs_soi.returns_with_ordinary_dividends
         unit: count
-        aggregation: count
+        aggregation: sum
         expected_cell_type: number
         expected_column_header_row: 1
         expected_column_header: N00600
@@ -495,7 +495,7 @@ record_sets:
         source_column_id: N00650
         concept: irs_soi.returns_with_qualified_dividends
         unit: count
-        aggregation: count
+        aggregation: sum
         expected_cell_type: number
         expected_column_header_row: 1
         expected_column_header: N00650
@@ -520,7 +520,7 @@ record_sets:
         source_column_id: N00900
         concept: irs_soi.returns_with_schedule_c_income
         unit: count
-        aggregation: count
+        aggregation: sum
         expected_cell_type: number
         expected_column_header_row: 1
         expected_column_header: N00900
@@ -545,7 +545,7 @@ record_sets:
         source_column_id: N01000
         concept: irs_soi.returns_with_taxable_net_capital_gains
         unit: count
-        aggregation: count
+        aggregation: sum
         expected_cell_type: number
         expected_column_header_row: 1
         expected_column_header: N01000
@@ -570,7 +570,7 @@ record_sets:
         source_column_id: N01400
         concept: irs_soi.returns_with_taxable_ira_distributions
         unit: count
-        aggregation: count
+        aggregation: sum
         expected_cell_type: number
         expected_column_header_row: 1
         expected_column_header: N01400
@@ -595,7 +595,7 @@ record_sets:
         source_column_id: N01700
         concept: irs_soi.returns_with_taxable_pension_income
         unit: count
-        aggregation: count
+        aggregation: sum
         expected_cell_type: number
         expected_column_header_row: 1
         expected_column_header: N01700
@@ -620,7 +620,7 @@ record_sets:
         source_column_id: N02300
         concept: irs_soi.returns_with_unemployment_compensation
         unit: count
-        aggregation: count
+        aggregation: sum
         expected_cell_type: number
         expected_column_header_row: 1
         expected_column_header: N02300
@@ -645,7 +645,7 @@ record_sets:
         source_column_id: N02500
         concept: irs_soi.returns_with_taxable_social_security_benefits
         unit: count
-        aggregation: count
+        aggregation: sum
         expected_cell_type: number
         expected_column_header_row: 1
         expected_column_header: N02500
@@ -670,7 +670,7 @@ record_sets:
         source_column_id: N26270
         concept: irs_soi.returns_with_partnership_scorp_income
         unit: count
-        aggregation: count
+        aggregation: sum
         expected_cell_type: number
         expected_column_header_row: 1
         expected_column_header: N26270
@@ -695,7 +695,7 @@ record_sets:
         source_column_id: N04470
         concept: irs_soi.returns_with_itemized_deductions
         unit: count
-        aggregation: count
+        aggregation: sum
         expected_cell_type: number
         expected_column_header_row: 1
         expected_column_header: N04470
@@ -720,7 +720,7 @@ record_sets:
         source_column_id: N17000
         concept: irs_soi.returns_with_medical_dental_expense_deduction
         unit: count
-        aggregation: count
+        aggregation: sum
         expected_cell_type: number
         expected_column_header_row: 1
         expected_column_header: N17000
@@ -745,7 +745,7 @@ record_sets:
         source_column_id: N04800
         concept: irs_soi.returns_with_taxable_income
         unit: count
-        aggregation: count
+        aggregation: sum
         expected_cell_type: number
         expected_column_header_row: 1
         expected_column_header: N04800
@@ -770,7 +770,7 @@ record_sets:
         source_column_id: N06500
         concept: irs_soi.returns_with_total_income_tax
         unit: count
-        aggregation: count
+        aggregation: sum
         expected_cell_type: number
         expected_column_header_row: 1
         expected_column_header: N06500
@@ -794,7 +794,7 @@ record_sets:
         source_column_id: N03270
         concept: irs_soi.returns_with_qualified_business_income_deduction
         unit: count
-        aggregation: count
+        aggregation: sum
         expected_cell_type: number
         expected_column_header_row: 1
         expected_column_header: N03270
@@ -817,7 +817,7 @@ record_sets:
         source_column_id: N25870
         concept: irs_soi.returns_with_rental_royalty_income
         unit: count
-        aggregation: count
+        aggregation: sum
         expected_cell_type: number
         expected_column_header_row: 1
         expected_column_header: N25870
@@ -840,7 +840,7 @@ record_sets:
         source_column_id: N07225
         concept: irs_soi.returns_with_child_tax_credit
         unit: count
-        aggregation: count
+        aggregation: sum
         expected_cell_type: number
         expected_column_header_row: 1
         expected_column_header: N07225
@@ -863,7 +863,7 @@ record_sets:
         source_column_id: N11070
         concept: irs_soi.returns_with_additional_child_tax_credit
         unit: count
-        aggregation: count
+        aggregation: sum
         expected_cell_type: number
         expected_column_header_row: 1
         expected_column_header: N11070

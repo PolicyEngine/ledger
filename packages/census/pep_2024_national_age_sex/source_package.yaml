@@ -880,5 +880,5 @@ record_sets:
     expected_column_header: POPESTIMATE2024
     concept: census_pep.resident_population
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number

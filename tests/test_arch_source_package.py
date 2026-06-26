@@ -98,7 +98,7 @@ def test_source_package_alias_compiles_soi_table_1_1_specs():
     assert len(specs) == 80
     assert specs[0].source_record_id == "irs_soi.ty2023.table_1_1.all.return_count"
     assert specs[0].layout is not None
-    assert specs[0].layout.record_set_spec_hash == "d606c87f11948c197386dfa4"
+    assert specs[0].layout.record_set_spec_hash == "94fe70f5b2562236752c34af"
 
 
 def test_empty_guard_cells_do_not_change_legacy_single_cell_hash(tmp_path):
@@ -113,7 +113,23 @@ def test_empty_guard_cells_do_not_change_legacy_single_cell_hash(tmp_path):
     specs = load_source_package(package_dir).build_source_record_specs(2023)
 
     assert specs[0].layout is not None
-    assert specs[0].layout.record_set_spec_hash == "d606c87f11948c197386dfa4"
+    assert specs[0].layout.record_set_spec_hash == "94fe70f5b2562236752c34af"
+
+
+def test_source_package_validation_rejects_count_aggregation(tmp_path):
+    source_path = REPO_ROOT / "packages" / "irs_soi" / "table_1_1"
+    payload = yaml.safe_load((source_path / "source_package.yaml").read_text())
+    payload["record_sets"][0]["measures"][0]["aggregation"] = "count"
+
+    package_dir = tmp_path / "soi-with-count-aggregation"
+    package_dir.mkdir()
+    (package_dir / "source_package.yaml").write_text(yaml.safe_dump(payload))
+
+    report = validate_source_package(package_dir, year=2023)
+
+    assert not report.valid
+    assert [error.code for error in report.errors] == ["malformed_measure_aggregation"]
+    assert report.errors[0].measure_id == "return_count"
 
 
 def test_guard_cell_order_does_not_change_record_set_spec_hash(tmp_path):

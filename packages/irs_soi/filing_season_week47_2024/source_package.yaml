@@ -56,7 +56,7 @@ record_sets:
         expected_column_header: "Total\nreturns"
         concept: irs_soi.returns_with_total_earned_income_credit
         unit: count
-        aggregation: count
+        aggregation: sum
         expected_cell_type: number
   - record_set_id: irs_soi.ty2024.filing_season_week47.eitc_all_returns.amount
     record_set_spec_id: irs_soi.filing_season_week47.eitc_amount.v1
@@ -367,7 +367,7 @@ record_sets:
         expected_column_header: "Total\nreturns"
         concept: irs_soi.returns_with_total_earned_income_credit
         unit: count
-        aggregation: count
+        aggregation: sum
         expected_cell_type: number
   - record_set_id: irs_soi.ty2024.filing_season_week47.eitc_by_agi.amount
     record_set_spec_id: irs_soi.filing_season_week47.eitc_by_agi_amount.v1

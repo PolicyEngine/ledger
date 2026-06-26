@@ -69,5 +69,5 @@ record_sets:
         expected_column_header: numeric_value
         concept: hhs_acf_liheap.households_served_by_state_programs
         unit: count
-        aggregation: count
+        aggregation: sum
         expected_cell_type: number

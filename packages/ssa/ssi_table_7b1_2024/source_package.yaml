@@ -4565,7 +4565,7 @@ record_sets:
     concept_evidence_url: https://www.ssa.gov/policy/docs/statcomps/supplement/2025/7b.html
     concept_evidence_notes: SSA Annual Statistical Supplement 2025 Table 7.B1 reports federally administered SSI recipients for December 2024 by area and eligibility category.
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
     expected_column_header_row: 1
     expected_column_header: recipient_count

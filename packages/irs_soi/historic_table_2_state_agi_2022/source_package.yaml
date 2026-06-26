@@ -1267,7 +1267,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -1289,7 +1289,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -1531,7 +1531,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -1553,7 +1553,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -1795,7 +1795,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -1817,7 +1817,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -2059,7 +2059,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -2081,7 +2081,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -2323,7 +2323,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -2345,7 +2345,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -2587,7 +2587,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -2609,7 +2609,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -2851,7 +2851,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -2873,7 +2873,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -3115,7 +3115,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -3137,7 +3137,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -3379,7 +3379,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -3401,7 +3401,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -3643,7 +3643,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -3665,7 +3665,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -3907,7 +3907,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -3929,7 +3929,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -4171,7 +4171,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -4193,7 +4193,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -4435,7 +4435,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -4457,7 +4457,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -4699,7 +4699,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -4721,7 +4721,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -4963,7 +4963,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -4985,7 +4985,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -5227,7 +5227,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -5249,7 +5249,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -5491,7 +5491,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -5513,7 +5513,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -5755,7 +5755,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -5777,7 +5777,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -6019,7 +6019,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -6041,7 +6041,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -6283,7 +6283,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -6305,7 +6305,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -6547,7 +6547,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -6569,7 +6569,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -6811,7 +6811,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -6833,7 +6833,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -7075,7 +7075,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -7097,7 +7097,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -7339,7 +7339,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -7361,7 +7361,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -7603,7 +7603,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -7625,7 +7625,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -7867,7 +7867,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -7889,7 +7889,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -8131,7 +8131,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -8153,7 +8153,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -8395,7 +8395,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -8417,7 +8417,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -8659,7 +8659,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -8681,7 +8681,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -8923,7 +8923,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -8945,7 +8945,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -9187,7 +9187,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -9209,7 +9209,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -9451,7 +9451,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -9473,7 +9473,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -9715,7 +9715,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -9737,7 +9737,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -9979,7 +9979,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -10001,7 +10001,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -10243,7 +10243,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -10265,7 +10265,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -10507,7 +10507,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -10529,7 +10529,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -10771,7 +10771,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -10793,7 +10793,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -11035,7 +11035,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -11057,7 +11057,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -11299,7 +11299,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -11321,7 +11321,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -11563,7 +11563,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -11585,7 +11585,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -11827,7 +11827,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -11849,7 +11849,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -12091,7 +12091,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -12113,7 +12113,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -12355,7 +12355,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -12377,7 +12377,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -12619,7 +12619,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -12641,7 +12641,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -12883,7 +12883,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -12905,7 +12905,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -13147,7 +13147,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -13169,7 +13169,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -13411,7 +13411,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -13433,7 +13433,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -13675,7 +13675,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -13697,7 +13697,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -13939,7 +13939,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -13961,7 +13961,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -14203,7 +14203,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -14225,7 +14225,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3
@@ -14467,7 +14467,7 @@ record_sets:
     column: C
     concept: irs_soi.individual_income_tax_returns
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: adjusted_gross_income
     label: Adjusted gross income
     ordinal: 1
@@ -14489,7 +14489,7 @@ record_sets:
     source_column_id: N00300
     concept: irs_soi.returns_with_taxable_interest
     unit: count
-    aggregation: count
+    aggregation: sum
   - measure_id: taxable_interest_amount
     label: Taxable interest
     ordinal: 3

@@ -603,7 +603,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: cms
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
   - measure_id: aptc_recipients
     label: APTC consumers
@@ -617,7 +617,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: cms
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
   - measure_id: average_monthly_aptc
     label: Average monthly APTC

@@ -1411,7 +1411,7 @@ record_sets:
     source_concept: cms_medicaid.total_medicaid_chip_enrollment
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
   - measure_id: total_medicaid_enrollment
     label: Total Medicaid enrollment
@@ -1424,7 +1424,7 @@ record_sets:
     source_concept: cms_medicaid.total_medicaid_enrollment
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
   - measure_id: total_chip_enrollment
     label: Total CHIP enrollment
@@ -1437,7 +1437,7 @@ record_sets:
     source_concept: cms_medicaid.total_chip_enrollment
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
   - measure_id: medicaid_chip_child_enrollment
     label: Medicaid and CHIP child enrollment
@@ -1450,7 +1450,7 @@ record_sets:
     source_concept: cms_medicaid.medicaid_chip_child_enrollment
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
   - measure_id: total_adult_medicaid_enrollment
     label: Total adult Medicaid enrollment
@@ -1463,5 +1463,5 @@ record_sets:
     source_concept: cms_medicaid.total_adult_medicaid_enrollment
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number

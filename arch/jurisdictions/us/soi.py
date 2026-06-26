@@ -40,8 +40,7 @@ IRS_SOI_AGI_SOURCE_CONCEPT = "irs_soi.adjusted_gross_income"
 IRS_SOI_TOTAL_WAGES_SOURCE_CONCEPT = "irs_soi.total_wages"
 IRS_SOI_TOTAL_WAGES_RETURNS_SOURCE_CONCEPT = "irs_soi.returns_with_total_wages"
 AGI_CONCEPT_EVIDENCE_URL = (
-    "https://uscode.house.gov/view.xhtml?"
-    "req=(title:26%20section:62%20edition:prelim)"
+    "https://uscode.house.gov/view.xhtml?req=(title:26%20section:62%20edition:prelim)"
 )
 AGI_CONCEPT_EVIDENCE_NOTES = (
     "IRS SOI Table 1.1 reports adjusted gross income for individual income tax "
@@ -171,7 +170,7 @@ def _legacy_soi_table_1_1_source_record_specs(
                     measure_id="return_count",
                     concept="irs_soi.individual_income_tax_returns",
                     unit="count",
-                    aggregation="count",
+                    aggregation="sum",
                     filters=filters,
                 ),
                 _legacy_source_record_spec(
@@ -215,7 +214,7 @@ def _legacy_soi_table_1_1_source_record_specs(
                     measure_id="income_tax_after_credits_returns",
                     concept="irs_soi.returns_with_income_tax_after_credits",
                     unit="count",
-                    aggregation="count",
+                    aggregation="sum",
                     filters=filters,
                 ),
             ]
@@ -280,9 +279,7 @@ def _legacy_source_record_spec(
     legal_vintage: str | None = None,
     value_scale: int = 1,
 ) -> SourceRecordSpec:
-    source_record_id = (
-        f"irs_soi.ty{year}.table_1_1.{range_id}.{measure_id}"
-    )
+    source_record_id = f"irs_soi.ty{year}.table_1_1.{range_id}.{measure_id}"
     return SourceRecordSpec(
         source_record_id=source_record_id,
         selector=CellSelectorSpec(

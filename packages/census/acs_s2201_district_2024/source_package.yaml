@@ -103,7 +103,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0102
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -193,7 +193,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0103
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -283,7 +283,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0104
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -373,7 +373,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0105
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -463,7 +463,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0106
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -553,7 +553,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0107
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -643,7 +643,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0200
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -733,7 +733,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0401
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -823,7 +823,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0402
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -913,7 +913,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0403
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -1003,7 +1003,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0404
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -1093,7 +1093,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0405
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -1183,7 +1183,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0406
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -1273,7 +1273,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0407
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -1363,7 +1363,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0408
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -1453,7 +1453,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0409
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -1543,7 +1543,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0501
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -1633,7 +1633,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0502
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -1723,7 +1723,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0503
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -1813,7 +1813,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0504
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -1903,7 +1903,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0601
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -1993,7 +1993,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0602
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -2083,7 +2083,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0603
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -2173,7 +2173,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0604
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -2263,7 +2263,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0605
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -2353,7 +2353,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0606
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -2443,7 +2443,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0607
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -2533,7 +2533,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0608
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -2623,7 +2623,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0609
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -2713,7 +2713,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0610
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -2803,7 +2803,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0611
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -2893,7 +2893,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0612
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -2983,7 +2983,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0613
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -3073,7 +3073,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0614
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -3163,7 +3163,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0615
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -3253,7 +3253,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0616
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -3343,7 +3343,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0617
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -3433,7 +3433,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0618
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -3523,7 +3523,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0619
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -3613,7 +3613,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0620
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -3703,7 +3703,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0621
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -3793,7 +3793,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0622
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -3883,7 +3883,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0623
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -3973,7 +3973,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0624
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -4063,7 +4063,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0625
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -4153,7 +4153,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0626
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -4243,7 +4243,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0627
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -4333,7 +4333,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0628
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -4423,7 +4423,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0629
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -4513,7 +4513,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0630
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -4603,7 +4603,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0631
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -4693,7 +4693,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0632
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -4783,7 +4783,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0633
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -4873,7 +4873,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0634
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -4963,7 +4963,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0635
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -5053,7 +5053,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0636
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -5143,7 +5143,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0637
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -5233,7 +5233,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0638
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -5323,7 +5323,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0639
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -5413,7 +5413,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0640
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -5503,7 +5503,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0641
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -5593,7 +5593,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0642
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -5683,7 +5683,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0643
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -5773,7 +5773,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0644
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -5863,7 +5863,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0645
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -5953,7 +5953,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0646
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -6043,7 +6043,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0647
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -6133,7 +6133,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0648
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -6223,7 +6223,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0649
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -6313,7 +6313,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0650
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -6403,7 +6403,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0651
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -6493,7 +6493,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0652
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -6583,7 +6583,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0801
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -6673,7 +6673,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0802
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -6763,7 +6763,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0803
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -6853,7 +6853,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0804
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -6943,7 +6943,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0805
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -7033,7 +7033,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0806
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -7123,7 +7123,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0807
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -7213,7 +7213,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0808
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -7303,7 +7303,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0901
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -7393,7 +7393,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0902
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -7483,7 +7483,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0903
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -7573,7 +7573,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0904
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -7663,7 +7663,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0905
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -7753,7 +7753,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1000
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -7843,7 +7843,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1198
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -7933,7 +7933,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1201
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -8023,7 +8023,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1202
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -8113,7 +8113,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1203
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -8203,7 +8203,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1204
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -8293,7 +8293,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1205
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -8383,7 +8383,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1206
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -8473,7 +8473,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1207
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -8563,7 +8563,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1208
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -8653,7 +8653,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1209
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -8743,7 +8743,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1210
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -8833,7 +8833,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1211
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -8923,7 +8923,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1212
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -9013,7 +9013,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1213
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -9103,7 +9103,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1214
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -9193,7 +9193,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1215
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -9283,7 +9283,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1216
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -9373,7 +9373,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1217
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -9463,7 +9463,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1218
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -9553,7 +9553,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1219
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -9643,7 +9643,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1220
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -9733,7 +9733,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1221
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -9823,7 +9823,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1222
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -9913,7 +9913,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1223
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -10003,7 +10003,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1224
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -10093,7 +10093,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1225
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -10183,7 +10183,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1226
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -10273,7 +10273,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1227
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -10363,7 +10363,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1228
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -10453,7 +10453,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1301
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -10543,7 +10543,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1302
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -10633,7 +10633,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1303
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -10723,7 +10723,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1304
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -10813,7 +10813,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1305
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -10903,7 +10903,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1306
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -10993,7 +10993,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1307
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -11083,7 +11083,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1308
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -11173,7 +11173,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1309
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -11263,7 +11263,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1310
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -11353,7 +11353,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1311
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -11443,7 +11443,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1312
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -11533,7 +11533,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1313
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -11623,7 +11623,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1314
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -11713,7 +11713,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1501
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -11803,7 +11803,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1502
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -11893,7 +11893,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1601
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -11983,7 +11983,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1602
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -12073,7 +12073,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1701
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -12163,7 +12163,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1702
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -12253,7 +12253,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1703
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -12343,7 +12343,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1704
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -12433,7 +12433,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1705
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -12523,7 +12523,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1706
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -12613,7 +12613,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1707
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -12703,7 +12703,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1708
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -12793,7 +12793,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1709
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -12883,7 +12883,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1710
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -12973,7 +12973,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1711
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -13063,7 +13063,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1712
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -13153,7 +13153,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1713
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -13243,7 +13243,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1714
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -13333,7 +13333,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1715
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -13423,7 +13423,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1716
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -13513,7 +13513,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1717
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -13603,7 +13603,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1801
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -13693,7 +13693,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1802
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -13783,7 +13783,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1803
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -13873,7 +13873,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1804
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -13963,7 +13963,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1805
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -14053,7 +14053,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1806
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -14143,7 +14143,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1807
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -14233,7 +14233,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1808
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -14323,7 +14323,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1809
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -14413,7 +14413,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1901
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -14503,7 +14503,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1902
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -14593,7 +14593,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1903
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -14683,7 +14683,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1904
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -14773,7 +14773,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2001
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -14863,7 +14863,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2002
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -14953,7 +14953,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2003
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -15043,7 +15043,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2004
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -15133,7 +15133,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2101
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -15223,7 +15223,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2102
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -15313,7 +15313,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2103
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -15403,7 +15403,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2104
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -15493,7 +15493,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2105
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -15583,7 +15583,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2106
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -15673,7 +15673,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2201
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -15763,7 +15763,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2202
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -15853,7 +15853,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2203
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -15943,7 +15943,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2204
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -16033,7 +16033,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2205
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -16123,7 +16123,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2206
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -16213,7 +16213,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2301
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -16303,7 +16303,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2302
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -16393,7 +16393,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2401
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -16483,7 +16483,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2402
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -16573,7 +16573,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2403
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -16663,7 +16663,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2404
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -16753,7 +16753,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2405
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -16843,7 +16843,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2406
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -16933,7 +16933,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2407
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -17023,7 +17023,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2408
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -17113,7 +17113,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2501
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -17203,7 +17203,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2502
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -17293,7 +17293,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2503
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -17383,7 +17383,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2504
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -17473,7 +17473,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2505
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -17563,7 +17563,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2506
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -17653,7 +17653,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2507
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -17743,7 +17743,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2508
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -17833,7 +17833,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2509
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -17923,7 +17923,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2601
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -18013,7 +18013,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2602
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -18103,7 +18103,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2603
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -18193,7 +18193,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2604
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -18283,7 +18283,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2605
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -18373,7 +18373,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2606
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -18463,7 +18463,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2607
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -18553,7 +18553,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2608
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -18643,7 +18643,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2609
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -18733,7 +18733,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2610
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -18823,7 +18823,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2611
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -18913,7 +18913,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2612
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -19003,7 +19003,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2613
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -19093,7 +19093,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2701
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -19183,7 +19183,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2702
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -19273,7 +19273,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2703
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -19363,7 +19363,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2704
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -19453,7 +19453,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2705
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -19543,7 +19543,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2706
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -19633,7 +19633,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2707
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -19723,7 +19723,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2708
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -19813,7 +19813,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2801
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -19903,7 +19903,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2802
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -19993,7 +19993,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2803
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -20083,7 +20083,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2804
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -20173,7 +20173,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2901
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -20263,7 +20263,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2902
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -20353,7 +20353,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2903
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -20443,7 +20443,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2904
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -20533,7 +20533,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2905
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -20623,7 +20623,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2906
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -20713,7 +20713,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2907
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -20803,7 +20803,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2908
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -20893,7 +20893,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3001
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -20983,7 +20983,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3002
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -21073,7 +21073,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3101
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -21163,7 +21163,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3102
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -21253,7 +21253,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3103
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -21343,7 +21343,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3201
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -21433,7 +21433,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3202
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -21523,7 +21523,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3203
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -21613,7 +21613,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3204
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -21703,7 +21703,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3301
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -21793,7 +21793,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3302
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -21883,7 +21883,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3401
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -21973,7 +21973,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3402
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -22063,7 +22063,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3403
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -22153,7 +22153,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3404
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -22243,7 +22243,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3405
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -22333,7 +22333,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3406
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -22423,7 +22423,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3407
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -22513,7 +22513,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3408
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -22603,7 +22603,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3409
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -22693,7 +22693,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3410
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -22783,7 +22783,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3411
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -22873,7 +22873,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3412
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -22963,7 +22963,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3501
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -23053,7 +23053,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3502
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -23143,7 +23143,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3503
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -23233,7 +23233,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3601
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -23323,7 +23323,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3602
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -23413,7 +23413,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3603
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -23503,7 +23503,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3604
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -23593,7 +23593,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3605
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -23683,7 +23683,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3606
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -23773,7 +23773,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3607
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -23863,7 +23863,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3608
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -23953,7 +23953,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3609
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -24043,7 +24043,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3610
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -24133,7 +24133,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3611
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -24223,7 +24223,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3612
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -24313,7 +24313,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3613
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -24403,7 +24403,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3614
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -24493,7 +24493,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3615
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -24583,7 +24583,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3616
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -24673,7 +24673,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3617
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -24763,7 +24763,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3618
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -24853,7 +24853,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3619
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -24943,7 +24943,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3620
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -25033,7 +25033,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3621
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -25123,7 +25123,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3622
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -25213,7 +25213,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3623
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -25303,7 +25303,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3624
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -25393,7 +25393,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3625
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -25483,7 +25483,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3626
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -25573,7 +25573,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3701
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -25663,7 +25663,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3702
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -25753,7 +25753,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3703
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -25843,7 +25843,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3704
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -25933,7 +25933,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3705
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -26023,7 +26023,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3706
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -26113,7 +26113,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3707
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -26203,7 +26203,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3708
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -26293,7 +26293,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3709
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -26383,7 +26383,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3710
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -26473,7 +26473,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3711
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -26563,7 +26563,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3712
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -26653,7 +26653,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3713
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -26743,7 +26743,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3714
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -26833,7 +26833,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3800
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -26923,7 +26923,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3901
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -27013,7 +27013,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3902
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -27103,7 +27103,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3903
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -27193,7 +27193,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3904
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -27283,7 +27283,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3905
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -27373,7 +27373,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3906
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -27463,7 +27463,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3907
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -27553,7 +27553,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3908
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -27643,7 +27643,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3909
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -27733,7 +27733,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3910
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -27823,7 +27823,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3911
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -27913,7 +27913,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3912
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -28003,7 +28003,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3913
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -28093,7 +28093,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3914
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -28183,7 +28183,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3915
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -28273,7 +28273,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4001
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -28363,7 +28363,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4002
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -28453,7 +28453,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4003
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -28543,7 +28543,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4004
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -28633,7 +28633,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4005
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -28723,7 +28723,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4101
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -28813,7 +28813,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4102
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -28903,7 +28903,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4103
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -28993,7 +28993,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4104
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -29083,7 +29083,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4105
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -29173,7 +29173,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4106
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -29263,7 +29263,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4201
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -29353,7 +29353,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4202
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -29443,7 +29443,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4203
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -29533,7 +29533,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4204
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -29623,7 +29623,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4205
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -29713,7 +29713,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4206
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -29803,7 +29803,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4207
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -29893,7 +29893,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4208
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -29983,7 +29983,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4209
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -30073,7 +30073,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4210
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -30163,7 +30163,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4211
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -30253,7 +30253,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4212
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -30343,7 +30343,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4213
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -30433,7 +30433,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4214
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -30523,7 +30523,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4215
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -30613,7 +30613,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4216
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -30703,7 +30703,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4217
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -30793,7 +30793,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4401
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -30883,7 +30883,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4402
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -30973,7 +30973,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4501
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -31063,7 +31063,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4502
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -31153,7 +31153,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4503
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -31243,7 +31243,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4504
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -31333,7 +31333,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4505
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -31423,7 +31423,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4506
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -31513,7 +31513,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4507
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -31603,7 +31603,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4600
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -31693,7 +31693,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4701
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -31783,7 +31783,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4702
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -31873,7 +31873,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4703
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -31963,7 +31963,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4704
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -32053,7 +32053,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4705
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -32143,7 +32143,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4706
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -32233,7 +32233,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4707
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -32323,7 +32323,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4708
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -32413,7 +32413,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4709
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -32503,7 +32503,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4801
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -32593,7 +32593,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4802
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -32683,7 +32683,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4803
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -32773,7 +32773,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4804
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -32863,7 +32863,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4805
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -32953,7 +32953,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4806
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -33043,7 +33043,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4807
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -33133,7 +33133,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4808
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -33223,7 +33223,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4809
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -33313,7 +33313,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4810
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -33403,7 +33403,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4811
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -33493,7 +33493,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4812
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -33583,7 +33583,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4813
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -33673,7 +33673,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4814
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -33763,7 +33763,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4815
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -33853,7 +33853,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4816
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -33943,7 +33943,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4817
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -34033,7 +34033,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4818
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -34123,7 +34123,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4819
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -34213,7 +34213,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4820
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -34303,7 +34303,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4821
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -34393,7 +34393,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4822
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -34483,7 +34483,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4823
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -34573,7 +34573,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4824
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -34663,7 +34663,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4825
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -34753,7 +34753,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4826
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -34843,7 +34843,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4827
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -34933,7 +34933,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4828
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -35023,7 +35023,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4829
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -35113,7 +35113,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4830
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -35203,7 +35203,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4831
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -35293,7 +35293,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4832
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -35383,7 +35383,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4833
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -35473,7 +35473,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4834
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -35563,7 +35563,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4835
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -35653,7 +35653,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4836
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -35743,7 +35743,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4837
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -35833,7 +35833,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4838
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -35923,7 +35923,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4901
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -36013,7 +36013,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4902
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -36103,7 +36103,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4903
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -36193,7 +36193,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4904
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -36283,7 +36283,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5000
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -36373,7 +36373,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5101
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -36463,7 +36463,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5102
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -36553,7 +36553,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5103
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -36643,7 +36643,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5104
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -36733,7 +36733,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5105
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -36823,7 +36823,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5106
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -36913,7 +36913,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5107
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -37003,7 +37003,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5108
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -37093,7 +37093,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5109
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -37183,7 +37183,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5110
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -37273,7 +37273,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5111
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -37363,7 +37363,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5301
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -37453,7 +37453,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5302
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -37543,7 +37543,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5303
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -37633,7 +37633,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5304
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -37723,7 +37723,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5305
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -37813,7 +37813,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5306
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -37903,7 +37903,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5307
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -37993,7 +37993,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5308
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -38083,7 +38083,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5309
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -38173,7 +38173,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5310
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -38263,7 +38263,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5401
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -38353,7 +38353,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5402
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -38443,7 +38443,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5501
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -38533,7 +38533,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5502
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -38623,7 +38623,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5503
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -38713,7 +38713,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5504
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -38803,7 +38803,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5505
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -38893,7 +38893,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5506
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -38983,7 +38983,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5507
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -39073,7 +39073,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5508
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -39163,7 +39163,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5600
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -39253,7 +39253,7 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.7298
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
@@ -39347,5 +39347,5 @@ record_sets:
     source_concept: ACS S2201 household estimate
     concept_relation: source_label
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number

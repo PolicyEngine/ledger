@@ -105,7 +105,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_1
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -187,7 +187,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_2
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -269,7 +269,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_3
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -351,7 +351,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_4
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -433,7 +433,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_5
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -515,7 +515,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_6
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -597,7 +597,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_7
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -679,7 +679,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_8
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -761,7 +761,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_9
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -843,7 +843,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_10
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -925,7 +925,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_11
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -1007,7 +1007,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_12
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -1089,7 +1089,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_13
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -1171,7 +1171,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_14
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -1253,7 +1253,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_15
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -1335,7 +1335,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_16
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -1417,7 +1417,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_17
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -1499,7 +1499,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_18
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -1581,7 +1581,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_19
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -1663,7 +1663,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_20
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -1745,7 +1745,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_21
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -1827,7 +1827,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_22
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -1909,7 +1909,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_23
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -1991,7 +1991,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_24
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -2073,7 +2073,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_25
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -2155,7 +2155,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_26
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -2237,7 +2237,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_27
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -2319,7 +2319,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_28
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -2401,7 +2401,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_29
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -2483,7 +2483,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_30
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -2565,7 +2565,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_31
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -2647,7 +2647,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_32
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -2729,7 +2729,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_33
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -2811,7 +2811,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_34
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -2893,7 +2893,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_35
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -2975,7 +2975,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_36
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -3057,7 +3057,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_37
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -3139,7 +3139,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_38
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -3221,7 +3221,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_39
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -3303,7 +3303,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_40
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -3385,7 +3385,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_41
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -3467,7 +3467,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_42
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -3549,7 +3549,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_43
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -3631,7 +3631,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_44
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -3713,7 +3713,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_45
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -3795,7 +3795,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_46
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -3877,7 +3877,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_47
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -3959,7 +3959,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_48
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -4041,7 +4041,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_49
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -4123,7 +4123,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_50
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -4205,7 +4205,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_51
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -4287,7 +4287,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_52
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -4369,7 +4369,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_53
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -4451,7 +4451,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_54
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -4533,7 +4533,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_55
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -4615,7 +4615,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_56
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -4697,7 +4697,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_57
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -4779,7 +4779,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_58
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -4861,7 +4861,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_59
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -4943,7 +4943,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_60
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -5025,7 +5025,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_61
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -5107,7 +5107,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_62
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -5189,7 +5189,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_63
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -5271,7 +5271,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_64
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -5353,7 +5353,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_65
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -5435,7 +5435,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_66
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -5517,7 +5517,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_67
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -5599,7 +5599,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_68
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -5681,7 +5681,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_69
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -5763,7 +5763,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_70
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -5845,7 +5845,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_71
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -5927,7 +5927,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_72
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -6009,7 +6009,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_73
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -6091,7 +6091,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_74
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -6173,7 +6173,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_75
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -6255,7 +6255,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_76
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -6337,7 +6337,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_77
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -6419,7 +6419,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_78
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -6501,7 +6501,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_79
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -6583,7 +6583,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_80
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -6665,7 +6665,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_81
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -6747,7 +6747,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_82
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -6829,7 +6829,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_83
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -6911,7 +6911,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_84
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -6993,7 +6993,7 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
 - record_set_id: census.popproj2023.cy{year}.national_population.age_85_plus
   record_set_spec_id: census.popproj2023.national_population_by_age.v1
@@ -7070,5 +7070,5 @@ record_sets:
     concept_relation: source_label
     concept_authority: census
     unit: count
-    aggregation: count
+    aggregation: sum
     expected_cell_type: number
