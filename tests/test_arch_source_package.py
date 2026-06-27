@@ -1983,7 +1983,7 @@ def test_soi_congressional_district_2022_builds_all_return_facts():
     assert package.package_id == "soi-congressional-district-2022"
     assert len(rows) == 4_791
     assert len(cells) == 79_365
-    assert len(facts) == 1_440
+    assert len(facts) == 26_880
     assert validate_source_rows(rows).valid
     assert validate_source_cells(cells).valid
     assert validate_facts(facts).valid
@@ -2005,6 +2005,26 @@ def test_soi_congressional_district_2022_builds_all_return_facts():
     assert (
         values_by_record[
             "irs_soi.ty2022.congressional_district_2022.all_returns."
+            "us.eitc_amount"
+        ].value
+        == 58_124_026_000
+    )
+    eitc_three_or_more_amount = values_by_record[
+        "irs_soi.ty2022.congressional_district_2022.all_returns."
+        "us.eitc_three_or_more_children_amount"
+    ]
+    assert eitc_three_or_more_amount.value == 13_600_954_503
+    assert eitc_three_or_more_amount.layout.source_column_id == "A59664"
+    assert eitc_three_or_more_amount.filters["eitc_child_count"] == "3plus"
+    assert {
+        (constraint.variable, constraint.operator, constraint.value)
+        for constraint in eitc_three_or_more_amount.constraints
+    } == {
+        ("us.tax.earned_income_credit_qualifying_children", ">=", 3),
+    }
+    assert (
+        values_by_record[
+            "irs_soi.ty2022.congressional_district_2022.all_returns."
             "al_total.return_count"
         ].value
         == 2_104_760
@@ -2020,6 +2040,12 @@ def test_soi_congressional_district_2022_builds_all_return_facts():
     assert al_01_agi.value == 22_915_824_000
     assert al_01_agi.geography.id == "5001700US0101"
     assert al_01_agi.geography.name == "Alabama Congressional District 1"
+    al_01_taxable_interest = values_by_record[
+        "irs_soi.ty2022.congressional_district_2022.all_returns."
+        "al_01.taxable_interest_amount"
+    ]
+    assert al_01_taxable_interest.value == 135_822_000
+    assert al_01_taxable_interest.layout.source_column_id == "A00300"
     assert ca_53_returns.value == 383_160
     assert ca_53_returns.geography.id == "5001700US0653"
 
