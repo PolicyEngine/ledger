@@ -58,6 +58,48 @@ def test__given_count_like_profile_rows__then_they_are_still_sum_measurements() 
     )
 
 
+def test__given_uk_firms_profile__then_it_declares_ledger_only_firm_targets() -> None:
+    # When
+    profile = load_target_profile("uk_firms")
+
+    # Then
+    assert profile.country == "uk"
+    assert profile.default_operation == "sum"
+    assert profile.base_period_policy == "latest_not_after_build_base_period"
+    assert [target.target_id for target in profile.targets_for_geography("country")] == [
+        "ons.uk_business.enterprise_count.turnover_bands",
+        "ons.uk_business.enterprise_count.employment_bands",
+        "hmrc.vat.registered_trader_count.turnover_bands",
+        "hmrc.vat.net_liability.turnover_bands",
+    ]
+
+    turnover_count = profile.targets[0]
+    assert turnover_count.measurement["entity"] == "firm"
+    assert turnover_count.ledger_selector == {
+        "source_name": "ons",
+        "source_measure_id": "enterprise_count",
+        "record_set_id": "ons.uk_business.cy2025.enterprise_count.by_turnover_band",
+        "groupby_dimension": "uk.firm.annual_turnover",
+    }
+    assert turnover_count.binding("populace").metric_name == (
+        "ons/uk_business/enterprise_count/turnover_bands"
+    )
+
+    registered_count = profile.targets[2]
+    assert registered_count.binding("axiom").payload["filter_rule"] == (
+        "uk:policies/govuk/vat#firm_vat_registered"
+    )
+
+    vat_liability = profile.targets[-1]
+    assert vat_liability.measurement["concept"] == "uk.tax.vat.net_liability"
+    assert vat_liability.binding("axiom").payload["value_rule"] == (
+        "uk:policies/govuk/vat#net_vat_liability"
+    )
+    assert vat_liability.binding("axiom").payload["filter_rule"] == (
+        "uk:policies/govuk/vat#firm_vat_registered"
+    )
+
+
 @pytest.mark.parametrize("forbidden", ["registry", "aggregation", "target_value"])
 def test__given_forbidden_profile_option__then_profile_is_rejected(
     forbidden: str,

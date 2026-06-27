@@ -1,0 +1,15 @@
+target_group,band_id,band_label,value
+turnover_band,0_49k,"GBP 0 to GBP 49,999 annual turnover",387285
+turnover_band,50_99k,"GBP 50,000 to GBP 99,999 annual turnover",525225
+turnover_band,100_249k,"GBP 100,000 to GBP 249,999 annual turnover",873705
+turnover_band,250_499k,"GBP 250,000 to GBP 499,999 annual turnover",390055
+turnover_band,500_999k,"GBP 500,000 to GBP 999,999 annual turnover",244225
+turnover_band,1000_4999k,"GBP 1,000,000 to GBP 4,999,999 annual turnover",232795
+turnover_band,5000k_plus,"GBP 5,000,000 or more annual turnover",81325
+employment_band,0_4,"0 to 4 employees",2137200
+employment_band,5_9,"5 to 9 employees",300645
+employment_band,10_19,"10 to 19 employees",156590
+employment_band,20_49,"20 to 49 employees",84595
+employment_band,50_99,"50 to 99 employees",29335
+employment_band,100_249,"100 to 249 employees",14835
+employment_band,250_plus,"250 or more employees",11415
