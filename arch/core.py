@@ -111,7 +111,6 @@ class Aggregation:
     """How source observations are aggregated into the fact value."""
 
     method: str
-    count_entity: str | None = None
     denominator: str | None = None
 
 
@@ -404,18 +403,6 @@ def validate_fact(fact: AggregateFact) -> tuple[ValidationIssue, ...]:
                 "malformed_aggregation",
                 f"Unsupported aggregation method: {fact.aggregation.method!r}",
                 "aggregation.method",
-            )
-        )
-    if (
-        fact.aggregation.count_entity is not None
-        and fact.aggregation.count_entity not in ALLOWED_ENTITIES
-    ):
-        errors.append(
-            _issue(
-                "malformed_aggregation",
-                "Unsupported aggregation count entity: "
-                f"{fact.aggregation.count_entity!r}",
-                "aggregation.count_entity",
             )
         )
 

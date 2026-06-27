@@ -293,7 +293,6 @@ def _create_schema(connection: sqlite3.Connection) -> None:
             measure_legal_vintage TEXT,
             measure_unit TEXT NOT NULL,
             aggregation_method TEXT NOT NULL,
-            aggregation_count_entity TEXT,
             aggregation_denominator TEXT,
             domain TEXT NOT NULL,
             filters_json TEXT NOT NULL,
@@ -835,7 +834,6 @@ def _insert_aggregate_fact(
             measure_legal_vintage,
             measure_unit,
             aggregation_method,
-            aggregation_count_entity,
             aggregation_denominator,
             domain,
             filters_json,
@@ -849,7 +847,7 @@ def _insert_aggregate_fact(
             source_extraction_method,
             source_method_notes
         )
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """,
         (
             fact_key,
@@ -890,7 +888,6 @@ def _insert_aggregate_fact(
             fact.measure.legal_vintage,
             fact.measure.unit,
             fact.aggregation.method,
-            fact.aggregation.count_entity,
             fact.aggregation.denominator,
             fact.domain,
             _json_dumps(fact.filters),

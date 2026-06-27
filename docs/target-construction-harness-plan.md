@@ -269,8 +269,8 @@ For count targets:
 measure_id: policyengine_us.tax_unit_count.filers_by_agi
 model: policyengine_us
 entity: tax_unit
-aggregate: count
-count_entity: tax_unit
+aggregate: sum
+variable: tax_unit_count
 weight_variable: household_weight
 weight_entity: household
 filters:
@@ -288,10 +288,10 @@ filters:
 Rules:
 
 - Entity can be inferred from the model variable registry as a linting convenience, but the compiled production spec should store it explicitly.
-- Counts should be first-class specs with `aggregate: count` and `count_entity`. Constant-one backend variables are acceptable compiler implementation details, not the semantic spec.
-- The harness should reject ambiguous count specs.
-- Aggregation should be explicit: `sum`, `count`, `mean`, or `ratio`.
-- Weight variable, weight entity, and entity joins must be explicit and validated. Microplex-US should default to household weights for final dataset validation.
+- Counts should be represented as sums of count-valued measures, not as a separate aggregation method.
+- The harness should reject non-sum count specs.
+- Aggregation should be explicit, and count targets should use `sum`.
+- Weight variable, weight entity, and entity joins must be explicit and validated. Populace should default to household weights for final dataset validation.
 
 ### Target Contracts
 
@@ -796,8 +796,8 @@ Acceptance:
 ## Open Design Answers
 
 1. Source-record specs should live in Arch as YAML source of truth plus compiled DB rows.
-2. Active target specs should start in Microplex-US. Split later only when multiple adapters/profiles need independent versioning.
-3. Count targets should be first-class `aggregate: count` specs with explicit `count_entity`.
+2. Active target specs should start in Populace. Split later only when multiple adapters/profiles need independent versioning.
+3. Count targets should be sums of count-valued measures, never a separate count aggregation.
 4. PE parity should be required enough to classify differences, not enough to force exact reproduction of PE omissions or legacy shortcuts.
 5. Arch should preserve every parsed source cell, then layer semantic source records on top. Do not automatically turn every cell into a semantic record.
 

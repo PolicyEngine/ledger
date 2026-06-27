@@ -118,9 +118,6 @@
         "method": {
           "type": "string"
         },
-        "count_entity": {
-          "type": "string"
-        },
         "denominator": {
           "type": "string"
         }
