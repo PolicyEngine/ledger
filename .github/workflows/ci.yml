@@ -28,71 +28,14 @@ jobs:
         run: >
           uv run ruff check
           ledger
-          db/cli.py
-          db/etl_snap.py
-          db/etl_aca_enrollment.py
-          db/etl_medicaid.py
-          db/etl_ssi.py
-          db/pe_source_inventory.py
-          db/schema.py
-          db/supabase_client.py
-          db/source_files.py
-          micro/us/census/download_cps.py
-          micro/us/entities.py
-          micro/us/hierarchy_validation.py
-          micro/us/hierarchical_pipeline.py
-          micro/us/pipeline.py
-          micro/us/policyengine.py
-          micro/us/targets.py
-          micro/us/validation_dashboard.py
-          calibration/constraints.py
-          calibration/targets.py
-          tests/test_ledger_facts.py
-          tests/test_ledger_boundaries.py
-          tests/test_ledger_consumer_contract.py
-          tests/test_ledger_namespace.py
-          tests/test_ledger_normalization.py
-          tests/test_ledger_governance.py
-          tests/test_etl_snap.py
-          tests/test_etl_soi.py
-          tests/test_etl_aca_enrollment.py
-          tests/test_etl_medicaid.py
-          tests/test_etl_ssi.py
-          tests/test_source_files.py
-          tests/test_microplex_entities.py
-          tests/test_microplex_hierarchy_validation.py
-          tests/test_microplex_target_adapter.py
-          tests/test_microplex_pipeline.py
-          tests/test_microplex_policyengine.py
-          tests/test_download_cps.py
-          tests/test_hierarchical_pipeline.py
-          tests/test_supabase_client.py
+          policyengine_ledger
+          db
+          scripts
+          tests
 
       - name: Test Ledger surface
         run: >
-          uv run pytest
-          tests/test_ledger_facts.py
-          tests/test_ledger_boundaries.py
-          tests/test_ledger_consumer_contract.py
-          tests/test_ledger_namespace.py
-          tests/test_ledger_normalization.py
-          tests/test_ledger_governance.py
-          tests/test_etl_snap.py
-          tests/test_etl_soi.py
-          tests/test_etl_aca_enrollment.py
-          tests/test_etl_medicaid.py
-          tests/test_etl_ssi.py
-          tests/test_source_files.py
-          tests/test_calibration.py
-          tests/test_microplex_entities.py
-          tests/test_microplex_hierarchy_validation.py
-          tests/test_microplex_target_adapter.py
-          tests/test_microplex_pipeline.py
-          tests/test_microplex_policyengine.py
-          tests/test_download_cps.py
-          tests/test_hierarchical_pipeline.py
-          tests/test_supabase_client.py
-          -q
+          uv run pytest -q
 
       - name: Build source input database
         run: |
@@ -113,9 +56,9 @@ jobs:
           cd /tmp
           /tmp/ledger-wheel-smoke/bin/python - <<'PY'
           import policyengine_ledger
-          import policyengine_ledger.microdata
           import policyengine_ledger.normalization
           import policyengine_ledger.sources
+          import policyengine_ledger.target_profiles
           import policyengine_ledger.targets
 
           assert policyengine_ledger.__name__ == "policyengine_ledger"
