@@ -1,0 +1,272 @@
+{
+  "schema_version": "policyengine_ledger.target_profile.v1",
+  "profile_id": "uk_firms",
+  "country": "uk",
+  "label": "UK firm calibration",
+  "defaults": {
+    "base_period_policy": "latest_not_after_build_base_period",
+    "operation": "sum"
+  },
+  "targets": [
+    {
+      "target_id": "ons.uk_business.enterprise_count.turnover_bands",
+      "family": "ons_uk_business",
+      "geography_levels": ["country"],
+      "ledger_selector": {
+        "source_name": "ons",
+        "source_measure_id": "enterprise_count",
+        "record_set_id": "ons.uk_business.cy2025.enterprise_count.by_turnover_band",
+        "groupby_dimension": "uk.firm.annual_turnover"
+      },
+      "measurement": {
+        "entity": "firm",
+        "concept": "uk.firm.count",
+        "groupby_dimension": "uk.firm.annual_turnover"
+      },
+      "bindings": {
+        "populace": {
+          "metric_name": "ons/uk_business/enterprise_count/turnover_bands",
+          "value_variable": "firm_count",
+          "from_entity": "firm",
+          "groupby_variable": "annual_turnover"
+        },
+        "axiom": {
+          "metric_name": "ons/uk_business/enterprise_count/turnover_bands",
+          "status": "pending",
+          "value_rule": "uk.firm.count"
+        }
+      }
+    },
+    {
+      "target_id": "ons.uk_business.enterprise_count.employment_bands",
+      "family": "ons_uk_business",
+      "geography_levels": ["country"],
+      "ledger_selector": {
+        "source_name": "ons",
+        "source_measure_id": "enterprise_count",
+        "record_set_id": "ons.uk_business.cy2025.enterprise_count.by_employment_band",
+        "groupby_dimension": "uk.firm.employees"
+      },
+      "measurement": {
+        "entity": "firm",
+        "concept": "uk.firm.count",
+        "groupby_dimension": "uk.firm.employees"
+      },
+      "bindings": {
+        "populace": {
+          "metric_name": "ons/uk_business/enterprise_count/employment_bands",
+          "value_variable": "firm_count",
+          "from_entity": "firm",
+          "groupby_variable": "employment"
+        },
+        "axiom": {
+          "metric_name": "ons/uk_business/enterprise_count/employment_bands",
+          "status": "pending",
+          "value_rule": "uk.firm.count"
+        }
+      }
+    },
+    {
+      "target_id": "hmrc.vat.registered_trader_count.turnover_bands",
+      "family": "hmrc_vat",
+      "geography_levels": ["country"],
+      "ledger_selector": {
+        "source_name": "hmrc",
+        "source_measure_id": "vat_registered_trader_count",
+        "record_set_id": "hmrc.vat.fy2024_25.registered_trader_count.by_turnover_band",
+        "groupby_dimension": "uk.firm.annual_turnover"
+      },
+      "measurement": {
+        "entity": "firm",
+        "concept": "uk.firm.count",
+        "groupby_dimension": "uk.firm.annual_turnover",
+        "filters": [
+          {"concept": "uk.firm.vat_registered", "operator": "==", "value": true}
+        ]
+      },
+      "bindings": {
+        "populace": {
+          "metric_name": "hmrc/vat/registered_trader_count/turnover_bands",
+          "value_variable": "firm_count",
+          "from_entity": "firm",
+          "groupby_variable": "annual_turnover",
+          "filters": [
+            {"variable": "vat_registered", "operator": "==", "value": true}
+          ]
+        },
+        "axiom": {
+          "metric_name": "hmrc/vat/registered_trader_count/turnover_bands",
+          "status": "pending",
+          "value_rule": "uk.firm.count",
+          "filter_rule": "uk:policies/govuk/vat#firm_vat_registered"
+        }
+      }
+    },
+    {
+      "target_id": "hmrc.vat.net_liability.turnover_bands",
+      "family": "hmrc_vat",
+      "geography_levels": ["country"],
+      "ledger_selector": {
+        "source_name": "hmrc",
+        "source_measure_id": "net_vat_liability",
+        "record_set_id": "hmrc.vat.fy2024_25.net_liability.by_turnover_band",
+        "groupby_dimension": "uk.firm.annual_turnover"
+      },
+      "measurement": {
+        "entity": "firm",
+        "concept": "uk.tax.vat.net_liability",
+        "groupby_dimension": "uk.firm.annual_turnover",
+        "filters": [
+          {"concept": "uk.firm.vat_registered", "operator": "==", "value": true}
+        ]
+      },
+      "bindings": {
+        "populace": {
+          "metric_name": "hmrc/vat/net_liability/turnover_bands",
+          "value_variable": "vat_liability",
+          "from_entity": "firm",
+          "groupby_variable": "annual_turnover",
+          "filters": [
+            {"variable": "vat_registered", "operator": "==", "value": true}
+          ]
+        },
+        "axiom": {
+          "metric_name": "hmrc/vat/net_liability/turnover_bands",
+          "status": "pending",
+          "value_rule": "uk:policies/govuk/vat#net_vat_liability",
+          "filter_rule": "uk:policies/govuk/vat#firm_vat_registered"
+        }
+      }
+    },
+    {
+      "target_id": "ons.uk_business.enterprise_count.sic_turnover_bands",
+      "family": "ons_uk_business",
+      "geography_levels": ["country"],
+      "ledger_selector": {
+        "source_name": "ons",
+        "source_measure_id": "enterprise_count",
+        "record_set_id": "ons.uk_business.cy2025.enterprise_count.by_sic_turnover_band",
+        "dimensions": ["uk.firm.sic_code", "uk.firm.turnover_band"]
+      },
+      "measurement": {
+        "entity": "firm",
+        "concept": "uk.firm.count",
+        "dimensions": ["uk.firm.sic_code", "uk.firm.turnover_band"]
+      },
+      "bindings": {
+        "populace": {
+          "metric_name": "ons/uk_business/enterprise_count/sic_turnover_bands",
+          "value_variable": "firm_count",
+          "from_entity": "firm",
+          "groupby_variables": ["sic_code", "annual_turnover"]
+        },
+        "axiom": {
+          "metric_name": "ons/uk_business/enterprise_count/sic_turnover_bands",
+          "status": "pending",
+          "value_rule": "uk.firm.count"
+        }
+      }
+    },
+    {
+      "target_id": "ons.uk_business.enterprise_count.sic_employment_bands",
+      "family": "ons_uk_business",
+      "geography_levels": ["country"],
+      "ledger_selector": {
+        "source_name": "ons",
+        "source_measure_id": "enterprise_count",
+        "record_set_id": "ons.uk_business.cy2025.enterprise_count.by_sic_employment_band",
+        "dimensions": ["uk.firm.sic_code", "uk.firm.employment_band"]
+      },
+      "measurement": {
+        "entity": "firm",
+        "concept": "uk.firm.count",
+        "dimensions": ["uk.firm.sic_code", "uk.firm.employment_band"]
+      },
+      "bindings": {
+        "populace": {
+          "metric_name": "ons/uk_business/enterprise_count/sic_employment_bands",
+          "value_variable": "firm_count",
+          "from_entity": "firm",
+          "groupby_variables": ["sic_code", "employment"]
+        },
+        "axiom": {
+          "metric_name": "ons/uk_business/enterprise_count/sic_employment_bands",
+          "status": "pending",
+          "value_rule": "uk.firm.count"
+        }
+      }
+    },
+    {
+      "target_id": "hmrc.vat.registered_trader_count.sic_sectors",
+      "family": "hmrc_vat",
+      "geography_levels": ["country"],
+      "ledger_selector": {
+        "source_name": "hmrc",
+        "source_measure_id": "vat_registered_trader_count",
+        "record_set_id": "hmrc.vat.fy2024_25.registered_trader_count.by_sic",
+        "groupby_dimension": "uk.firm.sic_code"
+      },
+      "measurement": {
+        "entity": "firm",
+        "concept": "uk.firm.count",
+        "groupby_dimension": "uk.firm.sic_code",
+        "filters": [
+          {"concept": "uk.firm.vat_registered", "operator": "==", "value": true}
+        ]
+      },
+      "bindings": {
+        "populace": {
+          "metric_name": "hmrc/vat/registered_trader_count/sic_sectors",
+          "value_variable": "firm_count",
+          "from_entity": "firm",
+          "groupby_variable": "sic_code",
+          "filters": [
+            {"variable": "vat_registered", "operator": "==", "value": true}
+          ]
+        },
+        "axiom": {
+          "metric_name": "hmrc/vat/registered_trader_count/sic_sectors",
+          "status": "pending",
+          "value_rule": "uk.firm.count",
+          "filter_rule": "uk:policies/govuk/vat#firm_vat_registered"
+        }
+      }
+    },
+    {
+      "target_id": "hmrc.vat.net_liability.sic_sectors",
+      "family": "hmrc_vat",
+      "geography_levels": ["country"],
+      "ledger_selector": {
+        "source_name": "hmrc",
+        "source_measure_id": "net_vat_liability",
+        "record_set_id": "hmrc.vat.fy2024_25.net_liability.by_sic",
+        "groupby_dimension": "uk.firm.sic_code"
+      },
+      "measurement": {
+        "entity": "firm",
+        "concept": "uk.tax.vat.net_liability",
+        "groupby_dimension": "uk.firm.sic_code",
+        "filters": [
+          {"concept": "uk.firm.vat_registered", "operator": "==", "value": true}
+        ]
+      },
+      "bindings": {
+        "populace": {
+          "metric_name": "hmrc/vat/net_liability/sic_sectors",
+          "value_variable": "vat_liability",
+          "from_entity": "firm",
+          "groupby_variable": "sic_code",
+          "filters": [
+            {"variable": "vat_registered", "operator": "==", "value": true}
+          ]
+        },
+        "axiom": {
+          "metric_name": "hmrc/vat/net_liability/sic_sectors",
+          "status": "pending",
+          "value_rule": "uk:policies/govuk/vat#net_vat_liability",
+          "filter_rule": "uk:policies/govuk/vat#firm_vat_registered"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,382 @@
+schema_version: arch.source_package.v1
+package_id: hmrc-vat-firm-targets-2024-25
+label: HMRC Annual UK VAT Statistics 2024-25 national VAT firm targets
+artifact:
+  source_name: hmrc
+  source_table: Annual UK VAT Statistics 2024 to 2025 VAT trader population and net VAT liability by turnover band
+  resource_package: db
+  resource_directory: data/hmrc/vat_firm_targets_2024_25
+  manifest: manifest.yaml
+  vintage: fiscal_year_2024_25
+  extracted_at: "2026-06-27"
+  extraction_method: >-
+    curated CSV extract from HMRC Annual UK VAT Statistics 2024 to 2025
+    turnover-band tables; 2024-25 sub-bands between GBP 1 million and GBP 10
+    million are re-aggregated to the historical GBP 1m to GBP 10m band
+  parser: delimited_text_full_rows
+  artifact_year: 2024
+  sheet_name: hmrc_vat_firm_targets_2024_25
+record_sets:
+  - record_set_id: hmrc.vat.fy2024_25.registered_trader_count.by_turnover_band
+    record_set_spec_id: hmrc.vat.registered_trader_count.by_turnover_band.v1
+    source_record_id_prefix: hmrc.vat.fy2024_25.registered_trader_count.by_turnover_band
+    sheet_name: hmrc_vat_firm_targets_2024_25
+    period_type: fiscal_year
+    period: 2024
+    geography_id: K02000001
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: firm
+    entity_role: vat_registered_trader
+    domain: uk_vat_registered_traders
+    groupby_dimension: uk.firm.annual_turnover
+    shared_filters:
+      uk.firm.vat_registered: true
+    shared_constraints:
+      - variable: uk.firm.vat_registered
+        operator: ==
+        value: true
+        label: VAT registered
+    rows:
+      - &negative_or_zero_count
+        value_id: negative_or_zero
+        label: Negative or zero annual turnover
+        ordinal: 0
+        row_number: 2
+        expected_row_header_column: B
+        expected_row_header: negative_or_zero
+        guard_cells:
+          - column: A
+            expected_value: vat_registered_count_by_turnover
+            label: target group
+        filters:
+          uk.firm.turnover_band: negative_or_zero
+        constraints:
+          - variable: uk.firm.turnover_band
+            operator: ==
+            value: negative_or_zero
+            label: Annual turnover band
+          - variable: uk.firm.annual_turnover
+            operator: <=
+            value: 0
+            unit: gbp
+            label: Annual turnover upper bound
+      - &one_to_threshold_count
+        value_id: 1_to_threshold
+        label: GBP 1 to VAT registration threshold annual turnover
+        ordinal: 1
+        row_number: 3
+        expected_row_header_column: B
+        expected_row_header: 1_to_threshold
+        guard_cells:
+          - column: A
+            expected_value: vat_registered_count_by_turnover
+            label: target group
+        filters:
+          uk.firm.turnover_band: 1_to_threshold
+        constraints:
+          - variable: uk.firm.turnover_band
+            operator: ==
+            value: 1_to_threshold
+            label: Annual turnover band
+          - variable: uk.firm.annual_turnover
+            operator: ">"
+            value: 0
+            unit: gbp
+            label: Annual turnover lower bound
+          - variable: uk.firm.annual_turnover
+            operator: <=
+            value: 90000
+            unit: gbp
+            label: Annual turnover upper bound
+      - &threshold_to_150k_count
+        value_id: threshold_to_150k
+        label: VAT registration threshold to GBP 150,000 annual turnover
+        ordinal: 2
+        row_number: 4
+        expected_row_header_column: B
+        expected_row_header: threshold_to_150k
+        guard_cells:
+          - column: A
+            expected_value: vat_registered_count_by_turnover
+            label: target group
+        filters:
+          uk.firm.turnover_band: threshold_to_150k
+        constraints:
+          - variable: uk.firm.turnover_band
+            operator: ==
+            value: threshold_to_150k
+            label: Annual turnover band
+          - variable: uk.firm.annual_turnover
+            operator: ">"
+            value: 90000
+            unit: gbp
+            label: Annual turnover lower bound
+          - variable: uk.firm.annual_turnover
+            operator: <=
+            value: 150000
+            unit: gbp
+            label: Annual turnover upper bound
+      - &band_150k_to_300k_count
+        value_id: 150k_to_300k
+        label: GBP 150,000 to GBP 300,000 annual turnover
+        ordinal: 3
+        row_number: 5
+        expected_row_header_column: B
+        expected_row_header: 150k_to_300k
+        guard_cells:
+          - column: A
+            expected_value: vat_registered_count_by_turnover
+            label: target group
+        filters:
+          uk.firm.turnover_band: 150k_to_300k
+        constraints:
+          - variable: uk.firm.turnover_band
+            operator: ==
+            value: 150k_to_300k
+            label: Annual turnover band
+          - variable: uk.firm.annual_turnover
+            operator: ">"
+            value: 150000
+            unit: gbp
+            label: Annual turnover lower bound
+          - variable: uk.firm.annual_turnover
+            operator: <=
+            value: 300000
+            unit: gbp
+            label: Annual turnover upper bound
+      - &band_300k_to_500k_count
+        value_id: 300k_to_500k
+        label: GBP 300,000 to GBP 500,000 annual turnover
+        ordinal: 4
+        row_number: 6
+        expected_row_header_column: B
+        expected_row_header: 300k_to_500k
+        guard_cells:
+          - column: A
+            expected_value: vat_registered_count_by_turnover
+            label: target group
+        filters:
+          uk.firm.turnover_band: 300k_to_500k
+        constraints:
+          - variable: uk.firm.turnover_band
+            operator: ==
+            value: 300k_to_500k
+            label: Annual turnover band
+          - variable: uk.firm.annual_turnover
+            operator: ">"
+            value: 300000
+            unit: gbp
+            label: Annual turnover lower bound
+          - variable: uk.firm.annual_turnover
+            operator: <=
+            value: 500000
+            unit: gbp
+            label: Annual turnover upper bound
+      - &band_500k_to_1m_count
+        value_id: 500k_to_1m
+        label: GBP 500,000 to GBP 1,000,000 annual turnover
+        ordinal: 5
+        row_number: 7
+        expected_row_header_column: B
+        expected_row_header: 500k_to_1m
+        guard_cells:
+          - column: A
+            expected_value: vat_registered_count_by_turnover
+            label: target group
+        filters:
+          uk.firm.turnover_band: 500k_to_1m
+        constraints:
+          - variable: uk.firm.turnover_band
+            operator: ==
+            value: 500k_to_1m
+            label: Annual turnover band
+          - variable: uk.firm.annual_turnover
+            operator: ">"
+            value: 500000
+            unit: gbp
+            label: Annual turnover lower bound
+          - variable: uk.firm.annual_turnover
+            operator: <=
+            value: 1000000
+            unit: gbp
+            label: Annual turnover upper bound
+      - &band_1m_to_10m_count
+        value_id: 1m_to_10m
+        label: GBP 1,000,000 to GBP 10,000,000 annual turnover
+        ordinal: 6
+        row_number: 8
+        expected_row_header_column: B
+        expected_row_header: 1m_to_10m
+        guard_cells:
+          - column: A
+            expected_value: vat_registered_count_by_turnover
+            label: target group
+        filters:
+          uk.firm.turnover_band: 1m_to_10m
+        constraints:
+          - variable: uk.firm.turnover_band
+            operator: ==
+            value: 1m_to_10m
+            label: Annual turnover band
+          - variable: uk.firm.annual_turnover
+            operator: ">"
+            value: 1000000
+            unit: gbp
+            label: Annual turnover lower bound
+          - variable: uk.firm.annual_turnover
+            operator: <=
+            value: 10000000
+            unit: gbp
+            label: Annual turnover upper bound
+      - &greater_than_10m_count
+        value_id: greater_than_10m
+        label: Greater than GBP 10,000,000 annual turnover
+        ordinal: 7
+        row_number: 9
+        expected_row_header_column: B
+        expected_row_header: greater_than_10m
+        guard_cells:
+          - column: A
+            expected_value: vat_registered_count_by_turnover
+            label: target group
+        filters:
+          uk.firm.turnover_band: greater_than_10m
+        constraints:
+          - variable: uk.firm.turnover_band
+            operator: ==
+            value: greater_than_10m
+            label: Annual turnover band
+          - variable: uk.firm.annual_turnover
+            operator: ">"
+            value: 10000000
+            unit: gbp
+            label: Annual turnover lower bound
+      - value_id: unknown
+        label: Unknown annual turnover
+        ordinal: 8
+        row_number: 10
+        expected_row_header_column: B
+        expected_row_header: unknown
+        guard_cells:
+          - column: A
+            expected_value: vat_registered_count_by_turnover
+            label: target group
+        filters:
+          uk.firm.turnover_band: unknown
+        constraints:
+          - variable: uk.firm.turnover_band
+            operator: ==
+            value: unknown
+            label: Annual turnover band
+    measures:
+      - measure_id: vat_registered_trader_count
+        label: HMRC VAT-registered trader count
+        ordinal: 0
+        column: D
+        source_column_id: value
+        expected_column_header_row: 1
+        expected_column_header: value
+        concept: uk.firm.count
+        source_concept: hmrc.vat.registered_trader_count
+        concept_relation: approximate
+        concept_authority: arch-uk
+        concept_evidence_url: https://www.gov.uk/government/statistics/value-added-tax-vat-annual-statistics
+        concept_evidence_notes: >-
+          HMRC Annual UK VAT Statistics reports VAT-registered traders by
+          annual turnover band; Ledger represents those traders as VAT-registered
+          firm count facts.
+        unit: count
+        aggregation: sum
+        expected_cell_type: number
+  - record_set_id: hmrc.vat.fy2024_25.net_liability.by_turnover_band
+    record_set_spec_id: hmrc.vat.net_liability.by_turnover_band.v1
+    source_record_id_prefix: hmrc.vat.fy2024_25.net_liability.by_turnover_band
+    sheet_name: hmrc_vat_firm_targets_2024_25
+    period_type: fiscal_year
+    period: 2024
+    geography_id: K02000001
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: firm
+    entity_role: vat_registered_trader
+    domain: uk_vat_registered_traders
+    groupby_dimension: uk.firm.annual_turnover
+    shared_filters:
+      uk.firm.vat_registered: true
+    shared_constraints:
+      - variable: uk.firm.vat_registered
+        operator: ==
+        value: true
+        label: VAT registered
+    rows:
+      - <<: *negative_or_zero_count
+        row_number: 11
+        guard_cells:
+          - column: A
+            expected_value: vat_liability_by_turnover
+            label: target group
+      - <<: *one_to_threshold_count
+        row_number: 12
+        guard_cells:
+          - column: A
+            expected_value: vat_liability_by_turnover
+            label: target group
+      - <<: *threshold_to_150k_count
+        row_number: 13
+        guard_cells:
+          - column: A
+            expected_value: vat_liability_by_turnover
+            label: target group
+      - <<: *band_150k_to_300k_count
+        row_number: 14
+        guard_cells:
+          - column: A
+            expected_value: vat_liability_by_turnover
+            label: target group
+      - <<: *band_300k_to_500k_count
+        row_number: 15
+        guard_cells:
+          - column: A
+            expected_value: vat_liability_by_turnover
+            label: target group
+      - <<: *band_500k_to_1m_count
+        row_number: 16
+        guard_cells:
+          - column: A
+            expected_value: vat_liability_by_turnover
+            label: target group
+      - <<: *band_1m_to_10m_count
+        row_number: 17
+        guard_cells:
+          - column: A
+            expected_value: vat_liability_by_turnover
+            label: target group
+      - <<: *greater_than_10m_count
+        row_number: 18
+        guard_cells:
+          - column: A
+            expected_value: vat_liability_by_turnover
+            label: target group
+    measures:
+      - measure_id: net_vat_liability
+        label: HMRC net VAT liability
+        ordinal: 0
+        column: D
+        source_column_id: value_millions
+        expected_column_header_row: 1
+        expected_column_header: value
+        concept: uk.tax.vat.net_liability
+        source_concept: hmrc.vat.net_liability
+        concept_relation: approximate
+        concept_authority: arch-uk
+        concept_evidence_url: https://www.gov.uk/government/statistics/value-added-tax-vat-annual-statistics
+        concept_evidence_notes: >-
+          HMRC Annual UK VAT Statistics reports net VAT declared by annual
+          turnover band in GBP millions. Ledger scales the selected cells to GBP.
+        unit: gbp
+        aggregation: sum
+        value_scale: 1000000
+        expected_cell_type: number

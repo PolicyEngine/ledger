@@ -1,0 +1,3101 @@
+schema_version: arch.source_package.v1
+package_id: hmrc-vat-firm-sector-targets-2024-25
+label: HMRC Annual UK VAT Statistics 2024-25 sector VAT firm targets
+artifact:
+  source_name: hmrc
+  source_table: Annual UK VAT Statistics 2024 to 2025 VAT trader population and net VAT liability
+    by trade sector
+  resource_package: db
+  resource_directory: data/hmrc/vat_firm_sector_targets_2024_25
+  manifest: manifest.yaml
+  vintage: fiscal_year_2024_25
+  extracted_at: '2026-06-27'
+  extraction_method: curated CSV extract from firm-microsim-paper processed/2024-25 HMRC sector
+    tables
+  parser: delimited_text_full_rows
+  artifact_year: 2024
+  sheet_name: hmrc_vat_firm_sector_targets_2024_25
+record_sets:
+- record_set_id: hmrc.vat.fy2024_25.registered_trader_count.by_sic
+  record_set_spec_id: hmrc.vat.registered_trader_count.by_sic.v1
+  source_record_id_prefix: hmrc.vat.fy2024_25.registered_trader_count.by_sic
+  sheet_name: hmrc_vat_firm_sector_targets_2024_25
+  period_type: fiscal_year
+  period: 2024
+  geography_id: K02000001
+  geography_level: country
+  geography_name: United Kingdom
+  geography_vintage: current
+  entity: firm
+  entity_role: vat_registered_trader
+  domain: uk_vat_registered_traders
+  groupby_dimension: uk.firm.sic_code
+  shared_filters:
+    uk.firm.vat_registered: true
+  shared_constraints:
+  - variable: uk.firm.vat_registered
+    operator: ==
+    value: true
+    label: VAT registered
+  rows:
+  - value_id: sic_00001
+    label: SIC 00001 Crop and animal production, hunting and related service activities
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: B
+    expected_row_header: 1
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00001'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00001'
+      label: SIC code
+  - value_id: sic_00002
+    label: SIC 00002 Forestry and logging
+    ordinal: 1
+    row_number: 3
+    expected_row_header_column: B
+    expected_row_header: 2
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00002'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00002'
+      label: SIC code
+  - value_id: sic_00003
+    label: SIC 00003 Fishing and aquaculture
+    ordinal: 2
+    row_number: 4
+    expected_row_header_column: B
+    expected_row_header: 3
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00003'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00003'
+      label: SIC code
+  - value_id: sic_00005
+    label: SIC 00005 Mining of coal and lignite
+    ordinal: 3
+    row_number: 5
+    expected_row_header_column: B
+    expected_row_header: 5
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00005'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00005'
+      label: SIC code
+  - value_id: sic_00006
+    label: SIC 00006 Extraction of crude petroleum and natural gas
+    ordinal: 4
+    row_number: 6
+    expected_row_header_column: B
+    expected_row_header: 6
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00006'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00006'
+      label: SIC code
+  - value_id: sic_00007
+    label: SIC 00007 Mining of metal ores
+    ordinal: 5
+    row_number: 7
+    expected_row_header_column: B
+    expected_row_header: 7
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00007'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00007'
+      label: SIC code
+  - value_id: sic_00008
+    label: SIC 00008 Other mining and quarrying
+    ordinal: 6
+    row_number: 8
+    expected_row_header_column: B
+    expected_row_header: 8
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00008
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00008
+      label: SIC code
+  - value_id: sic_00009
+    label: SIC 00009 Mining and support service activities
+    ordinal: 7
+    row_number: 9
+    expected_row_header_column: B
+    expected_row_header: 9
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00009
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00009
+      label: SIC code
+  - value_id: sic_00010
+    label: SIC 00010 Manufacture of food products
+    ordinal: 8
+    row_number: 10
+    expected_row_header_column: B
+    expected_row_header: 10
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00010'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00010'
+      label: SIC code
+  - value_id: sic_00011
+    label: SIC 00011 Manufacture of beverages
+    ordinal: 9
+    row_number: 11
+    expected_row_header_column: B
+    expected_row_header: 11
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00011'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00011'
+      label: SIC code
+  - value_id: sic_00012
+    label: SIC 00012 Manufacture of tobacco products
+    ordinal: 10
+    row_number: 12
+    expected_row_header_column: B
+    expected_row_header: 12
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00012'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00012'
+      label: SIC code
+  - value_id: sic_00013
+    label: SIC 00013 Manufacture of textiles
+    ordinal: 11
+    row_number: 13
+    expected_row_header_column: B
+    expected_row_header: 13
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00013'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00013'
+      label: SIC code
+  - value_id: sic_00014
+    label: SIC 00014 Manufacture of wearing apparel
+    ordinal: 12
+    row_number: 14
+    expected_row_header_column: B
+    expected_row_header: 14
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00014'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00014'
+      label: SIC code
+  - value_id: sic_00015
+    label: SIC 00015 Manufacture of leather and related products
+    ordinal: 13
+    row_number: 15
+    expected_row_header_column: B
+    expected_row_header: 15
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00015'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00015'
+      label: SIC code
+  - value_id: sic_00016
+    label: SIC 00016 Manufacture of wood and of products of wood and cork, except furniture;
+      manufacture of articles of straw and plaiting materials
+    ordinal: 14
+    row_number: 16
+    expected_row_header_column: B
+    expected_row_header: 16
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00016'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00016'
+      label: SIC code
+  - value_id: sic_00017
+    label: SIC 00017 Manufacture of paper and paper products
+    ordinal: 15
+    row_number: 17
+    expected_row_header_column: B
+    expected_row_header: 17
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00017'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00017'
+      label: SIC code
+  - value_id: sic_00018
+    label: SIC 00018 Printing and reproduction of recorded media
+    ordinal: 16
+    row_number: 18
+    expected_row_header_column: B
+    expected_row_header: 18
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00018
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00018
+      label: SIC code
+  - value_id: sic_00019
+    label: SIC 00019 Manufacture of coke and refined petroleum products
+    ordinal: 17
+    row_number: 19
+    expected_row_header_column: B
+    expected_row_header: 19
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00019
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00019
+      label: SIC code
+  - value_id: sic_00020
+    label: SIC 00020 Manufacture of chemicals and chemical products
+    ordinal: 18
+    row_number: 20
+    expected_row_header_column: B
+    expected_row_header: 20
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00020'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00020'
+      label: SIC code
+  - value_id: sic_00021
+    label: SIC 00021 Manufacture of basic pharmaceutical products and pharmaceutical preparations
+    ordinal: 19
+    row_number: 21
+    expected_row_header_column: B
+    expected_row_header: 21
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00021'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00021'
+      label: SIC code
+  - value_id: sic_00022
+    label: SIC 00022 Manufacture of rubber and rubber products
+    ordinal: 20
+    row_number: 22
+    expected_row_header_column: B
+    expected_row_header: 22
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00022'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00022'
+      label: SIC code
+  - value_id: sic_00023
+    label: SIC 00023 Manufacture of other non-metallic mineral products
+    ordinal: 21
+    row_number: 23
+    expected_row_header_column: B
+    expected_row_header: 23
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00023'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00023'
+      label: SIC code
+  - value_id: sic_00024
+    label: SIC 00024 Manufacture of basic metals
+    ordinal: 22
+    row_number: 24
+    expected_row_header_column: B
+    expected_row_header: 24
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00024'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00024'
+      label: SIC code
+  - value_id: sic_00025
+    label: SIC 00025 Manufacture of fabricated metal products, except machinery and equipment
+    ordinal: 23
+    row_number: 25
+    expected_row_header_column: B
+    expected_row_header: 25
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00025'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00025'
+      label: SIC code
+  - value_id: sic_00026
+    label: SIC 00026 Manufacture of computer, electronic and optical products
+    ordinal: 24
+    row_number: 26
+    expected_row_header_column: B
+    expected_row_header: 26
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00026'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00026'
+      label: SIC code
+  - value_id: sic_00027
+    label: SIC 00027 Manufacture of electrical equipment
+    ordinal: 25
+    row_number: 27
+    expected_row_header_column: B
+    expected_row_header: 27
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00027'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00027'
+      label: SIC code
+  - value_id: sic_00028
+    label: SIC 00028 Manufacture of machinery and equipment n.e.c
+    ordinal: 26
+    row_number: 28
+    expected_row_header_column: B
+    expected_row_header: 28
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00028
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00028
+      label: SIC code
+  - value_id: sic_00029
+    label: SIC 00029 Manufacture of motor vehicles, trailers and semi-trailers
+    ordinal: 27
+    row_number: 29
+    expected_row_header_column: B
+    expected_row_header: 29
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00029
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00029
+      label: SIC code
+  - value_id: sic_00030
+    label: SIC 00030 Manufacture of other transport equipment
+    ordinal: 28
+    row_number: 30
+    expected_row_header_column: B
+    expected_row_header: 30
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00030'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00030'
+      label: SIC code
+  - value_id: sic_00031
+    label: SIC 00031 Manufacture of furniture
+    ordinal: 29
+    row_number: 31
+    expected_row_header_column: B
+    expected_row_header: 31
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00031'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00031'
+      label: SIC code
+  - value_id: sic_00032
+    label: SIC 00032 Other manufacturing
+    ordinal: 30
+    row_number: 32
+    expected_row_header_column: B
+    expected_row_header: 32
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00032'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00032'
+      label: SIC code
+  - value_id: sic_00033
+    label: SIC 00033 Repair and installation of machinery and equipment
+    ordinal: 31
+    row_number: 33
+    expected_row_header_column: B
+    expected_row_header: 33
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00033'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00033'
+      label: SIC code
+  - value_id: sic_00035
+    label: SIC 00035 Electricity, gas, steam and air conditioning supply
+    ordinal: 32
+    row_number: 34
+    expected_row_header_column: B
+    expected_row_header: 35
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00035'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00035'
+      label: SIC code
+  - value_id: sic_00036
+    label: SIC 00036 Water collection, treatment and supply
+    ordinal: 33
+    row_number: 35
+    expected_row_header_column: B
+    expected_row_header: 36
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00036'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00036'
+      label: SIC code
+  - value_id: sic_00037
+    label: SIC 00037 Sewerage
+    ordinal: 34
+    row_number: 36
+    expected_row_header_column: B
+    expected_row_header: 37
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00037'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00037'
+      label: SIC code
+  - value_id: sic_00038
+    label: SIC 00038 Waste collection, treatment and disposal activities; materials recovery
+    ordinal: 35
+    row_number: 37
+    expected_row_header_column: B
+    expected_row_header: 38
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00038
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00038
+      label: SIC code
+  - value_id: sic_00039
+    label: SIC 00039 Remediation activities and other waste management services
+    ordinal: 36
+    row_number: 38
+    expected_row_header_column: B
+    expected_row_header: 39
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00039
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00039
+      label: SIC code
+  - value_id: sic_00041
+    label: SIC 00041 Construction of buildings
+    ordinal: 37
+    row_number: 39
+    expected_row_header_column: B
+    expected_row_header: 41
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00041'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00041'
+      label: SIC code
+  - value_id: sic_00042
+    label: SIC 00042 Civil engineering
+    ordinal: 38
+    row_number: 40
+    expected_row_header_column: B
+    expected_row_header: 42
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00042'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00042'
+      label: SIC code
+  - value_id: sic_00043
+    label: SIC 00043 Specialised construction activities
+    ordinal: 39
+    row_number: 41
+    expected_row_header_column: B
+    expected_row_header: 43
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00043'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00043'
+      label: SIC code
+  - value_id: sic_00045
+    label: SIC 00045 Wholesale and retail trade and repair of motor vehicles and motorcycles
+    ordinal: 40
+    row_number: 42
+    expected_row_header_column: B
+    expected_row_header: 45
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00045'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00045'
+      label: SIC code
+  - value_id: sic_00046
+    label: SIC 00046 Wholesale trade, except of motor vehicles and motorcycles
+    ordinal: 41
+    row_number: 43
+    expected_row_header_column: B
+    expected_row_header: 46
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00046'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00046'
+      label: SIC code
+  - value_id: sic_00047
+    label: SIC 00047 Retail trade except of motor vehicles and motorcycles
+    ordinal: 42
+    row_number: 44
+    expected_row_header_column: B
+    expected_row_header: 47
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00047'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00047'
+      label: SIC code
+  - value_id: sic_00049
+    label: SIC 00049 Land transport and transport via pipelines
+    ordinal: 43
+    row_number: 45
+    expected_row_header_column: B
+    expected_row_header: 49
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00049
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00049
+      label: SIC code
+  - value_id: sic_00050
+    label: SIC 00050 Water transport
+    ordinal: 44
+    row_number: 46
+    expected_row_header_column: B
+    expected_row_header: 50
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00050'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00050'
+      label: SIC code
+  - value_id: sic_00051
+    label: SIC 00051 Air transport
+    ordinal: 45
+    row_number: 47
+    expected_row_header_column: B
+    expected_row_header: 51
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00051'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00051'
+      label: SIC code
+  - value_id: sic_00052
+    label: SIC 00052 Warehousing and support activities for transportation
+    ordinal: 46
+    row_number: 48
+    expected_row_header_column: B
+    expected_row_header: 52
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00052'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00052'
+      label: SIC code
+  - value_id: sic_00053
+    label: SIC 00053 Postal and courier activities
+    ordinal: 47
+    row_number: 49
+    expected_row_header_column: B
+    expected_row_header: 53
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00053'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00053'
+      label: SIC code
+  - value_id: sic_00055
+    label: SIC 00055 Accommodation
+    ordinal: 48
+    row_number: 50
+    expected_row_header_column: B
+    expected_row_header: 55
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00055'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00055'
+      label: SIC code
+  - value_id: sic_00056
+    label: SIC 00056 Food and beverage service activities
+    ordinal: 49
+    row_number: 51
+    expected_row_header_column: B
+    expected_row_header: 56
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00056'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00056'
+      label: SIC code
+  - value_id: sic_00058
+    label: SIC 00058 Publishing activities
+    ordinal: 50
+    row_number: 52
+    expected_row_header_column: B
+    expected_row_header: 58
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00058
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00058
+      label: SIC code
+  - value_id: sic_00059
+    label: SIC 00059 Motion picture, video and television programme production, sound recording
+      and music publishing activities
+    ordinal: 51
+    row_number: 53
+    expected_row_header_column: B
+    expected_row_header: 59
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00059
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00059
+      label: SIC code
+  - value_id: sic_00060
+    label: SIC 00060 Programming and broadcasting activities
+    ordinal: 52
+    row_number: 54
+    expected_row_header_column: B
+    expected_row_header: 60
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00060'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00060'
+      label: SIC code
+  - value_id: sic_00061
+    label: SIC 00061 Telecommunications
+    ordinal: 53
+    row_number: 55
+    expected_row_header_column: B
+    expected_row_header: 61
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00061'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00061'
+      label: SIC code
+  - value_id: sic_00062
+    label: SIC 00062 Computer programming, consultancy and related activities
+    ordinal: 54
+    row_number: 56
+    expected_row_header_column: B
+    expected_row_header: 62
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00062'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00062'
+      label: SIC code
+  - value_id: sic_00063
+    label: SIC 00063 Information service activities
+    ordinal: 55
+    row_number: 57
+    expected_row_header_column: B
+    expected_row_header: 63
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00063'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00063'
+      label: SIC code
+  - value_id: sic_00064
+    label: SIC 00064 Financial service activities, except insurance and pension funding
+    ordinal: 56
+    row_number: 58
+    expected_row_header_column: B
+    expected_row_header: 64
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00064'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00064'
+      label: SIC code
+  - value_id: sic_00065
+    label: SIC 00065 Insurance, reinsurance and pension funding, except compulsory social
+      security
+    ordinal: 57
+    row_number: 59
+    expected_row_header_column: B
+    expected_row_header: 65
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00065'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00065'
+      label: SIC code
+  - value_id: sic_00066
+    label: SIC 00066 Activities auxiliary to financial services and insurance activities
+    ordinal: 58
+    row_number: 60
+    expected_row_header_column: B
+    expected_row_header: 66
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00066'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00066'
+      label: SIC code
+  - value_id: sic_00068
+    label: SIC 00068 Real estate activities
+    ordinal: 59
+    row_number: 61
+    expected_row_header_column: B
+    expected_row_header: 68
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00068
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00068
+      label: SIC code
+  - value_id: sic_00069
+    label: SIC 00069 Legal and accounting services
+    ordinal: 60
+    row_number: 62
+    expected_row_header_column: B
+    expected_row_header: 69
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00069
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00069
+      label: SIC code
+  - value_id: sic_00070
+    label: SIC 00070 Activities of head offices; management consultancy services
+    ordinal: 61
+    row_number: 63
+    expected_row_header_column: B
+    expected_row_header: 70
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00070'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00070'
+      label: SIC code
+  - value_id: sic_00071
+    label: SIC 00071 Architectural and engineering activities; technical testing and analysis
+    ordinal: 62
+    row_number: 64
+    expected_row_header_column: B
+    expected_row_header: 71
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00071'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00071'
+      label: SIC code
+  - value_id: sic_00072
+    label: SIC 00072 Scientific research and development
+    ordinal: 63
+    row_number: 65
+    expected_row_header_column: B
+    expected_row_header: 72
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00072'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00072'
+      label: SIC code
+  - value_id: sic_00073
+    label: SIC 00073 Advertising and market research
+    ordinal: 64
+    row_number: 66
+    expected_row_header_column: B
+    expected_row_header: 73
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00073'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00073'
+      label: SIC code
+  - value_id: sic_00074
+    label: SIC 00074 Other professional, scientific and technical activities
+    ordinal: 65
+    row_number: 67
+    expected_row_header_column: B
+    expected_row_header: 74
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00074'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00074'
+      label: SIC code
+  - value_id: sic_00075
+    label: SIC 00075 Veterinary activities
+    ordinal: 66
+    row_number: 68
+    expected_row_header_column: B
+    expected_row_header: 75
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00075'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00075'
+      label: SIC code
+  - value_id: sic_00077
+    label: SIC 00077 Rental and leasing activities
+    ordinal: 67
+    row_number: 69
+    expected_row_header_column: B
+    expected_row_header: 77
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00077'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00077'
+      label: SIC code
+  - value_id: sic_00078
+    label: SIC 00078 Employment activities
+    ordinal: 68
+    row_number: 70
+    expected_row_header_column: B
+    expected_row_header: 78
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00078
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00078
+      label: SIC code
+  - value_id: sic_00079
+    label: SIC 00079 Travel agency, tour operator and other reservation service and related
+      activities
+    ordinal: 69
+    row_number: 71
+    expected_row_header_column: B
+    expected_row_header: 79
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00079
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00079
+      label: SIC code
+  - value_id: sic_00080
+    label: SIC 00080 Security and investigation activities
+    ordinal: 70
+    row_number: 72
+    expected_row_header_column: B
+    expected_row_header: 80
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00080
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00080
+      label: SIC code
+  - value_id: sic_00081
+    label: SIC 00081 Services to buildings and landscape activities
+    ordinal: 71
+    row_number: 73
+    expected_row_header_column: B
+    expected_row_header: 81
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00081
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00081
+      label: SIC code
+  - value_id: sic_00082
+    label: SIC 00082 Office administrative and support activities
+    ordinal: 72
+    row_number: 74
+    expected_row_header_column: B
+    expected_row_header: 82
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00082
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00082
+      label: SIC code
+  - value_id: sic_00084
+    label: SIC 00084 Public administration and defence; compulsory social security
+    ordinal: 73
+    row_number: 75
+    expected_row_header_column: B
+    expected_row_header: 84
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00084
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00084
+      label: SIC code
+  - value_id: sic_00085
+    label: SIC 00085 Education
+    ordinal: 74
+    row_number: 76
+    expected_row_header_column: B
+    expected_row_header: 85
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00085
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00085
+      label: SIC code
+  - value_id: sic_00086
+    label: SIC 00086 Human health activities
+    ordinal: 75
+    row_number: 77
+    expected_row_header_column: B
+    expected_row_header: 86
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00086
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00086
+      label: SIC code
+  - value_id: sic_00087
+    label: SIC 00087 Residential care activities
+    ordinal: 76
+    row_number: 78
+    expected_row_header_column: B
+    expected_row_header: 87
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00087
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00087
+      label: SIC code
+  - value_id: sic_00088
+    label: SIC 00088 Social work activities without accommodation
+    ordinal: 77
+    row_number: 79
+    expected_row_header_column: B
+    expected_row_header: 88
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00088
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00088
+      label: SIC code
+  - value_id: sic_00090
+    label: SIC 00090 Creative, arts and entertainment activities
+    ordinal: 78
+    row_number: 80
+    expected_row_header_column: B
+    expected_row_header: 90
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00090
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00090
+      label: SIC code
+  - value_id: sic_00091
+    label: SIC 00091 Libraries, archives, museums and other cultural activities
+    ordinal: 79
+    row_number: 81
+    expected_row_header_column: B
+    expected_row_header: 91
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00091
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00091
+      label: SIC code
+  - value_id: sic_00092
+    label: SIC 00092 Gambling and betting activities
+    ordinal: 80
+    row_number: 82
+    expected_row_header_column: B
+    expected_row_header: 92
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00092
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00092
+      label: SIC code
+  - value_id: sic_00093
+    label: SIC 00093 Sports activities and amusement and recreation activities
+    ordinal: 81
+    row_number: 83
+    expected_row_header_column: B
+    expected_row_header: 93
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00093
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00093
+      label: SIC code
+  - value_id: sic_00094
+    label: SIC 00094 Activities of membership organisations
+    ordinal: 82
+    row_number: 84
+    expected_row_header_column: B
+    expected_row_header: 94
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00094
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00094
+      label: SIC code
+  - value_id: sic_00095
+    label: SIC 00095 Repair of computers and personal and household goods
+    ordinal: 83
+    row_number: 85
+    expected_row_header_column: B
+    expected_row_header: 95
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00095
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00095
+      label: SIC code
+  - value_id: sic_00096
+    label: SIC 00096 Other personal service activities
+    ordinal: 84
+    row_number: 86
+    expected_row_header_column: B
+    expected_row_header: 96
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00096
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00096
+      label: SIC code
+  - value_id: sic_00097
+    label: SIC 00097 Activities of households as employers of domestic personnel
+    ordinal: 85
+    row_number: 87
+    expected_row_header_column: B
+    expected_row_header: 97
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00097
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00097
+      label: SIC code
+  - value_id: sic_00098
+    label: SIC 00098 Undifferentiated goods- and services-producing activities of private
+      households for own use
+    ordinal: 86
+    row_number: 88
+    expected_row_header_column: B
+    expected_row_header: 98
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00098
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00098
+      label: SIC code
+  - value_id: sic_00099
+    label: SIC 00099 Activities of extraterritorial organisations and bodies
+    ordinal: 87
+    row_number: 89
+    expected_row_header_column: B
+    expected_row_header: 99
+    guard_cells:
+    - column: A
+      expected_value: vat_registered_count_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00099
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00099
+      label: SIC code
+  measures:
+  - measure_id: vat_registered_trader_count
+    label: HMRC VAT-registered trader count
+    ordinal: 0
+    column: D
+    source_column_id: value
+    expected_column_header_row: 1
+    expected_column_header: value
+    concept: uk.firm.count
+    source_concept: hmrc.vat.registered_trader_count
+    concept_relation: approximate
+    concept_authority: arch-uk
+    concept_evidence_url: https://www.gov.uk/government/statistics/value-added-tax-vat-annual-statistics
+    concept_evidence_notes: HMRC Annual UK VAT Statistics reports VAT-registered traders by
+      trade sector; Ledger represents those traders as VAT-registered firm count facts.
+    unit: count
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: hmrc.vat.fy2024_25.net_liability.by_sic
+  record_set_spec_id: hmrc.vat.net_liability.by_sic.v1
+  source_record_id_prefix: hmrc.vat.fy2024_25.net_liability.by_sic
+  sheet_name: hmrc_vat_firm_sector_targets_2024_25
+  period_type: fiscal_year
+  period: 2024
+  geography_id: K02000001
+  geography_level: country
+  geography_name: United Kingdom
+  geography_vintage: current
+  entity: firm
+  entity_role: vat_registered_trader
+  domain: uk_vat_registered_traders
+  groupby_dimension: uk.firm.sic_code
+  shared_filters:
+    uk.firm.vat_registered: true
+  shared_constraints:
+  - variable: uk.firm.vat_registered
+    operator: ==
+    value: true
+    label: VAT registered
+  rows:
+  - value_id: sic_00001
+    label: SIC 00001 Crop and animal production, hunting and related service activities
+    ordinal: 0
+    row_number: 90
+    expected_row_header_column: B
+    expected_row_header: 1
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00001'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00001'
+      label: SIC code
+  - value_id: sic_00002
+    label: SIC 00002 Forestry and logging
+    ordinal: 1
+    row_number: 91
+    expected_row_header_column: B
+    expected_row_header: 2
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00002'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00002'
+      label: SIC code
+  - value_id: sic_00003
+    label: SIC 00003 Fishing and aquaculture
+    ordinal: 2
+    row_number: 92
+    expected_row_header_column: B
+    expected_row_header: 3
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00003'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00003'
+      label: SIC code
+  - value_id: sic_00005
+    label: SIC 00005 Mining of coal and lignite
+    ordinal: 3
+    row_number: 93
+    expected_row_header_column: B
+    expected_row_header: 5
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00005'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00005'
+      label: SIC code
+  - value_id: sic_00006
+    label: SIC 00006 Extraction of crude petroleum and natural gas
+    ordinal: 4
+    row_number: 94
+    expected_row_header_column: B
+    expected_row_header: 6
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00006'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00006'
+      label: SIC code
+  - value_id: sic_00007
+    label: SIC 00007 Mining of metal ores
+    ordinal: 5
+    row_number: 95
+    expected_row_header_column: B
+    expected_row_header: 7
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00007'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00007'
+      label: SIC code
+  - value_id: sic_00008
+    label: SIC 00008 Other mining and quarrying
+    ordinal: 6
+    row_number: 96
+    expected_row_header_column: B
+    expected_row_header: 8
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00008
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00008
+      label: SIC code
+  - value_id: sic_00009
+    label: SIC 00009 Mining and support service activities
+    ordinal: 7
+    row_number: 97
+    expected_row_header_column: B
+    expected_row_header: 9
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00009
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00009
+      label: SIC code
+  - value_id: sic_00010
+    label: SIC 00010 Manufacture of food products
+    ordinal: 8
+    row_number: 98
+    expected_row_header_column: B
+    expected_row_header: 10
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00010'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00010'
+      label: SIC code
+  - value_id: sic_00011
+    label: SIC 00011 Manufacture of beverages
+    ordinal: 9
+    row_number: 99
+    expected_row_header_column: B
+    expected_row_header: 11
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00011'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00011'
+      label: SIC code
+  - value_id: sic_00012
+    label: SIC 00012 Manufacture of tobacco products
+    ordinal: 10
+    row_number: 100
+    expected_row_header_column: B
+    expected_row_header: 12
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00012'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00012'
+      label: SIC code
+  - value_id: sic_00013
+    label: SIC 00013 Manufacture of textiles
+    ordinal: 11
+    row_number: 101
+    expected_row_header_column: B
+    expected_row_header: 13
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00013'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00013'
+      label: SIC code
+  - value_id: sic_00014
+    label: SIC 00014 Manufacture of wearing apparel
+    ordinal: 12
+    row_number: 102
+    expected_row_header_column: B
+    expected_row_header: 14
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00014'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00014'
+      label: SIC code
+  - value_id: sic_00015
+    label: SIC 00015 Manufacture of leather and related products
+    ordinal: 13
+    row_number: 103
+    expected_row_header_column: B
+    expected_row_header: 15
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00015'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00015'
+      label: SIC code
+  - value_id: sic_00016
+    label: SIC 00016 Manufacture of wood and of products of wood and cork, except furniture;
+      manufacture of articles of straw and plaiting materials
+    ordinal: 14
+    row_number: 104
+    expected_row_header_column: B
+    expected_row_header: 16
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00016'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00016'
+      label: SIC code
+  - value_id: sic_00017
+    label: SIC 00017 Manufacture of paper and paper products
+    ordinal: 15
+    row_number: 105
+    expected_row_header_column: B
+    expected_row_header: 17
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00017'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00017'
+      label: SIC code
+  - value_id: sic_00018
+    label: SIC 00018 Printing and reproduction of recorded media
+    ordinal: 16
+    row_number: 106
+    expected_row_header_column: B
+    expected_row_header: 18
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00018
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00018
+      label: SIC code
+  - value_id: sic_00019
+    label: SIC 00019 Manufacture of coke and refined petroleum products
+    ordinal: 17
+    row_number: 107
+    expected_row_header_column: B
+    expected_row_header: 19
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00019
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00019
+      label: SIC code
+  - value_id: sic_00020
+    label: SIC 00020 Manufacture of chemicals and chemical products
+    ordinal: 18
+    row_number: 108
+    expected_row_header_column: B
+    expected_row_header: 20
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00020'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00020'
+      label: SIC code
+  - value_id: sic_00021
+    label: SIC 00021 Manufacture of basic pharmaceutical products and pharmaceutical preparations
+    ordinal: 19
+    row_number: 109
+    expected_row_header_column: B
+    expected_row_header: 21
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00021'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00021'
+      label: SIC code
+  - value_id: sic_00022
+    label: SIC 00022 Manufacture of rubber and rubber products
+    ordinal: 20
+    row_number: 110
+    expected_row_header_column: B
+    expected_row_header: 22
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00022'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00022'
+      label: SIC code
+  - value_id: sic_00023
+    label: SIC 00023 Manufacture of other non-metallic mineral products
+    ordinal: 21
+    row_number: 111
+    expected_row_header_column: B
+    expected_row_header: 23
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00023'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00023'
+      label: SIC code
+  - value_id: sic_00024
+    label: SIC 00024 Manufacture of basic metals
+    ordinal: 22
+    row_number: 112
+    expected_row_header_column: B
+    expected_row_header: 24
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00024'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00024'
+      label: SIC code
+  - value_id: sic_00025
+    label: SIC 00025 Manufacture of fabricated metal products, except machinery and equipment
+    ordinal: 23
+    row_number: 113
+    expected_row_header_column: B
+    expected_row_header: 25
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00025'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00025'
+      label: SIC code
+  - value_id: sic_00026
+    label: SIC 00026 Manufacture of computer, electronic and optical products
+    ordinal: 24
+    row_number: 114
+    expected_row_header_column: B
+    expected_row_header: 26
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00026'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00026'
+      label: SIC code
+  - value_id: sic_00027
+    label: SIC 00027 Manufacture of electrical equipment
+    ordinal: 25
+    row_number: 115
+    expected_row_header_column: B
+    expected_row_header: 27
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00027'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00027'
+      label: SIC code
+  - value_id: sic_00028
+    label: SIC 00028 Manufacture of machinery and equipment n.e.c
+    ordinal: 26
+    row_number: 116
+    expected_row_header_column: B
+    expected_row_header: 28
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00028
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00028
+      label: SIC code
+  - value_id: sic_00029
+    label: SIC 00029 Manufacture of motor vehicles, trailers and semi-trailers
+    ordinal: 27
+    row_number: 117
+    expected_row_header_column: B
+    expected_row_header: 29
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00029
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00029
+      label: SIC code
+  - value_id: sic_00030
+    label: SIC 00030 Manufacture of other transport equipment
+    ordinal: 28
+    row_number: 118
+    expected_row_header_column: B
+    expected_row_header: 30
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00030'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00030'
+      label: SIC code
+  - value_id: sic_00031
+    label: SIC 00031 Manufacture of furniture
+    ordinal: 29
+    row_number: 119
+    expected_row_header_column: B
+    expected_row_header: 31
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00031'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00031'
+      label: SIC code
+  - value_id: sic_00032
+    label: SIC 00032 Other manufacturing
+    ordinal: 30
+    row_number: 120
+    expected_row_header_column: B
+    expected_row_header: 32
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00032'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00032'
+      label: SIC code
+  - value_id: sic_00033
+    label: SIC 00033 Repair and installation of machinery and equipment
+    ordinal: 31
+    row_number: 121
+    expected_row_header_column: B
+    expected_row_header: 33
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00033'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00033'
+      label: SIC code
+  - value_id: sic_00035
+    label: SIC 00035 Electricity, gas, steam and air conditioning supply
+    ordinal: 32
+    row_number: 122
+    expected_row_header_column: B
+    expected_row_header: 35
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00035'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00035'
+      label: SIC code
+  - value_id: sic_00036
+    label: SIC 00036 Water collection, treatment and supply
+    ordinal: 33
+    row_number: 123
+    expected_row_header_column: B
+    expected_row_header: 36
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00036'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00036'
+      label: SIC code
+  - value_id: sic_00037
+    label: SIC 00037 Sewerage
+    ordinal: 34
+    row_number: 124
+    expected_row_header_column: B
+    expected_row_header: 37
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00037'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00037'
+      label: SIC code
+  - value_id: sic_00038
+    label: SIC 00038 Waste collection, treatment and disposal activities; materials recovery
+    ordinal: 35
+    row_number: 125
+    expected_row_header_column: B
+    expected_row_header: 38
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00038
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00038
+      label: SIC code
+  - value_id: sic_00039
+    label: SIC 00039 Remediation activities and other waste management services
+    ordinal: 36
+    row_number: 126
+    expected_row_header_column: B
+    expected_row_header: 39
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00039
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00039
+      label: SIC code
+  - value_id: sic_00041
+    label: SIC 00041 Construction of buildings
+    ordinal: 37
+    row_number: 127
+    expected_row_header_column: B
+    expected_row_header: 41
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00041'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00041'
+      label: SIC code
+  - value_id: sic_00042
+    label: SIC 00042 Civil engineering
+    ordinal: 38
+    row_number: 128
+    expected_row_header_column: B
+    expected_row_header: 42
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00042'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00042'
+      label: SIC code
+  - value_id: sic_00043
+    label: SIC 00043 Specialised construction activities
+    ordinal: 39
+    row_number: 129
+    expected_row_header_column: B
+    expected_row_header: 43
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00043'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00043'
+      label: SIC code
+  - value_id: sic_00045
+    label: SIC 00045 Wholesale and retail trade and repair of motor vehicles and motorcycles
+    ordinal: 40
+    row_number: 130
+    expected_row_header_column: B
+    expected_row_header: 45
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00045'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00045'
+      label: SIC code
+  - value_id: sic_00046
+    label: SIC 00046 Wholesale trade, except of motor vehicles and motorcycles
+    ordinal: 41
+    row_number: 131
+    expected_row_header_column: B
+    expected_row_header: 46
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00046'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00046'
+      label: SIC code
+  - value_id: sic_00047
+    label: SIC 00047 Retail trade except of motor vehicles and motorcycles
+    ordinal: 42
+    row_number: 132
+    expected_row_header_column: B
+    expected_row_header: 47
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00047'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00047'
+      label: SIC code
+  - value_id: sic_00049
+    label: SIC 00049 Land transport and transport via pipelines
+    ordinal: 43
+    row_number: 133
+    expected_row_header_column: B
+    expected_row_header: 49
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00049
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00049
+      label: SIC code
+  - value_id: sic_00050
+    label: SIC 00050 Water transport
+    ordinal: 44
+    row_number: 134
+    expected_row_header_column: B
+    expected_row_header: 50
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00050'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00050'
+      label: SIC code
+  - value_id: sic_00051
+    label: SIC 00051 Air transport
+    ordinal: 45
+    row_number: 135
+    expected_row_header_column: B
+    expected_row_header: 51
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00051'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00051'
+      label: SIC code
+  - value_id: sic_00052
+    label: SIC 00052 Warehousing and support activities for transportation
+    ordinal: 46
+    row_number: 136
+    expected_row_header_column: B
+    expected_row_header: 52
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00052'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00052'
+      label: SIC code
+  - value_id: sic_00053
+    label: SIC 00053 Postal and courier activities
+    ordinal: 47
+    row_number: 137
+    expected_row_header_column: B
+    expected_row_header: 53
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00053'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00053'
+      label: SIC code
+  - value_id: sic_00055
+    label: SIC 00055 Accommodation
+    ordinal: 48
+    row_number: 138
+    expected_row_header_column: B
+    expected_row_header: 55
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00055'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00055'
+      label: SIC code
+  - value_id: sic_00056
+    label: SIC 00056 Food and beverage service activities
+    ordinal: 49
+    row_number: 139
+    expected_row_header_column: B
+    expected_row_header: 56
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00056'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00056'
+      label: SIC code
+  - value_id: sic_00058
+    label: SIC 00058 Publishing activities
+    ordinal: 50
+    row_number: 140
+    expected_row_header_column: B
+    expected_row_header: 58
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00058
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00058
+      label: SIC code
+  - value_id: sic_00059
+    label: SIC 00059 Motion picture, video and television programme production, sound recording
+      and music publishing activities
+    ordinal: 51
+    row_number: 141
+    expected_row_header_column: B
+    expected_row_header: 59
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00059
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00059
+      label: SIC code
+  - value_id: sic_00060
+    label: SIC 00060 Programming and broadcasting activities
+    ordinal: 52
+    row_number: 142
+    expected_row_header_column: B
+    expected_row_header: 60
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00060'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00060'
+      label: SIC code
+  - value_id: sic_00061
+    label: SIC 00061 Telecommunications
+    ordinal: 53
+    row_number: 143
+    expected_row_header_column: B
+    expected_row_header: 61
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00061'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00061'
+      label: SIC code
+  - value_id: sic_00062
+    label: SIC 00062 Computer programming, consultancy and related activities
+    ordinal: 54
+    row_number: 144
+    expected_row_header_column: B
+    expected_row_header: 62
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00062'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00062'
+      label: SIC code
+  - value_id: sic_00063
+    label: SIC 00063 Information service activities
+    ordinal: 55
+    row_number: 145
+    expected_row_header_column: B
+    expected_row_header: 63
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00063'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00063'
+      label: SIC code
+  - value_id: sic_00064
+    label: SIC 00064 Financial service activities, except insurance and pension funding
+    ordinal: 56
+    row_number: 146
+    expected_row_header_column: B
+    expected_row_header: 64
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00064'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00064'
+      label: SIC code
+  - value_id: sic_00065
+    label: SIC 00065 Insurance, reinsurance and pension funding, except compulsory social
+      security
+    ordinal: 57
+    row_number: 147
+    expected_row_header_column: B
+    expected_row_header: 65
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00065'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00065'
+      label: SIC code
+  - value_id: sic_00066
+    label: SIC 00066 Activities auxiliary to financial services and insurance activities
+    ordinal: 58
+    row_number: 148
+    expected_row_header_column: B
+    expected_row_header: 66
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00066'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00066'
+      label: SIC code
+  - value_id: sic_00068
+    label: SIC 00068 Real estate activities
+    ordinal: 59
+    row_number: 149
+    expected_row_header_column: B
+    expected_row_header: 68
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00068
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00068
+      label: SIC code
+  - value_id: sic_00069
+    label: SIC 00069 Legal and accounting services
+    ordinal: 60
+    row_number: 150
+    expected_row_header_column: B
+    expected_row_header: 69
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00069
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00069
+      label: SIC code
+  - value_id: sic_00070
+    label: SIC 00070 Activities of head offices; management consultancy services
+    ordinal: 61
+    row_number: 151
+    expected_row_header_column: B
+    expected_row_header: 70
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00070'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00070'
+      label: SIC code
+  - value_id: sic_00071
+    label: SIC 00071 Architectural and engineering activities; technical testing and analysis
+    ordinal: 62
+    row_number: 152
+    expected_row_header_column: B
+    expected_row_header: 71
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00071'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00071'
+      label: SIC code
+  - value_id: sic_00072
+    label: SIC 00072 Scientific research and development
+    ordinal: 63
+    row_number: 153
+    expected_row_header_column: B
+    expected_row_header: 72
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00072'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00072'
+      label: SIC code
+  - value_id: sic_00073
+    label: SIC 00073 Advertising and market research
+    ordinal: 64
+    row_number: 154
+    expected_row_header_column: B
+    expected_row_header: 73
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00073'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00073'
+      label: SIC code
+  - value_id: sic_00074
+    label: SIC 00074 Other professional, scientific and technical activities
+    ordinal: 65
+    row_number: 155
+    expected_row_header_column: B
+    expected_row_header: 74
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00074'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00074'
+      label: SIC code
+  - value_id: sic_00075
+    label: SIC 00075 Veterinary activities
+    ordinal: 66
+    row_number: 156
+    expected_row_header_column: B
+    expected_row_header: 75
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00075'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00075'
+      label: SIC code
+  - value_id: sic_00077
+    label: SIC 00077 Rental and leasing activities
+    ordinal: 67
+    row_number: 157
+    expected_row_header_column: B
+    expected_row_header: 77
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: '00077'
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: '00077'
+      label: SIC code
+  - value_id: sic_00078
+    label: SIC 00078 Employment activities
+    ordinal: 68
+    row_number: 158
+    expected_row_header_column: B
+    expected_row_header: 78
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00078
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00078
+      label: SIC code
+  - value_id: sic_00079
+    label: SIC 00079 Travel agency, tour operator and other reservation service and related
+      activities
+    ordinal: 69
+    row_number: 159
+    expected_row_header_column: B
+    expected_row_header: 79
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00079
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00079
+      label: SIC code
+  - value_id: sic_00080
+    label: SIC 00080 Security and investigation activities
+    ordinal: 70
+    row_number: 160
+    expected_row_header_column: B
+    expected_row_header: 80
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00080
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00080
+      label: SIC code
+  - value_id: sic_00081
+    label: SIC 00081 Services to buildings and landscape activities
+    ordinal: 71
+    row_number: 161
+    expected_row_header_column: B
+    expected_row_header: 81
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00081
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00081
+      label: SIC code
+  - value_id: sic_00082
+    label: SIC 00082 Office administrative and support activities
+    ordinal: 72
+    row_number: 162
+    expected_row_header_column: B
+    expected_row_header: 82
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00082
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00082
+      label: SIC code
+  - value_id: sic_00084
+    label: SIC 00084 Public administration and defence; compulsory social security
+    ordinal: 73
+    row_number: 163
+    expected_row_header_column: B
+    expected_row_header: 84
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00084
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00084
+      label: SIC code
+  - value_id: sic_00085
+    label: SIC 00085 Education
+    ordinal: 74
+    row_number: 164
+    expected_row_header_column: B
+    expected_row_header: 85
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00085
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00085
+      label: SIC code
+  - value_id: sic_00086
+    label: SIC 00086 Human health activities
+    ordinal: 75
+    row_number: 165
+    expected_row_header_column: B
+    expected_row_header: 86
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00086
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00086
+      label: SIC code
+  - value_id: sic_00087
+    label: SIC 00087 Residential care activities
+    ordinal: 76
+    row_number: 166
+    expected_row_header_column: B
+    expected_row_header: 87
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00087
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00087
+      label: SIC code
+  - value_id: sic_00088
+    label: SIC 00088 Social work activities without accommodation
+    ordinal: 77
+    row_number: 167
+    expected_row_header_column: B
+    expected_row_header: 88
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00088
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00088
+      label: SIC code
+  - value_id: sic_00090
+    label: SIC 00090 Creative, arts and entertainment activities
+    ordinal: 78
+    row_number: 168
+    expected_row_header_column: B
+    expected_row_header: 90
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00090
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00090
+      label: SIC code
+  - value_id: sic_00091
+    label: SIC 00091 Libraries, archives, museums and other cultural activities
+    ordinal: 79
+    row_number: 169
+    expected_row_header_column: B
+    expected_row_header: 91
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00091
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00091
+      label: SIC code
+  - value_id: sic_00092
+    label: SIC 00092 Gambling and betting activities
+    ordinal: 80
+    row_number: 170
+    expected_row_header_column: B
+    expected_row_header: 92
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00092
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00092
+      label: SIC code
+  - value_id: sic_00093
+    label: SIC 00093 Sports activities and amusement and recreation activities
+    ordinal: 81
+    row_number: 171
+    expected_row_header_column: B
+    expected_row_header: 93
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00093
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00093
+      label: SIC code
+  - value_id: sic_00094
+    label: SIC 00094 Activities of membership organisations
+    ordinal: 82
+    row_number: 172
+    expected_row_header_column: B
+    expected_row_header: 94
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00094
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00094
+      label: SIC code
+  - value_id: sic_00095
+    label: SIC 00095 Repair of computers and personal and household goods
+    ordinal: 83
+    row_number: 173
+    expected_row_header_column: B
+    expected_row_header: 95
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00095
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00095
+      label: SIC code
+  - value_id: sic_00096
+    label: SIC 00096 Other personal service activities
+    ordinal: 84
+    row_number: 174
+    expected_row_header_column: B
+    expected_row_header: 96
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00096
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00096
+      label: SIC code
+  - value_id: sic_00097
+    label: SIC 00097 Activities of households as employers of domestic personnel
+    ordinal: 85
+    row_number: 175
+    expected_row_header_column: B
+    expected_row_header: 97
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00097
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00097
+      label: SIC code
+  - value_id: sic_00098
+    label: SIC 00098 Undifferentiated goods- and services-producing activities of private
+      households for own use
+    ordinal: 86
+    row_number: 176
+    expected_row_header_column: B
+    expected_row_header: 98
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00098
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00098
+      label: SIC code
+  - value_id: sic_00099
+    label: SIC 00099 Activities of extraterritorial organisations and bodies
+    ordinal: 87
+    row_number: 177
+    expected_row_header_column: B
+    expected_row_header: 99
+    guard_cells:
+    - column: A
+      expected_value: vat_liability_by_sic
+      label: target group
+    filters:
+      uk.firm.sic_code: 00099
+    constraints:
+    - variable: uk.firm.sic_code
+      operator: ==
+      value: 00099
+      label: SIC code
+  measures:
+  - measure_id: net_vat_liability
+    label: HMRC net VAT liability
+    ordinal: 0
+    column: D
+    source_column_id: value_millions
+    expected_column_header_row: 1
+    expected_column_header: value
+    concept: uk.tax.vat.net_liability
+    source_concept: hmrc.vat.net_liability
+    concept_relation: approximate
+    concept_authority: arch-uk
+    concept_evidence_url: https://www.gov.uk/government/statistics/value-added-tax-vat-annual-statistics
+    concept_evidence_notes: HMRC Annual UK VAT Statistics reports net VAT declared by trade
+      sector in GBP millions. Ledger scales the selected cells to GBP.
+    unit: gbp
+    aggregation: sum
+    value_scale: 1000000
+    expected_cell_type: number
