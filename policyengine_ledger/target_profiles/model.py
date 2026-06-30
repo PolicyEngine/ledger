@@ -1,9 +1,9 @@
-"""Ledger-owned target profiles and measurement contracts.
+"""Ledger-owned target profiles for government statistics source records.
 
 Target profiles describe which source-backed Ledger facts a downstream build
-may select and how a model should measure the matching quantity.
-They do not contain target values. Values come from Ledger fact rows selected by
-the profile's selectors.
+may select and the semantic quantity those facts represent. They do not contain
+target values, runtime hooks, or solver instructions. Values come from Ledger
+fact rows selected by the profile's selectors.
 """
 
 from __future__ import annotations
@@ -34,7 +34,7 @@ FORBIDDEN_RUNTIME_KEYS = {
 
 @dataclass(frozen=True)
 class TargetProfileBinding:
-    """Backend-specific executable binding for one measurement contract."""
+    """Backend-specific semantic reference for one source quantity."""
 
     backend: str
     metric_name: str
@@ -43,7 +43,7 @@ class TargetProfileBinding:
 
 @dataclass(frozen=True)
 class TargetProfileTarget:
-    """One profile target family and its model-measurement contract."""
+    """One profile target family and its source quantity contract."""
 
     target_id: str
     family: str
@@ -65,7 +65,7 @@ class TargetProfileTarget:
 
 @dataclass(frozen=True)
 class TargetProfile:
-    """A Ledger-owned target profile consumed by Populace or other solvers."""
+    """A Ledger-owned source profile referenced by downstream builders."""
 
     profile_id: str
     country: str

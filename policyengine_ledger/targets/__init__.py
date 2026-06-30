@@ -2,7 +2,7 @@
 
 Ledger owns source-backed facts, target-eligible source inputs, and target
 profiles. Consumers such as Populace decide which profile rows their support
-universe can activate and how to execute calibration.
+universe can activate and how to calibrate outside Ledger.
 """
 
 __all__ = [
