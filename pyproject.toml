@@ -16,7 +16,6 @@ dependencies = [
     "httpx>=0.27.0",  # For fetching external data
     "numpy>=1.24.0",  # For source table normalization
     "pandas>=2.0.0",  # For source table parsing
-    "scipy>=1.11.0",
     "pyarrow>=22.0.0",
     "openpyxl>=3.1.0",
     "odfpy>=1.4.1",
@@ -29,10 +28,6 @@ dev = [
     "pytest>=8.0.0,<9",
     "ruff>=0.5.0",
 ]
-policyengine = [
-    "policyengine-us>=1.670.2",
-]
-
 [project.scripts]
 ledger = "policyengine_ledger.cli:main"
 

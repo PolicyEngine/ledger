@@ -689,95 +689,58 @@ Acceptance:
 - Ledger also exposes source records for non-targeted Table 1.4 columns/rows.
 - Source records have concept/statistic/universe metadata and no simulator model variable IDs.
 
-### Phase 3: Identity Target Values And Contracts
+### Phase 3: Ledger Target Profile Handoff
 
 Tasks:
 
-- Implement Populace target value recipes with identity/no-op transforms first.
-- Implement target contracts that bind a recipe to a model measure placeholder.
-- Add profile uniqueness checks.
-- Store resolved source record IDs in compiled active target values.
+- Declare target profiles that select source-backed facts and define
+  model-measurement contracts.
+- Store stable selectors, source-record IDs, source periods, units, geography,
+  value definitions, and profile metadata.
+- Add validation that target profiles contain no target values, source
+  reconciliation, aging, active support decisions, or simulator execution
+  logic.
 
 Acceptance:
 
-- Source records can become active target values without aging or reconciliation.
-- Every active target value is reproducible from Ledger snapshot + recipe hash.
-- Contract compatibility fields are present even before full model measure compilation.
+- Downstream systems can resolve every profile row back to Ledger source records
+  and source artifacts.
+- Profile validation fails closed when a row includes active target values,
+  model-runtime code, or unsupported operations.
+- Populace can consume the profile as a contract, but owns all active target
+  values, aging, model-measure compilation, scoring, and differential tests.
 
-### Phase 4: Model Measure Compiler
-
-Tasks:
-
-- Implement a PolicyEngine-US backend compiler.
-- Infer variable entity from `policyengine_us` metadata as a linting aid.
-- Store entity explicitly in compiled measure specs.
-- Compile filters and aggregates.
-- Add count-basis support.
-- Add weight variable/entity validation.
-- Add ratio support or reject ratio specs clearly until implemented.
-- Add tiny fixture tests.
-
-Acceptance:
-
-- A hand-built PE fixture passes count, sum, filter, and weight tests.
-- Entity/weight/filter mismatches produce useful errors.
-- Matrix-builder results match direct simulation results on fixtures.
-
-### Phase 5: Pinned PE Differential Slice
-
-Tasks:
-
-- Build equivalence mapping for PE national eCPS `build_loss_matrix()` column names where relevant.
-- Also map against newer PE target database artifacts where relevant and available.
-- Map at least:
-  - AGI by AGI/status
-  - return counts by AGI/status
-  - Table 1.4 income-source totals/counts by AGI
-  - aggregate-only SOI variables
-- Compare source-value, active-value, measure-vector, and profile-selection layers.
-- Classify every difference.
-
-Acceptance:
-
-- Exact or near-exact parity for declared PE-equivalent targets.
-- Any intentional deviation has metadata and a test asserting the new behavior.
-- No unclassified PE-equivalent differences remain in the pilot slice.
-
-### Phase 6: Expand SOI National Family
+### Phase 4: Expand SOI National Family
 
 Tasks:
 
 - Extend source-record specs to SOI Table 1.1, Table 1.4, Table 2.1, top-tail tables, filing-status variants, and AGI-band variants.
-- Extend model measures and target contracts for the same family.
 - Add source integrity checks for totals/components where valid.
 
 Acceptance:
 
 - Source records exist for every relevant value in the national SOI source files.
-- Active Populace national targets can be benchmarked against PE national.
 - Missing and intentionally omitted values are visible in coverage reports.
 
-### Phase 7: CI And Dashboard
+### Phase 5: CI And Dashboard
 
 Tasks:
 
 - Add CI job for source manifest smoke tests.
 - Add selector/source-record spec validation tests.
-- Add target contract validation tests.
-- Add PE differential tests on small fixtures.
-- Add optional or nightly full parity against larger PE datasets.
-- Surface results in the Populace/Ledger observatory:
+- Add target profile validation tests.
+- Surface Ledger-owned results in the source observatory:
   - source coverage
   - parsed-cell coverage
   - source-record coverage
-  - active target coverage
-  - model-measure compile coverage
-  - PE differential status
-  - known intentional deviations
+  - target profile selector coverage
+  - known source coverage gaps
 
 Acceptance:
 
-- A developer can see whether a dataset version is improving, regressing, or intentionally diverging from PE.
+- A developer can see whether a source-package version preserves more official
+  statistics release content, regresses source fidelity, or intentionally omits
+  source rows.
 - CI catches accidental source omission, selector breakage, target contract incompatibility, and measure compiler regressions.
 
 ### Phase 8: State And Local Expansion

@@ -54,6 +54,7 @@ def test_ledger_governance_files_define_required_review_surface():
 def test_ci_runs_boundary_and_governance_tests():
     ci = (ROOT / ".github" / "workflows" / "ci.yml").read_text()
 
-    assert "tests/test_ledger_boundaries.py" in ci
-    assert "tests/test_ledger_consumer_contract.py" in ci
-    assert "tests/test_ledger_governance.py" in ci
+    assert "uv run pytest -q" in ci
+    assert (ROOT / "tests" / "test_ledger_boundaries.py").exists()
+    assert (ROOT / "tests" / "test_ledger_consumer_contract.py").exists()
+    assert (ROOT / "tests" / "test_ledger_governance.py").exists()
