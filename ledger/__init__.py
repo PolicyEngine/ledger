@@ -1,9 +1,9 @@
 """Ledger source-data foundation.
 
-Ledger owns source artifacts, source-backed facts, constraints, provenance, and
-microdata ingestion. Modeling choices such as source reconciliation, aging,
-imputation, target activation, and calibration profiles belong in Populace
-packages.
+Ledger owns government-statistics releases: source artifacts, source-backed
+facts, constraints, provenance, and target profiles. Raw microdata storage,
+source reconciliation, aging, imputation, target activation, and calibration
+belong in downstream systems such as Populace.
 """
 
 __all__ = [
@@ -17,7 +17,6 @@ __all__ = [
     "harness",
     "jurisdictions",
     "mirror",
-    "microdata",
     "normalization",
     "source_package",
     "store",

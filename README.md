@@ -12,7 +12,8 @@ Ledger may normalize structure: parse files, type values, declare units and
 scales, assign geography and period identifiers, preserve lineage back to
 source artifacts, and publish target profiles that identify source-backed facts
 and measurement contracts. Ledger does not reconcile inconsistent sources,
-impute missing data, or execute simulator-specific calibration.
+impute missing data, store raw survey microdata, or execute simulator-specific
+calibration.
 
 Populace consumes Ledger facts and target profiles, selects the subset its
 current support universe can target, applies minimal period alignment when
@@ -31,8 +32,6 @@ This repository provides:
   conversion and source-published total/share arithmetic.
 - **Target profiles**: Source-backed target contracts and model-measurement
   bindings that Populace, Thesis, and future rule engines can consume.
-- **Microdata**: Survey and administrative microdata ingestion for CPS, PUF,
-  FRS, and related datasets.
 - **Jurisdiction loaders**: Source-specific ETL that emits the shared Ledger
   schema.
 
@@ -100,14 +99,11 @@ ledger/
 │   ├── facts/               # Source-backed facts
 │   ├── normalization/       # Low-assumption representation helpers
 │   ├── targets/             # Target input schema, client, loaders
-│   ├── microdata/           # Microdata registry, ingestion, queries
 │   ├── jurisdictions/       # Temporary in-repo jurisdiction source prototypes
 ├── db/                      # SQLModel persistence and source loaders
 │   ├── schema.py            # SQLModel: Target, Stratum, StratumConstraint
 │   ├── supabase_client.py   # Supabase client helpers
 │   └── etl_*.py             # Source-specific ETL pipelines
-├── micro/                   # Legacy simulation consumer prototypes
-├── calibration/             # Calibration target adapters and constraints
 ├── data/                    # Cached data files
 └── docs/                    # Architecture and source documentation
 ```
@@ -222,8 +218,8 @@ uv run ledger validate-package slc-student-support-england-2025 --year 2025
 uv run ledger build-suite slc-student-support-england-2025 --year 2025 --out /tmp/ledger-slc-student-support-england-2025 --replace
 ```
 
-The first ZIP-backed PE migration package is CMS Marketplace OEP state-level
-PUF:
+The first ZIP-backed PE migration package is the CMS Marketplace OEP
+state-level public-use release:
 
 ```bash
 uv run ledger validate-package cms-aca-oep-state-level --year 2024
@@ -394,8 +390,7 @@ uv run ledger publish-derived \
 The Supabase schema for this mirror lives at
 `supabase/migrations/20260504_ledger_bronze.sql`. Raw government spreadsheets are
 mirrored as artifact metadata plus one row per parsed cell, not one tidy table
-per sheet. Typed rectangular microdata can still use separate raw microdata
-tables.
+per sheet. Ledger does not host raw survey microdata tables.
 
 After the migration is applied and the `ledger` schema is exposed through the
 Supabase Data API, accepted mirror exports can be upserted with:
@@ -461,22 +456,11 @@ LEDGER_EXPLORER_DATA_DIRS=/tmp/ledger-build-a,/tmp/ledger-build-b npm run dev --
 ### 5. Query Target Inputs in Python
 
 ```python
-from policyengine_ledger.targets import DataSource, Target, TargetType
-from calibration.targets import get_targets
+from policyengine_ledger.targets import DataSource, Target, TargetType, query_targets
+from policyengine_ledger.target_profiles import load_target_profile
 
-target_inputs = get_targets(
-    jurisdiction="us",
-    year=2021,
-    sources=["irs-soi"],
-)
-```
-
-### 6. Query Microdata
-
-```python
-from policyengine_ledger.microdata import query_cps_asec
-
-persons = query_cps_asec(year=2024, table_type="person", limit=10_000)
+target_rows = query_targets(jurisdiction="us", year=2024)
+profile = load_target_profile("us_fiscal")
 ```
 
 ## Target Input Schema
@@ -522,14 +506,6 @@ normalized_fact = convert_units(fact, 1000, "count")
 
 ## Current Coverage
 
-### Microdata
-
-| Source | Variables | Description |
-|--------|-----------|-------------|
-| US CPS ASEC | 78 | Census household survey |
-| US IRS PUF | 33 | Tax return sample |
-| UK FRS | 29 | DWP household survey |
-
 ### Aggregate Facts And Target Inputs
 
 | Source | Coverage | Description |
@@ -545,11 +521,11 @@ normalized_fact = convert_units(fact, 1000, "count")
 
 ## Boundaries
 
-- **Ledger** owns source data, provenance, source facts, aggregate facts,
-  microdata ingestion, target profiles, and measurement contracts.
+- **Ledger** owns government-statistics release artifacts, provenance, source
+  facts, aggregate facts, target profiles, and measurement contracts.
 - **Populace** owns support-aware target activation, minimal period alignment,
-  simulation interfaces, entity modeling, weights, diagnostics, and calibration
-  execution.
+  raw microdata access, simulation interfaces, entity modeling, weights,
+  diagnostics, and calibration execution.
 - **Jurisdiction source packages** such as `ledger-us` and `ledger-uk` own
   source-specific parsers and specs that emit shared Ledger records.
 - **Jurisdiction simulation packages** own simulation-specific variable

@@ -1,4 +1,4 @@
-"""Calibration target schema and query helpers."""
+"""Ledger target-input schema and query helpers."""
 
 from db.schema import (
     DEFAULT_DB_PATH,
@@ -14,7 +14,6 @@ from db.schema import (
     init_db,
 )
 from db.supabase_client import insert_targets_batch, query_strata, query_targets
-from calibration.targets import TargetSpec, get_targets
 from .us_poverty import (
     US_POVERTY_NONFILER_TARGET_COVERAGE,
     TargetSourceCoverage,
@@ -33,13 +32,11 @@ __all__ = [
     "Stratum",
     "StratumConstraint",
     "Target",
-    "TargetSpec",
     "TargetSourceCoverage",
     "TargetType",
     "US_POVERTY_NONFILER_TARGET_COVERAGE",
     "coverage_entries",
     "get_engine",
-    "get_targets",
     "get_session",
     "hard_target_package_aliases",
     "init_db",

@@ -7,8 +7,8 @@ source publications, preserves provenance, and represents published values as
 structured, queryable facts. Populace consumes Ledger facts to produce final
 calibrated simulation inputs.
 
-This document describes the full data pipeline from source publications to
-Populace target sets and calibrated output. Ledger is global at the schema,
+This document describes the source-publication pipeline from government
+statistics releases to source-backed facts and target profiles. Ledger is global at the schema,
 validation, and build-harness layer. Jurisdiction source packages such as
 `ledger-us` and `ledger-uk` emit records into that shared contract.
 
@@ -16,12 +16,12 @@ validation, and build-harness layer. Jurisdiction source packages such as
 
 | Layer | Owns | Does not own |
 |-------|------|--------------|
-| Ledger | Source artifacts, provenance, aggregate facts, constraints, microdata ingestion | Source reconciliation, aging, imputation, active target selection |
+| Ledger | Source artifacts, provenance, aggregate facts, constraints, target profiles | Raw microdata storage, source reconciliation, aging, imputation, active target selection |
 | Populace Targets | Source selection, reconciliation, aging, imputation, active target sets | Source artifact storage and provenance |
 | Populace | Entity model, weights, calibration interfaces, calibrated output | Source ETL and source provenance |
 | Jurisdiction source packages | Source-specific parsers and specs that emit Ledger records | Forked fact or constraint schemas |
 | Jurisdiction simulation packages | Model-specific adapters, variable mappings, target recipes | Source facts |
-| PolicyEngine | Policy-facing workflows and analysis tools | Source ETL or calibrated microdata generation |
+| PolicyEngine | Policy-facing workflows and analysis tools | Source ETL or calibrated dataset generation |
 
 ## Storage Layers
 
@@ -32,8 +32,7 @@ Source files are immutable and versioned.
 ```text
 sources/
   irs/soi/2023/table_1_2.xlsx          # IRS SOI individual returns
-  census/acs/2023/pums_hh.csv          # ACS PUMS households
-  census/cps/2024/asec_raw.zip         # CPS ASEC microdata
+  census/acs/2023/table_b01001.csv     # ACS published table
   bls/cpi/2024/monthly.csv             # CPI monthly series
   usda/snap/2023/qc_data.xlsx          # SNAP QC data
 ```
@@ -45,7 +44,6 @@ sources/
 | `ledger` | Source metadata and lineage | sources, files, content, fetch_log |
 | `indices` | Source time series | series, values (CPI, wage growth) |
 | `targets` | Target inputs | strata, constraints, targets |
-| `microdata` | Intermediate microdata | cps_asec, acs_pums, synthetic |
 | `populace` | Final calibrated data | households, persons, tax_units |
 
 ## Python Namespaces
@@ -56,7 +54,6 @@ New code should use the `policyengine_ledger` namespace:
 from policyengine_ledger.sources import SourceFile, SourceReference, query_sources
 from policyengine_ledger.facts import SourceFact
 from policyengine_ledger.targets import Target, query_targets
-from policyengine_ledger.microdata import query_cps_asec
 from policyengine_ledger.normalization import convert_units
 ```
 
@@ -91,20 +88,19 @@ policyengine_ledger.sources
 policyengine_ledger.facts
 (structured source claims)
       |
-      +------------------------+
-      v                        v
-policyengine_ledger.normalization        microdata.*
-(units, scales,           (typed source
- IDs, source-published     microdata)
- arithmetic)
-      |                        |
-      v                        |
-policyengine_ledger.aggregate_facts          |
-(published aggregate          |
- facts)                       |
-      |                        |
-      +-----------+------------+
-                  v
+      |
+      v
+policyengine_ledger.normalization
+(units, scales, IDs, source-published arithmetic)
+      |
+      v
+policyengine_ledger.aggregate_facts
+(published aggregate facts)
+      |
+      v
+policyengine_ledger.target_profiles
+      |
+      v
         Populace Targets
    (selected, reconciled,
     aged active target sets)
@@ -112,7 +108,7 @@ policyengine_ledger.aggregate_facts          |
                   v
              populace.*
           (final calibrated
-              microdata)
+              datasets)
 ```
 
 ## Source Facts And Populace Targets
@@ -180,7 +176,7 @@ survey input, imputed model feature, or source-selection decision rather than a
 publisher aggregate, the cell should stay out of Ledger until a primary source
 fact and its provenance are identified.
 
-## Calibration Pipeline
+## Downstream Target Composition
 
 ### 1. Target Inputs (from `targets.*` schema)
 
@@ -326,14 +322,6 @@ targets.targets          -- stratum_id, variable, value, period, source
 
 Targets in Ledger are source-backed inputs. Active, aged, reconciled calibration
 target sets belong to Populace Targets.
-
-### microdata.* (Intermediate)
-
-```sql
-microdata.cps_asec       -- processed CPS (cleaned, typed)
-microdata.acs_pums       -- processed ACS
-microdata.synthetic      -- generated synthetic records
-```
 
 ### populace.* (Final Output)
 

@@ -1,8 +1,8 @@
 """Ledger-owned downstream consumer contract exports.
 
-The rows produced here are source-fact contract rows, not Microplex target rows.
-They expose stable Ledger identity and audit fields that downstream adapters can
-consume without importing Ledger internals or depending on source table layout.
+The rows produced here are source-fact contract rows. They expose stable Ledger
+identity and audit fields that downstream adapters can consume without importing
+Ledger internals or depending on source table layout.
 """
 
 from __future__ import annotations

@@ -2,10 +2,6 @@
 
 from __future__ import annotations
 
-import builtins
-import importlib
-import sys
-
 from ledger.core import (
     Aggregation,
     EntityDimension,
@@ -49,24 +45,6 @@ def _fact(**overrides):
         label="United States tax year 2023 sum adjusted gross income",
     )
     return AggregateFact(**{**fact.__dict__, **overrides})
-
-
-def test_ledger_core_imports_without_microplex(monkeypatch):
-    for name in list(sys.modules):
-        if name == "microplex" or name.startswith("microplex."):
-            del sys.modules[name]
-
-    real_import = builtins.__import__
-
-    def guarded_import(name, *args, **kwargs):
-        if name == "microplex" or name.startswith("microplex."):
-            raise AssertionError("ledger.core imported microplex")
-        return real_import(name, *args, **kwargs)
-
-    monkeypatch.setattr(builtins, "__import__", guarded_import)
-    import ledger.core
-
-    importlib.reload(ledger.core)
 
 
 def test_valid_fact_passes_validation():

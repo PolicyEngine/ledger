@@ -1,7 +1,7 @@
 """Ledger-owned target profiles and measurement contracts.
 
-Target profiles describe which source-backed Ledger facts a calibration build
-may select and how a model should measure the matching quantity on microdata.
+Target profiles describe which source-backed Ledger facts a downstream build
+may select and how a model should measure the matching quantity.
 They do not contain target values. Values come from Ledger fact rows selected by
 the profile's selectors.
 """
@@ -28,7 +28,7 @@ class TargetProfileBinding:
 
 @dataclass(frozen=True)
 class TargetProfileTarget:
-    """One profile target family and its microdata measurement contract."""
+    """One profile target family and its model-measurement contract."""
 
     target_id: str
     family: str

@@ -30,7 +30,7 @@ from .specs import (
     source_regions_from_record_set_spec,
 )
 from db.schema import SourceArtifact, SourceColumn, SourceRow, SourceTable
-from db.supabase_client import list_datasets, query_sources, register_dataset
+from db.supabase_client import query_sources
 
 __all__ = [
     "CellSelectorSpec",
@@ -52,10 +52,8 @@ __all__ = [
     "SourceTable",
     "build_source_cell_key",
     "compile_source_record_set_specs",
-    "list_datasets",
     "load_source_cells_jsonl",
     "query_sources",
-    "register_dataset",
     "resolve_cell_selector",
     "resolve_source_record",
     "save_source_cells_jsonl",

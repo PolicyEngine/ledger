@@ -10,8 +10,8 @@ class of Ledger data belongs.
 Ledger uses three storage layers with different jobs.
 
 `ledger-raw` is the immutable source-byte archive. It stores exact publisher
-artifacts as fetched: workbooks, CSVs, PDFs, ZIPs, HTML snapshots, public raw
-microdata files when allowed, and similar source files. Raw objects are
+artifacts as fetched: workbooks, CSVs, PDFs, ZIPs, HTML snapshots, and similar
+government-statistics release files. Raw objects are
 content-addressed by checksum and should never be overwritten in place.
 
 `ledger-derived` is the reproducible artifact archive. It stores build outputs
@@ -147,6 +147,10 @@ to it. Use `--dry-run` to verify local JSONL files without writing.
 ## Non-Goals
 
 Supabase should not store large raw binary artifacts. It should point to R2.
+
+Ledger should not store raw survey or administrative microdata. It reflects
+government statistics releases and the provenance needed to audit those
+published facts.
 
 R2 should not be the schema authority. It stores bytes and reproducible build
 files, while Ledger code and checked specs define semantics.

@@ -1,8 +1,8 @@
 # Ledger Contribution Governance
 
-Ledger is the raw source-of-truth layer for PolicyEngine source facts. Its job
-is to preserve publisher-backed facts with provenance. Populace turns those raw
-facts into active, aged, reconciled calibration targets.
+Ledger is the source-of-truth layer for PolicyEngine government-statistics
+release facts. Its job is to preserve publisher-backed facts with provenance.
+Populace turns those facts into active, aged, reconciled calibration targets.
 
 ## Boundary
 
@@ -21,6 +21,7 @@ Ledger must not:
 - reconcile across sources
 - age facts to a build year
 - impute missing values
+- store raw survey or administrative microdata
 - choose a support-aware active target subset
 - build solver-ready calibration targets
 - invent derived facts whose source is Ledger itself

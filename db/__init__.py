@@ -1,5 +1,5 @@
 """
-Database layer for Ledger target inputs and calibration data.
+Database layer for Ledger source facts and target inputs.
 
 Supports two backends:
 - SQLite (local development via SQLModel)

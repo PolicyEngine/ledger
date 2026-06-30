@@ -3,7 +3,7 @@
 These helpers are for low-assumption structural normalization: unit/scale
 standardization and same-source arithmetic with explicit lineage. Modeling
 choices such as inflation, aging, target reconciliation, or simulator-specific
-allocation belong in Microplex calibration recipes.
+allocation belong in downstream calibration recipes.
 """
 
 from __future__ import annotations

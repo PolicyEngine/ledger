@@ -241,7 +241,8 @@ Rules:
 
 ### Model Measure Specs
 
-A model measure spec maps a target contract to a quantity computed on a microdataset.
+A model measure spec maps a target contract to a quantity computed on a model
+population.
 
 Example:
 
@@ -359,7 +360,7 @@ Example:
 ```yaml
 active_target_id: us_2024.irs_soi.taxable_interest.amount.all
 target_contract_id: us_2024.irs_soi.taxable_interest.amount.all.contract
-calibration_profile: microplex_us_2024_national_v1
+calibration_profile: populace_us_2024_national_v1
 status: active
 replacement_for:
   project: policyengine-us-data
@@ -611,7 +612,7 @@ target_contracts
 active_target_specs
 active_target_values
 target_profile_manifests
-microplex_profile_snapshots
+target_profile_snapshots
 ```
 
 These can start as YAML/JSON files before being promoted into database tables.

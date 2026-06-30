@@ -1,8 +1,7 @@
 """Canonical Ledger aggregate facts and validation.
 
-This module is intentionally independent of Microplex. It defines source-backed
-aggregate facts, deterministic fact keys, human-readable labels, and
-schema-level validation for Ledger fact sets.
+This module defines source-backed aggregate facts, deterministic fact keys,
+human-readable labels, and schema-level validation for Ledger fact sets.
 """
 
 from __future__ import annotations

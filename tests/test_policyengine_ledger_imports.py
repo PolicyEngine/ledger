@@ -61,14 +61,14 @@ def test__given_ledger_target_import_path__then_it_reexports_target_contracts() 
 
 
 def test__given_public_ledger_namespaces__then_core_helpers_are_importable() -> None:
-    from policyengine_ledger.microdata import query_cps_asec
     from policyengine_ledger.normalization import convert_units
     from policyengine_ledger.sources import SourceFile, query_sources
+    from policyengine_ledger.target_profiles import load_target_profile
 
     assert SourceFile is not None
     assert query_sources is not None
     assert convert_units is not None
-    assert query_cps_asec is not None
+    assert load_target_profile is not None
 
 
 def test__given_public_ledger_normalization__then_target_construction_is_hidden() -> (
