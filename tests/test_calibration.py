@@ -32,14 +32,18 @@ def sample_microdata():
     """Create sample microdata for testing constraint building."""
     np.random.seed(42)
     n = 1000
-    return pd.DataFrame({
-        "weight": np.random.uniform(100, 200, n),
-        "is_tax_filer": np.random.choice([0, 1], n, p=[0.2, 0.8]),
-        "adjusted_gross_income": np.random.lognormal(10, 1.5, n),
-        "age": np.random.randint(18, 85, n),
-        "state_fips": np.random.choice(["06", "36", "48"], n),  # CA, NY, TX
-        "filing_status": np.random.choice(["1", "2", "3", "4"], n),  # single, mfj, mfs, hoh
-    })
+    return pd.DataFrame(
+        {
+            "weight": np.random.uniform(100, 200, n),
+            "is_tax_filer": np.random.choice([0, 1], n, p=[0.2, 0.8]),
+            "adjusted_gross_income": np.random.lognormal(10, 1.5, n),
+            "age": np.random.randint(18, 85, n),
+            "state_fips": np.random.choice(["06", "36", "48"], n),  # CA, NY, TX
+            "filing_status": np.random.choice(
+                ["1", "2", "3", "4"], n
+            ),  # single, mfj, mfs, hoh
+        }
+    )
 
 
 class TestTargetSpec:
@@ -137,7 +141,8 @@ class TestGetTargets:
 
         # Find a bracket target (should have AGI constraints)
         bracket_targets = [
-            t for t in targets
+            t
+            for t in targets
             if any("adjusted_gross_income" in c[0] for c in t.constraints)
         ]
 
@@ -305,9 +310,7 @@ class TestBuildConstraintMatrix:
             ),
         ]
 
-        constraints = build_constraint_matrix(
-            sample_microdata, targets, tolerance=0.05
-        )
+        constraints = build_constraint_matrix(sample_microdata, targets, tolerance=0.05)
 
         assert constraints[0].tolerance == 0.05
 
@@ -484,7 +487,9 @@ class TestEntropyCalibrator:
         # and should give the same KL divergence
         uniform_scale = target / current_sum
         uniform_weights = original_weights * uniform_scale
-        kl_uniform = np.sum(uniform_weights * np.log(uniform_weights / original_weights))
+        kl_uniform = np.sum(
+            uniform_weights * np.log(uniform_weights / original_weights)
+        )
 
         # Our solution should be very close to uniform scaling
         np.testing.assert_allclose(kl_div, kl_uniform, rtol=0.01)

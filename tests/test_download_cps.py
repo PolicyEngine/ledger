@@ -43,16 +43,18 @@ class TestCPSDownloader:
     def test_process_cps_data_creates_required_columns(self):
         """Processing should create all required columns."""
         # Create mock raw data
-        raw_df = pd.DataFrame({
-            "household_id": [1, 1, 2],
-            "person_seq": [1, 2, 1],
-            "age": [35, 10, 65],
-            "march_supplement_weight": [100, 100, 150],
-            "class_of_worker": [1, 0, 0],
-            "wage_salary_income": [50000, 0, 20000],
-            "own_children_under_18": [1, 0, 0],
-            "state_fips": [6, 6, 36],
-        })
+        raw_df = pd.DataFrame(
+            {
+                "household_id": [1, 1, 2],
+                "person_seq": [1, 2, 1],
+                "age": [35, 10, 65],
+                "march_supplement_weight": [100, 100, 150],
+                "class_of_worker": [1, 0, 0],
+                "wage_salary_income": [50000, 0, 20000],
+                "own_children_under_18": [1, 0, 0],
+                "state_fips": [6, 6, 36],
+            }
+        )
 
         result = process_cps_data(raw_df)
 
@@ -66,13 +68,15 @@ class TestCPSDownloader:
 
     def test_process_cps_data_scales_weights(self):
         """Processing should divide weights by 100 (CPS 2 implied decimals)."""
-        raw_df = pd.DataFrame({
-            "household_id": [1],
-            "person_seq": [1],
-            "age": [30],
-            "march_supplement_weight": [10000],  # Raw weight
-            "state_fips": [6],
-        })
+        raw_df = pd.DataFrame(
+            {
+                "household_id": [1],
+                "person_seq": [1],
+                "age": [30],
+                "march_supplement_weight": [10000],  # Raw weight
+                "state_fips": [6],
+            }
+        )
 
         result = process_cps_data(raw_df)
 
@@ -81,13 +85,15 @@ class TestCPSDownloader:
 
     def test_process_cps_data_filters_positive_weights(self):
         """Processing should filter to positive weights only."""
-        raw_df = pd.DataFrame({
-            "household_id": [1, 2, 3],
-            "person_seq": [1, 1, 1],
-            "age": [30, 40, 50],
-            "march_supplement_weight": [100, 0, -10],  # Only first is positive
-            "state_fips": [1, 2, 3],
-        })
+        raw_df = pd.DataFrame(
+            {
+                "household_id": [1, 2, 3],
+                "person_seq": [1, 1, 1],
+                "age": [30, 40, 50],
+                "march_supplement_weight": [100, 0, -10],  # Only first is positive
+                "state_fips": [1, 2, 3],
+            }
+        )
 
         result = process_cps_data(raw_df)
 
@@ -96,14 +102,16 @@ class TestCPSDownloader:
 
     def test_process_cps_data_calculates_employment(self):
         """Employment status should be derived from class_of_worker."""
-        raw_df = pd.DataFrame({
-            "household_id": [1, 2, 3],
-            "person_seq": [1, 1, 1],
-            "age": [30, 40, 50],
-            "march_supplement_weight": [100, 100, 100],
-            "class_of_worker": [1, 0, 2],  # 1=employed, 0=not, 2=employed
-            "state_fips": [1, 2, 3],
-        })
+        raw_df = pd.DataFrame(
+            {
+                "household_id": [1, 2, 3],
+                "person_seq": [1, 1, 1],
+                "age": [30, 40, 50],
+                "march_supplement_weight": [100, 100, 100],
+                "class_of_worker": [1, 0, 2],  # 1=employed, 0=not, 2=employed
+                "state_fips": [1, 2, 3],
+            }
+        )
 
         result = process_cps_data(raw_df)
 
@@ -165,7 +173,7 @@ class TestLoaderIntegration:
         # Weight should sum to ~330M (US population), not 33B
         total_weight = df["weight"].sum()
         assert 300_000_000 < total_weight < 400_000_000, (
-            f"Total weight {total_weight:,.0f} should be ~330M, not {total_weight/1e9:.1f}B"
+            f"Total weight {total_weight:,.0f} should be ~330M, not {total_weight / 1e9:.1f}B"
         )
 
     def test_load_microdata_falls_back_to_synthetic(self):
@@ -182,5 +190,7 @@ class TestLoaderIntegration:
             assert "weight" in df.columns
 
             # Should have warned about fallback
-            assert any("falling back to synthetic" in str(warning.message).lower()
-                      for warning in w)
+            assert any(
+                "falling back to synthetic" in str(warning.message).lower()
+                for warning in w
+            )

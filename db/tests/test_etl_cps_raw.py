@@ -12,19 +12,21 @@ class TestCPSRawETL:
         from db.etl_cps_raw import prepare_person_records
 
         # Sample raw CPS data
-        df = pd.DataFrame({
-            "PH_SEQ": [1, 1, 2],
-            "PPPOS": [1, 2, 1],
-            "A_AGE": [35, 10, 42],
-            "A_SEX": [1, 2, 2],
-            "PRDTRACE": [1, 1, 2],
-            "PEHSPNON": [2, 2, 1],
-            "GESTFIPS": [6, 6, 36],
-            "PTOTVAL": [50000.0, 0.0, 75000.0],
-            "PEARNVAL": [48000.0, 0.0, 70000.0],
-            "WSAL_VAL": [45000.0, 0.0, 65000.0],
-            "MARSUPWT": [1500.0, 1500.0, 2000.0],
-        })
+        df = pd.DataFrame(
+            {
+                "PH_SEQ": [1, 1, 2],
+                "PPPOS": [1, 2, 1],
+                "A_AGE": [35, 10, 42],
+                "A_SEX": [1, 2, 2],
+                "PRDTRACE": [1, 1, 2],
+                "PEHSPNON": [2, 2, 1],
+                "GESTFIPS": [6, 6, 36],
+                "PTOTVAL": [50000.0, 0.0, 75000.0],
+                "PEARNVAL": [48000.0, 0.0, 70000.0],
+                "WSAL_VAL": [45000.0, 0.0, 65000.0],
+                "MARSUPWT": [1500.0, 1500.0, 2000.0],
+            }
+        )
 
         records = prepare_person_records(df)
 
@@ -41,15 +43,17 @@ class TestCPSRawETL:
         """Test preparing household records for Supabase insert."""
         from db.etl_cps_raw import prepare_household_records
 
-        df = pd.DataFrame({
-            "H_SEQ": [1, 2],
-            "H_NUMPER": [3, 2],
-            "HH5TO18": [1, 0],
-            "HUNDER18": [1, 0],
-            "GESTFIPS": [6, 36],
-            "HTOTVAL": [125000.0, 80000.0],
-            "HSUP_WGT": [1500.0, 2000.0],
-        })
+        df = pd.DataFrame(
+            {
+                "H_SEQ": [1, 2],
+                "H_NUMPER": [3, 2],
+                "HH5TO18": [1, 0],
+                "HUNDER18": [1, 0],
+                "GESTFIPS": [6, 36],
+                "HTOTVAL": [125000.0, 80000.0],
+                "HSUP_WGT": [1500.0, 2000.0],
+            }
+        )
 
         records = prepare_household_records(df)
 
@@ -82,11 +86,13 @@ class TestCPSRawETL:
         mock_cache_dir.return_value.__truediv__ = lambda self, x: mock_path
 
         # Mock parquet reading
-        mock_read.return_value = pd.DataFrame({
-            "PH_SEQ": [1, 2],
-            "A_AGE": [35, 42],
-            "MARSUPWT": [1500, 2000],
-        })
+        mock_read.return_value = pd.DataFrame(
+            {
+                "PH_SEQ": [1, 2],
+                "A_AGE": [35, 42],
+                "MARSUPWT": [1500, 2000],
+            }
+        )
 
         result = load_cps_to_supabase(2024, dry_run=True)
 

@@ -1,4 +1,4 @@
-schema_version: arch.source_package.v1
+schema_version: ledger.source_package.v1
 package_id: soi-filing-season-week47-2024-eitc-total
 label: IRS SOI filing season week 47 EITC totals and AGI distribution 2024
 artifact:

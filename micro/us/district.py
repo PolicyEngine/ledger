@@ -5,7 +5,7 @@ Generates synthetic tax units at geographic granularity (states, counties,
 congressional districts) and calibrates weights to match local targets.
 
 Uses microplex library for synthesis and calibration algorithms.
-Uses Arch targets for authoritative calibration data.
+Uses Ledger targets for authoritative calibration data.
 
 Example:
     >>> from micro.us.district import DistrictMicroplex
@@ -36,20 +36,63 @@ try:
 except ImportError:
     MicroplexSparseCalibrator = None
 
-# Import targets from Arch-compatible calibration adapters
+# Import targets from Ledger-compatible calibration adapters.
 from calibration.targets import TargetSpec, get_targets
 from db.schema import TargetType
 
 
 # US State FIPS codes (int -> abbreviation)
 STATE_FIPS: Dict[int, str] = {
-    1: "AL", 2: "AK", 4: "AZ", 5: "AR", 6: "CA", 8: "CO", 9: "CT", 10: "DE",
-    11: "DC", 12: "FL", 13: "GA", 15: "HI", 16: "ID", 17: "IL", 18: "IN",
-    19: "IA", 20: "KS", 21: "KY", 22: "LA", 23: "ME", 24: "MD", 25: "MA",
-    26: "MI", 27: "MN", 28: "MS", 29: "MO", 30: "MT", 31: "NE", 32: "NV",
-    33: "NH", 34: "NJ", 35: "NM", 36: "NY", 37: "NC", 38: "ND", 39: "OH",
-    40: "OK", 41: "OR", 42: "PA", 44: "RI", 45: "SC", 46: "SD", 47: "TN",
-    48: "TX", 49: "UT", 50: "VT", 51: "VA", 53: "WA", 54: "WV", 55: "WI",
+    1: "AL",
+    2: "AK",
+    4: "AZ",
+    5: "AR",
+    6: "CA",
+    8: "CO",
+    9: "CT",
+    10: "DE",
+    11: "DC",
+    12: "FL",
+    13: "GA",
+    15: "HI",
+    16: "ID",
+    17: "IL",
+    18: "IN",
+    19: "IA",
+    20: "KS",
+    21: "KY",
+    22: "LA",
+    23: "ME",
+    24: "MD",
+    25: "MA",
+    26: "MI",
+    27: "MN",
+    28: "MS",
+    29: "MO",
+    30: "MT",
+    31: "NE",
+    32: "NV",
+    33: "NH",
+    34: "NJ",
+    35: "NM",
+    36: "NY",
+    37: "NC",
+    38: "ND",
+    39: "OH",
+    40: "OK",
+    41: "OR",
+    42: "PA",
+    44: "RI",
+    45: "SC",
+    46: "SD",
+    47: "TN",
+    48: "TX",
+    49: "UT",
+    50: "VT",
+    51: "VA",
+    53: "WA",
+    54: "WV",
+    55: "WI",
     56: "WY",
 }
 
@@ -66,7 +109,7 @@ def build_targets_from_db(
     verbose: bool = False,
 ) -> Tuple[Dict[str, Dict], Dict[str, float]]:
     """
-    Build calibration targets from the Arch target database.
+    Build calibration targets from the Ledger target database.
 
     Args:
         year: Target year (default 2021)
@@ -96,7 +139,9 @@ def build_targets_from_db(
         if state_constraint is None:
             # National target - add to continuous
             if t.variable in ["adjusted_gross_income", "wage_income", "total_income"]:
-                continuous_targets[t.variable] = continuous_targets.get(t.variable, 0) + t.value
+                continuous_targets[t.variable] = (
+                    continuous_targets.get(t.variable, 0) + t.value
+                )
             continue
 
         # State-level count target
@@ -151,9 +196,11 @@ def synthesize_district_records(
     if len(state_records) == 0:
         state_records = seed_data
 
-    if maf is not None and hasattr(maf, '_X_mean'):
+    if maf is not None and hasattr(maf, "_X_mean"):
         # Flow-based generation
-        context_indices = np.random.choice(len(maf._training_context), n_records, replace=True)
+        context_indices = np.random.choice(
+            len(maf._training_context), n_records, replace=True
+        )
         context = maf._training_context[context_indices].astype(np.float32)
 
         # Generate from flow with tight clipping
@@ -173,11 +220,18 @@ def synthesize_district_records(
         synthetic = pd.DataFrame(X, columns=maf._cont_vars)
 
         # Add categorical columns by sampling from state records
-        cat_cols = ["filing_status", "num_dependents", "num_ctc_children",
-                    "num_eitc_children", "is_joint"]
+        cat_cols = [
+            "filing_status",
+            "num_dependents",
+            "num_ctc_children",
+            "num_eitc_children",
+            "is_joint",
+        ]
         for col in cat_cols:
             if col in state_records.columns:
-                synthetic[col] = state_records[col].sample(n_records, replace=True).values
+                synthetic[col] = (
+                    state_records[col].sample(n_records, replace=True).values
+                )
 
         synthetic["state_fips"] = state_fips
     else:
@@ -199,9 +253,16 @@ def synthesize_district_records(
     synthetic["state_fips"] = state_fips
 
     # Recalculate totals
-    income_cols = ["wage_income", "self_employment_income", "interest_income",
-                   "dividend_income", "rental_income", "social_security_income",
-                   "unemployment_compensation", "other_income"]
+    income_cols = [
+        "wage_income",
+        "self_employment_income",
+        "interest_income",
+        "dividend_income",
+        "rental_income",
+        "social_security_income",
+        "unemployment_compensation",
+        "other_income",
+    ]
     existing_cols = [c for c in income_cols if c in synthetic.columns]
     if existing_cols:
         synthetic["total_income"] = synthetic[existing_cols].sum(axis=1)
@@ -358,7 +419,8 @@ class DistrictMicroplex:
             print(f"  Training for {epochs} epochs on {self.device}...")
 
         self._maf.fit(
-            X_normalized, C,
+            X_normalized,
+            C,
             epochs=epochs,
             batch_size=batch_size,
             lr=lr,
@@ -408,7 +470,7 @@ class DistrictMicroplex:
             all_synthetic.append(synthetic)
 
             if verbose and (i + 1) % 10 == 0:
-                print(f"   Generated {i+1}/{len(districts)} districts")
+                print(f"   Generated {i + 1}/{len(districts)} districts")
 
         combined = pd.concat(all_synthetic, ignore_index=True)
 
@@ -451,10 +513,14 @@ class DistrictMicroplex:
         if verbose:
             n_cat = sum(len(v) for v in marginal_targets.values())
             n_cont = len(continuous_targets)
-            print(f"Calibrating {len(synthetic):,} records to {n_cat + n_cont} targets...")
+            print(
+                f"Calibrating {len(synthetic):,} records to {n_cat + n_cont} targets..."
+            )
 
         start = time.time()
-        result = self._calibrator.fit_transform(synthetic, marginal_targets, continuous_targets)
+        result = self._calibrator.fit_transform(
+            synthetic, marginal_targets, continuous_targets
+        )
         elapsed = time.time() - start
 
         if verbose:
@@ -511,7 +577,9 @@ class DistrictMicroplex:
         if marginal_targets is None or continuous_targets is None:
             if verbose:
                 print("\n3. Loading targets from database...")
-            marginal_targets, continuous_targets = build_targets_from_db(year=2021, verbose=verbose)
+            marginal_targets, continuous_targets = build_targets_from_db(
+                year=2021, verbose=verbose
+            )
 
             # Fill in missing state targets from seed data
             states = sorted(seed_data["state_fips"].dropna().unique().astype(int))
@@ -524,7 +592,9 @@ class DistrictMicroplex:
         # Step 4: Calibrate
         if verbose:
             print("\n4. Calibrating weights...")
-        calibrated = self.calibrate(synthetic, marginal_targets, continuous_targets, verbose=verbose)
+        calibrated = self.calibrate(
+            synthetic, marginal_targets, continuous_targets, verbose=verbose
+        )
 
         if verbose:
             print("\n" + "=" * 60)
@@ -532,7 +602,7 @@ class DistrictMicroplex:
             print("=" * 60)
             non_zero = (calibrated["weight"] > 1e-9).sum()
             print(f"Total records: {len(calibrated):,}")
-            print(f"Non-zero weights: {non_zero:,} ({non_zero/len(calibrated):.1%})")
+            print(f"Non-zero weights: {non_zero:,} ({non_zero / len(calibrated):.1%})")
             print(f"Weighted population: {calibrated['weight'].sum():,.0f}")
 
         return calibrated
@@ -552,7 +622,8 @@ def load_seed_data(data_path: Optional[Path] = None) -> pd.DataFrame:
         # Try standard locations
         candidates = [
             Path(__file__).parent / "cps_2024.parquet",
-            Path(__file__).parent.parent.parent / "tax_units_calibrated_gradient_2024.parquet",
+            Path(__file__).parent.parent.parent
+            / "tax_units_calibrated_gradient_2024.parquet",
         ]
         for p in candidates:
             if p.exists():

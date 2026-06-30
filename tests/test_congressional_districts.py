@@ -89,9 +89,7 @@ class TestCongressionalDistrictGeographicLevel:
 
             # Find the stratum
             stratum = session.exec(
-                select(Stratum).where(
-                    Stratum.name == "Congressional District 06-01"
-                )
+                select(Stratum).where(Stratum.name == "Congressional District 06-01")
             ).first()
 
             assert stratum is not None
@@ -170,7 +168,10 @@ class TestCongressionalDistrictGeographicLevel:
 
     def test_query_by_geographic_level(self, temp_db):
         """Should be able to query targets by geographic level."""
-        from db.etl_census import load_census_targets, load_congressional_district_targets
+        from db.etl_census import (
+            load_census_targets,
+            load_congressional_district_targets,
+        )
 
         district_data = {
             ("06", "01"): {"population": 750000},
@@ -202,9 +203,7 @@ class TestCongressionalDistrictGeographicLevel:
 
             # Query for state targets
             state_targets = session.exec(
-                select(Target).where(
-                    Target.geographic_level == GeographicLevel.STATE
-                )
+                select(Target).where(Target.geographic_level == GeographicLevel.STATE)
             ).all()
 
             assert len(state_targets) > 0

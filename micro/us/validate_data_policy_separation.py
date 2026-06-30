@@ -11,47 +11,40 @@ from pathlib import Path
 # Variables that are POLICY (must be in .rac files, not data builders)
 POLICY_VARIABLES = {
     # 26 USC § 62 - Adjusted Gross Income
-    'adjusted_gross_income',
-    'agi',
-
+    "adjusted_gross_income",
+    "agi",
     # 26 USC § 63 - Taxable Income
-    'taxable_income',
-    'standard_deduction',
-    'itemized_deduction',
-
+    "taxable_income",
+    "standard_deduction",
+    "itemized_deduction",
     # 26 USC § 2(b) - Filing Status
-    'is_head_of_household',
-
+    "is_head_of_household",
     # 26 USC § 32 - EITC
-    'eitc',
-    'earned_income_credit',
-
+    "eitc",
+    "earned_income_credit",
     # 26 USC § 24 - CTC
-    'child_tax_credit',
-    'ctc',
-    'refundable_ctc',
-    'non_refundable_ctc',
-
+    "child_tax_credit",
+    "ctc",
+    "refundable_ctc",
+    "non_refundable_ctc",
     # 26 USC § 1 - Income Tax
-    'income_tax',
-    'income_tax_before_credits',
-    'tax_liability',
-
+    "income_tax",
+    "income_tax_before_credits",
+    "tax_liability",
     # Self-employment tax
-    'self_employment_tax',
-    'se_tax',
-
+    "self_employment_tax",
+    "se_tax",
     # Other policy variables
-    'niit',
-    'amt',
-    'taxable_social_security',
+    "niit",
+    "amt",
+    "taxable_social_security",
 }
 
 # Files that should NOT contain policy calculations
 DATA_FILES = [
-    'tax_unit_builder.py',
-    'cps_loader.py',
-    'person_builder.py',
+    "tax_unit_builder.py",
+    "cps_loader.py",
+    "person_builder.py",
 ]
 
 

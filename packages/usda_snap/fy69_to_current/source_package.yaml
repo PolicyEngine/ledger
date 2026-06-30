@@ -1,4 +1,4 @@
-schema_version: arch.source_package.v1
+schema_version: ledger.source_package.v1
 package_id: usda-snap-fy69-to-current
 label: USDA FNS SNAP FY69 to current archive FY24 national and state summary
 artifact:

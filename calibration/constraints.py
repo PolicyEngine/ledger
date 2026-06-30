@@ -27,7 +27,7 @@ class Constraint:
     Attributes:
         indicator: Vector of indicator values (length = microdata rows)
         target_value: Target aggregate to match
-        variable: Arch target input variable ID
+        variable: Ledger target input variable ID
         target_type: COUNT or AMOUNT
         tolerance: Allowed deviation from target (fraction)
         stratum_name: Human-readable description
@@ -197,9 +197,7 @@ def build_hierarchical_constraint_matrix(
         # Build indicator based on level
         if level == "household":
             # Direct household-level constraint
-            indicator = _build_household_indicator(
-                hh_df, target, hh_id_col
-            )
+            indicator = _build_household_indicator(hh_df, target, hh_id_col)
         elif level == "tax_unit" and tax_unit_df is not None:
             # Aggregate from tax unit to household
             indicator = _build_aggregated_indicator(
@@ -207,9 +205,7 @@ def build_hierarchical_constraint_matrix(
             )
         else:
             # Aggregate from person to household (default)
-            indicator = _build_aggregated_indicator(
-                hh_df, person_df, target, hh_id_col
-            )
+            indicator = _build_aggregated_indicator(hh_df, person_df, target, hh_id_col)
 
         constraint = Constraint(
             indicator=indicator,

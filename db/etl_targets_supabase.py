@@ -37,7 +37,14 @@ def get_or_create_stratum(
         Stratum UUID
     """
     # Check if exists by name + jurisdiction (unique constraint)
-    result = client.schema("microplex").table("strata").select("id").eq("name", name).eq("jurisdiction", jurisdiction).execute()
+    result = (
+        client.schema("microplex")
+        .table("strata")
+        .select("id")
+        .eq("name", name)
+        .eq("jurisdiction", jurisdiction)
+        .execute()
+    )
     if result.data:
         return result.data[0]["id"]
 
@@ -60,7 +67,9 @@ def get_or_create_stratum(
             "operator": constraint["operator"],
             "value": constraint["value"],
         }
-        client.schema("microplex").table("stratum_constraints").insert(constraint_data).execute()
+        client.schema("microplex").table("stratum_constraints").insert(
+            constraint_data
+        ).execute()
 
     return stratum_id
 
@@ -91,13 +100,20 @@ def load_soi_targets_supabase(
     soi_source = next((s for s in sources if s["dataset"] == "soi"), None)
 
     if not soi_source:
-        result = client.schema("microplex").table("sources").insert({
-            "jurisdiction": "us",
-            "institution": "irs",
-            "dataset": "soi",
-            "name": "IRS Statistics of Income",
-            "url": SOURCE_URL,
-        }).execute()
+        result = (
+            client.schema("microplex")
+            .table("sources")
+            .insert(
+                {
+                    "jurisdiction": "us",
+                    "institution": "irs",
+                    "dataset": "soi",
+                    "name": "IRS Statistics of Income",
+                    "url": SOURCE_URL,
+                }
+            )
+            .execute()
+        )
         source_id = result.data[0]["id"]
     else:
         source_id = soi_source["id"]
@@ -123,24 +139,28 @@ def load_soi_targets_supabase(
             )
             strata_created += 1
 
-            client.schema("microplex").table("targets").insert({
-                "source_id": source_id,
-                "stratum_id": stratum_id,
-                "variable": "tax_unit_count",
-                "value": year_data["total_returns"],
-                "target_type": "count",
-                "period": year,
-            }).execute()
+            client.schema("microplex").table("targets").insert(
+                {
+                    "source_id": source_id,
+                    "stratum_id": stratum_id,
+                    "variable": "tax_unit_count",
+                    "value": year_data["total_returns"],
+                    "target_type": "count",
+                    "period": year,
+                }
+            ).execute()
             targets_loaded += 1
 
-            client.schema("microplex").table("targets").insert({
-                "source_id": source_id,
-                "stratum_id": stratum_id,
-                "variable": "agi_total",
-                "value": year_data["total_agi"],
-                "target_type": "amount",
-                "period": year,
-            }).execute()
+            client.schema("microplex").table("targets").insert(
+                {
+                    "source_id": source_id,
+                    "stratum_id": stratum_id,
+                    "variable": "agi_total",
+                    "value": year_data["total_agi"],
+                    "target_type": "amount",
+                    "period": year,
+                }
+            ).execute()
             targets_loaded += 1
 
         # AGI bracket targets
@@ -157,29 +177,35 @@ def load_soi_targets_supabase(
                 client,
                 name=stratum_name,
                 jurisdiction="us",
-                constraints=[{"variable": "agi_bracket", "operator": "==", "value": bracket}],
+                constraints=[
+                    {"variable": "agi_bracket", "operator": "==", "value": bracket}
+                ],
             )
             strata_created += 1
 
-            client.schema("microplex").table("targets").insert({
-                "source_id": source_id,
-                "stratum_id": stratum_id,
-                "variable": "tax_unit_count",
-                "value": returns,
-                "target_type": "count",
-                "period": year,
-            }).execute()
+            client.schema("microplex").table("targets").insert(
+                {
+                    "source_id": source_id,
+                    "stratum_id": stratum_id,
+                    "variable": "tax_unit_count",
+                    "value": returns,
+                    "target_type": "count",
+                    "period": year,
+                }
+            ).execute()
             targets_loaded += 1
 
             if bracket in agi_by_bracket:
-                client.schema("microplex").table("targets").insert({
-                    "source_id": source_id,
-                    "stratum_id": stratum_id,
-                    "variable": "agi_total",
-                    "value": agi_by_bracket[bracket],
-                    "target_type": "amount",
-                    "period": year,
-                }).execute()
+                client.schema("microplex").table("targets").insert(
+                    {
+                        "source_id": source_id,
+                        "stratum_id": stratum_id,
+                        "variable": "agi_total",
+                        "value": agi_by_bracket[bracket],
+                        "target_type": "amount",
+                        "period": year,
+                    }
+                ).execute()
                 targets_loaded += 1
 
     return {
@@ -207,13 +233,20 @@ def load_snap_targets_supabase(
     snap_source = next((s for s in sources if s["dataset"] == "snap"), None)
 
     if not snap_source:
-        result = client.schema("microplex").table("sources").insert({
-            "jurisdiction": "us",
-            "institution": "usda",
-            "dataset": "snap",
-            "name": "USDA SNAP Statistics",
-            "url": SOURCE_URL,
-        }).execute()
+        result = (
+            client.schema("microplex")
+            .table("sources")
+            .insert(
+                {
+                    "jurisdiction": "us",
+                    "institution": "usda",
+                    "dataset": "snap",
+                    "name": "USDA SNAP Statistics",
+                    "url": SOURCE_URL,
+                }
+            )
+            .execute()
+        )
         source_id = result.data[0]["id"]
     else:
         source_id = snap_source["id"]
@@ -235,40 +268,48 @@ def load_snap_targets_supabase(
             client,
             name=f"US SNAP Recipients {year}",
             jurisdiction="us",
-            constraints=[{"variable": "snap_participation", "operator": "==", "value": "1"}],
+            constraints=[
+                {"variable": "snap_participation", "operator": "==", "value": "1"}
+            ],
         )
 
         # Participants
-        client.schema("microplex").table("targets").insert({
-            "source_id": source_id,
-            "stratum_id": stratum_id,
-            "variable": "snap_participants",
-            "value": data["participants"],
-            "target_type": "count",
-            "period": year,
-        }).execute()
+        client.schema("microplex").table("targets").insert(
+            {
+                "source_id": source_id,
+                "stratum_id": stratum_id,
+                "variable": "snap_participants",
+                "value": data["participants"],
+                "target_type": "count",
+                "period": year,
+            }
+        ).execute()
         targets_loaded += 1
 
         # Households
-        client.schema("microplex").table("targets").insert({
-            "source_id": source_id,
-            "stratum_id": stratum_id,
-            "variable": "snap_households",
-            "value": data["households"],
-            "target_type": "count",
-            "period": year,
-        }).execute()
+        client.schema("microplex").table("targets").insert(
+            {
+                "source_id": source_id,
+                "stratum_id": stratum_id,
+                "variable": "snap_households",
+                "value": data["households"],
+                "target_type": "count",
+                "period": year,
+            }
+        ).execute()
         targets_loaded += 1
 
         # Benefits
-        client.schema("microplex").table("targets").insert({
-            "source_id": source_id,
-            "stratum_id": stratum_id,
-            "variable": "snap_benefits_total",
-            "value": data["benefits"],
-            "target_type": "amount",
-            "period": year,
-        }).execute()
+        client.schema("microplex").table("targets").insert(
+            {
+                "source_id": source_id,
+                "stratum_id": stratum_id,
+                "variable": "snap_benefits_total",
+                "value": data["benefits"],
+                "target_type": "amount",
+                "period": year,
+            }
+        ).execute()
         targets_loaded += 1
 
     return {
@@ -301,9 +342,13 @@ def main():
     import argparse
 
     parser = argparse.ArgumentParser(description="Load targets to Supabase")
-    parser.add_argument("--source", type=str, choices=["soi", "snap", "all"], default="all")
+    parser.add_argument(
+        "--source", type=str, choices=["soi", "snap", "all"], default="all"
+    )
     parser.add_argument("--years", type=int, nargs="+", help="Years to load")
-    parser.add_argument("--dry-run", action="store_true", help="Show stats without inserting")
+    parser.add_argument(
+        "--dry-run", action="store_true", help="Show stats without inserting"
+    )
     args = parser.parse_args()
 
     if args.source == "all":

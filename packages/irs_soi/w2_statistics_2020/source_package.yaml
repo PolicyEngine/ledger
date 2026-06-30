@@ -1,4 +1,4 @@
-schema_version: arch.source_package.v1
+schema_version: ledger.source_package.v1
 package_id: soi-w2-statistics-2020
 label: IRS SOI 2020 Form W-2 social-security tips totals
 artifact:

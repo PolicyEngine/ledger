@@ -1,4 +1,4 @@
-schema_version: arch.source_package.v1
+schema_version: ledger.source_package.v1
 package_id: cms-medicaid-chip-monthly-enrollment-december-2024
 label: CMS Medicaid and CHIP December 2024 final monthly state enrollment
 artifact:

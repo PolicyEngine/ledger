@@ -26,17 +26,18 @@ from typing import Any, Dict, List, Tuple
 # Lazy import of Supabase to avoid import errors when not available
 _supabase_client = None
 
+
 def _get_supabase_client():
     """Lazy import of Supabase client."""
     global _supabase_client
     if _supabase_client is None:
         try:
             from db.supabase_client import get_supabase_client
+
             _supabase_client = get_supabase_client()
         except ImportError:
             raise ImportError(
-                "Supabase client not available. "
-                "Install with: pip install supabase"
+                "Supabase client not available. Install with: pip install supabase"
             )
     return _supabase_client
 
@@ -44,6 +45,7 @@ def _get_supabase_client():
 @dataclass
 class HierarchicalCalibrationResult:
     """Results from hierarchical IPF calibration."""
+
     n_households: int
     n_persons: int
     original_weights: np.ndarray
@@ -83,7 +85,13 @@ def load_hierarchical_data_from_supabase(
     try:
         # Query households
         print("  Loading households...")
-        hh_result = client.schema("microplex").table("households").select("*").limit(limit).execute()
+        hh_result = (
+            client.schema("microplex")
+            .table("households")
+            .select("*")
+            .limit(limit)
+            .execute()
+        )
         hh_df = pd.DataFrame(hh_result.data)
         print(f"    Loaded {len(hh_df):,} households")
 
@@ -127,19 +135,25 @@ def load_hierarchical_data_from_supabase(
         return _create_mock_hierarchical_data(limit)
 
 
-def _create_mock_hierarchical_data(limit: int = 100) -> Tuple[pd.DataFrame, pd.DataFrame]:
+def _create_mock_hierarchical_data(
+    limit: int = 100,
+) -> Tuple[pd.DataFrame, pd.DataFrame]:
     """Create mock hierarchical data for testing."""
     np.random.seed(42)
 
     n_households = min(limit, 1000)
 
     # Generate households
-    hh_df = pd.DataFrame({
-        "household_id": range(1, n_households + 1),
-        "weight": np.random.uniform(50, 500, n_households),
-        "state_fips": np.random.choice([6, 36, 48, 12, 17], n_households),  # CA, NY, TX, FL, IL
-        "tenure": np.random.choice(["own", "rent"], n_households, p=[0.6, 0.4]),
-    })
+    hh_df = pd.DataFrame(
+        {
+            "household_id": range(1, n_households + 1),
+            "weight": np.random.uniform(50, 500, n_households),
+            "state_fips": np.random.choice(
+                [6, 36, 48, 12, 17], n_households
+            ),  # CA, NY, TX, FL, IL
+            "tenure": np.random.choice(["own", "rent"], n_households, p=[0.6, 0.4]),
+        }
+    )
 
     # Generate persons (1-4 per household)
     persons = []
@@ -152,15 +166,17 @@ def _create_mock_hierarchical_data(limit: int = 100) -> Tuple[pd.DataFrame, pd.D
                 p=[0.08, 0.08, 0.08, 0.15, 0.18, 0.15, 0.12, 0.10, 0.06],
             )
             income = max(0, np.random.normal(40000, 30000)) if age >= 18 else 0
-            persons.append({
-                "person_id": person_id,
-                "household_id": hh_id,
-                "age": age,
-                "is_male": np.random.choice([True, False]),
-                "employment_income": income,
-                "is_snap_recipient": np.random.random() < 0.12,
-                "is_medicaid_enrolled": np.random.random() < 0.20,
-            })
+            persons.append(
+                {
+                    "person_id": person_id,
+                    "household_id": hh_id,
+                    "age": age,
+                    "is_male": np.random.choice([True, False]),
+                    "employment_income": income,
+                    "is_snap_recipient": np.random.random() < 0.12,
+                    "is_medicaid_enrolled": np.random.random() < 0.20,
+                }
+            )
             person_id += 1
 
     person_df = pd.DataFrame(persons)
@@ -191,9 +207,13 @@ def load_targets_from_supabase(
         client = _get_supabase_client()
 
         # Try to query targets from targets schema
-        result = client.schema("microplex").table("targets").select(
-            "*, strata(*, stratum_constraints(*))"
-        ).eq("period", year).execute()
+        result = (
+            client.schema("microplex")
+            .table("targets")
+            .select("*, strata(*, stratum_constraints(*))")
+            .eq("period", year)
+            .execute()
+        )
 
         if result.data and len(result.data) > 10:
             print(f"  Loaded {len(result.data)} targets from Supabase")
@@ -216,20 +236,24 @@ def _convert_supabase_targets(raw_targets: List[Dict]) -> List[Dict[str, Any]]:
         constraints = []
 
         for c in strata.get("stratum_constraints", []):
-            constraints.append((
-                c.get("variable"),
-                c.get("operator", "=="),
-                c.get("value"),
-            ))
+            constraints.append(
+                (
+                    c.get("variable"),
+                    c.get("operator", "=="),
+                    c.get("value"),
+                )
+            )
 
-        targets.append({
-            "variable": t.get("variable"),
-            "value": float(t.get("value", 0)),
-            "target_type": t.get("target_type", "count"),
-            "constraints": constraints,
-            "stratum_name": strata.get("name"),
-            "source": t.get("source"),
-        })
+        targets.append(
+            {
+                "variable": t.get("variable"),
+                "value": float(t.get("value", 0)),
+                "target_type": t.get("target_type", "count"),
+                "constraints": constraints,
+                "stratum_name": strata.get("name"),
+                "source": t.get("source"),
+            }
+        )
 
     return targets
 
@@ -348,14 +372,16 @@ def build_hierarchical_constraints(
 
         n_obs = np.sum(indicator > 0)
         if n_obs >= min_obs:
-            constraints.append({
-                "indicator": indicator,
-                "target_value": value,
-                "variable": variable,
-                "target_type": target_type,
-                "stratum": stratum_name,
-                "n_obs": int(n_obs),
-            })
+            constraints.append(
+                {
+                    "indicator": indicator,
+                    "target_value": value,
+                    "variable": variable,
+                    "target_type": target_type,
+                    "stratum": stratum_name,
+                    "n_obs": int(n_obs),
+                }
+            )
 
     print(f"  Built {len(constraints)} constraints from {len(targets)} targets")
     return constraints
@@ -452,17 +478,17 @@ def _build_aggregated_indicator(
             val = float(val)
 
         if op == "==":
-            mask &= (col == val)
+            mask &= col == val
         elif op == "!=":
-            mask &= (col != val)
+            mask &= col != val
         elif op == ">=":
-            mask &= (col >= val)
+            mask &= col >= val
         elif op == ">":
-            mask &= (col > val)
+            mask &= col > val
         elif op == "<=":
-            mask &= (col <= val)
+            mask &= col <= val
         elif op == "<":
-            mask &= (col < val)
+            mask &= col < val
 
     filtered = person_df[mask]
 
@@ -523,7 +549,9 @@ def run_hierarchical_ipf(
         return original_weights.copy(), True, 0.0
 
     if verbose:
-        print(f"  IPF calibration: {n:,} households, {m} constraints, {max_iter} iterations")
+        print(
+            f"  IPF calibration: {n:,} households, {m} constraints, {max_iter} iterations"
+        )
 
     # Build constraint matrix
     A = np.zeros((m, n))
@@ -545,7 +573,7 @@ def run_hierarchical_ipf(
 
         # Apply bounds after each full iteration
         # Guard against division issues
-        with np.errstate(divide='ignore', invalid='ignore'):
+        with np.errstate(divide="ignore", invalid="ignore"):
             adj = np.where(original_weights > 0, w / original_weights, 1.0)
         adj = np.clip(adj, bounds[0], bounds[1])
         w = original_weights * adj
@@ -555,9 +583,9 @@ def run_hierarchical_ipf(
 
     # Compute L2 loss (squared relative error)
     achieved = A @ w
-    with np.errstate(divide='ignore', invalid='ignore'):
+    with np.errstate(divide="ignore", invalid="ignore"):
         rel_errors = np.where(targets != 0, (achieved - targets) / targets, 0)
-    l2_loss = float(np.mean(rel_errors ** 2))
+    l2_loss = float(np.mean(rel_errors**2))
 
     # Check convergence (all targets within 5%)
     max_error = float(np.max(np.abs(rel_errors)))
@@ -582,7 +610,7 @@ def write_households_to_supabase(
     # Update existing records with calibrated weights
     total = 0
     for i in range(0, len(hh_df), chunk_size):
-        chunk = hh_df.iloc[i:i + chunk_size]
+        chunk = hh_df.iloc[i : i + chunk_size]
 
         for _, row in chunk.iterrows():
             hh_id = row["household_id"]
@@ -590,10 +618,12 @@ def write_households_to_supabase(
             weight_adjustment = float(row.get("weight_adjustment", 1.0))
 
             try:
-                client.schema("microplex").table("households").update({
-                    "calibrated_weight": calibrated_weight,
-                    "weight_adjustment": weight_adjustment,
-                }).eq("household_id", hh_id).execute()
+                client.schema("microplex").table("households").update(
+                    {
+                        "calibrated_weight": calibrated_weight,
+                        "weight_adjustment": weight_adjustment,
+                    }
+                ).eq("household_id", hh_id).execute()
                 total += 1
             except Exception as e:
                 print(f"    Error updating household {hh_id}: {e}")
@@ -671,12 +701,16 @@ def run_hierarchical_pipeline(
 
     # Pre-scale to match total target if available
     for c in constraints:
-        if c.get("variable") in ("household_count", "person_count") and c.get("n_obs") == len(hh_df):
+        if c.get("variable") in ("household_count", "person_count") and c.get(
+            "n_obs"
+        ) == len(hh_df):
             target_total = c["target_value"]
             scale = target_total / original_weights.sum()
             original_weights *= scale
             if verbose:
-                print(f"Pre-scaled weights by {scale:.3f} to match {c['variable']} target")
+                print(
+                    f"Pre-scaled weights by {scale:.3f} to match {c['variable']} target"
+                )
             break
 
     # Run IPF calibration
@@ -742,11 +776,24 @@ Examples:
     python -m micro.us.hierarchical_pipeline --year 2024 --limit 10000
         """,
     )
-    parser.add_argument("--year", type=int, default=2024, help="Data year (default: 2024)")
-    parser.add_argument("--dry-run", action="store_true", help="Don't write to Supabase")
-    parser.add_argument("--use-mock", action="store_true", help="Use mock data instead of Supabase")
-    parser.add_argument("--limit", type=int, default=100000, help="Max households to load (default: 100000)")
-    parser.add_argument("--quiet", "-q", action="store_true", help="Reduce output verbosity")
+    parser.add_argument(
+        "--year", type=int, default=2024, help="Data year (default: 2024)"
+    )
+    parser.add_argument(
+        "--dry-run", action="store_true", help="Don't write to Supabase"
+    )
+    parser.add_argument(
+        "--use-mock", action="store_true", help="Use mock data instead of Supabase"
+    )
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=100000,
+        help="Max households to load (default: 100000)",
+    )
+    parser.add_argument(
+        "--quiet", "-q", action="store_true", help="Reduce output verbosity"
+    )
 
     args = parser.parse_args()
 

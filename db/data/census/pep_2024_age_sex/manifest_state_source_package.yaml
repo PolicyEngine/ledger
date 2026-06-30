@@ -14,6 +14,6 @@ files:
     storage:
       r2:
         provider: r2
-        bucket: arch-raw
+        bucket: ledger-raw
         key: raw/census_pep/census-pep-2024-state-age-sex/2024/0e82431e3869554aff9541fcf00c22a8defc2af3c66fb0ec6bae094f23749230/sc-est2024-alldata6.csv
-        uri: r2://arch-raw/raw/census_pep/census-pep-2024-state-age-sex/2024/0e82431e3869554aff9541fcf00c22a8defc2af3c66fb0ec6bae094f23749230/sc-est2024-alldata6.csv
+        uri: r2://ledger-raw/raw/census_pep/census-pep-2024-state-age-sex/2024/0e82431e3869554aff9541fcf00c22a8defc2af3c66fb0ec6bae094f23749230/sc-est2024-alldata6.csv

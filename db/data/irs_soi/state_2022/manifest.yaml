@@ -13,6 +13,6 @@ files:
     storage:
       r2:
         provider: r2
-        bucket: arch-raw
+        bucket: ledger-raw
         key: raw/irs_soi/soi-state-2022/2022/5e58050449c07c2e941f280c60d597784047f02ee1fa93dc1aed64fc1ea493f6/22in54us.xlsx
-        uri: r2://arch-raw/raw/irs_soi/soi-state-2022/2022/5e58050449c07c2e941f280c60d597784047f02ee1fa93dc1aed64fc1ea493f6/22in54us.xlsx
+        uri: r2://ledger-raw/raw/irs_soi/soi-state-2022/2022/5e58050449c07c2e941f280c60d597784047f02ee1fa93dc1aed64fc1ea493f6/22in54us.xlsx

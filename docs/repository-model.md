@@ -1,34 +1,35 @@
-# Arch Repository Model
+# Ledger Repository Model
 
-Arch is global at the schema layer. Jurisdiction packages are modular source
-packages that build source-backed Arch records for one jurisdiction or source
+Ledger is global at the schema layer. Jurisdiction packages are modular source
+packages that build source-backed Ledger records for one jurisdiction or source
 family.
 
 ## Names
 
 ```text
-GitHub repositories:
-  PolicyEngine/arch-data
-  PolicyEngine/arch-us
-  PolicyEngine/arch-uk
+GitHub repositories after the rename:
+  PolicyEngine/ledger
+  PolicyEngine/ledger-us
+  PolicyEngine/ledger-uk
 
 Python distributions:
-  policyengine-arch-data
-  policyengine-arch-us
-  policyengine-arch-uk
+  policyengine-ledger
+  policyengine-ledger-us
+  policyengine-ledger-uk
 
 Python imports:
-  arch
-  arch_us
-  arch_uk
+  policyengine_ledger
+  policyengine_ledger_us
+  policyengine_ledger_uk
 ```
 
 The `policyengine-` prefix belongs in published distribution names, where
-generic names collide. Repository names and import namespaces should stay short.
+generic names collide. Public imports use the explicit `policyengine_ledger`
+namespace to avoid colliding with unrelated `ledger` packages.
 
 ## Ownership
 
-`arch` owns the stable contract:
+`ledger` owns the stable contract:
 
 - source artifact metadata
 - parsed source cells
@@ -50,12 +51,12 @@ Jurisdiction packages own source implementations:
 - source-record specs
 - fixture builds for that jurisdiction
 
-They must emit the shared Arch schema. They should not define a different fact,
+They must emit the shared Ledger schema. They should not define a different fact,
 constraint, lineage, validation, or DB model.
 
 ## Current State
 
-`arch.jurisdictions.us` is an in-repo prototype so the core contract can move
+The current in-repo US loaders are a prototype so the core contract can move
 quickly while SOI fixtures exercise the schema. Once the contract stabilizes,
-the US loaders should move to `arch-us`, with `arch` retaining only a small
-test fixture and the shared harness.
+the US loaders should move to `policyengine-ledger-us`, with the core repository
+retaining only a small test fixture and the shared harness.

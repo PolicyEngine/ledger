@@ -15,9 +15,7 @@ import torch
 class ZeroInflatedTransform:
     """Handle zero-inflated variables by splitting into indicator and values."""
 
-    def split(
-        self, x: np.ndarray
-    ) -> Tuple[np.ndarray, np.ndarray]:
+    def split(self, x: np.ndarray) -> Tuple[np.ndarray, np.ndarray]:
         """
         Split data into zero indicator and positive values.
 
@@ -32,9 +30,7 @@ class ZeroInflatedTransform:
         positive_values = x[x > 0]
         return indicator, positive_values
 
-    def combine(
-        self, indicator: np.ndarray, positive_values: np.ndarray
-    ) -> np.ndarray:
+    def combine(self, indicator: np.ndarray, positive_values: np.ndarray) -> np.ndarray:
         """
         Recombine indicator and positive values.
 
@@ -299,9 +295,7 @@ class MultiVariableTransformer:
 
         return self
 
-    def transform(
-        self, data: Dict[str, np.ndarray]
-    ) -> Dict[str, np.ndarray]:
+    def transform(self, data: Dict[str, np.ndarray]) -> Dict[str, np.ndarray]:
         """
         Transform all variables.
 
@@ -316,9 +310,7 @@ class MultiVariableTransformer:
             result[var_name] = self.transformers_[var_name].transform(data[var_name])
         return result
 
-    def inverse_transform(
-        self, data: Dict[str, np.ndarray]
-    ) -> Dict[str, np.ndarray]:
+    def inverse_transform(self, data: Dict[str, np.ndarray]) -> Dict[str, np.ndarray]:
         """
         Inverse transform all variables.
 

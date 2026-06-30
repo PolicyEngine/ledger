@@ -20,6 +20,7 @@ from policyengine.brackets import marginal_agg  # noqa: E402
 def load_tax_units() -> pd.DataFrame:
     """Load tax unit data from CPS."""
     from tax_unit_builder import load_and_build_tax_units
+
     return load_and_build_tax_units(2024)
 
 
@@ -31,8 +32,16 @@ def get_brackets_2024() -> dict:
             "single": [0, 11600, 47150, 100525, 191950, 243725, 609350],
             "joint": [0, 23200, 94300, 201050, 383900, 487450, 731200],
             "head_of_household": [0, 16550, 63100, 100500, 191950, 243700, 609350],
-            "married_filing_separately": [0, 11600, 47150, 100525, 191950, 243725, 365600],
-        }
+            "married_filing_separately": [
+                0,
+                11600,
+                47150,
+                100525,
+                191950,
+                243725,
+                365600,
+            ],
+        },
     }
 
 
@@ -46,7 +55,7 @@ def calculate_income_tax_dsl(df: pd.DataFrame) -> np.ndarray:
     filing_status = np.where(
         df["is_joint"].values,
         "joint",
-        "single"  # Simplified - should handle HoH etc.
+        "single",  # Simplified - should handle HoH etc.
     )
 
     # Use marginal_agg with threshold_by for filing status
@@ -64,7 +73,7 @@ def calculate_income_tax_python(df: pd.DataFrame) -> np.ndarray:
         (100525, 191950, 0.24),
         (191950, 243725, 0.32),
         (243725, 609350, 0.35),
-        (609350, float('inf'), 0.37),
+        (609350, float("inf"), 0.37),
     ]
 
     brackets_joint = [
@@ -74,7 +83,7 @@ def calculate_income_tax_python(df: pd.DataFrame) -> np.ndarray:
         (201050, 383900, 0.24),
         (383900, 487450, 0.32),
         (487450, 731200, 0.35),
-        (731200, float('inf'), 0.37),
+        (731200, float("inf"), 0.37),
     ]
 
     taxable = df["taxable_income"].values
@@ -120,13 +129,13 @@ def get_policyengine_values(df: pd.DataFrame) -> np.ndarray:
                     }
                 },
                 "tax_units": {"tu": {"members": ["p1"]}},
-                "households": {"hh": {"members": ["p1"], "state_code": {2024: "TX"}}}
+                "households": {"hh": {"members": ["p1"], "state_code": {2024: "TX"}}},
             }
 
             if row.get("is_joint", False):
                 situation["people"]["p2"] = {
                     "age": {2024: 33},
-                    "employment_income": {2024: 0}
+                    "employment_income": {2024: 0},
                 }
                 situation["tax_units"]["tu"]["members"].append("p2")
                 situation["households"]["hh"]["members"].append("p2")
@@ -157,14 +166,14 @@ def main():
     start = time.time()
     dsl_tax = calculate_income_tax_dsl(df)
     dsl_time = time.time() - start
-    print(f"   Done in {dsl_time:.2f}s ({len(df)/dsl_time:,.0f} units/sec)")
+    print(f"   Done in {dsl_time:.2f}s ({len(df) / dsl_time:,.0f} units/sec)")
 
     # Calculate with Python loop (baseline)
     print("\n3. Calculating with Python loop (baseline)...")
     start = time.time()
     py_tax = calculate_income_tax_python(df)
     py_time = time.time() - start
-    print(f"   Done in {py_time:.2f}s ({len(df)/py_time:,.0f} units/sec)")
+    print(f"   Done in {py_time:.2f}s ({len(df) / py_time:,.0f} units/sec)")
 
     # Compare DSL vs Python
     print("\n4. Comparing DSL vs Python...")
@@ -174,7 +183,7 @@ def main():
 
     print(f"   Match rate (<$1): {match_rate:.1f}%")
     print(f"   Max difference:   ${max_diff:,.2f}")
-    print(f"   Speedup:          {py_time/dsl_time:.1f}x")
+    print(f"   Speedup:          {py_time / dsl_time:.1f}x")
 
     # Weighted totals
     weight = df["weight"].values
@@ -211,9 +220,11 @@ def main():
     if match_rate >= 99:
         print("✅ DSL marginal_agg matches Python baseline perfectly")
     else:
-        print(f"⚠️  Some discrepancies ({100-match_rate:.1f}% mismatch)")
+        print(f"⚠️  Some discrepancies ({100 - match_rate:.1f}% mismatch)")
 
-    print(f"\nVectorized marginal_agg is {py_time/dsl_time:.1f}x faster than Python loop")
+    print(
+        f"\nVectorized marginal_agg is {py_time / dsl_time:.1f}x faster than Python loop"
+    )
 
 
 if __name__ == "__main__":

@@ -32,5 +32,7 @@ def test_load_soi_table_1_4_data_reads_packaged_2023_wage_source():
     assert data["source_url"] == "https://www.irs.gov/pub/irs-soi/23in14ar.xls"
     assert data["total_employment_income_returns"] == 128_591_050
     assert data["total_employment_income"] == 10_204_095_705_000
-    assert data["employment_income_returns_by_agi_bracket"]["100k_to_200k"] == 23_193_910
+    assert (
+        data["employment_income_returns_by_agi_bracket"]["100k_to_200k"] == 23_193_910
+    )
     assert data["employment_income_by_agi_bracket"]["100k_to_200k"] == 2_774_550_975_000

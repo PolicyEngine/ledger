@@ -281,64 +281,6 @@ wheels = [
 ]
 
 [[package]]
-name = "policyengine-arch-data"
-version = "0.1.0"
-source = { editable = "." }
-dependencies = [
-    { name = "httpx" },
-    { name = "microplex" },
-    { name = "numpy" },
-    { name = "odfpy" },
-    { name = "openpyxl" },
-    { name = "pandas" },
-    { name = "pyarrow" },
-    { name = "pypdf" },
-    { name = "pyyaml" },
-    { name = "scipy" },
-    { name = "sqlmodel" },
-    { name = "supabase" },
-    { name = "xlrd" },
-]
-
-[package.optional-dependencies]
-dev = [
-    { name = "pytest" },
-    { name = "ruff" },
-]
-policyengine = [
-    { name = "policyengine-us" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "pytest" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "httpx", specifier = ">=0.27.0" },
-    { name = "microplex", specifier = ">=0.1.0" },
-    { name = "numpy", specifier = ">=1.24.0" },
-    { name = "odfpy", specifier = ">=1.4.1" },
-    { name = "openpyxl", specifier = ">=3.1.0" },
-    { name = "pandas", specifier = ">=2.0.0" },
-    { name = "policyengine-us", marker = "extra == 'policyengine'", specifier = ">=1.670.2" },
-    { name = "pyarrow", specifier = ">=22.0.0" },
-    { name = "pypdf", specifier = ">=6.0.0" },
-    { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0.0,<9" },
-    { name = "pyyaml", specifier = ">=6.0" },
-    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.5.0" },
-    { name = "scipy", specifier = ">=1.11.0" },
-    { name = "sqlmodel", specifier = ">=0.0.22" },
-    { name = "supabase", specifier = ">=2.0.0" },
-    { name = "xlrd", specifier = ">=2.0.1" },
-]
-provides-extras = ["dev", "policyengine"]
-
-[package.metadata.requires-dev]
-dev = [{ name = "pytest", specifier = ">=8.0.0,<9" }]
-
-[[package]]
 name = "cryptography"
 version = "46.0.3"
 source = { registry = "https://pypi.org/simple" }
@@ -1721,6 +1663,66 @@ sdist = { url = "https://files.pythonhosted.org/packages/66/a6/46a316ef534adbedf
 wheels = [
     { url = "https://files.pythonhosted.org/packages/e2/e1/d3451e5c279bcea5da49c5cab3b3eec9e7fa35aafd62289394b769619b7e/policyengine_core-3.25.3-py3-none-any.whl", hash = "sha256:5b11ef29db4275121b58664a9c5ebd6478eeff5001e9f55b71e13716bbd9085f", size = 231186, upload-time = "2026-04-28T00:36:08.854Z" },
 ]
+
+[[package]]
+name = "policyengine-ledger"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "httpx" },
+    { name = "numpy" },
+    { name = "odfpy" },
+    { name = "openpyxl" },
+    { name = "pandas" },
+    { name = "pyarrow" },
+    { name = "pypdf" },
+    { name = "pyyaml" },
+    { name = "scipy" },
+    { name = "sqlmodel" },
+    { name = "supabase" },
+    { name = "xlrd" },
+]
+
+[package.optional-dependencies]
+dev = [
+    { name = "pytest" },
+    { name = "ruff" },
+]
+legacy = [
+    { name = "microplex" },
+]
+policyengine = [
+    { name = "policyengine-us" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "pytest" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "httpx", specifier = ">=0.27.0" },
+    { name = "microplex", marker = "extra == 'legacy'", specifier = ">=0.1.0" },
+    { name = "numpy", specifier = ">=1.24.0" },
+    { name = "odfpy", specifier = ">=1.4.1" },
+    { name = "openpyxl", specifier = ">=3.1.0" },
+    { name = "pandas", specifier = ">=2.0.0" },
+    { name = "policyengine-us", marker = "extra == 'policyengine'", specifier = ">=1.670.2" },
+    { name = "pyarrow", specifier = ">=22.0.0" },
+    { name = "pypdf", specifier = ">=6.0.0" },
+    { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0.0,<9" },
+    { name = "pyyaml", specifier = ">=6.0" },
+    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.5.0" },
+    { name = "scipy", specifier = ">=1.11.0" },
+    { name = "sqlmodel", specifier = ">=0.0.22" },
+    { name = "supabase", specifier = ">=2.0.0" },
+    { name = "xlrd", specifier = ">=2.0.1" },
+]
+provides-extras = ["dev", "policyengine", "legacy"]
+
+[package.metadata.requires-dev]
+dev = [{ name = "pytest", specifier = ">=8.0.0,<9" }]
 
 [[package]]
 name = "policyengine-us"

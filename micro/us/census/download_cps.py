@@ -27,6 +27,7 @@ import requests
 try:
     from tqdm import tqdm
 except ImportError:  # pragma: no cover - exercised when optional dependency is absent
+
     def tqdm(iterable=None, **kwargs):
         """Small fallback so downloads still work without tqdm installed."""
         if iterable is not None:
@@ -43,6 +44,7 @@ class _NullProgress:
 
     def update(self, n: int) -> None:
         return None
+
 
 # Storage paths
 CACHE_DIR = Path(__file__).parent / "raw_cache"
@@ -197,8 +199,7 @@ def extract_person_data(
             ]
             if not person_candidates:
                 raise FileNotFoundError(
-                    f"Could not find {person_file} in CPS ZIP. "
-                    f"Files: {sorted(names)}"
+                    f"Could not find {person_file} in CPS ZIP. Files: {sorted(names)}"
                 )
             selected_file = person_candidates[0]
 
@@ -242,12 +243,12 @@ def extract_cps_variables(
     # Merge household data for geography (GESTFIPS is in household file)
     household_path = cache_dir / "household.parquet"
     if household_path.exists():
-        household = pd.read_parquet(household_path, columns=["H_SEQ", "GESTFIPS", "GEDIV", "GEREG"])
+        household = pd.read_parquet(
+            household_path, columns=["H_SEQ", "GESTFIPS", "GEDIV", "GEREG"]
+        )
         # Merge on household ID (PH_SEQ in person = H_SEQ in household)
         person = person.merge(
-            household.rename(columns={"H_SEQ": "PH_SEQ"}),
-            on="PH_SEQ",
-            how="left"
+            household.rename(columns={"H_SEQ": "PH_SEQ"}), on="PH_SEQ", how="left"
         )
 
     # Select and rename columns
@@ -329,7 +330,9 @@ def _process_person_data(df: pd.DataFrame) -> pd.DataFrame:
     """Process raw person data into analysis-ready format."""
     # Create unique person ID
     if "household_id" in df.columns and "person_seq" in df.columns:
-        df["person_id"] = df["household_id"].astype(str) + "_" + df["person_seq"].astype(str)
+        df["person_id"] = (
+            df["household_id"].astype(str) + "_" + df["person_seq"].astype(str)
+        )
 
     # Employment status
     if "class_of_worker" in df.columns:
@@ -339,8 +342,12 @@ def _process_person_data(df: pd.DataFrame) -> pd.DataFrame:
 
     # Total income from components
     income_cols = [
-        "wage_salary_income", "self_employment_income", "farm_self_employment_income",
-        "interest_income", "dividend_income", "rental_income",
+        "wage_salary_income",
+        "self_employment_income",
+        "farm_self_employment_income",
+        "interest_income",
+        "dividend_income",
+        "rental_income",
     ]
     available = [c for c in income_cols if c in df.columns]
     if available:
@@ -394,8 +401,12 @@ def main():
     parser = argparse.ArgumentParser(description="Download CPS ASEC microdata")
     parser.add_argument("--year", type=int, default=2024, help="Tax year")
     parser.add_argument("--output", type=str, help="Output parquet path")
-    parser.add_argument("--raw-only", action="store_true", help="Only download raw data, don't extract")
-    parser.add_argument("--force", action="store_true", help="Force re-download even if cached")
+    parser.add_argument(
+        "--raw-only", action="store_true", help="Only download raw data, don't extract"
+    )
+    parser.add_argument(
+        "--force", action="store_true", help="Force re-download even if cached"
+    )
     args = parser.parse_args()
 
     if args.raw_only:

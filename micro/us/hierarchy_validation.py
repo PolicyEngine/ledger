@@ -9,7 +9,7 @@ from typing import Any
 import numpy as np
 import pandas as pd
 
-from arch.targets import TargetSpec
+from ledger.targets import TargetSpec
 from micro.us.entities import MicroplexEntityFrames, build_microplex_entities
 from micro.us.pipeline import (
     CalibrationResult,
@@ -116,9 +116,7 @@ def compare_flat_vs_household_calibration(
             ),
         )
 
-    flat_tax_units = entities.tax_units[
-        entities.tax_units["is_tax_filer"] == 1
-    ].copy()
+    flat_tax_units = entities.tax_units[entities.tax_units["is_tax_filer"] == 1].copy()
     if flat_tax_units.empty:
         raise ValueError("No filing tax units available for flat comparison.")
 

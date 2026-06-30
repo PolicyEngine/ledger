@@ -1,4 +1,4 @@
-schema_version: arch.source_package.v1
+schema_version: ledger.source_package.v1
 package_id: ssa-ssi-table-7b1-2024
 label: SSA Annual Statistical Supplement 2025 Table 7.B1 SSI recipients and payments
 artifact:
@@ -9,7 +9,7 @@ artifact:
   manifest: manifest.yaml
   vintage: annual_statistical_supplement_2025
   extracted_at: '2026-05-29'
-  extraction_method: manual table extraction from SSA Annual Statistical Supplement 2025 Table 7.B1 HTML; payment rows retained in source thousands of dollars and scaled in Arch measures
+  extraction_method: manual table extraction from SSA Annual Statistical Supplement 2025 Table 7.B1 HTML; payment rows retained in source thousands of dollars and scaled in Ledger measures
   parser: delimited_text_full_rows
   artifact_year: 2024
   sheet_name: ssi_table_7b1_2024
@@ -4561,7 +4561,7 @@ record_sets:
     concept: ssa.ssi_recipient_count
     source_concept: ssa_supplement.table_7b1.recipient_count
     concept_relation: exact
-    concept_authority: arch-us
+    concept_authority: ledger-us
     concept_evidence_url: https://www.ssa.gov/policy/docs/statcomps/supplement/2025/7b.html
     concept_evidence_notes: SSA Annual Statistical Supplement 2025 Table 7.B1 reports federally administered SSI recipients for December 2024 by area and eligibility category.
     unit: count
@@ -9117,7 +9117,7 @@ record_sets:
     concept: ssa.ssi_payment_amount
     source_concept: ssa_supplement.table_7b1.payment_amount
     concept_relation: exact
-    concept_authority: arch-us
+    concept_authority: ledger-us
     concept_evidence_url: https://www.ssa.gov/policy/docs/statcomps/supplement/2025/7b.html
     concept_evidence_notes: SSA Annual Statistical Supplement 2025 Table 7.B1 reports calendar-year 2024 federally administered SSI payments by area and eligibility category in thousands of dollars.
     unit: usd

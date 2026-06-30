@@ -25,6 +25,7 @@ from datetime import datetime
 @dataclass
 class ValidationMetric:
     """A single validation metric."""
+
     name: str
     category: str  # marginal, joint, policy, privacy, calibration
     value: float
@@ -53,6 +54,7 @@ class ValidationMetric:
 @dataclass
 class ValidationResult:
     """Complete validation results for a synthesis run."""
+
     timestamp: str
     synthesis_version: str
     metrics: List[ValidationMetric]
@@ -80,31 +82,34 @@ class ValidationResult:
                     "passing": sum(1 for m in metrics if m.is_passing is True),
                 }
                 for cat, metrics in by_category.items()
-            }
+            },
         }
 
     def to_json(self) -> str:
         """Serialize to JSON for dashboard."""
-        return json.dumps({
-            "timestamp": self.timestamp,
-            "synthesis_version": self.synthesis_version,
-            "comparison_baseline": self.comparison_baseline,
-            "metadata": self.metadata,
-            "metrics": [
-                {
-                    "name": m.name,
-                    "category": m.category,
-                    "value": m.value,
-                    "target": m.target,
-                    "threshold": m.threshold,
-                    "direction": m.direction,
-                    "is_passing": m.is_passing,
-                    "details": m.details,
-                }
-                for m in self.metrics
-            ],
-            "summary": self.summary()
-        }, indent=2)
+        return json.dumps(
+            {
+                "timestamp": self.timestamp,
+                "synthesis_version": self.synthesis_version,
+                "comparison_baseline": self.comparison_baseline,
+                "metadata": self.metadata,
+                "metrics": [
+                    {
+                        "name": m.name,
+                        "category": m.category,
+                        "value": m.value,
+                        "target": m.target,
+                        "threshold": m.threshold,
+                        "direction": m.direction,
+                        "is_passing": m.is_passing,
+                        "details": m.details,
+                    }
+                    for m in self.metrics
+                ],
+                "summary": self.summary(),
+            },
+            indent=2,
+        )
 
 
 class SynthesisValidator:
@@ -126,18 +131,31 @@ class SynthesisValidator:
 
         # Tax variables to validate
         self.continuous_vars = [
-            'wages', 'interest', 'dividends', 'capital_gains',
-            'business_income', 'rental_income', 'social_security',
-            'adjusted_gross_income', 'itemized_deductions',
-            'mortgage_interest', 'state_taxes_paid', 'charitable',
+            "wages",
+            "interest",
+            "dividends",
+            "capital_gains",
+            "business_income",
+            "rental_income",
+            "social_security",
+            "adjusted_gross_income",
+            "itemized_deductions",
+            "mortgage_interest",
+            "state_taxes_paid",
+            "charitable",
         ]
 
         self.discrete_vars = [
-            'is_itemizer', 'has_business', 'has_capital_gains',
+            "is_itemizer",
+            "has_business",
+            "has_capital_gains",
         ]
 
         self.credit_vars = [
-            'eitc', 'ctc', 'cdcc', 'education_credits',
+            "eitc",
+            "ctc",
+            "cdcc",
+            "education_credits",
         ]
 
     def validate(
@@ -193,7 +211,7 @@ class SynthesisValidator:
                 "n_synthetic_records": len(synthetic),
                 "n_puf_records": len(self.puf) if self.puf is not None else None,
                 "n_pe_records": len(self.pe_ecps) if self.pe_ecps is not None else None,
-            }
+            },
         )
 
     def _validate_marginals(
@@ -211,53 +229,65 @@ class SynthesisValidator:
 
             # KL divergence (binned approximation)
             kl = self._compute_kl_divergence(
-                synthetic[var], reference[var],
-                synthetic.get('weight', None), reference.get('weight', None)
+                synthetic[var],
+                reference[var],
+                synthetic.get("weight", None),
+                reference.get("weight", None),
             )
 
-            metrics.append(ValidationMetric(
-                name=f"kl_{var}",
-                category="marginal",
-                value=kl,
-                target=0.0,
-                threshold=0.1,  # KL < 0.1 is good
-                direction="lower",
-                details={"variable": var, "reference": ref_name}
-            ))
+            metrics.append(
+                ValidationMetric(
+                    name=f"kl_{var}",
+                    category="marginal",
+                    value=kl,
+                    target=0.0,
+                    threshold=0.1,  # KL < 0.1 is good
+                    direction="lower",
+                    details={"variable": var, "reference": ref_name},
+                )
+            )
 
             # Zero fraction difference
             zero_diff = self._compute_zero_fraction_diff(
-                synthetic[var], reference[var],
-                synthetic.get('weight', None), reference.get('weight', None)
+                synthetic[var],
+                reference[var],
+                synthetic.get("weight", None),
+                reference.get("weight", None),
             )
 
-            metrics.append(ValidationMetric(
-                name=f"zero_frac_diff_{var}",
-                category="marginal",
-                value=zero_diff,
-                target=0.0,
-                threshold=0.05,  # Within 5pp
-                direction="lower",
-                details={"variable": var, "reference": ref_name}
-            ))
+            metrics.append(
+                ValidationMetric(
+                    name=f"zero_frac_diff_{var}",
+                    category="marginal",
+                    value=zero_diff,
+                    target=0.0,
+                    threshold=0.05,  # Within 5pp
+                    direction="lower",
+                    details={"variable": var, "reference": ref_name},
+                )
+            )
 
             # Quantile errors (median, 90th, 99th)
             for q in [0.5, 0.9, 0.99]:
                 q_error = self._compute_quantile_error(
-                    synthetic[var], reference[var],
-                    synthetic.get('weight', None), reference.get('weight', None),
-                    q
+                    synthetic[var],
+                    reference[var],
+                    synthetic.get("weight", None),
+                    reference.get("weight", None),
+                    q,
                 )
 
-                metrics.append(ValidationMetric(
-                    name=f"q{int(q*100)}_{var}",
-                    category="marginal",
-                    value=q_error,
-                    target=0.0,
-                    threshold=0.15,  # Within 15%
-                    direction="lower",
-                    details={"variable": var, "quantile": q, "reference": ref_name}
-                ))
+                metrics.append(
+                    ValidationMetric(
+                        name=f"q{int(q * 100)}_{var}",
+                        category="marginal",
+                        value=q_error,
+                        target=0.0,
+                        threshold=0.15,  # Within 15%
+                        direction="lower",
+                        details={"variable": var, "quantile": q, "reference": ref_name},
+                    )
+                )
 
         return metrics
 
@@ -272,11 +302,11 @@ class SynthesisValidator:
 
         # Key economic correlations to preserve
         correlation_pairs = [
-            ('wages', 'adjusted_gross_income'),
-            ('wages', 'state_taxes_paid'),
-            ('capital_gains', 'dividends'),
-            ('adjusted_gross_income', 'itemized_deductions'),
-            ('business_income', 'adjusted_gross_income'),
+            ("wages", "adjusted_gross_income"),
+            ("wages", "state_taxes_paid"),
+            ("capital_gains", "dividends"),
+            ("adjusted_gross_income", "itemized_deductions"),
+            ("business_income", "adjusted_gross_income"),
         ]
 
         for var1, var2 in correlation_pairs:
@@ -286,49 +316,56 @@ class SynthesisValidator:
                 continue
 
             synth_corr = self._weighted_correlation(
-                synthetic[var1], synthetic[var2], synthetic.get('weight', None)
+                synthetic[var1], synthetic[var2], synthetic.get("weight", None)
             )
             ref_corr = self._weighted_correlation(
-                reference[var1], reference[var2], reference.get('weight', None)
+                reference[var1], reference[var2], reference.get("weight", None)
             )
 
             corr_diff = abs(synth_corr - ref_corr)
 
-            metrics.append(ValidationMetric(
-                name=f"corr_{var1}_{var2}",
-                category="joint",
-                value=corr_diff,
-                target=0.0,
-                threshold=0.1,  # Within 0.1 correlation units
-                direction="lower",
-                details={
-                    "var1": var1,
-                    "var2": var2,
-                    "synthetic_corr": synth_corr,
-                    "reference_corr": ref_corr,
-                    "reference": ref_name,
-                }
-            ))
+            metrics.append(
+                ValidationMetric(
+                    name=f"corr_{var1}_{var2}",
+                    category="joint",
+                    value=corr_diff,
+                    target=0.0,
+                    threshold=0.1,  # Within 0.1 correlation units
+                    direction="lower",
+                    details={
+                        "var1": var1,
+                        "var2": var2,
+                        "synthetic_corr": synth_corr,
+                        "reference_corr": ref_corr,
+                        "reference": ref_name,
+                    },
+                )
+            )
 
         # Correlation matrix Frobenius distance
-        available_vars = [v for v in self.continuous_vars
-                        if v in synthetic.columns and v in reference.columns]
+        available_vars = [
+            v
+            for v in self.continuous_vars
+            if v in synthetic.columns and v in reference.columns
+        ]
 
         if len(available_vars) >= 3:
             synth_corr_mat = synthetic[available_vars].corr().values
             ref_corr_mat = reference[available_vars].corr().values
 
-            frobenius = np.linalg.norm(synth_corr_mat - ref_corr_mat, 'fro')
+            frobenius = np.linalg.norm(synth_corr_mat - ref_corr_mat, "fro")
 
-            metrics.append(ValidationMetric(
-                name="correlation_matrix_distance",
-                category="joint",
-                value=frobenius,
-                target=0.0,
-                threshold=2.0,
-                direction="lower",
-                details={"n_variables": len(available_vars), "reference": ref_name}
-            ))
+            metrics.append(
+                ValidationMetric(
+                    name="correlation_matrix_distance",
+                    category="joint",
+                    value=frobenius,
+                    target=0.0,
+                    threshold=2.0,
+                    direction="lower",
+                    details={"n_variables": len(available_vars), "reference": ref_name},
+                )
+            )
 
         return metrics
 
@@ -340,8 +377,8 @@ class SynthesisValidator:
             return metrics
 
         for _, target in self.irs_soi_targets.iterrows():
-            target_name = target['name']
-            target_value = target['target']
+            target_name = target["name"]
+            target_value = target["target"]
 
             # Compute estimated value from synthetic data
             estimated = self._compute_target_estimate(synthetic, target)
@@ -349,19 +386,21 @@ class SynthesisValidator:
             if estimated is not None and target_value != 0:
                 rel_error = abs(estimated - target_value) / abs(target_value)
 
-                metrics.append(ValidationMetric(
-                    name=f"calibration_{target_name}",
-                    category="calibration",
-                    value=rel_error,
-                    target=0.0,
-                    threshold=0.05,  # Within 5%
-                    direction="lower",
-                    details={
-                        "target_name": target_name,
-                        "target_value": target_value,
-                        "estimated_value": estimated,
-                    }
-                ))
+                metrics.append(
+                    ValidationMetric(
+                        name=f"calibration_{target_name}",
+                        category="calibration",
+                        value=rel_error,
+                        target=0.0,
+                        threshold=0.05,  # Within 5%
+                        direction="lower",
+                        details={
+                            "target_name": target_name,
+                            "target_value": target_value,
+                            "estimated_value": estimated,
+                        },
+                    )
+                )
 
         return metrics
 
@@ -378,25 +417,27 @@ class SynthesisValidator:
             if credit not in synthetic.columns or credit not in reference.columns:
                 continue
 
-            synth_total = (synthetic[credit] * synthetic.get('weight', 1)).sum()
-            ref_total = (reference[credit] * reference.get('weight', 1)).sum()
+            synth_total = (synthetic[credit] * synthetic.get("weight", 1)).sum()
+            ref_total = (reference[credit] * reference.get("weight", 1)).sum()
 
             if ref_total != 0:
                 rel_diff = abs(synth_total - ref_total) / abs(ref_total)
 
-                metrics.append(ValidationMetric(
-                    name=f"total_{credit}",
-                    category="policy",
-                    value=rel_diff,
-                    target=0.0,
-                    threshold=0.10,  # Within 10%
-                    direction="lower",
-                    details={
-                        "credit": credit,
-                        "synthetic_total": synth_total,
-                        "reference_total": ref_total,
-                    }
-                ))
+                metrics.append(
+                    ValidationMetric(
+                        name=f"total_{credit}",
+                        category="policy",
+                        value=rel_diff,
+                        target=0.0,
+                        threshold=0.10,  # Within 10%
+                        direction="lower",
+                        details={
+                            "credit": credit,
+                            "synthetic_total": synth_total,
+                            "reference_total": ref_total,
+                        },
+                    )
+                )
 
         return metrics
 
@@ -409,8 +450,11 @@ class SynthesisValidator:
         metrics = []
 
         # Check nearest neighbor distances
-        available_vars = [v for v in self.continuous_vars
-                        if v in synthetic.columns and v in puf.columns]
+        available_vars = [
+            v
+            for v in self.continuous_vars
+            if v in synthetic.columns and v in puf.columns
+        ]
 
         if len(available_vars) >= 3:
             # Sample for efficiency
@@ -425,21 +469,24 @@ class SynthesisValidator:
 
             # Compute pairwise distances (expensive, use sample)
             from scipy.spatial.distance import cdist
+
             distances = cdist(synth_norm.values[:100], puf_norm.values[:100])
             min_distances = distances.min(axis=1)
 
-            metrics.append(ValidationMetric(
-                name="min_nn_distance",
-                category="privacy",
-                value=min_distances.min(),
-                target=None,
-                threshold=0.05,  # Should be > 0.05 normalized distance
-                direction="higher",
-                details={
-                    "mean_min_distance": min_distances.mean(),
-                    "n_vars": len(available_vars),
-                }
-            ))
+            metrics.append(
+                ValidationMetric(
+                    name="min_nn_distance",
+                    category="privacy",
+                    value=min_distances.min(),
+                    target=None,
+                    threshold=0.05,  # Should be > 0.05 normalized distance
+                    direction="higher",
+                    details={
+                        "mean_min_distance": min_distances.mean(),
+                        "n_vars": len(available_vars),
+                    },
+                )
+            )
 
         return metrics
 
@@ -452,8 +499,11 @@ class SynthesisValidator:
         """Compare PolicyEngine synthesis to PE ECPS using PUF as ground truth."""
         metrics = []
 
-        available_vars = [v for v in self.continuous_vars
-                        if v in synthetic.columns and v in pe_ecps.columns and v in puf.columns]
+        available_vars = [
+            v
+            for v in self.continuous_vars
+            if v in synthetic.columns and v in pe_ecps.columns and v in puf.columns
+        ]
 
         if len(available_vars) >= 3:
             # Correlation matrix distances
@@ -461,25 +511,27 @@ class SynthesisValidator:
             synth_corr = synthetic[available_vars].corr().values
             pe_corr = pe_ecps[available_vars].corr().values
 
-            policyengine_dist = np.linalg.norm(synth_corr - puf_corr, 'fro')
-            pe_dist = np.linalg.norm(pe_corr - puf_corr, 'fro')
+            policyengine_dist = np.linalg.norm(synth_corr - puf_corr, "fro")
+            pe_dist = np.linalg.norm(pe_corr - puf_corr, "fro")
 
             # Improvement ratio (< 1 means PolicyEngine is better)
             improvement = policyengine_dist / (pe_dist + 1e-8)
 
-            metrics.append(ValidationMetric(
-                name="correlation_vs_pe",
-                category="comparison",
-                value=improvement,
-                target=1.0,
-                threshold=1.0,  # Should be <= 1.0 (at least as good as PE)
-                direction="lower",
-                details={
-                    "policyengine_distance": policyengine_dist,
-                    "pe_distance": pe_dist,
-                    "n_vars": len(available_vars),
-                }
-            ))
+            metrics.append(
+                ValidationMetric(
+                    name="correlation_vs_pe",
+                    category="comparison",
+                    value=improvement,
+                    target=1.0,
+                    threshold=1.0,  # Should be <= 1.0 (at least as good as PE)
+                    direction="lower",
+                    details={
+                        "policyengine_distance": policyengine_dist,
+                        "pe_distance": pe_dist,
+                        "n_vars": len(available_vars),
+                    },
+                )
+            )
 
         return metrics
 
@@ -624,7 +676,7 @@ def run_validation_dashboard(
     result = validator.validate(synthetic)
 
     # Write results
-    with open(output_path, 'w') as f:
+    with open(output_path, "w") as f:
         f.write(result.to_json())
 
     print(f"Validation complete. Results written to {output_path}")

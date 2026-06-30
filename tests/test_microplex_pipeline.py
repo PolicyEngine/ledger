@@ -2,7 +2,7 @@
 
 import pandas as pd
 
-from arch.targets import DataSource, TargetSpec, TargetType
+from ledger.targets import DataSource, TargetSpec, TargetType
 from micro.us import pipeline as microplex
 from micro.us.targets import TargetCompositionResult
 
@@ -162,7 +162,9 @@ def test_run_pipeline_writes_linked_entity_outputs(tmp_path, monkeypatch):
     assert len(tax_units) == 2
     assert households["weight_adjustment"].notna().all()
     assert persons["household_entity_id"].isin(households["household_entity_id"]).all()
-    assert tax_units["household_entity_id"].isin(households["household_entity_id"]).all()
+    assert (
+        tax_units["household_entity_id"].isin(households["household_entity_id"]).all()
+    )
 
 
 def test_calibrate_weights_preserves_per_target_diagnostics():
@@ -317,9 +319,9 @@ def test_generalized_rake_calibrates_count_and_amount_targets():
     assert result.success
     assert result.method == "generalized-rake"
     count_error = result.targets_after["tax_unit_count|count|All filers"]["error"]
-    amount_error = result.targets_after[
-        "adjusted_gross_income|amount|All filers"
-    ]["error"]
+    amount_error = result.targets_after["adjusted_gross_income|amount|All filers"][
+        "error"
+    ]
     assert abs(count_error) < 0.01
     assert abs(amount_error) < 0.01
 

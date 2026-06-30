@@ -31,16 +31,13 @@ BLS_DATA = {
         "employed": 161_100_000,
         "unemployed": 6_200_000,
         "not_in_labor_force": 99_800_000,
-
         # Rates (percentages stored as decimals)
         "unemployment_rate": 3.7,  # percent
         "labor_force_participation_rate": 62.6,  # percent
         "employment_population_ratio": 60.3,  # percent
-
         # Earnings
         "median_weekly_earnings": 1_145,  # dollars, full-time workers
         "median_hourly_wage": 23.40,  # dollars, all workers
-
         # By sector (nonfarm payroll, thousands)
         "total_nonfarm_employment": 157_000_000,
         "private_employment": 133_600_000,
@@ -51,14 +48,11 @@ BLS_DATA = {
         "employed": 158_300_000,
         "unemployed": 6_000_000,
         "not_in_labor_force": 99_600_000,
-
         "unemployment_rate": 3.6,
         "labor_force_participation_rate": 62.2,
         "employment_population_ratio": 59.9,
-
         "median_weekly_earnings": 1_085,
         "median_hourly_wage": 22.00,
-
         "total_nonfarm_employment": 153_000_000,
         "private_employment": 130_200_000,
         "government_employment": 22_800_000,
@@ -68,14 +62,11 @@ BLS_DATA = {
         "employed": 152_600_000,
         "unemployed": 8_600_000,
         "not_in_labor_force": 100_000_000,
-
         "unemployment_rate": 5.4,
         "labor_force_participation_rate": 61.7,
         "employment_population_ratio": 58.4,
-
         "median_weekly_earnings": 1_013,
         "median_hourly_wage": 20.50,
-
         "total_nonfarm_employment": 146_100_000,
         "private_employment": 124_200_000,
         "government_employment": 21_900_000,

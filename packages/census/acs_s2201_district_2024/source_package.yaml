@@ -1,4 +1,4 @@
-schema_version: arch.source_package.v1
+schema_version: ledger.source_package.v1
 package_id: census-acs-s2201-congressional-district-snap-2024
 label: Census ACS 2024 S2201 congressional district SNAP household counts
 artifact:

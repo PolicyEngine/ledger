@@ -22,6 +22,6 @@ files:
     storage:
       r2:
         provider: r2
-        bucket: arch-raw
+        bucket: ledger-raw
         key: raw/census_pep/census-pep-2024-national-age-sex/2024/fbb151e8ae8554283dcbf192e6b420658ea444ee7d8849988aa1d5615183edf1/nc-est2024-agesex-res.csv
-        uri: r2://arch-raw/raw/census_pep/census-pep-2024-national-age-sex/2024/fbb151e8ae8554283dcbf192e6b420658ea444ee7d8849988aa1d5615183edf1/nc-est2024-agesex-res.csv
+        uri: r2://ledger-raw/raw/census_pep/census-pep-2024-national-age-sex/2024/fbb151e8ae8554283dcbf192e6b420658ea444ee7d8849988aa1d5615183edf1/nc-est2024-agesex-res.csv

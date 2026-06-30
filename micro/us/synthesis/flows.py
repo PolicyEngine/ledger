@@ -47,9 +47,9 @@ class MADE(nn.Module):
         self.input_layer = nn.Linear(n_features + n_context, hidden_dim)
 
         # Hidden layers
-        self.hidden_layers = nn.ModuleList([
-            nn.Linear(hidden_dim, hidden_dim) for _ in range(n_hidden)
-        ])
+        self.hidden_layers = nn.ModuleList(
+            [nn.Linear(hidden_dim, hidden_dim) for _ in range(n_hidden)]
+        )
 
         # Output layer: predicts mu and log_scale for each feature
         self.output_layer = nn.Linear(hidden_dim, n_features * 2)
@@ -63,10 +63,12 @@ class MADE(nn.Module):
 
         # Input degrees: features have degrees 0 to n_features-1
         # Context features can connect to all (degree -1)
-        input_degrees = np.concatenate([
-            np.arange(self.n_features),
-            np.full(self.n_context, -1)  # Context connects to all
-        ])
+        input_degrees = np.concatenate(
+            [
+                np.arange(self.n_features),
+                np.full(self.n_context, -1),  # Context connects to all
+            ]
+        )
 
         # Hidden degrees: uniform random assignment
         hidden_degrees = []
@@ -130,8 +132,9 @@ class MADE(nn.Module):
 
         # Masked input layer
         h = self.activation(
-            nn.functional.linear(h, self.input_mask * self.input_layer.weight,
-                                 self.input_layer.bias)
+            nn.functional.linear(
+                h, self.input_mask * self.input_layer.weight, self.input_layer.bias
+            )
         )
 
         # Masked hidden layers
@@ -143,8 +146,9 @@ class MADE(nn.Module):
 
         # Masked output layer
         out = nn.functional.linear(
-            h, self.output_mask.repeat(2, 1) * self.output_layer.weight,
-            self.output_layer.bias
+            h,
+            self.output_mask.repeat(2, 1) * self.output_layer.weight,
+            self.output_layer.bias,
         )
 
         # Split into mu and log_scale
@@ -206,9 +210,7 @@ class AffineCouplingLayer(nn.Module):
 
         return z, log_det
 
-    def inverse(
-        self, z: torch.Tensor, context: torch.Tensor
-    ) -> torch.Tensor:
+    def inverse(self, z: torch.Tensor, context: torch.Tensor) -> torch.Tensor:
         """
         Inverse transformation: z -> x.
 
@@ -259,10 +261,12 @@ class ConditionalMAF(nn.Module):
         self.n_context = n_context
 
         # Stack of affine coupling layers
-        self.layers = nn.ModuleList([
-            AffineCouplingLayer(n_features, n_context, hidden_dim)
-            for _ in range(n_layers)
-        ])
+        self.layers = nn.ModuleList(
+            [
+                AffineCouplingLayer(n_features, n_context, hidden_dim)
+                for _ in range(n_layers)
+            ]
+        )
 
         # Permutations between layers (reverse order alternating)
         self.permutations = []
@@ -275,16 +279,10 @@ class ConditionalMAF(nn.Module):
             self.permutations.append(perm)
 
         # Base distribution (standard normal)
-        self.register_buffer(
-            "base_mean", torch.zeros(n_features)
-        )
-        self.register_buffer(
-            "base_std", torch.ones(n_features)
-        )
+        self.register_buffer("base_mean", torch.zeros(n_features))
+        self.register_buffer("base_std", torch.ones(n_features))
 
-    def log_prob(
-        self, x: torch.Tensor, context: torch.Tensor
-    ) -> torch.Tensor:
+    def log_prob(self, x: torch.Tensor, context: torch.Tensor) -> torch.Tensor:
         """
         Compute log probability of x given context.
 
@@ -309,8 +307,7 @@ class ConditionalMAF(nn.Module):
 
         # Log prob under base distribution
         base_log_prob = -0.5 * (
-            self.n_features * np.log(2 * np.pi) +
-            (z ** 2).sum(dim=-1)
+            self.n_features * np.log(2 * np.pi) + (z**2).sum(dim=-1)
         )
 
         return base_log_prob + total_log_det

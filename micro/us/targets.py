@@ -1,4 +1,4 @@
-"""Microplex adapters for Arch target inputs."""
+"""Microplex adapters for Ledger target inputs."""
 
 from __future__ import annotations
 
@@ -32,7 +32,7 @@ class SOIAgingFactors:
 
 @dataclass(frozen=True)
 class MicroplexTargetProfile:
-    """Declared rules for composing Arch records into Microplex target inputs."""
+    """Declared rules for composing Ledger records into Microplex target inputs."""
 
     min_current_target_inputs: int = 50
     tax_variables: tuple[str, ...] = (
@@ -63,7 +63,7 @@ def load_microplex_targets(
     sources: list[str] | None = None,
     variables: list[str] | None = None,
 ) -> list[TargetSpec]:
-    """Load Arch DB target inputs as ``TargetSpec`` objects for Microplex."""
+    """Load Ledger DB target inputs as ``TargetSpec`` objects for Microplex."""
     return get_targets(
         db_path=db_path,
         jurisdiction=jurisdiction,
@@ -81,10 +81,10 @@ def compose_microplex_targets(
     profile: MicroplexTargetProfile | None = None,
 ) -> TargetCompositionResult:
     """
-    Compose model-year target inputs for Microplex from Arch records.
+    Compose model-year target inputs for Microplex from Ledger records.
 
     This is the boundary where Microplex may choose source fallbacks and apply
-    model-year transformations. Arch records are not mutated.
+    model-year transformations. Ledger records are not mutated.
     """
     profile = profile or MicroplexTargetProfile()
     current_targets = load_microplex_targets(
@@ -220,7 +220,8 @@ def has_supported_tax_targets(
     """Return whether target inputs can produce current tax-unit constraints."""
     profile = profile or MicroplexTargetProfile()
     return any(
-        target.variable in profile.tax_variables and target.target_type != TargetType.RATE
+        target.variable in profile.tax_variables
+        and target.target_type != TargetType.RATE
         for target in targets
     )
 
@@ -354,7 +355,7 @@ def age_soi_targets(
     Age IRS SOI target inputs to a Microplex model year.
 
     This composes model-year targets from source records. It does not mutate
-    Arch records in the database.
+    Ledger records in the database.
     """
     source_years = {
         target.period
@@ -431,12 +432,12 @@ def build_microplex_constraints(
     min_obs: int = 0,
 ) -> list[Constraint]:
     """
-    Build flat Microplex calibration constraints from Arch DB target inputs.
+    Build flat Microplex calibration constraints from Ledger DB target inputs.
 
     Args:
         microdata: One row per calibrated unit.
         targets: Optional preloaded target specs. If omitted, targets are loaded
-            from the Arch SQLite database.
+            from the Ledger SQLite database.
         db_path: Optional target database path.
         jurisdiction: Jurisdiction prefix to load from the database.
         year: Optional target period.
@@ -481,7 +482,7 @@ def build_hierarchical_microplex_constraints(
     min_obs: int = 0,
 ) -> list[Constraint]:
     """
-    Build household-weighted Microplex constraints from Arch DB target inputs.
+    Build household-weighted Microplex constraints from Ledger DB target inputs.
 
     This is the adapter for hierarchical microdata where household weights must
     satisfy person-level or tax-unit-level aggregate targets.

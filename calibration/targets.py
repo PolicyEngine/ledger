@@ -32,7 +32,7 @@ class TargetSpec:
     ready for constraint matrix building.
 
     Attributes:
-        variable: Arch target input variable ID.
+        variable: Ledger target input variable ID.
         value: Target aggregate value
         target_type: COUNT, AMOUNT, or RATE
         constraints: List of (variable, operator, value) tuples defining stratum
@@ -100,13 +100,20 @@ def get_targets(
             jurisdiction_lower = jurisdiction.lower()
             # For now, simple filter - could be enhanced
             query = query.where(
-                Stratum.jurisdiction.in_([
-                    j for j in [
-                        "us", "us-federal", "us-ca", "us-ny", "us-tx",
-                        "uk",
+                Stratum.jurisdiction.in_(
+                    [
+                        j
+                        for j in [
+                            "us",
+                            "us-federal",
+                            "us-ca",
+                            "us-ny",
+                            "us-tx",
+                            "uk",
+                        ]
+                        if j.startswith(jurisdiction_lower)
                     ]
-                    if j.startswith(jurisdiction_lower)
-                ])
+                )
             )
 
         results = session.exec(query).all()
@@ -121,8 +128,7 @@ def get_targets(
             stratum_constraints = session.exec(constraint_query).all()
 
             constraints = [
-                (c.variable, c.operator, c.value)
-                for c in stratum_constraints
+                (c.variable, c.operator, c.value) for c in stratum_constraints
             ]
 
             spec = TargetSpec(

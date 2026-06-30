@@ -1,4 +1,4 @@
-schema_version: arch.source_package.v1
+schema_version: ledger.source_package.v1
 package_id: federal-reserve-z1-household-net-worth
 label: Federal Reserve Z.1 household and nonprofit net worth
 artifact:
@@ -61,7 +61,7 @@ record_sets:
         concept: federal_reserve.z1.households_nonprofits_net_worth
         source_concept: federal_reserve.z1.fl152090005
         concept_relation: source_label
-        concept_authority: arch-us
+        concept_authority: ledger-us
         unit: usd
         aggregation: sum
         value_scale: 1000000000

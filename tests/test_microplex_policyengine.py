@@ -8,7 +8,7 @@ import types
 import numpy as np
 import pandas as pd
 
-from arch.targets import DataSource, TargetSpec, TargetType
+from ledger.targets import DataSource, TargetSpec, TargetType
 from micro.us import pipeline as microplex
 from micro.us.policyengine import (
     DEFAULT_SOI_INCOME_TAX_VARIABLE,

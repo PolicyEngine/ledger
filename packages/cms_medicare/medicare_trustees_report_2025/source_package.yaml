@@ -1,4 +1,4 @@
-schema_version: arch.source_package.v1
+schema_version: ledger.source_package.v1
 package_id: cms-medicare-trustees-report-2025-part-b-premium-income
 label: CMS Medicare Trustees Report 2025 Part B premium income
 artifact:

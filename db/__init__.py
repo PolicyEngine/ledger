@@ -1,5 +1,5 @@
 """
-Database layer for Arch target inputs and calibration data.
+Database layer for Ledger target inputs and calibration data.
 
 Supports two backends:
 - SQLite (local development via SQLModel)

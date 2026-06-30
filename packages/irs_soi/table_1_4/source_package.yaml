@@ -1,4 +1,4 @@
-schema_version: arch.source_package.v1
+schema_version: ledger.source_package.v1
 package_id: soi-table-1-4
 label: IRS SOI Publication 1304 Table 1.4 total wages
 artifact:
@@ -419,12 +419,12 @@ record_sets:
         aggregation: sum
         source_concept: irs_soi.total_wages
         concept_relation: broad_match
-        concept_authority: arch-us
+        concept_authority: ledger-us
         concept_evidence_url: https://www.irs.gov/statistics/soi-tax-stats-individual-income-tax-returns-complete-report-publication-1304-basic-tables-part-1
         concept_evidence_notes: >
           IRS SOI Table 1.4 labels this measure Total wages for individual
           income tax returns. Axiom exposes wages as an inferred input to IRC
-          section 62 adjusted gross income, so Arch treats the SOI total wages
+          section 62 adjusted gross income, so Ledger treats the SOI total wages
           measure as a broad match to that input concept rather than an exact
           statutory definition.
         legal_vintage: tax_year_{year}
@@ -603,7 +603,7 @@ record_sets:
         aggregation: sum
         source_concept: irs_soi.payments_to_keogh_plan
         concept_relation: broad_match
-        concept_authority: arch-us
+        concept_authority: ledger-us
         concept_evidence_url: https://www.irs.gov/statistics/soi-tax-stats-individual-income-tax-returns-complete-report-publication-1304-basic-tables-part-1
         concept_evidence_notes: >
           IRS SOI Table 1.4 labels this statutory-adjustments measure

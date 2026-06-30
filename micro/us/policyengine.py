@@ -37,7 +37,7 @@ def add_policyengine_income_tax(
 
     SOI Publication 1304 Table 1.1's "total income tax" target corresponds to
     the PolicyEngine-US ``income_tax_before_credits`` variable in the
-    PolicyEngine-US-data SOI utilities. Microplex keeps the Arch-facing target
+    PolicyEngine-US-data SOI utilities. Microplex keeps the Ledger-facing target
     variable name, ``income_tax_liability``, and records the PE result there.
     """
     config = config or PolicyEngineTaxConfig()
@@ -193,9 +193,7 @@ def _normalize_person_hierarchy(persons: pd.DataFrame) -> pd.DataFrame:
     marital_unit_id = marital_unit_id.where(marital_unit_id.notna(), tax_unit_id)
     df["marital_unit_id"] = marital_unit_id
     df["_marital_unit_entity_id"] = (
-        df["_household_entity_id"]
-        + "|mu:"
-        + marital_unit_id.map(_format_identifier)
+        df["_household_entity_id"] + "|mu:" + marital_unit_id.map(_format_identifier)
     )
 
     df["age"] = _numeric_first_series(df, ["age", "a_age", "A_AGE"], default=40)
@@ -207,7 +205,13 @@ def _normalize_person_hierarchy(persons: pd.DataFrame) -> pd.DataFrame:
     df["weight"] = _normalized_weight(df)
     df["employment_income"] = _numeric_first_series(
         df,
-        ["employment_income", "wage_income", "wage_salary_income", "wsal_val", "WSAL_VAL"],
+        [
+            "employment_income",
+            "wage_income",
+            "wage_salary_income",
+            "wsal_val",
+            "WSAL_VAL",
+        ],
     )
     df["self_employment_income"] = _numeric_first_series(
         df,
@@ -215,7 +219,12 @@ def _normalize_person_hierarchy(persons: pd.DataFrame) -> pd.DataFrame:
     )
     df["farm_operations_income"] = _numeric_first_series(
         df,
-        ["farm_operations_income", "farm_self_employment_income", "frse_val", "FRSE_VAL"],
+        [
+            "farm_operations_income",
+            "farm_self_employment_income",
+            "frse_val",
+            "FRSE_VAL",
+        ],
     )
     df["taxable_interest_income"] = _numeric_first_series(
         df,
@@ -325,12 +334,8 @@ def _policyengine_situation_from_persons(
         people[person_id] = {
             "age": {year_key: int(row["age"])},
             "employment_income": {year_key: float(row["employment_income"])},
-            "self_employment_income": {
-                year_key: float(row["self_employment_income"])
-            },
-            "farm_operations_income": {
-                year_key: float(row["farm_operations_income"])
-            },
+            "self_employment_income": {year_key: float(row["self_employment_income"])},
+            "farm_operations_income": {year_key: float(row["farm_operations_income"])},
             "taxable_interest_income": {
                 year_key: float(row["taxable_interest_income"])
             },
@@ -343,9 +348,7 @@ def _policyengine_situation_from_persons(
             },
             "is_tax_unit_head": {year_key: bool(row["is_tax_unit_head"])},
             "is_tax_unit_spouse": {year_key: bool(row["is_tax_unit_spouse"])},
-            "is_tax_unit_dependent": {
-                year_key: bool(row["is_tax_unit_dependent"])
-            },
+            "is_tax_unit_dependent": {year_key: bool(row["is_tax_unit_dependent"])},
         }
         _append_member(tax_units, str(row["_tax_unit_entity_id"]), person_id)
         _append_member(households, str(row["_household_entity_id"]), person_id)
@@ -421,9 +424,7 @@ def _policyengine_situation(batch: pd.DataFrame, *, year: int) -> dict[str, Any]
         tax_units[tax_unit_id] = {"members": members}
         households[household_id] = {
             "members": members,
-            "state_fips": {
-                year_key: int(_row_number(row, ["state_fips"], default=6))
-            },
+            "state_fips": {year_key: int(_row_number(row, ["state_fips"], default=6))},
         }
         families[family_id] = {"members": members}
         spm_units[spm_unit_id] = {
@@ -498,17 +499,9 @@ def _normalized_weight(df: pd.DataFrame) -> pd.Series:
             .div(100)
         )
     if "marsupwt" in df.columns:
-        return (
-            pd.to_numeric(df["marsupwt"], errors="coerce")
-            .fillna(0.0)
-            .div(100)
-        )
+        return pd.to_numeric(df["marsupwt"], errors="coerce").fillna(0.0).div(100)
     if "MARSUPWT" in df.columns:
-        return (
-            pd.to_numeric(df["MARSUPWT"], errors="coerce")
-            .fillna(0.0)
-            .div(100)
-        )
+        return pd.to_numeric(df["MARSUPWT"], errors="coerce").fillna(0.0).div(100)
     return pd.Series(1.0, index=df.index, dtype=float)
 
 
@@ -520,10 +513,7 @@ def _tax_unit_roles(df: pd.DataFrame) -> pd.DataFrame:
     ]
     if all(column in df.columns for column in explicit):
         return pd.DataFrame(
-            {
-                column: df[column].astype(bool)
-                for column in explicit
-            },
+            {column: df[column].astype(bool) for column in explicit},
             index=df.index,
         )
 

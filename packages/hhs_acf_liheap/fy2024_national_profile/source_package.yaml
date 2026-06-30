@@ -1,4 +1,4 @@
-schema_version: arch.source_package.v1
+schema_version: ledger.source_package.v1
 package_id: hhs-acf-liheap-fy2024-national-profile
 label: HHS ACF LIHEAP FY2024 National Profile
 artifact:

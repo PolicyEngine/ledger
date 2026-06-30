@@ -155,16 +155,17 @@ class DiscreteModelCollection(nn.Module):
         self.categorical_vars = categorical_vars
 
         # Binary models
-        self.binary_models = nn.ModuleDict({
-            var: BinaryVariableModel(n_context, hidden_dim)
-            for var in binary_vars
-        })
+        self.binary_models = nn.ModuleDict(
+            {var: BinaryVariableModel(n_context, hidden_dim) for var in binary_vars}
+        )
 
         # Categorical models
-        self.categorical_models = nn.ModuleDict({
-            var: CategoricalVariableModel(n_context, n_cats, hidden_dim)
-            for var, n_cats in categorical_vars.items()
-        })
+        self.categorical_models = nn.ModuleDict(
+            {
+                var: CategoricalVariableModel(n_context, n_cats, hidden_dim)
+                for var, n_cats in categorical_vars.items()
+            }
+        )
 
         self.sampler = DiscreteVariableSampler()
 
@@ -209,9 +210,7 @@ class DiscreteModelCollection(nn.Module):
 
         return result
 
-    def log_prob(
-        self, context: torch.Tensor, targets: dict
-    ) -> torch.Tensor:
+    def log_prob(self, context: torch.Tensor, targets: dict) -> torch.Tensor:
         """
         Compute log probability of discrete variables.
 

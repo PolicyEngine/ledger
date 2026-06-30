@@ -4,7 +4,7 @@ dataset: cbo_revenue_projections_income_by_source_2026_02
 source_page: https://www.cbo.gov/data/budget-economic-data
 table: Revenue Projections, by Category, February 2026, sheet 3.Individual Income
   Tax Details
-notes: Curated Arch extract of selected CBO February 2026 baseline projection rows.
+notes: Curated Ledger extract of selected CBO February 2026 baseline projection rows.
   The direct CBO workbook URL returned a DataDome HTTP 403 from the agent shell on
   2026-05-19, so this CSV preserves the extracted values and the official workbook
   URL for source lineage until the raw workbook can be mirrored.
@@ -19,6 +19,6 @@ files:
     storage:
       r2:
         provider: r2
-        bucket: arch-raw
+        bucket: ledger-raw
         key: raw/cbo/cbo-revenue-projections-income-by-source-2026-02/2026/8cd8edee3e76258aa67153adff9dc0dc9b9738ace426eceebcc8d5b26d319bb8/cbo_revenue_projections_income_by_source_2026_02.csv
-        uri: r2://arch-raw/raw/cbo/cbo-revenue-projections-income-by-source-2026-02/2026/8cd8edee3e76258aa67153adff9dc0dc9b9738ace426eceebcc8d5b26d319bb8/cbo_revenue_projections_income_by_source_2026_02.csv
+        uri: r2://ledger-raw/raw/cbo/cbo-revenue-projections-income-by-source-2026-02/2026/8cd8edee3e76258aa67153adff9dc0dc9b9738ace426eceebcc8d5b26d319bb8/cbo_revenue_projections_income_by_source_2026_02.csv

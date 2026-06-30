@@ -1,10 +1,10 @@
-"""Tests for Arch target adapters used by Microplex."""
+"""Tests for Ledger target adapters used by Microplex."""
 
 import numpy as np
 import pandas as pd
 from sqlmodel import Session
 
-from arch.targets import (
+from ledger.targets import (
     DataSource,
     Jurisdiction,
     Stratum,
@@ -156,7 +156,7 @@ def _insert_soi_aging_inputs(db_path):
         session.commit()
 
 
-def test_load_microplex_targets_reads_arch_db(tmp_path):
+def test_load_microplex_targets_reads_ledger_db(tmp_path):
     db_path = tmp_path / "targets.db"
     _insert_simple_target(db_path)
 
@@ -187,10 +187,7 @@ def test_get_soi_aging_factors_uses_labor_force_and_aggregate_agi(tmp_path):
     assert factors.count_factor == 1.1
     assert np.isclose(factors.amount_factor, 1.331)
     assert factors.count_method == "cbo_labor_force_ratio"
-    assert (
-        factors.amount_method
-        == "soi_total_agi_last_growth_extrapolation"
-    )
+    assert factors.amount_method == "soi_total_agi_last_growth_extrapolation"
 
 
 def test_age_soi_targets_scales_soi_values_and_preserves_others(tmp_path):

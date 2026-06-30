@@ -13,6 +13,6 @@ files:
     storage:
       r2:
         provider: r2
-        bucket: arch-raw
+        bucket: ledger-raw
         key: raw/census/census-population-projections-2023/2023/07099471f96a2146d65138de6102f77f395c7f9904f5ac069b08b845cdbf8fc3/np2023_d5_mid.csv
-        uri: r2://arch-raw/raw/census/census-population-projections-2023/2023/07099471f96a2146d65138de6102f77f395c7f9904f5ac069b08b845cdbf8fc3/np2023_d5_mid.csv
+        uri: r2://ledger-raw/raw/census/census-population-projections-2023/2023/07099471f96a2146d65138de6102f77f395c7f9904f5ac069b08b845cdbf8fc3/np2023_d5_mid.csv

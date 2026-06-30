@@ -1,4 +1,4 @@
-schema_version: arch.source_package.v1
+schema_version: ledger.source_package.v1
 package_id: soi-historic-table-2-state-eitc-2022
 label: IRS SOI Historic Table 2 state EITC totals for 2022
 artifact:

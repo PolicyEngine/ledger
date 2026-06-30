@@ -8,6 +8,7 @@ import pytest
 
 # Add data/targets to path for imports
 import sys
+
 sys.path.insert(0, str(Path(__file__).parent.parent / "data" / "targets"))
 
 from build_state_targets import (
@@ -66,9 +67,16 @@ class TestIncomeDistribution:
         """Should have all required columns."""
         df = build_state_income_distribution()
         required = [
-            "state_code", "state_fips", "state_name", "year",
-            "agi_bracket", "agi_bracket_min", "agi_bracket_max",
-            "target_returns", "target_agi", "target_tax_liability",
+            "state_code",
+            "state_fips",
+            "state_name",
+            "year",
+            "agi_bracket",
+            "agi_bracket_min",
+            "agi_bracket_max",
+            "target_returns",
+            "target_agi",
+            "target_tax_liability",
         ]
         for col in required:
             assert col in df.columns, f"Missing column: {col}"
@@ -166,9 +174,9 @@ class TestDemographics:
         df = build_state_demographics()
         for _, row in df.iterrows():
             age_sum = (
-                row["population_under_18"] +
-                row["population_18_64"] +
-                row["population_65_plus"]
+                row["population_under_18"]
+                + row["population_18_64"]
+                + row["population_65_plus"]
             )
             assert age_sum == row["total_population"]
 
@@ -190,7 +198,12 @@ class TestBuildAllTargets:
     def test_has_all_target_types(self):
         """Should have all four target types."""
         targets = build_all_state_targets()
-        expected = ["income_distribution", "tax_credits", "unemployment", "demographics"]
+        expected = [
+            "income_distribution",
+            "tax_credits",
+            "unemployment",
+            "demographics",
+        ]
         for name in expected:
             assert name in targets, f"Missing target type: {name}"
 
@@ -214,7 +227,9 @@ class TestSaveAndLoad:
             save_targets(targets, output_dir)
 
             # Load back
-            loaded_income = load_state_targets("income_distribution", output_dir=output_dir)
+            loaded_income = load_state_targets(
+                "income_distribution", output_dir=output_dir
+            )
             loaded_credits = load_state_targets("tax_credits", output_dir=output_dir)
 
             # Check shapes match
@@ -265,10 +280,12 @@ class TestReweighterIntegration:
 
     def test_convert_to_reweighter_format(self):
         """Should convert to expected dict format."""
-        df = pd.DataFrame({
-            "state_code": ["CA", "TX", "NY"],
-            "target_returns": [1000, 800, 700],
-        })
+        df = pd.DataFrame(
+            {
+                "state_code": ["CA", "TX", "NY"],
+                "target_returns": [1000, 800, 700],
+            }
+        )
 
         targets = convert_to_reweighter_targets(
             df,
@@ -284,10 +301,12 @@ class TestReweighterIntegration:
 
     def test_convert_handles_multiple_rows_same_category(self):
         """Should handle multiple rows with same category (last wins)."""
-        df = pd.DataFrame({
-            "state_code": ["CA", "CA"],
-            "target_returns": [1000, 1500],
-        })
+        df = pd.DataFrame(
+            {
+                "state_code": ["CA", "CA"],
+                "target_returns": [1000, 1500],
+            }
+        )
 
         targets = convert_to_reweighter_targets(
             df,

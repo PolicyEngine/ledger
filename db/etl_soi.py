@@ -27,7 +27,9 @@ from .schema import (
     init_db,
 )
 
-SOURCE_URL = "https://www.irs.gov/statistics/soi-tax-stats-individual-income-tax-statistics"
+SOURCE_URL = (
+    "https://www.irs.gov/statistics/soi-tax-stats-individual-income-tax-statistics"
+)
 TABLE_1_1_SHEET_NAME = "TBL11"
 TABLE_1_4_SHEET_NAME = "TBL14"
 TABLE_1_1_MONEY_SCALE = 1_000
@@ -177,7 +179,7 @@ def _table_content(year: int, file_spec_fn, package_dir: str) -> bytes:
     else:
         request = Request(
             spec["source_url"],
-            headers={"User-Agent": "policyengine-arch-data/0.1", "Accept": "*/*"},
+            headers={"User-Agent": "policyengine-ledger/0.1", "Accept": "*/*"},
         )
         with urlopen(request, timeout=120) as response:
             content = response.read()

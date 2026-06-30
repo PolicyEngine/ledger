@@ -1,38 +1,40 @@
 # Agent Source Package Harness
 
-Arch source-population agents should fill constrained source packages and let
+Ledger source-population agents should fill constrained source packages and let
 the build suite decide whether the package is admissible. Agents should not
-hand-edit Arch DB artifacts, generated JSONL outputs, or core schema modules.
+hand-edit Ledger DB artifacts, generated JSONL outputs, or core schema modules.
 
 The older Python ETL loaders that write directly into the legacy `targets`
 tables are compatibility and migration inputs, not the preferred agent
-population path. They are useful for proving source coverage against Microplex
+population path. They are useful for proving source coverage against Populace
 today, but a source family should become agent-ready only after it is expressed
 as a source package with full-document parsing, source-row or source-cell
 lineage, provenance, constraints, and a passing `build-suite` report.
 
 The first gate for a new package is source-artifact acquisition. Agents should
-register raw source files with `uv run arch fetch-artifact` before authoring
+register raw source files with `uv run ledger fetch-artifact` before authoring
 selectors. This writes the local artifact, captures checksum and retrieval
 metadata in `manifest.yaml`, and can upload the exact bytes to the private
-`arch-raw` R2 bucket when Wrangler is authenticated. Agents can audit the local
-artifact registry with `uv run arch inventory-artifacts --root db/data`.
+`ledger-raw` R2 bucket when Wrangler is authenticated. Agents can audit the local
+artifact registry with `uv run ledger inventory-artifacts --root db/data`.
 For already-downloaded manifest artifacts, agents should run
-`uv run arch publish-raw --root db/data` to upload checksum-verified bytes to
+`uv run ledger publish-raw --root db/data` to upload checksum-verified bytes to
 R2 and write `storage.r2` metadata back into each manifest entry.
 
 Builds do not require production raw bytes to be committed to Git. Source
 packages first read packaged fixture bytes, then
-`ARCH_SOURCE_ARTIFACT_CACHE_DIR` (defaulting to
-`~/.cache/policyengine-arch-data/source-artifacts`). If a manifest artifact is
-missing locally, set `ARCH_SOURCE_ARTIFACT_FETCH=1` to fetch it from the
+`LEDGER_SOURCE_ARTIFACT_CACHE_DIR` (defaulting to
+`~/.cache/policyengine-ledger/source-artifacts`). If a manifest artifact is
+missing locally, set `LEDGER_SOURCE_ARTIFACT_FETCH=1` to fetch it from the
 manifest `source_url`, verify the declared SHA-256, and write it to that cache.
+The old `LEDGER_`-prefixed environment variables remain accepted only as
+migration fallbacks.
 
 For broad PE source migration, generate the agent queue from the manifest before
 assigning work:
 
 ```bash
-uv run arch plan-pe-sources \
+uv run ledger plan-pe-sources \
   --manifest docs/pe-us-source-manifest.csv \
   --out docs/pe-us-source-agent-plan.json \
   --markdown docs/pe-us-source-agent-plan.md
@@ -42,7 +44,7 @@ The generated plan separates existing source packages, primary-source lookup
 tasks, fetch/register tasks, source-cell scaffolds, and repair items. It is not
 semantic acceptance; agents still need `validate-package` and `build-suite`
 before a package can move past `semantic_candidate`. Aggregators such as FRED
-are migration clues, not canonical Arch source artifacts; agents should find
+are migration clues, not canonical Ledger source artifacts; agents should find
 and register the publisher-owned artifact before source cells or target facts
 become canonical.
 
@@ -52,7 +54,7 @@ A source package should eventually contain the source artifact manifest, parser
 or retrieval code, cell selector specs, source-record specs, and focused tests
 for one source family or table. The current in-repo pilot is
 `soi-table-1-1`, with `soi-table-1-4` as a second SOI wage pilot, backed by
-`arch.jurisdictions.us.soi` while the package contract stabilizes.
+`ledger.jurisdictions.us.soi` while the package contract stabilizes.
 
 Agents should prefer declarative package directories over Python edits. A
 minimal package has a `source_package.yaml` file that identifies the source
@@ -172,19 +174,19 @@ meaning; otherwise prefer endpoint guards plus a small number of sentinels.
 The build suite is the review surface:
 
 ```bash
-uv run arch validate-package packages/irs_soi/table_1_1 --year 2023
-uv run arch build-suite soi-table-1-1 --year 2023 --out /tmp/arch-suite --replace
-uv run arch build-suite packages/irs_soi/table_1_1 --year 2023 --out /tmp/arch-suite --replace
+uv run ledger validate-package packages/irs_soi/table_1_1 --year 2023
+uv run ledger build-suite soi-table-1-1 --year 2023 --out /tmp/ledger-suite --replace
+uv run ledger build-suite packages/irs_soi/table_1_1 --year 2023 --out /tmp/ledger-suite --replace
 ```
 
 For the row-oriented IRS SOI Historic Table 2 package, the 2022 national first
 slice can be checked with:
 
 ```bash
-uv run arch validate-package soi-historic-table-2 --year 2022
-uv run arch build-suite soi-historic-table-2 \
+uv run ledger validate-package soi-historic-table-2 --year 2022
+uv run ledger build-suite soi-historic-table-2 \
   --year 2022 \
-  --out /tmp/arch-soi-historic-table-2-2022 \
+  --out /tmp/ledger-soi-historic-table-2-2022 \
   --replace
 ```
 
@@ -192,54 +194,54 @@ For the CMS Marketplace OEP state-level ZIP package, the 2024 first slice can
 be checked with:
 
 ```bash
-uv run arch validate-package cms-aca-oep-state-level --year 2024
-uv run arch build-suite cms-aca-oep-state-level \
+uv run ledger validate-package cms-aca-oep-state-level --year 2024
+uv run ledger build-suite cms-aca-oep-state-level \
   --year 2024 \
-  --out /tmp/arch-cms-aca-oep-2024 \
+  --out /tmp/ledger-cms-aca-oep-2024 \
   --replace
 ```
 
 For the next US publisher-source packages, the 2024 slices can be checked with:
 
 ```bash
-uv run arch validate-package cms-nhe-historical-service-source --year 2024
-uv run arch build-suite cms-nhe-historical-service-source \
+uv run ledger validate-package cms-nhe-historical-service-source --year 2024
+uv run ledger build-suite cms-nhe-historical-service-source \
   --year 2024 \
-  --out /tmp/arch-cms-nhe-historical-service-source-2024 \
+  --out /tmp/ledger-cms-nhe-historical-service-source-2024 \
   --replace
 
-uv run arch validate-package census-stc-individual-income-tax --year 2024
-uv run arch build-suite census-stc-individual-income-tax \
+uv run ledger validate-package census-stc-individual-income-tax --year 2024
+uv run ledger build-suite census-stc-individual-income-tax \
   --year 2024 \
-  --out /tmp/arch-census-stc-individual-income-tax-2024 \
+  --out /tmp/ledger-census-stc-individual-income-tax-2024 \
   --replace
 
-uv run arch validate-package census-pep-2024-national-age-sex --year 2024
-uv run arch build-suite census-pep-2024-national-age-sex \
+uv run ledger validate-package census-pep-2024-national-age-sex --year 2024
+uv run ledger build-suite census-pep-2024-national-age-sex \
   --year 2024 \
-  --out /tmp/arch-census-pep-2024-national-age-sex-2024 \
+  --out /tmp/ledger-census-pep-2024-national-age-sex-2024 \
   --replace
 
-uv run arch validate-package hhs-acf-tanf-financial-2024 --year 2024
-uv run arch build-suite hhs-acf-tanf-financial-2024 \
+uv run ledger validate-package hhs-acf-tanf-financial-2024 --year 2024
+uv run ledger build-suite hhs-acf-tanf-financial-2024 \
   --year 2024 \
-  --out /tmp/arch-hhs-acf-tanf-financial-2024 \
+  --out /tmp/ledger-hhs-acf-tanf-financial-2024 \
   --replace
 
-uv run arch validate-package soi-ira-traditional-contributions-2022 --year 2022
-uv run arch build-suite soi-ira-traditional-contributions-2022 \
+uv run ledger validate-package soi-ira-traditional-contributions-2022 --year 2022
+uv run ledger build-suite soi-ira-traditional-contributions-2022 \
   --year 2022 \
-  --out /tmp/arch-soi-ira-traditional-contributions-2022 \
+  --out /tmp/ledger-soi-ira-traditional-contributions-2022 \
   --replace
-uv run arch validate-package soi-ira-roth-contributions-2022 --year 2022
-uv run arch build-suite soi-ira-roth-contributions-2022 \
+uv run ledger validate-package soi-ira-roth-contributions-2022 --year 2022
+uv run ledger build-suite soi-ira-roth-contributions-2022 \
   --year 2022 \
-  --out /tmp/arch-soi-ira-roth-contributions-2022 \
+  --out /tmp/ledger-soi-ira-roth-contributions-2022 \
   --replace
-uv run arch validate-package soi-w2-statistics-2020 --year 2020
-uv run arch build-suite soi-w2-statistics-2020 \
+uv run ledger validate-package soi-w2-statistics-2020 --year 2020
+uv run ledger build-suite soi-w2-statistics-2020 \
   --year 2020 \
-  --out /tmp/arch-soi-w2-statistics-2020 \
+  --out /tmp/ledger-soi-w2-statistics-2020 \
   --replace
 ```
 
@@ -247,139 +249,139 @@ For the first UK packages, OBR March 2026 EFO receipts and expenditure can be
 checked with:
 
 ```bash
-uv run arch validate-package obr-efo-receipts --year 2025
-uv run arch build-suite obr-efo-receipts \
+uv run ledger validate-package obr-efo-receipts --year 2025
+uv run ledger build-suite obr-efo-receipts \
   --year 2025 \
-  --out /tmp/arch-obr-efo-receipts-2025 \
+  --out /tmp/ledger-obr-efo-receipts-2025 \
   --replace
-uv run arch validate-package obr-efo-expenditure --year 2025
-uv run arch build-suite obr-efo-expenditure \
+uv run ledger validate-package obr-efo-expenditure --year 2025
+uv run ledger build-suite obr-efo-expenditure \
   --year 2025 \
-  --out /tmp/arch-obr-efo-expenditure-2025 \
+  --out /tmp/ledger-obr-efo-expenditure-2025 \
   --replace
-uv run arch validate-package slc-student-support-england-2025 --year 2025
-uv run arch build-suite slc-student-support-england-2025 \
+uv run ledger validate-package slc-student-support-england-2025 --year 2025
+uv run ledger build-suite slc-student-support-england-2025 \
   --year 2025 \
-  --out /tmp/arch-slc-student-support-england-2025 \
+  --out /tmp/ledger-slc-student-support-england-2025 \
   --replace
-uv run arch validate-package dwp-uc-two-child-limit-2025 --year 2026
-uv run arch build-suite dwp-uc-two-child-limit-2025 \
+uv run ledger validate-package dwp-uc-two-child-limit-2025 --year 2026
+uv run ledger build-suite dwp-uc-two-child-limit-2025 \
   --year 2026 \
-  --out /tmp/arch-dwp-uc-two-child-limit-2026 \
+  --out /tmp/ledger-dwp-uc-two-child-limit-2026 \
   --replace
-uv run arch validate-package dwp-benefit-cap-november-2025 --year 2025
-uv run arch build-suite dwp-benefit-cap-november-2025 \
+uv run ledger validate-package dwp-benefit-cap-november-2025 --year 2025
+uv run ledger build-suite dwp-benefit-cap-november-2025 \
   --year 2025 \
-  --out /tmp/arch-dwp-benefit-cap-2025 \
+  --out /tmp/ledger-dwp-benefit-cap-2025 \
   --replace
-uv run arch validate-package dwp-benefit-statistics-february-2026 --year 2025
-uv run arch build-suite dwp-benefit-statistics-february-2026 \
+uv run ledger validate-package dwp-benefit-statistics-february-2026 --year 2025
+uv run ledger build-suite dwp-benefit-statistics-february-2026 \
   --year 2025 \
-  --out /tmp/arch-dwp-benefit-statistics-2025 \
+  --out /tmp/ledger-dwp-benefit-statistics-2025 \
   --replace
-uv run arch validate-package dwp-pip-daily-living-foi-2025 --year 2025
-uv run arch build-suite dwp-pip-daily-living-foi-2025 \
+uv run ledger validate-package dwp-pip-daily-living-foi-2025 --year 2025
+uv run ledger build-suite dwp-pip-daily-living-foi-2025 \
   --year 2025 \
-  --out /tmp/arch-dwp-pip-daily-living-foi-2025 \
+  --out /tmp/ledger-dwp-pip-daily-living-foi-2025 \
   --replace
 
-uv run arch validate-package dwp-uc-national-payment-dist-2025 --year 2025
-uv run arch build-suite dwp-uc-national-payment-dist-2025 \
+uv run ledger validate-package dwp-uc-national-payment-dist-2025 --year 2025
+uv run ledger build-suite dwp-uc-national-payment-dist-2025 \
   --year 2025 \
-  --out /tmp/arch-dwp-uc-national-payment-dist-2025 \
+  --out /tmp/ledger-dwp-uc-national-payment-dist-2025 \
   --replace
 
-uv run arch validate-package hmrc-salary-sacrifice-relief-2024 --year 2024
-uv run arch build-suite hmrc-salary-sacrifice-relief-2024 \
+uv run ledger validate-package hmrc-salary-sacrifice-relief-2024 --year 2024
+uv run ledger build-suite hmrc-salary-sacrifice-relief-2024 \
   --year 2024 \
-  --out /tmp/arch-hmrc-salary-sacrifice-relief-2024 \
+  --out /tmp/ledger-hmrc-salary-sacrifice-relief-2024 \
   --replace
 
-uv run arch validate-package hmrc-spi-income-bands-2023 --year 2023
-uv run arch build-suite hmrc-spi-income-bands-2023 \
+uv run ledger validate-package hmrc-spi-income-bands-2023 --year 2023
+uv run ledger build-suite hmrc-spi-income-bands-2023 \
   --year 2023 \
-  --out /tmp/arch-hmrc-spi-income-bands-2023 \
+  --out /tmp/ledger-hmrc-spi-income-bands-2023 \
   --replace
 
-uv run arch validate-package ons-savings-interest-income --year 2023
-uv run arch build-suite ons-savings-interest-income \
+uv run ledger validate-package ons-savings-interest-income --year 2023
+uv run ledger build-suite ons-savings-interest-income \
   --year 2023 \
-  --out /tmp/arch-ons-savings-interest-income-2023 \
+  --out /tmp/ledger-ons-savings-interest-income-2023 \
   --replace
 
-uv run arch validate-package ons-uk-population-projections-2022 --year 2022
-uv run arch build-suite ons-uk-population-projections-2022 \
+uv run ledger validate-package ons-uk-population-projections-2022 --year 2022
+uv run ledger build-suite ons-uk-population-projections-2022 \
   --year 2022 \
-  --out /tmp/arch-ons-uk-population-projections-2022 \
+  --out /tmp/ledger-ons-uk-population-projections-2022 \
   --replace
 
-uv run arch validate-package nrs-mid-year-population-estimates-2024 --year 2024
-uv run arch build-suite nrs-mid-year-population-estimates-2024 \
+uv run ledger validate-package nrs-mid-year-population-estimates-2024 --year 2024
+uv run ledger build-suite nrs-mid-year-population-estimates-2024 \
   --year 2024 \
-  --out /tmp/arch-nrs-mid-year-population-estimates-2024 \
+  --out /tmp/ledger-nrs-mid-year-population-estimates-2024 \
   --replace
 
-uv run arch validate-package nrs-vital-events-reference-tables-2024 --year 2024
-uv run arch build-suite nrs-vital-events-reference-tables-2024 \
+uv run ledger validate-package nrs-vital-events-reference-tables-2024 --year 2024
+uv run ledger build-suite nrs-vital-events-reference-tables-2024 \
   --year 2024 \
-  --out /tmp/arch-nrs-vital-events-reference-tables-2024 \
+  --out /tmp/ledger-nrs-vital-events-reference-tables-2024 \
   --replace
 
-uv run arch validate-package ons-subnational-dwellings-by-tenure-2024 --year 2024
-uv run arch build-suite ons-subnational-dwellings-by-tenure-2024 \
+uv run ledger validate-package ons-subnational-dwellings-by-tenure-2024 --year 2024
+uv run ledger build-suite ons-subnational-dwellings-by-tenure-2024 \
   --year 2024 \
-  --out /tmp/arch-ons-subnational-dwellings-by-tenure-2024 \
+  --out /tmp/ledger-ons-subnational-dwellings-by-tenure-2024 \
   --replace
 
-uv run arch validate-package ons-national-balance-sheet-land-2025 --year 2024
-uv run arch build-suite ons-national-balance-sheet-land-2025 \
+uv run ledger validate-package ons-national-balance-sheet-land-2025 --year 2024
+uv run ledger build-suite ons-national-balance-sheet-land-2025 \
   --year 2024 \
-  --out /tmp/arch-ons-national-balance-sheet-land-2025 \
+  --out /tmp/ledger-ons-national-balance-sheet-land-2025 \
   --replace
 
-uv run arch validate-package voa-council-tax-bands-2025 --year 2025
-uv run arch build-suite voa-council-tax-bands-2025 \
+uv run ledger validate-package voa-council-tax-bands-2025 --year 2025
+uv run ledger build-suite voa-council-tax-bands-2025 \
   --year 2025 \
-  --out /tmp/arch-voa-council-tax-bands-2025 \
+  --out /tmp/ledger-voa-council-tax-bands-2025 \
   --replace
 
-uv run arch validate-package scotgov-council-tax-bands-2025 --year 2025
-uv run arch build-suite scotgov-council-tax-bands-2025 \
+uv run ledger validate-package scotgov-council-tax-bands-2025 --year 2025
+uv run ledger build-suite scotgov-council-tax-bands-2025 \
   --year 2025 \
-  --out /tmp/arch-scotgov-council-tax-bands-2025 \
+  --out /tmp/ledger-scotgov-council-tax-bands-2025 \
   --replace
 
-uv run arch validate-package scotgov-scottish-budget-social-security-assistance-2026 --year 2026
-uv run arch build-suite scotgov-scottish-budget-social-security-assistance-2026 \
+uv run ledger validate-package scotgov-scottish-budget-social-security-assistance-2026 --year 2026
+uv run ledger build-suite scotgov-scottish-budget-social-security-assistance-2026 \
   --year 2026 \
-  --out /tmp/arch-scotgov-scottish-budget-social-security-assistance-2026 \
+  --out /tmp/ledger-scotgov-scottish-budget-social-security-assistance-2026 \
   --replace
 
-uv run arch validate-package slc-student-loan-borrower-forecasts-england-2025 --year 2025
-uv run arch build-suite slc-student-loan-borrower-forecasts-england-2025 \
+uv run ledger validate-package slc-student-loan-borrower-forecasts-england-2025 --year 2025
+uv run ledger build-suite slc-student-loan-borrower-forecasts-england-2025 \
   --year 2025 \
-  --out /tmp/arch-slc-student-loan-borrower-forecasts-england-2025 \
+  --out /tmp/ledger-slc-student-loan-borrower-forecasts-england-2025 \
   --replace
 
-uv run arch validate-package slc-student-loan-repayments-england-2025 --year 2025
-uv run arch build-suite slc-student-loan-repayments-england-2025 \
+uv run ledger validate-package slc-student-loan-repayments-england-2025 --year 2025
+uv run ledger build-suite slc-student-loan-repayments-england-2025 \
   --year 2025 \
-  --out /tmp/arch-slc-student-loan-repayments-england-2025 \
+  --out /tmp/ledger-slc-student-loan-repayments-england-2025 \
   --replace
-uv run arch validate-package slc-student-loan-repayments-scotland-2025 --year 2025
-uv run arch build-suite slc-student-loan-repayments-scotland-2025 \
+uv run ledger validate-package slc-student-loan-repayments-scotland-2025 --year 2025
+uv run ledger build-suite slc-student-loan-repayments-scotland-2025 \
   --year 2025 \
-  --out /tmp/arch-slc-student-loan-repayments-scotland-2025 \
+  --out /tmp/ledger-slc-student-loan-repayments-scotland-2025 \
   --replace
-uv run arch validate-package slc-student-loan-repayments-wales-2025 --year 2025
-uv run arch build-suite slc-student-loan-repayments-wales-2025 \
+uv run ledger validate-package slc-student-loan-repayments-wales-2025 --year 2025
+uv run ledger build-suite slc-student-loan-repayments-wales-2025 \
   --year 2025 \
-  --out /tmp/arch-slc-student-loan-repayments-wales-2025 \
+  --out /tmp/ledger-slc-student-loan-repayments-wales-2025 \
   --replace
-uv run arch validate-package slc-student-loan-repayments-northern-ireland-2025 --year 2025
-uv run arch build-suite slc-student-loan-repayments-northern-ireland-2025 \
+uv run ledger validate-package slc-student-loan-repayments-northern-ireland-2025 --year 2025
+uv run ledger build-suite slc-student-loan-repayments-northern-ireland-2025 \
   --year 2025 \
-  --out /tmp/arch-slc-student-loan-repayments-northern-ireland-2025 \
+  --out /tmp/ledger-slc-student-loan-repayments-northern-ireland-2025 \
   --replace
 ```
 
@@ -389,14 +391,14 @@ sources.
 
 It produces source rows/cells, source-region specs, selector reports,
 aggregate facts, a relational SQLite DB artifact, and per-stage JSON reports under
-`/tmp/arch-suite/reports`. It also writes `datapackage.json` and
+`/tmp/ledger-suite/reports`. It also writes `datapackage.json` and
 `ro-crate-metadata.json` sidecars so the generated artifacts can be described
-with common data-package conventions while Arch keeps its native schema strict.
+with common data-package conventions while Ledger keeps its native schema strict.
 For downstream integration, agents should use the merged year bundle after
 individual source packages pass:
 
 ```bash
-uv run arch build-bundle --year 2023 --out /tmp/arch-us-2023 --replace
+uv run ledger build-bundle --year 2023 --out /tmp/ledger-us-2023 --replace
 ```
 
 The bundle emits a root `consumer_facts.jsonl`, `source_packages.json`,
@@ -404,7 +406,7 @@ The bundle emits a root `consumer_facts.jsonl`, `source_packages.json`,
 source-package suite under `sources/<source-package>/`.
 
 The first agent-facing gate is now
-`/tmp/arch-suite/reports/agent_acceptance.json`; it summarizes whether raw
+`/tmp/ledger-suite/reports/agent_acceptance.json`; it summarizes whether raw
 artifacts have R2 pointers, the full source document was parsed, facts have
 provenance and source-cell/source-row lineage, expected constraints are
 first-class, row-backed facts are consistent with their parsed source rows,
@@ -415,37 +417,37 @@ warn with `concept_alignment_validation_skipped`; stricter agent runs can make
 that warning fatal:
 
 ```bash
-uv run arch build-suite packages/irs_soi/table_1_1 \
+uv run ledger build-suite packages/irs_soi/table_1_1 \
   --year 2023 \
-  --out /tmp/arch-suite \
+  --out /tmp/ledger-suite \
   --replace \
   --axiom-cli axiom \
   --axiom-root ../rules-us \
   --require-axiom-validation
 ```
 
-The SQLite `arch.db` is the source of hosted mirrors. To prepare tables for
+The SQLite `ledger.db` is the source of hosted mirrors. To prepare tables for
 Supabase/Postgres bulk loading, export the DB artifact rather than inserting
 cells through the Supabase client:
 
 ```bash
-uv run arch export-db-tables --db /tmp/arch-suite/arch.db --out /tmp/arch-mirror --replace
+uv run ledger export-db-tables --db /tmp/ledger-suite/ledger.db --out /tmp/ledger-mirror --replace
 ```
 
-Accepted build-suite outputs can be published to the private `arch-derived` R2
+Accepted build-suite outputs can be published to the private `ledger-derived` R2
 bucket after validation:
 
 ```bash
-uv run arch publish-derived \
-  --dir /tmp/arch-suite \
+uv run ledger publish-derived \
+  --dir /tmp/ledger-suite \
   --source-id irs_soi \
   --package-id soi-table-1-1 \
   --year 2023 \
-  --build-artifacts-out /tmp/arch-build-artifacts.jsonl
+  --build-artifacts-out /tmp/ledger-build-artifacts.jsonl
 ```
 
 The SQL schema is checked in at
-`supabase/migrations/20260504_arch_bronze.sql`. Spreadsheet publications are
+`supabase/migrations/20260504_ledger_bronze.sql`. Spreadsheet publications are
 stored as immutable artifact metadata and one parsed-cell row per workbook cell.
 Agents should not try to normalize irregular government worksheets into tidy
 sheet tables before selector specs interpret them.
@@ -454,18 +456,18 @@ After the DB export and derived publish, agents can validate and load the
 hosted mirror:
 
 ```bash
-uv run arch load-supabase-mirror \
-  --dir /tmp/arch-mirror \
-  --build-artifacts /tmp/arch-build-artifacts.jsonl \
+uv run ledger load-supabase-mirror \
+  --dir /tmp/ledger-mirror \
+  --build-artifacts /tmp/ledger-build-artifacts.jsonl \
   --dry-run
-uv run arch load-supabase-mirror \
-  --dir /tmp/arch-mirror \
-  --build-artifacts /tmp/arch-build-artifacts.jsonl
+uv run ledger load-supabase-mirror \
+  --dir /tmp/ledger-mirror \
+  --build-artifacts /tmp/ledger-build-artifacts.jsonl
 ```
 
 The live load requires `POLICYENGINE_SUPABASE_URL` and
-`POLICYENGINE_SUPABASE_SERVICE_KEY`, the Arch mirror migration applied, and the
-`arch` schema exposed by the Supabase Data API.
+`POLICYENGINE_SUPABASE_SERVICE_KEY`, the Ledger mirror migration applied, and the
+`ledger` schema exposed by the Supabase Data API.
 
 ## Declarative Authoring Contract
 
@@ -477,17 +479,17 @@ canonical source cells or target facts. Each record set declares sheet name, per
 geography, entity, domain, groupby dimension, row definitions, measure columns,
 units, aggregation methods, filters, and first-class constraints. The harness
 compiles those rows and measures into atomic source records, validates selectors
-against parsed cells, then emits target facts and the relational Arch DB.
+against parsed cells, then emits target facts and the relational Ledger DB.
 
 Agents may add new package directories and YAML specs. They should not modify
-`arch.core`, `arch.database`, or `arch.suite` unless the package cannot be
+`ledger.core`, `ledger.database`, or `ledger.suite` unless the package cannot be
 expressed in the current contract and the failure is documented in the build
 report or PR notes.
 
 Agents can scaffold a new package before filling the table-specific fields:
 
 ```bash
-uv run arch scaffold-package --source-id irs_soi --package-id soi-table-1-2 \
+uv run ledger scaffold-package --source-id irs_soi --package-id soi-table-1-2 \
   --out packages/irs_soi/table_1_2 \
   --source-table "Publication 1304 Table 1.2" \
   --resource-directory data/irs_soi/table_1_2

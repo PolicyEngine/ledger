@@ -36,11 +36,13 @@ class TestSimpleEndToEnd:
         # Step 1: Create simple microdata with uniform weights
         np.random.seed(42)
         n = 100
-        microdata = pd.DataFrame({
-            "weight": np.ones(n) * 1000.0,  # Uniform weights
-            "is_tax_filer": np.random.choice([0, 1], n, p=[0.2, 0.8]),
-            "age": np.random.randint(18, 80, n),
-        })
+        microdata = pd.DataFrame(
+            {
+                "weight": np.ones(n) * 1000.0,  # Uniform weights
+                "is_tax_filer": np.random.choice([0, 1], n, p=[0.2, 0.8]),
+                "age": np.random.randint(18, 80, n),
+            }
+        )
 
         # Step 2: Create simple target manually (no database needed)
         current_filers = (microdata["weight"] * microdata["is_tax_filer"]).sum()
@@ -81,11 +83,13 @@ class TestSimpleEndToEnd:
         # Create small microdata
         np.random.seed(123)
         n = 50
-        microdata = pd.DataFrame({
-            "weight": np.ones(n) * 100.0,
-            "is_tax_filer": np.random.choice([0, 1], n, p=[0.3, 0.7]),
-            "age": np.random.randint(18, 80, n),
-        })
+        microdata = pd.DataFrame(
+            {
+                "weight": np.ones(n) * 100.0,
+                "is_tax_filer": np.random.choice([0, 1], n, p=[0.3, 0.7]),
+                "age": np.random.randint(18, 80, n),
+            }
+        )
 
         # Create two overlapping constraints
         targets = [
@@ -115,7 +119,9 @@ class TestSimpleEndToEnd:
         # Build and calibrate
         constraints = build_constraint_matrix(microdata, targets)
         calibrator = EntropyCalibrator(bounds=(0.5, 5.0), max_iterations=100)
-        calibrated_weights = calibrator.calibrate(microdata["weight"].values, constraints)
+        calibrated_weights = calibrator.calibrate(
+            microdata["weight"].values, constraints
+        )
 
         # Verify both constraints
         for i, constraint in enumerate(constraints):
@@ -132,11 +138,13 @@ class TestSimpleEndToEnd:
         # Create microdata with income
         np.random.seed(789)
         n = 50
-        microdata = pd.DataFrame({
-            "weight": np.ones(n) * 100.0,
-            "is_tax_filer": np.ones(n, dtype=int),
-            "income": np.random.lognormal(10, 1, n),
-        })
+        microdata = pd.DataFrame(
+            {
+                "weight": np.ones(n) * 100.0,
+                "is_tax_filer": np.ones(n, dtype=int),
+                "income": np.random.lognormal(10, 1, n),
+            }
+        )
 
         # Target: adjust total income based on current value
         current_income = (microdata["weight"] * microdata["income"]).sum()
@@ -156,7 +164,9 @@ class TestSimpleEndToEnd:
         # Calibrate (use wider bounds to accommodate 50% change)
         constraints = build_constraint_matrix(microdata, targets)
         calibrator = EntropyCalibrator(bounds=(0.1, 10.0), max_iterations=200)
-        calibrated_weights = calibrator.calibrate(microdata["weight"].values, constraints)
+        calibrated_weights = calibrator.calibrate(
+            microdata["weight"].values, constraints
+        )
 
         # Verify
         actual_income = (calibrated_weights * microdata["income"]).sum()
@@ -178,7 +188,9 @@ class TestSimpleEndToEnd:
                     name="all_filers",
                     jurisdiction=Jurisdiction.US,
                     description="All filers",
-                    definition_hash=Stratum.compute_hash(constraints_def, Jurisdiction.US),
+                    definition_hash=Stratum.compute_hash(
+                        constraints_def, Jurisdiction.US
+                    ),
                 )
                 session.add(stratum)
                 session.flush()
@@ -212,14 +224,18 @@ class TestSimpleEndToEnd:
             # Create microdata and calibrate
             np.random.seed(42)
             n = 50
-            microdata = pd.DataFrame({
-                "weight": np.ones(n) * 100.0,
-                "is_tax_filer": np.random.choice([0, 1], n, p=[0.3, 0.7]),
-            })
+            microdata = pd.DataFrame(
+                {
+                    "weight": np.ones(n) * 100.0,
+                    "is_tax_filer": np.random.choice([0, 1], n, p=[0.3, 0.7]),
+                }
+            )
 
             constraints = build_constraint_matrix(microdata, targets)
             calibrator = EntropyCalibrator(bounds=(0.5, 5.0))
-            calibrated_weights = calibrator.calibrate(microdata["weight"].values, constraints)
+            calibrated_weights = calibrator.calibrate(
+                microdata["weight"].values, constraints
+            )
 
             # Verify constraint satisfied
             actual = (calibrated_weights * microdata["is_tax_filer"]).sum()

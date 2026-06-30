@@ -15,6 +15,7 @@ import sys
 # Try to import torch, fall back to numpy-based optimization if not available
 try:
     import torch
+
     HAS_TORCH = True
 except ImportError:
     HAS_TORCH = False
@@ -22,16 +23,17 @@ except ImportError:
 
 from scipy.optimize import minimize
 
-sys.path.insert(0, str(__file__).rsplit('/', 3)[0])
+sys.path.insert(0, str(__file__).rsplit("/", 3)[0])
 
 
 @dataclass
 class Target:
     """A calibration target."""
+
     name: str
     geographic_id: str  # "US", state FIPS, county FIPS, etc.
-    variable: str       # e.g., "returns", "agi"
-    bracket: str        # e.g., "50k_to_75k" or "all"
+    variable: str  # e.g., "returns", "agi"
+    bracket: str  # e.g., "50k_to_75k" or "all"
     value: float
     is_count: bool = True  # True for count, False for sum
 
@@ -39,6 +41,7 @@ class Target:
 @dataclass
 class CalibrationResult:
     """Results from gradient descent calibration."""
+
     weights: np.ndarray
     original_weights: np.ndarray
     targets_df: pd.DataFrame
@@ -50,75 +53,75 @@ class CalibrationResult:
 
 # IRS SOI 2021 National Targets
 IRS_SOI_2021_RETURNS = {
-    'no_agi': 13_992_100,
-    'under_1': 1_686_440,
-    '1_to_5k': 5_183_390,
-    '5k_to_10k': 7_929_860,
-    '10k_to_15k': 9_883_050,
-    '15k_to_20k': 9_113_990,
-    '20k_to_25k': 8_186_640,
-    '25k_to_30k': 7_407_890,
-    '30k_to_40k': 13_194_450,
-    '40k_to_50k': 10_930_780,
-    '50k_to_75k': 19_494_660,
-    '75k_to_100k': 15_137_070,
-    '100k_to_200k': 22_849_380,
-    '200k_to_500k': 7_167_290,
-    '500k_to_1m': 1_106_040,
-    '1m_plus': 664_340,
+    "no_agi": 13_992_100,
+    "under_1": 1_686_440,
+    "1_to_5k": 5_183_390,
+    "5k_to_10k": 7_929_860,
+    "10k_to_15k": 9_883_050,
+    "15k_to_20k": 9_113_990,
+    "20k_to_25k": 8_186_640,
+    "25k_to_30k": 7_407_890,
+    "30k_to_40k": 13_194_450,
+    "40k_to_50k": 10_930_780,
+    "50k_to_75k": 19_494_660,
+    "75k_to_100k": 15_137_070,
+    "100k_to_200k": 22_849_380,
+    "200k_to_500k": 7_167_290,
+    "500k_to_1m": 1_106_040,
+    "1m_plus": 664_340,
 }
 
 IRS_SOI_2021_AGI = {
-    'no_agi': 0,
-    'under_1': -94_000_000_000,
-    '1_to_5k': 15_000_000_000,
-    '5k_to_10k': 59_000_000_000,
-    '10k_to_15k': 123_000_000_000,
-    '15k_to_20k': 160_000_000_000,
-    '20k_to_25k': 184_000_000_000,
-    '25k_to_30k': 204_000_000_000,
-    '30k_to_40k': 461_000_000_000,
-    '40k_to_50k': 492_000_000_000,
-    '50k_to_75k': 1_210_000_000_000,
-    '75k_to_100k': 1_316_000_000_000,
-    '100k_to_200k': 3_187_000_000_000,
-    '200k_to_500k': 2_161_000_000_000,
-    '500k_to_1m': 762_000_000_000,
-    '1m_plus': 4_466_000_000_000,
+    "no_agi": 0,
+    "under_1": -94_000_000_000,
+    "1_to_5k": 15_000_000_000,
+    "5k_to_10k": 59_000_000_000,
+    "10k_to_15k": 123_000_000_000,
+    "15k_to_20k": 160_000_000_000,
+    "20k_to_25k": 184_000_000_000,
+    "25k_to_30k": 204_000_000_000,
+    "30k_to_40k": 461_000_000_000,
+    "40k_to_50k": 492_000_000_000,
+    "50k_to_75k": 1_210_000_000_000,
+    "75k_to_100k": 1_316_000_000_000,
+    "100k_to_200k": 3_187_000_000_000,
+    "200k_to_500k": 2_161_000_000_000,
+    "500k_to_1m": 762_000_000_000,
+    "1m_plus": 4_466_000_000_000,
 }
 
 # IRS SOI 2021 State Targets (top 10 states by population)
 # Source: IRS SOI Historic Table 2
 IRS_SOI_2021_STATE_RETURNS = {
-    '06': 17_847_450,  # California
-    '48': 13_592_820,  # Texas
-    '12': 11_214_320,  # Florida
-    '36': 9_894_560,   # New York
-    '42': 6_485_230,   # Pennsylvania
-    '17': 6_317_890,   # Illinois
-    '39': 5_897_420,   # Ohio
-    '13': 5_234_670,   # Georgia
-    '37': 5_178_340,   # North Carolina
-    '26': 4_923_780,   # Michigan
+    "06": 17_847_450,  # California
+    "48": 13_592_820,  # Texas
+    "12": 11_214_320,  # Florida
+    "36": 9_894_560,  # New York
+    "42": 6_485_230,  # Pennsylvania
+    "17": 6_317_890,  # Illinois
+    "39": 5_897_420,  # Ohio
+    "13": 5_234_670,  # Georgia
+    "37": 5_178_340,  # North Carolina
+    "26": 4_923_780,  # Michigan
 }
 
 AGI_BRACKETS = [
-    ('no_agi', None, None),
-    ('under_1', -np.inf, 1),
-    ('1_to_5k', 1, 5000),
-    ('5k_to_10k', 5000, 10000),
-    ('10k_to_15k', 10000, 15000),
-    ('15k_to_20k', 15000, 20000),
-    ('20k_to_25k', 20000, 25000),
-    ('25k_to_30k', 25000, 30000),
-    ('30k_to_40k', 30000, 40000),
-    ('40k_to_50k', 40000, 50000),
-    ('50k_to_75k', 50000, 75000),
-    ('75k_to_100k', 75000, 100000),
-    ('100k_to_200k', 100000, 200000),
-    ('200k_to_500k', 200000, 500000),
-    ('500k_to_1m', 500000, 1000000),
-    ('1m_plus', 1000000, np.inf),
+    ("no_agi", None, None),
+    ("under_1", -np.inf, 1),
+    ("1_to_5k", 1, 5000),
+    ("5k_to_10k", 5000, 10000),
+    ("10k_to_15k", 10000, 15000),
+    ("15k_to_20k", 15000, 20000),
+    ("20k_to_25k", 20000, 25000),
+    ("25k_to_30k", 25000, 30000),
+    ("30k_to_40k", 30000, 40000),
+    ("40k_to_50k", 40000, 50000),
+    ("50k_to_75k", 50000, 75000),
+    ("75k_to_100k", 75000, 100000),
+    ("100k_to_200k", 100000, 200000),
+    ("200k_to_500k", 200000, 500000),
+    ("500k_to_1m", 500000, 1000000),
+    ("1m_plus", 1000000, np.inf),
 ]
 
 
@@ -126,7 +129,7 @@ def assign_agi_bracket(agi: np.ndarray) -> np.ndarray:
     """Assign each record to an AGI bracket."""
     brackets = np.empty(len(agi), dtype=object)
     for name, low, high in AGI_BRACKETS:
-        if name == 'no_agi':
+        if name == "no_agi":
             mask = (agi == 0) | np.isnan(agi)
         else:
             mask = (agi >= low) & (agi < high)
@@ -140,38 +143,44 @@ def build_targets(include_states: bool = True) -> List[Target]:
 
     # National returns by AGI bracket
     for bracket, count in IRS_SOI_2021_RETURNS.items():
-        targets.append(Target(
-            name=f"US/returns/{bracket}",
-            geographic_id="US",
-            variable="returns",
-            bracket=bracket,
-            value=count,
-            is_count=True,
-        ))
+        targets.append(
+            Target(
+                name=f"US/returns/{bracket}",
+                geographic_id="US",
+                variable="returns",
+                bracket=bracket,
+                value=count,
+                is_count=True,
+            )
+        )
 
     # National AGI by bracket
     for bracket, amount in IRS_SOI_2021_AGI.items():
         if amount != 0:  # Skip zero AGI bracket
-            targets.append(Target(
-                name=f"US/agi/{bracket}",
-                geographic_id="US",
-                variable="agi",
-                bracket=bracket,
-                value=amount,
-                is_count=False,
-            ))
+            targets.append(
+                Target(
+                    name=f"US/agi/{bracket}",
+                    geographic_id="US",
+                    variable="agi",
+                    bracket=bracket,
+                    value=amount,
+                    is_count=False,
+                )
+            )
 
     # State total returns
     if include_states:
         for state_fips, count in IRS_SOI_2021_STATE_RETURNS.items():
-            targets.append(Target(
-                name=f"{state_fips}/returns/all",
-                geographic_id=state_fips,
-                variable="returns",
-                bracket="all",
-                value=count,
-                is_count=True,
-            ))
+            targets.append(
+                Target(
+                    name=f"{state_fips}/returns/all",
+                    geographic_id=state_fips,
+                    variable="returns",
+                    bracket="all",
+                    value=count,
+                    is_count=True,
+                )
+            )
 
     return targets
 
@@ -195,7 +204,7 @@ def build_indicator_matrix(
 
     # Precompute brackets and state assignments
     df = df.copy()
-    df['agi_bracket'] = assign_agi_bracket(df['adjusted_gross_income'].values)
+    df["agi_bracket"] = assign_agi_bracket(df["adjusted_gross_income"].values)
 
     for j, target in enumerate(targets):
         y[j] = target.value
@@ -204,13 +213,13 @@ def build_indicator_matrix(
         if target.geographic_id == "US":
             geo_mask = np.ones(n, dtype=bool)
         else:
-            geo_mask = df['state_fips'].astype(str).str.zfill(2) == target.geographic_id
+            geo_mask = df["state_fips"].astype(str).str.zfill(2) == target.geographic_id
 
         # Bracket filter
         if target.bracket == "all":
             bracket_mask = np.ones(n, dtype=bool)
         else:
-            bracket_mask = df['agi_bracket'] == target.bracket
+            bracket_mask = df["agi_bracket"] == target.bracket
 
         # Combined mask
         mask = geo_mask & bracket_mask
@@ -219,7 +228,7 @@ def build_indicator_matrix(
         if target.variable == "returns":
             A[j, mask] = 1.0
         elif target.variable == "agi":
-            A[j, :] = mask * df['adjusted_gross_income'].values
+            A[j, :] = mask * df["adjusted_gross_income"].values
 
     return A, y
 
@@ -381,9 +390,9 @@ def calibrate_scipy(
     result = minimize(
         objective,
         log_w0,
-        method='L-BFGS-B',
+        method="L-BFGS-B",
         jac=gradient,
-        options={'maxiter': max_iter, 'disp': verbose},
+        options={"maxiter": max_iter, "disp": verbose},
     )
 
     return np.exp(result.x), initial_loss, result.fun
@@ -409,7 +418,7 @@ def calibrate_weights(
     Returns:
         CalibrationResult with calibrated weights and diagnostics
     """
-    original_weights = df['weight'].values.copy()
+    original_weights = df["weight"].values.copy()
 
     # Build targets
     targets = build_targets(include_states=include_states)
@@ -445,18 +454,20 @@ def calibrate_weights(
         target_errors[target.name] = rel_error
 
     # Build targets dataframe
-    targets_df = pd.DataFrame([
-        {
-            'name': t.name,
-            'geographic_id': t.geographic_id,
-            'variable': t.variable,
-            'bracket': t.bracket,
-            'target': t.value,
-            'estimate': estimates[i],
-            'rel_error': target_errors[t.name],
-        }
-        for i, t in enumerate(targets)
-    ])
+    targets_df = pd.DataFrame(
+        [
+            {
+                "name": t.name,
+                "geographic_id": t.geographic_id,
+                "variable": t.variable,
+                "bracket": t.bracket,
+                "target": t.value,
+                "estimate": estimates[i],
+                "rel_error": target_errors[t.name],
+            }
+            for i, t in enumerate(targets)
+        ]
+    )
 
     return CalibrationResult(
         weights=weights,
@@ -483,9 +494,9 @@ def calibrate_and_run(year: int = 2024) -> pd.DataFrame:
 
     # Filter to likely filers
     filer_mask = (
-        (df['total_income'] > 13850) |
-        (df['wage_income'] > 0) |
-        (df['self_employment_income'] > 0)
+        (df["total_income"] > 13850)
+        | (df["wage_income"] > 0)
+        | (df["self_employment_income"] > 0)
     )
     df = df[filer_mask].copy()
     print(f"   Filtered to {len(df):,} likely filers")
@@ -493,9 +504,9 @@ def calibrate_and_run(year: int = 2024) -> pd.DataFrame:
     print("\n2. Calibrating to IRS SOI 2021 targets...")
     result = calibrate_weights(df, include_states=True)
 
-    df['original_weight'] = result.original_weights
-    df['weight'] = result.weights
-    df['weight_adjustment'] = result.weights / result.original_weights
+    df["original_weight"] = result.original_weights
+    df["weight"] = result.weights
+    df["weight_adjustment"] = result.weights / result.original_weights
 
     print("\n3. Summary:")
     print(f"   Original total: {result.original_weights.sum():,.0f}")
@@ -504,12 +515,12 @@ def calibrate_and_run(year: int = 2024) -> pd.DataFrame:
 
     # Show worst errors
     print("\n4. Worst target errors:")
-    errors = result.targets_df.sort_values('rel_error', key=abs, ascending=False)
+    errors = result.targets_df.sort_values("rel_error", key=abs, ascending=False)
     for _, row in errors.head(10).iterrows():
         print(f"   {row['name']}: {row['rel_error']:+.1%}")
 
     print("\n5. Weight distribution:")
-    adj = df['weight_adjustment']
+    adj = df["weight_adjustment"]
     print(f"   Mean: {adj.mean():.2f}")
     print(f"   Std:  {adj.std():.2f}")
     print(f"   Range: [{adj.min():.2f}, {adj.max():.2f}]")

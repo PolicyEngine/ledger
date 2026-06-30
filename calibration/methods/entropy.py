@@ -71,24 +71,26 @@ class EntropyCalibrator:
         scipy_constraints = []
         for constraint in constraints:
             # Equality constraint: sum(w * indicator) - target = 0
-            def constraint_fn(w: np.ndarray, ind=constraint.indicator,
-                            target=constraint.target_value) -> float:
+            def constraint_fn(
+                w: np.ndarray, ind=constraint.indicator, target=constraint.target_value
+            ) -> float:
                 return np.dot(w, ind) - target
 
             # Jacobian of constraint: indicator vector
             def constraint_jac(w: np.ndarray, ind=constraint.indicator) -> np.ndarray:
                 return ind
 
-            scipy_constraints.append({
-                'type': 'eq',
-                'fun': constraint_fn,
-                'jac': constraint_jac,
-            })
+            scipy_constraints.append(
+                {
+                    "type": "eq",
+                    "fun": constraint_fn,
+                    "jac": constraint_jac,
+                }
+            )
 
         # Bounds on individual weights
         weight_bounds = [
-            (original_weights[i] * self.bounds[0],
-             original_weights[i] * self.bounds[1])
+            (original_weights[i] * self.bounds[0], original_weights[i] * self.bounds[1])
             for i in range(n)
         ]
 
@@ -99,29 +101,27 @@ class EntropyCalibrator:
         result: OptimizeResult = minimize(
             kl_divergence,
             x0,
-            method='SLSQP',
+            method="SLSQP",
             jac=kl_gradient,
             constraints=scipy_constraints,
             bounds=weight_bounds,
             options={
-                'maxiter': self.max_iterations,
-                'ftol': self.convergence_tol,
-                'disp': False,
-            }
+                "maxiter": self.max_iterations,
+                "ftol": self.convergence_tol,
+                "disp": False,
+            },
         )
 
         # Check if optimization succeeded
         if not result.success:
-            if 'Positive directional derivative for linesearch' in result.message:
+            if "Positive directional derivative for linesearch" in result.message:
                 # This often means constraints are infeasible
                 raise ValueError(
                     f"Optimization failed: constraints may be infeasible. "
                     f"Message: {result.message}"
                 )
             else:
-                raise RuntimeError(
-                    f"Optimization failed to converge: {result.message}"
-                )
+                raise RuntimeError(f"Optimization failed to converge: {result.message}")
 
         # Verify constraints are satisfied
         calibrated_weights = result.x

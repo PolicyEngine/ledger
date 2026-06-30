@@ -1,7 +1,7 @@
 """
-Microplex pipeline: build calibrated microdata from Arch target inputs.
+Microplex pipeline: build calibrated microdata from Ledger target inputs.
 
-Reads CPS microdata and Arch target inputs, runs calibration, and writes
+Reads CPS microdata and Ledger target inputs, runs calibration, and writes
 calibrated microplex output locally or back to Supabase.
 
 Calibration methods:
@@ -24,9 +24,9 @@ from typing import Any, Dict, List
 import numpy as np
 import pandas as pd
 
-from arch.client import get_supabase_client
-from arch.microdata import query_cps_asec
-from arch.targets import TargetSpec, TargetType, query_targets
+from ledger.client import get_supabase_client
+from ledger.microdata import query_cps_asec
+from ledger.targets import TargetSpec, TargetType, query_targets
 from micro.us.entities import (
     build_microplex_entities,
     with_household_weights,
@@ -48,6 +48,7 @@ from micro.us.targets import (
 @dataclass
 class CalibrationResult:
     """Results from Microplex weight calibration."""
+
     original_weights: np.ndarray
     calibrated_weights: np.ndarray
     adjustment_factors: np.ndarray
@@ -110,8 +111,11 @@ def load_targets_from_supabase(year: int) -> List[Dict[str, Any]]:
     print(f"Loading targets for {year} from Supabase...")
     # Get targets for US jurisdictions (both "US" and "US_FEDERAL")
     all_targets = query_targets(year=year)
-    targets = [t for t in all_targets
-               if t.get("strata", {}).get("jurisdiction", "").startswith("US")]
+    targets = [
+        t
+        for t in all_targets
+        if t.get("strata", {}).get("jurisdiction", "").startswith("US")
+    ]
     print(f"  Loaded {len(targets)} targets")
     return targets
 
@@ -123,8 +127,8 @@ def load_targets_from_db(
     sources: list[str] | None = None,
     variables: list[str] | None = None,
 ) -> List[TargetSpec]:
-    """Load calibration target inputs from the local Arch SQLite database."""
-    print(f"Loading target inputs for {year} from Arch DB...")
+    """Load calibration target inputs from the local Ledger SQLite database."""
+    print(f"Loading target inputs for {year} from Ledger DB...")
     targets = load_microplex_targets(
         db_path=db_path,
         jurisdiction=jurisdiction,
@@ -147,7 +151,9 @@ def build_tax_units(df: pd.DataFrame) -> pd.DataFrame:
     if "raw_data" in df.columns:
         # Extract key fields from raw_data
         for col in ["A_MARITL", "A_FAMREL", "TAX_ID"]:
-            df[col.lower()] = df["raw_data"].apply(lambda x: x.get(col) if isinstance(x, dict) else None)
+            df[col.lower()] = df["raw_data"].apply(
+                lambda x: x.get(col) if isinstance(x, dict) else None
+            )
 
     if "tax_unit_id" in df.columns:
         return build_tax_units_from_census_tax_ids(df)
@@ -168,7 +174,9 @@ def build_tax_units(df: pd.DataFrame) -> pd.DataFrame:
 
     # Simple AGI estimate (wages + SE - 1/2 SE tax)
     se_tax = np.maximum(df["self_employment_income"] * 0.0765, 0)
-    df["adjusted_gross_income"] = df["wage_income"] + df["self_employment_income"] - se_tax / 2
+    df["adjusted_gross_income"] = (
+        df["wage_income"] + df["self_employment_income"] - se_tax / 2
+    )
 
     # Weight
     if "marsupwt" in df.columns:
@@ -176,10 +184,13 @@ def build_tax_units(df: pd.DataFrame) -> pd.DataFrame:
     elif "weight" in df.columns:
         df["weight"] = pd.to_numeric(df["weight"], errors="coerce").fillna(0)
     elif "march_supplement_weight" in df.columns:
-        df["weight"] = pd.to_numeric(
-            df["march_supplement_weight"],
-            errors="coerce",
-        ).fillna(0) / 100
+        df["weight"] = (
+            pd.to_numeric(
+                df["march_supplement_weight"],
+                errors="coerce",
+            ).fillna(0)
+            / 100
+        )
     else:
         df["weight"] = 1.0
 
@@ -227,10 +238,13 @@ def build_tax_units_from_census_tax_ids(df: pd.DataFrame) -> pd.DataFrame:
     if "weight" in df.columns:
         df["weight"] = pd.to_numeric(df["weight"], errors="coerce").fillna(0)
     elif "march_supplement_weight" in df.columns:
-        df["weight"] = pd.to_numeric(
-            df["march_supplement_weight"],
-            errors="coerce",
-        ).fillna(0) / 100
+        df["weight"] = (
+            pd.to_numeric(
+                df["march_supplement_weight"],
+                errors="coerce",
+            ).fillna(0)
+            / 100
+        )
     else:
         df["weight"] = 1.0
 
@@ -647,10 +661,10 @@ def build_constraints_from_target_specs(
     holdout_variables: tuple[str, ...] = (),
 ) -> List[Dict]:
     """
-    Build legacy IPF constraint dicts from Arch DB ``TargetSpec`` objects.
+    Build legacy IPF constraint dicts from Ledger DB ``TargetSpec`` objects.
 
     This keeps the old IPF pipeline working while moving the target source from
-    Supabase-shaped dictionaries to the local Arch target database.
+    Supabase-shaped dictionaries to the local Ledger target database.
     """
     constraints, _, _ = build_constraints_and_diagnostics_from_target_specs(
         df,
@@ -1128,7 +1142,7 @@ def calibrate_weights(
     holdout_variables: tuple[str, ...] = (),
     verbose: bool = True,
 ) -> CalibrationResult:
-    """Calibrate Microplex weights to Arch target inputs."""
+    """Calibrate Microplex weights to Ledger target inputs."""
     original_weights = df["weight"].values.copy()
 
     if verbose:
@@ -1158,7 +1172,9 @@ def calibrate_weights(
         scale_factor = total_target / original_weights.sum()
         original_weights = original_weights * scale_factor
         if verbose:
-            print(f"Pre-scaled weights by {scale_factor:.3f} to match total target {total_target:,.0f}")
+            print(
+                f"Pre-scaled weights by {scale_factor:.3f} to match total target {total_target:,.0f}"
+            )
 
     # Pre-calibration values
     targets_before = {}
@@ -1215,7 +1231,11 @@ def calibrate_weights(
     max_error = 0
     for c in constraints:
         current = np.dot(calibrated_weights, c["indicator"])
-        error = (current - c["target_value"]) / c["target_value"] if c["target_value"] != 0 else 0
+        error = (
+            (current - c["target_value"]) / c["target_value"]
+            if c["target_value"] != 0
+            else 0
+        )
         diagnostic_index = c.get("diagnostic_index")
         if diagnostic_index is not None:
             diagnostics_df.loc[diagnostic_index, "post_value"] = current
@@ -1241,8 +1261,10 @@ def calibrate_weights(
 
     if verbose:
         print(f"\nPost-calibration max error: {max_error:.1%}")
-        print(f"Weight adjustments: mean={adjustment_factors.mean():.2f}, "
-              f"range=[{adjustment_factors.min():.2f}, {adjustment_factors.max():.2f}]")
+        print(
+            f"Weight adjustments: mean={adjustment_factors.mean():.2f}, "
+            f"range=[{adjustment_factors.min():.2f}, {adjustment_factors.max():.2f}]"
+        )
         print(f"L2 loss: {l2_loss:.6f}")
 
     return CalibrationResult(
@@ -1522,14 +1544,22 @@ def write_microplex_to_supabase(
     records = []
     for _, row in df.iterrows():
         record = {
-            "source_person_id": int(row.get("id", 0)) if pd.notna(row.get("id")) else None,
-            "household_id": int(row.get("ph_seq", 0)) if pd.notna(row.get("ph_seq")) else None,
+            "source_person_id": int(row.get("id", 0))
+            if pd.notna(row.get("id"))
+            else None,
+            "household_id": int(row.get("ph_seq", 0))
+            if pd.notna(row.get("ph_seq"))
+            else None,
             "age": int(row.get("a_age", 0)) if pd.notna(row.get("a_age")) else None,
-            "state_fips": int(row.get("gestfips", 0)) if pd.notna(row.get("gestfips")) else None,
+            "state_fips": int(row.get("gestfips", 0))
+            if pd.notna(row.get("gestfips"))
+            else None,
             "wage_income": float(row.get("wage_income", 0)),
             "self_employment_income": float(row.get("self_employment_income", 0)),
             "total_income": float(row.get("total_income", 0)),
-            "adjusted_gross_income": float(row.get("adjusted_gross_income", 0)) if "adjusted_gross_income" in row else None,
+            "adjusted_gross_income": float(row.get("adjusted_gross_income", 0))
+            if "adjusted_gross_income" in row
+            else None,
             "income_tax_liability": float(row.get("income_tax_liability", 0))
             if "income_tax_liability" in row
             else None,
@@ -1555,7 +1585,7 @@ def write_microplex_to_supabase(
 def print_target_composition_diagnostics(
     composition: TargetCompositionResult,
 ) -> None:
-    """Print how Arch target inputs became Microplex target candidates."""
+    """Print how Ledger target inputs became Microplex target candidates."""
     diagnostics = composition.diagnostics
     print("\nTarget input composition:")
     print(f"  Candidate targets: {len(composition.targets):,}")
@@ -1724,7 +1754,9 @@ def print_calibration_diagnostics(diagnostics: pd.DataFrame, max_rows: int = 8) 
         print(f"  Target roles: {role_text}")
     if not dropped.empty:
         reasons = dropped["drop_reason"].value_counts()
-        reason_text = ", ".join(f"{reason}={count}" for reason, count in reasons.items())
+        reason_text = ", ".join(
+            f"{reason}={count}" for reason, count in reasons.items()
+        )
         print(f"  Drop reasons: {reason_text}")
 
     if used.empty or "post_error" not in used:
@@ -1760,7 +1792,9 @@ def main():
 
     parser = argparse.ArgumentParser(description="Run microplex pipeline")
     parser.add_argument("--year", type=int, default=2024, help="Data year")
-    parser.add_argument("--dry-run", action="store_true", help="Don't write to Supabase")
+    parser.add_argument(
+        "--dry-run", action="store_true", help="Don't write to Supabase"
+    )
     parser.add_argument("--limit", type=int, default=200000, help="Max records to load")
     parser.add_argument(
         "--microdata-source",
@@ -1774,9 +1808,15 @@ def main():
         default="db",
         help="Calibration target source",
     )
-    parser.add_argument("--db-path", type=Path, default=None, help="Arch SQLite DB path")
-    parser.add_argument("--cps-path", type=Path, default=None, help="Local CPS parquet path")
-    parser.add_argument("--output-path", type=Path, default=None, help="Local parquet output")
+    parser.add_argument(
+        "--db-path", type=Path, default=None, help="Ledger SQLite DB path"
+    )
+    parser.add_argument(
+        "--cps-path", type=Path, default=None, help="Local CPS parquet path"
+    )
+    parser.add_argument(
+        "--output-path", type=Path, default=None, help="Local parquet output"
+    )
     parser.add_argument(
         "--entity-output-dir",
         type=Path,

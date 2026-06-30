@@ -248,7 +248,9 @@ def with_household_weights(
 
     persons = _replace_weight_columns(entities.persons, household_weights)
     tax_units = _replace_weight_columns(entities.tax_units, household_weights)
-    return replace(entities, households=households, persons=persons, tax_units=tax_units)
+    return replace(
+        entities, households=households, persons=persons, tax_units=tax_units
+    )
 
 
 def write_microplex_entities(

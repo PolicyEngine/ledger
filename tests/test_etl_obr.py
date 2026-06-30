@@ -171,16 +171,12 @@ class TestObrETL:
         """Loading twice should not duplicate data."""
         load_obr_targets(session, years=[2024])
         count1 = len(
-            session.exec(
-                select(Target).where(Target.source == DataSource.OBR)
-            ).all()
+            session.exec(select(Target).where(Target.source == DataSource.OBR)).all()
         )
 
         load_obr_targets(session, years=[2024])
         count2 = len(
-            session.exec(
-                select(Target).where(Target.source == DataSource.OBR)
-            ).all()
+            session.exec(select(Target).where(Target.source == DataSource.OBR)).all()
         )
 
         assert count1 == count2

@@ -132,7 +132,10 @@ class TestCpsETL:
             ).first()
 
             assert lfpr is not None
-            assert lfpr.value == CPS_MONTHLY_DATA[2023][12]["labor_force_participation_rate"]
+            assert (
+                lfpr.value
+                == CPS_MONTHLY_DATA[2023][12]["labor_force_participation_rate"]
+            )
             assert lfpr.target_type == TargetType.RATE
 
     def test_load_creates_employment_population_ratio(self, temp_db):
@@ -154,7 +157,9 @@ class TestCpsETL:
             ).first()
 
             assert ratio is not None
-            assert ratio.value == CPS_MONTHLY_DATA[2023][12]["employment_population_ratio"]
+            assert (
+                ratio.value == CPS_MONTHLY_DATA[2023][12]["employment_population_ratio"]
+            )
             assert ratio.target_type == TargetType.RATE
 
     def test_load_creates_not_in_labor_force(self, temp_db):

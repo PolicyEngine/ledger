@@ -25,9 +25,9 @@ def export_calibration_results(year: int = 2024, output_path: str = None) -> dic
 
     # Filter to likely filers
     filer_mask = (
-        (df['total_income'] > 13850) |
-        (df['wage_income'] > 0) |
-        (df['self_employment_income'] > 0)
+        (df["total_income"] > 13850)
+        | (df["wage_income"] > 0)
+        | (df["self_employment_income"] > 0)
     )
     df = df[filer_mask].copy()
     print(f"Filtered to {len(df):,} likely filers")
@@ -56,7 +56,7 @@ def export_calibration_results(year: int = 2024, output_path: str = None) -> dic
     summary = {
         "total_population_original": float(original_weights.sum()),
         "total_population_calibrated": float(weights.sum()),
-        "total_agi_calibrated": float((df['adjusted_gross_income'] * weights).sum()),
+        "total_agi_calibrated": float((df["adjusted_gross_income"] * weights).sum()),
         "mean_weight": float(adj.mean()),
         "std_weight": float(adj.std()),
         "min_weight": float(adj.min()),
@@ -67,7 +67,7 @@ def export_calibration_results(year: int = 2024, output_path: str = None) -> dic
     targets = []
     for _, row in result.targets_df.iterrows():
         # Determine group (national, state, county)
-        geo_id = row['geographic_id']
+        geo_id = row["geographic_id"]
         if geo_id == "US":
             group = "national"
         elif len(str(geo_id)) == 2:
@@ -76,22 +76,24 @@ def export_calibration_results(year: int = 2024, output_path: str = None) -> dic
             group = "county"
 
         # Format name nicely
-        name = row['name']
-        if row['variable'] == 'returns':
+        name = row["name"]
+        if row["variable"] == "returns":
             category = f"Returns ({row['bracket']})"
         else:
             category = f"AGI ({row['bracket']})"
 
-        rel_error = float(row['rel_error'])
-        targets.append({
-            "name": name,
-            "group": group,
-            "category": category,
-            "target_value": float(row['target']),
-            "estimated_value": float(row['estimate']),
-            "relative_error": rel_error,
-            "absolute_error": abs(rel_error),
-        })
+        rel_error = float(row["rel_error"])
+        targets.append(
+            {
+                "name": name,
+                "group": group,
+                "category": category,
+                "target_value": float(row["target"]),
+                "estimated_value": float(row["estimate"]),
+                "relative_error": rel_error,
+                "absolute_error": abs(rel_error),
+            }
+        )
 
     results = {
         "metadata": metadata,
@@ -100,7 +102,7 @@ def export_calibration_results(year: int = 2024, output_path: str = None) -> dic
     }
 
     if output_path:
-        with open(output_path, 'w') as f:
+        with open(output_path, "w") as f:
             json.dump(results, f, indent=2)
         print(f"Saved to {output_path}")
 
@@ -119,12 +121,18 @@ if __name__ == "__main__":
     print("=" * 60)
     print(f"Initial loss: {results['metadata']['initial_loss']:.6f}")
     print(f"Final loss: {results['metadata']['final_loss']:.6f}")
-    print(f"Reduction: {(1 - results['metadata']['final_loss'] / results['metadata']['initial_loss']) * 100:.1f}%")
-    print(f"Calibrated population: {results['summary']['total_population_calibrated']:,.0f}")
+    print(
+        f"Reduction: {(1 - results['metadata']['final_loss'] / results['metadata']['initial_loss']) * 100:.1f}%"
+    )
+    print(
+        f"Calibrated population: {results['summary']['total_population_calibrated']:,.0f}"
+    )
     print(f"Calibrated AGI: ${results['summary']['total_agi_calibrated']:,.0f}")
 
     # Count by error level
-    good = sum(1 for t in results['targets'] if t['absolute_error'] < 0.02)
-    medium = sum(1 for t in results['targets'] if 0.02 <= t['absolute_error'] < 0.10)
-    bad = sum(1 for t in results['targets'] if t['absolute_error'] >= 0.10)
-    print(f"\nTarget accuracy: {good} good (<2%), {medium} medium (2-10%), {bad} bad (>10%)")
+    good = sum(1 for t in results["targets"] if t["absolute_error"] < 0.02)
+    medium = sum(1 for t in results["targets"] if 0.02 <= t["absolute_error"] < 0.10)
+    bad = sum(1 for t in results["targets"] if t["absolute_error"] >= 0.10)
+    print(
+        f"\nTarget accuracy: {good} good (<2%), {medium} medium (2-10%), {bad} bad (>10%)"
+    )

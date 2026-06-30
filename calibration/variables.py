@@ -19,6 +19,7 @@ from typing import Optional
 try:
     from policyengine.dependency_resolver import PackageRegistry, ModuleResolver
     from policyengine.dsl_parser import parse_file
+
     POLICYENGINE_AVAILABLE = True
 except ImportError:
     POLICYENGINE_AVAILABLE = False
@@ -36,7 +37,6 @@ FALLBACK_ENTITIES = {
     "is_snap_recipient": "person",
     "is_medicaid_enrolled": "person",
     "is_ssi_recipient": "person",
-
     # Tax unit level
     "agi": "tax_unit",
     "adjusted_gross_income": "tax_unit",
@@ -46,7 +46,6 @@ FALLBACK_ENTITIES = {
     "ctc": "tax_unit",
     "child_tax_credit": "tax_unit",
     "tax_unit_count": "tax_unit",
-
     # Household level
     "household_size": "household",
     "tenure": "household",
@@ -57,11 +56,13 @@ FALLBACK_ENTITIES = {
 
 class VariableNotFoundError(Exception):
     """Raised when a variable cannot be found in the referenced file."""
+
     pass
 
 
 class InvalidVariableRefError(Exception):
     """Raised when a variable reference is malformed."""
+
     pass
 
 
@@ -186,13 +187,11 @@ def _get_entity_from_rac(
         if var.name == var_name:
             # Entity is stored as an enum or string
             entity = var.entity
-            if hasattr(entity, 'value'):
+            if hasattr(entity, "value"):
                 return entity.value.lower()
             return str(entity).lower()
 
-    raise VariableNotFoundError(
-        f"Variable '{var_name}' not found in {rac_path}"
-    )
+    raise VariableNotFoundError(f"Variable '{var_name}' not found in {rac_path}")
 
 
 def get_entity_for_constraint_var(var_name: str) -> str:

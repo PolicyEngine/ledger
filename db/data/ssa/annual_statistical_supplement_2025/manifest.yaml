@@ -11,9 +11,9 @@ files:
     storage:
       r2:
         provider: r2
-        bucket: arch-raw
+        bucket: ledger-raw
         key: raw/ssa/ssa-annual-statistical-supplement-2025/2024/ebc5a7327f818e3fe21c51d1cffe6f80f585e468802d3948dc2cfbf7a0cc384b/ssa_oasdi_ssi_2024.csv
-        uri: r2://arch-raw/raw/ssa/ssa-annual-statistical-supplement-2025/2024/ebc5a7327f818e3fe21c51d1cffe6f80f585e468802d3948dc2cfbf7a0cc384b/ssa_oasdi_ssi_2024.csv
+        uri: r2://ledger-raw/raw/ssa/ssa-annual-statistical-supplement-2025/2024/ebc5a7327f818e3fe21c51d1cffe6f80f585e468802d3948dc2cfbf7a0cc384b/ssa_oasdi_ssi_2024.csv
     source_urls:
       - https://www.ssa.gov/policy/docs/statcomps/supplement/2025/4a.html
       - https://www.ssa.gov/policy/docs/statcomps/supplement/2025/7b.html

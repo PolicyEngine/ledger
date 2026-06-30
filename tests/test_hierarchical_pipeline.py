@@ -24,6 +24,7 @@ try:
         load_hierarchical_data_from_supabase,
         run_hierarchical_pipeline,
     )
+
     SUPABASE_AVAILABLE = True
 except ImportError:
     SUPABASE_AVAILABLE = False
@@ -68,18 +69,34 @@ class TestBuildHierarchicalConstraints:
     def sample_hierarchical_data(self):
         """Create sample hierarchical microdata."""
         # 5 households with 2-3 persons each
-        hh_df = pd.DataFrame({
-            "household_id": [1, 2, 3, 4, 5],
-            "weight": [100.0, 200.0, 150.0, 180.0, 120.0],
-            "state_fips": [6, 6, 36, 36, 48],  # CA, CA, NY, NY, TX
-        })
+        hh_df = pd.DataFrame(
+            {
+                "household_id": [1, 2, 3, 4, 5],
+                "weight": [100.0, 200.0, 150.0, 180.0, 120.0],
+                "state_fips": [6, 6, 36, 36, 48],  # CA, CA, NY, NY, TX
+            }
+        )
 
-        person_df = pd.DataFrame({
-            "person_id": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-            "household_id": [1, 1, 2, 2, 2, 3, 3, 4, 4, 5, 5],
-            "age": [35, 8, 45, 42, 12, 65, 62, 28, 6, 55, 50],
-            "employment_income": [50000, 0, 80000, 60000, 0, 0, 0, 45000, 0, 70000, 40000],
-        })
+        person_df = pd.DataFrame(
+            {
+                "person_id": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+                "household_id": [1, 1, 2, 2, 2, 3, 3, 4, 4, 5, 5],
+                "age": [35, 8, 45, 42, 12, 65, 62, 28, 6, 55, 50],
+                "employment_income": [
+                    50000,
+                    0,
+                    80000,
+                    60000,
+                    0,
+                    0,
+                    0,
+                    45000,
+                    0,
+                    70000,
+                    40000,
+                ],
+            }
+        )
 
         return hh_df, person_df
 
@@ -88,12 +105,14 @@ class TestBuildHierarchicalConstraints:
         hh_df, person_df = sample_hierarchical_data
 
         # Target: count of persons aged 0-17
-        mock_targets = [{
-            "variable": "person_count",
-            "value": 500.0,  # Total weighted children
-            "target_type": "count",
-            "constraints": [("age", ">=", "0"), ("age", "<", "18")],
-        }]
+        mock_targets = [
+            {
+                "variable": "person_count",
+                "value": 500.0,  # Total weighted children
+                "target_type": "count",
+                "constraints": [("age", ">=", "0"), ("age", "<", "18")],
+            }
+        ]
 
         constraints = build_hierarchical_constraints(
             hh_df, person_df, mock_targets, hh_id_col="household_id", min_obs=1
@@ -110,12 +129,14 @@ class TestBuildHierarchicalConstraints:
         hh_df, person_df = sample_hierarchical_data
 
         # Target: total employment income
-        mock_targets = [{
-            "variable": "employment_income",
-            "value": 50000000.0,  # Total weighted income
-            "target_type": "amount",
-            "constraints": [],  # All persons
-        }]
+        mock_targets = [
+            {
+                "variable": "employment_income",
+                "value": 50000000.0,  # Total weighted income
+                "target_type": "amount",
+                "constraints": [],  # All persons
+            }
+        ]
 
         constraints = build_hierarchical_constraints(
             hh_df, person_df, mock_targets, hh_id_col="household_id", min_obs=1
@@ -137,10 +158,12 @@ class TestHierarchicalIPF:
         original_weights = np.array([100.0, 200.0, 150.0])
 
         # One constraint: total count = 500
-        constraints = [{
-            "indicator": np.array([1.0, 1.0, 1.0]),
-            "target_value": 500.0,
-        }]
+        constraints = [
+            {
+                "indicator": np.array([1.0, 1.0, 1.0]),
+                "target_value": 500.0,
+            }
+        ]
 
         calibrated, success, loss = run_hierarchical_ipf(
             original_weights, constraints, verbose=False
@@ -204,7 +227,10 @@ class TestIntegration:
         # Create realistic targets
         total_weight = hh_df["weight"].sum()
         n_children = person_df[person_df["age"] < 18].groupby("household_id").size()
-        weighted_children = (hh_df.set_index("household_id")["weight"] * n_children.reindex(hh_df["household_id"]).fillna(0).values).sum()
+        weighted_children = (
+            hh_df.set_index("household_id")["weight"]
+            * n_children.reindex(hh_df["household_id"]).fillna(0).values
+        ).sum()
 
         targets = [
             {

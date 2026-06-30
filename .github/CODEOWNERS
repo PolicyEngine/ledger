@@ -1,0 +1,11 @@
+# Ledger source-data changes require PolicyEngine core review.
+* @PolicyEngine/core-developers
+
+# Source contracts, source packages, and governance metadata are especially
+# sensitive because downstream Populace and Thesis builds consume them directly.
+/packages/** @PolicyEngine/core-developers
+/ledger/** @PolicyEngine/core-developers
+/policyengine_ledger/** @PolicyEngine/core-developers
+/docs/** @PolicyEngine/core-developers
+/.github/ledger-agents.yml @PolicyEngine/core-developers
+/AGENTS.md @PolicyEngine/core-developers

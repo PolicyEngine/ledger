@@ -340,7 +340,9 @@ class TestSoiDeductionsETL:
                 ).all()
 
                 # 5 deduction types x 2 (claims + amount) = 10 targets
-                assert len(targets) == 10, f"Expected 10 targets for {state_abbrev}, got {len(targets)}"
+                assert len(targets) == 10, (
+                    f"Expected 10 targets for {state_abbrev}, got {len(targets)}"
+                )
 
     def test_target_source_metadata(self, temp_db):
         """Targets should have correct source metadata."""
@@ -358,7 +360,10 @@ class TestSoiDeductionsETL:
             ).first()
 
             assert salt_target.source == DataSource.IRS_SOI
-            assert salt_target.source_table == "SOI Individual Returns - Itemized Deductions"
+            assert (
+                salt_target.source_table
+                == "SOI Individual Returns - Itemized Deductions"
+            )
             assert "soi-tax-stats" in salt_target.source_url
 
     def test_national_totals_are_reasonable(self, temp_db):
@@ -446,7 +451,10 @@ class TestSoiDeductionsETL:
             wy_data = SOI_DEDUCTIONS_DATA[2021]["WY"]
 
             assert ca_data["salt_claims"] > wy_data["salt_claims"]
-            assert ca_data["mortgage_interest_claims"] > wy_data["mortgage_interest_claims"]
+            assert (
+                ca_data["mortgage_interest_claims"]
+                > wy_data["mortgage_interest_claims"]
+            )
             assert ca_data["charitable_claims"] > wy_data["charitable_claims"]
             assert ca_data["medical_claims"] > wy_data["medical_claims"]
             assert ca_data["qbi_claims"] > wy_data["qbi_claims"]
@@ -456,7 +464,10 @@ class TestSoiDeductionsETL:
             vt_data = SOI_DEDUCTIONS_DATA[2021]["VT"]
 
             assert tx_data["salt_claims"] > vt_data["salt_claims"]
-            assert tx_data["mortgage_interest_claims"] > vt_data["mortgage_interest_claims"]
+            assert (
+                tx_data["mortgage_interest_claims"]
+                > vt_data["mortgage_interest_claims"]
+            )
 
     def test_deduction_types_constant(self, temp_db):
         """DEDUCTION_TYPES should contain all 5 deduction types."""

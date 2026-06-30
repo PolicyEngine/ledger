@@ -96,7 +96,9 @@ class TestSsiETL:
             ).first()
 
             assert avg_payment is not None
-            assert avg_payment.value == SSI_DATA[2023]["national"]["avg_monthly_payment"]
+            assert (
+                avg_payment.value == SSI_DATA[2023]["national"]["avg_monthly_payment"]
+            )
 
     def test_load_creates_federal_vs_state_supplementation(self, temp_db):
         """Loading SSI should create federal and state supplementation targets."""
@@ -123,7 +125,9 @@ class TestSsiETL:
             assert federal.value == SSI_DATA[2023]["national"]["federal_payments"]
 
             assert state_supp is not None
-            assert state_supp.value == SSI_DATA[2023]["national"]["state_supplementation"]
+            assert (
+                state_supp.value == SSI_DATA[2023]["national"]["state_supplementation"]
+            )
 
     def test_load_creates_aged_stratum(self, temp_db):
         """Loading SSI should create aged recipient stratum."""

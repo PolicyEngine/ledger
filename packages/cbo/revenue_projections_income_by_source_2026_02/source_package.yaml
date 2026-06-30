@@ -1,4 +1,4 @@
-schema_version: arch.source_package.v1
+schema_version: ledger.source_package.v1
 package_id: cbo-revenue-projections-income-by-source-2026-02
 label: CBO February 2026 revenue projections income by source
 artifact:

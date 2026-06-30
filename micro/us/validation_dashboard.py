@@ -241,7 +241,9 @@ def render_calibration_dashboard(
             "Household better",
             _format_number(active_delta["household_better_targets"]),
         ),
-        _metric_card("Flat better", _format_number(active_delta["flat_better_targets"])),
+        _metric_card(
+            "Flat better", _format_number(active_delta["flat_better_targets"])
+        ),
     ]
 
     return f"""<!doctype html>
@@ -347,7 +349,7 @@ def render_calibration_dashboard(
   </header>
   <main>
     <section class="cards">
-      {''.join(cards)}
+      {"".join(cards)}
     </section>
     {_table_section("Active Target Summary By Variable", variable_summary)}
     {_table_section("Worst Household Active Target Errors", worst_targets)}
@@ -464,15 +466,15 @@ def _table_section(title: str, df: pd.DataFrame) -> str:
         )
     return (
         f"<section><h2>{html.escape(title)}</h2>"
-        f"<div class=\"table-wrap\">{table}</div></section>"
+        f'<div class="table-wrap">{table}</div></section>'
     )
 
 
 def _metric_card(label: str, value: str) -> str:
     return (
-        "<div class=\"card\">"
-        f"<div class=\"card-label\">{html.escape(label)}</div>"
-        f"<div class=\"card-value\">{html.escape(value)}</div>"
+        '<div class="card">'
+        f'<div class="card-label">{html.escape(label)}</div>'
+        f'<div class="card-value">{html.escape(value)}</div>'
         "</div>"
     )
 

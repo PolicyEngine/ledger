@@ -1,4 +1,4 @@
-schema_version: arch.source_package.v1
+schema_version: ledger.source_package.v1
 package_id: bea-regional-state-personal-income-components-2024
 label: BEA Regional 2024 state personal income components
 artifact:

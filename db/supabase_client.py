@@ -1,5 +1,5 @@
 """
-Supabase client for Arch.
+Supabase client for Ledger.
 
 Provides connection to PolicyEngine Supabase database for:
 - Source metadata and dataset registries
@@ -31,13 +31,9 @@ def _env(*names: str) -> str | None:
     return None
 
 
-ARCH_SCHEMA = _env("POLICYENGINE_ARCH_SCHEMA") or "arch"
-MICRODATA_SCHEMA = (
-    _env("POLICYENGINE_MICRODATA_SCHEMA") or "microdata"
-)
-TARGETS_SCHEMA = (
-    _env("POLICYENGINE_TARGETS_SCHEMA") or "targets"
-)
+LEDGER_SCHEMA = _env("POLICYENGINE_LEDGER_SCHEMA") or "ledger"
+MICRODATA_SCHEMA = _env("POLICYENGINE_MICRODATA_SCHEMA") or "microdata"
+TARGETS_SCHEMA = _env("POLICYENGINE_TARGETS_SCHEMA") or "targets"
 
 
 @dataclass
@@ -142,7 +138,7 @@ def query_sources(
     institution: Optional[str] = None,
 ) -> List[Dict[str, Any]]:
     """
-    Query data sources from the Arch source registry.
+    Query data sources from the Ledger source registry.
 
     Args:
         jurisdiction: Filter by jurisdiction (e.g., "us", "uk")
@@ -152,7 +148,7 @@ def query_sources(
         List of source records
     """
     client = get_supabase_client()
-    query = _table(client, ARCH_SCHEMA, "sources").select("*")
+    query = _table(client, LEDGER_SCHEMA, "sources").select("*")
 
     if jurisdiction:
         query = query.eq("jurisdiction", jurisdiction)
@@ -182,7 +178,7 @@ def list_datasets(
         List of dataset records with table_name
     """
     client = get_supabase_client()
-    query = _table(client, ARCH_SCHEMA, "datasets").select("*")
+    query = _table(client, LEDGER_SCHEMA, "datasets").select("*")
 
     if jurisdiction:
         query = query.eq("jurisdiction", jurisdiction)
@@ -241,7 +237,7 @@ def register_dataset(
         data["source_url"] = source_url
 
     result = (
-        _table(client, ARCH_SCHEMA, "datasets")
+        _table(client, LEDGER_SCHEMA, "datasets")
         .upsert(data, on_conflict="jurisdiction,institution,dataset,year,table_type")
         .execute()
     )
@@ -398,7 +394,7 @@ def query_targets(
     variable: Optional[str] = None,
 ) -> List[Dict[str, Any]]:
     """
-    Query Arch target inputs.
+    Query Ledger target inputs.
 
     Args:
         jurisdiction: Filter by jurisdiction (via stratum join)

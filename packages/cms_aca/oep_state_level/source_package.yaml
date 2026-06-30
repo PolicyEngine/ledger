@@ -1,4 +1,4 @@
-schema_version: arch.source_package.v1
+schema_version: ledger.source_package.v1
 package_id: cms-aca-oep-state-level
 label: CMS Marketplace 2024 OEP state-level public use file
 artifact:

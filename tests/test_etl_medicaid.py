@@ -184,7 +184,9 @@ class TestMedicaidETL:
             load_medicaid_targets(session, years=[2023])
 
             expansion_stratum = session.exec(
-                select(Stratum).where(Stratum.name == "US Medicaid ACA Expansion Adults")
+                select(Stratum).where(
+                    Stratum.name == "US Medicaid ACA Expansion Adults"
+                )
             ).first()
 
             assert expansion_stratum is not None

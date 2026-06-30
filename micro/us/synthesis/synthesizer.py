@@ -141,9 +141,9 @@ class TaxSynthesizer:
         n_features = len(self.continuous_vars)
 
         # Context: demographic variables
-        context_np = np.column_stack([
-            data[var].values for var in self.demographic_vars
-        ])
+        context_np = np.column_stack(
+            [data[var].values for var in self.demographic_vars]
+        )
         context = torch.tensor(context_np, dtype=torch.float32)
 
         # Features: transformed continuous variables
@@ -175,7 +175,10 @@ class TaxSynthesizer:
 
         # Train flow (with masking for zero values)
         self._train_flow(
-            features, context, weights, positive_mask,
+            features,
+            context,
+            weights,
+            positive_mask,
             epochs=epochs,
             batch_size=batch_size,
             learning_rate=learning_rate,
@@ -184,7 +187,8 @@ class TaxSynthesizer:
 
         # Train zero/non-zero indicator models for each continuous variable
         self._train_zero_indicators(
-            data, context,
+            data,
+            context,
             epochs=epochs // 2,
             learning_rate=learning_rate,
         )
@@ -192,7 +196,8 @@ class TaxSynthesizer:
         # Train discrete models if we have discrete variables
         if self.discrete_vars:
             self._train_discrete(
-                data, context,
+                data,
+                context,
                 epochs=epochs // 2,
                 batch_size=batch_size,
                 learning_rate=learning_rate,
@@ -217,9 +222,7 @@ class TaxSynthesizer:
         Uses only rows where ALL variables are positive to ensure
         the flow learns on clean data.
         """
-        optimizer = torch.optim.Adam(
-            self.flow_model_.parameters(), lr=learning_rate
-        )
+        optimizer = torch.optim.Adam(self.flow_model_.parameters(), lr=learning_rate)
 
         # Only train on rows where all continuous variables are positive
         all_positive = positive_mask.all(dim=1)
@@ -285,9 +288,9 @@ class TaxSynthesizer:
             )
 
             # Target: 1 if positive, 0 if zero
-            target = torch.tensor(
-                (data[var].values > 0).astype(np.float32)
-            ).unsqueeze(-1)
+            target = torch.tensor((data[var].values > 0).astype(np.float32)).unsqueeze(
+                -1
+            )
 
             optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
@@ -375,9 +378,9 @@ class TaxSynthesizer:
             np.random.seed(seed)
 
         # Prepare context tensor
-        context_np = np.column_stack([
-            demographics[var].values for var in self.demographic_vars
-        ])
+        context_np = np.column_stack(
+            [demographics[var].values for var in self.demographic_vars]
+        )
         context = torch.tensor(context_np, dtype=torch.float32)
 
         # Sample from flow (will be masked by zero indicators)
@@ -389,8 +392,7 @@ class TaxSynthesizer:
 
         # Create dict with transformed values (these are in log/standardized space)
         transformed_dict = {
-            var: samples_np[:, i]
-            for i, var in enumerate(self.continuous_vars)
+            var: samples_np[:, i] for i, var in enumerate(self.continuous_vars)
         }
 
         # Inverse transform to original scale
@@ -399,7 +401,7 @@ class TaxSynthesizer:
         # Apply zero indicators: sample which values should be zero
         with torch.no_grad():
             for var in self.continuous_vars:
-                if hasattr(self, 'zero_indicators_') and var in self.zero_indicators_:
+                if hasattr(self, "zero_indicators_") and var in self.zero_indicators_:
                     # Get probability of being positive
                     prob_positive = self.zero_indicators_[var](context).squeeze(-1)
 
@@ -408,9 +410,7 @@ class TaxSynthesizer:
 
                     # Zero out values where indicator is 0
                     original_dict[var] = np.where(
-                        is_positive > 0.5,
-                        original_dict[var],
-                        0.0
+                        is_positive > 0.5, original_dict[var], 0.0
                     )
 
         # Ensure non-negative values
@@ -458,12 +458,12 @@ class TaxSynthesizer:
             "transformer": self.transformer_,
             "flow_state_dict": self.flow_model_.state_dict(),
             "discrete_state_dict": (
-                self.discrete_model_.state_dict()
-                if self.discrete_model_ else None
+                self.discrete_model_.state_dict() if self.discrete_model_ else None
             ),
             "zero_indicators_state_dict": (
                 self.zero_indicators_.state_dict()
-                if hasattr(self, 'zero_indicators_') else None
+                if hasattr(self, "zero_indicators_")
+                else None
             ),
             "training_loss": self.training_loss_,
         }

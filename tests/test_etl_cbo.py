@@ -138,12 +138,8 @@ class TestCboETL:
         """Should load projection years through 2034."""
         load_cbo_targets(session, years=[2030, 2034])
 
-        targets_2030 = session.exec(
-            select(Target).where(Target.period == 2030)
-        ).all()
-        targets_2034 = session.exec(
-            select(Target).where(Target.period == 2034)
-        ).all()
+        targets_2030 = session.exec(select(Target).where(Target.period == 2030)).all()
+        targets_2034 = session.exec(select(Target).where(Target.period == 2034)).all()
 
         assert len(targets_2030) > 0
         assert len(targets_2034) > 0

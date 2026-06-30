@@ -1,7 +1,7 @@
 [project]
-name = "policyengine-arch-data"
+name = "policyengine-ledger"
 version = "0.1.0"
-description = "PolicyEngine Arch source-data foundation: source facts, microdata, and target inputs"
+description = "PolicyEngine Ledger source-data foundation: source facts, microdata, and target profiles"
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.11"
@@ -17,7 +17,6 @@ dependencies = [
     "numpy>=1.24.0",  # For calibration calculations
     "pandas>=2.0.0",  # For microdata handling
     "scipy>=1.11.0",  # For entropy minimization optimization
-    "microplex>=0.1.0",  # Synthesis and calibration algorithms
     "pyarrow>=22.0.0",
     "openpyxl>=3.1.0",
     "odfpy>=1.4.1",
@@ -33,9 +32,11 @@ dev = [
 policyengine = [
     "policyengine-us>=1.670.2",
 ]
+legacy = [
+    "microplex>=0.1.0",
+]
 
 [project.scripts]
-arch = "arch.cli:main"
 ledger = "policyengine_ledger.cli:main"
 
 [build-system]
@@ -43,7 +44,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["arch", "db", "micro", "calibration", "packages", "policyengine_ledger"]
+packages = ["ledger", "db", "micro", "calibration", "packages", "policyengine_ledger"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

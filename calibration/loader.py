@@ -16,10 +16,57 @@ VALID_SOURCES = {"synthetic", "cps", "frs"}
 
 # US State FIPS codes (valid ones)
 US_STATE_FIPS = [
-    1, 2, 4, 5, 6, 8, 9, 10, 11, 12, 13, 15, 16, 17, 18, 19, 20,
-    21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35,
-    36, 37, 38, 39, 40, 41, 42, 44, 45, 46, 47, 48, 49, 50, 51,
-    53, 54, 55, 56
+    1,
+    2,
+    4,
+    5,
+    6,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    53,
+    54,
+    55,
+    56,
 ]
 
 
@@ -35,9 +82,7 @@ def _validate_year(year: int, source: str) -> None:
 
     # Don't allow ancient years
     if year < 1900:
-        raise ValueError(
-            f"Year {year} is too far in the past. Minimum year is 1900."
-        )
+        raise ValueError(f"Year {year} is too far in the past. Minimum year is 1900.")
 
 
 def _generate_synthetic_cps(
@@ -65,10 +110,10 @@ def _generate_synthetic_cps(
     # Age distribution (roughly matching US population)
     # More children and working-age adults, fewer elderly
     age_groups = [
-        (0, 18, 0.22),    # Children
-        (18, 35, 0.22),   # Young adults
-        (35, 55, 0.26),   # Middle-aged
-        (55, 70, 0.18),   # Near retirement
+        (0, 18, 0.22),  # Children
+        (18, 35, 0.22),  # Young adults
+        (35, 55, 0.26),  # Middle-aged
+        (55, 70, 0.18),  # Near retirement
         (70, 100, 0.12),  # Elderly
     ]
 
@@ -115,10 +160,14 @@ def _generate_synthetic_cps(
                 income[i] = 0
             else:
                 # Adults not in labor force may have some income
-                income[i] = np.random.lognormal(8.0, 1.0) * np.random.choice([0, 1], p=[0.7, 0.3])
+                income[i] = np.random.lognormal(8.0, 1.0) * np.random.choice(
+                    [0, 1], p=[0.7, 0.3]
+                )
         else:  # Unemployed
             # Unemployment benefits or no income
-            income[i] = np.random.lognormal(8.5, 0.5) * np.random.choice([0, 1], p=[0.4, 0.6])
+            income[i] = np.random.lognormal(8.5, 0.5) * np.random.choice(
+                [0, 1], p=[0.4, 0.6]
+            )
 
     # has_children: probability depends on age
     has_children = np.zeros(n_samples, dtype=int)
@@ -133,7 +182,7 @@ def _generate_synthetic_cps(
     # State FIPS (weighted by population)
     # Approximate state population weights (simplified)
     state_weights = {
-        6: 0.12,   # California
+        6: 0.12,  # California
         48: 0.09,  # Texas
         12: 0.07,  # Florida
         36: 0.06,  # New York
@@ -155,9 +204,7 @@ def _generate_synthetic_cps(
             # Pick from weighted states
             state_probs = np.array(list(state_weights.values()))
             state_probs = state_probs / state_probs.sum()
-            states.append(
-                np.random.choice(list(state_weights.keys()), p=state_probs)
-            )
+            states.append(np.random.choice(list(state_weights.keys()), p=state_probs))
 
     state_fips = np.array(states)
 
@@ -167,17 +214,21 @@ def _generate_synthetic_cps(
     # Add some variance
     weights = np.random.gamma(shape=4, scale=base_weight / 4, size=n_samples)
 
-    return pd.DataFrame({
-        "weight": weights,
-        "age": ages,
-        "income": income,
-        "employment_status": employment_status,
-        "has_children": has_children,
-        "state_fips": state_fips,
-    })
+    return pd.DataFrame(
+        {
+            "weight": weights,
+            "age": ages,
+            "income": income,
+            "employment_status": employment_status,
+            "has_children": has_children,
+            "state_fips": state_fips,
+        }
+    )
 
 
-def _load_cps_from_file(year: int, auto_download: bool = True) -> Optional[pd.DataFrame]:
+def _load_cps_from_file(
+    year: int, auto_download: bool = True
+) -> Optional[pd.DataFrame]:
     """
     Attempt to load CPS data from parquet files, downloading if needed.
 
@@ -207,8 +258,13 @@ def _load_cps_from_file(year: int, auto_download: bool = True) -> Optional[pd.Da
             if "weight" not in df.columns:
                 # Try common weight column names
                 weight_candidates = [
-                    "ASECWT", "asecwt", "WTFINL", "wtfinl",
-                    "PWGTP", "pwgtp", "survey_weight"
+                    "ASECWT",
+                    "asecwt",
+                    "WTFINL",
+                    "wtfinl",
+                    "PWGTP",
+                    "pwgtp",
+                    "survey_weight",
                 ]
                 for col in weight_candidates:
                     if col in df.columns:
@@ -224,16 +280,22 @@ def _load_cps_from_file(year: int, auto_download: bool = True) -> Optional[pd.Da
     # Try to download if not found
     if auto_download:
         try:
-            from micro.us.census.download_cps import download_and_process_cps, CPS_URL_BY_YEAR
+            from micro.us.census.download_cps import (
+                download_and_process_cps,
+                CPS_URL_BY_YEAR,
+            )
 
             if year in CPS_URL_BY_YEAR:
-                print(f"CPS {year} not found locally, downloading from Census Bureau...")
+                print(
+                    f"CPS {year} not found locally, downloading from Census Bureau..."
+                )
                 output_path = data_dir / f"cps_{year}.parquet"
                 return download_and_process_cps(year, output_path)
         except ImportError:
             pass  # download_cps module not available
         except Exception as e:
             import warnings
+
             warnings.warn(f"Failed to download CPS {year}: {e}")
 
     return None
@@ -262,9 +324,7 @@ def load_microdata(
     """
     # Validate source
     if source not in VALID_SOURCES:
-        raise ValueError(
-            f"Invalid source: {source}. Valid sources: {VALID_SOURCES}"
-        )
+        raise ValueError(f"Invalid source: {source}. Valid sources: {VALID_SOURCES}")
 
     # Validate year
     _validate_year(year, source)
@@ -279,6 +339,7 @@ def load_microdata(
         if df is None:
             # Fall back to synthetic with a warning
             import warnings
+
             warnings.warn(
                 f"CPS data for {year} not found, falling back to synthetic data. "
                 "To use real CPS data, add parquet files to micro/us/."
@@ -288,9 +349,8 @@ def load_microdata(
     elif source == "frs":
         # UK Family Resources Survey - not yet implemented
         import warnings
-        warnings.warn(
-            "FRS data loading not yet implemented, using synthetic data."
-        )
+
+        warnings.warn("FRS data loading not yet implemented, using synthetic data.")
         df = _generate_synthetic_cps(year, seed=seed)
 
     else:

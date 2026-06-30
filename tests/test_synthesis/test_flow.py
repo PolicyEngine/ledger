@@ -21,10 +21,10 @@ class TestConditionalMAF:
         from micro.us.synthesis.flows import ConditionalMAF
 
         flow = ConditionalMAF(
-            n_features=10,       # Number of tax variables
-            n_context=5,         # Number of demographic features
-            n_layers=4,          # Number of flow layers
-            hidden_dim=64        # Hidden layer size
+            n_features=10,  # Number of tax variables
+            n_context=5,  # Number of demographic features
+            n_layers=4,  # Number of flow layers
+            hidden_dim=64,  # Hidden layer size
         )
 
         assert flow.n_features == 10
@@ -106,11 +106,7 @@ class TestMAFLayer:
         """MADE network should be autoregressive."""
         from micro.us.synthesis.flows import MADE
 
-        made = MADE(
-            n_features=5,
-            n_context=3,
-            hidden_dim=32
-        )
+        made = MADE(n_features=5, n_context=3, hidden_dim=32)
 
         x = torch.randn(10, 5)
         context = torch.randn(10, 3)
@@ -129,8 +125,9 @@ class TestMAFLayer:
 
             # Gradient w.r.t. x[:, j] should be 0 for j >= i
             for j in range(i, 5):
-                assert torch.allclose(x.grad[:, j], torch.zeros_like(x.grad[:, j]), atol=1e-5), \
-                    f"Output {i} depends on input {j} (should be autoregressive)"
+                assert torch.allclose(
+                    x.grad[:, j], torch.zeros_like(x.grad[:, j]), atol=1e-5
+                ), f"Output {i} depends on input {j} (should be autoregressive)"
 
     def test_affine_coupling_invertible(self):
         """Affine coupling layer should be invertible."""
@@ -185,7 +182,9 @@ class TestFlowTraining:
         # Simple training data: features partially depend on context
         context = torch.randn(500, 3)
         x = torch.randn(500, 5)
-        x[:, :3] = context + torch.randn(500, 3) * 0.3  # First 3 features depend on context
+        x[:, :3] = (
+            context + torch.randn(500, 3) * 0.3
+        )  # First 3 features depend on context
 
         initial_loss = -flow.log_prob(x, context).mean().item()
 
@@ -197,8 +196,9 @@ class TestFlowTraining:
 
         final_loss = -flow.log_prob(x, context).mean().item()
 
-        assert final_loss < initial_loss, \
+        assert final_loss < initial_loss, (
             f"Loss should decrease: {initial_loss:.3f} -> {final_loss:.3f}"
+        )
 
     def test_samples_match_training_distribution(self):
         """After training, samples should match training distribution."""
@@ -227,8 +227,9 @@ class TestFlowTraining:
 
         # Samples should be close to test_context (since x ≈ context in training)
         residuals = samples - test_context
-        assert residuals.std() < 0.6, \
+        assert residuals.std() < 0.6, (
             f"Sample std from context: {residuals.std():.3f} (should be ~0.3)"
+        )
 
 
 class TestFlowWithRealTaxData:
@@ -298,8 +299,9 @@ class TestFlowWithRealTaxData:
         sample_corr = torch.corrcoef(samples[:, :2].T)[0, 1].item()
 
         # Correlation should be preserved (within tolerance)
-        assert abs(sample_corr - true_corr) < 0.15, \
+        assert abs(sample_corr - true_corr) < 0.15, (
             f"Correlation not preserved: true={true_corr:.3f}, sample={sample_corr:.3f}"
+        )
 
 
 class TestDiscreteVariableModel:

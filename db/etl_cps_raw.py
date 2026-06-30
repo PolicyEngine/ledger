@@ -102,7 +102,7 @@ def _prepare_records(
                 # Convert numpy types to Python types
                 if pd.isna(val):
                     record[dest_col] = None
-                elif hasattr(val, 'item'):
+                elif hasattr(val, "item"):
                     record[dest_col] = val.item()
                 else:
                     record[dest_col] = val
@@ -114,7 +114,7 @@ def _prepare_records(
                 val = row[col]
                 if pd.isna(val):
                     raw_data[col] = None
-                elif hasattr(val, 'item'):
+                elif hasattr(val, "item"):
                     raw_data[col] = val.item()
                 else:
                     raw_data[col] = val
@@ -176,15 +176,21 @@ def load_cps_to_supabase(
     # Load data
     print(f"Loading CPS ASEC {year} from {cache_dir}...")
     person_df = pd.read_parquet(person_path)
-    household_df = pd.read_parquet(household_path) if household_path.exists() else pd.DataFrame()
+    household_df = (
+        pd.read_parquet(household_path) if household_path.exists() else pd.DataFrame()
+    )
     family_df = pd.read_parquet(family_path) if family_path.exists() else pd.DataFrame()
 
     # Apply skip and limit
     if skip > 0:
         person_df = person_df.iloc[skip:]
         # For household/family, skip proportionally (approximate)
-        hh_skip = int(skip * len(household_df) / len(person_df)) if len(person_df) > 0 else 0
-        fam_skip = int(skip * len(family_df) / len(person_df)) if len(person_df) > 0 else 0
+        hh_skip = (
+            int(skip * len(household_df) / len(person_df)) if len(person_df) > 0 else 0
+        )
+        fam_skip = (
+            int(skip * len(family_df) / len(person_df)) if len(person_df) > 0 else 0
+        )
         household_df = household_df.iloc[hh_skip:]
         family_df = family_df.iloc[fam_skip:]
 
@@ -218,7 +224,9 @@ def load_cps_to_supabase(
         print("Truncating existing data...")
         for table_type, table_name in table_names.items():
             try:
-                client.schema("microplex").table(table_name).delete().neq("id", 0).execute()
+                client.schema("microplex").table(table_name).delete().neq(
+                    "id", 0
+                ).execute()
                 print(f"  Truncated {table_name}")
             except Exception as e:
                 print(f"  Warning: Could not truncate {table_name}: {e}")
@@ -248,8 +256,11 @@ def load_cps_to_supabase(
         year=year,
         table_type="person",
         row_count=len(person_df),
-        columns=[{"name": c, "dtype": str(person_df[c].dtype)} for c in person_df.columns[:20]],
-        source_url=f"https://www.census.gov/data/datasets/{year+1}/demo/cps/cps-asec-{year+1}.html",
+        columns=[
+            {"name": c, "dtype": str(person_df[c].dtype)}
+            for c in person_df.columns[:20]
+        ],
+        source_url=f"https://www.census.gov/data/datasets/{year + 1}/demo/cps/cps-asec-{year + 1}.html",
     )
 
     result["status"] = "completed"
@@ -267,7 +278,7 @@ def _insert_batch(
     total = 0
 
     for i in range(0, len(records), chunk_size):
-        chunk = records[i:i + chunk_size]
+        chunk = records[i : i + chunk_size]
         client.schema("microplex").table(table_name).insert(chunk).execute()
         total += len(chunk)
         if (i + chunk_size) % 5000 == 0:
@@ -350,14 +361,29 @@ def main():
 
     parser = argparse.ArgumentParser(description="Load raw CPS ASEC to Supabase")
     parser.add_argument("--year", type=int, default=2024, help="Data year")
-    parser.add_argument("--dry-run", action="store_true", help="Show stats without inserting")
-    parser.add_argument("--limit", type=int, help="Limit records per table (for testing)")
+    parser.add_argument(
+        "--dry-run", action="store_true", help="Show stats without inserting"
+    )
+    parser.add_argument(
+        "--limit", type=int, help="Limit records per table (for testing)"
+    )
     parser.add_argument("--chunk-size", type=int, default=200, help="Batch insert size")
-    parser.add_argument("--truncate", action="store_true", help="Delete existing data before loading")
-    parser.add_argument("--skip", type=int, default=0, help="Skip first N records (for resuming)")
-    parser.add_argument("--method", type=str, choices=["api", "csv"], default="api",
-                       help="Method: 'api' for record-by-record, 'csv' for export to CSV")
-    parser.add_argument("--output-dir", type=str, help="Output directory for CSV export")
+    parser.add_argument(
+        "--truncate", action="store_true", help="Delete existing data before loading"
+    )
+    parser.add_argument(
+        "--skip", type=int, default=0, help="Skip first N records (for resuming)"
+    )
+    parser.add_argument(
+        "--method",
+        type=str,
+        choices=["api", "csv"],
+        default="api",
+        help="Method: 'api' for record-by-record, 'csv' for export to CSV",
+    )
+    parser.add_argument(
+        "--output-dir", type=str, help="Output directory for CSV export"
+    )
     args = parser.parse_args()
 
     if args.method == "csv":

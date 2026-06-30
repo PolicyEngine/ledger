@@ -148,8 +148,8 @@ class TestStandardization:
 
         standardizer.fit(x, weights)
 
-        assert hasattr(standardizer, 'mean_')
-        assert hasattr(standardizer, 'std_')
+        assert hasattr(standardizer, "mean_")
+        assert hasattr(standardizer, "std_")
         np.testing.assert_allclose(standardizer.mean_, 3.0, rtol=1e-5)
 
     def test_transform_standardizes(self):
@@ -206,9 +206,7 @@ class TestTaxVariableTransformer:
         from micro.us.synthesis.transforms import TaxVariableTransformer
 
         transformer = TaxVariableTransformer(
-            zero_inflated=True,
-            log_transform=True,
-            standardize=True
+            zero_inflated=True, log_transform=True, standardize=True
         )
 
         # Typical tax variable: many zeros, heavy tail
@@ -227,9 +225,7 @@ class TestTaxVariableTransformer:
         from micro.us.synthesis.transforms import TaxVariableTransformer
 
         transformer = TaxVariableTransformer(
-            zero_inflated=True,
-            log_transform=True,
-            standardize=True
+            zero_inflated=True, log_transform=True, standardize=True
         )
 
         original = np.array([0, 0, 100, 0, 500, 0, 1000, 50000])
@@ -246,9 +242,7 @@ class TestTaxVariableTransformer:
         from micro.us.synthesis.transforms import TaxVariableTransformer
 
         transformer = TaxVariableTransformer(
-            zero_inflated=True,
-            log_transform=True,
-            standardize=True
+            zero_inflated=True, log_transform=True, standardize=True
         )
 
         x_np = np.array([0, 100, 0, 500, 1000])
@@ -270,61 +264,59 @@ class TestMultiVariableTransformer:
         from micro.us.synthesis.transforms import MultiVariableTransformer
 
         transformer = MultiVariableTransformer(
-            var_names=['wages', 'capital_gains', 'dividends']
+            var_names=["wages", "capital_gains", "dividends"]
         )
 
         data = {
-            'wages': np.array([50000, 60000, 0, 70000]),
-            'capital_gains': np.array([0, 0, 10000, 0]),
-            'dividends': np.array([0, 500, 1000, 0]),
-            'weight': np.array([1.0, 1.0, 1.0, 1.0])
+            "wages": np.array([50000, 60000, 0, 70000]),
+            "capital_gains": np.array([0, 0, 10000, 0]),
+            "dividends": np.array([0, 500, 1000, 0]),
+            "weight": np.array([1.0, 1.0, 1.0, 1.0]),
         }
 
         transformer.fit(data)
 
         # Each variable should have its own transformer
-        assert 'wages' in transformer.transformers_
-        assert 'capital_gains' in transformer.transformers_
-        assert 'dividends' in transformer.transformers_
+        assert "wages" in transformer.transformers_
+        assert "capital_gains" in transformer.transformers_
+        assert "dividends" in transformer.transformers_
 
     def test_transform_all_variables(self):
         """Should transform all variables together."""
         from micro.us.synthesis.transforms import MultiVariableTransformer
 
-        transformer = MultiVariableTransformer(
-            var_names=['wages', 'capital_gains']
-        )
+        transformer = MultiVariableTransformer(var_names=["wages", "capital_gains"])
 
         data = {
-            'wages': np.array([50000, 60000, 0, 70000]),
-            'capital_gains': np.array([0, 0, 10000, 0]),
-            'weight': np.array([1.0, 1.0, 1.0, 1.0])
+            "wages": np.array([50000, 60000, 0, 70000]),
+            "capital_gains": np.array([0, 0, 10000, 0]),
+            "weight": np.array([1.0, 1.0, 1.0, 1.0]),
         }
 
         transformer.fit(data)
         result = transformer.transform(data)
 
-        assert 'wages' in result
-        assert 'capital_gains' in result
+        assert "wages" in result
+        assert "capital_gains" in result
 
     def test_roundtrip_multiple_variables(self):
         """Roundtrip should recover all original values."""
         from micro.us.synthesis.transforms import MultiVariableTransformer
 
         transformer = MultiVariableTransformer(
-            var_names=['wages', 'capital_gains', 'dividends']
+            var_names=["wages", "capital_gains", "dividends"]
         )
 
         original = {
-            'wages': np.array([50000, 60000, 0, 70000]),
-            'capital_gains': np.array([0, 0, 10000, 0]),
-            'dividends': np.array([0, 500, 1000, 0]),
-            'weight': np.array([1.0, 1.0, 1.0, 1.0])
+            "wages": np.array([50000, 60000, 0, 70000]),
+            "capital_gains": np.array([0, 0, 10000, 0]),
+            "dividends": np.array([0, 500, 1000, 0]),
+            "weight": np.array([1.0, 1.0, 1.0, 1.0]),
         }
 
         transformer.fit(original)
         transformed = transformer.transform(original)
         result = transformer.inverse_transform(transformed)
 
-        for var in ['wages', 'capital_gains', 'dividends']:
+        for var in ["wages", "capital_gains", "dividends"]:
             np.testing.assert_allclose(result[var], original[var], rtol=1e-3)

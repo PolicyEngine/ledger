@@ -64,7 +64,9 @@ class TestSoiIncomeSourcesETL:
             ).first()
 
             assert taxable_interest_target is not None
-            expected = SOI_NATIONAL_INCOME_SOURCES_DATA[2021]["taxable_interest_returns"]
+            expected = SOI_NATIONAL_INCOME_SOURCES_DATA[2021][
+                "taxable_interest_returns"
+            ]
             assert taxable_interest_target.value == expected
             assert taxable_interest_target.target_type == TargetType.COUNT
             assert taxable_interest_target.source == DataSource.IRS_SOI
@@ -104,7 +106,9 @@ class TestSoiIncomeSourcesETL:
             ).first()
 
             assert returns_target is not None
-            expected = SOI_STATE_INCOME_SOURCES_DATA[2021]["CA"]["taxable_interest_returns"]
+            expected = SOI_STATE_INCOME_SOURCES_DATA[2021]["CA"][
+                "taxable_interest_returns"
+            ]
             assert returns_target.value == expected
             assert returns_target.target_type == TargetType.COUNT
 
@@ -136,7 +140,9 @@ class TestSoiIncomeSourcesETL:
             ).first()
 
             assert target is not None
-            expected = SOI_STATE_INCOME_SOURCES_DATA[2021]["FL"]["tax_exempt_interest_returns"]
+            expected = SOI_STATE_INCOME_SOURCES_DATA[2021]["FL"][
+                "tax_exempt_interest_returns"
+            ]
             assert target.value == expected
 
     def test_load_ordinary_dividends_targets(self, temp_db):
@@ -156,7 +162,9 @@ class TestSoiIncomeSourcesETL:
             ).first()
 
             assert target is not None
-            expected = SOI_STATE_INCOME_SOURCES_DATA[2021]["TX"]["ordinary_dividends_amount"]
+            expected = SOI_STATE_INCOME_SOURCES_DATA[2021]["TX"][
+                "ordinary_dividends_amount"
+            ]
             assert target.value == expected
 
     def test_load_qualified_dividends_targets(self, temp_db):
@@ -176,7 +184,9 @@ class TestSoiIncomeSourcesETL:
             ).first()
 
             assert target is not None
-            expected = SOI_STATE_INCOME_SOURCES_DATA[2021]["NY"]["qualified_dividends_returns"]
+            expected = SOI_STATE_INCOME_SOURCES_DATA[2021]["NY"][
+                "qualified_dividends_returns"
+            ]
             assert target.value == expected
 
     def test_load_short_term_capital_gains_targets(self, temp_db):
@@ -196,7 +206,9 @@ class TestSoiIncomeSourcesETL:
             ).first()
 
             assert target is not None
-            expected = SOI_STATE_INCOME_SOURCES_DATA[2021]["WA"]["short_term_capital_gains_amount"]
+            expected = SOI_STATE_INCOME_SOURCES_DATA[2021]["WA"][
+                "short_term_capital_gains_amount"
+            ]
             assert target.value == expected
 
     def test_load_long_term_capital_gains_targets(self, temp_db):
@@ -216,7 +228,9 @@ class TestSoiIncomeSourcesETL:
             ).first()
 
             assert target is not None
-            expected = SOI_STATE_INCOME_SOURCES_DATA[2021]["NJ"]["long_term_capital_gains_returns"]
+            expected = SOI_STATE_INCOME_SOURCES_DATA[2021]["NJ"][
+                "long_term_capital_gains_returns"
+            ]
             assert target.value == expected
 
     def test_load_state_local_refunds_targets(self, temp_db):
@@ -236,7 +250,9 @@ class TestSoiIncomeSourcesETL:
             ).first()
 
             assert target is not None
-            expected = SOI_STATE_INCOME_SOURCES_DATA[2021]["GA"]["state_local_refunds_amount"]
+            expected = SOI_STATE_INCOME_SOURCES_DATA[2021]["GA"][
+                "state_local_refunds_amount"
+            ]
             assert target.value == expected
 
     def test_load_alimony_received_targets(self, temp_db):
@@ -256,7 +272,9 @@ class TestSoiIncomeSourcesETL:
             ).first()
 
             assert target is not None
-            expected = SOI_STATE_INCOME_SOURCES_DATA[2021]["MA"]["alimony_received_returns"]
+            expected = SOI_STATE_INCOME_SOURCES_DATA[2021]["MA"][
+                "alimony_received_returns"
+            ]
             assert target.value == expected
 
     def test_load_schedule_c_income_targets(self, temp_db):
@@ -276,7 +294,9 @@ class TestSoiIncomeSourcesETL:
             ).first()
 
             assert target is not None
-            expected = SOI_STATE_INCOME_SOURCES_DATA[2021]["IL"]["schedule_c_income_amount"]
+            expected = SOI_STATE_INCOME_SOURCES_DATA[2021]["IL"][
+                "schedule_c_income_amount"
+            ]
             assert target.value == expected
 
     def test_load_rental_royalty_income_targets(self, temp_db):
@@ -296,7 +316,9 @@ class TestSoiIncomeSourcesETL:
             ).first()
 
             assert target is not None
-            expected = SOI_STATE_INCOME_SOURCES_DATA[2021]["PA"]["rental_royalty_income_returns"]
+            expected = SOI_STATE_INCOME_SOURCES_DATA[2021]["PA"][
+                "rental_royalty_income_returns"
+            ]
             assert target.value == expected
 
     def test_load_partnership_scorp_income_targets(self, temp_db):
@@ -316,7 +338,9 @@ class TestSoiIncomeSourcesETL:
             ).first()
 
             assert target is not None
-            expected = SOI_STATE_INCOME_SOURCES_DATA[2021]["OH"]["partnership_scorp_income_amount"]
+            expected = SOI_STATE_INCOME_SOURCES_DATA[2021]["OH"][
+                "partnership_scorp_income_amount"
+            ]
             assert target.value == expected
 
     def test_load_soi_income_sources_stratum_has_state_constraint(self, temp_db):
@@ -437,16 +461,29 @@ class TestSoiIncomeSourcesETL:
             assert 40_000_000 < national_data["taxable_interest_returns"] < 80_000_000
 
             # Check national long-term capital gains - should be ~$850B
-            assert 500_000_000_000 < national_data["long_term_capital_gains_amount"] < 1_500_000_000_000
+            assert (
+                500_000_000_000
+                < national_data["long_term_capital_gains_amount"]
+                < 1_500_000_000_000
+            )
 
             # Alimony should be much lower than other income sources
-            assert national_data["alimony_received_returns"] < national_data["taxable_interest_returns"]
+            assert (
+                national_data["alimony_received_returns"]
+                < national_data["taxable_interest_returns"]
+            )
 
     def test_qualified_dividends_less_than_ordinary(self, temp_db):
         """Qualified dividends should always be less than or equal to ordinary dividends."""
         for state_data in SOI_STATE_INCOME_SOURCES_DATA[2021].values():
-            assert state_data["qualified_dividends_returns"] <= state_data["ordinary_dividends_returns"]
-            assert state_data["qualified_dividends_amount"] <= state_data["ordinary_dividends_amount"]
+            assert (
+                state_data["qualified_dividends_returns"]
+                <= state_data["ordinary_dividends_returns"]
+            )
+            assert (
+                state_data["qualified_dividends_amount"]
+                <= state_data["ordinary_dividends_amount"]
+            )
 
 
 class TestIncomeSourcesData:
@@ -470,9 +507,7 @@ class TestIncomeSourcesData:
 
         for state_abbrev, state_data in SOI_STATE_INCOME_SOURCES_DATA[2021].items():
             for var in expected_vars:
-                assert var in state_data, (
-                    f"Missing {var} for {state_abbrev}"
-                )
+                assert var in state_data, f"Missing {var} for {state_abbrev}"
                 assert isinstance(state_data[var], (int, float)), (
                     f"{var} for {state_abbrev} is not numeric"
                 )
@@ -492,8 +527,13 @@ class TestIncomeSourcesData:
         wy_data = SOI_STATE_INCOME_SOURCES_DATA[2021]["WY"]
 
         assert ca_data["taxable_interest_returns"] > wy_data["taxable_interest_returns"]
-        assert ca_data["ordinary_dividends_amount"] > wy_data["ordinary_dividends_amount"]
-        assert ca_data["long_term_capital_gains_amount"] > wy_data["long_term_capital_gains_amount"]
+        assert (
+            ca_data["ordinary_dividends_amount"] > wy_data["ordinary_dividends_amount"]
+        )
+        assert (
+            ca_data["long_term_capital_gains_amount"]
+            > wy_data["long_term_capital_gains_amount"]
+        )
         assert ca_data["schedule_c_income_amount"] > wy_data["schedule_c_income_amount"]
 
         # Texas (large) vs Vermont (small)
@@ -501,7 +541,10 @@ class TestIncomeSourcesData:
         vt_data = SOI_STATE_INCOME_SOURCES_DATA[2021]["VT"]
 
         assert tx_data["taxable_interest_returns"] > vt_data["taxable_interest_returns"]
-        assert tx_data["partnership_scorp_income_amount"] > vt_data["partnership_scorp_income_amount"]
+        assert (
+            tx_data["partnership_scorp_income_amount"]
+            > vt_data["partnership_scorp_income_amount"]
+        )
 
     def test_national_data_structure(self):
         """National data should have all required fields."""
@@ -511,7 +554,9 @@ class TestIncomeSourcesData:
             returns_var = f"{source}_returns"
             amount_var = f"{source}_amount"
 
-            assert returns_var in national_data, f"Missing {returns_var} in national data"
+            assert returns_var in national_data, (
+                f"Missing {returns_var} in national data"
+            )
             assert amount_var in national_data, f"Missing {amount_var} in national data"
             assert isinstance(national_data[returns_var], int)
             assert isinstance(national_data[amount_var], int)

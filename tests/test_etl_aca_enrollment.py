@@ -151,7 +151,9 @@ class TestAcaEnrollmentETL:
             ).first()
 
             national_data = ACA_ENROLLMENT_DATA[2024]["national"]
-            expected = int(national_data["total_enrollment"] * national_data["silver_pct"])
+            expected = int(
+                national_data["total_enrollment"] * national_data["silver_pct"]
+            )
             assert enrollment.value == expected
             assert "apply_share" in enrollment.notes
 

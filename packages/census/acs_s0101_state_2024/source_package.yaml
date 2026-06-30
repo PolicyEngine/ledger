@@ -1,4 +1,4 @@
-schema_version: arch.source_package.v1
+schema_version: ledger.source_package.v1
 package_id: census-acs-s0101-state-age-2024
 label: Census ACS 2024 S0101 state population by age band
 artifact:

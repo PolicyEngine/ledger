@@ -1,4 +1,4 @@
-schema_version: arch.source_package.v1
+schema_version: ledger.source_package.v1
 package_id: soi-table-2-5-eitc-agi-children-2023
 label: IRS SOI Publication 1304 Table 2.5 EITC by AGI and qualifying children 2023
 artifact:

@@ -10,10 +10,12 @@ import numpy as np
 import pandas as pd
 import pytest
 
+
 # Import only the minimal types needed, avoid supabase dependency chain
 # by defining local stubs for testing
 class TargetType(str, Enum):
     """Stub for db.schema.TargetType for testing."""
+
     COUNT = "count"
     AMOUNT = "amount"
     RATE = "rate"
@@ -21,6 +23,7 @@ class TargetType(str, Enum):
 
 class DataSource(str, Enum):
     """Stub for db.schema.DataSource for testing."""
+
     IRS_SOI = "irs-soi"
     CENSUS_ACS = "census-acs"
 
@@ -42,6 +45,7 @@ InvalidVariableRefError = _variables_module.InvalidVariableRefError
 @dataclass
 class TargetSpec:
     """Minimal TargetSpec for testing."""
+
     variable: str
     value: float
     target_type: TargetType
@@ -55,6 +59,7 @@ class TargetSpec:
 @dataclass
 class Constraint:
     """Minimal Constraint for testing."""
+
     indicator: np.ndarray
     target_value: float
     variable: str
@@ -128,14 +133,16 @@ def build_hierarchical_constraint_matrix(
             else:
                 indicator = np.zeros(len(hh_df))
 
-        constraints.append(Constraint(
-            indicator=indicator,
-            target_value=target.value,
-            variable=target.variable,
-            target_type=target.target_type,
-            tolerance=target.tolerance if target.tolerance else tolerance,
-            stratum_name=target.stratum_name,
-        ))
+        constraints.append(
+            Constraint(
+                indicator=indicator,
+                target_value=target.value,
+                variable=target.variable,
+                target_type=target.target_type,
+                tolerance=target.tolerance if target.tolerance else tolerance,
+                stratum_name=target.stratum_name,
+            )
+        )
 
     return constraints
 
@@ -146,15 +153,17 @@ def mock_households():
     np.random.seed(42)
     n_households = 100
 
-    return pd.DataFrame({
-        "household_id": range(1, n_households + 1),
-        "state_fips": np.random.choice(
-            ["06", "36", "48", "12", "17"],  # CA, NY, TX, FL, IL
-            n_households,
-            p=[0.30, 0.15, 0.20, 0.20, 0.15],
-        ),
-        "weight": np.random.uniform(100, 500, n_households),
-    })
+    return pd.DataFrame(
+        {
+            "household_id": range(1, n_households + 1),
+            "state_fips": np.random.choice(
+                ["06", "36", "48", "12", "17"],  # CA, NY, TX, FL, IL
+                n_households,
+                p=[0.30, 0.15, 0.20, 0.20, 0.15],
+            ),
+            "weight": np.random.uniform(100, 500, n_households),
+        }
+    )
 
 
 @pytest.fixture
@@ -170,12 +179,16 @@ def mock_persons(mock_households):
         n_persons = np.random.randint(1, 6)
         for _ in range(n_persons):
             age = np.random.randint(0, 95)
-            persons.append({
-                "person_id": person_id,
-                "household_id": hh_id,
-                "age": age,
-                "is_employed": 1 if age >= 18 and age < 65 and np.random.random() > 0.3 else 0,
-            })
+            persons.append(
+                {
+                    "person_id": person_id,
+                    "household_id": hh_id,
+                    "age": age,
+                    "is_employed": 1
+                    if age >= 18 and age < 65 and np.random.random() > 0.3
+                    else 0,
+                }
+            )
             person_id += 1
 
     return pd.DataFrame(persons)
@@ -256,18 +269,11 @@ class TestBuildHierarchicalConstraintMatrix:
 
         # Manually compute expected indicator: count of persons aged 18-64 per household
         mask = (mock_persons["age"] >= 18) & (mock_persons["age"] < 65)
-        expected_counts = (
-            mock_persons[mask]
-            .groupby("household_id")
-            .size()
-        )
+        expected_counts = mock_persons[mask].groupby("household_id").size()
 
         # Map back to household order
         expected_indicator = (
-            mock_households["household_id"]
-            .map(expected_counts)
-            .fillna(0)
-            .values
+            mock_households["household_id"].map(expected_counts).fillna(0).values
         )
 
         np.testing.assert_array_equal(
@@ -287,8 +293,8 @@ class TestBuildHierarchicalConstraintMatrix:
 
         # Indicator should be 1 for California households, 0 otherwise
         expected_indicator = (
-            mock_households["state_fips"] == "06"
-        ).astype(float).values
+            (mock_households["state_fips"] == "06").astype(float).values
+        )
 
         np.testing.assert_array_equal(
             constraints[0].indicator,
@@ -358,9 +364,7 @@ class TestBuildHierarchicalConstraintMatrix:
 
         assert constraints[0].target_type == TargetType.COUNT
 
-    def test_custom_tolerance(
-        self, mock_households, mock_persons, person_count_target
-    ):
+    def test_custom_tolerance(self, mock_households, mock_persons, person_count_target):
         """Should respect custom tolerance parameter."""
         constraints = build_hierarchical_constraint_matrix(
             hh_df=mock_households,
@@ -456,7 +460,9 @@ class TestParseVariableRef:
 
     def test_parse_state_reference(self):
         """Should correctly parse a state-level reference."""
-        package, path, var_name = parse_variable_ref("us-ca:statute/ca/rtc/17041#ca_agi")
+        package, path, var_name = parse_variable_ref(
+            "us-ca:statute/ca/rtc/17041#ca_agi"
+        )
 
         assert package == "us-ca"
         assert path == "statute/ca/rtc/17041"
@@ -499,7 +505,9 @@ class TestParseVariableRef:
 
     def test_parse_uk_reference(self):
         """Should correctly parse a UK reference."""
-        package, path, var_name = parse_variable_ref("uk:statute/ita/2007#personal_allowance")
+        package, path, var_name = parse_variable_ref(
+            "uk:statute/ita/2007#personal_allowance"
+        )
 
         assert package == "uk"
         assert path == "statute/ita/2007"

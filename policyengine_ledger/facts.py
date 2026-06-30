@@ -1,3 +1,3 @@
 """Ledger source-fact compatibility module."""
 
-from arch.facts import *  # noqa: F403
+from ledger.facts import *  # noqa: F403

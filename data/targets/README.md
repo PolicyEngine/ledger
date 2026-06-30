@@ -16,7 +16,7 @@ This directory contains state-level calibration targets for use with the PolicyE
 Run the build script to generate/update all target files:
 
 ```bash
-cd arch-data
+cd ledger
 python data/targets/build_state_targets.py
 ```
 
