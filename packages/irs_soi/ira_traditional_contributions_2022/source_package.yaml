@@ -1,4 +1,4 @@
-schema_version: arch.source_package.v1
+schema_version: ledger.source_package.v1
 package_id: soi-ira-traditional-contributions-2022
 label: IRS SOI 2022 Traditional IRA contribution totals
 artifact:

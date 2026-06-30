@@ -1,3 +1,3 @@
 """Ledger relational database compatibility module."""
 
-from arch.database import *  # noqa: F403
+from ledger.database import *  # noqa: F403

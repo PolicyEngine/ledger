@@ -1,4 +1,4 @@
-schema_version: arch.source_package.v1
+schema_version: ledger.source_package.v1
 package_id: cms-aca-effectuated-enrollment-2022
 label: CMS Marketplace full-year 2022 effectuated enrollment and financial assistance
 artifact:

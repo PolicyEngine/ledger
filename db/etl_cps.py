@@ -164,7 +164,9 @@ def get_or_create_stratum(
     return stratum
 
 
-def load_cps_targets(session: Session, years: list[int] | None = None, months: list[int] | None = None):
+def load_cps_targets(
+    session: Session, years: list[int] | None = None, months: list[int] | None = None
+):
     """
     Load CPS monthly employment targets into database.
 

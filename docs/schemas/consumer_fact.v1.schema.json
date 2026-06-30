@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://policyengine.org/arch/schemas/consumer_fact.v1.schema.json",
-  "title": "Arch consumer fact contract row",
+  "$id": "https://policyengine.org/ledger/schemas/consumer_fact.v1.schema.json",
+  "title": "Ledger consumer fact contract row",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -28,39 +28,39 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "arch.consumer_fact.v1"
+      "const": "ledger.consumer_fact.v1"
     },
     "aggregate_fact_key": {
       "type": "string",
-      "pattern": "^arch\\.aggregate_fact\\.v2:[0-9a-f]{24}$"
+      "pattern": "^ledger\\.aggregate_fact\\.v2:[0-9a-f]{24}$"
     },
     "semantic_fact_key": {
       "type": "string",
-      "pattern": "^arch\\.semantic_fact\\.v2:[0-9a-f]{24}$"
+      "pattern": "^ledger\\.semantic_fact\\.v2:[0-9a-f]{24}$"
     },
     "legacy_fact_key": {
       "type": "string",
-      "pattern": "^arch\\.fact\\.v1:[0-9a-f]{24}$"
+      "pattern": "^ledger\\.fact\\.v1:[0-9a-f]{24}$"
     },
     "source_release_key": {
       "type": "string",
-      "pattern": "^arch\\.source_release\\.v2:[0-9a-f]{24}$"
+      "pattern": "^ledger\\.source_release\\.v2:[0-9a-f]{24}$"
     },
     "source_series_key": {
       "type": "string",
-      "pattern": "^arch\\.source_series\\.v2:[0-9a-f]{24}$"
+      "pattern": "^ledger\\.source_series\\.v2:[0-9a-f]{24}$"
     },
     "observed_measure_key": {
       "type": "string",
-      "pattern": "^arch\\.observed_measure\\.v2:[0-9a-f]{24}$"
+      "pattern": "^ledger\\.observed_measure\\.v2:[0-9a-f]{24}$"
     },
     "dimension_set_key": {
       "type": "string",
-      "pattern": "^arch\\.dimension_set\\.v2:[0-9a-f]{24}$"
+      "pattern": "^ledger\\.dimension_set\\.v2:[0-9a-f]{24}$"
     },
     "universe_constraint_set_key": {
       "type": "string",
-      "pattern": "^arch\\.universe_constraint_set\\.v2:[0-9a-f]{24}$"
+      "pattern": "^ledger\\.universe_constraint_set\\.v2:[0-9a-f]{24}$"
     },
     "value": {
       "type": ["integer", "number", "string", "boolean"]
@@ -271,7 +271,7 @@
       "properties": {
         "concept_alignment_key": {
           "type": "string",
-          "pattern": "^arch\\.concept_alignment\\.v2:[0-9a-f]{24}$"
+          "pattern": "^ledger\\.concept_alignment\\.v2:[0-9a-f]{24}$"
         },
         "source_concept": {
           "type": "string"

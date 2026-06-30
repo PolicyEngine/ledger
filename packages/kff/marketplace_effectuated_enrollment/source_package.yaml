@@ -1,4 +1,4 @@
-schema_version: arch.source_package.v1
+schema_version: ledger.source_package.v1
 package_id: kff-marketplace-effectuated-enrollment
 label: KFF State Health Facts full-year average marketplace effectuated enrollment
 artifact:

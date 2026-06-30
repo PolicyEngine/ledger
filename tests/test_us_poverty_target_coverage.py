@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from arch.source_package import SOURCE_PACKAGE_ALIASES, load_source_package
-from arch.targets.us_poverty import (
+from ledger.source_package import SOURCE_PACKAGE_ALIASES, load_source_package
+from ledger.targets.us_poverty import (
     coverage_entries,
     hard_target_package_aliases,
     source_gap_family_ids,

@@ -148,7 +148,10 @@ class TestHmrcETL:
             ).first()
 
             assert uc_spend is not None
-            assert uc_spend.value == HMRC_DATA[2022]["benefits"]["universal_credit"]["expenditure"]
+            assert (
+                uc_spend.value
+                == HMRC_DATA[2022]["benefits"]["universal_credit"]["expenditure"]
+            )
             assert uc_spend.target_type == TargetType.AMOUNT
 
     def test_load_multiple_years(self, temp_db):

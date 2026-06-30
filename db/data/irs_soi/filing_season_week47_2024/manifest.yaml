@@ -13,6 +13,6 @@ files:
     storage:
       r2:
         provider: r2
-        bucket: arch-raw
+        bucket: ledger-raw
         key: raw/irs_soi/soi-filing-season-week47-2024-eitc-total/2024/5b8f05734ec3f4ad68c51ee8add91510ce209492c301786f17f50b22cc00adb3/25inweek47.xlsx
-        uri: r2://arch-raw/raw/irs_soi/soi-filing-season-week47-2024-eitc-total/2024/5b8f05734ec3f4ad68c51ee8add91510ce209492c301786f17f50b22cc00adb3/25inweek47.xlsx
+        uri: r2://ledger-raw/raw/irs_soi/soi-filing-season-week47-2024-eitc-total/2024/5b8f05734ec3f4ad68c51ee8add91510ce209492c301786f17f50b22cc00adb3/25inweek47.xlsx

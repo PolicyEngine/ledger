@@ -255,7 +255,7 @@ class TestAgiBracketStratification:
             next_bracket = AGI_BRACKETS[i + 1]
             assert current["max"] == next_bracket["min"], (
                 f"Gap between bracket {i} (max={current['max']}) "
-                f"and bracket {i+1} (min={next_bracket['min']})"
+                f"and bracket {i + 1} (min={next_bracket['min']})"
             )
 
     def test_load_soi_state_creates_agi_bracket_strata(self, temp_db):
@@ -281,9 +281,7 @@ class TestAgiBracketStratification:
 
             # Find CA $50k-$75k bracket stratum
             ca_bracket_stratum = session.exec(
-                select(Stratum).where(
-                    Stratum.name == "CA Filers AGI $50k-$75k"
-                )
+                select(Stratum).where(Stratum.name == "CA Filers AGI $50k-$75k")
             ).first()
 
             assert ca_bracket_stratum is not None
@@ -311,9 +309,7 @@ class TestAgiBracketStratification:
             ).first()
 
             ca_bracket_stratum = session.exec(
-                select(Stratum).where(
-                    Stratum.name == "CA Filers AGI $50k-$75k"
-                )
+                select(Stratum).where(Stratum.name == "CA Filers AGI $50k-$75k")
             ).first()
 
             assert ca_bracket_stratum.parent_id == ca_state_stratum.id
@@ -324,9 +320,7 @@ class TestAgiBracketStratification:
             load_soi_state_targets(session, years=[2021])
 
             ca_bracket_stratum = session.exec(
-                select(Stratum).where(
-                    Stratum.name == "CA Filers AGI $100k-$200k"
-                )
+                select(Stratum).where(Stratum.name == "CA Filers AGI $100k-$200k")
             ).first()
 
             assert ca_bracket_stratum is not None
@@ -351,9 +345,7 @@ class TestAgiBracketStratification:
             load_soi_state_targets(session, years=[2021])
 
             tx_bracket_stratum = session.exec(
-                select(Stratum).where(
-                    Stratum.name == "TX Filers AGI $1M+"
-                )
+                select(Stratum).where(Stratum.name == "TX Filers AGI $1M+")
             ).first()
 
             returns_target = session.exec(
@@ -372,9 +364,7 @@ class TestAgiBracketStratification:
 
             # Check NY has all 10 brackets
             ny_bracket_strata = session.exec(
-                select(Stratum).where(
-                    Stratum.name.like("NY Filers AGI %")
-                )
+                select(Stratum).where(Stratum.name.like("NY Filers AGI %"))
             ).all()
 
             assert len(ny_bracket_strata) == len(AGI_BRACKETS)
@@ -385,9 +375,7 @@ class TestAgiBracketStratification:
             load_soi_state_targets(session, years=[2021])
 
             stratum = session.exec(
-                select(Stratum).where(
-                    Stratum.name == "FL Filers AGI Under $1"
-                )
+                select(Stratum).where(Stratum.name == "FL Filers AGI Under $1")
             ).first()
 
             assert stratum is not None

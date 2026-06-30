@@ -1,4 +1,4 @@
-schema_version: arch.source_package.v1
+schema_version: ledger.source_package.v1
 package_id: census-stc-individual-income-tax
 label: Census State Tax Collections individual income tax collections
 artifact:

@@ -1,16 +1,16 @@
 # US Poverty and Nonfiler Source-Target Coverage
 
-This document records the Arch-side source coverage contract for US poverty and
-nonfiler calibration work. Arch stores source-backed facts and target inputs.
+This document records the Ledger-side source coverage contract for US poverty and
+nonfiler calibration work. Ledger stores source-backed facts and target inputs.
 Populace owns the active calibration profile, source reconciliation, aging, and
 model variable mapping.
 
 The related machine-readable contract lives in
-`arch.targets.us_poverty.US_POVERTY_NONFILER_TARGET_COVERAGE`.
+`ledger.targets.us_poverty.US_POVERTY_NONFILER_TARGET_COVERAGE`.
 
 ## Main Answer
 
-Yes, many of the targets discussed for ECPS/Populace are already in Arch:
+Yes, many of the targets discussed for ECPS/Populace are already in Ledger:
 
 - BEA NIPA full-population income, transfer, tax, and pension aggregates.
 - IRS SOI filer income, deduction, credit, wage, and state/district facts.
@@ -22,17 +22,17 @@ Yes, many of the targets discussed for ECPS/Populace are already in Arch:
   collections.
 
 The missing piece was not another legacy `policyengine-us-data` comparison. It
-was an explicit coverage gate that tells consumers which Arch source families
+was an explicit coverage gate that tells consumers which Ledger source families
 are hard target inputs, which are validation-only diagnostics, and which source
 packages are still missing for SPM-specific components.
 
 ## Hard Target Inputs
 
-These source families are appropriate Arch inputs for Populace target
+These source families are appropriate Ledger inputs for Populace target
 composition. Populace may still decide how to reconcile, age, activate, or map
 them to model variables.
 
-| Family | Source scope | Arch aliases |
+| Family | Source scope | Ledger aliases |
 |---|---|---|
 | Population by age, sex, state, and congressional district | Census PEP and ACS demographics | `census-pep-2024-national-age-sex`, `census-pep-2024-state-age-sex`, `census-acs-s0101-national-age-2024`, `census-acs-s0101-state-age-2024`, `census-acs-s0101-congressional-district-age-2024` |
 | NIPA personal income, transfers, taxes, and pensions | BEA NIPA full-population aggregates | `bea-nipa-total-wages-salaries`, `bea-nipa-personal-income-components`, `bea-nipa-personal-income-disposition`, `bea-nipa-pension-contributions` |
@@ -46,7 +46,7 @@ them to model variables.
 
 BEA NIPA is especially important for nonfilers because it is a
 full-population macro control, not an SOI-only filer target. It currently gives
-Arch coverage for wages, proprietors' income, rental income, interest,
+Ledger coverage for wages, proprietors' income, rental income, interest,
 dividends, UI, Social Security, SSI, SNAP, Medicare, Medicaid, TANF, personal
 taxes, disposable personal income, and pension contributions.
 
@@ -81,7 +81,7 @@ These are the current poverty/SPM-specific gaps to add as source packages:
 
 The old ECPS-style gate was a source-backed target coverage gate: every active
 source-backed target family needed a ledgered source family, with reviewed
-exclusions for survey/model-only variables. That idea belongs here in Arch as
+exclusions for survey/model-only variables. That idea belongs here in Ledger as
 source coverage, while Populace owns the active target profile.
 
 The important distinction is:

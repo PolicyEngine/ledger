@@ -12,9 +12,9 @@ files:
     storage:
       r2:
         provider: r2
-        bucket: arch-raw
+        bucket: ledger-raw
         key: raw/irs_soi/soi-historic-table-2/2020/01da5c0e510685d19fe47fe1c960f217d20208f31f66c7dbd2892feba7d2ace2/20in55cmcsv.csv
-        uri: r2://arch-raw/raw/irs_soi/soi-historic-table-2/2020/01da5c0e510685d19fe47fe1c960f217d20208f31f66c7dbd2892feba7d2ace2/20in55cmcsv.csv
+        uri: r2://ledger-raw/raw/irs_soi/soi-historic-table-2/2020/01da5c0e510685d19fe47fe1c960f217d20208f31f66c7dbd2892feba7d2ace2/20in55cmcsv.csv
   2021:
     filename: 21in55cmcsv.csv
     source_url: https://www.irs.gov/pub/irs-soi/21in55cmcsv.csv
@@ -23,9 +23,9 @@ files:
     storage:
       r2:
         provider: r2
-        bucket: arch-raw
+        bucket: ledger-raw
         key: raw/irs_soi/soi-historic-table-2/2021/eb12920d565b773d895e84cb4188119f13ffd664c04579ed6e7ccc7d298a0a2d/21in55cmcsv.csv
-        uri: r2://arch-raw/raw/irs_soi/soi-historic-table-2/2021/eb12920d565b773d895e84cb4188119f13ffd664c04579ed6e7ccc7d298a0a2d/21in55cmcsv.csv
+        uri: r2://ledger-raw/raw/irs_soi/soi-historic-table-2/2021/eb12920d565b773d895e84cb4188119f13ffd664c04579ed6e7ccc7d298a0a2d/21in55cmcsv.csv
   2022:
     filename: 22in55cmcsv.csv
     source_url: https://www.irs.gov/pub/irs-soi/22in55cmcsv.csv
@@ -34,6 +34,6 @@ files:
     storage:
       r2:
         provider: r2
-        bucket: arch-raw
+        bucket: ledger-raw
         key: raw/irs_soi/soi-historic-table-2/2022/f72f83339c36af889cf0ba98acdfab8e3d18051f88cb181f46db2ddc4ae498bb/22in55cmcsv.csv
-        uri: r2://arch-raw/raw/irs_soi/soi-historic-table-2/2022/f72f83339c36af889cf0ba98acdfab8e3d18051f88cb181f46db2ddc4ae498bb/22in55cmcsv.csv
+        uri: r2://ledger-raw/raw/irs_soi/soi-historic-table-2/2022/f72f83339c36af889cf0ba98acdfab8e3d18051f88cb181f46db2ddc4ae498bb/22in55cmcsv.csv

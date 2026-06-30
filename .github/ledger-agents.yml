@@ -1,0 +1,62 @@
+schema_version: policyengine_ledger.approved_agents.v1
+owners:
+  github_team: PolicyEngine/core-developers
+approved_agents:
+  - id: ledger-source-ingestor
+    purpose: Add or update source packages that emit raw publisher-backed facts.
+    allowed_paths:
+      - packages/**
+      - ledger/jurisdictions/**
+      - ledger/sources/**
+      - tests/test_ledger_*.py
+      - tests/test_source_*.py
+      - tests/test_etl_*.py
+    required_deterministic_checks:
+      - source-package validation
+      - source-cell preservation
+      - consumer-contract validation
+      - raw-facts boundary validation
+    required_judges:
+      - ledger-source-fidelity
+      - ledger-boundary
+  - id: ledger-target-profile-author
+    purpose: Add source-backed target profiles and model measurement contracts without target values.
+    allowed_paths:
+      - policyengine_ledger/target_profiles/**
+      - ledger/targets/**
+      - tests/test_policyengine_ledger_target_profiles.py
+      - tests/test_us_poverty_target_coverage.py
+    required_deterministic_checks:
+      - no embedded target values
+      - sum-only operation
+      - selector references raw Ledger facts
+    required_judges:
+      - ledger-target-profile
+      - ledger-boundary
+  - id: ledger-contract-maintainer
+    purpose: Change Ledger schemas, identity, provenance, or consumer contracts.
+    allowed_paths:
+      - ledger/core.py
+      - ledger/consumer_contract.py
+      - policyengine_ledger/**
+      - docs/schemas/**
+      - tests/test_ledger_consumer_contract.py
+      - tests/test_ledger_core.py
+      - tests/test_policyengine_ledger_imports.py
+    required_deterministic_checks:
+      - schema validation
+      - consumer-contract validation
+      - package import compatibility
+      - raw-facts boundary validation
+    required_judges:
+      - ledger-contract
+      - ledger-boundary
+required_judges:
+  ledger-source-fidelity:
+    verdict: PASS if every new fact is directly traceable to publisher bytes/cells and no source values are invented.
+  ledger-target-profile:
+    verdict: PASS if profiles contain selectors and measurement contracts only, with no target values or active calibration decisions.
+  ledger-contract:
+    verdict: PASS if schema or identity changes preserve source provenance and do not move Populace responsibilities into Ledger.
+  ledger-boundary:
+    verdict: PASS if reconciliation, aging, imputation, support-aware activation, and solver construction remain outside Ledger.

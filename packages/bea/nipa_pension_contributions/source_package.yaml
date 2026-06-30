@@ -1,4 +1,4 @@
-schema_version: arch.source_package.v1
+schema_version: ledger.source_package.v1
 package_id: bea-nipa-pension-contributions
 label: BEA NIPA defined contribution pension contributions
 artifact:

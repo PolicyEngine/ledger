@@ -261,7 +261,9 @@ class TestSoiCreditsETL:
                     select(Target).where(Target.stratum_id == stratum.id)
                 ).all()
 
-                assert len(targets) == 6, f"Expected 6 targets for {state_abbrev}, got {len(targets)}"
+                assert len(targets) == 6, (
+                    f"Expected 6 targets for {state_abbrev}, got {len(targets)}"
+                )
 
     def test_target_source_metadata(self, temp_db):
         """Targets should have correct source metadata."""
@@ -472,7 +474,9 @@ class TestEitcByChildrenETL:
             assert avg_0_children < 300  # Much lower max credit for no children
 
             # 3+ children: higher average credit
-            avg_3plus = data["3plus_children"]["amount"] / data["3plus_children"]["claims"]
+            avg_3plus = (
+                data["3plus_children"]["amount"] / data["3plus_children"]["claims"]
+            )
             assert avg_3plus > 3000  # Higher max credit for 3+ children
 
     def test_eitc_by_children_has_parent_stratum(self, temp_db):
@@ -518,7 +522,10 @@ class TestEitcByChildrenETL:
             ).first()
 
             assert target.source == DataSource.IRS_SOI
-            assert target.source_table == "EITC Statistics by Number of Qualifying Children"
+            assert (
+                target.source_table
+                == "EITC Statistics by Number of Qualifying Children"
+            )
             assert "earned-income-tax-credit" in target.source_url
 
 
@@ -681,7 +688,9 @@ class TestCtcByChildrenETL:
             ).first()
 
             assert target.source == DataSource.IRS_SOI
-            assert target.source_table == "CTC Statistics by Number of Qualifying Children"
+            assert (
+                target.source_table == "CTC Statistics by Number of Qualifying Children"
+            )
             assert "state-data" in target.source_url
 
 
@@ -844,5 +853,8 @@ class TestActcByChildrenETL:
             ).first()
 
             assert target.source == DataSource.IRS_SOI
-            assert target.source_table == "ACTC Statistics by Number of Qualifying Children"
+            assert (
+                target.source_table
+                == "ACTC Statistics by Number of Qualifying Children"
+            )
             assert "state-data" in target.source_url

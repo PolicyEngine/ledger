@@ -1,3 +1,3 @@
 """US poverty/nonfiler target coverage compatibility module."""
 
-from arch.targets.us_poverty import *  # noqa: F403
+from ledger.targets.us_poverty import *  # noqa: F403

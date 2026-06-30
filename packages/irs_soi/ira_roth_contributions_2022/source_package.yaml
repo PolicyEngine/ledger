@@ -1,4 +1,4 @@
-schema_version: arch.source_package.v1
+schema_version: ledger.source_package.v1
 package_id: soi-ira-roth-contributions-2022
 label: IRS SOI 2022 Roth IRA contribution totals
 artifact:

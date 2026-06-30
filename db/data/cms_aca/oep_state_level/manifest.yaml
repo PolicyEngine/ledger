@@ -12,6 +12,6 @@ files:
     storage:
       r2:
         provider: r2
-        bucket: arch-raw
+        bucket: ledger-raw
         key: raw/cms_aca/cms-aca-oep-state-level/2024/8b98f8816c1769beff243cd64204ef2c431283c0ad21784196e2666777a6b5d9/2024-oep-state-level-public-use-file.zip
-        uri: r2://arch-raw/raw/cms_aca/cms-aca-oep-state-level/2024/8b98f8816c1769beff243cd64204ef2c431283c0ad21784196e2666777a6b5d9/2024-oep-state-level-public-use-file.zip
+        uri: r2://ledger-raw/raw/cms_aca/cms-aca-oep-state-level/2024/8b98f8816c1769beff243cd64204ef2c431283c0ad21784196e2666777a6b5d9/2024-oep-state-level-public-use-file.zip

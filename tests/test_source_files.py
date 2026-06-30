@@ -167,10 +167,10 @@ def test_ingest_pdf_source_artifact(tmp_path):
 
 def test_pe_source_inventory_finds_both_pipeline_roots(tmp_path):
     pe_us = tmp_path / "policyengine-us-data"
-    raw_inputs = pe_us / "policyengine_us_data" / "storage" / "calibration" / "raw_inputs"
-    target_inputs = (
-        pe_us / "policyengine_us_data" / "storage" / "calibration_targets"
+    raw_inputs = (
+        pe_us / "policyengine_us_data" / "storage" / "calibration" / "raw_inputs"
     )
+    target_inputs = pe_us / "policyengine_us_data" / "storage" / "calibration_targets"
     raw_inputs.mkdir(parents=True)
     target_inputs.mkdir(parents=True)
     (raw_inputs / "irs_soi_sample.csv").write_text("x\n1\n", encoding="utf-8")

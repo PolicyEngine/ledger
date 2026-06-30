@@ -1,9 +1,9 @@
-"""Ledger-owned target profiles and measurement contracts.
+"""Ledger-owned target profiles for government statistics source records.
 
-Target profiles describe which source-backed Ledger facts a calibration build
-may select and how a model should measure the matching quantity on microdata.
-They do not contain target values. Values come from Ledger fact rows selected by
-the profile's selectors.
+Target profiles describe which source-backed Ledger facts a downstream build
+may select and the semantic quantity those facts represent. They do not contain
+target values, runtime hooks, or solver instructions. Values come from Ledger
+fact rows selected by the profile's selectors.
 """
 
 from __future__ import annotations
@@ -15,11 +15,26 @@ from importlib.resources import files
 from typing import Any
 
 TARGET_PROFILE_SCHEMA_VERSION = "policyengine_ledger.target_profile.v1"
+FORBIDDEN_VALUE_KEYS = {"aggregation", "operation", "registry", "target_value", "value"}
+FORBIDDEN_RUNTIME_KEYS = {
+    "callable",
+    "command",
+    "execute",
+    "executable",
+    "function",
+    "import",
+    "imports",
+    "module",
+    "python_code",
+    "runtime_code",
+    "script",
+    "solver",
+}
 
 
 @dataclass(frozen=True)
 class TargetProfileBinding:
-    """Backend-specific executable binding for one measurement contract."""
+    """Backend-specific semantic reference for one source quantity."""
 
     backend: str
     metric_name: str
@@ -28,7 +43,7 @@ class TargetProfileBinding:
 
 @dataclass(frozen=True)
 class TargetProfileTarget:
-    """One profile target family and its microdata measurement contract."""
+    """One profile target family and its source quantity contract."""
 
     target_id: str
     family: str
@@ -50,7 +65,7 @@ class TargetProfileTarget:
 
 @dataclass(frozen=True)
 class TargetProfile:
-    """A Ledger-owned target profile consumed by Populace or other solvers."""
+    """A Ledger-owned source profile referenced by downstream builders."""
 
     profile_id: str
     country: str
@@ -199,13 +214,13 @@ def _binding_from_mapping(
 
 
 def _reject_forbidden_value_keys(raw: Mapping[str, Any], *, context: str) -> None:
-    forbidden = {"aggregation", "operation", "registry", "target_value", "value"}
+    forbidden = FORBIDDEN_VALUE_KEYS | FORBIDDEN_RUNTIME_KEYS
     present = sorted(key for key in forbidden if key in raw)
     if present:
         raise ValueError(
-            f"{context} must not declare {present}; Ledger profiles use implicit "
-            "Ledger source selection and sum-only measurement, with values "
-            "coming from Ledger facts."
+            f"{context} must not declare {present}; Ledger profiles use "
+            "implicit Ledger source selection, sum-only measurement, no "
+            "runtime execution hooks, and values coming from Ledger facts."
         )
 
 
@@ -219,15 +234,16 @@ def _reject_forbidden_contract_keys(value: Any, *, context: str) -> None:
     """
 
     if isinstance(value, Mapping):
-        forbidden = {"aggregation", "operation", "registry", "target_value"}
+        forbidden = FORBIDDEN_VALUE_KEYS - {"value"}
         if not _is_filter_predicate(value):
             forbidden = forbidden | {"value"}
+        forbidden = forbidden | FORBIDDEN_RUNTIME_KEYS
         present = sorted(key for key in forbidden if key in value)
         if present:
             raise ValueError(
                 f"{context} must not declare {present}; Ledger target profiles "
-                "use implicit source selection and sum-only measurement, with "
-                "values coming from Ledger facts."
+                "use implicit source selection, sum-only measurement, no "
+                "runtime execution hooks, and values coming from Ledger facts."
             )
         for key, item in value.items():
             _reject_forbidden_contract_keys(item, context=f"{context}.{key}")

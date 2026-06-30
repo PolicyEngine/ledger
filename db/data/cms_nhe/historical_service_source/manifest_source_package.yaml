@@ -15,6 +15,6 @@ files:
     storage:
       r2:
         provider: r2
-        bucket: arch-raw
+        bucket: ledger-raw
         key: raw/cms_nhe/cms-nhe-historical-service-source/2024/b6a9e26774ca36931d42add46204947d6335fc4898011780563196898f964746/national-health-expenditures-type-service-source-funds-cy-1960-2024.zip
-        uri: r2://arch-raw/raw/cms_nhe/cms-nhe-historical-service-source/2024/b6a9e26774ca36931d42add46204947d6335fc4898011780563196898f964746/national-health-expenditures-type-service-source-funds-cy-1960-2024.zip
+        uri: r2://ledger-raw/raw/cms_nhe/cms-nhe-historical-service-source/2024/b6a9e26774ca36931d42add46204947d6335fc4898011780563196898f964746/national-health-expenditures-type-service-source-funds-cy-1960-2024.zip

@@ -31,15 +31,12 @@ HMRC_DATA = {
         "national_insurance": 176_500_000_000,  # £176.5bn
         "capital_gains_tax": 18_200_000_000,  # £18.2bn
         "inheritance_tax": 7_100_000_000,  # £7.1bn
-
         # Taxpayer counts
         "taxpayers": 34_100_000,
         "higher_rate_taxpayers": 6_100_000,
         "additional_rate_taxpayers": 629_000,
-
         # Total income
         "total_income": 1_534_000_000_000,  # £1.534tn
-
         # Benefits (DWP data, included here for convenience)
         "benefits": {
             "universal_credit": {
@@ -69,13 +66,10 @@ HMRC_DATA = {
         "national_insurance": 157_800_000_000,
         "capital_gains_tax": 14_900_000_000,
         "inheritance_tax": 6_100_000_000,
-
         "taxpayers": 32_400_000,
         "higher_rate_taxpayers": 5_500_000,
         "additional_rate_taxpayers": 538_000,
-
         "total_income": 1_423_000_000_000,
-
         "benefits": {
             "universal_credit": {
                 "recipients": 5_800_000,
@@ -101,7 +95,9 @@ HMRC_DATA = {
     },
 }
 
-SOURCE_URL_TAX = "https://www.gov.uk/government/statistics/income-tax-liabilities-statistics"
+SOURCE_URL_TAX = (
+    "https://www.gov.uk/government/statistics/income-tax-liabilities-statistics"
+)
 SOURCE_URL_DWP = "https://www.gov.uk/government/collections/dwp-benefits-statistics"
 
 
@@ -169,7 +165,9 @@ def load_hmrc_targets(session: Session, years: list[int] | None = None):
             session,
             name="UK All Taxpayers",
             jurisdiction=Jurisdiction.UK,
-            constraints=[("is_taxpayer", "==", "1")],  # Taxpayers only, not whole population
+            constraints=[
+                ("is_taxpayer", "==", "1")
+            ],  # Taxpayers only, not whole population
             description="All UK taxpayers",
             stratum_group_id="uk_national",
         )

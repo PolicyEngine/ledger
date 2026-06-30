@@ -1,4 +1,4 @@
-schema_version: arch.source_package.v1
+schema_version: ledger.source_package.v1
 package_id: cms-nhe-historical-service-source
 label: CMS NHE historical Medicaid source-of-funds expenditures
 artifact:

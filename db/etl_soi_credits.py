@@ -883,7 +883,11 @@ def load_eitc_by_children_targets(session: Session, years: list[int] | None = No
                 jurisdiction=Jurisdiction.US_FEDERAL,
                 constraints=[
                     ("is_tax_filer", "==", "1"),
-                    ("eitc_qualifying_children", category_def["constraint_operator"], category_def["constraint_value"]),
+                    (
+                        "eitc_qualifying_children",
+                        category_def["constraint_operator"],
+                        category_def["constraint_value"],
+                    ),
                 ],
                 description=category_def["description"],
                 parent_id=national_stratum.id,
@@ -966,7 +970,11 @@ def load_ctc_by_children_targets(session: Session, years: list[int] | None = Non
                 jurisdiction=Jurisdiction.US_FEDERAL,
                 constraints=[
                     ("is_tax_filer", "==", "1"),
-                    ("ctc_qualifying_children", category_def["constraint_operator"], category_def["constraint_value"]),
+                    (
+                        "ctc_qualifying_children",
+                        category_def["constraint_operator"],
+                        category_def["constraint_value"],
+                    ),
                 ],
                 description=category_def["description"],
                 parent_id=national_stratum.id,
@@ -1051,7 +1059,11 @@ def load_actc_by_children_targets(session: Session, years: list[int] | None = No
                 jurisdiction=Jurisdiction.US_FEDERAL,
                 constraints=[
                     ("is_tax_filer", "==", "1"),
-                    ("actc_qualifying_children", category_def["constraint_operator"], category_def["constraint_value"]),
+                    (
+                        "actc_qualifying_children",
+                        category_def["constraint_operator"],
+                        category_def["constraint_value"],
+                    ),
                 ],
                 description=category_def["description"],
                 parent_id=national_stratum.id,

@@ -1,4 +1,4 @@
-"""PolicyEngine source-file inventory for Arch ingestion."""
+"""PolicyEngine source-file inventory for Ledger ingestion."""
 
 from __future__ import annotations
 
@@ -317,7 +317,12 @@ def _infer_uk_source_id(path: Path) -> str:
         return "hmrc"
     if "council_tax" in name:
         return "voa"
-    if "demographics" in name or "households" in name or "tenure" in name or name == "age.csv":
+    if (
+        "demographics" in name
+        or "households" in name
+        or "tenure" in name
+        or name == "age.csv"
+    ):
         return "ons"
     if "rent" in name or "lha" in name:
         return "ons-housing"
@@ -377,7 +382,9 @@ def _url_spec(
     )
 
 
-def pe_us_source_specs(pe_us_root: Path = DEFAULT_PE_US_ROOT) -> list[SourceArtifactSpec]:
+def pe_us_source_specs(
+    pe_us_root: Path = DEFAULT_PE_US_ROOT,
+) -> list[SourceArtifactSpec]:
     """Return public PE-US target source files available in a local checkout."""
     root = pe_us_root / "policyengine_us_data" / "storage"
     specs: list[SourceArtifactSpec] = []
@@ -497,7 +504,9 @@ def pe_us_source_specs(pe_us_root: Path = DEFAULT_PE_US_ROOT) -> list[SourceArti
     return specs
 
 
-def pe_uk_source_specs(pe_uk_root: Path = DEFAULT_PE_UK_ROOT) -> list[SourceArtifactSpec]:
+def pe_uk_source_specs(
+    pe_uk_root: Path = DEFAULT_PE_UK_ROOT,
+) -> list[SourceArtifactSpec]:
     """Return public PE-UK target source files available in a local checkout."""
     storage = pe_uk_root / "policyengine_uk_data" / "storage"
     specs: list[SourceArtifactSpec] = []

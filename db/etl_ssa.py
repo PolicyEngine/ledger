@@ -29,34 +29,29 @@ SSA_DATA = {
         # OASDI (Old-Age, Survivors, and Disability Insurance)
         "total_beneficiaries": 67_500_000,
         "total_benefits": 1_415_000_000_000,  # $1.415 trillion annually
-
         # Retired workers
         "retired_workers": {
             "beneficiaries": 51_200_000,
             "benefits": 987_000_000_000,
             "avg_monthly_benefit": 1_907,  # dollars
         },
-
         # Disabled workers
         "disabled_workers": {
             "beneficiaries": 7_600_000,
             "benefits": 143_000_000_000,
             "avg_monthly_benefit": 1_537,
         },
-
         # Survivors
         "survivors": {
             "beneficiaries": 5_900_000,
             "benefits": 112_000_000_000,
             "avg_monthly_benefit": 1_498,
         },
-
         # Spouses and children
         "dependents": {
             "beneficiaries": 2_800_000,
             "benefits": 43_000_000_000,
         },
-
         # SSI (Supplemental Security Income)
         "ssi": {
             "recipients": 7_400_000,
@@ -70,30 +65,25 @@ SSA_DATA = {
     2022: {
         "total_beneficiaries": 66_000_000,
         "total_benefits": 1_234_000_000_000,
-
         "retired_workers": {
             "beneficiaries": 50_100_000,
             "benefits": 876_000_000_000,
             "avg_monthly_benefit": 1_827,
         },
-
         "disabled_workers": {
             "beneficiaries": 7_800_000,
             "benefits": 134_000_000_000,
             "avg_monthly_benefit": 1_483,
         },
-
         "survivors": {
             "beneficiaries": 5_800_000,
             "benefits": 98_000_000_000,
             "avg_monthly_benefit": 1_456,
         },
-
         "dependents": {
             "beneficiaries": 2_300_000,
             "benefits": 38_000_000_000,
         },
-
         "ssi": {
             "recipients": 7_600_000,
             "payments": 56_700_000_000,
@@ -106,30 +96,25 @@ SSA_DATA = {
     2021: {
         "total_beneficiaries": 65_000_000,
         "total_benefits": 1_145_000_000_000,
-
         "retired_workers": {
             "beneficiaries": 49_000_000,
             "benefits": 812_000_000_000,
             "avg_monthly_benefit": 1_657,
         },
-
         "disabled_workers": {
             "beneficiaries": 8_000_000,
             "benefits": 128_000_000_000,
             "avg_monthly_benefit": 1_358,
         },
-
         "survivors": {
             "beneficiaries": 5_700_000,
             "benefits": 92_000_000_000,
             "avg_monthly_benefit": 1_387,
         },
-
         "dependents": {
             "beneficiaries": 2_300_000,
             "benefits": 35_000_000_000,
         },
-
         "ssi": {
             "recipients": 7_800_000,
             "payments": 54_800_000_000,

@@ -13,9 +13,9 @@ files:
     storage:
       r2:
         provider: r2
-        bucket: arch-raw
+        bucket: ledger-raw
         key: raw/irs_soi/soi-table-4-3/2023/4a65447b858f14cb39c6fdc1935c9f4cb8ee0a0c4c245baf263c29d80d1a49c8/23in43ts.xls
-        uri: r2://arch-raw/raw/irs_soi/soi-table-4-3/2023/4a65447b858f14cb39c6fdc1935c9f4cb8ee0a0c4c245baf263c29d80d1a49c8/23in43ts.xls
+        uri: r2://ledger-raw/raw/irs_soi/soi-table-4-3/2023/4a65447b858f14cb39c6fdc1935c9f4cb8ee0a0c4c245baf263c29d80d1a49c8/23in43ts.xls
   2022:
     filename: 22in43ts.xls
     source_url: https://www.irs.gov/pub/irs-soi/22in43ts.xls
@@ -25,9 +25,9 @@ files:
     storage:
       r2:
         provider: r2
-        bucket: arch-raw
+        bucket: ledger-raw
         key: raw/irs_soi/soi-table-4-3/2022/cb36e5fbd7862f54067801c4ee7abac45cc94c10ef8aed4c30adca9cdac85e4c/22in43ts.xls
-        uri: r2://arch-raw/raw/irs_soi/soi-table-4-3/2022/cb36e5fbd7862f54067801c4ee7abac45cc94c10ef8aed4c30adca9cdac85e4c/22in43ts.xls
+        uri: r2://ledger-raw/raw/irs_soi/soi-table-4-3/2022/cb36e5fbd7862f54067801c4ee7abac45cc94c10ef8aed4c30adca9cdac85e4c/22in43ts.xls
   2021:
     filename: 21in43ts.xls
     source_url: https://www.irs.gov/pub/irs-soi/21in43ts.xls
@@ -37,6 +37,6 @@ files:
     storage:
       r2:
         provider: r2
-        bucket: arch-raw
+        bucket: ledger-raw
         key: raw/irs_soi/soi-table-4-3/2021/c2c4717067e661d62d4615b1147f41d780dc769ad4ee30cc0f03c07270700709/21in43ts.xls
-        uri: r2://arch-raw/raw/irs_soi/soi-table-4-3/2021/c2c4717067e661d62d4615b1147f41d780dc769ad4ee30cc0f03c07270700709/21in43ts.xls
+        uri: r2://ledger-raw/raw/irs_soi/soi-table-4-3/2021/c2c4717067e661d62d4615b1147f41d780dc769ad4ee30cc0f03c07270700709/21in43ts.xls

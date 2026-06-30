@@ -170,16 +170,12 @@ class TestOnsETL:
         """Loading twice should not duplicate data."""
         load_ons_targets(session, years=[2024])
         count1 = len(
-            session.exec(
-                select(Target).where(Target.source == DataSource.ONS)
-            ).all()
+            session.exec(select(Target).where(Target.source == DataSource.ONS)).all()
         )
 
         load_ons_targets(session, years=[2024])
         count2 = len(
-            session.exec(
-                select(Target).where(Target.source == DataSource.ONS)
-            ).all()
+            session.exec(select(Target).where(Target.source == DataSource.ONS)).all()
         )
 
         assert count1 == count2

@@ -1,4 +1,4 @@
-schema_version: arch.source_package.v1
+schema_version: ledger.source_package.v1
 package_id: ssa-annual-statistical-supplement-2025
 label: SSA Annual Statistical Supplement 2025 national OASDI and SSI payments
 artifact:
@@ -186,7 +186,7 @@ record_sets:
         concept: ssa.annual_oasdi_or_ssi_payment_amount
         source_concept: ssa.annual_statistical_supplement_payment_amount
         concept_relation: source_label
-        concept_authority: arch-us
+        concept_authority: ledger-us
         unit: usd
         aggregation: sum
         expected_cell_type: number

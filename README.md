@@ -1,10 +1,8 @@
 # PolicyEngine Ledger
 
-PolicyEngine Ledger is the public name for the source-backed fact store
-currently implemented in the historical `arch` Python namespace and
-`PolicyEngine/arch-data` repository. New consumers should use the
-`policyengine_ledger` import path; existing `arch` imports remain supported
-during the rename.
+PolicyEngine Ledger is the source-backed fact store for PolicyEngine,
+Populace, and Thesis. New consumers should use the `policyengine_ledger`
+import path and the `ledger` console command.
 
 Ledger is PolicyEngine's source-data foundation for social simulation. It
 captures source publications, preserves provenance, and represents published
@@ -14,7 +12,8 @@ Ledger may normalize structure: parse files, type values, declare units and
 scales, assign geography and period identifiers, preserve lineage back to
 source artifacts, and publish target profiles that identify source-backed facts
 and measurement contracts. Ledger does not reconcile inconsistent sources,
-impute missing data, or execute simulator-specific calibration.
+impute missing data, store raw survey microdata, or execute simulator-specific
+calibration.
 
 Populace consumes Ledger facts and target profiles, selects the subset its
 current support universe can target, applies minimal period alignment when
@@ -33,9 +32,7 @@ This repository provides:
   conversion and source-published total/share arithmetic.
 - **Target profiles**: Source-backed target contracts and model-measurement
   bindings that Populace, Thesis, and future rule engines can consume.
-- **Microdata**: Survey and administrative microdata ingestion for CPS, PUF,
-  FRS, and related datasets.
-- **Jurisdiction loaders**: Source-specific ETL that emits the shared Arch
+- **Jurisdiction loaders**: Source-specific ETL that emits the shared Ledger
   schema.
 
 Ledger facts are not PolicyEngine's assertion that a source claim is ultimately true.
@@ -58,98 +55,90 @@ The load-bearing rule:
 | Populace Targets | Build-ready active subset | Support-aware activation, solver inputs, diagnostics |
 
 The storage split is documented in
-[`docs/storage-architecture.md`](docs/storage-architecture.md): `arch-raw`
-stores immutable source bytes, `arch-derived` stores reproducible build
-artifacts, and Supabase/Postgres hosts the queryable relational Arch registry
+[`docs/storage-architecture.md`](docs/storage-architecture.md): `ledger-raw`
+stores immutable source bytes, `ledger-derived` stores reproducible build
+artifacts, and Supabase/Postgres hosts the queryable relational Ledger registry
 mirrored from accepted builds.
 
 ## Repository Model
 
 Ledger is global at the schema, validation, database, and build-harness layer.
-Jurisdiction packages are modular source packages that emit the same Arch
+Jurisdiction packages are modular source packages that emit the same Ledger
 objects.
 
 ```text
-GitHub repositories:
-  PolicyEngine/arch-data # Core schema, validation, harness, DB schema
-  PolicyEngine/arch-us   # US source parsers/specs; emits Arch records
-  PolicyEngine/arch-uk   # UK source parsers/specs; emits Arch records
+Planned GitHub repositories after the rename:
+  PolicyEngine/ledger # Core schema, validation, harness, DB schema
+  PolicyEngine/ledger-us   # US source parsers/specs; emits Ledger records
+  PolicyEngine/ledger-uk   # UK source parsers/specs; emits Ledger records
 
 Python distributions:
-  policyengine-arch-data
-  policyengine-arch-us
-  policyengine-arch-uk
+  policyengine-ledger
+  policyengine-ledger-us
+  policyengine-ledger-uk
 
 Python imports:
   policyengine_ledger # New public API
-  arch
-  arch_us
-  arch_uk
+  policyengine_ledger_us
+  policyengine_ledger_uk
 ```
 
-The current `arch.jurisdictions.us` package is an in-repo prototype while the
-core schema is still moving. Once the Arch contract stabilizes, US and UK
-source packages should move to `arch-us` and `arch-uk`. They must not fork
-`AggregateConstraint`, source-row/source-cell lineage, stable keys, validation, or the
-relational DB schema.
+The current in-repo US package is a prototype while the core schema is still
+moving. Until the GitHub repository rename lands, clone this repository into a
+local `ledger` directory. Once the Ledger contract stabilizes, US and UK source
+packages should move to `ledger-us` and `ledger-uk`. They must not fork
+`AggregateConstraint`, source-row/source-cell lineage, stable keys, validation,
+or the relational DB schema.
 
 ## Structure
 
 ```text
-arch/
-├── arch/                    # Public Arch namespace
+ledger/
+├── policyengine_ledger/       # Public Ledger namespace
 │   ├── sources/             # Source lineage helpers
 │   ├── facts/               # Source-backed facts
 │   ├── normalization/       # Low-assumption representation helpers
 │   ├── targets/             # Target input schema, client, loaders
-│   ├── microdata/           # Microdata registry, ingestion, queries
 │   ├── jurisdictions/       # Temporary in-repo jurisdiction source prototypes
 ├── db/                      # SQLModel persistence and source loaders
 │   ├── schema.py            # SQLModel: Target, Stratum, StratumConstraint
 │   ├── supabase_client.py   # Supabase client helpers
 │   └── etl_*.py             # Source-specific ETL pipelines
-├── micro/                   # Legacy simulation consumer prototypes
-├── calibration/             # Calibration target adapters and constraints
 ├── data/                    # Cached data files
 └── docs/                    # Architecture and source documentation
 ```
 
 New code should prefer `policyengine_ledger` for source-backed fact and target
 profile consumers. Existing in-repo implementation code may continue using
-`arch.sources`, `arch.facts`, `arch.normalization`, `arch.targets`, and
-`arch.microdata` while the rename is phased in. Solver execution and calibrated
-dataset construction belong in Populace.
+legacy implementation modules while the namespace migration is completed.
+Solver execution and calibrated dataset construction belong in Populace.
 
 ## Quick Start
 
 ### 1. Install
 
 ```bash
-pip install policyengine-arch-data
-# Or for development:
-git clone https://github.com/PolicyEngine/arch-data arch
-cd arch
+pip install policyengine-ledger
+# Or for development, clone this repository into a Ledger-named directory:
+git clone <current repository URL> ledger
+cd ledger
 pip install -e ".[dev]"
 ```
 
 ### 2. Initialize and Load Legacy Target Inputs
 
 ```bash
-arch init
-arch load soi --years 2021
-arch stats
+ledger init
+ledger load soi --years 2021
+ledger stats
 ```
 
 ### 3. Validate Fixture Facts
 
-The standalone Arch fact harness validates JSONL aggregate facts and emits a
+The standalone Ledger fact harness validates JSONL aggregate facts and emits a
 JSON report with fact counts, QA counts, warnings, and validation errors:
 
 ```bash
-uv run python -m arch.harness validate-facts --fixture
-# Equivalent when the console script is installed:
-uv run arch validate-facts --fixture
-# Equivalent public command once installed:
 uv run ledger validate-facts --fixture
 ```
 
@@ -157,16 +146,16 @@ To build a tiny source-backed fixture from the packaged IRS SOI Table 1.1
 workbook and validate it:
 
 ```bash
-uv run arch build-fixture-facts soi-table-1-1 --year 2023 --output /tmp/arch-soi-facts.jsonl
-uv run arch validate-facts --input /tmp/arch-soi-facts.jsonl
+uv run ledger build-fixture-facts soi-table-1-1 --year 2023 --output /tmp/ledger-soi-facts.jsonl
+uv run ledger validate-facts --input /tmp/ledger-soi-facts.jsonl
 ```
 
 To preserve the whole used range of that workbook as source-cell records before
 semantic fact construction:
 
 ```bash
-uv run arch build-source-cells soi-table-1-1 --year 2023 --output /tmp/arch-soi-cells.jsonl
-uv run arch validate-source-cells --input /tmp/arch-soi-cells.jsonl
+uv run ledger build-source-cells soi-table-1-1 --year 2023 --output /tmp/ledger-soi-cells.jsonl
+uv run ledger validate-source-cells --input /tmp/ledger-soi-cells.jsonl
 ```
 
 Delimited source packages should preserve the whole file as row records before
@@ -174,8 +163,8 @@ selecting facts. For example, the BEA NIPA flat file pilot parses all source
 rows, then emits two selected pension contribution facts:
 
 ```bash
-uv run arch build-source-rows bea-nipa-pension-contributions --year 2022 --output /tmp/arch-bea-rows.jsonl
-uv run arch validate-source-rows --input /tmp/arch-bea-rows.jsonl
+uv run ledger build-source-rows bea-nipa-pension-contributions --year 2022 --output /tmp/ledger-bea-rows.jsonl
+uv run ledger validate-source-rows --input /tmp/ledger-bea-rows.jsonl
 ```
 
 ZIP archives with rectangular publisher files use the same row-first contract.
@@ -184,18 +173,18 @@ its CSV member into source rows/cells, and emits state-level enrollment and
 APTC facts:
 
 ```bash
-uv run arch validate-package cms-aca-oep-state-level --year 2024
-uv run arch build-suite cms-aca-oep-state-level --year 2024 --out /tmp/arch-cms-aca-oep-2024 --replace
+uv run ledger validate-package cms-aca-oep-state-level --year 2024
+uv run ledger build-suite cms-aca-oep-state-level --year 2024 --out /tmp/ledger-cms-aca-oep-2024 --replace
 ```
 
-To build a relational Arch DB artifact with aggregate facts, first-class
+To build a relational Ledger DB artifact with aggregate facts, first-class
 constraints, source-cell lineage, and source-row lineage when available:
 
 ```bash
-uv run arch build-db --fixture --db /tmp/arch-fixture.db --replace
+uv run ledger build-db --fixture --db /tmp/ledger-fixture.db --replace
 ```
 
-This writes queryable Arch-owned tables such as `source_rows`,
+This writes queryable Ledger-owned tables such as `source_rows`,
 `source_columns`, `source_row_values`, `source_cells`, `aggregate_facts`,
 `aggregate_constraints`, `concept_alignments`, `fact_source_cells`, and
 `fact_source_rows`. The DB is a deterministic build artifact from source
@@ -207,34 +196,34 @@ rows/cells, source-region spec, selector report, aggregate facts, DB artifact,
 and JSON reports into one output directory:
 
 ```bash
-uv run arch build-suite soi-table-1-1 --year 2023 --out /tmp/arch-suite --replace
+uv run ledger build-suite soi-table-1-1 --year 2023 --out /tmp/ledger-suite --replace
 ```
 
 The same command accepts a declarative package directory. This is the preferred
 agent authoring surface:
 
 ```bash
-uv run arch build-suite packages/irs_soi/table_1_1 --year 2023 --out /tmp/arch-suite --replace
+uv run ledger build-suite packages/irs_soi/table_1_1 --year 2023 --out /tmp/ledger-suite --replace
 ```
 
 The first UK source packages use the OBR March 2026 EFO receipts and
 expenditure workbooks and emit 2025-26 fiscal-year aggregate facts:
 
 ```bash
-uv run arch validate-package obr-efo-receipts --year 2025
-uv run arch build-suite obr-efo-receipts --year 2025 --out /tmp/arch-obr-efo-receipts-2025 --replace
-uv run arch validate-package obr-efo-expenditure --year 2025
-uv run arch build-suite obr-efo-expenditure --year 2025 --out /tmp/arch-obr-efo-expenditure-2025 --replace
-uv run arch validate-package slc-student-support-england-2025 --year 2025
-uv run arch build-suite slc-student-support-england-2025 --year 2025 --out /tmp/arch-slc-student-support-england-2025 --replace
+uv run ledger validate-package obr-efo-receipts --year 2025
+uv run ledger build-suite obr-efo-receipts --year 2025 --out /tmp/ledger-obr-efo-receipts-2025 --replace
+uv run ledger validate-package obr-efo-expenditure --year 2025
+uv run ledger build-suite obr-efo-expenditure --year 2025 --out /tmp/ledger-obr-efo-expenditure-2025 --replace
+uv run ledger validate-package slc-student-support-england-2025 --year 2025
+uv run ledger build-suite slc-student-support-england-2025 --year 2025 --out /tmp/ledger-slc-student-support-england-2025 --replace
 ```
 
-The first ZIP-backed PE migration package is CMS Marketplace OEP state-level
-PUF:
+The first ZIP-backed PE migration package is the CMS Marketplace OEP
+state-level public-use release:
 
 ```bash
-uv run arch validate-package cms-aca-oep-state-level --year 2024
-uv run arch build-suite cms-aca-oep-state-level --year 2024 --out /tmp/arch-cms-aca-oep-2024 --replace
+uv run ledger validate-package cms-aca-oep-state-level --year 2024
+uv run ledger build-suite cms-aca-oep-state-level --year 2024 --out /tmp/ledger-cms-aca-oep-2024 --replace
 ```
 
 This writes:
@@ -248,7 +237,7 @@ This writes:
   source_regions.jsonl
   facts.jsonl
   consumer_facts.jsonl
-  arch.db
+  ledger.db
   reports/
     source_rows.json
     source_cells.json
@@ -276,7 +265,7 @@ To build the downstream integration artifact Populace can inspect, merge
 available source-package suites for a year into one bundle:
 
 ```bash
-uv run arch build-bundle --year 2023 --out /tmp/arch-us-2023 --replace
+uv run ledger build-bundle --year 2023 --out /tmp/ledger-us-2023 --replace
 ```
 
 This writes a root `consumer_facts.jsonl`, `source_packages.json`,
@@ -295,9 +284,9 @@ valid, but `agent_acceptance.json` warns with
 canonical concept to resolve through Axiom:
 
 ```bash
-uv run arch build-suite packages/irs_soi/table_1_1 \
+uv run ledger build-suite packages/irs_soi/table_1_1 \
   --year 2023 \
-  --out /tmp/arch-suite \
+  --out /tmp/ledger-suite \
   --replace \
   --axiom-cli axiom \
   --axiom-root ../rules-us \
@@ -308,13 +297,13 @@ For the faster authoring loop before running the full build suite, validate a
 package directory directly:
 
 ```bash
-uv run arch validate-package packages/irs_soi/table_1_1 --year 2023
+uv run ledger validate-package packages/irs_soi/table_1_1 --year 2023
 ```
 
 To start a new package from the constrained YAML template:
 
 ```bash
-uv run arch scaffold-package --source-id irs_soi --package-id soi-table-1-2 \
+uv run ledger scaffold-package --source-id irs_soi --package-id soi-table-1-2 \
   --out packages/irs_soi/table_1_2 \
   --source-table "Publication 1304 Table 1.2" \
   --resource-directory data/irs_soi/table_1_2
@@ -328,11 +317,11 @@ hosted database carrying the queryable provenance:
 ```bash
 # One-time after creating the PolicyEngine Cloudflare account and running
 # `npx wrangler login`:
-uv run arch bootstrap-r2 --raw-bucket arch-raw --derived-bucket arch-derived
+uv run ledger bootstrap-r2 --raw-bucket ledger-raw --derived-bucket ledger-derived
 
 # Fetch/register a source artifact, write db/data/.../manifest.yaml, and upload
 # the exact bytes to R2 when Wrangler is authenticated:
-uv run arch fetch-artifact \
+uv run ledger fetch-artifact \
   --url https://www.irs.gov/pub/irs-soi/23in12ms.xls \
   --source-id irs_soi \
   --package-id soi-table-1-2 \
@@ -343,18 +332,18 @@ uv run arch fetch-artifact \
   --upload-r2
 
 # Audit local manifests and checksums:
-uv run arch inventory-artifacts --root db/data
+uv run ledger inventory-artifacts --root db/data
 
-# Upload all existing manifest-declared local artifacts to arch-raw and write
+# Upload all existing manifest-declared local artifacts to ledger-raw and write
 # storage.r2 metadata back into the manifests:
-uv run arch publish-raw --root db/data
+uv run ledger publish-raw --root db/data
 ```
 
 To coordinate broad PE source migration without jumping straight to semantic
 target construction, generate an agent batch plan from the PE manifest:
 
 ```bash
-uv run arch plan-pe-sources \
+uv run ledger plan-pe-sources \
   --manifest docs/pe-us-source-manifest.csv \
   --out docs/pe-us-source-agent-plan.json \
   --markdown docs/pe-us-source-agent-plan.md
@@ -364,10 +353,10 @@ The plan marks existing source packages, primary-source lookup work,
 fetch/register work, source-cell scaffolds, and repair items. Fetch hints
 include `--upload-r2`; semantic target work still requires a package to pass
 `build-suite`. Aggregators such as FRED stay in the migration plan only as
-publisher-source lookup clues; they should not become canonical Arch source
+publisher-source lookup clues; they should not become canonical Ledger source
 artifacts or target provenance.
 
-R2 owns the immutable bytes. Arch manifests and Supabase/Postgres mirrors own
+R2 owns the immutable bytes. Ledger manifests and Supabase/Postgres mirrors own
 metadata such as source URL, checksum, size, vintage, extraction date, and R2
 key. Source-package parsers still read deterministic local/package resources,
 so builds remain reproducible without making hosted storage the source of
@@ -376,47 +365,46 @@ schema truth.
 The same build-suite path also supports the SOI Table 1.4 wage pilot:
 
 ```bash
-uv run arch build-suite soi-table-1-4 --year 2023 --out /tmp/arch-suite-1-4 --replace
-uv run arch build-suite packages/irs_soi/table_1_4 --year 2023 --out /tmp/arch-suite-1-4 --replace
+uv run ledger build-suite soi-table-1-4 --year 2023 --out /tmp/ledger-suite-1-4 --replace
+uv run ledger build-suite packages/irs_soi/table_1_4 --year 2023 --out /tmp/ledger-suite-1-4 --replace
 ```
 
 To prepare the deterministic SQLite artifact for a hosted Supabase/Postgres
 mirror, export each relational table to JSONL plus a manifest:
 
 ```bash
-uv run arch export-db-tables --db /tmp/arch-suite/arch.db --out /tmp/arch-mirror --replace
+uv run ledger export-db-tables --db /tmp/ledger-suite/ledger.db --out /tmp/ledger-mirror --replace
 ```
 
-To publish the deterministic build outputs to the `arch-derived` R2 bucket:
+To publish the deterministic build outputs to the `ledger-derived` R2 bucket:
 
 ```bash
-uv run arch publish-derived \
-  --dir /tmp/arch-suite \
+uv run ledger publish-derived \
+  --dir /tmp/ledger-suite \
   --source-id irs_soi \
   --package-id soi-table-1-1 \
   --year 2023 \
-  --build-artifacts-out /tmp/arch-build-artifacts.jsonl
+  --build-artifacts-out /tmp/ledger-build-artifacts.jsonl
 ```
 
 The Supabase schema for this mirror lives at
-`supabase/migrations/20260504_arch_bronze.sql`. Raw government spreadsheets are
+`supabase/migrations/20260504_ledger_bronze.sql`. Raw government spreadsheets are
 mirrored as artifact metadata plus one row per parsed cell, not one tidy table
-per sheet. Typed rectangular microdata can still use separate raw microdata
-tables.
+per sheet. Ledger does not host raw survey microdata tables.
 
-After the migration is applied and the `arch` schema is exposed through the
+After the migration is applied and the `ledger` schema is exposed through the
 Supabase Data API, accepted mirror exports can be upserted with:
 
 ```bash
-uv run arch load-supabase-mirror \
-  --dir /tmp/arch-mirror \
-  --build-artifacts /tmp/arch-build-artifacts.jsonl
+uv run ledger load-supabase-mirror \
+  --dir /tmp/ledger-mirror \
+  --build-artifacts /tmp/ledger-build-artifacts.jsonl
 ```
 
 Use `--dry-run` first to validate JSONL row counts and file coverage without
 writing to Supabase.
 
-Arch facts keep source concepts and canonical concepts separately. For example,
+Ledger facts keep source concepts and canonical concepts separately. For example,
 the SOI Table 1.1 adjusted gross income column is preserved as
 `irs_soi.adjusted_gross_income`, while the canonical concept is
 `us:statutes/26/62#adjusted_gross_income` with an `exact` alignment assertion.
@@ -424,28 +412,28 @@ The SOI Table 1.4 wage amount column is preserved as `irs_soi.total_wages`,
 while the canonical concept is `us:statutes/26/62#input.wages` with a
 `broad_match` assertion because Axiom currently treats wages as an inferred
 input under IRC section 62 rather than an exact statutory term.
-This lets Arch share vocabulary with Axiom legal terms without importing Axiom
+This lets Ledger share vocabulary with Axiom legal terms without importing Axiom
 runtime code.
 
 To validate source-to-canonical concept alignments against an installed Axiom
 concept CLI outside the full suite:
 
 ```bash
-uv run arch validate-concept-alignments --input /tmp/arch-soi-facts.jsonl \
+uv run ledger validate-concept-alignments --input /tmp/ledger-soi-facts.jsonl \
   --axiom-cli axiom \
   --axiom-root ../rules-us
 ```
 
 The command emits JSON with the alignments checked, validation errors, and
-warnings. If the Axiom CLI is omitted, Arch still reports alignment metadata and
+warnings. If the Axiom CLI is omitted, Ledger still reports alignment metadata and
 warns that external concept validation was skipped. `build-suite` accepts the
 same `--axiom-cli` and `--axiom-root` flags, plus
 `--require-axiom-validation` when skipped concept checks should fail agent
 acceptance.
 
-### 4. Run Arch Explorer
+### 4. Run Ledger Explorer
 
-Arch Explorer is a Next/Tailwind app that reads the fixture fact JSONL and
+Ledger Explorer is a Next/Tailwind app that reads the fixture fact JSONL and
 source-cell JSONL, then shows aggregate facts, source-cell lineage, and
 consumer-contract fields:
 
@@ -458,32 +446,21 @@ npm run dev -- --port 3090
 Then open `http://localhost:3090`.
 
 By default, the workbench reads the current local suite outputs at
-`/tmp/arch-us-2023-parity/sources/*` and
-`/tmp/arch-soi-historic-table-2-2022`. To point it at another build, set:
+`/tmp/ledger-us-2023-parity/sources/*` and
+`/tmp/ledger-soi-historic-table-2-2022`. To point it at another build, set:
 
 ```bash
-ARCH_EXPLORER_DATA_DIRS=/tmp/arch-build-a,/tmp/arch-build-b npm run dev -- --port 3090
+LEDGER_EXPLORER_DATA_DIRS=/tmp/ledger-build-a,/tmp/ledger-build-b npm run dev -- --port 3090
 ```
 
 ### 5. Query Target Inputs in Python
 
 ```python
-from arch.targets import DataSource, Target, TargetType
-from calibration.targets import get_targets
+from policyengine_ledger.targets import DataSource, Target, TargetType, query_targets
+from policyengine_ledger.target_profiles import load_target_profile
 
-target_inputs = get_targets(
-    jurisdiction="us",
-    year=2021,
-    sources=["irs-soi"],
-)
-```
-
-### 6. Query Microdata
-
-```python
-from arch.microdata import query_cps_asec
-
-persons = query_cps_asec(year=2024, table_type="person", limit=10_000)
+target_rows = query_targets(jurisdiction="us", year=2024)
+profile = load_target_profile("us_fiscal")
 ```
 
 ## Target Input Schema
@@ -512,35 +489,22 @@ Target profiles in Ledger may declare the source-backed rows and measurement
 bindings Populace is allowed to activate.
 
 ```python
-from arch.facts import SourceFact
-from arch.targets import DataSource, Jurisdiction, TargetType
-from arch.normalization import as_target, convert_units
+from policyengine_ledger.facts import SourceFact
+from policyengine_ledger.normalization import convert_units
 
 fact = SourceFact(
     name="snap_households",
     value=22_323,
     period=2023,
     unit="thousands",
-    source=DataSource.USDA_SNAP,
-    jurisdiction=Jurisdiction.US,
+    source="usda_snap",
+    jurisdiction="us",
 )
 
-target_input = as_target(
-    convert_units(fact, 1000, "count"),
-    target_type=TargetType.COUNT,
-    stratum_name="US SNAP Households",
-)
+normalized_fact = convert_units(fact, 1000, "count")
 ```
 
 ## Current Coverage
-
-### Microdata
-
-| Source | Variables | Description |
-|--------|-----------|-------------|
-| US CPS ASEC | 78 | Census household survey |
-| US IRS PUF | 33 | Tax return sample |
-| UK FRS | 29 | DWP household survey |
 
 ### Aggregate Facts And Target Inputs
 
@@ -557,13 +521,13 @@ target_input = as_target(
 
 ## Boundaries
 
-- **Ledger** owns source data, provenance, source facts, aggregate facts,
-  microdata ingestion, target profiles, and measurement contracts.
+- **Ledger** owns government-statistics release artifacts, provenance, source
+  facts, aggregate facts, target profiles, and measurement contracts.
 - **Populace** owns support-aware target activation, minimal period alignment,
-  simulation interfaces, entity modeling, weights, diagnostics, and calibration
-  execution.
-- **Jurisdiction source packages** such as `arch-us` and `arch-uk` own
-  source-specific parsers and specs that emit shared Arch records.
+  raw microdata access, simulation interfaces, entity modeling, weights,
+  diagnostics, and calibration execution.
+- **Jurisdiction source packages** such as `ledger-us` and `ledger-uk` own
+  source-specific parsers and specs that emit shared Ledger records.
 - **Jurisdiction simulation packages** own simulation-specific variable
   mappings and target recipes.
 - **PolicyEngine** owns policy-facing tools and analysis workflows.

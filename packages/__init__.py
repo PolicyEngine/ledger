@@ -1,1 +1,1 @@
-"""Packaged Arch source-package specs."""
+"""Packaged Ledger source-package specs."""

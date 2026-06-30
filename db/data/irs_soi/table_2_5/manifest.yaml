@@ -13,9 +13,9 @@ files:
     storage:
       r2:
         provider: r2
-        bucket: arch-raw
+        bucket: ledger-raw
         key: raw/irs_soi/soi-table-2-5/2023/c6a58f637e42e83248b1f6f336fddc5d94ac91e04ccf68b1d089291d2d5fe1a5/23in25ic.xls
-        uri: r2://arch-raw/raw/irs_soi/soi-table-2-5/2023/c6a58f637e42e83248b1f6f336fddc5d94ac91e04ccf68b1d089291d2d5fe1a5/23in25ic.xls
+        uri: r2://ledger-raw/raw/irs_soi/soi-table-2-5/2023/c6a58f637e42e83248b1f6f336fddc5d94ac91e04ccf68b1d089291d2d5fe1a5/23in25ic.xls
   2021:
     filename: 21in25ic.xls
     source_url: https://www.irs.gov/pub/irs-soi/21in25ic.xls
@@ -25,9 +25,9 @@ files:
     storage:
       r2:
         provider: r2
-        bucket: arch-raw
+        bucket: ledger-raw
         key: raw/irs_soi/soi-table-2-5/2021/d4429c04a101b70cf23c6412f3246a3bc6a7244bad99f3561e54c302007f3285/21in25ic.xls
-        uri: r2://arch-raw/raw/irs_soi/soi-table-2-5/2021/d4429c04a101b70cf23c6412f3246a3bc6a7244bad99f3561e54c302007f3285/21in25ic.xls
+        uri: r2://ledger-raw/raw/irs_soi/soi-table-2-5/2021/d4429c04a101b70cf23c6412f3246a3bc6a7244bad99f3561e54c302007f3285/21in25ic.xls
   2022:
     filename: 22in25ic.xls
     source_url: https://www.irs.gov/pub/irs-soi/22in25ic.xls
@@ -37,9 +37,9 @@ files:
     storage:
       r2:
         provider: r2
-        bucket: arch-raw
+        bucket: ledger-raw
         key: raw/irs_soi/soi-table-2-5/2022/bd890a09ef3a35c577dcc9d94272a7ee40d836453c686d70599372b48b863884/22in25ic.xls
-        uri: r2://arch-raw/raw/irs_soi/soi-table-2-5/2022/bd890a09ef3a35c577dcc9d94272a7ee40d836453c686d70599372b48b863884/22in25ic.xls
+        uri: r2://ledger-raw/raw/irs_soi/soi-table-2-5/2022/bd890a09ef3a35c577dcc9d94272a7ee40d836453c686d70599372b48b863884/22in25ic.xls
   2020:
     filename: 20in25ic.xls
     source_url: https://www.irs.gov/pub/irs-soi/20in25ic.xls
@@ -49,6 +49,6 @@ files:
     storage:
       r2:
         provider: r2
-        bucket: arch-raw
+        bucket: ledger-raw
         key: raw/irs_soi/soi-table-2-5/2020/28f8823857b345b59575038736011dfb750ba362df38ddb0b4b9b591a1cc7135/20in25ic.xls
-        uri: r2://arch-raw/raw/irs_soi/soi-table-2-5/2020/28f8823857b345b59575038736011dfb750ba362df38ddb0b4b9b591a1cc7135/20in25ic.xls
+        uri: r2://ledger-raw/raw/irs_soi/soi-table-2-5/2020/28f8823857b345b59575038736011dfb750ba362df38ddb0b4b9b591a1cc7135/20in25ic.xls

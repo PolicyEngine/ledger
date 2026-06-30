@@ -4,10 +4,10 @@
 
 Build a harness that verifies source fact construction end to end:
 
-1. Arch preserves the full source artifact behind each PolicyEngine calibration source.
-2. Arch preserves parsed source cells, including values PE omits.
-3. Arch emits simulator-neutral source records for published statistical values.
-4. Microplex can later compose active target values from Arch facts under declared modeling choices.
+1. Ledger preserves the full source artifact behind each PolicyEngine calibration source.
+2. Ledger preserves parsed source cells, including values PE omits.
+3. Ledger emits simulator-neutral source records for published statistical values.
+4. Populace can later compose active target values from Ledger facts under declared modeling choices.
 5. Each active target is bound downstream to the correct model measure: variable, count basis, filters, aggregation, units, weights, entity semantics, geography, period, and universe.
 
 This is separate from parser tests. Parser tests answer whether a spreadsheet was read correctly. The harness answers whether the parsed value became a source-backed fact with the right dimensions, constraints, provenance, and lineage.
@@ -16,32 +16,32 @@ This is separate from parser tests. Parser tests answer whether a spreadsheet wa
 
 Load-bearing rule:
 
-> Arch can change representation. Microplex can change meaning.
+> Ledger can change representation. Populace can change meaning.
 
-Arch owns source preservation and simulator-neutral source records.
+Ledger owns source preservation and simulator-neutral source records.
 
-Arch may:
+Ledger may:
 
 - Store immutable artifacts, checksums, retrieval metadata, parsed sheets/tables/rows/cells.
 - Preserve raw value, raw units, source table, source row, source column, formula/display metadata, notes, and extraction method.
 - Re-express published values in canonical units and IDs when the conversion is mechanical and reversible.
-- Emit aggregate facts: source-published values that Microplex may later use.
+- Emit aggregate facts: source-published values that Populace may later use.
 - Run source-side integrity checks, such as declared component-to-total checks.
 
-Arch must not:
+Ledger must not:
 
-- Store PolicyEngine, Microplex, or Axiom model variable IDs in source records.
+- Store PolicyEngine, Populace, or Axiom model variable IDs in source records.
 - Age values to a different model year.
 - Reconcile inconsistent national/state/district values.
 - Select active targets.
 - Choose a deflator, growth factor, or source preference.
 - Apply simulator-specific calibration weighting.
 
-Microplex owns active targets and model measures.
+Populace owns active targets and model measures.
 
-Microplex may:
+Populace may:
 
-- Select records from Arch.
+- Select records from Ledger.
 - Age source records to the model year.
 - Reconcile across source granularities.
 - Decide which calibration profile is active.
@@ -52,7 +52,7 @@ Microplex may:
 
 I asked ChatGPT Pro to critique the plan as a senior data/simulation architecture reviewer. The useful changes incorporated here are:
 
-- Remove model variable identity from Arch records. Arch records should use simulator-neutral source concepts, statistics, universes, periods, geographies, and dimensions.
+- Remove model variable identity from Ledger records. Ledger records should use simulator-neutral source concepts, statistics, universes, periods, geographies, and dimensions.
 - Split cell selection from semantic interpretation. A selector failure and a wrong AGI-band/universe mapping should fail different tests.
 - Add a first-class target contract layer. Correct source value plus correct model expression is not enough if their units, universes, entities, periods, or geographies do not match.
 - Treat PE parity as a pinned differential harness, not the truth oracle.
@@ -79,7 +79,7 @@ Required fields:
 - `artifact`
 - `filename`
 - `format`
-- `arch_source_status`
+- `ledger_source_status`
 - `source_cell_status`
 - `target_construction_status`
 - `value_capture_policy`
@@ -89,7 +89,7 @@ Acceptance criteria:
 
 - Every PE source document/file used by national or local calibration appears in the manifest.
 - Every row has an explicit policy to preserve the full source artifact, including omitted PE rows.
-- `arch_source_status` is row-parse inventory status only: `not_loaded`, `inventory_error`, `identity_mismatch`, `fetch_error`, `fetched_unparsed`, `parsed_no_rows`, or `row_parsed`.
+- `ledger_source_status` is row-parse inventory status only: `not_loaded`, `inventory_error`, `identity_mismatch`, `fetch_error`, `fetched_unparsed`, `parsed_no_rows`, or `row_parsed`.
 - `row_parsed` does not imply source-cell completeness, selector readiness, or target-construction readiness. Those are represented by separate `source_cell_status` and `target_construction_status` fields.
 - A row is row-parsed only when the expected artifact instance matches the stored artifact identity. URL-backed artifacts must match the expected URL; local artifacts must match the expected local path. Hash/vintage checks should be added as expected checksums and publisher vintages become available.
 - The manifest is a migration checklist, not the permanent ontology. The long-term ontology should distinguish source series, artifact instances, and PE usage crosswalks.
@@ -109,7 +109,7 @@ pe_usage_crosswalk
 
 ### Parsed Source Cells
 
-Arch should preserve every parsed source cell as a generic cell record.
+Ledger should preserve every parsed source cell as a generic cell record.
 
 ```text
 source_cell = generic parsed cell, including headers, notes, omitted cells
@@ -199,11 +199,11 @@ Rules:
 - Representation conversions are allowed only when they are mechanical and documented, e.g. thousands of dollars to dollars.
 - Canonical values should use decimal/fixed precision, not binary float.
 - `all`, `unknown`, and missing must be distinct. `all` is an explicit dimension value; `unknown` is explicit and rare; missing dimensions are invalid unless the concept schema permits them.
-- Arch source records should not contain simulator variable IDs. They may contain source concepts, source-domain variables, statistics, universes, and dimensions.
+- Ledger source records should not contain simulator variable IDs. They may contain source concepts, source-domain variables, statistics, universes, and dimensions.
 
 ### Target Value Recipes
 
-A target value recipe is Microplex-owned. It resolves Arch source records and transforms them into an active target value.
+A target value recipe is Populace-owned. It resolves Ledger source records and transforms them into an active target value.
 
 Specs should normally use source queries, not hard-coded source record IDs. Compiled target values should store the resolved source record IDs.
 
@@ -237,11 +237,12 @@ Rules:
 
 - Aging and reconciliation methods must be named and versioned.
 - Identity/no-op recipes should be implemented first so the value side can be tested before aging.
-- The compiled value records the resolved source IDs, transform fingerprint, Arch snapshot, and code/spec hashes.
+- The compiled value records the resolved source IDs, transform fingerprint, Ledger snapshot, and code/spec hashes.
 
 ### Model Measure Specs
 
-A model measure spec maps a target contract to a quantity computed on a microdataset.
+A model measure spec maps a target contract to a quantity computed on a model
+population.
 
 Example:
 
@@ -352,14 +353,14 @@ Rules:
 
 ### Active Target Specs
 
-An active target spec places a target contract into a Microplex calibration profile.
+An active target spec places a target contract into a Populace calibration profile.
 
 Example:
 
 ```yaml
 active_target_id: us_2024.irs_soi.taxable_interest.amount.all
 target_contract_id: us_2024.irs_soi.taxable_interest.amount.all.contract
-calibration_profile: microplex_us_2024_national_v1
+calibration_profile: populace_us_2024_national_v1
 status: active
 replacement_for:
   project: policyengine-us-data
@@ -369,9 +370,9 @@ replacement_mode: improved_source_lineage
 
 Rules:
 
-- Arch should not own active target specs.
+- Ledger should not own active target specs.
 - Excluded source records and excluded candidate targets need explicit exclusion reasons.
-- Active target values should be reproducible from Arch snapshot + Microplex specs + transform DAG.
+- Active target values should be reproducible from Ledger snapshot + Populace specs + transform DAG.
 
 ## Harness Layers
 
@@ -379,7 +380,7 @@ Rules:
 
 Purpose:
 
-Ensure every manifest row is represented in Arch source tables.
+Ensure every manifest row is represented in Ledger source tables.
 
 Checks:
 
@@ -428,7 +429,7 @@ Failure modes this should catch:
 
 Purpose:
 
-Ensure selected source cells are transformed into canonical Arch source records without value loss or simulator leakage.
+Ensure selected source cells are transformed into canonical Ledger source records without value loss or simulator leakage.
 
 Checks:
 
@@ -461,7 +462,7 @@ Optional source integrity checks:
 
 Purpose:
 
-Ensure Microplex target values are reproducible from Arch records and declared transformations.
+Ensure Populace target values are reproducible from Ledger records and declared transformations.
 
 Checks:
 
@@ -470,7 +471,7 @@ Checks:
 - Transform DAG is declared and hashable.
 - Identity/no-op recipes reproduce the source record value exactly.
 - Aging/reconciliation/source-selection methods are named and versioned.
-- Target value is reproducible from Arch snapshot + source records + transform metadata.
+- Target value is reproducible from Ledger snapshot + source records + transform metadata.
 - Excluded records have explicit exclusion reasons.
 
 ### Layer 5: Model Measure Harness
@@ -524,9 +525,9 @@ not_yet_classified
 Checks:
 
 - Pin PE version/commit, dataset, and target files.
-- Compare Arch source records against PE source CSV/workbook-derived values where PE has equivalents.
-- Compare Microplex active target values against PE target databases/CSVs where PE has equivalents.
-- Compile equivalent Microplex measure specs on the same dataset.
+- Compare Ledger source records against PE source CSV/workbook-derived values where PE has equivalents.
+- Compare Populace active target values against PE target databases/CSVs where PE has equivalents.
+- Compile equivalent Populace measure specs on the same dataset.
 - Compare each PE-equivalent measure vector where an equivalence mapping exists.
 - Compare included/excluded target profile decisions where PE has an equivalent profile.
 - Fail on unclassified differences in entity mapping, filters, signs, units, weights, aggregation, or profile inclusion.
@@ -535,31 +536,31 @@ Scope:
 
 - Start with national SOI rows because PE has useful legacy national target machinery there.
 - Add PE local/geography-aware parity after national slices work.
-- Do not require parity for improved or intentionally changed Microplex targets; those should have explicit `replacement_for` metadata and a reason.
+- Do not require parity for improved or intentionally changed Populace targets; those should have explicit `replacement_for` metadata and a reason.
 
 ### Layer 7: Active Target Profile Harness
 
 Purpose:
 
-Ensure Microplex's active calibration profiles are explicit and reproducible.
+Ensure Populace's active calibration profiles are explicit and reproducible.
 
 Checks:
 
 - Every active target points to one target contract.
 - Every contract points to one target value recipe and one model measure.
-- Every compiled active target value records resolved Arch source records.
+- Every compiled active target value records resolved Ledger source records.
 - Aging/reconciliation/source-selection methods are declared.
 - Target value is reproducible from source records and method metadata.
 - No duplicate active target occupies the same measure/year/geography/dimension domain unless explicitly marked as alternative.
-- Profile hash is reproducible from Arch snapshot, model adapter, measure specs, target specs, and code versions.
+- Profile hash is reproducible from Ledger snapshot, model adapter, measure specs, target specs, and code versions.
 
 ## Database Implications
 
-Arch source tables already store artifacts, parsed tables, columns, and rows. However, the current row-oriented storage is not sufficient for the selector harness: it does not preserve stable spreadsheet coordinates, empty-cell distinctions, formulas, displayed values, merged-header lineage, or footnotes. The next implementation step must add a real `source_cell` layer before, or alongside, source-record specs.
+Ledger source tables already store artifacts, parsed tables, columns, and rows. However, the current row-oriented storage is not sufficient for the selector harness: it does not preserve stable spreadsheet coordinates, empty-cell distinctions, formulas, displayed values, merged-header lineage, or footnotes. The next implementation step must add a real `source_cell` layer before, or alongside, source-record specs.
 
 After `source_cell` exists, the next tables or artifacts should be source-record oriented, not active-target oriented.
 
-Candidate Arch concepts:
+Candidate Ledger concepts:
 
 ```text
 source_series
@@ -570,7 +571,7 @@ cell_selector_specs
 source_record_specs
 source_records
 source_record_lineage
-arch_snapshots
+ledger_snapshots
 ```
 
 `source_records` should include:
@@ -599,9 +600,9 @@ arch_snapshots
 - footnotes JSON
 - lineage hash
 
-`source_records` should not include PolicyEngine, Microplex, or Axiom model variable IDs.
+`source_records` should not include PolicyEngine, Populace, or Axiom model variable IDs.
 
-Microplex-side artifacts should include:
+Populace-side artifacts should include:
 
 ```text
 model_adapters
@@ -611,7 +612,7 @@ target_contracts
 active_target_specs
 active_target_values
 target_profile_manifests
-microplex_profile_snapshots
+target_profile_snapshots
 ```
 
 These can start as YAML/JSON files before being promoted into database tables.
@@ -633,9 +634,9 @@ Status: started through this plan.
 Tasks:
 
 - Freeze the minimum boundary rules:
-  - no model variable IDs in Arch source records
+  - no model variable IDs in Ledger source records
   - source specs are versioned and hashable
-  - active targets are reproducible from Arch snapshot + Microplex specs
+  - active targets are reproducible from Ledger snapshot + Populace specs
   - every target has a value side, measure side, and binding contract
 - Keep `docs/pe-us-source-manifest.csv` current.
 - Add missing publisher source documents as they are discovered.
@@ -646,7 +647,7 @@ Tasks:
 
 Tasks:
 
-- Load full IRS SOI TY2023 Table 1.4 workbook into Arch source artifacts.
+- Load full IRS SOI TY2023 Table 1.4 workbook into Ledger source artifacts.
 - Capture artifact checksum, retrieval metadata, and storage URI.
 - Parse sheets/tables/cells.
 - Preserve headers, footnotes, raw cell values, displayed values, and omitted adjacent columns.
@@ -684,100 +685,64 @@ Tasks:
 
 Acceptance:
 
-- Arch can reproduce all PE TY2023 Table 1.4 rows in `soi_targets.csv` at the source-value layer.
-- Arch also exposes source records for non-targeted Table 1.4 columns/rows.
+- Ledger can reproduce all PE TY2023 Table 1.4 rows in `soi_targets.csv` at the source-value layer.
+- Ledger also exposes source records for non-targeted Table 1.4 columns/rows.
 - Source records have concept/statistic/universe metadata and no simulator model variable IDs.
 
-### Phase 3: Identity Target Values And Contracts
+### Phase 3: Ledger Target Profile Handoff
 
 Tasks:
 
-- Implement Microplex target value recipes with identity/no-op transforms first.
-- Implement target contracts that bind a recipe to a model measure placeholder.
-- Add profile uniqueness checks.
-- Store resolved source record IDs in compiled active target values.
+- Declare target profiles that select source-backed facts and define
+  model-measurement contracts.
+- Store stable selectors, source-record IDs, source periods, units, geography,
+  value definitions, and profile metadata.
+- Add validation that target profiles contain no target values, source
+  reconciliation, aging, active support decisions, or simulator execution
+  logic.
 
 Acceptance:
 
-- Source records can become active target values without aging or reconciliation.
-- Every active target value is reproducible from Arch snapshot + recipe hash.
-- Contract compatibility fields are present even before full model measure compilation.
+- Downstream systems can resolve every profile row back to Ledger source records
+  and source artifacts.
+- Profile validation fails closed when a row includes active target values,
+  model-runtime code, or unsupported operations.
+- Populace can consume the profile as a contract, but owns all active target
+  values, aging, model-measure compilation, scoring, and differential tests.
 
-### Phase 4: Model Measure Compiler
-
-Tasks:
-
-- Implement a PolicyEngine-US backend compiler.
-- Infer variable entity from `policyengine_us` metadata as a linting aid.
-- Store entity explicitly in compiled measure specs.
-- Compile filters and aggregates.
-- Add count-basis support.
-- Add weight variable/entity validation.
-- Add ratio support or reject ratio specs clearly until implemented.
-- Add tiny fixture tests.
-
-Acceptance:
-
-- A hand-built PE fixture passes count, sum, filter, and weight tests.
-- Entity/weight/filter mismatches produce useful errors.
-- Matrix-builder results match direct simulation results on fixtures.
-
-### Phase 5: Pinned PE Differential Slice
-
-Tasks:
-
-- Build equivalence mapping for PE national eCPS `build_loss_matrix()` column names where relevant.
-- Also map against newer PE target database artifacts where relevant and available.
-- Map at least:
-  - AGI by AGI/status
-  - return counts by AGI/status
-  - Table 1.4 income-source totals/counts by AGI
-  - aggregate-only SOI variables
-- Compare source-value, active-value, measure-vector, and profile-selection layers.
-- Classify every difference.
-
-Acceptance:
-
-- Exact or near-exact parity for declared PE-equivalent targets.
-- Any intentional deviation has metadata and a test asserting the new behavior.
-- No unclassified PE-equivalent differences remain in the pilot slice.
-
-### Phase 6: Expand SOI National Family
+### Phase 4: Expand SOI National Family
 
 Tasks:
 
 - Extend source-record specs to SOI Table 1.1, Table 1.4, Table 2.1, top-tail tables, filing-status variants, and AGI-band variants.
-- Extend model measures and target contracts for the same family.
 - Add source integrity checks for totals/components where valid.
 
 Acceptance:
 
 - Source records exist for every relevant value in the national SOI source files.
-- Active Microplex national targets can be benchmarked against PE national.
 - Missing and intentionally omitted values are visible in coverage reports.
 
-### Phase 7: CI And Dashboard
+### Phase 5: CI And Dashboard
 
 Tasks:
 
 - Add CI job for source manifest smoke tests.
 - Add selector/source-record spec validation tests.
-- Add target contract validation tests.
-- Add PE differential tests on small fixtures.
-- Add optional or nightly full parity against larger PE datasets.
-- Surface results in the Microplex/Arch observatory:
+- Add target profile validation tests.
+- Surface Ledger-owned results in the source observatory:
   - source coverage
   - parsed-cell coverage
   - source-record coverage
-  - active target coverage
-  - model-measure compile coverage
-  - PE differential status
-  - known intentional deviations
+  - target profile selector coverage
+  - known source coverage gaps
 
 Acceptance:
 
-- A developer can see whether a dataset version is improving, regressing, or intentionally diverging from PE.
-- CI catches accidental source omission, selector breakage, target contract incompatibility, and measure compiler regressions.
+- A developer can see whether a source-package version preserves more official
+  statistics release content, regresses source fidelity, or intentionally omits
+  source rows.
+- CI catches accidental source omission, selector breakage, target profile
+  schema violations, and source coverage regressions.
 
 ### Phase 8: State And Local Expansion
 
@@ -790,16 +755,16 @@ Tasks:
 Acceptance:
 
 - Source records exist for every value in PE target source files.
-- Active Microplex local/geography-aware targets can be benchmarked against PE local outputs where PE local parity data exists.
-- Local-readiness report shows which source families are not yet Microplex-active.
+- Active Populace local/geography-aware targets can be benchmarked against PE local outputs where PE local parity data exists.
+- Local-readiness report shows which source families are not yet Populace-active.
 
 ## Open Design Answers
 
-1. Source-record specs should live in Arch as YAML source of truth plus compiled DB rows.
+1. Source-record specs should live in Ledger as YAML source of truth plus compiled DB rows.
 2. Active target specs should start in Populace. Split later only when multiple adapters/profiles need independent versioning.
 3. Count targets should be sums of count-valued measures, never a separate count aggregation.
 4. PE parity should be required enough to classify differences, not enough to force exact reproduction of PE omissions or legacy shortcuts.
-5. Arch should preserve every parsed source cell, then layer semantic source records on top. Do not automatically turn every cell into a semantic record.
+5. Ledger should preserve every parsed source cell, then layer semantic source records on top. Do not automatically turn every cell into a semantic record.
 
 ## Recommendation
 
@@ -807,8 +772,9 @@ Start with YAML specs plus generated database records.
 
 Use:
 
-- Arch for source artifacts, parsed cells, selectors, and simulator-neutral source records.
-- Microplex-US for target value recipes, model measure specs, target contracts, active target profiles, and PE differential metadata.
+- Ledger for source artifacts, parsed cells, selectors, and simulator-neutral source records.
+- Populace for target value recipes, model measure specs, target contracts,
+  active target profiles, and PE differential metadata.
 - PE parity as a pinned differential harness, not as the source of truth.
 
 The first implementation should target IRS SOI TY2023 Table 1.4 because it exercises the main failure modes:
@@ -820,10 +786,7 @@ The first implementation should target IRS SOI TY2023 Table 1.4 because it exerc
 - taxable-only interpretation
 - source concept/statistic/universe mapping
 - AGI-bin filters
-- income-source model measure mapping
 - count-vs-amount distinction
-- household-weight validation
-- PE differential checks against existing target machinery
 
 First-slice acceptance criteria:
 
@@ -831,7 +794,8 @@ First-slice acceptance criteria:
 - Parsed cells preserve raw/displayed/formula/missingness distinctions.
 - Selector specs cover all PE-used cells and adjacent omitted source columns.
 - Source records are simulator-neutral and contain concept/statistic/universe metadata.
-- Identity target value recipes compile from source queries and store resolved source record IDs.
-- Target contracts bind value recipes to model measure specs with explicit unit/entity/universe/geography/period/dimension expectations.
-- Tiny model fixtures pass sum, count, filter, weight, and entity tests.
-- PE-equivalent differences are either exact, expected, replacement, not applicable, or not yet classified.
+- Target profiles select source records without storing target values, runtime
+  code, active support decisions, or model compiler configuration.
+- Downstream Populace recipes can reference the source records and target
+  profiles, but their values, model measures, fixtures, and differential checks
+  remain outside Ledger.

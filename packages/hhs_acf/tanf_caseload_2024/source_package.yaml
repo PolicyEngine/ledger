@@ -1,4 +1,4 @@
-schema_version: arch.source_package.v1
+schema_version: ledger.source_package.v1
 package_id: hhs-acf-tanf-caseload-2024
 label: HHS ACF FY 2024 TANF average monthly caseload
 artifact:
@@ -55,7 +55,7 @@ record_sets:
         concept: hhs_acf_tanf.average_monthly_tanf_total_families
         source_concept: hhs_acf_tanf.average_monthly_tanf_total_families
         concept_relation: source_label
-        concept_authority: arch-us
+        concept_authority: ledger-us
         unit: count
         aggregation: mean
         expected_cell_type: number
@@ -69,7 +69,7 @@ record_sets:
         concept: hhs_acf_tanf.average_monthly_tanf_two_parent_families
         source_concept: hhs_acf_tanf.average_monthly_tanf_two_parent_families
         concept_relation: source_label
-        concept_authority: arch-us
+        concept_authority: ledger-us
         unit: count
         aggregation: mean
         expected_cell_type: number
@@ -83,7 +83,7 @@ record_sets:
         concept: hhs_acf_tanf.average_monthly_tanf_one_parent_families
         source_concept: hhs_acf_tanf.average_monthly_tanf_one_parent_families
         concept_relation: source_label
-        concept_authority: arch-us
+        concept_authority: ledger-us
         unit: count
         aggregation: mean
         expected_cell_type: number
@@ -97,7 +97,7 @@ record_sets:
         concept: hhs_acf_tanf.average_monthly_tanf_no_parent_families
         source_concept: hhs_acf_tanf.average_monthly_tanf_no_parent_families
         concept_relation: source_label
-        concept_authority: arch-us
+        concept_authority: ledger-us
         unit: count
         aggregation: mean
         expected_cell_type: number
@@ -688,7 +688,7 @@ record_sets:
         concept: hhs_acf_tanf.average_monthly_tanf_total_families
         source_concept: hhs_acf_tanf.average_monthly_tanf_total_families
         concept_relation: source_label
-        concept_authority: arch-us
+        concept_authority: ledger-us
         unit: count
         aggregation: mean
         expected_cell_type: number
@@ -734,7 +734,7 @@ record_sets:
         concept: hhs_acf_tanf.average_monthly_tanf_total_recipients
         source_concept: hhs_acf_tanf.average_monthly_tanf_total_recipients
         concept_relation: source_label
-        concept_authority: arch-us
+        concept_authority: ledger-us
         unit: count
         aggregation: mean
         expected_cell_type: number
@@ -748,7 +748,7 @@ record_sets:
         concept: hhs_acf_tanf.average_monthly_tanf_adult_recipients
         source_concept: hhs_acf_tanf.average_monthly_tanf_adult_recipients
         concept_relation: source_label
-        concept_authority: arch-us
+        concept_authority: ledger-us
         unit: count
         aggregation: mean
         expected_cell_type: number
@@ -762,7 +762,7 @@ record_sets:
         concept: hhs_acf_tanf.average_monthly_tanf_child_recipients
         source_concept: hhs_acf_tanf.average_monthly_tanf_child_recipients
         concept_relation: source_label
-        concept_authority: arch-us
+        concept_authority: ledger-us
         unit: count
         aggregation: mean
         expected_cell_type: number

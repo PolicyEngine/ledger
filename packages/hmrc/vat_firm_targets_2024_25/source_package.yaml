@@ -1,4 +1,4 @@
-schema_version: arch.source_package.v1
+schema_version: ledger.source_package.v1
 package_id: hmrc-vat-firm-targets-2024-25
 label: HMRC Annual UK VAT Statistics 2024-25 national VAT firm targets
 artifact:
@@ -281,7 +281,7 @@ record_sets:
         concept: uk.firm.count
         source_concept: hmrc.vat.registered_trader_count
         concept_relation: approximate
-        concept_authority: arch-uk
+        concept_authority: ledger-uk
         concept_evidence_url: https://www.gov.uk/government/statistics/value-added-tax-vat-annual-statistics
         concept_evidence_notes: >-
           HMRC Annual UK VAT Statistics reports VAT-registered traders by
@@ -371,7 +371,7 @@ record_sets:
         concept: uk.tax.vat.net_liability
         source_concept: hmrc.vat.net_liability
         concept_relation: approximate
-        concept_authority: arch-uk
+        concept_authority: ledger-uk
         concept_evidence_url: https://www.gov.uk/government/statistics/value-added-tax-vat-annual-statistics
         concept_evidence_notes: >-
           HMRC Annual UK VAT Statistics reports net VAT declared by annual

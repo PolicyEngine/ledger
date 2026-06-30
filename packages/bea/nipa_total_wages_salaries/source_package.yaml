@@ -1,4 +1,4 @@
-schema_version: arch.source_package.v1
+schema_version: ledger.source_package.v1
 package_id: bea-nipa-total-wages-salaries
 label: BEA NIPA total wages and salaries
 artifact:

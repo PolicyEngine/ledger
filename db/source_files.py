@@ -1,4 +1,4 @@
-"""Generic source-file ingestion for Arch source artifacts."""
+"""Generic source-file ingestion for Ledger source artifacts."""
 
 from __future__ import annotations
 
@@ -46,7 +46,7 @@ SUPPORTED_SUFFIXES = {
 
 @dataclass(frozen=True)
 class SourceArtifactSpec:
-    """A source artifact to parse into the Arch source-file tables."""
+    """A source artifact to parse into the Ledger source-file tables."""
 
     slug: str
     origin_project: str
@@ -94,7 +94,7 @@ def _fetch_url(url: str) -> tuple[bytes, str | None, str]:
     request = Request(
         url,
         headers={
-            "User-Agent": "policyengine-arch-data/0.1",
+            "User-Agent": "policyengine-ledger/0.1",
             "Accept": "*/*",
         },
     )
@@ -132,7 +132,10 @@ def _suffix_for_content_type(content_type: str | None) -> str:
         return ".ods"
     if content_type == "application/vnd.ms-excel":
         return ".xls"
-    if content_type == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":
+    if (
+        content_type
+        == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    ):
         return ".xlsx"
     return ".txt"
 
@@ -156,7 +159,11 @@ def _artifact_name(
 
 def _read_spec_content(spec: SourceArtifactSpec) -> tuple[bytes, str, str | None]:
     if spec.path is not None:
-        return _read_bytes(spec.path), spec.path.name, mimetypes.guess_type(spec.path.name)[0]
+        return (
+            _read_bytes(spec.path),
+            spec.path.name,
+            mimetypes.guess_type(spec.path.name)[0],
+        )
     if spec.source_url is None:
         raise ValueError(f"Source artifact {spec.slug} has no path or URL")
     try:
@@ -286,9 +293,7 @@ def _parse_json(content: bytes, name: str) -> list[ParsedSourceTable]:
                 )
         df = pd.DataFrame(rows)
     else:
-        df = pd.DataFrame(
-            [{"value": json.dumps(data, ensure_ascii=True, default=str)}]
-        )
+        df = pd.DataFrame([{"value": json.dumps(data, ensure_ascii=True, default=str)}])
     return [ParsedSourceTable(name=name, frame=df)]
 
 
@@ -307,7 +312,9 @@ def _parse_excel(content: bytes, name: str, suffix: str) -> list[ParsedSourceTab
     return tables
 
 
-def parse_source_artifact(path: Path, content: bytes | None = None) -> list[ParsedSourceTable]:
+def parse_source_artifact(
+    path: Path, content: bytes | None = None
+) -> list[ParsedSourceTable]:
     """Parse a supported source artifact into one or more source tables."""
     if content is None:
         content = _read_bytes(path)
@@ -333,7 +340,10 @@ def parse_source_artifact(path: Path, content: bytes | None = None) -> list[Pars
         with zipfile.ZipFile(io.BytesIO(content)) as archive:
             for member in archive.namelist():
                 member_path = Path(member)
-                if member.endswith("/") or member_path.suffix.lower() not in SUPPORTED_SUFFIXES:
+                if (
+                    member.endswith("/")
+                    or member_path.suffix.lower() not in SUPPORTED_SUFFIXES
+                ):
                     continue
                 member_content = archive.read(member)
                 for table in parse_source_artifact(member_path, member_content):
@@ -444,7 +454,9 @@ def ingest_source_artifacts(
     return results
 
 
-def prune_source_artifacts(session: Session, specs: Iterable[SourceArtifactSpec]) -> int:
+def prune_source_artifacts(
+    session: Session, specs: Iterable[SourceArtifactSpec]
+) -> int:
     """Delete artifacts in the same inventory scope that are no longer expected."""
     specs = list(specs)
     expected_slugs = {spec.slug for spec in specs}

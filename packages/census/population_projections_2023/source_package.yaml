@@ -1,4 +1,4 @@
-schema_version: arch.source_package.v1
+schema_version: ledger.source_package.v1
 package_id: census-population-projections-2023
 label: Census 2023 national population projections by single year of age
 artifact:
