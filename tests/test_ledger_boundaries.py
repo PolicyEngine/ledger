@@ -37,3 +37,4 @@ def test_repository_does_not_ship_raw_microdata_namespace():
     assert not (repo_root / "policyengine_ledger" / "microdata").exists()
     assert not (repo_root / "micro").exists()
     assert not (repo_root / "calibration").exists()
+    assert not (repo_root / "storage").exists()
