@@ -1582,6 +1582,143 @@ def test_hmrc_vat_firm_targets_source_package_builds_vat_facts():
     assert large_liability.measure.unit == "gbp"
 
 
+def test_ons_uk_business_firm_sector_targets_source_package_alias_validates_counts():
+    report = validate_source_package(
+        "ons-uk-business-firm-sector-targets-2025",
+        year=2025,
+    )
+
+    assert report.valid
+    assert report.counts == {
+        "record_set_count": 2,
+        "row_count": 1_232,
+        "measure_count": 2,
+        "source_record_count": 1_232,
+        "source_region_count": 2,
+    }
+
+
+def test_ons_uk_business_firm_sector_targets_source_package_builds_firm_facts():
+    package = load_source_package("ons-uk-business-firm-sector-targets-2025")
+    rows = package.build_source_rows(2025)
+    cells = package.build_source_cells(2025, source_rows=rows)
+    facts = package.build_facts(2025, cells=cells, source_rows=rows)
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "ons-uk-business-firm-sector-targets-2025"
+    assert len(rows) == 1_232
+    assert validate_source_rows(rows).valid
+    assert validate_source_cells(cells).valid
+    assert len(cells) == 7_398
+    assert len(facts) == 1_232
+    assert validate_facts(facts).valid
+    assert validate_consumer_fact_contract(facts).valid
+
+    crop_small_turnover = values_by_record[
+        "ons.uk_business.cy2025.enterprise_count.by_sic_turnover_band."
+        "sic_00001__0_49k.enterprise_count"
+    ]
+    crop_small_employment = values_by_record[
+        "ons.uk_business.cy2025.enterprise_count.by_sic_employment_band."
+        "sic_00001__0_4.enterprise_count"
+    ]
+    rows_by_source_record = {
+        row["lineage"]["source_record_id"]: row
+        for row in consumer_fact_rows(facts)
+    }
+
+    assert crop_small_turnover.value == 41_610
+    assert crop_small_turnover.filters == {
+        "uk.firm.sic_code": "00001",
+        "uk.firm.turnover_band": "0_49k",
+    }
+    assert {
+        (constraint.variable, constraint.operator, constraint.value)
+        for constraint in crop_small_turnover.constraints
+    } == {
+        ("uk.firm.sic_code", "==", "00001"),
+        ("uk.firm.turnover_band", "==", "0_49k"),
+        ("uk.firm.annual_turnover", ">=", 0),
+        ("uk.firm.annual_turnover", "<", 50_000),
+    }
+    assert rows_by_source_record[
+        crop_small_turnover.source_record_id
+    ]["dimensions"] == {
+        "uk.firm.sic_code": "00001",
+        "uk.firm.turnover_band": "0_49k",
+    }
+
+    assert crop_small_employment.value == 116_500
+    assert {
+        (constraint.variable, constraint.operator, constraint.value)
+        for constraint in crop_small_employment.constraints
+    } == {
+        ("uk.firm.sic_code", "==", "00001"),
+        ("uk.firm.employment_band", "==", "0_4"),
+        ("uk.firm.employees", ">=", 0),
+        ("uk.firm.employees", "<", 5),
+    }
+
+
+def test_hmrc_vat_firm_sector_targets_source_package_alias_validates_counts():
+    report = validate_source_package(
+        "hmrc-vat-firm-sector-targets-2024-25",
+        year=2024,
+    )
+
+    assert report.valid
+    assert report.counts == {
+        "record_set_count": 2,
+        "row_count": 176,
+        "measure_count": 2,
+        "source_record_count": 176,
+        "source_region_count": 2,
+    }
+
+
+def test_hmrc_vat_firm_sector_targets_source_package_builds_vat_facts():
+    package = load_source_package("hmrc-vat-firm-sector-targets-2024-25")
+    rows = package.build_source_rows(2024)
+    cells = package.build_source_cells(2024, source_rows=rows)
+    facts = package.build_facts(2024, cells=cells, source_rows=rows)
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "hmrc-vat-firm-sector-targets-2024-25"
+    assert len(rows) == 176
+    assert validate_source_rows(rows).valid
+    assert validate_source_cells(cells).valid
+    assert len(cells) == 708
+    assert len(facts) == 176
+    assert validate_facts(facts).valid
+    assert validate_consumer_fact_contract(facts).valid
+
+    crop_population = values_by_record[
+        "hmrc.vat.fy2024_25.registered_trader_count.by_sic."
+        "sic_00001.vat_registered_trader_count"
+    ]
+    petroleum_liability = values_by_record[
+        "hmrc.vat.fy2024_25.net_liability.by_sic."
+        "sic_00019.net_vat_liability"
+    ]
+
+    assert crop_population.value == 128_900
+    assert crop_population.filters == {
+        "uk.firm.vat_registered": True,
+        "uk.firm.sic_code": "00001",
+    }
+    assert {
+        (constraint.variable, constraint.operator, constraint.value)
+        for constraint in crop_population.constraints
+    } == {
+        ("uk.firm.vat_registered", "==", True),
+        ("uk.firm.sic_code", "==", "00001"),
+    }
+
+    assert petroleum_liability.value == 7_550_000_000
+    assert petroleum_liability.measure.concept == "uk.tax.vat.net_liability"
+    assert petroleum_liability.measure.unit == "gbp"
+
+
 def test_census_pep_source_package_alias_validates_fixture_counts():
     report = validate_source_package("census-pep-2024-national-age-sex", year=2023)
 

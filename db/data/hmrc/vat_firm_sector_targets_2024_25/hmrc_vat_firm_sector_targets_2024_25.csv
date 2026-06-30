@@ -1,0 +1,177 @@
+target_group,sector_id,sector_label,value
+vat_registered_count_by_sic,00001,"Crop and animal production, hunting and related service activities",128900
+vat_registered_count_by_sic,00002,Forestry and logging,5480
+vat_registered_count_by_sic,00003,Fishing and aquaculture,4540
+vat_registered_count_by_sic,00005,Mining of coal and lignite,30
+vat_registered_count_by_sic,00006,Extraction of crude petroleum and natural gas,220
+vat_registered_count_by_sic,00007,Mining of metal ores,90
+vat_registered_count_by_sic,00008,Other mining and quarrying,790
+vat_registered_count_by_sic,00009,Mining and support service activities,1470
+vat_registered_count_by_sic,00010,Manufacture of food products,10200
+vat_registered_count_by_sic,00011,Manufacture of beverages,3230
+vat_registered_count_by_sic,00012,Manufacture of tobacco products,60
+vat_registered_count_by_sic,00013,Manufacture of textiles,4170
+vat_registered_count_by_sic,00014,Manufacture of wearing apparel,3450
+vat_registered_count_by_sic,00015,Manufacture of leather and related products,820
+vat_registered_count_by_sic,00016,"Manufacture of wood and of products of wood and cork, except furniture; manufacture of articles of straw and plaiting materials",8240
+vat_registered_count_by_sic,00017,Manufacture of paper and paper products,1610
+vat_registered_count_by_sic,00018,Printing and reproduction of recorded media,9630
+vat_registered_count_by_sic,00019,Manufacture of coke and refined petroleum products,180
+vat_registered_count_by_sic,00020,Manufacture of chemicals and chemical products,3680
+vat_registered_count_by_sic,00021,Manufacture of basic pharmaceutical products and pharmaceutical preparations,840
+vat_registered_count_by_sic,00022,Manufacture of rubber and rubber products,4730
+vat_registered_count_by_sic,00023,Manufacture of other non-metallic mineral products,4420
+vat_registered_count_by_sic,00024,Manufacture of basic metals,2350
+vat_registered_count_by_sic,00025,"Manufacture of fabricated metal products, except machinery and equipment",19300
+vat_registered_count_by_sic,00026,"Manufacture of computer, electronic and optical products",5900
+vat_registered_count_by_sic,00027,Manufacture of electrical equipment,2900
+vat_registered_count_by_sic,00028,Manufacture of machinery and equipment n.e.c,7710
+vat_registered_count_by_sic,00029,"Manufacture of motor vehicles, trailers and semi-trailers",3100
+vat_registered_count_by_sic,00030,Manufacture of other transport equipment,2040
+vat_registered_count_by_sic,00031,Manufacture of furniture,5720
+vat_registered_count_by_sic,00032,Other manufacturing,10400
+vat_registered_count_by_sic,00033,Repair and installation of machinery and equipment,13500
+vat_registered_count_by_sic,00035,"Electricity, gas, steam and air conditioning supply",7530
+vat_registered_count_by_sic,00036,"Water collection, treatment and supply",650
+vat_registered_count_by_sic,00037,Sewerage,920
+vat_registered_count_by_sic,00038,"Waste collection, treatment and disposal activities; materials recovery",5240
+vat_registered_count_by_sic,00039,Remediation activities and other waste management services,1260
+vat_registered_count_by_sic,00041,Construction of buildings,117600
+vat_registered_count_by_sic,00042,Civil engineering,22300
+vat_registered_count_by_sic,00043,Specialised construction activities,209800
+vat_registered_count_by_sic,00045,Wholesale and retail trade and repair of motor vehicles and motorcycles,71400
+vat_registered_count_by_sic,00046,"Wholesale trade, except of motor vehicles and motorcycles",104400
+vat_registered_count_by_sic,00047,Retail trade except of motor vehicles and motorcycles,335600
+vat_registered_count_by_sic,00049,Land transport and transport via pipelines,50400
+vat_registered_count_by_sic,00050,Water transport,1530
+vat_registered_count_by_sic,00051,Air transport,1170
+vat_registered_count_by_sic,00052,Warehousing and support activities for transportation,12300
+vat_registered_count_by_sic,00053,Postal and courier activities,33200
+vat_registered_count_by_sic,00055,Accommodation,18000
+vat_registered_count_by_sic,00056,Food and beverage service activities,110400
+vat_registered_count_by_sic,00058,Publishing activities,11900
+vat_registered_count_by_sic,00059,"Motion picture, video and television programme production, sound recording and music publishing activities",30900
+vat_registered_count_by_sic,00060,Programming and broadcasting activities,1470
+vat_registered_count_by_sic,00061,Telecommunications,6900
+vat_registered_count_by_sic,00062,"Computer programming, consultancy and related activities",118800
+vat_registered_count_by_sic,00063,Information service activities,7040
+vat_registered_count_by_sic,00064,"Financial service activities, except insurance and pension funding",14000
+vat_registered_count_by_sic,00065,"Insurance, reinsurance and pension funding, except compulsory social security",2970
+vat_registered_count_by_sic,00066,Activities auxiliary to financial services and insurance activities,6240
+vat_registered_count_by_sic,00068,Real estate activities,112800
+vat_registered_count_by_sic,00069,Legal and accounting services,58700
+vat_registered_count_by_sic,00070,Activities of head offices; management consultancy services,136100
+vat_registered_count_by_sic,00071,Architectural and engineering activities; technical testing and analysis,63900
+vat_registered_count_by_sic,00072,Scientific research and development,5800
+vat_registered_count_by_sic,00073,Advertising and market research,20000
+vat_registered_count_by_sic,00074,"Other professional, scientific and technical activities",48100
+vat_registered_count_by_sic,00075,Veterinary activities,3680
+vat_registered_count_by_sic,00077,Rental and leasing activities,18200
+vat_registered_count_by_sic,00078,Employment activities,25500
+vat_registered_count_by_sic,00079,"Travel agency, tour operator and other reservation service and related activities",7320
+vat_registered_count_by_sic,00080,Security and investigation activities,8690
+vat_registered_count_by_sic,00081,Services to buildings and landscape activities,37700
+vat_registered_count_by_sic,00082,Office administrative and support activities,48700
+vat_registered_count_by_sic,00084,Public administration and defence; compulsory social security,3760
+vat_registered_count_by_sic,00085,Education,23600
+vat_registered_count_by_sic,00086,Human health activities,10300
+vat_registered_count_by_sic,00087,Residential care activities,1820
+vat_registered_count_by_sic,00088,Social work activities without accommodation,3160
+vat_registered_count_by_sic,00090,"Creative, arts and entertainment activities",28800
+vat_registered_count_by_sic,00091,"Libraries, archives, museums and other cultural activities",1120
+vat_registered_count_by_sic,00092,Gambling and betting activities,360
+vat_registered_count_by_sic,00093,Sports activities and amusement and recreation activities,33400
+vat_registered_count_by_sic,00094,Activities of membership organisations,8610
+vat_registered_count_by_sic,00095,Repair of computers and personal and household goods,4860
+vat_registered_count_by_sic,00096,Other personal service activities,41300
+vat_registered_count_by_sic,00097,Activities of households as employers of domestic personnel,140
+vat_registered_count_by_sic,00098,Undifferentiated goods- and services-producing activities of private households for own use,130
+vat_registered_count_by_sic,00099,Activities of extraterritorial organisations and bodies,60
+vat_liability_by_sic,00001,"Crop and animal production, hunting and related service activities",-2300.0
+vat_liability_by_sic,00002,Forestry and logging,110.0
+vat_liability_by_sic,00003,Fishing and aquaculture,-100.0
+vat_liability_by_sic,00005,Mining of coal and lignite,0.0
+vat_liability_by_sic,00006,Extraction of crude petroleum and natural gas,-460.0
+vat_liability_by_sic,00007,Mining of metal ores,-10.0
+vat_liability_by_sic,00008,Other mining and quarrying,290.0
+vat_liability_by_sic,00009,Mining and support service activities,-320.0
+vat_liability_by_sic,00010,Manufacture of food products,-2060.0
+vat_liability_by_sic,00011,Manufacture of beverages,1840.0
+vat_liability_by_sic,00012,Manufacture of tobacco products,1700.0
+vat_liability_by_sic,00013,Manufacture of textiles,440.0
+vat_liability_by_sic,00014,Manufacture of wearing apparel,290.0
+vat_liability_by_sic,00015,Manufacture of leather and related products,130.0
+vat_liability_by_sic,00016,"Manufacture of wood and of products of wood and cork, except furniture; manufacture of articles of straw and plaiting materials",620.0
+vat_liability_by_sic,00017,Manufacture of paper and paper products,870.0
+vat_liability_by_sic,00018,Printing and reproduction of recorded media,500.0
+vat_liability_by_sic,00019,Manufacture of coke and refined petroleum products,7550.0
+vat_liability_by_sic,00020,Manufacture of chemicals and chemical products,1570.0
+vat_liability_by_sic,00021,Manufacture of basic pharmaceutical products and pharmaceutical preparations,600.0
+vat_liability_by_sic,00022,Manufacture of rubber and rubber products,1470.0
+vat_liability_by_sic,00023,Manufacture of other non-metallic mineral products,1150.0
+vat_liability_by_sic,00024,Manufacture of basic metals,-780.0
+vat_liability_by_sic,00025,"Manufacture of fabricated metal products, except machinery and equipment",1990.0
+vat_liability_by_sic,00026,"Manufacture of computer, electronic and optical products",1130.0
+vat_liability_by_sic,00027,Manufacture of electrical equipment,840.0
+vat_liability_by_sic,00028,Manufacture of machinery and equipment n.e.c,1320.0
+vat_liability_by_sic,00029,"Manufacture of motor vehicles, trailers and semi-trailers",1390.0
+vat_liability_by_sic,00030,Manufacture of other transport equipment,-1250.0
+vat_liability_by_sic,00031,Manufacture of furniture,720.0
+vat_liability_by_sic,00032,Other manufacturing,1200.0
+vat_liability_by_sic,00033,Repair and installation of machinery and equipment,1050.0
+vat_liability_by_sic,00035,"Electricity, gas, steam and air conditioning supply",3940.0
+vat_liability_by_sic,00036,"Water collection, treatment and supply",-2490.0
+vat_liability_by_sic,00037,Sewerage,-10.0
+vat_liability_by_sic,00038,"Waste collection, treatment and disposal activities; materials recovery",600.0
+vat_liability_by_sic,00039,Remediation activities and other waste management services,350.0
+vat_liability_by_sic,00041,Construction of buildings,2630.0
+vat_liability_by_sic,00042,Civil engineering,4490.0
+vat_liability_by_sic,00043,Specialised construction activities,5000.0
+vat_liability_by_sic,00045,Wholesale and retail trade and repair of motor vehicles and motorcycles,14000.0
+vat_liability_by_sic,00046,"Wholesale trade, except of motor vehicles and motorcycles",25900.0
+vat_liability_by_sic,00047,Retail trade except of motor vehicles and motorcycles,16800.0
+vat_liability_by_sic,00049,Land transport and transport via pipelines,-310.0
+vat_liability_by_sic,00050,Water transport,-90.0
+vat_liability_by_sic,00051,Air transport,-1340.0
+vat_liability_by_sic,00052,Warehousing and support activities for transportation,1190.0
+vat_liability_by_sic,00053,Postal and courier activities,1250.0
+vat_liability_by_sic,00055,Accommodation,2860.0
+vat_liability_by_sic,00056,Food and beverage service activities,8800.0
+vat_liability_by_sic,00058,Publishing activities,800.0
+vat_liability_by_sic,00059,"Motion picture, video and television programme production, sound recording and music publishing activities",470.0
+vat_liability_by_sic,00060,Programming and broadcasting activities,-20.0
+vat_liability_by_sic,00061,Telecommunications,4250.0
+vat_liability_by_sic,00062,"Computer programming, consultancy and related activities",15700.0
+vat_liability_by_sic,00063,Information service activities,430.0
+vat_liability_by_sic,00064,"Financial service activities, except insurance and pension funding",90.0
+vat_liability_by_sic,00065,"Insurance, reinsurance and pension funding, except compulsory social security",290.0
+vat_liability_by_sic,00066,Activities auxiliary to financial services and insurance activities,1060.0
+vat_liability_by_sic,00068,Real estate activities,4840.0
+vat_liability_by_sic,00069,Legal and accounting services,9590.0
+vat_liability_by_sic,00070,Activities of head offices; management consultancy services,9410.0
+vat_liability_by_sic,00071,Architectural and engineering activities; technical testing and analysis,5080.0
+vat_liability_by_sic,00072,Scientific research and development,30.0
+vat_liability_by_sic,00073,Advertising and market research,2010.0
+vat_liability_by_sic,00074,"Other professional, scientific and technical activities",1710.0
+vat_liability_by_sic,00075,Veterinary activities,810.0
+vat_liability_by_sic,00077,Rental and leasing activities,1690.0
+vat_liability_by_sic,00078,Employment activities,5870.0
+vat_liability_by_sic,00079,"Travel agency, tour operator and other reservation service and related activities",170.0
+vat_liability_by_sic,00080,Security and investigation activities,1160.0
+vat_liability_by_sic,00081,Services to buildings and landscape activities,2500.0
+vat_liability_by_sic,00082,Office administrative and support activities,6250.0
+vat_liability_by_sic,00084,Public administration and defence; compulsory social security,-11600.0
+vat_liability_by_sic,00085,Education,960.0
+vat_liability_by_sic,00086,Human health activities,40.0
+vat_liability_by_sic,00087,Residential care activities,320.0
+vat_liability_by_sic,00088,Social work activities without accommodation,420.0
+vat_liability_by_sic,00090,"Creative, arts and entertainment activities",1750.0
+vat_liability_by_sic,00091,"Libraries, archives, museums and other cultural activities",30.0
+vat_liability_by_sic,00092,Gambling and betting activities,70.0
+vat_liability_by_sic,00093,Sports activities and amusement and recreation activities,1910.0
+vat_liability_by_sic,00094,Activities of membership organisations,590.0
+vat_liability_by_sic,00095,Repair of computers and personal and household goods,300.0
+vat_liability_by_sic,00096,Other personal service activities,3210.0
+vat_liability_by_sic,00097,Activities of households as employers of domestic personnel,0.0
+vat_liability_by_sic,00098,Undifferentiated goods- and services-producing activities of private households for own use,0.0
+vat_liability_by_sic,00099,Activities of extraterritorial organisations and bodies,40.0
