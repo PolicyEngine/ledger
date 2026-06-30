@@ -157,8 +157,18 @@ SOURCE_PACKAGE_ALIASES = {
     "ssa-ssi-table-7b1-2024": Path("ssa/ssi_table_7b1_2024"),
     "hhs-acf-tanf-caseload-2024": Path("hhs_acf/tanf_caseload_2024"),
     "hhs-acf-tanf-financial-2024": Path("hhs_acf/tanf_financial_2024"),
+    "hmrc-vat-firm-targets-2024-25": Path("hmrc/vat_firm_targets_2024_25"),
+    "hmrc-vat-firm-sector-targets-2024-25": Path(
+        "hmrc/vat_firm_sector_targets_2024_25"
+    ),
     "kff-marketplace-effectuated-enrollment": Path(
         "kff/marketplace_effectuated_enrollment"
+    ),
+    "ons-uk-business-firm-targets-2025": Path(
+        "ons/uk_business_firm_targets_2025"
+    ),
+    "ons-uk-business-firm-sector-targets-2025": Path(
+        "ons/uk_business_firm_sector_targets_2025"
     ),
     "usda-snap-fy69-to-current": Path("usda_snap/fy69_to_current"),
 }

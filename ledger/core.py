@@ -43,6 +43,7 @@ ALLOWED_ENTITIES = {
     "government",
     "dwelling",
     "institutional_sector",
+    "firm",
 }
 ALLOWED_AGGREGATIONS = {
     "sum",

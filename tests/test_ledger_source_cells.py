@@ -15,13 +15,17 @@ from ledger.jurisdictions.us.soi import (
     build_soi_table_1_1_source_record_specs,
 )
 from ledger.sources.cells import (
+    SourceArtifactMetadata,
     load_source_cells_jsonl,
     source_cells_from_delimited_text,
     source_cells_from_html_tables_and_text,
     validate_source_cells,
 )
-from ledger.sources.cells import SourceArtifactMetadata
-from ledger.sources.rows import SourceRow, source_cells_from_source_rows
+from ledger.sources.rows import (
+    SourceRow,
+    source_cells_from_source_rows,
+    source_rows_from_delimited_text,
+)
 from ledger.sources.specs import resolve_source_record
 
 
@@ -141,6 +145,39 @@ def test_delimited_text_selected_rows_preserves_requested_order_with_shared_keys
 
     assert values[(2, 4)] == 20
     assert values[(3, 4)] == 10
+
+
+def test_delimited_text_parsers_preserve_underscore_identifiers():
+    artifact = SourceArtifactMetadata(
+        source_name="ons",
+        source_table="test",
+        source_file="test.csv",
+        url="https://example.test/test.csv",
+        vintage="test",
+        sha256="abc123",
+        size_bytes=10,
+        extracted_at="2026-06-27",
+        extraction_method="test",
+    )
+    content = b"band,value\n0_4,123\n10_19,456\n"
+
+    rows = source_rows_from_delimited_text(
+        content,
+        artifact,
+        sheet_name="test",
+    )
+    cells = source_cells_from_delimited_text(
+        content,
+        artifact,
+        sheet_name="test",
+    )
+
+    assert [row.values["band"] for row in rows] == ["0_4", "10_19"]
+    assert [
+        cell.raw_value
+        for cell in cells
+        if cell.column_number == 1 and cell.row_number > 1
+    ] == ["0_4", "10_19"]
 
 
 def test_html_tables_and_text_parser_preserves_tables_and_document_numbers():

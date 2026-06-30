@@ -1,0 +1,18 @@
+target_group,band_id,band_label,value
+vat_registered_count_by_turnover,negative_or_zero,"Negative or zero annual turnover",211400
+vat_registered_count_by_turnover,1_to_threshold,"GBP 1 to VAT registration threshold annual turnover",683700
+vat_registered_count_by_turnover,threshold_to_150k,"VAT registration threshold to GBP 150,000 annual turnover",280400
+vat_registered_count_by_turnover,150k_to_300k,"GBP 150,000 to GBP 300,000 annual turnover",338600
+vat_registered_count_by_turnover,300k_to_500k,"GBP 300,000 to GBP 500,000 annual turnover",186700
+vat_registered_count_by_turnover,500k_to_1m,"GBP 500,000 to GBP 1,000,000 annual turnover",184100
+vat_registered_count_by_turnover,1m_to_10m,"GBP 1,000,000 to GBP 10,000,000 annual turnover",240500
+vat_registered_count_by_turnover,greater_than_10m,"Greater than GBP 10,000,000 annual turnover",45800
+vat_registered_count_by_turnover,unknown,"Unknown annual turnover",159300
+vat_liability_by_turnover,negative_or_zero,"Negative or zero annual turnover",-2910
+vat_liability_by_turnover,1_to_threshold,"GBP 1 to VAT registration threshold annual turnover",-300
+vat_liability_by_turnover,threshold_to_150k,"VAT registration threshold to GBP 150,000 annual turnover",2420
+vat_liability_by_turnover,150k_to_300k,"GBP 150,000 to GBP 300,000 annual turnover",4830
+vat_liability_by_turnover,300k_to_500k,"GBP 300,000 to GBP 500,000 annual turnover",3970
+vat_liability_by_turnover,500k_to_1m,"GBP 500,000 to GBP 1,000,000 annual turnover",6840
+vat_liability_by_turnover,1m_to_10m,"GBP 1,000,000 to GBP 10,000,000 annual turnover",29520
+vat_liability_by_turnover,greater_than_10m,"Greater than GBP 10,000,000 annual turnover",132800

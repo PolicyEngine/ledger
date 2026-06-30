@@ -1,0 +1,454 @@
+schema_version: arch.source_package.v1
+package_id: ons-uk-business-firm-targets-2025
+label: ONS UK Business 2025 national firm calibration targets
+artifact:
+  source_name: ons
+  source_table: UK Business, Activity, Size and Location 2025 enterprise turnover and employment size bands
+  resource_package: db
+  resource_directory: data/ons/uk_business_firm_targets_2025
+  manifest: manifest.yaml
+  vintage: uk_business_2025
+  extracted_at: "2026-06-27"
+  extraction_method: >-
+    curated CSV extract from ONS UK Business, Activity, Size and Location 2025
+    workbook national enterprise counts by turnover and employment size band
+  parser: delimited_text_full_rows
+  artifact_year: 2025
+  sheet_name: ons_uk_business_firm_targets_2025
+record_sets:
+  - record_set_id: ons.uk_business.cy2025.enterprise_count.by_turnover_band
+    record_set_spec_id: ons.uk_business.enterprise_count.by_turnover_band.v1
+    source_record_id_prefix: ons.uk_business.cy2025.enterprise_count.by_turnover_band
+    sheet_name: ons_uk_business_firm_targets_2025
+    period_type: calendar_year
+    period: 2025
+    geography_id: K02000001
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: firm
+    entity_role: enterprise
+    domain: uk_business_enterprises
+    groupby_dimension: uk.firm.annual_turnover
+    rows:
+      - value_id: 0_49k
+        label: GBP 0 to GBP 49,999 annual turnover
+        ordinal: 0
+        row_number: 2
+        expected_row_header_column: B
+        expected_row_header: 0_49k
+        guard_cells:
+          - column: A
+            expected_value: turnover_band
+            label: target group
+        filters:
+          uk.firm.turnover_band: 0_49k
+        constraints:
+          - variable: uk.firm.turnover_band
+            operator: ==
+            value: 0_49k
+            label: Annual turnover band
+          - variable: uk.firm.annual_turnover
+            operator: ">="
+            value: 0
+            unit: gbp
+            label: Annual turnover lower bound
+          - variable: uk.firm.annual_turnover
+            operator: <
+            value: 50000
+            unit: gbp
+            label: Annual turnover upper bound
+      - value_id: 50_99k
+        label: GBP 50,000 to GBP 99,999 annual turnover
+        ordinal: 1
+        row_number: 3
+        expected_row_header_column: B
+        expected_row_header: 50_99k
+        guard_cells:
+          - column: A
+            expected_value: turnover_band
+            label: target group
+        filters:
+          uk.firm.turnover_band: 50_99k
+        constraints:
+          - variable: uk.firm.turnover_band
+            operator: ==
+            value: 50_99k
+            label: Annual turnover band
+          - variable: uk.firm.annual_turnover
+            operator: ">="
+            value: 50000
+            unit: gbp
+            label: Annual turnover lower bound
+          - variable: uk.firm.annual_turnover
+            operator: <
+            value: 100000
+            unit: gbp
+            label: Annual turnover upper bound
+      - value_id: 100_249k
+        label: GBP 100,000 to GBP 249,999 annual turnover
+        ordinal: 2
+        row_number: 4
+        expected_row_header_column: B
+        expected_row_header: 100_249k
+        guard_cells:
+          - column: A
+            expected_value: turnover_band
+            label: target group
+        filters:
+          uk.firm.turnover_band: 100_249k
+        constraints:
+          - variable: uk.firm.turnover_band
+            operator: ==
+            value: 100_249k
+            label: Annual turnover band
+          - variable: uk.firm.annual_turnover
+            operator: ">="
+            value: 100000
+            unit: gbp
+            label: Annual turnover lower bound
+          - variable: uk.firm.annual_turnover
+            operator: <
+            value: 250000
+            unit: gbp
+            label: Annual turnover upper bound
+      - value_id: 250_499k
+        label: GBP 250,000 to GBP 499,999 annual turnover
+        ordinal: 3
+        row_number: 5
+        expected_row_header_column: B
+        expected_row_header: 250_499k
+        guard_cells:
+          - column: A
+            expected_value: turnover_band
+            label: target group
+        filters:
+          uk.firm.turnover_band: 250_499k
+        constraints:
+          - variable: uk.firm.turnover_band
+            operator: ==
+            value: 250_499k
+            label: Annual turnover band
+          - variable: uk.firm.annual_turnover
+            operator: ">="
+            value: 250000
+            unit: gbp
+            label: Annual turnover lower bound
+          - variable: uk.firm.annual_turnover
+            operator: <
+            value: 500000
+            unit: gbp
+            label: Annual turnover upper bound
+      - value_id: 500_999k
+        label: GBP 500,000 to GBP 999,999 annual turnover
+        ordinal: 4
+        row_number: 6
+        expected_row_header_column: B
+        expected_row_header: 500_999k
+        guard_cells:
+          - column: A
+            expected_value: turnover_band
+            label: target group
+        filters:
+          uk.firm.turnover_band: 500_999k
+        constraints:
+          - variable: uk.firm.turnover_band
+            operator: ==
+            value: 500_999k
+            label: Annual turnover band
+          - variable: uk.firm.annual_turnover
+            operator: ">="
+            value: 500000
+            unit: gbp
+            label: Annual turnover lower bound
+          - variable: uk.firm.annual_turnover
+            operator: <
+            value: 1000000
+            unit: gbp
+            label: Annual turnover upper bound
+      - value_id: 1000_4999k
+        label: GBP 1,000,000 to GBP 4,999,999 annual turnover
+        ordinal: 5
+        row_number: 7
+        expected_row_header_column: B
+        expected_row_header: 1000_4999k
+        guard_cells:
+          - column: A
+            expected_value: turnover_band
+            label: target group
+        filters:
+          uk.firm.turnover_band: 1000_4999k
+        constraints:
+          - variable: uk.firm.turnover_band
+            operator: ==
+            value: 1000_4999k
+            label: Annual turnover band
+          - variable: uk.firm.annual_turnover
+            operator: ">="
+            value: 1000000
+            unit: gbp
+            label: Annual turnover lower bound
+          - variable: uk.firm.annual_turnover
+            operator: <
+            value: 5000000
+            unit: gbp
+            label: Annual turnover upper bound
+      - value_id: 5000k_plus
+        label: GBP 5,000,000 or more annual turnover
+        ordinal: 6
+        row_number: 8
+        expected_row_header_column: B
+        expected_row_header: 5000k_plus
+        guard_cells:
+          - column: A
+            expected_value: turnover_band
+            label: target group
+        filters:
+          uk.firm.turnover_band: 5000k_plus
+        constraints:
+          - variable: uk.firm.turnover_band
+            operator: ==
+            value: 5000k_plus
+            label: Annual turnover band
+          - variable: uk.firm.annual_turnover
+            operator: ">="
+            value: 5000000
+            unit: gbp
+            label: Annual turnover lower bound
+    measures:
+      - measure_id: enterprise_count
+        label: ONS enterprise count
+        ordinal: 0
+        column: D
+        source_column_id: value
+        expected_column_header_row: 1
+        expected_column_header: value
+        concept: uk.firm.count
+        source_concept: ons.uk_business.enterprise_count
+        concept_relation: approximate
+        concept_authority: arch-uk
+        concept_evidence_url: https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/datasets/ukbusinessactivitysizeandlocation
+        concept_evidence_notes: >-
+          ONS UK Business publishes enterprise counts by annual turnover band;
+          Ledger represents these enterprises as firm calibration count facts.
+        unit: count
+        aggregation: sum
+        expected_cell_type: number
+  - record_set_id: ons.uk_business.cy2025.enterprise_count.by_employment_band
+    record_set_spec_id: ons.uk_business.enterprise_count.by_employment_band.v1
+    source_record_id_prefix: ons.uk_business.cy2025.enterprise_count.by_employment_band
+    sheet_name: ons_uk_business_firm_targets_2025
+    period_type: calendar_year
+    period: 2025
+    geography_id: K02000001
+    geography_level: country
+    geography_name: United Kingdom
+    geography_vintage: current
+    entity: firm
+    entity_role: enterprise
+    domain: uk_business_enterprises
+    groupby_dimension: uk.firm.employees
+    rows:
+      - value_id: "0_4"
+        label: 0 to 4 employees
+        ordinal: 0
+        row_number: 9
+        expected_row_header_column: B
+        expected_row_header: "0_4"
+        guard_cells:
+          - column: A
+            expected_value: employment_band
+            label: target group
+        filters:
+          uk.firm.employment_band: "0_4"
+        constraints:
+          - variable: uk.firm.employment_band
+            operator: ==
+            value: "0_4"
+            label: Employment band
+          - variable: uk.firm.employees
+            operator: ">="
+            value: 0
+            unit: count
+            label: Employee lower bound
+          - variable: uk.firm.employees
+            operator: <
+            value: 5
+            unit: count
+            label: Employee upper bound
+      - value_id: "5_9"
+        label: 5 to 9 employees
+        ordinal: 1
+        row_number: 10
+        expected_row_header_column: B
+        expected_row_header: "5_9"
+        guard_cells:
+          - column: A
+            expected_value: employment_band
+            label: target group
+        filters:
+          uk.firm.employment_band: "5_9"
+        constraints:
+          - variable: uk.firm.employment_band
+            operator: ==
+            value: "5_9"
+            label: Employment band
+          - variable: uk.firm.employees
+            operator: ">="
+            value: 5
+            unit: count
+            label: Employee lower bound
+          - variable: uk.firm.employees
+            operator: <
+            value: 10
+            unit: count
+            label: Employee upper bound
+      - value_id: "10_19"
+        label: 10 to 19 employees
+        ordinal: 2
+        row_number: 11
+        expected_row_header_column: B
+        expected_row_header: "10_19"
+        guard_cells:
+          - column: A
+            expected_value: employment_band
+            label: target group
+        filters:
+          uk.firm.employment_band: "10_19"
+        constraints:
+          - variable: uk.firm.employment_band
+            operator: ==
+            value: "10_19"
+            label: Employment band
+          - variable: uk.firm.employees
+            operator: ">="
+            value: 10
+            unit: count
+            label: Employee lower bound
+          - variable: uk.firm.employees
+            operator: <
+            value: 20
+            unit: count
+            label: Employee upper bound
+      - value_id: "20_49"
+        label: 20 to 49 employees
+        ordinal: 3
+        row_number: 12
+        expected_row_header_column: B
+        expected_row_header: "20_49"
+        guard_cells:
+          - column: A
+            expected_value: employment_band
+            label: target group
+        filters:
+          uk.firm.employment_band: "20_49"
+        constraints:
+          - variable: uk.firm.employment_band
+            operator: ==
+            value: "20_49"
+            label: Employment band
+          - variable: uk.firm.employees
+            operator: ">="
+            value: 20
+            unit: count
+            label: Employee lower bound
+          - variable: uk.firm.employees
+            operator: <
+            value: 50
+            unit: count
+            label: Employee upper bound
+      - value_id: "50_99"
+        label: 50 to 99 employees
+        ordinal: 4
+        row_number: 13
+        expected_row_header_column: B
+        expected_row_header: "50_99"
+        guard_cells:
+          - column: A
+            expected_value: employment_band
+            label: target group
+        filters:
+          uk.firm.employment_band: "50_99"
+        constraints:
+          - variable: uk.firm.employment_band
+            operator: ==
+            value: "50_99"
+            label: Employment band
+          - variable: uk.firm.employees
+            operator: ">="
+            value: 50
+            unit: count
+            label: Employee lower bound
+          - variable: uk.firm.employees
+            operator: <
+            value: 100
+            unit: count
+            label: Employee upper bound
+      - value_id: "100_249"
+        label: 100 to 249 employees
+        ordinal: 5
+        row_number: 14
+        expected_row_header_column: B
+        expected_row_header: "100_249"
+        guard_cells:
+          - column: A
+            expected_value: employment_band
+            label: target group
+        filters:
+          uk.firm.employment_band: "100_249"
+        constraints:
+          - variable: uk.firm.employment_band
+            operator: ==
+            value: "100_249"
+            label: Employment band
+          - variable: uk.firm.employees
+            operator: ">="
+            value: 100
+            unit: count
+            label: Employee lower bound
+          - variable: uk.firm.employees
+            operator: <
+            value: 250
+            unit: count
+            label: Employee upper bound
+      - value_id: 250_plus
+        label: 250 or more employees
+        ordinal: 6
+        row_number: 15
+        expected_row_header_column: B
+        expected_row_header: 250_plus
+        guard_cells:
+          - column: A
+            expected_value: employment_band
+            label: target group
+        filters:
+          uk.firm.employment_band: 250_plus
+        constraints:
+          - variable: uk.firm.employment_band
+            operator: ==
+            value: 250_plus
+            label: Employment band
+          - variable: uk.firm.employees
+            operator: ">="
+            value: 250
+            unit: count
+            label: Employee lower bound
+    measures:
+      - measure_id: enterprise_count
+        label: ONS enterprise count
+        ordinal: 0
+        column: D
+        source_column_id: value
+        expected_column_header_row: 1
+        expected_column_header: value
+        concept: uk.firm.count
+        source_concept: ons.uk_business.enterprise_count
+        concept_relation: approximate
+        concept_authority: arch-uk
+        concept_evidence_url: https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/datasets/ukbusinessactivitysizeandlocation
+        concept_evidence_notes: >-
+          ONS UK Business publishes enterprise counts by employment size band;
+          Ledger represents these enterprises as firm calibration count facts.
+        unit: count
+        aggregation: sum
+        expected_cell_type: number
