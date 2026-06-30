@@ -1,4 +1,4 @@
-schema_version: arch.source_package.v1
+schema_version: ledger.source_package.v1
 package_id: ons-uk-business-firm-targets-2025
 label: ONS UK Business 2025 national firm calibration targets
 artifact:
@@ -226,7 +226,7 @@ record_sets:
         concept: uk.firm.count
         source_concept: ons.uk_business.enterprise_count
         concept_relation: approximate
-        concept_authority: arch-uk
+        concept_authority: ledger-uk
         concept_evidence_url: https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/datasets/ukbusinessactivitysizeandlocation
         concept_evidence_notes: >-
           ONS UK Business publishes enterprise counts by annual turnover band;
@@ -444,7 +444,7 @@ record_sets:
         concept: uk.firm.count
         source_concept: ons.uk_business.enterprise_count
         concept_relation: approximate
-        concept_authority: arch-uk
+        concept_authority: ledger-uk
         concept_evidence_url: https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/datasets/ukbusinessactivitysizeandlocation
         concept_evidence_notes: >-
           ONS UK Business publishes enterprise counts by employment size band;

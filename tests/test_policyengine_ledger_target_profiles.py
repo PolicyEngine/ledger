@@ -66,7 +66,9 @@ def test__given_uk_firms_profile__then_it_declares_ledger_only_firm_targets() ->
     assert profile.country == "uk"
     assert profile.default_operation == "sum"
     assert profile.base_period_policy == "latest_not_after_build_base_period"
-    assert [target.target_id for target in profile.targets_for_geography("country")] == [
+    assert [
+        target.target_id for target in profile.targets_for_geography("country")
+    ] == [
         "ons.uk_business.enterprise_count.turnover_bands",
         "ons.uk_business.enterprise_count.employment_bands",
         "hmrc.vat.registered_trader_count.turnover_bands",
@@ -90,16 +92,12 @@ def test__given_uk_firms_profile__then_it_declares_ledger_only_firm_targets() ->
         "ons/uk_business/enterprise_count/turnover_bands"
     )
 
-    registered_count = targets_by_id[
-        "hmrc.vat.registered_trader_count.turnover_bands"
-    ]
+    registered_count = targets_by_id["hmrc.vat.registered_trader_count.turnover_bands"]
     assert registered_count.binding("axiom").payload["filter_rule"] == (
         "uk:policies/govuk/vat#firm_vat_registered"
     )
 
-    sic_turnover = targets_by_id[
-        "ons.uk_business.enterprise_count.sic_turnover_bands"
-    ]
+    sic_turnover = targets_by_id["ons.uk_business.enterprise_count.sic_turnover_bands"]
     assert sic_turnover.ledger_selector == {
         "source_name": "ons",
         "source_measure_id": "enterprise_count",

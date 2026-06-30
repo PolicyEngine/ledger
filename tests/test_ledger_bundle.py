@@ -25,21 +25,21 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
     assert summary["valid"]
     assert summary["counts"] == {
         "aggregate_duplicate_key_count": 0,
-        "entity_count": 7,
+        "entity_count": 8,
         "error_count": 0,
-        "fact_count": 36895,
-        "geography_count": 483,
-        "period_count": 10,
+        "fact_count": 38334,
+        "geography_count": 484,
+        "period_count": 11,
         "semantic_duplicate_key_count": 12,
         "skipped_source_count": 9,
-        "source_count": 16,
-        "source_package_count": 43,
+        "source_count": 18,
+        "source_package_count": 47,
         "warning_count": 1,
     }
-    assert len(rows) == 36895
+    assert len(rows) == 38334
     assert rows[0]["aggregate_fact_key"].startswith("ledger.aggregate_fact.v2:")
     assert rows[0]["semantic_fact_key"].startswith("ledger.semantic_fact.v2:")
-    assert source_packages["source_package_count"] == 43
+    assert source_packages["source_package_count"] == 47
     assert source_packages["skipped_source_count"] == 9
     assert sorted(item["source"] for item in source_packages["skipped_sources"]) == [
         "census-acs-s0101-congressional-district-age-2024",
@@ -52,7 +52,7 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "cms-aca-oep-state-level-2025",
         "jct-tax-expenditures-2024",
     ]
-    assert coverage["fact_count"] == 36895
+    assert coverage["fact_count"] == 38334
     assert coverage["counts"]["by_source"] == {
         "bea": 445,
         "cbo": 7,
@@ -66,13 +66,15 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "federal_reserve": 1,
         "hhs_acf_liheap": 2,
         "hhs_acf_tanf": 110,
+        "hmrc": 193,
         "irs_soi": 33535,
         "kff": 52,
+        "ons": 1246,
         "ssa": 422,
         "usda_snap": 216,
     }
     table_counts = coverage["counts"]["by_source_table"]
-    assert len(table_counts) == 38
+    assert len(table_counts) == 42
     assert table_counts["irs_soi:Congressional District Data 2022"] == 26880
     assert table_counts["irs_soi:Publication 1304 Table 1.1"] == 80
     assert (
@@ -107,12 +109,41 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         == 515
     )
     assert table_counts["ssa:SSA Annual Statistical Supplement 2025 Table 7.B1"] == 416
+    assert (
+        table_counts[
+            "ons:UK Business, Activity, Size and Location 2025 enterprise "
+            "counts by SIC division, turnover band, and employment size band"
+        ]
+        == 1232
+    )
+    assert (
+        table_counts[
+            "ons:UK Business, Activity, Size and Location 2025 enterprise "
+            "turnover and employment size bands"
+        ]
+        == 14
+    )
+    assert (
+        table_counts[
+            "hmrc:Annual UK VAT Statistics 2024 to 2025 VAT trader "
+            "population and net VAT liability by trade sector"
+        ]
+        == 176
+    )
+    assert (
+        table_counts[
+            "hmrc:Annual UK VAT Statistics 2024 to 2025 VAT trader "
+            "population and net VAT liability by turnover band"
+        ]
+        == 17
+    )
     assert coverage["counts"]["by_period"] == {
         "calendar_year:2018": 1,
         "calendar_year:2023": 999,
         "calendar_year:2024": 1464,
+        "calendar_year:2025": 1246,
         "fiscal_year:2023": 48,
-        "fiscal_year:2024": 327,
+        "fiscal_year:2024": 520,
         "month:2024-12": 260,
         "month:2025-12": 255,
         "tax_year:2022": 5886,
@@ -124,9 +155,11 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
     assert (
         coverage["counts"]["by_geography"]["congressional_district:5001700US0601"] == 56
     )
-    assert len(coverage["counts"]["by_geography"]) == 483
+    assert coverage["counts"]["by_geography"]["country:K02000001"] == 1439
+    assert len(coverage["counts"]["by_geography"]) == 484
     assert coverage["counts"]["by_entity"] == {
         "family": 107,
+        "firm": 1439,
         "government": 102,
         "household": 56,
         "institutional_sector": 1,
@@ -234,6 +267,30 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         output_dir
         / "sources"
         / "kff-marketplace-effectuated-enrollment"
+        / "consumer_facts.jsonl"
+    ).exists()
+    assert (
+        output_dir
+        / "sources"
+        / "ons-uk-business-firm-targets-2025"
+        / "consumer_facts.jsonl"
+    ).exists()
+    assert (
+        output_dir
+        / "sources"
+        / "ons-uk-business-firm-sector-targets-2025"
+        / "consumer_facts.jsonl"
+    ).exists()
+    assert (
+        output_dir
+        / "sources"
+        / "hmrc-vat-firm-targets-2024-25"
+        / "consumer_facts.jsonl"
+    ).exists()
+    assert (
+        output_dir
+        / "sources"
+        / "hmrc-vat-firm-sector-targets-2024-25"
         / "consumer_facts.jsonl"
     ).exists()
 

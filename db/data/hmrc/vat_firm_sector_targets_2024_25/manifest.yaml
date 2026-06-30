@@ -8,14 +8,14 @@ files:
     source_url: https://www.gov.uk/government/statistics/value-added-tax-vat-annual-statistics
     source_table: Annual UK VAT Statistics 2024 to 2025 VAT trader population and net VAT
       liability by trade sector
-    sha256: 508d96cc162daf60ce65efe87b496a59611b5443638a1ab5dc7113a832f6067a
-    size_bytes: 14230
+    sha256: 1ad4ad25fde9eeae3ddb57957921c03c3a3167aa924cbe8d5d99df73a63a95f8
+    size_bytes: 17440
     storage:
       r2:
         provider: r2
-        bucket: arch-raw
-        key: raw/hmrc/hmrc-vat-firm-sector-targets-2024-25/2024/508d96cc162daf60ce65efe87b496a59611b5443638a1ab5dc7113a832f6067a/hmrc_vat_firm_sector_targets_2024_25.csv
-        uri: r2://arch-raw/raw/hmrc/hmrc-vat-firm-sector-targets-2024-25/2024/508d96cc162daf60ce65efe87b496a59611b5443638a1ab5dc7113a832f6067a/hmrc_vat_firm_sector_targets_2024_25.csv
+        bucket: ledger-raw
+        key: raw/hmrc/hmrc-vat-firm-sector-targets-2024-25/2024/1ad4ad25fde9eeae3ddb57957921c03c3a3167aa924cbe8d5d99df73a63a95f8/hmrc_vat_firm_sector_targets_2024_25.csv
+        uri: r2://ledger-raw/raw/hmrc/hmrc-vat-firm-sector-targets-2024-25/2024/1ad4ad25fde9eeae3ddb57957921c03c3a3167aa924cbe8d5d99df73a63a95f8/hmrc_vat_firm_sector_targets_2024_25.csv
     source_urls:
     - https://www.gov.uk/government/statistics/value-added-tax-vat-annual-statistics
     notes: Curated trade-sector extract from HMRC Annual UK VAT Statistics 2024 to 2025 used

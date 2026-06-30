@@ -7,14 +7,14 @@ files:
     filename: ons_uk_business_firm_targets_2025.csv
     source_url: https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/datasets/ukbusinessactivitysizeandlocation
     source_table: UK Business, Activity, Size and Location 2025 enterprise turnover and employment size bands
-    sha256: 929717d7cd58dbd615b8383462c3c9da961663f8c50a16a666c58a2d12df0cf3
-    size_bytes: 900
+    sha256: 717cd268d8e59575b61e0806c9dbf00555944ead82fb5f601b3fbc6d64687d33
+    size_bytes: 1378
     storage:
       r2:
         provider: r2
-        bucket: arch-raw
-        key: raw/ons/ons-uk-business-firm-targets-2025/2025/929717d7cd58dbd615b8383462c3c9da961663f8c50a16a666c58a2d12df0cf3/ons_uk_business_firm_targets_2025.csv
-        uri: r2://arch-raw/raw/ons/ons-uk-business-firm-targets-2025/2025/929717d7cd58dbd615b8383462c3c9da961663f8c50a16a666c58a2d12df0cf3/ons_uk_business_firm_targets_2025.csv
+        bucket: ledger-raw
+        key: raw/ons/ons-uk-business-firm-targets-2025/2025/717cd268d8e59575b61e0806c9dbf00555944ead82fb5f601b3fbc6d64687d33/ons_uk_business_firm_targets_2025.csv
+        uri: r2://ledger-raw/raw/ons/ons-uk-business-firm-targets-2025/2025/717cd268d8e59575b61e0806c9dbf00555944ead82fb5f601b3fbc6d64687d33/ons_uk_business_firm_targets_2025.csv
     source_urls:
       - https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/datasets/ukbusinessactivitysizeandlocation
     notes: >-

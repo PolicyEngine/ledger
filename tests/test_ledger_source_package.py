@@ -1424,7 +1424,7 @@ def test_ons_uk_business_firm_targets_source_package_builds_firm_facts():
     assert len(rows) == 14
     assert validate_source_rows(rows).valid
     assert validate_source_cells(cells).valid
-    assert len(cells) == 60
+    assert len(cells) == 165
     assert len(facts) == 14
     assert validate_facts(facts).valid
     assert validate_consumer_fact_contract(facts).valid
@@ -1507,9 +1507,10 @@ def test_ons_uk_business_firm_targets_source_package_builds_firm_facts():
         ),
     }
 
-    for band_id, (expected_value, expected_constraints) in (
-        expected_employment_band_facts.items()
-    ):
+    for band_id, (
+        expected_value,
+        expected_constraints,
+    ) in expected_employment_band_facts.items():
         fact = values_by_record[
             "ons.uk_business.cy2025.enterprise_count.by_employment_band."
             f"{band_id}.enterprise_count"
@@ -1546,7 +1547,7 @@ def test_hmrc_vat_firm_targets_source_package_builds_vat_facts():
     assert len(rows) == 17
     assert validate_source_rows(rows).valid
     assert validate_source_cells(cells).valid
-    assert len(cells) == 72
+    assert len(cells) == 216
     assert len(facts) == 17
     assert validate_facts(facts).valid
     assert validate_consumer_fact_contract(facts).valid
@@ -1609,7 +1610,7 @@ def test_ons_uk_business_firm_sector_targets_source_package_builds_firm_facts():
     assert len(rows) == 1_232
     assert validate_source_rows(rows).valid
     assert validate_source_cells(cells).valid
-    assert len(cells) == 7_398
+    assert len(cells) == 16_029
     assert len(facts) == 1_232
     assert validate_facts(facts).valid
     assert validate_consumer_fact_contract(facts).valid
@@ -1623,8 +1624,7 @@ def test_ons_uk_business_firm_sector_targets_source_package_builds_firm_facts():
         "sic_00001__0_4.enterprise_count"
     ]
     rows_by_source_record = {
-        row["lineage"]["source_record_id"]: row
-        for row in consumer_fact_rows(facts)
+        row["lineage"]["source_record_id"]: row for row in consumer_fact_rows(facts)
     }
 
     assert crop_small_turnover.value == 41_610
@@ -1641,9 +1641,9 @@ def test_ons_uk_business_firm_sector_targets_source_package_builds_firm_facts():
         ("uk.firm.annual_turnover", ">=", 0),
         ("uk.firm.annual_turnover", "<", 50_000),
     }
-    assert rows_by_source_record[
-        crop_small_turnover.source_record_id
-    ]["dimensions"] == {
+    assert rows_by_source_record[crop_small_turnover.source_record_id][
+        "dimensions"
+    ] == {
         "uk.firm.sic_code": "00001",
         "uk.firm.turnover_band": "0_49k",
     }
@@ -1687,7 +1687,7 @@ def test_hmrc_vat_firm_sector_targets_source_package_builds_vat_facts():
     assert len(rows) == 176
     assert validate_source_rows(rows).valid
     assert validate_source_cells(cells).valid
-    assert len(cells) == 708
+    assert len(cells) == 2_124
     assert len(facts) == 176
     assert validate_facts(facts).valid
     assert validate_consumer_fact_contract(facts).valid
@@ -1697,8 +1697,7 @@ def test_hmrc_vat_firm_sector_targets_source_package_builds_vat_facts():
         "sic_00001.vat_registered_trader_count"
     ]
     petroleum_liability = values_by_record[
-        "hmrc.vat.fy2024_25.net_liability.by_sic."
-        "sic_00019.net_vat_liability"
+        "hmrc.vat.fy2024_25.net_liability.by_sic.sic_00019.net_vat_liability"
     ]
 
     assert crop_population.value == 128_900

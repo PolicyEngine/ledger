@@ -164,9 +164,7 @@ SOURCE_PACKAGE_ALIASES = {
     "kff-marketplace-effectuated-enrollment": Path(
         "kff/marketplace_effectuated_enrollment"
     ),
-    "ons-uk-business-firm-targets-2025": Path(
-        "ons/uk_business_firm_targets_2025"
-    ),
+    "ons-uk-business-firm-targets-2025": Path("ons/uk_business_firm_targets_2025"),
     "ons-uk-business-firm-sector-targets-2025": Path(
         "ons/uk_business_firm_sector_targets_2025"
     ),
