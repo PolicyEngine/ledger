@@ -741,7 +741,8 @@ Acceptance:
 - A developer can see whether a source-package version preserves more official
   statistics release content, regresses source fidelity, or intentionally omits
   source rows.
-- CI catches accidental source omission, selector breakage, target contract incompatibility, and measure compiler regressions.
+- CI catches accidental source omission, selector breakage, target profile
+  schema violations, and source coverage regressions.
 
 ### Phase 8: State And Local Expansion
 
@@ -772,7 +773,8 @@ Start with YAML specs plus generated database records.
 Use:
 
 - Ledger for source artifacts, parsed cells, selectors, and simulator-neutral source records.
-- Populace for target value recipes, model measure specs, target contracts, active target profiles, and PE differential metadata.
+- Populace for target value recipes, model measure specs, target contracts,
+  active target profiles, and PE differential metadata.
 - PE parity as a pinned differential harness, not as the source of truth.
 
 The first implementation should target IRS SOI TY2023 Table 1.4 because it exercises the main failure modes:
@@ -784,10 +786,7 @@ The first implementation should target IRS SOI TY2023 Table 1.4 because it exerc
 - taxable-only interpretation
 - source concept/statistic/universe mapping
 - AGI-bin filters
-- income-source model measure mapping
 - count-vs-amount distinction
-- household-weight validation
-- PE differential checks against existing target machinery
 
 First-slice acceptance criteria:
 
@@ -795,7 +794,8 @@ First-slice acceptance criteria:
 - Parsed cells preserve raw/displayed/formula/missingness distinctions.
 - Selector specs cover all PE-used cells and adjacent omitted source columns.
 - Source records are simulator-neutral and contain concept/statistic/universe metadata.
-- Identity target value recipes compile from source queries and store resolved source record IDs.
-- Target contracts bind value recipes to model measure specs with explicit unit/entity/universe/geography/period/dimension expectations.
-- Tiny model fixtures pass sum, count, filter, weight, and entity tests.
-- PE-equivalent differences are either exact, expected, replacement, not applicable, or not yet classified.
+- Target profiles select source records without storing target values, runtime
+  code, active support decisions, or model compiler configuration.
+- Downstream Populace recipes can reference the source records and target
+  profiles, but their values, model measures, fixtures, and differential checks
+  remain outside Ledger.

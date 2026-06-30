@@ -172,6 +172,22 @@ def test__given_forbidden_profile_option__then_profile_is_rejected(
 
 
 @pytest.mark.parametrize(
+    "forbidden",
+    ["runtime_code", "python_code", "solver", "execute", "module", "command"],
+)
+def test__given_runtime_binding_option__then_profile_is_rejected(
+    forbidden: str,
+) -> None:
+    # Given
+    payload = _minimal_profile_payload()
+    payload["targets"][0]["bindings"]["policyengine"][forbidden] = "not allowed"
+
+    # When / Then
+    with pytest.raises(ValueError, match=forbidden):
+        target_profile_from_mapping(payload)
+
+
+@pytest.mark.parametrize(
     ("container", "forbidden"),
     [
         ("ledger_selector", "value"),
