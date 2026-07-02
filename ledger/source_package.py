@@ -18,11 +18,14 @@ import yaml
 
 from ledger.core import (
     ALLOWED_AGGREGATIONS,
+    ALLOWED_ASSERTIONS,
+    DEFAULT_ASSERTION,
     Aggregation,
     AggregateConstraint,
     EntityDimension,
     GeographyDimension,
     Measure,
+    PeriodCoverage,
     PeriodDimension,
     SourceProvenance,
     AggregateFact,
@@ -746,6 +749,11 @@ class DeclarativeRecordSet:
             shared_constraints=tuple(
                 _constraint_from_mapping(constraint, year=year)
                 for constraint in self.payload.get("shared_constraints", ())
+            ),
+            assertion=_assertion_from_mapping(self.payload),
+            period_coverage=_period_coverage_from_mapping(
+                self.payload.get("period_coverage"),
+                year=year,
             ),
         )
 
@@ -1633,6 +1641,8 @@ def _fact_from_source_record(
         source_row_keys=record.source_row_keys,
         constraints=spec.constraints,
         layout=spec.layout,
+        assertion=spec.assertion,
+        period_coverage=spec.period_coverage,
     )
 
 
@@ -1655,6 +1665,47 @@ def _source_provenance_from_cells(cells: list[SourceCell]) -> SourceProvenance:
         raw_r2_bucket=artifact.raw_r2_bucket,
         raw_r2_key=artifact.raw_r2_key,
         raw_r2_uri=artifact.raw_r2_uri,
+    )
+
+
+def _assertion_from_mapping(payload: dict[str, Any]) -> str:
+    assertion = payload.get("assertion", DEFAULT_ASSERTION)
+    if assertion not in ALLOWED_ASSERTIONS:
+        raise ValueError(
+            f"record_set assertion must be one of {sorted(ALLOWED_ASSERTIONS)}, "
+            f"got {assertion!r}. PolicyEngine-computed values are not Ledger "
+            "facts; only publisher observations and publisher projections are."
+        )
+    return assertion
+
+
+def _period_coverage_from_mapping(
+    payload: Any,
+    *,
+    year: int,
+) -> PeriodCoverage | None:
+    if payload is None:
+        return None
+    if not isinstance(payload, dict):
+        raise ValueError("record_set period_coverage must be a mapping.")
+    allowed_keys = {
+        "start_date",
+        "end_date",
+        "basis",
+        "source_period_label",
+        "accounting_basis",
+        "notes",
+    }
+    unknown = sorted(set(payload) - allowed_keys)
+    if unknown:
+        raise ValueError(
+            f"record_set period_coverage has unknown keys: {unknown}."
+        )
+    return PeriodCoverage(
+        **{
+            key: _optional_rendered_string(payload.get(key), year=year)
+            for key in allowed_keys
+        }
     )
 
 

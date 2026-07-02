@@ -291,6 +291,8 @@ def _create_schema(connection: sqlite3.Connection) -> None:
             aggregation_method TEXT NOT NULL,
             aggregation_denominator TEXT,
             domain TEXT NOT NULL,
+            assertion TEXT NOT NULL DEFAULT 'observation',
+            period_coverage_json TEXT,
             filters_json TEXT NOT NULL,
             label TEXT,
             source_name TEXT,
@@ -832,6 +834,8 @@ def _insert_aggregate_fact(
             aggregation_method,
             aggregation_denominator,
             domain,
+            assertion,
+            period_coverage_json,
             filters_json,
             label,
             source_name,
@@ -843,7 +847,7 @@ def _insert_aggregate_fact(
             source_extraction_method,
             source_method_notes
         )
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """,
         (
             fact_key,
@@ -886,6 +890,18 @@ def _insert_aggregate_fact(
             fact.aggregation.method,
             fact.aggregation.denominator,
             fact.domain,
+            fact.assertion,
+            (
+                _json_dumps(
+                    {
+                        key: value
+                        for key, value in asdict(fact.period_coverage).items()
+                        if value is not None
+                    }
+                )
+                if fact.period_coverage is not None
+                else None
+            ),
             _json_dumps(fact.filters),
             fact.label,
             fact.source.source_name,

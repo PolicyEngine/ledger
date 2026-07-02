@@ -9,11 +9,13 @@ from pathlib import Path
 from typing import Any
 
 from ledger.core import (
+    DEFAULT_ASSERTION,
     Aggregation,
     AggregateConstraint,
     EntityDimension,
     GeographyDimension,
     Measure,
+    PeriodCoverage,
     PeriodDimension,
     SourceProvenance,
     SourceRecordLayout,
@@ -75,6 +77,12 @@ def fact_from_mapping(payload: dict[str, Any]) -> AggregateFact:
         layout=(
             SourceRecordLayout(**payload["layout"]) if payload.get("layout") else None
         ),
+        assertion=payload.get("assertion", DEFAULT_ASSERTION),
+        period_coverage=(
+            PeriodCoverage(**payload["period_coverage"])
+            if payload.get("period_coverage")
+            else None
+        ),
     )
 
 
@@ -96,5 +104,15 @@ def fact_to_mapping(fact: AggregateFact) -> dict[str, Any]:
     else:
         payload["layout"] = {
             key: value for key, value in payload["layout"].items() if value is not None
+        }
+    if fact.assertion == DEFAULT_ASSERTION:
+        payload.pop("assertion", None)
+    if fact.period_coverage is None:
+        payload.pop("period_coverage", None)
+    else:
+        payload["period_coverage"] = {
+            key: value
+            for key, value in payload["period_coverage"].items()
+            if value is not None
         }
     return payload

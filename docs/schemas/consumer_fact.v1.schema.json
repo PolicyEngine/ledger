@@ -16,6 +16,7 @@
     "universe_constraint_set_key",
     "value",
     "value_type",
+    "assertion",
     "period",
     "geography",
     "entity",
@@ -63,28 +64,48 @@
       "pattern": "^ledger\\.universe_constraint_set\\.v2:[0-9a-f]{24}$"
     },
     "value": {
-      "type": ["integer", "number", "string", "boolean"]
+      "type": [
+        "integer",
+        "number",
+        "string",
+        "boolean"
+      ]
     },
     "value_type": {
-      "enum": ["integer", "number", "decimal", "string", "boolean"]
+      "enum": [
+        "integer",
+        "number",
+        "decimal",
+        "string",
+        "boolean"
+      ]
     },
     "period": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["type", "value"],
+      "required": [
+        "type",
+        "value"
+      ],
       "properties": {
         "type": {
           "type": "string"
         },
         "value": {
-          "type": ["integer", "string"]
+          "type": [
+            "integer",
+            "string"
+          ]
         }
       }
     },
     "geography": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["level", "id"],
+      "required": [
+        "level",
+        "id"
+      ],
       "properties": {
         "level": {
           "type": "string"
@@ -100,7 +121,9 @@
     "entity": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["name"],
+      "required": [
+        "name"
+      ],
       "properties": {
         "name": {
           "type": "string"
@@ -113,7 +136,9 @@
     "aggregation": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["method"],
+      "required": [
+        "method"
+      ],
       "properties": {
         "method": {
           "type": "string"
@@ -154,13 +179,20 @@
     "dimensions": {
       "type": "object",
       "additionalProperties": {
-        "type": ["integer", "number", "string", "boolean"]
+        "type": [
+          "integer",
+          "number",
+          "string",
+          "boolean"
+        ]
       }
     },
     "universe_constraints": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["domain"],
+      "required": [
+        "domain"
+      ],
       "properties": {
         "domain": {
           "type": "string"
@@ -232,7 +264,10 @@
     "lineage": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["source_record_id", "source_cell_keys"],
+      "required": [
+        "source_record_id",
+        "source_cell_keys"
+      ],
       "properties": {
         "source_record_id": {
           "type": "string"
@@ -295,13 +330,62 @@
           "type": "string"
         }
       }
+    },
+    "assertion": {
+      "type": "string",
+      "enum": [
+        "observation",
+        "source_projection"
+      ],
+      "description": "Who asserted the value: a publisher-measured outcome (observation) or the publisher's own forward-looking estimate (source_projection). PolicyEngine-computed values are never consumer facts."
+    },
+    "period_coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Non-identity provenance for the fact's reference period: coverage dates, basis, the publisher's period label, and accounting basis.",
+      "properties": {
+        "start_date": {
+          "type": "string"
+        },
+        "end_date": {
+          "type": "string"
+        },
+        "basis": {
+          "type": "string",
+          "enum": [
+            "calendar",
+            "tax",
+            "fiscal",
+            "survey_reference",
+            "projection_horizon"
+          ]
+        },
+        "source_period_label": {
+          "type": "string"
+        },
+        "accounting_basis": {
+          "type": "string",
+          "enum": [
+            "cash",
+            "accrual"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
     }
   },
   "$defs": {
     "constraint": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["variable", "operator", "value", "role"],
+      "required": [
+        "variable",
+        "operator",
+        "value",
+        "role"
+      ],
       "properties": {
         "variable": {
           "type": "string"
@@ -310,7 +394,12 @@
           "type": "string"
         },
         "value": {
-          "type": ["integer", "number", "string", "boolean"]
+          "type": [
+            "integer",
+            "number",
+            "string",
+            "boolean"
+          ]
         },
         "unit": {
           "type": "string"
