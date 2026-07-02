@@ -26,6 +26,7 @@ artifact:
 record_sets:
   - record_set_id: cbo.revenue_projection.ty{year}.income_by_source.adjusted_gross_income
     record_set_spec_id: cbo.revenue_projection.income_by_source.adjusted_gross_income.v1
+    assertion: source_projection
     source_record_id_prefix: cbo.revenue_projection.ty{year}.income_by_source
     sheet_name: income_by_source
     period_type: tax_year
@@ -87,6 +88,7 @@ record_sets:
         expected_cell_type: number
   - record_set_id: cbo.revenue_projection.ty{year}.income_by_source.wages_and_salaries
     record_set_spec_id: cbo.revenue_projection.income_by_source.wages_and_salaries.v1
+    assertion: source_projection
     source_record_id_prefix: cbo.revenue_projection.ty{year}.income_by_source
     sheet_name: income_by_source
     period_type: tax_year
@@ -133,6 +135,7 @@ record_sets:
         expected_cell_type: number
   - record_set_id: cbo.revenue_projection.ty{year}.income_by_source.taxable_interest_ordinary_dividends
     record_set_spec_id: cbo.revenue_projection.income_by_source.taxable_interest_ordinary_dividends.v1
+    assertion: source_projection
     source_record_id_prefix: cbo.revenue_projection.ty{year}.income_by_source
     sheet_name: income_by_source
     period_type: tax_year
@@ -182,6 +185,7 @@ record_sets:
         expected_cell_type: number
   - record_set_id: cbo.revenue_projection.ty{year}.income_by_source.qualified_dividend_income
     record_set_spec_id: cbo.revenue_projection.income_by_source.qualified_dividend_income.v1
+    assertion: source_projection
     source_record_id_prefix: cbo.revenue_projection.ty{year}.income_by_source
     sheet_name: income_by_source
     period_type: tax_year
@@ -228,6 +232,7 @@ record_sets:
         expected_cell_type: number
   - record_set_id: cbo.revenue_projection.ty{year}.income_by_source.net_capital_gain
     record_set_spec_id: cbo.revenue_projection.income_by_source.net_capital_gain.v1
+    assertion: source_projection
     source_record_id_prefix: cbo.revenue_projection.ty{year}.income_by_source
     sheet_name: income_by_source
     period_type: tax_year
@@ -274,6 +279,7 @@ record_sets:
         expected_cell_type: number
   - record_set_id: cbo.revenue_projection.ty{year}.income_by_source.net_business_income
     record_set_spec_id: cbo.revenue_projection.income_by_source.net_business_income.v1
+    assertion: source_projection
     source_record_id_prefix: cbo.revenue_projection.ty{year}.income_by_source
     sheet_name: income_by_source
     period_type: tax_year
