@@ -27,11 +27,17 @@ This repository provides:
 - **Sources**: Source file references, retrieval metadata, manifests, checksums,
   and provenance.
 - **Facts**: Source-backed claims represented with typed values, units,
-  geography, period, source table, and lineage.
+  geography, period, source table, and lineage. Publisher projections (CBO
+  baselines, BFP outlooks, SSA trustees tables, TPC/JCT scores) are facts
+  typed `assertion: source_projection`; measured outcomes are the default
+  `assertion: observation`.
 - **Normalization**: Low-assumption representation changes such as unit/scale
   conversion and source-published total/share arithmetic.
 - **Target profiles**: Source-backed target contracts and model-measurement
   bindings that Populace, Thesis, and future rule engines can consume.
+- **Consumer artifacts**: Versioned, reproducible bundles of consumer-contract
+  fact rows plus profiles (`ledger build-consumer-artifact`) with a resolution
+  API that enforces the period contract.
 - **Jurisdiction loaders**: Source-specific ETL that emits the shared Ledger
   schema.
 
@@ -45,6 +51,16 @@ The load-bearing rule:
 > Ledger may re-express a published value and declare target contracts, but may
 > not reconcile, impute, or transform published values in ways that change their
 > meaning.
+
+The store is facts-only, and the line is who asserted the value. Everything a
+publisher asserted — including the publisher's own projections — is a fact.
+Everything PolicyEngine computes (aged, uprated, forecast, or reconciled
+levels) is a downstream build artifact and never enters the store; Populace
+owns aging as a named, versioned model over Ledger growth-factor facts. A
+fact's `period` is the period its value refers to, and resolving a target at
+any other period hard-fails without an explicit consumer
+`PeriodAlignmentDeclaration` — the guard against silent un-aged calibration
+(see [`docs/adr-ledger-facts-only.md`](docs/adr-ledger-facts-only.md)).
 
 | Layer | Owns | Examples |
 |-------|------|----------|
