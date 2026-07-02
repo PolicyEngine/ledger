@@ -1,0 +1,5701 @@
+schema_version: ledger.source_package.v1
+package_id: statbel-fiscal-income-2023-nis-2025
+label: Statbel fiscal income 2023 commune taxable-income targets on 2025 NIS geography
+artifact:
+  source_name: statbel_fiscal_income
+  source_table: Personal income tax statistics by municipality, income year 2023, 2025 NIS
+    geography
+  resource_package: db
+  resource_directory: data/statbel/fiscal_income_commune_2023_nis_2025
+  manifest: manifest.yaml
+  vintage: statbel_fiscal_income_2023_nis_2025
+  extracted_at: '2026-07-02'
+  extraction_method: curated CSV extract from Statbel fiscal income table aggregated through
+    the 2025 NIS commune crosswalk
+  parser: delimited_text_full_rows
+  artifact_year: 2023
+  sheet_name: statbel_fiscal_income_commune_2023_nis_2025
+record_sets:
+- record_set_id: statbel.fiscal_income.tax_year2023.taxable_income.by_commune_nis2025
+  record_set_spec_id: statbel.fiscal_income.taxable_income.by_commune_nis2025.v1
+  source_record_id_prefix: statbel.fiscal_income.tax_year2023.taxable_income.by_commune_nis2025
+  sheet_name: statbel_fiscal_income_commune_2023_nis_2025
+  period_type: tax_year
+  period: 2023
+  geography_id: BE
+  geography_level: country
+  geography_name: Belgium
+  geography_vintage: current
+  entity: person
+  entity_role: taxpayer
+  domain: personal_income_tax
+  groupby_dimension: geography
+  rows:
+  - value_id: nis_11001
+    label: Aartselaar PIT taxable income
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: nis_11001
+    geography_id: '11001'
+    geography_level: commune
+    geography_name: Aartselaar
+    geography_vintage: nis_2025
+  - value_id: nis_11002
+    label: Antwerpen PIT taxable income
+    ordinal: 1
+    row_number: 3
+    expected_row_header_column: A
+    expected_row_header: nis_11002
+    geography_id: '11002'
+    geography_level: commune
+    geography_name: Antwerpen
+    geography_vintage: nis_2025
+  - value_id: nis_11004
+    label: Boechout PIT taxable income
+    ordinal: 2
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: nis_11004
+    geography_id: '11004'
+    geography_level: commune
+    geography_name: Boechout
+    geography_vintage: nis_2025
+  - value_id: nis_11005
+    label: Boom PIT taxable income
+    ordinal: 3
+    row_number: 5
+    expected_row_header_column: A
+    expected_row_header: nis_11005
+    geography_id: '11005'
+    geography_level: commune
+    geography_name: Boom
+    geography_vintage: nis_2025
+  - value_id: nis_11008
+    label: Brasschaat PIT taxable income
+    ordinal: 4
+    row_number: 6
+    expected_row_header_column: A
+    expected_row_header: nis_11008
+    geography_id: '11008'
+    geography_level: commune
+    geography_name: Brasschaat
+    geography_vintage: nis_2025
+  - value_id: nis_11009
+    label: Brecht PIT taxable income
+    ordinal: 5
+    row_number: 7
+    expected_row_header_column: A
+    expected_row_header: nis_11009
+    geography_id: '11009'
+    geography_level: commune
+    geography_name: Brecht
+    geography_vintage: nis_2025
+  - value_id: nis_11013
+    label: Edegem PIT taxable income
+    ordinal: 6
+    row_number: 8
+    expected_row_header_column: A
+    expected_row_header: nis_11013
+    geography_id: '11013'
+    geography_level: commune
+    geography_name: Edegem
+    geography_vintage: nis_2025
+  - value_id: nis_11016
+    label: Essen PIT taxable income
+    ordinal: 7
+    row_number: 9
+    expected_row_header_column: A
+    expected_row_header: nis_11016
+    geography_id: '11016'
+    geography_level: commune
+    geography_name: Essen
+    geography_vintage: nis_2025
+  - value_id: nis_11018
+    label: Hemiksem PIT taxable income
+    ordinal: 8
+    row_number: 10
+    expected_row_header_column: A
+    expected_row_header: nis_11018
+    geography_id: '11018'
+    geography_level: commune
+    geography_name: Hemiksem
+    geography_vintage: nis_2025
+  - value_id: nis_11021
+    label: Hove PIT taxable income
+    ordinal: 9
+    row_number: 11
+    expected_row_header_column: A
+    expected_row_header: nis_11021
+    geography_id: '11021'
+    geography_level: commune
+    geography_name: Hove
+    geography_vintage: nis_2025
+  - value_id: nis_11022
+    label: Kalmthout PIT taxable income
+    ordinal: 10
+    row_number: 12
+    expected_row_header_column: A
+    expected_row_header: nis_11022
+    geography_id: '11022'
+    geography_level: commune
+    geography_name: Kalmthout
+    geography_vintage: nis_2025
+  - value_id: nis_11023
+    label: Kapellen PIT taxable income
+    ordinal: 11
+    row_number: 13
+    expected_row_header_column: A
+    expected_row_header: nis_11023
+    geography_id: '11023'
+    geography_level: commune
+    geography_name: Kapellen
+    geography_vintage: nis_2025
+  - value_id: nis_11024
+    label: Kontich PIT taxable income
+    ordinal: 12
+    row_number: 14
+    expected_row_header_column: A
+    expected_row_header: nis_11024
+    geography_id: '11024'
+    geography_level: commune
+    geography_name: Kontich
+    geography_vintage: nis_2025
+  - value_id: nis_11025
+    label: Lint PIT taxable income
+    ordinal: 13
+    row_number: 15
+    expected_row_header_column: A
+    expected_row_header: nis_11025
+    geography_id: '11025'
+    geography_level: commune
+    geography_name: Lint
+    geography_vintage: nis_2025
+  - value_id: nis_11029
+    label: Mortsel PIT taxable income
+    ordinal: 14
+    row_number: 16
+    expected_row_header_column: A
+    expected_row_header: nis_11029
+    geography_id: '11029'
+    geography_level: commune
+    geography_name: Mortsel
+    geography_vintage: nis_2025
+  - value_id: nis_11030
+    label: Niel PIT taxable income
+    ordinal: 15
+    row_number: 17
+    expected_row_header_column: A
+    expected_row_header: nis_11030
+    geography_id: '11030'
+    geography_level: commune
+    geography_name: Niel
+    geography_vintage: nis_2025
+  - value_id: nis_11035
+    label: Ranst PIT taxable income
+    ordinal: 16
+    row_number: 18
+    expected_row_header_column: A
+    expected_row_header: nis_11035
+    geography_id: '11035'
+    geography_level: commune
+    geography_name: Ranst
+    geography_vintage: nis_2025
+  - value_id: nis_11037
+    label: Rumst PIT taxable income
+    ordinal: 17
+    row_number: 19
+    expected_row_header_column: A
+    expected_row_header: nis_11037
+    geography_id: '11037'
+    geography_level: commune
+    geography_name: Rumst
+    geography_vintage: nis_2025
+  - value_id: nis_11038
+    label: Schelle PIT taxable income
+    ordinal: 18
+    row_number: 20
+    expected_row_header_column: A
+    expected_row_header: nis_11038
+    geography_id: '11038'
+    geography_level: commune
+    geography_name: Schelle
+    geography_vintage: nis_2025
+  - value_id: nis_11039
+    label: Schilde PIT taxable income
+    ordinal: 19
+    row_number: 21
+    expected_row_header_column: A
+    expected_row_header: nis_11039
+    geography_id: '11039'
+    geography_level: commune
+    geography_name: Schilde
+    geography_vintage: nis_2025
+  - value_id: nis_11040
+    label: Schoten PIT taxable income
+    ordinal: 20
+    row_number: 22
+    expected_row_header_column: A
+    expected_row_header: nis_11040
+    geography_id: '11040'
+    geography_level: commune
+    geography_name: Schoten
+    geography_vintage: nis_2025
+  - value_id: nis_11044
+    label: Stabroek PIT taxable income
+    ordinal: 21
+    row_number: 23
+    expected_row_header_column: A
+    expected_row_header: nis_11044
+    geography_id: '11044'
+    geography_level: commune
+    geography_name: Stabroek
+    geography_vintage: nis_2025
+  - value_id: nis_11050
+    label: Wijnegem PIT taxable income
+    ordinal: 22
+    row_number: 24
+    expected_row_header_column: A
+    expected_row_header: nis_11050
+    geography_id: '11050'
+    geography_level: commune
+    geography_name: Wijnegem
+    geography_vintage: nis_2025
+  - value_id: nis_11052
+    label: Wommelgem PIT taxable income
+    ordinal: 23
+    row_number: 25
+    expected_row_header_column: A
+    expected_row_header: nis_11052
+    geography_id: '11052'
+    geography_level: commune
+    geography_name: Wommelgem
+    geography_vintage: nis_2025
+  - value_id: nis_11053
+    label: Wuustwezel PIT taxable income
+    ordinal: 24
+    row_number: 26
+    expected_row_header_column: A
+    expected_row_header: nis_11053
+    geography_id: '11053'
+    geography_level: commune
+    geography_name: Wuustwezel
+    geography_vintage: nis_2025
+  - value_id: nis_11054
+    label: Zandhoven PIT taxable income
+    ordinal: 25
+    row_number: 27
+    expected_row_header_column: A
+    expected_row_header: nis_11054
+    geography_id: '11054'
+    geography_level: commune
+    geography_name: Zandhoven
+    geography_vintage: nis_2025
+  - value_id: nis_11055
+    label: Zoersel PIT taxable income
+    ordinal: 26
+    row_number: 28
+    expected_row_header_column: A
+    expected_row_header: nis_11055
+    geography_id: '11055'
+    geography_level: commune
+    geography_name: Zoersel
+    geography_vintage: nis_2025
+  - value_id: nis_11057
+    label: Malle PIT taxable income
+    ordinal: 27
+    row_number: 29
+    expected_row_header_column: A
+    expected_row_header: nis_11057
+    geography_id: '11057'
+    geography_level: commune
+    geography_name: Malle
+    geography_vintage: nis_2025
+  - value_id: nis_12002
+    label: Berlaar PIT taxable income
+    ordinal: 28
+    row_number: 30
+    expected_row_header_column: A
+    expected_row_header: nis_12002
+    geography_id: '12002'
+    geography_level: commune
+    geography_name: Berlaar
+    geography_vintage: nis_2025
+  - value_id: nis_12005
+    label: Bonheiden PIT taxable income
+    ordinal: 29
+    row_number: 31
+    expected_row_header_column: A
+    expected_row_header: nis_12005
+    geography_id: '12005'
+    geography_level: commune
+    geography_name: Bonheiden
+    geography_vintage: nis_2025
+  - value_id: nis_12007
+    label: Bornem PIT taxable income
+    ordinal: 30
+    row_number: 32
+    expected_row_header_column: A
+    expected_row_header: nis_12007
+    geography_id: '12007'
+    geography_level: commune
+    geography_name: Bornem
+    geography_vintage: nis_2025
+  - value_id: nis_12009
+    label: Duffel PIT taxable income
+    ordinal: 31
+    row_number: 33
+    expected_row_header_column: A
+    expected_row_header: nis_12009
+    geography_id: '12009'
+    geography_level: commune
+    geography_name: Duffel
+    geography_vintage: nis_2025
+  - value_id: nis_12014
+    label: Heist-op-den-Berg PIT taxable income
+    ordinal: 32
+    row_number: 34
+    expected_row_header_column: A
+    expected_row_header: nis_12014
+    geography_id: '12014'
+    geography_level: commune
+    geography_name: Heist-op-den-Berg
+    geography_vintage: nis_2025
+  - value_id: nis_12021
+    label: Lier PIT taxable income
+    ordinal: 33
+    row_number: 35
+    expected_row_header_column: A
+    expected_row_header: nis_12021
+    geography_id: '12021'
+    geography_level: commune
+    geography_name: Lier
+    geography_vintage: nis_2025
+  - value_id: nis_12025
+    label: Mechelen PIT taxable income
+    ordinal: 34
+    row_number: 36
+    expected_row_header_column: A
+    expected_row_header: nis_12025
+    geography_id: '12025'
+    geography_level: commune
+    geography_name: Mechelen
+    geography_vintage: nis_2025
+  - value_id: nis_12026
+    label: Nijlen PIT taxable income
+    ordinal: 35
+    row_number: 37
+    expected_row_header_column: A
+    expected_row_header: nis_12026
+    geography_id: '12026'
+    geography_level: commune
+    geography_name: Nijlen
+    geography_vintage: nis_2025
+  - value_id: nis_12029
+    label: Putte PIT taxable income
+    ordinal: 36
+    row_number: 38
+    expected_row_header_column: A
+    expected_row_header: nis_12029
+    geography_id: '12029'
+    geography_level: commune
+    geography_name: Putte
+    geography_vintage: nis_2025
+  - value_id: nis_12035
+    label: Sint-Katelijne-Waver PIT taxable income
+    ordinal: 37
+    row_number: 39
+    expected_row_header_column: A
+    expected_row_header: nis_12035
+    geography_id: '12035'
+    geography_level: commune
+    geography_name: Sint-Katelijne-Waver
+    geography_vintage: nis_2025
+  - value_id: nis_12040
+    label: Willebroek PIT taxable income
+    ordinal: 38
+    row_number: 40
+    expected_row_header_column: A
+    expected_row_header: nis_12040
+    geography_id: '12040'
+    geography_level: commune
+    geography_name: Willebroek
+    geography_vintage: nis_2025
+  - value_id: nis_12041
+    label: Puurs-Sint-Amands PIT taxable income
+    ordinal: 39
+    row_number: 41
+    expected_row_header_column: A
+    expected_row_header: nis_12041
+    geography_id: '12041'
+    geography_level: commune
+    geography_name: Puurs-Sint-Amands
+    geography_vintage: nis_2025
+  - value_id: nis_13001
+    label: Arendonk PIT taxable income
+    ordinal: 40
+    row_number: 42
+    expected_row_header_column: A
+    expected_row_header: nis_13001
+    geography_id: '13001'
+    geography_level: commune
+    geography_name: Arendonk
+    geography_vintage: nis_2025
+  - value_id: nis_13002
+    label: Baarle-Hertog PIT taxable income
+    ordinal: 41
+    row_number: 43
+    expected_row_header_column: A
+    expected_row_header: nis_13002
+    geography_id: '13002'
+    geography_level: commune
+    geography_name: Baarle-Hertog
+    geography_vintage: nis_2025
+  - value_id: nis_13003
+    label: Balen PIT taxable income
+    ordinal: 42
+    row_number: 44
+    expected_row_header_column: A
+    expected_row_header: nis_13003
+    geography_id: '13003'
+    geography_level: commune
+    geography_name: Balen
+    geography_vintage: nis_2025
+  - value_id: nis_13004
+    label: Beerse PIT taxable income
+    ordinal: 43
+    row_number: 45
+    expected_row_header_column: A
+    expected_row_header: nis_13004
+    geography_id: '13004'
+    geography_level: commune
+    geography_name: Beerse
+    geography_vintage: nis_2025
+  - value_id: nis_13006
+    label: Dessel PIT taxable income
+    ordinal: 44
+    row_number: 46
+    expected_row_header_column: A
+    expected_row_header: nis_13006
+    geography_id: '13006'
+    geography_level: commune
+    geography_name: Dessel
+    geography_vintage: nis_2025
+  - value_id: nis_13008
+    label: Geel PIT taxable income
+    ordinal: 45
+    row_number: 47
+    expected_row_header_column: A
+    expected_row_header: nis_13008
+    geography_id: '13008'
+    geography_level: commune
+    geography_name: Geel
+    geography_vintage: nis_2025
+  - value_id: nis_13010
+    label: Grobbendonk PIT taxable income
+    ordinal: 46
+    row_number: 48
+    expected_row_header_column: A
+    expected_row_header: nis_13010
+    geography_id: '13010'
+    geography_level: commune
+    geography_name: Grobbendonk
+    geography_vintage: nis_2025
+  - value_id: nis_13011
+    label: Herentals PIT taxable income
+    ordinal: 47
+    row_number: 49
+    expected_row_header_column: A
+    expected_row_header: nis_13011
+    geography_id: '13011'
+    geography_level: commune
+    geography_name: Herentals
+    geography_vintage: nis_2025
+  - value_id: nis_13012
+    label: Herenthout PIT taxable income
+    ordinal: 48
+    row_number: 50
+    expected_row_header_column: A
+    expected_row_header: nis_13012
+    geography_id: '13012'
+    geography_level: commune
+    geography_name: Herenthout
+    geography_vintage: nis_2025
+  - value_id: nis_13013
+    label: Herselt PIT taxable income
+    ordinal: 49
+    row_number: 51
+    expected_row_header_column: A
+    expected_row_header: nis_13013
+    geography_id: '13013'
+    geography_level: commune
+    geography_name: Herselt
+    geography_vintage: nis_2025
+  - value_id: nis_13014
+    label: Hoogstraten PIT taxable income
+    ordinal: 50
+    row_number: 52
+    expected_row_header_column: A
+    expected_row_header: nis_13014
+    geography_id: '13014'
+    geography_level: commune
+    geography_name: Hoogstraten
+    geography_vintage: nis_2025
+  - value_id: nis_13016
+    label: Hulshout PIT taxable income
+    ordinal: 51
+    row_number: 53
+    expected_row_header_column: A
+    expected_row_header: nis_13016
+    geography_id: '13016'
+    geography_level: commune
+    geography_name: Hulshout
+    geography_vintage: nis_2025
+  - value_id: nis_13017
+    label: Kasterlee PIT taxable income
+    ordinal: 52
+    row_number: 54
+    expected_row_header_column: A
+    expected_row_header: nis_13017
+    geography_id: '13017'
+    geography_level: commune
+    geography_name: Kasterlee
+    geography_vintage: nis_2025
+  - value_id: nis_13019
+    label: Lille PIT taxable income
+    ordinal: 53
+    row_number: 55
+    expected_row_header_column: A
+    expected_row_header: nis_13019
+    geography_id: '13019'
+    geography_level: commune
+    geography_name: Lille
+    geography_vintage: nis_2025
+  - value_id: nis_13021
+    label: Meerhout PIT taxable income
+    ordinal: 54
+    row_number: 56
+    expected_row_header_column: A
+    expected_row_header: nis_13021
+    geography_id: '13021'
+    geography_level: commune
+    geography_name: Meerhout
+    geography_vintage: nis_2025
+  - value_id: nis_13023
+    label: Merksplas PIT taxable income
+    ordinal: 55
+    row_number: 57
+    expected_row_header_column: A
+    expected_row_header: nis_13023
+    geography_id: '13023'
+    geography_level: commune
+    geography_name: Merksplas
+    geography_vintage: nis_2025
+  - value_id: nis_13025
+    label: Mol PIT taxable income
+    ordinal: 56
+    row_number: 58
+    expected_row_header_column: A
+    expected_row_header: nis_13025
+    geography_id: '13025'
+    geography_level: commune
+    geography_name: Mol
+    geography_vintage: nis_2025
+  - value_id: nis_13029
+    label: Olen PIT taxable income
+    ordinal: 57
+    row_number: 59
+    expected_row_header_column: A
+    expected_row_header: nis_13029
+    geography_id: '13029'
+    geography_level: commune
+    geography_name: Olen
+    geography_vintage: nis_2025
+  - value_id: nis_13031
+    label: Oud-Turnhout PIT taxable income
+    ordinal: 58
+    row_number: 60
+    expected_row_header_column: A
+    expected_row_header: nis_13031
+    geography_id: '13031'
+    geography_level: commune
+    geography_name: Oud-Turnhout
+    geography_vintage: nis_2025
+  - value_id: nis_13035
+    label: Ravels PIT taxable income
+    ordinal: 59
+    row_number: 61
+    expected_row_header_column: A
+    expected_row_header: nis_13035
+    geography_id: '13035'
+    geography_level: commune
+    geography_name: Ravels
+    geography_vintage: nis_2025
+  - value_id: nis_13036
+    label: Retie PIT taxable income
+    ordinal: 60
+    row_number: 62
+    expected_row_header_column: A
+    expected_row_header: nis_13036
+    geography_id: '13036'
+    geography_level: commune
+    geography_name: Retie
+    geography_vintage: nis_2025
+  - value_id: nis_13037
+    label: Rijkevorsel PIT taxable income
+    ordinal: 61
+    row_number: 63
+    expected_row_header_column: A
+    expected_row_header: nis_13037
+    geography_id: '13037'
+    geography_level: commune
+    geography_name: Rijkevorsel
+    geography_vintage: nis_2025
+  - value_id: nis_13040
+    label: Turnhout PIT taxable income
+    ordinal: 62
+    row_number: 64
+    expected_row_header_column: A
+    expected_row_header: nis_13040
+    geography_id: '13040'
+    geography_level: commune
+    geography_name: Turnhout
+    geography_vintage: nis_2025
+  - value_id: nis_13044
+    label: Vorselaar PIT taxable income
+    ordinal: 63
+    row_number: 65
+    expected_row_header_column: A
+    expected_row_header: nis_13044
+    geography_id: '13044'
+    geography_level: commune
+    geography_name: Vorselaar
+    geography_vintage: nis_2025
+  - value_id: nis_13046
+    label: Vosselaar PIT taxable income
+    ordinal: 64
+    row_number: 66
+    expected_row_header_column: A
+    expected_row_header: nis_13046
+    geography_id: '13046'
+    geography_level: commune
+    geography_name: Vosselaar
+    geography_vintage: nis_2025
+  - value_id: nis_13049
+    label: Westerlo PIT taxable income
+    ordinal: 65
+    row_number: 67
+    expected_row_header_column: A
+    expected_row_header: nis_13049
+    geography_id: '13049'
+    geography_level: commune
+    geography_name: Westerlo
+    geography_vintage: nis_2025
+  - value_id: nis_13053
+    label: Laakdal PIT taxable income
+    ordinal: 66
+    row_number: 68
+    expected_row_header_column: A
+    expected_row_header: nis_13053
+    geography_id: '13053'
+    geography_level: commune
+    geography_name: Laakdal
+    geography_vintage: nis_2025
+  - value_id: nis_21001
+    label: Anderlecht PIT taxable income
+    ordinal: 67
+    row_number: 69
+    expected_row_header_column: A
+    expected_row_header: nis_21001
+    geography_id: '21001'
+    geography_level: commune
+    geography_name: Anderlecht
+    geography_vintage: nis_2025
+  - value_id: nis_21002
+    label: Auderghem PIT taxable income
+    ordinal: 68
+    row_number: 70
+    expected_row_header_column: A
+    expected_row_header: nis_21002
+    geography_id: '21002'
+    geography_level: commune
+    geography_name: Auderghem
+    geography_vintage: nis_2025
+  - value_id: nis_21003
+    label: Berchem-Sainte-Agathe PIT taxable income
+    ordinal: 69
+    row_number: 71
+    expected_row_header_column: A
+    expected_row_header: nis_21003
+    geography_id: '21003'
+    geography_level: commune
+    geography_name: Berchem-Sainte-Agathe
+    geography_vintage: nis_2025
+  - value_id: nis_21004
+    label: Brussels PIT taxable income
+    ordinal: 70
+    row_number: 72
+    expected_row_header_column: A
+    expected_row_header: nis_21004
+    geography_id: '21004'
+    geography_level: commune
+    geography_name: Brussels
+    geography_vintage: nis_2025
+  - value_id: nis_21005
+    label: Etterbeek PIT taxable income
+    ordinal: 71
+    row_number: 73
+    expected_row_header_column: A
+    expected_row_header: nis_21005
+    geography_id: '21005'
+    geography_level: commune
+    geography_name: Etterbeek
+    geography_vintage: nis_2025
+  - value_id: nis_21006
+    label: Evere PIT taxable income
+    ordinal: 72
+    row_number: 74
+    expected_row_header_column: A
+    expected_row_header: nis_21006
+    geography_id: '21006'
+    geography_level: commune
+    geography_name: Evere
+    geography_vintage: nis_2025
+  - value_id: nis_21007
+    label: Forest PIT taxable income
+    ordinal: 73
+    row_number: 75
+    expected_row_header_column: A
+    expected_row_header: nis_21007
+    geography_id: '21007'
+    geography_level: commune
+    geography_name: Forest
+    geography_vintage: nis_2025
+  - value_id: nis_21008
+    label: Ganshoren PIT taxable income
+    ordinal: 74
+    row_number: 76
+    expected_row_header_column: A
+    expected_row_header: nis_21008
+    geography_id: '21008'
+    geography_level: commune
+    geography_name: Ganshoren
+    geography_vintage: nis_2025
+  - value_id: nis_21009
+    label: Ixelles PIT taxable income
+    ordinal: 75
+    row_number: 77
+    expected_row_header_column: A
+    expected_row_header: nis_21009
+    geography_id: '21009'
+    geography_level: commune
+    geography_name: Ixelles
+    geography_vintage: nis_2025
+  - value_id: nis_21010
+    label: Jette PIT taxable income
+    ordinal: 76
+    row_number: 78
+    expected_row_header_column: A
+    expected_row_header: nis_21010
+    geography_id: '21010'
+    geography_level: commune
+    geography_name: Jette
+    geography_vintage: nis_2025
+  - value_id: nis_21011
+    label: Koekelberg PIT taxable income
+    ordinal: 77
+    row_number: 79
+    expected_row_header_column: A
+    expected_row_header: nis_21011
+    geography_id: '21011'
+    geography_level: commune
+    geography_name: Koekelberg
+    geography_vintage: nis_2025
+  - value_id: nis_21012
+    label: Molenbeek-Saint-Jean PIT taxable income
+    ordinal: 78
+    row_number: 80
+    expected_row_header_column: A
+    expected_row_header: nis_21012
+    geography_id: '21012'
+    geography_level: commune
+    geography_name: Molenbeek-Saint-Jean
+    geography_vintage: nis_2025
+  - value_id: nis_21013
+    label: Saint-Gilles PIT taxable income
+    ordinal: 79
+    row_number: 81
+    expected_row_header_column: A
+    expected_row_header: nis_21013
+    geography_id: '21013'
+    geography_level: commune
+    geography_name: Saint-Gilles
+    geography_vintage: nis_2025
+  - value_id: nis_21014
+    label: Saint-Josse-ten-Noode PIT taxable income
+    ordinal: 80
+    row_number: 82
+    expected_row_header_column: A
+    expected_row_header: nis_21014
+    geography_id: '21014'
+    geography_level: commune
+    geography_name: Saint-Josse-ten-Noode
+    geography_vintage: nis_2025
+  - value_id: nis_21015
+    label: Schaerbeek PIT taxable income
+    ordinal: 81
+    row_number: 83
+    expected_row_header_column: A
+    expected_row_header: nis_21015
+    geography_id: '21015'
+    geography_level: commune
+    geography_name: Schaerbeek
+    geography_vintage: nis_2025
+  - value_id: nis_21016
+    label: Uccle PIT taxable income
+    ordinal: 82
+    row_number: 84
+    expected_row_header_column: A
+    expected_row_header: nis_21016
+    geography_id: '21016'
+    geography_level: commune
+    geography_name: Uccle
+    geography_vintage: nis_2025
+  - value_id: nis_21017
+    label: Watermael-Boitsfort PIT taxable income
+    ordinal: 83
+    row_number: 85
+    expected_row_header_column: A
+    expected_row_header: nis_21017
+    geography_id: '21017'
+    geography_level: commune
+    geography_name: Watermael-Boitsfort
+    geography_vintage: nis_2025
+  - value_id: nis_21018
+    label: Woluwe-Saint-Lambert PIT taxable income
+    ordinal: 84
+    row_number: 86
+    expected_row_header_column: A
+    expected_row_header: nis_21018
+    geography_id: '21018'
+    geography_level: commune
+    geography_name: Woluwe-Saint-Lambert
+    geography_vintage: nis_2025
+  - value_id: nis_21019
+    label: Woluwe-Saint-Pierre PIT taxable income
+    ordinal: 85
+    row_number: 87
+    expected_row_header_column: A
+    expected_row_header: nis_21019
+    geography_id: '21019'
+    geography_level: commune
+    geography_name: Woluwe-Saint-Pierre
+    geography_vintage: nis_2025
+  - value_id: nis_23002
+    label: Asse PIT taxable income
+    ordinal: 86
+    row_number: 88
+    expected_row_header_column: A
+    expected_row_header: nis_23002
+    geography_id: '23002'
+    geography_level: commune
+    geography_name: Asse
+    geography_vintage: nis_2025
+  - value_id: nis_23003
+    label: Beersel PIT taxable income
+    ordinal: 87
+    row_number: 89
+    expected_row_header_column: A
+    expected_row_header: nis_23003
+    geography_id: '23003'
+    geography_level: commune
+    geography_name: Beersel
+    geography_vintage: nis_2025
+  - value_id: nis_23009
+    label: Bever PIT taxable income
+    ordinal: 88
+    row_number: 90
+    expected_row_header_column: A
+    expected_row_header: nis_23009
+    geography_id: '23009'
+    geography_level: commune
+    geography_name: Bever
+    geography_vintage: nis_2025
+  - value_id: nis_23016
+    label: Dilbeek PIT taxable income
+    ordinal: 89
+    row_number: 91
+    expected_row_header_column: A
+    expected_row_header: nis_23016
+    geography_id: '23016'
+    geography_level: commune
+    geography_name: Dilbeek
+    geography_vintage: nis_2025
+  - value_id: nis_23025
+    label: Grimbergen PIT taxable income
+    ordinal: 90
+    row_number: 92
+    expected_row_header_column: A
+    expected_row_header: nis_23025
+    geography_id: '23025'
+    geography_level: commune
+    geography_name: Grimbergen
+    geography_vintage: nis_2025
+  - value_id: nis_23027
+    label: Halle PIT taxable income
+    ordinal: 91
+    row_number: 93
+    expected_row_header_column: A
+    expected_row_header: nis_23027
+    geography_id: '23027'
+    geography_level: commune
+    geography_name: Halle
+    geography_vintage: nis_2025
+  - value_id: nis_23033
+    label: Hoeilaart PIT taxable income
+    ordinal: 92
+    row_number: 94
+    expected_row_header_column: A
+    expected_row_header: nis_23033
+    geography_id: '23033'
+    geography_level: commune
+    geography_name: Hoeilaart
+    geography_vintage: nis_2025
+  - value_id: nis_23038
+    label: Kampenhout PIT taxable income
+    ordinal: 93
+    row_number: 95
+    expected_row_header_column: A
+    expected_row_header: nis_23038
+    geography_id: '23038'
+    geography_level: commune
+    geography_name: Kampenhout
+    geography_vintage: nis_2025
+  - value_id: nis_23039
+    label: Kapelle-op-den-Bos PIT taxable income
+    ordinal: 94
+    row_number: 96
+    expected_row_header_column: A
+    expected_row_header: nis_23039
+    geography_id: '23039'
+    geography_level: commune
+    geography_name: Kapelle-op-den-Bos
+    geography_vintage: nis_2025
+  - value_id: nis_23044
+    label: Liedekerke PIT taxable income
+    ordinal: 95
+    row_number: 97
+    expected_row_header_column: A
+    expected_row_header: nis_23044
+    geography_id: '23044'
+    geography_level: commune
+    geography_name: Liedekerke
+    geography_vintage: nis_2025
+  - value_id: nis_23045
+    label: Londerzeel PIT taxable income
+    ordinal: 96
+    row_number: 98
+    expected_row_header_column: A
+    expected_row_header: nis_23045
+    geography_id: '23045'
+    geography_level: commune
+    geography_name: Londerzeel
+    geography_vintage: nis_2025
+  - value_id: nis_23047
+    label: Machelen PIT taxable income
+    ordinal: 97
+    row_number: 99
+    expected_row_header_column: A
+    expected_row_header: nis_23047
+    geography_id: '23047'
+    geography_level: commune
+    geography_name: Machelen
+    geography_vintage: nis_2025
+  - value_id: nis_23050
+    label: Meise PIT taxable income
+    ordinal: 98
+    row_number: 100
+    expected_row_header_column: A
+    expected_row_header: nis_23050
+    geography_id: '23050'
+    geography_level: commune
+    geography_name: Meise
+    geography_vintage: nis_2025
+  - value_id: nis_23052
+    label: Merchtem PIT taxable income
+    ordinal: 99
+    row_number: 101
+    expected_row_header_column: A
+    expected_row_header: nis_23052
+    geography_id: '23052'
+    geography_level: commune
+    geography_name: Merchtem
+    geography_vintage: nis_2025
+  - value_id: nis_23060
+    label: Opwijk PIT taxable income
+    ordinal: 100
+    row_number: 102
+    expected_row_header_column: A
+    expected_row_header: nis_23060
+    geography_id: '23060'
+    geography_level: commune
+    geography_name: Opwijk
+    geography_vintage: nis_2025
+  - value_id: nis_23062
+    label: Overijse PIT taxable income
+    ordinal: 101
+    row_number: 103
+    expected_row_header_column: A
+    expected_row_header: nis_23062
+    geography_id: '23062'
+    geography_level: commune
+    geography_name: Overijse
+    geography_vintage: nis_2025
+  - value_id: nis_23064
+    label: Pepingen PIT taxable income
+    ordinal: 102
+    row_number: 104
+    expected_row_header_column: A
+    expected_row_header: nis_23064
+    geography_id: '23064'
+    geography_level: commune
+    geography_name: Pepingen
+    geography_vintage: nis_2025
+  - value_id: nis_23077
+    label: Sint-Pieters-Leeuw PIT taxable income
+    ordinal: 103
+    row_number: 105
+    expected_row_header_column: A
+    expected_row_header: nis_23077
+    geography_id: '23077'
+    geography_level: commune
+    geography_name: Sint-Pieters-Leeuw
+    geography_vintage: nis_2025
+  - value_id: nis_23081
+    label: Steenokkerzeel PIT taxable income
+    ordinal: 104
+    row_number: 106
+    expected_row_header_column: A
+    expected_row_header: nis_23081
+    geography_id: '23081'
+    geography_level: commune
+    geography_name: Steenokkerzeel
+    geography_vintage: nis_2025
+  - value_id: nis_23086
+    label: Ternat PIT taxable income
+    ordinal: 105
+    row_number: 107
+    expected_row_header_column: A
+    expected_row_header: nis_23086
+    geography_id: '23086'
+    geography_level: commune
+    geography_name: Ternat
+    geography_vintage: nis_2025
+  - value_id: nis_23088
+    label: Vilvoorde PIT taxable income
+    ordinal: 106
+    row_number: 108
+    expected_row_header_column: A
+    expected_row_header: nis_23088
+    geography_id: '23088'
+    geography_level: commune
+    geography_name: Vilvoorde
+    geography_vintage: nis_2025
+  - value_id: nis_23094
+    label: Zaventem PIT taxable income
+    ordinal: 107
+    row_number: 109
+    expected_row_header_column: A
+    expected_row_header: nis_23094
+    geography_id: '23094'
+    geography_level: commune
+    geography_name: Zaventem
+    geography_vintage: nis_2025
+  - value_id: nis_23096
+    label: Zemst PIT taxable income
+    ordinal: 108
+    row_number: 110
+    expected_row_header_column: A
+    expected_row_header: nis_23096
+    geography_id: '23096'
+    geography_level: commune
+    geography_name: Zemst
+    geography_vintage: nis_2025
+  - value_id: nis_23097
+    label: Roosdaal PIT taxable income
+    ordinal: 109
+    row_number: 111
+    expected_row_header_column: A
+    expected_row_header: nis_23097
+    geography_id: '23097'
+    geography_level: commune
+    geography_name: Roosdaal
+    geography_vintage: nis_2025
+  - value_id: nis_23098
+    label: Drogenbos PIT taxable income
+    ordinal: 110
+    row_number: 112
+    expected_row_header_column: A
+    expected_row_header: nis_23098
+    geography_id: '23098'
+    geography_level: commune
+    geography_name: Drogenbos
+    geography_vintage: nis_2025
+  - value_id: nis_23099
+    label: Kraainem PIT taxable income
+    ordinal: 111
+    row_number: 113
+    expected_row_header_column: A
+    expected_row_header: nis_23099
+    geography_id: '23099'
+    geography_level: commune
+    geography_name: Kraainem
+    geography_vintage: nis_2025
+  - value_id: nis_23100
+    label: Linkebeek PIT taxable income
+    ordinal: 112
+    row_number: 114
+    expected_row_header_column: A
+    expected_row_header: nis_23100
+    geography_id: '23100'
+    geography_level: commune
+    geography_name: Linkebeek
+    geography_vintage: nis_2025
+  - value_id: nis_23101
+    label: Sint-Genesius-Rode PIT taxable income
+    ordinal: 113
+    row_number: 115
+    expected_row_header_column: A
+    expected_row_header: nis_23101
+    geography_id: '23101'
+    geography_level: commune
+    geography_name: Sint-Genesius-Rode
+    geography_vintage: nis_2025
+  - value_id: nis_23102
+    label: Wemmel PIT taxable income
+    ordinal: 114
+    row_number: 116
+    expected_row_header_column: A
+    expected_row_header: nis_23102
+    geography_id: '23102'
+    geography_level: commune
+    geography_name: Wemmel
+    geography_vintage: nis_2025
+  - value_id: nis_23103
+    label: Wezembeek-Oppem PIT taxable income
+    ordinal: 115
+    row_number: 117
+    expected_row_header_column: A
+    expected_row_header: nis_23103
+    geography_id: '23103'
+    geography_level: commune
+    geography_name: Wezembeek-Oppem
+    geography_vintage: nis_2025
+  - value_id: nis_23104
+    label: Lennik PIT taxable income
+    ordinal: 116
+    row_number: 118
+    expected_row_header_column: A
+    expected_row_header: nis_23104
+    geography_id: '23104'
+    geography_level: commune
+    geography_name: Lennik
+    geography_vintage: nis_2025
+  - value_id: nis_23105
+    label: Affligem PIT taxable income
+    ordinal: 117
+    row_number: 119
+    expected_row_header_column: A
+    expected_row_header: nis_23105
+    geography_id: '23105'
+    geography_level: commune
+    geography_name: Affligem
+    geography_vintage: nis_2025
+  - value_id: nis_23106
+    label: Pajottegem PIT taxable income
+    ordinal: 118
+    row_number: 120
+    expected_row_header_column: A
+    expected_row_header: nis_23106
+    geography_id: '23106'
+    geography_level: commune
+    geography_name: Pajottegem
+    geography_vintage: nis_2025
+  - value_id: nis_24001
+    label: Aarschot PIT taxable income
+    ordinal: 119
+    row_number: 121
+    expected_row_header_column: A
+    expected_row_header: nis_24001
+    geography_id: '24001'
+    geography_level: commune
+    geography_name: Aarschot
+    geography_vintage: nis_2025
+  - value_id: nis_24007
+    label: Begijnendijk PIT taxable income
+    ordinal: 120
+    row_number: 122
+    expected_row_header_column: A
+    expected_row_header: nis_24007
+    geography_id: '24007'
+    geography_level: commune
+    geography_name: Begijnendijk
+    geography_vintage: nis_2025
+  - value_id: nis_24008
+    label: Bekkevoort PIT taxable income
+    ordinal: 121
+    row_number: 123
+    expected_row_header_column: A
+    expected_row_header: nis_24008
+    geography_id: '24008'
+    geography_level: commune
+    geography_name: Bekkevoort
+    geography_vintage: nis_2025
+  - value_id: nis_24009
+    label: Bertem PIT taxable income
+    ordinal: 122
+    row_number: 124
+    expected_row_header_column: A
+    expected_row_header: nis_24009
+    geography_id: '24009'
+    geography_level: commune
+    geography_name: Bertem
+    geography_vintage: nis_2025
+  - value_id: nis_24011
+    label: Bierbeek PIT taxable income
+    ordinal: 123
+    row_number: 125
+    expected_row_header_column: A
+    expected_row_header: nis_24011
+    geography_id: '24011'
+    geography_level: commune
+    geography_name: Bierbeek
+    geography_vintage: nis_2025
+  - value_id: nis_24014
+    label: Boortmeerbeek PIT taxable income
+    ordinal: 124
+    row_number: 126
+    expected_row_header_column: A
+    expected_row_header: nis_24014
+    geography_id: '24014'
+    geography_level: commune
+    geography_name: Boortmeerbeek
+    geography_vintage: nis_2025
+  - value_id: nis_24016
+    label: Boutersem PIT taxable income
+    ordinal: 125
+    row_number: 127
+    expected_row_header_column: A
+    expected_row_header: nis_24016
+    geography_id: '24016'
+    geography_level: commune
+    geography_name: Boutersem
+    geography_vintage: nis_2025
+  - value_id: nis_24020
+    label: Diest PIT taxable income
+    ordinal: 126
+    row_number: 128
+    expected_row_header_column: A
+    expected_row_header: nis_24020
+    geography_id: '24020'
+    geography_level: commune
+    geography_name: Diest
+    geography_vintage: nis_2025
+  - value_id: nis_24028
+    label: Geetbets PIT taxable income
+    ordinal: 127
+    row_number: 129
+    expected_row_header_column: A
+    expected_row_header: nis_24028
+    geography_id: '24028'
+    geography_level: commune
+    geography_name: Geetbets
+    geography_vintage: nis_2025
+  - value_id: nis_24033
+    label: Haacht PIT taxable income
+    ordinal: 128
+    row_number: 130
+    expected_row_header_column: A
+    expected_row_header: nis_24033
+    geography_id: '24033'
+    geography_level: commune
+    geography_name: Haacht
+    geography_vintage: nis_2025
+  - value_id: nis_24038
+    label: Herent PIT taxable income
+    ordinal: 129
+    row_number: 131
+    expected_row_header_column: A
+    expected_row_header: nis_24038
+    geography_id: '24038'
+    geography_level: commune
+    geography_name: Herent
+    geography_vintage: nis_2025
+  - value_id: nis_24041
+    label: Hoegaarden PIT taxable income
+    ordinal: 130
+    row_number: 132
+    expected_row_header_column: A
+    expected_row_header: nis_24041
+    geography_id: '24041'
+    geography_level: commune
+    geography_name: Hoegaarden
+    geography_vintage: nis_2025
+  - value_id: nis_24043
+    label: Holsbeek PIT taxable income
+    ordinal: 131
+    row_number: 133
+    expected_row_header_column: A
+    expected_row_header: nis_24043
+    geography_id: '24043'
+    geography_level: commune
+    geography_name: Holsbeek
+    geography_vintage: nis_2025
+  - value_id: nis_24045
+    label: Huldenberg PIT taxable income
+    ordinal: 132
+    row_number: 134
+    expected_row_header_column: A
+    expected_row_header: nis_24045
+    geography_id: '24045'
+    geography_level: commune
+    geography_name: Huldenberg
+    geography_vintage: nis_2025
+  - value_id: nis_24048
+    label: Keerbergen PIT taxable income
+    ordinal: 133
+    row_number: 135
+    expected_row_header_column: A
+    expected_row_header: nis_24048
+    geography_id: '24048'
+    geography_level: commune
+    geography_name: Keerbergen
+    geography_vintage: nis_2025
+  - value_id: nis_24054
+    label: Kortenaken PIT taxable income
+    ordinal: 134
+    row_number: 136
+    expected_row_header_column: A
+    expected_row_header: nis_24054
+    geography_id: '24054'
+    geography_level: commune
+    geography_name: Kortenaken
+    geography_vintage: nis_2025
+  - value_id: nis_24055
+    label: Kortenberg PIT taxable income
+    ordinal: 135
+    row_number: 137
+    expected_row_header_column: A
+    expected_row_header: nis_24055
+    geography_id: '24055'
+    geography_level: commune
+    geography_name: Kortenberg
+    geography_vintage: nis_2025
+  - value_id: nis_24059
+    label: Landen PIT taxable income
+    ordinal: 136
+    row_number: 138
+    expected_row_header_column: A
+    expected_row_header: nis_24059
+    geography_id: '24059'
+    geography_level: commune
+    geography_name: Landen
+    geography_vintage: nis_2025
+  - value_id: nis_24062
+    label: Leuven PIT taxable income
+    ordinal: 137
+    row_number: 139
+    expected_row_header_column: A
+    expected_row_header: nis_24062
+    geography_id: '24062'
+    geography_level: commune
+    geography_name: Leuven
+    geography_vintage: nis_2025
+  - value_id: nis_24066
+    label: Lubbeek PIT taxable income
+    ordinal: 138
+    row_number: 140
+    expected_row_header_column: A
+    expected_row_header: nis_24066
+    geography_id: '24066'
+    geography_level: commune
+    geography_name: Lubbeek
+    geography_vintage: nis_2025
+  - value_id: nis_24086
+    label: Oud-Heverlee PIT taxable income
+    ordinal: 139
+    row_number: 141
+    expected_row_header_column: A
+    expected_row_header: nis_24086
+    geography_id: '24086'
+    geography_level: commune
+    geography_name: Oud-Heverlee
+    geography_vintage: nis_2025
+  - value_id: nis_24094
+    label: Rotselaar PIT taxable income
+    ordinal: 140
+    row_number: 142
+    expected_row_header_column: A
+    expected_row_header: nis_24094
+    geography_id: '24094'
+    geography_level: commune
+    geography_name: Rotselaar
+    geography_vintage: nis_2025
+  - value_id: nis_24104
+    label: Tervuren PIT taxable income
+    ordinal: 141
+    row_number: 143
+    expected_row_header_column: A
+    expected_row_header: nis_24104
+    geography_id: '24104'
+    geography_level: commune
+    geography_name: Tervuren
+    geography_vintage: nis_2025
+  - value_id: nis_24107
+    label: Tienen PIT taxable income
+    ordinal: 142
+    row_number: 144
+    expected_row_header_column: A
+    expected_row_header: nis_24107
+    geography_id: '24107'
+    geography_level: commune
+    geography_name: Tienen
+    geography_vintage: nis_2025
+  - value_id: nis_24109
+    label: Tremelo PIT taxable income
+    ordinal: 143
+    row_number: 145
+    expected_row_header_column: A
+    expected_row_header: nis_24109
+    geography_id: '24109'
+    geography_level: commune
+    geography_name: Tremelo
+    geography_vintage: nis_2025
+  - value_id: nis_24130
+    label: Zoutleeuw PIT taxable income
+    ordinal: 144
+    row_number: 146
+    expected_row_header_column: A
+    expected_row_header: nis_24130
+    geography_id: '24130'
+    geography_level: commune
+    geography_name: Zoutleeuw
+    geography_vintage: nis_2025
+  - value_id: nis_24133
+    label: Linter PIT taxable income
+    ordinal: 145
+    row_number: 147
+    expected_row_header_column: A
+    expected_row_header: nis_24133
+    geography_id: '24133'
+    geography_level: commune
+    geography_name: Linter
+    geography_vintage: nis_2025
+  - value_id: nis_24134
+    label: Scherpenheuvel-Zichem PIT taxable income
+    ordinal: 146
+    row_number: 148
+    expected_row_header_column: A
+    expected_row_header: nis_24134
+    geography_id: '24134'
+    geography_level: commune
+    geography_name: Scherpenheuvel-Zichem
+    geography_vintage: nis_2025
+  - value_id: nis_24135
+    label: Tielt-Winge PIT taxable income
+    ordinal: 147
+    row_number: 149
+    expected_row_header_column: A
+    expected_row_header: nis_24135
+    geography_id: '24135'
+    geography_level: commune
+    geography_name: Tielt-Winge
+    geography_vintage: nis_2025
+  - value_id: nis_24137
+    label: Glabbeek PIT taxable income
+    ordinal: 148
+    row_number: 150
+    expected_row_header_column: A
+    expected_row_header: nis_24137
+    geography_id: '24137'
+    geography_level: commune
+    geography_name: Glabbeek
+    geography_vintage: nis_2025
+  - value_id: nis_25005
+    label: Beauvechain PIT taxable income
+    ordinal: 149
+    row_number: 151
+    expected_row_header_column: A
+    expected_row_header: nis_25005
+    geography_id: '25005'
+    geography_level: commune
+    geography_name: Beauvechain
+    geography_vintage: nis_2025
+  - value_id: nis_25014
+    label: "Braine-l\u2019Alleud PIT taxable income"
+    ordinal: 150
+    row_number: 152
+    expected_row_header_column: A
+    expected_row_header: nis_25014
+    geography_id: '25014'
+    geography_level: commune
+    geography_name: "Braine-l\u2019Alleud"
+    geography_vintage: nis_2025
+  - value_id: nis_25015
+    label: "Braine-le-Ch\xE2teau PIT taxable income"
+    ordinal: 151
+    row_number: 153
+    expected_row_header_column: A
+    expected_row_header: nis_25015
+    geography_id: '25015'
+    geography_level: commune
+    geography_name: "Braine-le-Ch\xE2teau"
+    geography_vintage: nis_2025
+  - value_id: nis_25018
+    label: Chaumont-Gistoux PIT taxable income
+    ordinal: 152
+    row_number: 154
+    expected_row_header_column: A
+    expected_row_header: nis_25018
+    geography_id: '25018'
+    geography_level: commune
+    geography_name: Chaumont-Gistoux
+    geography_vintage: nis_2025
+  - value_id: nis_25023
+    label: Court-Saint-Etienne PIT taxable income
+    ordinal: 153
+    row_number: 155
+    expected_row_header_column: A
+    expected_row_header: nis_25023
+    geography_id: '25023'
+    geography_level: commune
+    geography_name: Court-Saint-Etienne
+    geography_vintage: nis_2025
+  - value_id: nis_25031
+    label: Genappe PIT taxable income
+    ordinal: 154
+    row_number: 156
+    expected_row_header_column: A
+    expected_row_header: nis_25031
+    geography_id: '25031'
+    geography_level: commune
+    geography_name: Genappe
+    geography_vintage: nis_2025
+  - value_id: nis_25037
+    label: Grez-Doiceau PIT taxable income
+    ordinal: 155
+    row_number: 157
+    expected_row_header_column: A
+    expected_row_header: nis_25037
+    geography_id: '25037'
+    geography_level: commune
+    geography_name: Grez-Doiceau
+    geography_vintage: nis_2025
+  - value_id: nis_25043
+    label: Incourt PIT taxable income
+    ordinal: 156
+    row_number: 158
+    expected_row_header_column: A
+    expected_row_header: nis_25043
+    geography_id: '25043'
+    geography_level: commune
+    geography_name: Incourt
+    geography_vintage: nis_2025
+  - value_id: nis_25044
+    label: Ittre PIT taxable income
+    ordinal: 157
+    row_number: 159
+    expected_row_header_column: A
+    expected_row_header: nis_25044
+    geography_id: '25044'
+    geography_level: commune
+    geography_name: Ittre
+    geography_vintage: nis_2025
+  - value_id: nis_25048
+    label: Jodoigne PIT taxable income
+    ordinal: 158
+    row_number: 160
+    expected_row_header_column: A
+    expected_row_header: nis_25048
+    geography_id: '25048'
+    geography_level: commune
+    geography_name: Jodoigne
+    geography_vintage: nis_2025
+  - value_id: nis_25050
+    label: La Hulpe PIT taxable income
+    ordinal: 159
+    row_number: 161
+    expected_row_header_column: A
+    expected_row_header: nis_25050
+    geography_id: '25050'
+    geography_level: commune
+    geography_name: La Hulpe
+    geography_vintage: nis_2025
+  - value_id: nis_25068
+    label: Mont-Saint-Guibert PIT taxable income
+    ordinal: 160
+    row_number: 162
+    expected_row_header_column: A
+    expected_row_header: nis_25068
+    geography_id: '25068'
+    geography_level: commune
+    geography_name: Mont-Saint-Guibert
+    geography_vintage: nis_2025
+  - value_id: nis_25072
+    label: Nivelles PIT taxable income
+    ordinal: 161
+    row_number: 163
+    expected_row_header_column: A
+    expected_row_header: nis_25072
+    geography_id: '25072'
+    geography_level: commune
+    geography_name: Nivelles
+    geography_vintage: nis_2025
+  - value_id: nis_25084
+    label: Perwez PIT taxable income
+    ordinal: 162
+    row_number: 164
+    expected_row_header_column: A
+    expected_row_header: nis_25084
+    geography_id: '25084'
+    geography_level: commune
+    geography_name: Perwez
+    geography_vintage: nis_2025
+  - value_id: nis_25091
+    label: Rixensart PIT taxable income
+    ordinal: 163
+    row_number: 165
+    expected_row_header_column: A
+    expected_row_header: nis_25091
+    geography_id: '25091'
+    geography_level: commune
+    geography_name: Rixensart
+    geography_vintage: nis_2025
+  - value_id: nis_25105
+    label: Tubize PIT taxable income
+    ordinal: 164
+    row_number: 166
+    expected_row_header_column: A
+    expected_row_header: nis_25105
+    geography_id: '25105'
+    geography_level: commune
+    geography_name: Tubize
+    geography_vintage: nis_2025
+  - value_id: nis_25107
+    label: Villers-la-Ville PIT taxable income
+    ordinal: 165
+    row_number: 167
+    expected_row_header_column: A
+    expected_row_header: nis_25107
+    geography_id: '25107'
+    geography_level: commune
+    geography_name: Villers-la-Ville
+    geography_vintage: nis_2025
+  - value_id: nis_25110
+    label: Waterloo PIT taxable income
+    ordinal: 166
+    row_number: 168
+    expected_row_header_column: A
+    expected_row_header: nis_25110
+    geography_id: '25110'
+    geography_level: commune
+    geography_name: Waterloo
+    geography_vintage: nis_2025
+  - value_id: nis_25112
+    label: Wavre PIT taxable income
+    ordinal: 167
+    row_number: 169
+    expected_row_header_column: A
+    expected_row_header: nis_25112
+    geography_id: '25112'
+    geography_level: commune
+    geography_name: Wavre
+    geography_vintage: nis_2025
+  - value_id: nis_25117
+    label: Chastre PIT taxable income
+    ordinal: 168
+    row_number: 170
+    expected_row_header_column: A
+    expected_row_header: nis_25117
+    geography_id: '25117'
+    geography_level: commune
+    geography_name: Chastre
+    geography_vintage: nis_2025
+  - value_id: nis_25118
+    label: "H\xE9l\xE9cine PIT taxable income"
+    ordinal: 169
+    row_number: 171
+    expected_row_header_column: A
+    expected_row_header: nis_25118
+    geography_id: '25118'
+    geography_level: commune
+    geography_name: "H\xE9l\xE9cine"
+    geography_vintage: nis_2025
+  - value_id: nis_25119
+    label: Lasne PIT taxable income
+    ordinal: 170
+    row_number: 172
+    expected_row_header_column: A
+    expected_row_header: nis_25119
+    geography_id: '25119'
+    geography_level: commune
+    geography_name: Lasne
+    geography_vintage: nis_2025
+  - value_id: nis_25120
+    label: Orp-Jauche PIT taxable income
+    ordinal: 171
+    row_number: 173
+    expected_row_header_column: A
+    expected_row_header: nis_25120
+    geography_id: '25120'
+    geography_level: commune
+    geography_name: Orp-Jauche
+    geography_vintage: nis_2025
+  - value_id: nis_25121
+    label: Ottignies-Louvain-la-Neuve PIT taxable income
+    ordinal: 172
+    row_number: 174
+    expected_row_header_column: A
+    expected_row_header: nis_25121
+    geography_id: '25121'
+    geography_level: commune
+    geography_name: Ottignies-Louvain-la-Neuve
+    geography_vintage: nis_2025
+  - value_id: nis_25122
+    label: Ramillies PIT taxable income
+    ordinal: 173
+    row_number: 175
+    expected_row_header_column: A
+    expected_row_header: nis_25122
+    geography_id: '25122'
+    geography_level: commune
+    geography_name: Ramillies
+    geography_vintage: nis_2025
+  - value_id: nis_25123
+    label: Rebecq PIT taxable income
+    ordinal: 174
+    row_number: 176
+    expected_row_header_column: A
+    expected_row_header: nis_25123
+    geography_id: '25123'
+    geography_level: commune
+    geography_name: Rebecq
+    geography_vintage: nis_2025
+  - value_id: nis_25124
+    label: Walhain PIT taxable income
+    ordinal: 175
+    row_number: 177
+    expected_row_header_column: A
+    expected_row_header: nis_25124
+    geography_id: '25124'
+    geography_level: commune
+    geography_name: Walhain
+    geography_vintage: nis_2025
+  - value_id: nis_31003
+    label: Beernem PIT taxable income
+    ordinal: 176
+    row_number: 178
+    expected_row_header_column: A
+    expected_row_header: nis_31003
+    geography_id: '31003'
+    geography_level: commune
+    geography_name: Beernem
+    geography_vintage: nis_2025
+  - value_id: nis_31004
+    label: Blankenberge PIT taxable income
+    ordinal: 177
+    row_number: 179
+    expected_row_header_column: A
+    expected_row_header: nis_31004
+    geography_id: '31004'
+    geography_level: commune
+    geography_name: Blankenberge
+    geography_vintage: nis_2025
+  - value_id: nis_31005
+    label: Brugge PIT taxable income
+    ordinal: 178
+    row_number: 180
+    expected_row_header_column: A
+    expected_row_header: nis_31005
+    geography_id: '31005'
+    geography_level: commune
+    geography_name: Brugge
+    geography_vintage: nis_2025
+  - value_id: nis_31006
+    label: Damme PIT taxable income
+    ordinal: 179
+    row_number: 181
+    expected_row_header_column: A
+    expected_row_header: nis_31006
+    geography_id: '31006'
+    geography_level: commune
+    geography_name: Damme
+    geography_vintage: nis_2025
+  - value_id: nis_31012
+    label: Jabbeke PIT taxable income
+    ordinal: 180
+    row_number: 182
+    expected_row_header_column: A
+    expected_row_header: nis_31012
+    geography_id: '31012'
+    geography_level: commune
+    geography_name: Jabbeke
+    geography_vintage: nis_2025
+  - value_id: nis_31022
+    label: Oostkamp PIT taxable income
+    ordinal: 181
+    row_number: 183
+    expected_row_header_column: A
+    expected_row_header: nis_31022
+    geography_id: '31022'
+    geography_level: commune
+    geography_name: Oostkamp
+    geography_vintage: nis_2025
+  - value_id: nis_31033
+    label: Torhout PIT taxable income
+    ordinal: 182
+    row_number: 184
+    expected_row_header_column: A
+    expected_row_header: nis_31033
+    geography_id: '31033'
+    geography_level: commune
+    geography_name: Torhout
+    geography_vintage: nis_2025
+  - value_id: nis_31040
+    label: Zedelgem PIT taxable income
+    ordinal: 183
+    row_number: 185
+    expected_row_header_column: A
+    expected_row_header: nis_31040
+    geography_id: '31040'
+    geography_level: commune
+    geography_name: Zedelgem
+    geography_vintage: nis_2025
+  - value_id: nis_31042
+    label: Zuienkerke PIT taxable income
+    ordinal: 184
+    row_number: 186
+    expected_row_header_column: A
+    expected_row_header: nis_31042
+    geography_id: '31042'
+    geography_level: commune
+    geography_name: Zuienkerke
+    geography_vintage: nis_2025
+  - value_id: nis_31043
+    label: Knokke-Heist PIT taxable income
+    ordinal: 185
+    row_number: 187
+    expected_row_header_column: A
+    expected_row_header: nis_31043
+    geography_id: '31043'
+    geography_level: commune
+    geography_name: Knokke-Heist
+    geography_vintage: nis_2025
+  - value_id: nis_32003
+    label: Diksmuide PIT taxable income
+    ordinal: 186
+    row_number: 188
+    expected_row_header_column: A
+    expected_row_header: nis_32003
+    geography_id: '32003'
+    geography_level: commune
+    geography_name: Diksmuide
+    geography_vintage: nis_2025
+  - value_id: nis_32006
+    label: Houthulst PIT taxable income
+    ordinal: 187
+    row_number: 189
+    expected_row_header_column: A
+    expected_row_header: nis_32006
+    geography_id: '32006'
+    geography_level: commune
+    geography_name: Houthulst
+    geography_vintage: nis_2025
+  - value_id: nis_32010
+    label: Koekelare PIT taxable income
+    ordinal: 188
+    row_number: 190
+    expected_row_header_column: A
+    expected_row_header: nis_32010
+    geography_id: '32010'
+    geography_level: commune
+    geography_name: Koekelare
+    geography_vintage: nis_2025
+  - value_id: nis_32011
+    label: Kortemark PIT taxable income
+    ordinal: 189
+    row_number: 191
+    expected_row_header_column: A
+    expected_row_header: nis_32011
+    geography_id: '32011'
+    geography_level: commune
+    geography_name: Kortemark
+    geography_vintage: nis_2025
+  - value_id: nis_32030
+    label: Lo-Reninge PIT taxable income
+    ordinal: 190
+    row_number: 192
+    expected_row_header_column: A
+    expected_row_header: nis_32030
+    geography_id: '32030'
+    geography_level: commune
+    geography_name: Lo-Reninge
+    geography_vintage: nis_2025
+  - value_id: nis_33011
+    label: Ieper PIT taxable income
+    ordinal: 191
+    row_number: 193
+    expected_row_header_column: A
+    expected_row_header: nis_33011
+    geography_id: '33011'
+    geography_level: commune
+    geography_name: Ieper
+    geography_vintage: nis_2025
+  - value_id: nis_33016
+    label: Mesen PIT taxable income
+    ordinal: 192
+    row_number: 194
+    expected_row_header_column: A
+    expected_row_header: nis_33016
+    geography_id: '33016'
+    geography_level: commune
+    geography_name: Mesen
+    geography_vintage: nis_2025
+  - value_id: nis_33021
+    label: Poperinge PIT taxable income
+    ordinal: 193
+    row_number: 195
+    expected_row_header_column: A
+    expected_row_header: nis_33021
+    geography_id: '33021'
+    geography_level: commune
+    geography_name: Poperinge
+    geography_vintage: nis_2025
+  - value_id: nis_33029
+    label: Wervik PIT taxable income
+    ordinal: 194
+    row_number: 196
+    expected_row_header_column: A
+    expected_row_header: nis_33029
+    geography_id: '33029'
+    geography_level: commune
+    geography_name: Wervik
+    geography_vintage: nis_2025
+  - value_id: nis_33037
+    label: Zonnebeke PIT taxable income
+    ordinal: 195
+    row_number: 197
+    expected_row_header_column: A
+    expected_row_header: nis_33037
+    geography_id: '33037'
+    geography_level: commune
+    geography_name: Zonnebeke
+    geography_vintage: nis_2025
+  - value_id: nis_33039
+    label: Heuvelland PIT taxable income
+    ordinal: 196
+    row_number: 198
+    expected_row_header_column: A
+    expected_row_header: nis_33039
+    geography_id: '33039'
+    geography_level: commune
+    geography_name: Heuvelland
+    geography_vintage: nis_2025
+  - value_id: nis_33040
+    label: Langemark-Poelkapelle PIT taxable income
+    ordinal: 197
+    row_number: 199
+    expected_row_header_column: A
+    expected_row_header: nis_33040
+    geography_id: '33040'
+    geography_level: commune
+    geography_name: Langemark-Poelkapelle
+    geography_vintage: nis_2025
+  - value_id: nis_33041
+    label: Vleteren PIT taxable income
+    ordinal: 198
+    row_number: 200
+    expected_row_header_column: A
+    expected_row_header: nis_33041
+    geography_id: '33041'
+    geography_level: commune
+    geography_name: Vleteren
+    geography_vintage: nis_2025
+  - value_id: nis_34002
+    label: Anzegem PIT taxable income
+    ordinal: 199
+    row_number: 201
+    expected_row_header_column: A
+    expected_row_header: nis_34002
+    geography_id: '34002'
+    geography_level: commune
+    geography_name: Anzegem
+    geography_vintage: nis_2025
+  - value_id: nis_34003
+    label: Avelgem PIT taxable income
+    ordinal: 200
+    row_number: 202
+    expected_row_header_column: A
+    expected_row_header: nis_34003
+    geography_id: '34003'
+    geography_level: commune
+    geography_name: Avelgem
+    geography_vintage: nis_2025
+  - value_id: nis_34009
+    label: Deerlijk PIT taxable income
+    ordinal: 201
+    row_number: 203
+    expected_row_header_column: A
+    expected_row_header: nis_34009
+    geography_id: '34009'
+    geography_level: commune
+    geography_name: Deerlijk
+    geography_vintage: nis_2025
+  - value_id: nis_34013
+    label: Harelbeke PIT taxable income
+    ordinal: 202
+    row_number: 204
+    expected_row_header_column: A
+    expected_row_header: nis_34013
+    geography_id: '34013'
+    geography_level: commune
+    geography_name: Harelbeke
+    geography_vintage: nis_2025
+  - value_id: nis_34022
+    label: Kortrijk PIT taxable income
+    ordinal: 203
+    row_number: 205
+    expected_row_header_column: A
+    expected_row_header: nis_34022
+    geography_id: '34022'
+    geography_level: commune
+    geography_name: Kortrijk
+    geography_vintage: nis_2025
+  - value_id: nis_34023
+    label: Kuurne PIT taxable income
+    ordinal: 204
+    row_number: 206
+    expected_row_header_column: A
+    expected_row_header: nis_34023
+    geography_id: '34023'
+    geography_level: commune
+    geography_name: Kuurne
+    geography_vintage: nis_2025
+  - value_id: nis_34025
+    label: Lendelede PIT taxable income
+    ordinal: 205
+    row_number: 207
+    expected_row_header_column: A
+    expected_row_header: nis_34025
+    geography_id: '34025'
+    geography_level: commune
+    geography_name: Lendelede
+    geography_vintage: nis_2025
+  - value_id: nis_34027
+    label: Menen PIT taxable income
+    ordinal: 206
+    row_number: 208
+    expected_row_header_column: A
+    expected_row_header: nis_34027
+    geography_id: '34027'
+    geography_level: commune
+    geography_name: Menen
+    geography_vintage: nis_2025
+  - value_id: nis_34040
+    label: Waregem PIT taxable income
+    ordinal: 207
+    row_number: 209
+    expected_row_header_column: A
+    expected_row_header: nis_34040
+    geography_id: '34040'
+    geography_level: commune
+    geography_name: Waregem
+    geography_vintage: nis_2025
+  - value_id: nis_34041
+    label: Wevelgem PIT taxable income
+    ordinal: 208
+    row_number: 210
+    expected_row_header_column: A
+    expected_row_header: nis_34041
+    geography_id: '34041'
+    geography_level: commune
+    geography_name: Wevelgem
+    geography_vintage: nis_2025
+  - value_id: nis_34042
+    label: Zwevegem PIT taxable income
+    ordinal: 209
+    row_number: 211
+    expected_row_header_column: A
+    expected_row_header: nis_34042
+    geography_id: '34042'
+    geography_level: commune
+    geography_name: Zwevegem
+    geography_vintage: nis_2025
+  - value_id: nis_34043
+    label: Spiere-Helkijn PIT taxable income
+    ordinal: 210
+    row_number: 212
+    expected_row_header_column: A
+    expected_row_header: nis_34043
+    geography_id: '34043'
+    geography_level: commune
+    geography_name: Spiere-Helkijn
+    geography_vintage: nis_2025
+  - value_id: nis_35002
+    label: Bredene PIT taxable income
+    ordinal: 211
+    row_number: 213
+    expected_row_header_column: A
+    expected_row_header: nis_35002
+    geography_id: '35002'
+    geography_level: commune
+    geography_name: Bredene
+    geography_vintage: nis_2025
+  - value_id: nis_35005
+    label: Gistel PIT taxable income
+    ordinal: 212
+    row_number: 214
+    expected_row_header_column: A
+    expected_row_header: nis_35005
+    geography_id: '35005'
+    geography_level: commune
+    geography_name: Gistel
+    geography_vintage: nis_2025
+  - value_id: nis_35006
+    label: Ichtegem PIT taxable income
+    ordinal: 213
+    row_number: 215
+    expected_row_header_column: A
+    expected_row_header: nis_35006
+    geography_id: '35006'
+    geography_level: commune
+    geography_name: Ichtegem
+    geography_vintage: nis_2025
+  - value_id: nis_35011
+    label: Middelkerke PIT taxable income
+    ordinal: 214
+    row_number: 216
+    expected_row_header_column: A
+    expected_row_header: nis_35011
+    geography_id: '35011'
+    geography_level: commune
+    geography_name: Middelkerke
+    geography_vintage: nis_2025
+  - value_id: nis_35013
+    label: Oostende PIT taxable income
+    ordinal: 215
+    row_number: 217
+    expected_row_header_column: A
+    expected_row_header: nis_35013
+    geography_id: '35013'
+    geography_level: commune
+    geography_name: Oostende
+    geography_vintage: nis_2025
+  - value_id: nis_35014
+    label: Oudenburg PIT taxable income
+    ordinal: 216
+    row_number: 218
+    expected_row_header_column: A
+    expected_row_header: nis_35014
+    geography_id: '35014'
+    geography_level: commune
+    geography_name: Oudenburg
+    geography_vintage: nis_2025
+  - value_id: nis_35029
+    label: De Haan PIT taxable income
+    ordinal: 217
+    row_number: 219
+    expected_row_header_column: A
+    expected_row_header: nis_35029
+    geography_id: '35029'
+    geography_level: commune
+    geography_name: De Haan
+    geography_vintage: nis_2025
+  - value_id: nis_36006
+    label: Hooglede PIT taxable income
+    ordinal: 218
+    row_number: 220
+    expected_row_header_column: A
+    expected_row_header: nis_36006
+    geography_id: '36006'
+    geography_level: commune
+    geography_name: Hooglede
+    geography_vintage: nis_2025
+  - value_id: nis_36007
+    label: Ingelmunster PIT taxable income
+    ordinal: 219
+    row_number: 221
+    expected_row_header_column: A
+    expected_row_header: nis_36007
+    geography_id: '36007'
+    geography_level: commune
+    geography_name: Ingelmunster
+    geography_vintage: nis_2025
+  - value_id: nis_36008
+    label: Izegem PIT taxable income
+    ordinal: 220
+    row_number: 222
+    expected_row_header_column: A
+    expected_row_header: nis_36008
+    geography_id: '36008'
+    geography_level: commune
+    geography_name: Izegem
+    geography_vintage: nis_2025
+  - value_id: nis_36010
+    label: Ledegem PIT taxable income
+    ordinal: 221
+    row_number: 223
+    expected_row_header_column: A
+    expected_row_header: nis_36010
+    geography_id: '36010'
+    geography_level: commune
+    geography_name: Ledegem
+    geography_vintage: nis_2025
+  - value_id: nis_36011
+    label: Lichtervelde PIT taxable income
+    ordinal: 222
+    row_number: 224
+    expected_row_header_column: A
+    expected_row_header: nis_36011
+    geography_id: '36011'
+    geography_level: commune
+    geography_name: Lichtervelde
+    geography_vintage: nis_2025
+  - value_id: nis_36012
+    label: Moorslede PIT taxable income
+    ordinal: 223
+    row_number: 225
+    expected_row_header_column: A
+    expected_row_header: nis_36012
+    geography_id: '36012'
+    geography_level: commune
+    geography_name: Moorslede
+    geography_vintage: nis_2025
+  - value_id: nis_36015
+    label: Roeselare PIT taxable income
+    ordinal: 224
+    row_number: 226
+    expected_row_header_column: A
+    expected_row_header: nis_36015
+    geography_id: '36015'
+    geography_level: commune
+    geography_name: Roeselare
+    geography_vintage: nis_2025
+  - value_id: nis_36019
+    label: Staden PIT taxable income
+    ordinal: 225
+    row_number: 227
+    expected_row_header_column: A
+    expected_row_header: nis_36019
+    geography_id: '36019'
+    geography_level: commune
+    geography_name: Staden
+    geography_vintage: nis_2025
+  - value_id: nis_37002
+    label: Dentergem PIT taxable income
+    ordinal: 226
+    row_number: 228
+    expected_row_header_column: A
+    expected_row_header: nis_37002
+    geography_id: '37002'
+    geography_level: commune
+    geography_name: Dentergem
+    geography_vintage: nis_2025
+  - value_id: nis_37010
+    label: Oostrozebeke PIT taxable income
+    ordinal: 227
+    row_number: 229
+    expected_row_header_column: A
+    expected_row_header: nis_37010
+    geography_id: '37010'
+    geography_level: commune
+    geography_name: Oostrozebeke
+    geography_vintage: nis_2025
+  - value_id: nis_37011
+    label: Pittem PIT taxable income
+    ordinal: 228
+    row_number: 230
+    expected_row_header_column: A
+    expected_row_header: nis_37011
+    geography_id: '37011'
+    geography_level: commune
+    geography_name: Pittem
+    geography_vintage: nis_2025
+  - value_id: nis_37017
+    label: Wielsbeke PIT taxable income
+    ordinal: 229
+    row_number: 231
+    expected_row_header_column: A
+    expected_row_header: nis_37017
+    geography_id: '37017'
+    geography_level: commune
+    geography_name: Wielsbeke
+    geography_vintage: nis_2025
+  - value_id: nis_37020
+    label: Ardooie PIT taxable income
+    ordinal: 230
+    row_number: 232
+    expected_row_header_column: A
+    expected_row_header: nis_37020
+    geography_id: '37020'
+    geography_level: commune
+    geography_name: Ardooie
+    geography_vintage: nis_2025
+  - value_id: nis_37021
+    label: Wingene PIT taxable income
+    ordinal: 231
+    row_number: 233
+    expected_row_header_column: A
+    expected_row_header: nis_37021
+    geography_id: '37021'
+    geography_level: commune
+    geography_name: Wingene
+    geography_vintage: nis_2025
+  - value_id: nis_37022
+    label: Tielt PIT taxable income
+    ordinal: 232
+    row_number: 234
+    expected_row_header_column: A
+    expected_row_header: nis_37022
+    geography_id: '37022'
+    geography_level: commune
+    geography_name: Tielt
+    geography_vintage: nis_2025
+  - value_id: nis_38002
+    label: Alveringem PIT taxable income
+    ordinal: 233
+    row_number: 235
+    expected_row_header_column: A
+    expected_row_header: nis_38002
+    geography_id: '38002'
+    geography_level: commune
+    geography_name: Alveringem
+    geography_vintage: nis_2025
+  - value_id: nis_38008
+    label: De Panne PIT taxable income
+    ordinal: 234
+    row_number: 236
+    expected_row_header_column: A
+    expected_row_header: nis_38008
+    geography_id: '38008'
+    geography_level: commune
+    geography_name: De Panne
+    geography_vintage: nis_2025
+  - value_id: nis_38014
+    label: Koksijde PIT taxable income
+    ordinal: 235
+    row_number: 237
+    expected_row_header_column: A
+    expected_row_header: nis_38014
+    geography_id: '38014'
+    geography_level: commune
+    geography_name: Koksijde
+    geography_vintage: nis_2025
+  - value_id: nis_38016
+    label: Nieuwpoort PIT taxable income
+    ordinal: 236
+    row_number: 238
+    expected_row_header_column: A
+    expected_row_header: nis_38016
+    geography_id: '38016'
+    geography_level: commune
+    geography_name: Nieuwpoort
+    geography_vintage: nis_2025
+  - value_id: nis_38025
+    label: Veurne PIT taxable income
+    ordinal: 237
+    row_number: 239
+    expected_row_header_column: A
+    expected_row_header: nis_38025
+    geography_id: '38025'
+    geography_level: commune
+    geography_name: Veurne
+    geography_vintage: nis_2025
+  - value_id: nis_41002
+    label: Aalst PIT taxable income
+    ordinal: 238
+    row_number: 240
+    expected_row_header_column: A
+    expected_row_header: nis_41002
+    geography_id: '41002'
+    geography_level: commune
+    geography_name: Aalst
+    geography_vintage: nis_2025
+  - value_id: nis_41011
+    label: Denderleeuw PIT taxable income
+    ordinal: 239
+    row_number: 241
+    expected_row_header_column: A
+    expected_row_header: nis_41011
+    geography_id: '41011'
+    geography_level: commune
+    geography_name: Denderleeuw
+    geography_vintage: nis_2025
+  - value_id: nis_41018
+    label: Geraardsbergen PIT taxable income
+    ordinal: 240
+    row_number: 242
+    expected_row_header_column: A
+    expected_row_header: nis_41018
+    geography_id: '41018'
+    geography_level: commune
+    geography_name: Geraardsbergen
+    geography_vintage: nis_2025
+  - value_id: nis_41024
+    label: Haaltert PIT taxable income
+    ordinal: 241
+    row_number: 243
+    expected_row_header_column: A
+    expected_row_header: nis_41024
+    geography_id: '41024'
+    geography_level: commune
+    geography_name: Haaltert
+    geography_vintage: nis_2025
+  - value_id: nis_41027
+    label: Herzele PIT taxable income
+    ordinal: 242
+    row_number: 244
+    expected_row_header_column: A
+    expected_row_header: nis_41027
+    geography_id: '41027'
+    geography_level: commune
+    geography_name: Herzele
+    geography_vintage: nis_2025
+  - value_id: nis_41034
+    label: Lede PIT taxable income
+    ordinal: 243
+    row_number: 245
+    expected_row_header_column: A
+    expected_row_header: nis_41034
+    geography_id: '41034'
+    geography_level: commune
+    geography_name: Lede
+    geography_vintage: nis_2025
+  - value_id: nis_41048
+    label: Ninove PIT taxable income
+    ordinal: 244
+    row_number: 246
+    expected_row_header_column: A
+    expected_row_header: nis_41048
+    geography_id: '41048'
+    geography_level: commune
+    geography_name: Ninove
+    geography_vintage: nis_2025
+  - value_id: nis_41063
+    label: Sint-Lievens-Houtem PIT taxable income
+    ordinal: 245
+    row_number: 247
+    expected_row_header_column: A
+    expected_row_header: nis_41063
+    geography_id: '41063'
+    geography_level: commune
+    geography_name: Sint-Lievens-Houtem
+    geography_vintage: nis_2025
+  - value_id: nis_41081
+    label: Zottegem PIT taxable income
+    ordinal: 246
+    row_number: 248
+    expected_row_header_column: A
+    expected_row_header: nis_41081
+    geography_id: '41081'
+    geography_level: commune
+    geography_name: Zottegem
+    geography_vintage: nis_2025
+  - value_id: nis_41082
+    label: Erpe-Mere PIT taxable income
+    ordinal: 247
+    row_number: 249
+    expected_row_header_column: A
+    expected_row_header: nis_41082
+    geography_id: '41082'
+    geography_level: commune
+    geography_name: Erpe-Mere
+    geography_vintage: nis_2025
+  - value_id: nis_42003
+    label: Berlare PIT taxable income
+    ordinal: 248
+    row_number: 250
+    expected_row_header_column: A
+    expected_row_header: nis_42003
+    geography_id: '42003'
+    geography_level: commune
+    geography_name: Berlare
+    geography_vintage: nis_2025
+  - value_id: nis_42004
+    label: Buggenhout PIT taxable income
+    ordinal: 249
+    row_number: 251
+    expected_row_header_column: A
+    expected_row_header: nis_42004
+    geography_id: '42004'
+    geography_level: commune
+    geography_name: Buggenhout
+    geography_vintage: nis_2025
+  - value_id: nis_42006
+    label: Dendermonde PIT taxable income
+    ordinal: 250
+    row_number: 252
+    expected_row_header_column: A
+    expected_row_header: nis_42006
+    geography_id: '42006'
+    geography_level: commune
+    geography_name: Dendermonde
+    geography_vintage: nis_2025
+  - value_id: nis_42008
+    label: Hamme PIT taxable income
+    ordinal: 251
+    row_number: 253
+    expected_row_header_column: A
+    expected_row_header: nis_42008
+    geography_id: '42008'
+    geography_level: commune
+    geography_name: Hamme
+    geography_vintage: nis_2025
+  - value_id: nis_42010
+    label: Laarne PIT taxable income
+    ordinal: 252
+    row_number: 254
+    expected_row_header_column: A
+    expected_row_header: nis_42010
+    geography_id: '42010'
+    geography_level: commune
+    geography_name: Laarne
+    geography_vintage: nis_2025
+  - value_id: nis_42011
+    label: Lebbeke PIT taxable income
+    ordinal: 253
+    row_number: 255
+    expected_row_header_column: A
+    expected_row_header: nis_42011
+    geography_id: '42011'
+    geography_level: commune
+    geography_name: Lebbeke
+    geography_vintage: nis_2025
+  - value_id: nis_42023
+    label: Waasmunster PIT taxable income
+    ordinal: 254
+    row_number: 256
+    expected_row_header_column: A
+    expected_row_header: nis_42023
+    geography_id: '42023'
+    geography_level: commune
+    geography_name: Waasmunster
+    geography_vintage: nis_2025
+  - value_id: nis_42025
+    label: Wetteren PIT taxable income
+    ordinal: 255
+    row_number: 257
+    expected_row_header_column: A
+    expected_row_header: nis_42025
+    geography_id: '42025'
+    geography_level: commune
+    geography_name: Wetteren
+    geography_vintage: nis_2025
+  - value_id: nis_42026
+    label: Wichelen PIT taxable income
+    ordinal: 256
+    row_number: 258
+    expected_row_header_column: A
+    expected_row_header: nis_42026
+    geography_id: '42026'
+    geography_level: commune
+    geography_name: Wichelen
+    geography_vintage: nis_2025
+  - value_id: nis_42028
+    label: Zele PIT taxable income
+    ordinal: 257
+    row_number: 259
+    expected_row_header_column: A
+    expected_row_header: nis_42028
+    geography_id: '42028'
+    geography_level: commune
+    geography_name: Zele
+    geography_vintage: nis_2025
+  - value_id: nis_43002
+    label: Assenede PIT taxable income
+    ordinal: 258
+    row_number: 260
+    expected_row_header_column: A
+    expected_row_header: nis_43002
+    geography_id: '43002'
+    geography_level: commune
+    geography_name: Assenede
+    geography_vintage: nis_2025
+  - value_id: nis_43005
+    label: Eeklo PIT taxable income
+    ordinal: 259
+    row_number: 261
+    expected_row_header_column: A
+    expected_row_header: nis_43005
+    geography_id: '43005'
+    geography_level: commune
+    geography_name: Eeklo
+    geography_vintage: nis_2025
+  - value_id: nis_43007
+    label: Kaprijke PIT taxable income
+    ordinal: 260
+    row_number: 262
+    expected_row_header_column: A
+    expected_row_header: nis_43007
+    geography_id: '43007'
+    geography_level: commune
+    geography_name: Kaprijke
+    geography_vintage: nis_2025
+  - value_id: nis_43010
+    label: Maldegem PIT taxable income
+    ordinal: 261
+    row_number: 263
+    expected_row_header_column: A
+    expected_row_header: nis_43010
+    geography_id: '43010'
+    geography_level: commune
+    geography_name: Maldegem
+    geography_vintage: nis_2025
+  - value_id: nis_43014
+    label: Sint-Laureins PIT taxable income
+    ordinal: 262
+    row_number: 264
+    expected_row_header_column: A
+    expected_row_header: nis_43014
+    geography_id: '43014'
+    geography_level: commune
+    geography_name: Sint-Laureins
+    geography_vintage: nis_2025
+  - value_id: nis_43018
+    label: Zelzate PIT taxable income
+    ordinal: 263
+    row_number: 265
+    expected_row_header_column: A
+    expected_row_header: nis_43018
+    geography_id: '43018'
+    geography_level: commune
+    geography_name: Zelzate
+    geography_vintage: nis_2025
+  - value_id: nis_44013
+    label: Destelbergen PIT taxable income
+    ordinal: 264
+    row_number: 266
+    expected_row_header_column: A
+    expected_row_header: nis_44013
+    geography_id: '44013'
+    geography_level: commune
+    geography_name: Destelbergen
+    geography_vintage: nis_2025
+  - value_id: nis_44019
+    label: Evergem PIT taxable income
+    ordinal: 265
+    row_number: 267
+    expected_row_header_column: A
+    expected_row_header: nis_44019
+    geography_id: '44019'
+    geography_level: commune
+    geography_name: Evergem
+    geography_vintage: nis_2025
+  - value_id: nis_44020
+    label: Gavere PIT taxable income
+    ordinal: 266
+    row_number: 268
+    expected_row_header_column: A
+    expected_row_header: nis_44020
+    geography_id: '44020'
+    geography_level: commune
+    geography_name: Gavere
+    geography_vintage: nis_2025
+  - value_id: nis_44021
+    label: Gent PIT taxable income
+    ordinal: 267
+    row_number: 269
+    expected_row_header_column: A
+    expected_row_header: nis_44021
+    geography_id: '44021'
+    geography_level: commune
+    geography_name: Gent
+    geography_vintage: nis_2025
+  - value_id: nis_44052
+    label: Oosterzele PIT taxable income
+    ordinal: 268
+    row_number: 270
+    expected_row_header_column: A
+    expected_row_header: nis_44052
+    geography_id: '44052'
+    geography_level: commune
+    geography_name: Oosterzele
+    geography_vintage: nis_2025
+  - value_id: nis_44064
+    label: Sint-Martens-Latem PIT taxable income
+    ordinal: 269
+    row_number: 271
+    expected_row_header_column: A
+    expected_row_header: nis_44064
+    geography_id: '44064'
+    geography_level: commune
+    geography_name: Sint-Martens-Latem
+    geography_vintage: nis_2025
+  - value_id: nis_44081
+    label: Zulte PIT taxable income
+    ordinal: 270
+    row_number: 272
+    expected_row_header_column: A
+    expected_row_header: nis_44081
+    geography_id: '44081'
+    geography_level: commune
+    geography_name: Zulte
+    geography_vintage: nis_2025
+  - value_id: nis_44083
+    label: Deinze PIT taxable income
+    ordinal: 271
+    row_number: 273
+    expected_row_header_column: A
+    expected_row_header: nis_44083
+    geography_id: '44083'
+    geography_level: commune
+    geography_name: Deinze
+    geography_vintage: nis_2025
+  - value_id: nis_44084
+    label: Aalter PIT taxable income
+    ordinal: 272
+    row_number: 274
+    expected_row_header_column: A
+    expected_row_header: nis_44084
+    geography_id: '44084'
+    geography_level: commune
+    geography_name: Aalter
+    geography_vintage: nis_2025
+  - value_id: nis_44085
+    label: Lievegem PIT taxable income
+    ordinal: 273
+    row_number: 275
+    expected_row_header_column: A
+    expected_row_header: nis_44085
+    geography_id: '44085'
+    geography_level: commune
+    geography_name: Lievegem
+    geography_vintage: nis_2025
+  - value_id: nis_44086
+    label: Nazareth-De Pinte PIT taxable income
+    ordinal: 274
+    row_number: 276
+    expected_row_header_column: A
+    expected_row_header: nis_44086
+    geography_id: '44086'
+    geography_level: commune
+    geography_name: Nazareth-De Pinte
+    geography_vintage: nis_2025
+  - value_id: nis_44087
+    label: Lochristi PIT taxable income
+    ordinal: 275
+    row_number: 277
+    expected_row_header_column: A
+    expected_row_header: nis_44087
+    geography_id: '44087'
+    geography_level: commune
+    geography_name: Lochristi
+    geography_vintage: nis_2025
+  - value_id: nis_44088
+    label: Merelbeke-Melle PIT taxable income
+    ordinal: 276
+    row_number: 278
+    expected_row_header_column: A
+    expected_row_header: nis_44088
+    geography_id: '44088'
+    geography_level: commune
+    geography_name: Merelbeke-Melle
+    geography_vintage: nis_2025
+  - value_id: nis_45035
+    label: Oudenaarde PIT taxable income
+    ordinal: 277
+    row_number: 279
+    expected_row_header_column: A
+    expected_row_header: nis_45035
+    geography_id: '45035'
+    geography_level: commune
+    geography_name: Oudenaarde
+    geography_vintage: nis_2025
+  - value_id: nis_45041
+    label: Ronse PIT taxable income
+    ordinal: 278
+    row_number: 280
+    expected_row_header_column: A
+    expected_row_header: nis_45041
+    geography_id: '45041'
+    geography_level: commune
+    geography_name: Ronse
+    geography_vintage: nis_2025
+  - value_id: nis_45059
+    label: Brakel PIT taxable income
+    ordinal: 279
+    row_number: 281
+    expected_row_header_column: A
+    expected_row_header: nis_45059
+    geography_id: '45059'
+    geography_level: commune
+    geography_name: Brakel
+    geography_vintage: nis_2025
+  - value_id: nis_45060
+    label: Kluisbergen PIT taxable income
+    ordinal: 280
+    row_number: 282
+    expected_row_header_column: A
+    expected_row_header: nis_45060
+    geography_id: '45060'
+    geography_level: commune
+    geography_name: Kluisbergen
+    geography_vintage: nis_2025
+  - value_id: nis_45061
+    label: Wortegem-Petegem PIT taxable income
+    ordinal: 281
+    row_number: 283
+    expected_row_header_column: A
+    expected_row_header: nis_45061
+    geography_id: '45061'
+    geography_level: commune
+    geography_name: Wortegem-Petegem
+    geography_vintage: nis_2025
+  - value_id: nis_45062
+    label: Horebeke PIT taxable income
+    ordinal: 282
+    row_number: 284
+    expected_row_header_column: A
+    expected_row_header: nis_45062
+    geography_id: '45062'
+    geography_level: commune
+    geography_name: Horebeke
+    geography_vintage: nis_2025
+  - value_id: nis_45063
+    label: Lierde PIT taxable income
+    ordinal: 283
+    row_number: 285
+    expected_row_header_column: A
+    expected_row_header: nis_45063
+    geography_id: '45063'
+    geography_level: commune
+    geography_name: Lierde
+    geography_vintage: nis_2025
+  - value_id: nis_45064
+    label: Maarkedal PIT taxable income
+    ordinal: 284
+    row_number: 286
+    expected_row_header_column: A
+    expected_row_header: nis_45064
+    geography_id: '45064'
+    geography_level: commune
+    geography_name: Maarkedal
+    geography_vintage: nis_2025
+  - value_id: nis_45065
+    label: Zwalm PIT taxable income
+    ordinal: 285
+    row_number: 287
+    expected_row_header_column: A
+    expected_row_header: nis_45065
+    geography_id: '45065'
+    geography_level: commune
+    geography_name: Zwalm
+    geography_vintage: nis_2025
+  - value_id: nis_45068
+    label: Kruisem PIT taxable income
+    ordinal: 286
+    row_number: 288
+    expected_row_header_column: A
+    expected_row_header: nis_45068
+    geography_id: '45068'
+    geography_level: commune
+    geography_name: Kruisem
+    geography_vintage: nis_2025
+  - value_id: nis_46020
+    label: Sint-Gillis-Waas PIT taxable income
+    ordinal: 287
+    row_number: 289
+    expected_row_header_column: A
+    expected_row_header: nis_46020
+    geography_id: '46020'
+    geography_level: commune
+    geography_name: Sint-Gillis-Waas
+    geography_vintage: nis_2025
+  - value_id: nis_46021
+    label: Sint-Niklaas PIT taxable income
+    ordinal: 288
+    row_number: 290
+    expected_row_header_column: A
+    expected_row_header: nis_46021
+    geography_id: '46021'
+    geography_level: commune
+    geography_name: Sint-Niklaas
+    geography_vintage: nis_2025
+  - value_id: nis_46024
+    label: Stekene PIT taxable income
+    ordinal: 289
+    row_number: 291
+    expected_row_header_column: A
+    expected_row_header: nis_46024
+    geography_id: '46024'
+    geography_level: commune
+    geography_name: Stekene
+    geography_vintage: nis_2025
+  - value_id: nis_46025
+    label: Temse PIT taxable income
+    ordinal: 290
+    row_number: 292
+    expected_row_header_column: A
+    expected_row_header: nis_46025
+    geography_id: '46025'
+    geography_level: commune
+    geography_name: Temse
+    geography_vintage: nis_2025
+  - value_id: nis_46029
+    label: Lokeren PIT taxable income
+    ordinal: 291
+    row_number: 293
+    expected_row_header_column: A
+    expected_row_header: nis_46029
+    geography_id: '46029'
+    geography_level: commune
+    geography_name: Lokeren
+    geography_vintage: nis_2025
+  - value_id: nis_46030
+    label: Beveren-Kruibeke-Zwijndrecht PIT taxable income
+    ordinal: 292
+    row_number: 294
+    expected_row_header_column: A
+    expected_row_header: nis_46030
+    geography_id: '46030'
+    geography_level: commune
+    geography_name: Beveren-Kruibeke-Zwijndrecht
+    geography_vintage: nis_2025
+  - value_id: nis_51004
+    label: Ath PIT taxable income
+    ordinal: 293
+    row_number: 295
+    expected_row_header_column: A
+    expected_row_header: nis_51004
+    geography_id: '51004'
+    geography_level: commune
+    geography_name: Ath
+    geography_vintage: nis_2025
+  - value_id: nis_51008
+    label: Beloeil PIT taxable income
+    ordinal: 294
+    row_number: 296
+    expected_row_header_column: A
+    expected_row_header: nis_51008
+    geography_id: '51008'
+    geography_level: commune
+    geography_name: Beloeil
+    geography_vintage: nis_2025
+  - value_id: nis_51009
+    label: Bernissart PIT taxable income
+    ordinal: 295
+    row_number: 297
+    expected_row_header_column: A
+    expected_row_header: nis_51009
+    geography_id: '51009'
+    geography_level: commune
+    geography_name: Bernissart
+    geography_vintage: nis_2025
+  - value_id: nis_51012
+    label: Brugelette PIT taxable income
+    ordinal: 296
+    row_number: 298
+    expected_row_header_column: A
+    expected_row_header: nis_51012
+    geography_id: '51012'
+    geography_level: commune
+    geography_name: Brugelette
+    geography_vintage: nis_2025
+  - value_id: nis_51014
+    label: "Chi\xE8vres PIT taxable income"
+    ordinal: 297
+    row_number: 299
+    expected_row_header_column: A
+    expected_row_header: nis_51014
+    geography_id: '51014'
+    geography_level: commune
+    geography_name: "Chi\xE8vres"
+    geography_vintage: nis_2025
+  - value_id: nis_51017
+    label: Ellezelles PIT taxable income
+    ordinal: 298
+    row_number: 300
+    expected_row_header_column: A
+    expected_row_header: nis_51017
+    geography_id: '51017'
+    geography_level: commune
+    geography_name: Ellezelles
+    geography_vintage: nis_2025
+  - value_id: nis_51019
+    label: Flobecq PIT taxable income
+    ordinal: 299
+    row_number: 301
+    expected_row_header_column: A
+    expected_row_header: nis_51019
+    geography_id: '51019'
+    geography_level: commune
+    geography_name: Flobecq
+    geography_vintage: nis_2025
+  - value_id: nis_51065
+    label: Frasnes-lez-Anvaing PIT taxable income
+    ordinal: 300
+    row_number: 302
+    expected_row_header_column: A
+    expected_row_header: nis_51065
+    geography_id: '51065'
+    geography_level: commune
+    geography_name: Frasnes-lez-Anvaing
+    geography_vintage: nis_2025
+  - value_id: nis_51067
+    label: Enghien PIT taxable income
+    ordinal: 301
+    row_number: 303
+    expected_row_header_column: A
+    expected_row_header: nis_51067
+    geography_id: '51067'
+    geography_level: commune
+    geography_name: Enghien
+    geography_vintage: nis_2025
+  - value_id: nis_51068
+    label: Silly PIT taxable income
+    ordinal: 302
+    row_number: 304
+    expected_row_header_column: A
+    expected_row_header: nis_51068
+    geography_id: '51068'
+    geography_level: commune
+    geography_name: Silly
+    geography_vintage: nis_2025
+  - value_id: nis_51069
+    label: Lessines PIT taxable income
+    ordinal: 303
+    row_number: 305
+    expected_row_header_column: A
+    expected_row_header: nis_51069
+    geography_id: '51069'
+    geography_level: commune
+    geography_name: Lessines
+    geography_vintage: nis_2025
+  - value_id: nis_52010
+    label: Chapelle-lez-Herlaimont PIT taxable income
+    ordinal: 304
+    row_number: 306
+    expected_row_header_column: A
+    expected_row_header: nis_52010
+    geography_id: '52010'
+    geography_level: commune
+    geography_name: Chapelle-lez-Herlaimont
+    geography_vintage: nis_2025
+  - value_id: nis_52011
+    label: Charleroi PIT taxable income
+    ordinal: 305
+    row_number: 307
+    expected_row_header_column: A
+    expected_row_header: nis_52011
+    geography_id: '52011'
+    geography_level: commune
+    geography_name: Charleroi
+    geography_vintage: nis_2025
+  - value_id: nis_52012
+    label: "Ch\xE2telet PIT taxable income"
+    ordinal: 306
+    row_number: 308
+    expected_row_header_column: A
+    expected_row_header: nis_52012
+    geography_id: '52012'
+    geography_level: commune
+    geography_name: "Ch\xE2telet"
+    geography_vintage: nis_2025
+  - value_id: nis_52015
+    label: Courcelles PIT taxable income
+    ordinal: 307
+    row_number: 309
+    expected_row_header_column: A
+    expected_row_header: nis_52015
+    geography_id: '52015'
+    geography_level: commune
+    geography_name: Courcelles
+    geography_vintage: nis_2025
+  - value_id: nis_52018
+    label: Farciennes PIT taxable income
+    ordinal: 308
+    row_number: 310
+    expected_row_header_column: A
+    expected_row_header: nis_52018
+    geography_id: '52018'
+    geography_level: commune
+    geography_name: Farciennes
+    geography_vintage: nis_2025
+  - value_id: nis_52021
+    label: Fleurus PIT taxable income
+    ordinal: 309
+    row_number: 311
+    expected_row_header_column: A
+    expected_row_header: nis_52021
+    geography_id: '52021'
+    geography_level: commune
+    geography_name: Fleurus
+    geography_vintage: nis_2025
+  - value_id: nis_52022
+    label: "Fontaine-l\u2019Ev\xEAque PIT taxable income"
+    ordinal: 310
+    row_number: 312
+    expected_row_header_column: A
+    expected_row_header: nis_52022
+    geography_id: '52022'
+    geography_level: commune
+    geography_name: "Fontaine-l\u2019Ev\xEAque"
+    geography_vintage: nis_2025
+  - value_id: nis_52025
+    label: Gerpinnes PIT taxable income
+    ordinal: 311
+    row_number: 313
+    expected_row_header_column: A
+    expected_row_header: nis_52025
+    geography_id: '52025'
+    geography_level: commune
+    geography_name: Gerpinnes
+    geography_vintage: nis_2025
+  - value_id: nis_52048
+    label: Montigny-le-Tilleul PIT taxable income
+    ordinal: 312
+    row_number: 314
+    expected_row_header_column: A
+    expected_row_header: nis_52048
+    geography_id: '52048'
+    geography_level: commune
+    geography_name: Montigny-le-Tilleul
+    geography_vintage: nis_2025
+  - value_id: nis_52055
+    label: "Pont-\xE0-Celles PIT taxable income"
+    ordinal: 313
+    row_number: 315
+    expected_row_header_column: A
+    expected_row_header: nis_52055
+    geography_id: '52055'
+    geography_level: commune
+    geography_name: "Pont-\xE0-Celles"
+    geography_vintage: nis_2025
+  - value_id: nis_52074
+    label: Aiseau-Presles PIT taxable income
+    ordinal: 314
+    row_number: 316
+    expected_row_header_column: A
+    expected_row_header: nis_52074
+    geography_id: '52074'
+    geography_level: commune
+    geography_name: Aiseau-Presles
+    geography_vintage: nis_2025
+  - value_id: nis_52075
+    label: Les Bons Villers PIT taxable income
+    ordinal: 315
+    row_number: 317
+    expected_row_header_column: A
+    expected_row_header: nis_52075
+    geography_id: '52075'
+    geography_level: commune
+    geography_name: Les Bons Villers
+    geography_vintage: nis_2025
+  - value_id: nis_53014
+    label: Boussu PIT taxable income
+    ordinal: 316
+    row_number: 318
+    expected_row_header_column: A
+    expected_row_header: nis_53014
+    geography_id: '53014'
+    geography_level: commune
+    geography_name: Boussu
+    geography_vintage: nis_2025
+  - value_id: nis_53020
+    label: Dour PIT taxable income
+    ordinal: 317
+    row_number: 319
+    expected_row_header_column: A
+    expected_row_header: nis_53020
+    geography_id: '53020'
+    geography_level: commune
+    geography_name: Dour
+    geography_vintage: nis_2025
+  - value_id: nis_53028
+    label: Frameries PIT taxable income
+    ordinal: 318
+    row_number: 320
+    expected_row_header_column: A
+    expected_row_header: nis_53028
+    geography_id: '53028'
+    geography_level: commune
+    geography_name: Frameries
+    geography_vintage: nis_2025
+  - value_id: nis_53039
+    label: Hensies PIT taxable income
+    ordinal: 319
+    row_number: 321
+    expected_row_header_column: A
+    expected_row_header: nis_53039
+    geography_id: '53039'
+    geography_level: commune
+    geography_name: Hensies
+    geography_vintage: nis_2025
+  - value_id: nis_53044
+    label: Jurbise PIT taxable income
+    ordinal: 320
+    row_number: 322
+    expected_row_header_column: A
+    expected_row_header: nis_53044
+    geography_id: '53044'
+    geography_level: commune
+    geography_name: Jurbise
+    geography_vintage: nis_2025
+  - value_id: nis_53046
+    label: Lens PIT taxable income
+    ordinal: 321
+    row_number: 323
+    expected_row_header_column: A
+    expected_row_header: nis_53046
+    geography_id: '53046'
+    geography_level: commune
+    geography_name: Lens
+    geography_vintage: nis_2025
+  - value_id: nis_53053
+    label: Mons PIT taxable income
+    ordinal: 322
+    row_number: 324
+    expected_row_header_column: A
+    expected_row_header: nis_53053
+    geography_id: '53053'
+    geography_level: commune
+    geography_name: Mons
+    geography_vintage: nis_2025
+  - value_id: nis_53065
+    label: Quaregnon PIT taxable income
+    ordinal: 323
+    row_number: 325
+    expected_row_header_column: A
+    expected_row_header: nis_53065
+    geography_id: '53065'
+    geography_level: commune
+    geography_name: Quaregnon
+    geography_vintage: nis_2025
+  - value_id: nis_53068
+    label: "Qui\xE9vrain PIT taxable income"
+    ordinal: 324
+    row_number: 326
+    expected_row_header_column: A
+    expected_row_header: nis_53068
+    geography_id: '53068'
+    geography_level: commune
+    geography_name: "Qui\xE9vrain"
+    geography_vintage: nis_2025
+  - value_id: nis_53070
+    label: Saint-Ghislain PIT taxable income
+    ordinal: 325
+    row_number: 327
+    expected_row_header_column: A
+    expected_row_header: nis_53070
+    geography_id: '53070'
+    geography_level: commune
+    geography_name: Saint-Ghislain
+    geography_vintage: nis_2025
+  - value_id: nis_53082
+    label: Colfontaine PIT taxable income
+    ordinal: 326
+    row_number: 328
+    expected_row_header_column: A
+    expected_row_header: nis_53082
+    geography_id: '53082'
+    geography_level: commune
+    geography_name: Colfontaine
+    geography_vintage: nis_2025
+  - value_id: nis_53083
+    label: Honnelles PIT taxable income
+    ordinal: 327
+    row_number: 329
+    expected_row_header_column: A
+    expected_row_header: nis_53083
+    geography_id: '53083'
+    geography_level: commune
+    geography_name: Honnelles
+    geography_vintage: nis_2025
+  - value_id: nis_53084
+    label: "Qu\xE9vy PIT taxable income"
+    ordinal: 328
+    row_number: 330
+    expected_row_header_column: A
+    expected_row_header: nis_53084
+    geography_id: '53084'
+    geography_level: commune
+    geography_name: "Qu\xE9vy"
+    geography_vintage: nis_2025
+  - value_id: nis_55004
+    label: Braine-le-Comte PIT taxable income
+    ordinal: 329
+    row_number: 331
+    expected_row_header_column: A
+    expected_row_header: nis_55004
+    geography_id: '55004'
+    geography_level: commune
+    geography_name: Braine-le-Comte
+    geography_vintage: nis_2025
+  - value_id: nis_55035
+    label: Le Roeulx PIT taxable income
+    ordinal: 330
+    row_number: 332
+    expected_row_header_column: A
+    expected_row_header: nis_55035
+    geography_id: '55035'
+    geography_level: commune
+    geography_name: Le Roeulx
+    geography_vintage: nis_2025
+  - value_id: nis_55040
+    label: Soignies PIT taxable income
+    ordinal: 331
+    row_number: 333
+    expected_row_header_column: A
+    expected_row_header: nis_55040
+    geography_id: '55040'
+    geography_level: commune
+    geography_name: Soignies
+    geography_vintage: nis_2025
+  - value_id: nis_55050
+    label: Ecaussinnes PIT taxable income
+    ordinal: 332
+    row_number: 334
+    expected_row_header_column: A
+    expected_row_header: nis_55050
+    geography_id: '55050'
+    geography_level: commune
+    geography_name: Ecaussinnes
+    geography_vintage: nis_2025
+  - value_id: nis_55085
+    label: Seneffe PIT taxable income
+    ordinal: 333
+    row_number: 335
+    expected_row_header_column: A
+    expected_row_header: nis_55085
+    geography_id: '55085'
+    geography_level: commune
+    geography_name: Seneffe
+    geography_vintage: nis_2025
+  - value_id: nis_55086
+    label: Manage PIT taxable income
+    ordinal: 334
+    row_number: 336
+    expected_row_header_column: A
+    expected_row_header: nis_55086
+    geography_id: '55086'
+    geography_level: commune
+    geography_name: Manage
+    geography_vintage: nis_2025
+  - value_id: nis_56001
+    label: Anderlues PIT taxable income
+    ordinal: 335
+    row_number: 337
+    expected_row_header_column: A
+    expected_row_header: nis_56001
+    geography_id: '56001'
+    geography_level: commune
+    geography_name: Anderlues
+    geography_vintage: nis_2025
+  - value_id: nis_56005
+    label: Beaumont PIT taxable income
+    ordinal: 336
+    row_number: 338
+    expected_row_header_column: A
+    expected_row_header: nis_56005
+    geography_id: '56005'
+    geography_level: commune
+    geography_name: Beaumont
+    geography_vintage: nis_2025
+  - value_id: nis_56016
+    label: Chimay PIT taxable income
+    ordinal: 337
+    row_number: 339
+    expected_row_header_column: A
+    expected_row_header: nis_56016
+    geography_id: '56016'
+    geography_level: commune
+    geography_name: Chimay
+    geography_vintage: nis_2025
+  - value_id: nis_56022
+    label: Erquelinnes PIT taxable income
+    ordinal: 338
+    row_number: 340
+    expected_row_header_column: A
+    expected_row_header: nis_56022
+    geography_id: '56022'
+    geography_level: commune
+    geography_name: Erquelinnes
+    geography_vintage: nis_2025
+  - value_id: nis_56029
+    label: Froidchapelle PIT taxable income
+    ordinal: 339
+    row_number: 341
+    expected_row_header_column: A
+    expected_row_header: nis_56029
+    geography_id: '56029'
+    geography_level: commune
+    geography_name: Froidchapelle
+    geography_vintage: nis_2025
+  - value_id: nis_56044
+    label: Lobbes PIT taxable income
+    ordinal: 340
+    row_number: 342
+    expected_row_header_column: A
+    expected_row_header: nis_56044
+    geography_id: '56044'
+    geography_level: commune
+    geography_name: Lobbes
+    geography_vintage: nis_2025
+  - value_id: nis_56049
+    label: "Merbes-le-Ch\xE2teau PIT taxable income"
+    ordinal: 341
+    row_number: 343
+    expected_row_header_column: A
+    expected_row_header: nis_56049
+    geography_id: '56049'
+    geography_level: commune
+    geography_name: "Merbes-le-Ch\xE2teau"
+    geography_vintage: nis_2025
+  - value_id: nis_56051
+    label: Momignies PIT taxable income
+    ordinal: 342
+    row_number: 344
+    expected_row_header_column: A
+    expected_row_header: nis_56051
+    geography_id: '56051'
+    geography_level: commune
+    geography_name: Momignies
+    geography_vintage: nis_2025
+  - value_id: nis_56078
+    label: Thuin PIT taxable income
+    ordinal: 343
+    row_number: 345
+    expected_row_header_column: A
+    expected_row_header: nis_56078
+    geography_id: '56078'
+    geography_level: commune
+    geography_name: Thuin
+    geography_vintage: nis_2025
+  - value_id: nis_56086
+    label: Ham-sur-Heure-Nalinnes PIT taxable income
+    ordinal: 344
+    row_number: 346
+    expected_row_header_column: A
+    expected_row_header: nis_56086
+    geography_id: '56086'
+    geography_level: commune
+    geography_name: Ham-sur-Heure-Nalinnes
+    geography_vintage: nis_2025
+  - value_id: nis_56088
+    label: Sivry-Rance PIT taxable income
+    ordinal: 345
+    row_number: 347
+    expected_row_header_column: A
+    expected_row_header: nis_56088
+    geography_id: '56088'
+    geography_level: commune
+    geography_name: Sivry-Rance
+    geography_vintage: nis_2025
+  - value_id: nis_57003
+    label: Antoing PIT taxable income
+    ordinal: 346
+    row_number: 348
+    expected_row_header_column: A
+    expected_row_header: nis_57003
+    geography_id: '57003'
+    geography_level: commune
+    geography_name: Antoing
+    geography_vintage: nis_2025
+  - value_id: nis_57018
+    label: Celles PIT taxable income
+    ordinal: 347
+    row_number: 349
+    expected_row_header_column: A
+    expected_row_header: nis_57018
+    geography_id: '57018'
+    geography_level: commune
+    geography_name: Celles
+    geography_vintage: nis_2025
+  - value_id: nis_57027
+    label: Estaimpuis PIT taxable income
+    ordinal: 348
+    row_number: 350
+    expected_row_header_column: A
+    expected_row_header: nis_57027
+    geography_id: '57027'
+    geography_level: commune
+    geography_name: Estaimpuis
+    geography_vintage: nis_2025
+  - value_id: nis_57062
+    label: Pecq PIT taxable income
+    ordinal: 349
+    row_number: 351
+    expected_row_header_column: A
+    expected_row_header: nis_57062
+    geography_id: '57062'
+    geography_level: commune
+    geography_name: Pecq
+    geography_vintage: nis_2025
+  - value_id: nis_57064
+    label: "P\xE9ruwelz PIT taxable income"
+    ordinal: 350
+    row_number: 352
+    expected_row_header_column: A
+    expected_row_header: nis_57064
+    geography_id: '57064'
+    geography_level: commune
+    geography_name: "P\xE9ruwelz"
+    geography_vintage: nis_2025
+  - value_id: nis_57072
+    label: Rumes PIT taxable income
+    ordinal: 351
+    row_number: 353
+    expected_row_header_column: A
+    expected_row_header: nis_57072
+    geography_id: '57072'
+    geography_level: commune
+    geography_name: Rumes
+    geography_vintage: nis_2025
+  - value_id: nis_57081
+    label: Tournai PIT taxable income
+    ordinal: 352
+    row_number: 354
+    expected_row_header_column: A
+    expected_row_header: nis_57081
+    geography_id: '57081'
+    geography_level: commune
+    geography_name: Tournai
+    geography_vintage: nis_2025
+  - value_id: nis_57093
+    label: Brunehaut PIT taxable income
+    ordinal: 353
+    row_number: 355
+    expected_row_header_column: A
+    expected_row_header: nis_57093
+    geography_id: '57093'
+    geography_level: commune
+    geography_name: Brunehaut
+    geography_vintage: nis_2025
+  - value_id: nis_57094
+    label: Leuze-en-Hainaut PIT taxable income
+    ordinal: 354
+    row_number: 356
+    expected_row_header_column: A
+    expected_row_header: nis_57094
+    geography_id: '57094'
+    geography_level: commune
+    geography_name: Leuze-en-Hainaut
+    geography_vintage: nis_2025
+  - value_id: nis_57095
+    label: "Mont-de-l\u2019Enclus PIT taxable income"
+    ordinal: 355
+    row_number: 357
+    expected_row_header_column: A
+    expected_row_header: nis_57095
+    geography_id: '57095'
+    geography_level: commune
+    geography_name: "Mont-de-l\u2019Enclus"
+    geography_vintage: nis_2025
+  - value_id: nis_57096
+    label: Mouscron PIT taxable income
+    ordinal: 356
+    row_number: 358
+    expected_row_header_column: A
+    expected_row_header: nis_57096
+    geography_id: '57096'
+    geography_level: commune
+    geography_name: Mouscron
+    geography_vintage: nis_2025
+  - value_id: nis_57097
+    label: Comines-Warneton PIT taxable income
+    ordinal: 357
+    row_number: 359
+    expected_row_header_column: A
+    expected_row_header: nis_57097
+    geography_id: '57097'
+    geography_level: commune
+    geography_name: Comines-Warneton
+    geography_vintage: nis_2025
+  - value_id: nis_58001
+    label: "La Louvi\xE8re PIT taxable income"
+    ordinal: 358
+    row_number: 360
+    expected_row_header_column: A
+    expected_row_header: nis_58001
+    geography_id: '58001'
+    geography_level: commune
+    geography_name: "La Louvi\xE8re"
+    geography_vintage: nis_2025
+  - value_id: nis_58002
+    label: Binche PIT taxable income
+    ordinal: 359
+    row_number: 361
+    expected_row_header_column: A
+    expected_row_header: nis_58002
+    geography_id: '58002'
+    geography_level: commune
+    geography_name: Binche
+    geography_vintage: nis_2025
+  - value_id: nis_58003
+    label: Estinnes PIT taxable income
+    ordinal: 360
+    row_number: 362
+    expected_row_header_column: A
+    expected_row_header: nis_58003
+    geography_id: '58003'
+    geography_level: commune
+    geography_name: Estinnes
+    geography_vintage: nis_2025
+  - value_id: nis_58004
+    label: Morlanwelz PIT taxable income
+    ordinal: 361
+    row_number: 363
+    expected_row_header_column: A
+    expected_row_header: nis_58004
+    geography_id: '58004'
+    geography_level: commune
+    geography_name: Morlanwelz
+    geography_vintage: nis_2025
+  - value_id: nis_61003
+    label: Amay PIT taxable income
+    ordinal: 362
+    row_number: 364
+    expected_row_header_column: A
+    expected_row_header: nis_61003
+    geography_id: '61003'
+    geography_level: commune
+    geography_name: Amay
+    geography_vintage: nis_2025
+  - value_id: nis_61010
+    label: Burdinne PIT taxable income
+    ordinal: 363
+    row_number: 365
+    expected_row_header_column: A
+    expected_row_header: nis_61010
+    geography_id: '61010'
+    geography_level: commune
+    geography_name: Burdinne
+    geography_vintage: nis_2025
+  - value_id: nis_61012
+    label: Clavier PIT taxable income
+    ordinal: 364
+    row_number: 366
+    expected_row_header_column: A
+    expected_row_header: nis_61012
+    geography_id: '61012'
+    geography_level: commune
+    geography_name: Clavier
+    geography_vintage: nis_2025
+  - value_id: nis_61019
+    label: "Ferri\xE8res PIT taxable income"
+    ordinal: 365
+    row_number: 367
+    expected_row_header_column: A
+    expected_row_header: nis_61019
+    geography_id: '61019'
+    geography_level: commune
+    geography_name: "Ferri\xE8res"
+    geography_vintage: nis_2025
+  - value_id: nis_61024
+    label: Hamoir PIT taxable income
+    ordinal: 366
+    row_number: 368
+    expected_row_header_column: A
+    expected_row_header: nis_61024
+    geography_id: '61024'
+    geography_level: commune
+    geography_name: Hamoir
+    geography_vintage: nis_2025
+  - value_id: nis_61028
+    label: "H\xE9ron PIT taxable income"
+    ordinal: 367
+    row_number: 369
+    expected_row_header_column: A
+    expected_row_header: nis_61028
+    geography_id: '61028'
+    geography_level: commune
+    geography_name: "H\xE9ron"
+    geography_vintage: nis_2025
+  - value_id: nis_61031
+    label: Huy PIT taxable income
+    ordinal: 368
+    row_number: 370
+    expected_row_header_column: A
+    expected_row_header: nis_61031
+    geography_id: '61031'
+    geography_level: commune
+    geography_name: Huy
+    geography_vintage: nis_2025
+  - value_id: nis_61039
+    label: Marchin PIT taxable income
+    ordinal: 369
+    row_number: 371
+    expected_row_header_column: A
+    expected_row_header: nis_61039
+    geography_id: '61039'
+    geography_level: commune
+    geography_name: Marchin
+    geography_vintage: nis_2025
+  - value_id: nis_61041
+    label: Modave PIT taxable income
+    ordinal: 370
+    row_number: 372
+    expected_row_header_column: A
+    expected_row_header: nis_61041
+    geography_id: '61041'
+    geography_level: commune
+    geography_name: Modave
+    geography_vintage: nis_2025
+  - value_id: nis_61043
+    label: Nandrin PIT taxable income
+    ordinal: 371
+    row_number: 373
+    expected_row_header_column: A
+    expected_row_header: nis_61043
+    geography_id: '61043'
+    geography_level: commune
+    geography_name: Nandrin
+    geography_vintage: nis_2025
+  - value_id: nis_61048
+    label: Ouffet PIT taxable income
+    ordinal: 372
+    row_number: 374
+    expected_row_header_column: A
+    expected_row_header: nis_61048
+    geography_id: '61048'
+    geography_level: commune
+    geography_name: Ouffet
+    geography_vintage: nis_2025
+  - value_id: nis_61063
+    label: Verlaine PIT taxable income
+    ordinal: 373
+    row_number: 375
+    expected_row_header_column: A
+    expected_row_header: nis_61063
+    geography_id: '61063'
+    geography_level: commune
+    geography_name: Verlaine
+    geography_vintage: nis_2025
+  - value_id: nis_61068
+    label: Villers-Le-Bouillet PIT taxable income
+    ordinal: 374
+    row_number: 376
+    expected_row_header_column: A
+    expected_row_header: nis_61068
+    geography_id: '61068'
+    geography_level: commune
+    geography_name: Villers-Le-Bouillet
+    geography_vintage: nis_2025
+  - value_id: nis_61072
+    label: Wanze PIT taxable income
+    ordinal: 375
+    row_number: 377
+    expected_row_header_column: A
+    expected_row_header: nis_61072
+    geography_id: '61072'
+    geography_level: commune
+    geography_name: Wanze
+    geography_vintage: nis_2025
+  - value_id: nis_61079
+    label: Anthisnes PIT taxable income
+    ordinal: 376
+    row_number: 378
+    expected_row_header_column: A
+    expected_row_header: nis_61079
+    geography_id: '61079'
+    geography_level: commune
+    geography_name: Anthisnes
+    geography_vintage: nis_2025
+  - value_id: nis_61080
+    label: Engis PIT taxable income
+    ordinal: 377
+    row_number: 379
+    expected_row_header_column: A
+    expected_row_header: nis_61080
+    geography_id: '61080'
+    geography_level: commune
+    geography_name: Engis
+    geography_vintage: nis_2025
+  - value_id: nis_61081
+    label: Tinlot PIT taxable income
+    ordinal: 378
+    row_number: 380
+    expected_row_header_column: A
+    expected_row_header: nis_61081
+    geography_id: '61081'
+    geography_level: commune
+    geography_name: Tinlot
+    geography_vintage: nis_2025
+  - value_id: nis_62003
+    label: Ans PIT taxable income
+    ordinal: 379
+    row_number: 381
+    expected_row_header_column: A
+    expected_row_header: nis_62003
+    geography_id: '62003'
+    geography_level: commune
+    geography_name: Ans
+    geography_vintage: nis_2025
+  - value_id: nis_62006
+    label: Awans PIT taxable income
+    ordinal: 380
+    row_number: 382
+    expected_row_header_column: A
+    expected_row_header: nis_62006
+    geography_id: '62006'
+    geography_level: commune
+    geography_name: Awans
+    geography_vintage: nis_2025
+  - value_id: nis_62009
+    label: Aywaille PIT taxable income
+    ordinal: 381
+    row_number: 383
+    expected_row_header_column: A
+    expected_row_header: nis_62009
+    geography_id: '62009'
+    geography_level: commune
+    geography_name: Aywaille
+    geography_vintage: nis_2025
+  - value_id: nis_62011
+    label: Bassenge PIT taxable income
+    ordinal: 382
+    row_number: 384
+    expected_row_header_column: A
+    expected_row_header: nis_62011
+    geography_id: '62011'
+    geography_level: commune
+    geography_name: Bassenge
+    geography_vintage: nis_2025
+  - value_id: nis_62015
+    label: Beyne-Heusay PIT taxable income
+    ordinal: 383
+    row_number: 385
+    expected_row_header_column: A
+    expected_row_header: nis_62015
+    geography_id: '62015'
+    geography_level: commune
+    geography_name: Beyne-Heusay
+    geography_vintage: nis_2025
+  - value_id: nis_62022
+    label: Chaudfontaine PIT taxable income
+    ordinal: 384
+    row_number: 386
+    expected_row_header_column: A
+    expected_row_header: nis_62022
+    geography_id: '62022'
+    geography_level: commune
+    geography_name: Chaudfontaine
+    geography_vintage: nis_2025
+  - value_id: nis_62026
+    label: Comblain-au-Pont PIT taxable income
+    ordinal: 385
+    row_number: 387
+    expected_row_header_column: A
+    expected_row_header: nis_62026
+    geography_id: '62026'
+    geography_level: commune
+    geography_name: Comblain-au-Pont
+    geography_vintage: nis_2025
+  - value_id: nis_62027
+    label: Dalhem PIT taxable income
+    ordinal: 386
+    row_number: 388
+    expected_row_header_column: A
+    expected_row_header: nis_62027
+    geography_id: '62027'
+    geography_level: commune
+    geography_name: Dalhem
+    geography_vintage: nis_2025
+  - value_id: nis_62032
+    label: Esneux PIT taxable income
+    ordinal: 387
+    row_number: 389
+    expected_row_header_column: A
+    expected_row_header: nis_62032
+    geography_id: '62032'
+    geography_level: commune
+    geography_name: Esneux
+    geography_vintage: nis_2025
+  - value_id: nis_62038
+    label: "Fl\xE9ron PIT taxable income"
+    ordinal: 388
+    row_number: 390
+    expected_row_header_column: A
+    expected_row_header: nis_62038
+    geography_id: '62038'
+    geography_level: commune
+    geography_name: "Fl\xE9ron"
+    geography_vintage: nis_2025
+  - value_id: nis_62051
+    label: Herstal PIT taxable income
+    ordinal: 389
+    row_number: 391
+    expected_row_header_column: A
+    expected_row_header: nis_62051
+    geography_id: '62051'
+    geography_level: commune
+    geography_name: Herstal
+    geography_vintage: nis_2025
+  - value_id: nis_62060
+    label: Juprelle PIT taxable income
+    ordinal: 390
+    row_number: 392
+    expected_row_header_column: A
+    expected_row_header: nis_62060
+    geography_id: '62060'
+    geography_level: commune
+    geography_name: Juprelle
+    geography_vintage: nis_2025
+  - value_id: nis_62063
+    label: "Li\xE8ge PIT taxable income"
+    ordinal: 391
+    row_number: 393
+    expected_row_header_column: A
+    expected_row_header: nis_62063
+    geography_id: '62063'
+    geography_level: commune
+    geography_name: "Li\xE8ge"
+    geography_vintage: nis_2025
+  - value_id: nis_62079
+    label: Oupeye PIT taxable income
+    ordinal: 392
+    row_number: 394
+    expected_row_header_column: A
+    expected_row_header: nis_62079
+    geography_id: '62079'
+    geography_level: commune
+    geography_name: Oupeye
+    geography_vintage: nis_2025
+  - value_id: nis_62093
+    label: Saint-Nicolas PIT taxable income
+    ordinal: 393
+    row_number: 395
+    expected_row_header_column: A
+    expected_row_header: nis_62093
+    geography_id: '62093'
+    geography_level: commune
+    geography_name: Saint-Nicolas
+    geography_vintage: nis_2025
+  - value_id: nis_62096
+    label: Seraing PIT taxable income
+    ordinal: 394
+    row_number: 396
+    expected_row_header_column: A
+    expected_row_header: nis_62096
+    geography_id: '62096'
+    geography_level: commune
+    geography_name: Seraing
+    geography_vintage: nis_2025
+  - value_id: nis_62099
+    label: Soumagne PIT taxable income
+    ordinal: 395
+    row_number: 397
+    expected_row_header_column: A
+    expected_row_header: nis_62099
+    geography_id: '62099'
+    geography_level: commune
+    geography_name: Soumagne
+    geography_vintage: nis_2025
+  - value_id: nis_62100
+    label: Sprimont PIT taxable income
+    ordinal: 396
+    row_number: 398
+    expected_row_header_column: A
+    expected_row_header: nis_62100
+    geography_id: '62100'
+    geography_level: commune
+    geography_name: Sprimont
+    geography_vintage: nis_2025
+  - value_id: nis_62108
+    label: "Vis\xE9 PIT taxable income"
+    ordinal: 397
+    row_number: 399
+    expected_row_header_column: A
+    expected_row_header: nis_62108
+    geography_id: '62108'
+    geography_level: commune
+    geography_name: "Vis\xE9"
+    geography_vintage: nis_2025
+  - value_id: nis_62118
+    label: "Gr\xE2ce-Hollogne PIT taxable income"
+    ordinal: 398
+    row_number: 400
+    expected_row_header_column: A
+    expected_row_header: nis_62118
+    geography_id: '62118'
+    geography_level: commune
+    geography_name: "Gr\xE2ce-Hollogne"
+    geography_vintage: nis_2025
+  - value_id: nis_62119
+    label: Blegny PIT taxable income
+    ordinal: 399
+    row_number: 401
+    expected_row_header_column: A
+    expected_row_header: nis_62119
+    geography_id: '62119'
+    geography_level: commune
+    geography_name: Blegny
+    geography_vintage: nis_2025
+  - value_id: nis_62120
+    label: "Fl\xE9malle PIT taxable income"
+    ordinal: 400
+    row_number: 402
+    expected_row_header_column: A
+    expected_row_header: nis_62120
+    geography_id: '62120'
+    geography_level: commune
+    geography_name: "Fl\xE9malle"
+    geography_vintage: nis_2025
+  - value_id: nis_62121
+    label: "Neupr\xE9 PIT taxable income"
+    ordinal: 401
+    row_number: 403
+    expected_row_header_column: A
+    expected_row_header: nis_62121
+    geography_id: '62121'
+    geography_level: commune
+    geography_name: "Neupr\xE9"
+    geography_vintage: nis_2025
+  - value_id: nis_62122
+    label: Trooz PIT taxable income
+    ordinal: 402
+    row_number: 404
+    expected_row_header_column: A
+    expected_row_header: nis_62122
+    geography_id: '62122'
+    geography_level: commune
+    geography_name: Trooz
+    geography_vintage: nis_2025
+  - value_id: nis_63001
+    label: Amel PIT taxable income
+    ordinal: 403
+    row_number: 405
+    expected_row_header_column: A
+    expected_row_header: nis_63001
+    geography_id: '63001'
+    geography_level: commune
+    geography_name: Amel
+    geography_vintage: nis_2025
+  - value_id: nis_63003
+    label: Aubel PIT taxable income
+    ordinal: 404
+    row_number: 406
+    expected_row_header_column: A
+    expected_row_header: nis_63003
+    geography_id: '63003'
+    geography_level: commune
+    geography_name: Aubel
+    geography_vintage: nis_2025
+  - value_id: nis_63004
+    label: Baelen PIT taxable income
+    ordinal: 405
+    row_number: 407
+    expected_row_header_column: A
+    expected_row_header: nis_63004
+    geography_id: '63004'
+    geography_level: commune
+    geography_name: Baelen
+    geography_vintage: nis_2025
+  - value_id: nis_63012
+    label: "B\xFCllingen PIT taxable income"
+    ordinal: 406
+    row_number: 408
+    expected_row_header_column: A
+    expected_row_header: nis_63012
+    geography_id: '63012'
+    geography_level: commune
+    geography_name: "B\xFCllingen"
+    geography_vintage: nis_2025
+  - value_id: nis_63013
+    label: "B\xFCtgenbach PIT taxable income"
+    ordinal: 407
+    row_number: 409
+    expected_row_header_column: A
+    expected_row_header: nis_63013
+    geography_id: '63013'
+    geography_level: commune
+    geography_name: "B\xFCtgenbach"
+    geography_vintage: nis_2025
+  - value_id: nis_63020
+    label: Dison PIT taxable income
+    ordinal: 408
+    row_number: 410
+    expected_row_header_column: A
+    expected_row_header: nis_63020
+    geography_id: '63020'
+    geography_level: commune
+    geography_name: Dison
+    geography_vintage: nis_2025
+  - value_id: nis_63023
+    label: Eupen PIT taxable income
+    ordinal: 409
+    row_number: 411
+    expected_row_header_column: A
+    expected_row_header: nis_63023
+    geography_id: '63023'
+    geography_level: commune
+    geography_name: Eupen
+    geography_vintage: nis_2025
+  - value_id: nis_63035
+    label: Herve PIT taxable income
+    ordinal: 410
+    row_number: 412
+    expected_row_header_column: A
+    expected_row_header: nis_63035
+    geography_id: '63035'
+    geography_level: commune
+    geography_name: Herve
+    geography_vintage: nis_2025
+  - value_id: nis_63038
+    label: Jalhay PIT taxable income
+    ordinal: 411
+    row_number: 413
+    expected_row_header_column: A
+    expected_row_header: nis_63038
+    geography_id: '63038'
+    geography_level: commune
+    geography_name: Jalhay
+    geography_vintage: nis_2025
+  - value_id: nis_63040
+    label: Kelmis PIT taxable income
+    ordinal: 412
+    row_number: 414
+    expected_row_header_column: A
+    expected_row_header: nis_63040
+    geography_id: '63040'
+    geography_level: commune
+    geography_name: Kelmis
+    geography_vintage: nis_2025
+  - value_id: nis_63045
+    label: Lierneux PIT taxable income
+    ordinal: 413
+    row_number: 415
+    expected_row_header_column: A
+    expected_row_header: nis_63045
+    geography_id: '63045'
+    geography_level: commune
+    geography_name: Lierneux
+    geography_vintage: nis_2025
+  - value_id: nis_63046
+    label: Limbourg PIT taxable income
+    ordinal: 414
+    row_number: 416
+    expected_row_header_column: A
+    expected_row_header: nis_63046
+    geography_id: '63046'
+    geography_level: commune
+    geography_name: Limbourg
+    geography_vintage: nis_2025
+  - value_id: nis_63048
+    label: Lontzen PIT taxable income
+    ordinal: 415
+    row_number: 417
+    expected_row_header_column: A
+    expected_row_header: nis_63048
+    geography_id: '63048'
+    geography_level: commune
+    geography_name: Lontzen
+    geography_vintage: nis_2025
+  - value_id: nis_63049
+    label: Malmedy PIT taxable income
+    ordinal: 416
+    row_number: 418
+    expected_row_header_column: A
+    expected_row_header: nis_63049
+    geography_id: '63049'
+    geography_level: commune
+    geography_name: Malmedy
+    geography_vintage: nis_2025
+  - value_id: nis_63057
+    label: Olne PIT taxable income
+    ordinal: 417
+    row_number: 419
+    expected_row_header_column: A
+    expected_row_header: nis_63057
+    geography_id: '63057'
+    geography_level: commune
+    geography_name: Olne
+    geography_vintage: nis_2025
+  - value_id: nis_63058
+    label: Pepinster PIT taxable income
+    ordinal: 418
+    row_number: 420
+    expected_row_header_column: A
+    expected_row_header: nis_63058
+    geography_id: '63058'
+    geography_level: commune
+    geography_name: Pepinster
+    geography_vintage: nis_2025
+  - value_id: nis_63061
+    label: Raeren PIT taxable income
+    ordinal: 419
+    row_number: 421
+    expected_row_header_column: A
+    expected_row_header: nis_63061
+    geography_id: '63061'
+    geography_level: commune
+    geography_name: Raeren
+    geography_vintage: nis_2025
+  - value_id: nis_63067
+    label: Sankt Vith PIT taxable income
+    ordinal: 420
+    row_number: 422
+    expected_row_header_column: A
+    expected_row_header: nis_63067
+    geography_id: '63067'
+    geography_level: commune
+    geography_name: Sankt Vith
+    geography_vintage: nis_2025
+  - value_id: nis_63072
+    label: Spa PIT taxable income
+    ordinal: 421
+    row_number: 423
+    expected_row_header_column: A
+    expected_row_header: nis_63072
+    geography_id: '63072'
+    geography_level: commune
+    geography_name: Spa
+    geography_vintage: nis_2025
+  - value_id: nis_63073
+    label: Stavelot PIT taxable income
+    ordinal: 422
+    row_number: 424
+    expected_row_header_column: A
+    expected_row_header: nis_63073
+    geography_id: '63073'
+    geography_level: commune
+    geography_name: Stavelot
+    geography_vintage: nis_2025
+  - value_id: nis_63075
+    label: Stoumont PIT taxable income
+    ordinal: 423
+    row_number: 425
+    expected_row_header_column: A
+    expected_row_header: nis_63075
+    geography_id: '63075'
+    geography_level: commune
+    geography_name: Stoumont
+    geography_vintage: nis_2025
+  - value_id: nis_63076
+    label: Theux PIT taxable income
+    ordinal: 424
+    row_number: 426
+    expected_row_header_column: A
+    expected_row_header: nis_63076
+    geography_id: '63076'
+    geography_level: commune
+    geography_name: Theux
+    geography_vintage: nis_2025
+  - value_id: nis_63079
+    label: Verviers PIT taxable income
+    ordinal: 425
+    row_number: 427
+    expected_row_header_column: A
+    expected_row_header: nis_63079
+    geography_id: '63079'
+    geography_level: commune
+    geography_name: Verviers
+    geography_vintage: nis_2025
+  - value_id: nis_63080
+    label: Weismes PIT taxable income
+    ordinal: 426
+    row_number: 428
+    expected_row_header_column: A
+    expected_row_header: nis_63080
+    geography_id: '63080'
+    geography_level: commune
+    geography_name: Weismes
+    geography_vintage: nis_2025
+  - value_id: nis_63084
+    label: Welkenraedt PIT taxable income
+    ordinal: 427
+    row_number: 429
+    expected_row_header_column: A
+    expected_row_header: nis_63084
+    geography_id: '63084'
+    geography_level: commune
+    geography_name: Welkenraedt
+    geography_vintage: nis_2025
+  - value_id: nis_63086
+    label: Trois-Ponts PIT taxable income
+    ordinal: 428
+    row_number: 430
+    expected_row_header_column: A
+    expected_row_header: nis_63086
+    geography_id: '63086'
+    geography_level: commune
+    geography_name: Trois-Ponts
+    geography_vintage: nis_2025
+  - value_id: nis_63087
+    label: Burg-Reuland PIT taxable income
+    ordinal: 429
+    row_number: 431
+    expected_row_header_column: A
+    expected_row_header: nis_63087
+    geography_id: '63087'
+    geography_level: commune
+    geography_name: Burg-Reuland
+    geography_vintage: nis_2025
+  - value_id: nis_63088
+    label: "Plombi\xE8res PIT taxable income"
+    ordinal: 430
+    row_number: 432
+    expected_row_header_column: A
+    expected_row_header: nis_63088
+    geography_id: '63088'
+    geography_level: commune
+    geography_name: "Plombi\xE8res"
+    geography_vintage: nis_2025
+  - value_id: nis_63089
+    label: Thimister-Clermont PIT taxable income
+    ordinal: 431
+    row_number: 433
+    expected_row_header_column: A
+    expected_row_header: nis_63089
+    geography_id: '63089'
+    geography_level: commune
+    geography_name: Thimister-Clermont
+    geography_vintage: nis_2025
+  - value_id: nis_64008
+    label: Berloz PIT taxable income
+    ordinal: 432
+    row_number: 434
+    expected_row_header_column: A
+    expected_row_header: nis_64008
+    geography_id: '64008'
+    geography_level: commune
+    geography_name: Berloz
+    geography_vintage: nis_2025
+  - value_id: nis_64015
+    label: Braives PIT taxable income
+    ordinal: 433
+    row_number: 435
+    expected_row_header_column: A
+    expected_row_header: nis_64015
+    geography_id: '64015'
+    geography_level: commune
+    geography_name: Braives
+    geography_vintage: nis_2025
+  - value_id: nis_64021
+    label: "Crisn\xE9e PIT taxable income"
+    ordinal: 434
+    row_number: 436
+    expected_row_header_column: A
+    expected_row_header: nis_64021
+    geography_id: '64021'
+    geography_level: commune
+    geography_name: "Crisn\xE9e"
+    geography_vintage: nis_2025
+  - value_id: nis_64023
+    label: Donceel PIT taxable income
+    ordinal: 435
+    row_number: 437
+    expected_row_header_column: A
+    expected_row_header: nis_64023
+    geography_id: '64023'
+    geography_level: commune
+    geography_name: Donceel
+    geography_vintage: nis_2025
+  - value_id: nis_64025
+    label: Fexhe-le-Haut-Clocher PIT taxable income
+    ordinal: 436
+    row_number: 438
+    expected_row_header_column: A
+    expected_row_header: nis_64025
+    geography_id: '64025'
+    geography_level: commune
+    geography_name: Fexhe-le-Haut-Clocher
+    geography_vintage: nis_2025
+  - value_id: nis_64029
+    label: Geer PIT taxable income
+    ordinal: 437
+    row_number: 439
+    expected_row_header_column: A
+    expected_row_header: nis_64029
+    geography_id: '64029'
+    geography_level: commune
+    geography_name: Geer
+    geography_vintage: nis_2025
+  - value_id: nis_64034
+    label: Hannut PIT taxable income
+    ordinal: 438
+    row_number: 440
+    expected_row_header_column: A
+    expected_row_header: nis_64034
+    geography_id: '64034'
+    geography_level: commune
+    geography_name: Hannut
+    geography_vintage: nis_2025
+  - value_id: nis_64047
+    label: Lincent PIT taxable income
+    ordinal: 439
+    row_number: 441
+    expected_row_header_column: A
+    expected_row_header: nis_64047
+    geography_id: '64047'
+    geography_level: commune
+    geography_name: Lincent
+    geography_vintage: nis_2025
+  - value_id: nis_64056
+    label: Oreye PIT taxable income
+    ordinal: 440
+    row_number: 442
+    expected_row_header_column: A
+    expected_row_header: nis_64056
+    geography_id: '64056'
+    geography_level: commune
+    geography_name: Oreye
+    geography_vintage: nis_2025
+  - value_id: nis_64063
+    label: Remicourt PIT taxable income
+    ordinal: 441
+    row_number: 443
+    expected_row_header_column: A
+    expected_row_header: nis_64063
+    geography_id: '64063'
+    geography_level: commune
+    geography_name: Remicourt
+    geography_vintage: nis_2025
+  - value_id: nis_64065
+    label: Saint-Georges-sur-Meuse PIT taxable income
+    ordinal: 442
+    row_number: 444
+    expected_row_header_column: A
+    expected_row_header: nis_64065
+    geography_id: '64065'
+    geography_level: commune
+    geography_name: Saint-Georges-sur-Meuse
+    geography_vintage: nis_2025
+  - value_id: nis_64074
+    label: Waremme PIT taxable income
+    ordinal: 443
+    row_number: 445
+    expected_row_header_column: A
+    expected_row_header: nis_64074
+    geography_id: '64074'
+    geography_level: commune
+    geography_name: Waremme
+    geography_vintage: nis_2025
+  - value_id: nis_64075
+    label: Wasseiges PIT taxable income
+    ordinal: 444
+    row_number: 446
+    expected_row_header_column: A
+    expected_row_header: nis_64075
+    geography_id: '64075'
+    geography_level: commune
+    geography_name: Wasseiges
+    geography_vintage: nis_2025
+  - value_id: nis_64076
+    label: Faimes PIT taxable income
+    ordinal: 445
+    row_number: 447
+    expected_row_header_column: A
+    expected_row_header: nis_64076
+    geography_id: '64076'
+    geography_level: commune
+    geography_name: Faimes
+    geography_vintage: nis_2025
+  - value_id: nis_71002
+    label: As PIT taxable income
+    ordinal: 446
+    row_number: 448
+    expected_row_header_column: A
+    expected_row_header: nis_71002
+    geography_id: '71002'
+    geography_level: commune
+    geography_name: As
+    geography_vintage: nis_2025
+  - value_id: nis_71004
+    label: Beringen PIT taxable income
+    ordinal: 447
+    row_number: 449
+    expected_row_header_column: A
+    expected_row_header: nis_71004
+    geography_id: '71004'
+    geography_level: commune
+    geography_name: Beringen
+    geography_vintage: nis_2025
+  - value_id: nis_71011
+    label: Diepenbeek PIT taxable income
+    ordinal: 448
+    row_number: 450
+    expected_row_header_column: A
+    expected_row_header: nis_71011
+    geography_id: '71011'
+    geography_level: commune
+    geography_name: Diepenbeek
+    geography_vintage: nis_2025
+  - value_id: nis_71016
+    label: Genk PIT taxable income
+    ordinal: 449
+    row_number: 451
+    expected_row_header_column: A
+    expected_row_header: nis_71016
+    geography_id: '71016'
+    geography_level: commune
+    geography_name: Genk
+    geography_vintage: nis_2025
+  - value_id: nis_71017
+    label: Gingelom PIT taxable income
+    ordinal: 450
+    row_number: 452
+    expected_row_header_column: A
+    expected_row_header: nis_71017
+    geography_id: '71017'
+    geography_level: commune
+    geography_name: Gingelom
+    geography_vintage: nis_2025
+  - value_id: nis_71020
+    label: Halen PIT taxable income
+    ordinal: 451
+    row_number: 453
+    expected_row_header_column: A
+    expected_row_header: nis_71020
+    geography_id: '71020'
+    geography_level: commune
+    geography_name: Halen
+    geography_vintage: nis_2025
+  - value_id: nis_71024
+    label: Herk-de-Stad PIT taxable income
+    ordinal: 452
+    row_number: 454
+    expected_row_header_column: A
+    expected_row_header: nis_71024
+    geography_id: '71024'
+    geography_level: commune
+    geography_name: Herk-de-Stad
+    geography_vintage: nis_2025
+  - value_id: nis_71034
+    label: Leopoldsburg PIT taxable income
+    ordinal: 453
+    row_number: 455
+    expected_row_header_column: A
+    expected_row_header: nis_71034
+    geography_id: '71034'
+    geography_level: commune
+    geography_name: Leopoldsburg
+    geography_vintage: nis_2025
+  - value_id: nis_71037
+    label: Lummen PIT taxable income
+    ordinal: 454
+    row_number: 456
+    expected_row_header_column: A
+    expected_row_header: nis_71037
+    geography_id: '71037'
+    geography_level: commune
+    geography_name: Lummen
+    geography_vintage: nis_2025
+  - value_id: nis_71045
+    label: Nieuwerkerken PIT taxable income
+    ordinal: 455
+    row_number: 457
+    expected_row_header_column: A
+    expected_row_header: nis_71045
+    geography_id: '71045'
+    geography_level: commune
+    geography_name: Nieuwerkerken
+    geography_vintage: nis_2025
+  - value_id: nis_71053
+    label: Sint-Truiden PIT taxable income
+    ordinal: 456
+    row_number: 458
+    expected_row_header_column: A
+    expected_row_header: nis_71053
+    geography_id: '71053'
+    geography_level: commune
+    geography_name: Sint-Truiden
+    geography_vintage: nis_2025
+  - value_id: nis_71066
+    label: Zonhoven PIT taxable income
+    ordinal: 457
+    row_number: 459
+    expected_row_header_column: A
+    expected_row_header: nis_71066
+    geography_id: '71066'
+    geography_level: commune
+    geography_name: Zonhoven
+    geography_vintage: nis_2025
+  - value_id: nis_71067
+    label: Zutendaal PIT taxable income
+    ordinal: 458
+    row_number: 460
+    expected_row_header_column: A
+    expected_row_header: nis_71067
+    geography_id: '71067'
+    geography_level: commune
+    geography_name: Zutendaal
+    geography_vintage: nis_2025
+  - value_id: nis_71070
+    label: Heusden-Zolder PIT taxable income
+    ordinal: 459
+    row_number: 461
+    expected_row_header_column: A
+    expected_row_header: nis_71070
+    geography_id: '71070'
+    geography_level: commune
+    geography_name: Heusden-Zolder
+    geography_vintage: nis_2025
+  - value_id: nis_71071
+    label: Tessenderlo-Ham PIT taxable income
+    ordinal: 460
+    row_number: 462
+    expected_row_header_column: A
+    expected_row_header: nis_71071
+    geography_id: '71071'
+    geography_level: commune
+    geography_name: Tessenderlo-Ham
+    geography_vintage: nis_2025
+  - value_id: nis_71072
+    label: Hasselt PIT taxable income
+    ordinal: 461
+    row_number: 463
+    expected_row_header_column: A
+    expected_row_header: nis_71072
+    geography_id: '71072'
+    geography_level: commune
+    geography_name: Hasselt
+    geography_vintage: nis_2025
+  - value_id: nis_72003
+    label: Bocholt PIT taxable income
+    ordinal: 462
+    row_number: 464
+    expected_row_header_column: A
+    expected_row_header: nis_72003
+    geography_id: '72003'
+    geography_level: commune
+    geography_name: Bocholt
+    geography_vintage: nis_2025
+  - value_id: nis_72004
+    label: Bree PIT taxable income
+    ordinal: 463
+    row_number: 465
+    expected_row_header_column: A
+    expected_row_header: nis_72004
+    geography_id: '72004'
+    geography_level: commune
+    geography_name: Bree
+    geography_vintage: nis_2025
+  - value_id: nis_72018
+    label: Kinrooi PIT taxable income
+    ordinal: 464
+    row_number: 466
+    expected_row_header_column: A
+    expected_row_header: nis_72018
+    geography_id: '72018'
+    geography_level: commune
+    geography_name: Kinrooi
+    geography_vintage: nis_2025
+  - value_id: nis_72020
+    label: Lommel PIT taxable income
+    ordinal: 465
+    row_number: 467
+    expected_row_header_column: A
+    expected_row_header: nis_72020
+    geography_id: '72020'
+    geography_level: commune
+    geography_name: Lommel
+    geography_vintage: nis_2025
+  - value_id: nis_72021
+    label: Maaseik PIT taxable income
+    ordinal: 466
+    row_number: 468
+    expected_row_header_column: A
+    expected_row_header: nis_72021
+    geography_id: '72021'
+    geography_level: commune
+    geography_name: Maaseik
+    geography_vintage: nis_2025
+  - value_id: nis_72030
+    label: Peer PIT taxable income
+    ordinal: 467
+    row_number: 469
+    expected_row_header_column: A
+    expected_row_header: nis_72030
+    geography_id: '72030'
+    geography_level: commune
+    geography_name: Peer
+    geography_vintage: nis_2025
+  - value_id: nis_72037
+    label: Hamont-Achel PIT taxable income
+    ordinal: 468
+    row_number: 470
+    expected_row_header_column: A
+    expected_row_header: nis_72037
+    geography_id: '72037'
+    geography_level: commune
+    geography_name: Hamont-Achel
+    geography_vintage: nis_2025
+  - value_id: nis_72038
+    label: Hechtel-Eksel PIT taxable income
+    ordinal: 469
+    row_number: 471
+    expected_row_header_column: A
+    expected_row_header: nis_72038
+    geography_id: '72038'
+    geography_level: commune
+    geography_name: Hechtel-Eksel
+    geography_vintage: nis_2025
+  - value_id: nis_72039
+    label: Houthalen-Helchteren PIT taxable income
+    ordinal: 470
+    row_number: 472
+    expected_row_header_column: A
+    expected_row_header: nis_72039
+    geography_id: '72039'
+    geography_level: commune
+    geography_name: Houthalen-Helchteren
+    geography_vintage: nis_2025
+  - value_id: nis_72041
+    label: Dilsen-Stokkem PIT taxable income
+    ordinal: 471
+    row_number: 473
+    expected_row_header_column: A
+    expected_row_header: nis_72041
+    geography_id: '72041'
+    geography_level: commune
+    geography_name: Dilsen-Stokkem
+    geography_vintage: nis_2025
+  - value_id: nis_72042
+    label: Oudsbergen PIT taxable income
+    ordinal: 472
+    row_number: 474
+    expected_row_header_column: A
+    expected_row_header: nis_72042
+    geography_id: '72042'
+    geography_level: commune
+    geography_name: Oudsbergen
+    geography_vintage: nis_2025
+  - value_id: nis_72043
+    label: Pelt PIT taxable income
+    ordinal: 473
+    row_number: 475
+    expected_row_header_column: A
+    expected_row_header: nis_72043
+    geography_id: '72043'
+    geography_level: commune
+    geography_name: Pelt
+    geography_vintage: nis_2025
+  - value_id: nis_73001
+    label: Alken PIT taxable income
+    ordinal: 474
+    row_number: 476
+    expected_row_header_column: A
+    expected_row_header: nis_73001
+    geography_id: '73001'
+    geography_level: commune
+    geography_name: Alken
+    geography_vintage: nis_2025
+  - value_id: nis_73022
+    label: Heers PIT taxable income
+    ordinal: 475
+    row_number: 477
+    expected_row_header_column: A
+    expected_row_header: nis_73022
+    geography_id: '73022'
+    geography_level: commune
+    geography_name: Heers
+    geography_vintage: nis_2025
+  - value_id: nis_73028
+    label: Herstappe PIT taxable income
+    ordinal: 476
+    row_number: 478
+    expected_row_header_column: A
+    expected_row_header: nis_73028
+    geography_id: '73028'
+    geography_level: commune
+    geography_name: Herstappe
+    geography_vintage: nis_2025
+  - value_id: nis_73042
+    label: Lanaken PIT taxable income
+    ordinal: 477
+    row_number: 479
+    expected_row_header_column: A
+    expected_row_header: nis_73042
+    geography_id: '73042'
+    geography_level: commune
+    geography_name: Lanaken
+    geography_vintage: nis_2025
+  - value_id: nis_73066
+    label: Riemst PIT taxable income
+    ordinal: 478
+    row_number: 480
+    expected_row_header_column: A
+    expected_row_header: nis_73066
+    geography_id: '73066'
+    geography_level: commune
+    geography_name: Riemst
+    geography_vintage: nis_2025
+  - value_id: nis_73098
+    label: Wellen PIT taxable income
+    ordinal: 479
+    row_number: 481
+    expected_row_header_column: A
+    expected_row_header: nis_73098
+    geography_id: '73098'
+    geography_level: commune
+    geography_name: Wellen
+    geography_vintage: nis_2025
+  - value_id: nis_73107
+    label: Maasmechelen PIT taxable income
+    ordinal: 480
+    row_number: 482
+    expected_row_header_column: A
+    expected_row_header: nis_73107
+    geography_id: '73107'
+    geography_level: commune
+    geography_name: Maasmechelen
+    geography_vintage: nis_2025
+  - value_id: nis_73109
+    label: Voeren PIT taxable income
+    ordinal: 481
+    row_number: 483
+    expected_row_header_column: A
+    expected_row_header: nis_73109
+    geography_id: '73109'
+    geography_level: commune
+    geography_name: Voeren
+    geography_vintage: nis_2025
+  - value_id: nis_73110
+    label: Bilzen-Hoeselt PIT taxable income
+    ordinal: 482
+    row_number: 484
+    expected_row_header_column: A
+    expected_row_header: nis_73110
+    geography_id: '73110'
+    geography_level: commune
+    geography_name: Bilzen-Hoeselt
+    geography_vintage: nis_2025
+  - value_id: nis_73111
+    label: Tongeren-Borgloon PIT taxable income
+    ordinal: 483
+    row_number: 485
+    expected_row_header_column: A
+    expected_row_header: nis_73111
+    geography_id: '73111'
+    geography_level: commune
+    geography_name: Tongeren-Borgloon
+    geography_vintage: nis_2025
+  - value_id: nis_81001
+    label: Arlon PIT taxable income
+    ordinal: 484
+    row_number: 486
+    expected_row_header_column: A
+    expected_row_header: nis_81001
+    geography_id: '81001'
+    geography_level: commune
+    geography_name: Arlon
+    geography_vintage: nis_2025
+  - value_id: nis_81003
+    label: Attert PIT taxable income
+    ordinal: 485
+    row_number: 487
+    expected_row_header_column: A
+    expected_row_header: nis_81003
+    geography_id: '81003'
+    geography_level: commune
+    geography_name: Attert
+    geography_vintage: nis_2025
+  - value_id: nis_81004
+    label: Aubange PIT taxable income
+    ordinal: 486
+    row_number: 488
+    expected_row_header_column: A
+    expected_row_header: nis_81004
+    geography_id: '81004'
+    geography_level: commune
+    geography_name: Aubange
+    geography_vintage: nis_2025
+  - value_id: nis_81013
+    label: Martelange PIT taxable income
+    ordinal: 487
+    row_number: 489
+    expected_row_header_column: A
+    expected_row_header: nis_81013
+    geography_id: '81013'
+    geography_level: commune
+    geography_name: Martelange
+    geography_vintage: nis_2025
+  - value_id: nis_81015
+    label: Messancy PIT taxable income
+    ordinal: 488
+    row_number: 490
+    expected_row_header_column: A
+    expected_row_header: nis_81015
+    geography_id: '81015'
+    geography_level: commune
+    geography_name: Messancy
+    geography_vintage: nis_2025
+  - value_id: nis_82009
+    label: Fauvillers PIT taxable income
+    ordinal: 489
+    row_number: 491
+    expected_row_header_column: A
+    expected_row_header: nis_82009
+    geography_id: '82009'
+    geography_level: commune
+    geography_name: Fauvillers
+    geography_vintage: nis_2025
+  - value_id: nis_82014
+    label: Houffalize PIT taxable income
+    ordinal: 490
+    row_number: 492
+    expected_row_header_column: A
+    expected_row_header: nis_82014
+    geography_id: '82014'
+    geography_level: commune
+    geography_name: Houffalize
+    geography_vintage: nis_2025
+  - value_id: nis_82032
+    label: Vielsalm PIT taxable income
+    ordinal: 491
+    row_number: 493
+    expected_row_header_column: A
+    expected_row_header: nis_82032
+    geography_id: '82032'
+    geography_level: commune
+    geography_name: Vielsalm
+    geography_vintage: nis_2025
+  - value_id: nis_82036
+    label: "Vaux-sur-S\xFBre PIT taxable income"
+    ordinal: 492
+    row_number: 494
+    expected_row_header_column: A
+    expected_row_header: nis_82036
+    geography_id: '82036'
+    geography_level: commune
+    geography_name: "Vaux-sur-S\xFBre"
+    geography_vintage: nis_2025
+  - value_id: nis_82037
+    label: Gouvy PIT taxable income
+    ordinal: 493
+    row_number: 495
+    expected_row_header_column: A
+    expected_row_header: nis_82037
+    geography_id: '82037'
+    geography_level: commune
+    geography_name: Gouvy
+    geography_vintage: nis_2025
+  - value_id: nis_82038
+    label: Sainte-Ode PIT taxable income
+    ordinal: 494
+    row_number: 496
+    expected_row_header_column: A
+    expected_row_header: nis_82038
+    geography_id: '82038'
+    geography_level: commune
+    geography_name: Sainte-Ode
+    geography_vintage: nis_2025
+  - value_id: nis_82039
+    label: Bastogne PIT taxable income
+    ordinal: 495
+    row_number: 497
+    expected_row_header_column: A
+    expected_row_header: nis_82039
+    geography_id: '82039'
+    geography_level: commune
+    geography_name: Bastogne
+    geography_vintage: nis_2025
+  - value_id: nis_83012
+    label: Durbuy PIT taxable income
+    ordinal: 496
+    row_number: 498
+    expected_row_header_column: A
+    expected_row_header: nis_83012
+    geography_id: '83012'
+    geography_level: commune
+    geography_name: Durbuy
+    geography_vintage: nis_2025
+  - value_id: nis_83013
+    label: "Erez\xE9e PIT taxable income"
+    ordinal: 497
+    row_number: 499
+    expected_row_header_column: A
+    expected_row_header: nis_83013
+    geography_id: '83013'
+    geography_level: commune
+    geography_name: "Erez\xE9e"
+    geography_vintage: nis_2025
+  - value_id: nis_83028
+    label: Hotton PIT taxable income
+    ordinal: 498
+    row_number: 500
+    expected_row_header_column: A
+    expected_row_header: nis_83028
+    geography_id: '83028'
+    geography_level: commune
+    geography_name: Hotton
+    geography_vintage: nis_2025
+  - value_id: nis_83031
+    label: La Roche-en-Ardenne PIT taxable income
+    ordinal: 499
+    row_number: 501
+    expected_row_header_column: A
+    expected_row_header: nis_83031
+    geography_id: '83031'
+    geography_level: commune
+    geography_name: La Roche-en-Ardenne
+    geography_vintage: nis_2025
+  - value_id: nis_83034
+    label: Marche-en-Famenne PIT taxable income
+    ordinal: 500
+    row_number: 502
+    expected_row_header_column: A
+    expected_row_header: nis_83034
+    geography_id: '83034'
+    geography_level: commune
+    geography_name: Marche-en-Famenne
+    geography_vintage: nis_2025
+  - value_id: nis_83040
+    label: Nassogne PIT taxable income
+    ordinal: 501
+    row_number: 503
+    expected_row_header_column: A
+    expected_row_header: nis_83040
+    geography_id: '83040'
+    geography_level: commune
+    geography_name: Nassogne
+    geography_vintage: nis_2025
+  - value_id: nis_83044
+    label: Rendeux PIT taxable income
+    ordinal: 502
+    row_number: 504
+    expected_row_header_column: A
+    expected_row_header: nis_83044
+    geography_id: '83044'
+    geography_level: commune
+    geography_name: Rendeux
+    geography_vintage: nis_2025
+  - value_id: nis_83049
+    label: Tenneville PIT taxable income
+    ordinal: 503
+    row_number: 505
+    expected_row_header_column: A
+    expected_row_header: nis_83049
+    geography_id: '83049'
+    geography_level: commune
+    geography_name: Tenneville
+    geography_vintage: nis_2025
+  - value_id: nis_83055
+    label: Manhay PIT taxable income
+    ordinal: 504
+    row_number: 506
+    expected_row_header_column: A
+    expected_row_header: nis_83055
+    geography_id: '83055'
+    geography_level: commune
+    geography_name: Manhay
+    geography_vintage: nis_2025
+  - value_id: nis_84009
+    label: Bertrix PIT taxable income
+    ordinal: 505
+    row_number: 507
+    expected_row_header_column: A
+    expected_row_header: nis_84009
+    geography_id: '84009'
+    geography_level: commune
+    geography_name: Bertrix
+    geography_vintage: nis_2025
+  - value_id: nis_84010
+    label: Bouillon PIT taxable income
+    ordinal: 506
+    row_number: 508
+    expected_row_header_column: A
+    expected_row_header: nis_84010
+    geography_id: '84010'
+    geography_level: commune
+    geography_name: Bouillon
+    geography_vintage: nis_2025
+  - value_id: nis_84016
+    label: Daverdisse PIT taxable income
+    ordinal: 507
+    row_number: 509
+    expected_row_header_column: A
+    expected_row_header: nis_84016
+    geography_id: '84016'
+    geography_level: commune
+    geography_name: Daverdisse
+    geography_vintage: nis_2025
+  - value_id: nis_84029
+    label: Herbeumont PIT taxable income
+    ordinal: 508
+    row_number: 510
+    expected_row_header_column: A
+    expected_row_header: nis_84029
+    geography_id: '84029'
+    geography_level: commune
+    geography_name: Herbeumont
+    geography_vintage: nis_2025
+  - value_id: nis_84033
+    label: "L\xE9glise PIT taxable income"
+    ordinal: 509
+    row_number: 511
+    expected_row_header_column: A
+    expected_row_header: nis_84033
+    geography_id: '84033'
+    geography_level: commune
+    geography_name: "L\xE9glise"
+    geography_vintage: nis_2025
+  - value_id: nis_84035
+    label: Libin PIT taxable income
+    ordinal: 510
+    row_number: 512
+    expected_row_header_column: A
+    expected_row_header: nis_84035
+    geography_id: '84035'
+    geography_level: commune
+    geography_name: Libin
+    geography_vintage: nis_2025
+  - value_id: nis_84043
+    label: "Neufch\xE2teau PIT taxable income"
+    ordinal: 511
+    row_number: 513
+    expected_row_header_column: A
+    expected_row_header: nis_84043
+    geography_id: '84043'
+    geography_level: commune
+    geography_name: "Neufch\xE2teau"
+    geography_vintage: nis_2025
+  - value_id: nis_84050
+    label: Paliseul PIT taxable income
+    ordinal: 512
+    row_number: 514
+    expected_row_header_column: A
+    expected_row_header: nis_84050
+    geography_id: '84050'
+    geography_level: commune
+    geography_name: Paliseul
+    geography_vintage: nis_2025
+  - value_id: nis_84059
+    label: Saint-Hubert PIT taxable income
+    ordinal: 513
+    row_number: 515
+    expected_row_header_column: A
+    expected_row_header: nis_84059
+    geography_id: '84059'
+    geography_level: commune
+    geography_name: Saint-Hubert
+    geography_vintage: nis_2025
+  - value_id: nis_84068
+    label: Tellin PIT taxable income
+    ordinal: 514
+    row_number: 516
+    expected_row_header_column: A
+    expected_row_header: nis_84068
+    geography_id: '84068'
+    geography_level: commune
+    geography_name: Tellin
+    geography_vintage: nis_2025
+  - value_id: nis_84075
+    label: Wellin PIT taxable income
+    ordinal: 515
+    row_number: 517
+    expected_row_header_column: A
+    expected_row_header: nis_84075
+    geography_id: '84075'
+    geography_level: commune
+    geography_name: Wellin
+    geography_vintage: nis_2025
+  - value_id: nis_84077
+    label: Libramont-Chevigny PIT taxable income
+    ordinal: 516
+    row_number: 518
+    expected_row_header_column: A
+    expected_row_header: nis_84077
+    geography_id: '84077'
+    geography_level: commune
+    geography_name: Libramont-Chevigny
+    geography_vintage: nis_2025
+  - value_id: nis_85007
+    label: Chiny PIT taxable income
+    ordinal: 517
+    row_number: 519
+    expected_row_header_column: A
+    expected_row_header: nis_85007
+    geography_id: '85007'
+    geography_level: commune
+    geography_name: Chiny
+    geography_vintage: nis_2025
+  - value_id: nis_85009
+    label: Etalle PIT taxable income
+    ordinal: 518
+    row_number: 520
+    expected_row_header_column: A
+    expected_row_header: nis_85009
+    geography_id: '85009'
+    geography_level: commune
+    geography_name: Etalle
+    geography_vintage: nis_2025
+  - value_id: nis_85011
+    label: Florenville PIT taxable income
+    ordinal: 519
+    row_number: 521
+    expected_row_header_column: A
+    expected_row_header: nis_85011
+    geography_id: '85011'
+    geography_level: commune
+    geography_name: Florenville
+    geography_vintage: nis_2025
+  - value_id: nis_85024
+    label: Meix-devant-Virton PIT taxable income
+    ordinal: 520
+    row_number: 522
+    expected_row_header_column: A
+    expected_row_header: nis_85024
+    geography_id: '85024'
+    geography_level: commune
+    geography_name: Meix-devant-Virton
+    geography_vintage: nis_2025
+  - value_id: nis_85026
+    label: Musson PIT taxable income
+    ordinal: 521
+    row_number: 523
+    expected_row_header_column: A
+    expected_row_header: nis_85026
+    geography_id: '85026'
+    geography_level: commune
+    geography_name: Musson
+    geography_vintage: nis_2025
+  - value_id: nis_85034
+    label: "Saint-L\xE9ger PIT taxable income"
+    ordinal: 522
+    row_number: 524
+    expected_row_header_column: A
+    expected_row_header: nis_85034
+    geography_id: '85034'
+    geography_level: commune
+    geography_name: "Saint-L\xE9ger"
+    geography_vintage: nis_2025
+  - value_id: nis_85039
+    label: Tintigny PIT taxable income
+    ordinal: 523
+    row_number: 525
+    expected_row_header_column: A
+    expected_row_header: nis_85039
+    geography_id: '85039'
+    geography_level: commune
+    geography_name: Tintigny
+    geography_vintage: nis_2025
+  - value_id: nis_85045
+    label: Virton PIT taxable income
+    ordinal: 524
+    row_number: 526
+    expected_row_header_column: A
+    expected_row_header: nis_85045
+    geography_id: '85045'
+    geography_level: commune
+    geography_name: Virton
+    geography_vintage: nis_2025
+  - value_id: nis_85046
+    label: Habay PIT taxable income
+    ordinal: 525
+    row_number: 527
+    expected_row_header_column: A
+    expected_row_header: nis_85046
+    geography_id: '85046'
+    geography_level: commune
+    geography_name: Habay
+    geography_vintage: nis_2025
+  - value_id: nis_85047
+    label: Rouvroy PIT taxable income
+    ordinal: 526
+    row_number: 528
+    expected_row_header_column: A
+    expected_row_header: nis_85047
+    geography_id: '85047'
+    geography_level: commune
+    geography_name: Rouvroy
+    geography_vintage: nis_2025
+  - value_id: nis_91005
+    label: "Anh\xE9e PIT taxable income"
+    ordinal: 527
+    row_number: 529
+    expected_row_header_column: A
+    expected_row_header: nis_91005
+    geography_id: '91005'
+    geography_level: commune
+    geography_name: "Anh\xE9e"
+    geography_vintage: nis_2025
+  - value_id: nis_91013
+    label: Beauraing PIT taxable income
+    ordinal: 528
+    row_number: 530
+    expected_row_header_column: A
+    expected_row_header: nis_91013
+    geography_id: '91013'
+    geography_level: commune
+    geography_name: Beauraing
+    geography_vintage: nis_2025
+  - value_id: nis_91015
+    label: "Bi\xE8vre PIT taxable income"
+    ordinal: 529
+    row_number: 531
+    expected_row_header_column: A
+    expected_row_header: nis_91015
+    geography_id: '91015'
+    geography_level: commune
+    geography_name: "Bi\xE8vre"
+    geography_vintage: nis_2025
+  - value_id: nis_91030
+    label: Ciney PIT taxable income
+    ordinal: 530
+    row_number: 532
+    expected_row_header_column: A
+    expected_row_header: nis_91030
+    geography_id: '91030'
+    geography_level: commune
+    geography_name: Ciney
+    geography_vintage: nis_2025
+  - value_id: nis_91034
+    label: Dinant PIT taxable income
+    ordinal: 531
+    row_number: 533
+    expected_row_header_column: A
+    expected_row_header: nis_91034
+    geography_id: '91034'
+    geography_level: commune
+    geography_name: Dinant
+    geography_vintage: nis_2025
+  - value_id: nis_91054
+    label: Gedinne PIT taxable income
+    ordinal: 532
+    row_number: 534
+    expected_row_header_column: A
+    expected_row_header: nis_91054
+    geography_id: '91054'
+    geography_level: commune
+    geography_name: Gedinne
+    geography_vintage: nis_2025
+  - value_id: nis_91059
+    label: Hamois PIT taxable income
+    ordinal: 533
+    row_number: 535
+    expected_row_header_column: A
+    expected_row_header: nis_91059
+    geography_id: '91059'
+    geography_level: commune
+    geography_name: Hamois
+    geography_vintage: nis_2025
+  - value_id: nis_91064
+    label: Havelange PIT taxable income
+    ordinal: 534
+    row_number: 536
+    expected_row_header_column: A
+    expected_row_header: nis_91064
+    geography_id: '91064'
+    geography_level: commune
+    geography_name: Havelange
+    geography_vintage: nis_2025
+  - value_id: nis_91072
+    label: Houyet PIT taxable income
+    ordinal: 535
+    row_number: 537
+    expected_row_header_column: A
+    expected_row_header: nis_91072
+    geography_id: '91072'
+    geography_level: commune
+    geography_name: Houyet
+    geography_vintage: nis_2025
+  - value_id: nis_91103
+    label: Onhaye PIT taxable income
+    ordinal: 536
+    row_number: 538
+    expected_row_header_column: A
+    expected_row_header: nis_91103
+    geography_id: '91103'
+    geography_level: commune
+    geography_name: Onhaye
+    geography_vintage: nis_2025
+  - value_id: nis_91114
+    label: Rochefort PIT taxable income
+    ordinal: 537
+    row_number: 539
+    expected_row_header_column: A
+    expected_row_header: nis_91114
+    geography_id: '91114'
+    geography_level: commune
+    geography_name: Rochefort
+    geography_vintage: nis_2025
+  - value_id: nis_91120
+    label: Somme-Leuze PIT taxable income
+    ordinal: 538
+    row_number: 540
+    expected_row_header_column: A
+    expected_row_header: nis_91120
+    geography_id: '91120'
+    geography_level: commune
+    geography_name: Somme-Leuze
+    geography_vintage: nis_2025
+  - value_id: nis_91141
+    label: Yvoir PIT taxable income
+    ordinal: 539
+    row_number: 541
+    expected_row_header_column: A
+    expected_row_header: nis_91141
+    geography_id: '91141'
+    geography_level: commune
+    geography_name: Yvoir
+    geography_vintage: nis_2025
+  - value_id: nis_91142
+    label: "Hasti\xE8re PIT taxable income"
+    ordinal: 540
+    row_number: 542
+    expected_row_header_column: A
+    expected_row_header: nis_91142
+    geography_id: '91142'
+    geography_level: commune
+    geography_name: "Hasti\xE8re"
+    geography_vintage: nis_2025
+  - value_id: nis_91143
+    label: Vresse-sur-Semois PIT taxable income
+    ordinal: 541
+    row_number: 543
+    expected_row_header_column: A
+    expected_row_header: nis_91143
+    geography_id: '91143'
+    geography_level: commune
+    geography_name: Vresse-sur-Semois
+    geography_vintage: nis_2025
+  - value_id: nis_92003
+    label: Andenne PIT taxable income
+    ordinal: 542
+    row_number: 544
+    expected_row_header_column: A
+    expected_row_header: nis_92003
+    geography_id: '92003'
+    geography_level: commune
+    geography_name: Andenne
+    geography_vintage: nis_2025
+  - value_id: nis_92006
+    label: Assesse PIT taxable income
+    ordinal: 543
+    row_number: 545
+    expected_row_header_column: A
+    expected_row_header: nis_92006
+    geography_id: '92006'
+    geography_level: commune
+    geography_name: Assesse
+    geography_vintage: nis_2025
+  - value_id: nis_92035
+    label: "Eghez\xE9e PIT taxable income"
+    ordinal: 544
+    row_number: 546
+    expected_row_header_column: A
+    expected_row_header: nis_92035
+    geography_id: '92035'
+    geography_level: commune
+    geography_name: "Eghez\xE9e"
+    geography_vintage: nis_2025
+  - value_id: nis_92045
+    label: Floreffe PIT taxable income
+    ordinal: 545
+    row_number: 547
+    expected_row_header_column: A
+    expected_row_header: nis_92045
+    geography_id: '92045'
+    geography_level: commune
+    geography_name: Floreffe
+    geography_vintage: nis_2025
+  - value_id: nis_92048
+    label: Fosses-la-Ville PIT taxable income
+    ordinal: 546
+    row_number: 548
+    expected_row_header_column: A
+    expected_row_header: nis_92048
+    geography_id: '92048'
+    geography_level: commune
+    geography_name: Fosses-la-Ville
+    geography_vintage: nis_2025
+  - value_id: nis_92054
+    label: Gesves PIT taxable income
+    ordinal: 547
+    row_number: 549
+    expected_row_header_column: A
+    expected_row_header: nis_92054
+    geography_id: '92054'
+    geography_level: commune
+    geography_name: Gesves
+    geography_vintage: nis_2025
+  - value_id: nis_92087
+    label: Mettet PIT taxable income
+    ordinal: 548
+    row_number: 550
+    expected_row_header_column: A
+    expected_row_header: nis_92087
+    geography_id: '92087'
+    geography_level: commune
+    geography_name: Mettet
+    geography_vintage: nis_2025
+  - value_id: nis_92094
+    label: Namur PIT taxable income
+    ordinal: 549
+    row_number: 551
+    expected_row_header_column: A
+    expected_row_header: nis_92094
+    geography_id: '92094'
+    geography_level: commune
+    geography_name: Namur
+    geography_vintage: nis_2025
+  - value_id: nis_92097
+    label: Ohey PIT taxable income
+    ordinal: 550
+    row_number: 552
+    expected_row_header_column: A
+    expected_row_header: nis_92097
+    geography_id: '92097'
+    geography_level: commune
+    geography_name: Ohey
+    geography_vintage: nis_2025
+  - value_id: nis_92101
+    label: Profondeville PIT taxable income
+    ordinal: 551
+    row_number: 553
+    expected_row_header_column: A
+    expected_row_header: nis_92101
+    geography_id: '92101'
+    geography_level: commune
+    geography_name: Profondeville
+    geography_vintage: nis_2025
+  - value_id: nis_92114
+    label: Sombreffe PIT taxable income
+    ordinal: 552
+    row_number: 554
+    expected_row_header_column: A
+    expected_row_header: nis_92114
+    geography_id: '92114'
+    geography_level: commune
+    geography_name: Sombreffe
+    geography_vintage: nis_2025
+  - value_id: nis_92137
+    label: Sambreville PIT taxable income
+    ordinal: 553
+    row_number: 555
+    expected_row_header_column: A
+    expected_row_header: nis_92137
+    geography_id: '92137'
+    geography_level: commune
+    geography_name: Sambreville
+    geography_vintage: nis_2025
+  - value_id: nis_92138
+    label: Fernelmont PIT taxable income
+    ordinal: 554
+    row_number: 556
+    expected_row_header_column: A
+    expected_row_header: nis_92138
+    geography_id: '92138'
+    geography_level: commune
+    geography_name: Fernelmont
+    geography_vintage: nis_2025
+  - value_id: nis_92140
+    label: Jemeppe-sur-Sambre PIT taxable income
+    ordinal: 555
+    row_number: 557
+    expected_row_header_column: A
+    expected_row_header: nis_92140
+    geography_id: '92140'
+    geography_level: commune
+    geography_name: Jemeppe-sur-Sambre
+    geography_vintage: nis_2025
+  - value_id: nis_92141
+    label: "La Bruy\xE8re PIT taxable income"
+    ordinal: 556
+    row_number: 558
+    expected_row_header_column: A
+    expected_row_header: nis_92141
+    geography_id: '92141'
+    geography_level: commune
+    geography_name: "La Bruy\xE8re"
+    geography_vintage: nis_2025
+  - value_id: nis_92142
+    label: Gembloux PIT taxable income
+    ordinal: 557
+    row_number: 559
+    expected_row_header_column: A
+    expected_row_header: nis_92142
+    geography_id: '92142'
+    geography_level: commune
+    geography_name: Gembloux
+    geography_vintage: nis_2025
+  - value_id: nis_93010
+    label: Cerfontaine PIT taxable income
+    ordinal: 558
+    row_number: 560
+    expected_row_header_column: A
+    expected_row_header: nis_93010
+    geography_id: '93010'
+    geography_level: commune
+    geography_name: Cerfontaine
+    geography_vintage: nis_2025
+  - value_id: nis_93014
+    label: Couvin PIT taxable income
+    ordinal: 559
+    row_number: 561
+    expected_row_header_column: A
+    expected_row_header: nis_93014
+    geography_id: '93014'
+    geography_level: commune
+    geography_name: Couvin
+    geography_vintage: nis_2025
+  - value_id: nis_93018
+    label: Doische PIT taxable income
+    ordinal: 560
+    row_number: 562
+    expected_row_header_column: A
+    expected_row_header: nis_93018
+    geography_id: '93018'
+    geography_level: commune
+    geography_name: Doische
+    geography_vintage: nis_2025
+  - value_id: nis_93022
+    label: Florennes PIT taxable income
+    ordinal: 561
+    row_number: 563
+    expected_row_header_column: A
+    expected_row_header: nis_93022
+    geography_id: '93022'
+    geography_level: commune
+    geography_name: Florennes
+    geography_vintage: nis_2025
+  - value_id: nis_93056
+    label: Philippeville PIT taxable income
+    ordinal: 562
+    row_number: 564
+    expected_row_header_column: A
+    expected_row_header: nis_93056
+    geography_id: '93056'
+    geography_level: commune
+    geography_name: Philippeville
+    geography_vintage: nis_2025
+  - value_id: nis_93088
+    label: Walcourt PIT taxable income
+    ordinal: 563
+    row_number: 565
+    expected_row_header_column: A
+    expected_row_header: nis_93088
+    geography_id: '93088'
+    geography_level: commune
+    geography_name: Walcourt
+    geography_vintage: nis_2025
+  - value_id: nis_93090
+    label: Viroinval PIT taxable income
+    ordinal: 564
+    row_number: 566
+    expected_row_header_column: A
+    expected_row_header: nis_93090
+    geography_id: '93090'
+    geography_level: commune
+    geography_name: Viroinval
+    geography_vintage: nis_2025
+  measures:
+  - measure_id: taxable_income
+    label: Total net taxable income
+    ordinal: 0
+    column: K
+    source_column_id: value
+    expected_column_header_row: 1
+    expected_column_header: value
+    concept: belgium_pit_taxable_income
+    source_concept: statbel.fiscal_income.total_net_taxable_income
+    concept_relation: exact
+    concept_authority: ledger-be
+    concept_evidence_url: https://statbel.fgov.be/en/themes/households/taxable-income
+    concept_evidence_notes: Statbel fiscal statistics define total net taxable income for
+      the income year and tax year; Ledger keeps the published 2023 income-year period.
+    unit: eur
+    aggregation: sum
+    expected_cell_type: number

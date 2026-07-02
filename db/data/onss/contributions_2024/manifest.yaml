@@ -1,0 +1,22 @@
+source_id: onss-contributions-2024
+source_name: ONSS declared contributions 2024
+publisher: ONSS / RSZ
+source_page: https://www.onss.be/stats/cotisations-declarees
+files:
+  2024:
+    filename: onss_worker_contributions_2024.csv
+    source_url: https://www.onss.be/stats/cotisations-declarees
+    source_table: Declared contributions 2024, Table 6 by sector, status and sex
+    sha256: 7fcf5d07c717bcbbd18c2deddc4d7706155f7e4ffcc07161163eae3589ae1958
+    size_bytes: 341
+    storage:
+      r2:
+        provider: r2
+        bucket: ledger-raw
+        key: raw/belgium/onss-contributions-2024/2024/7fcf5d07c717bcbbd18c2deddc4d7706155f7e4ffcc07161163eae3589ae1958/onss_worker_contributions_2024.csv
+        uri: r2://ledger-raw/raw/belgium/onss-contributions-2024/2024/7fcf5d07c717bcbbd18c2deddc4d7706155f7e4ffcc07161163eae3589ae1958/onss_worker_contributions_2024.csv
+    source_urls:
+    - https://www.onss.be/stats/cotisations-declarees
+    - https://www.onss.be/file/6103c41969844d308979992d7f84d51e59927e1e/c5645c4ff527376e5bb15a751fccfdde874205d5/contributions-val-fr-2024.xlsx
+    notes: Curated Table 6 total for worker-borne personal social security contributions.
+      Source workbook reports thousands of euros.

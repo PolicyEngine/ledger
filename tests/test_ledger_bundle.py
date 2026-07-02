@@ -27,19 +27,19 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "aggregate_duplicate_key_count": 0,
         "entity_count": 8,
         "error_count": 0,
-        "fact_count": 38334,
-        "geography_count": 484,
-        "period_count": 11,
+        "fact_count": 38921,
+        "geography_count": 1053,
+        "period_count": 12,
         "semantic_duplicate_key_count": 12,
         "skipped_source_count": 9,
-        "source_count": 18,
-        "source_package_count": 47,
+        "source_count": 24,
+        "source_package_count": 53,
         "warning_count": 1,
     }
-    assert len(rows) == 38334
+    assert len(rows) == 38921
     assert rows[0]["aggregate_fact_key"].startswith("ledger.aggregate_fact.v2:")
     assert rows[0]["semantic_fact_key"].startswith("ledger.semantic_fact.v2:")
-    assert source_packages["source_package_count"] == 47
+    assert source_packages["source_package_count"] == 53
     assert source_packages["skipped_source_count"] == 9
     assert sorted(item["source"] for item in source_packages["skipped_sources"]) == [
         "census-acs-s0101-congressional-district-age-2024",
@@ -52,7 +52,7 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "cms-aca-oep-state-level-2025",
         "jct-tax-expenditures-2024",
     ]
-    assert coverage["fact_count"] == 38334
+    assert coverage["fact_count"] == 38921
     assert coverage["counts"]["by_source"] == {
         "bea": 445,
         "cbo": 7,
@@ -69,12 +69,18 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "hmrc": 193,
         "irs_soi": 33535,
         "kff": 52,
+        "nbb_national_accounts": 1,
         "ons": 1246,
+        "onem_rva_unemployment": 1,
+        "onss_contributions": 1,
+        "spf_finances_pit": 1,
         "ssa": 422,
+        "statbel_fiscal_income": 565,
+        "statbel_population_structure": 18,
         "usda_snap": 216,
     }
     table_counts = coverage["counts"]["by_source_table"]
-    assert len(table_counts) == 42
+    assert len(table_counts) == 48
     assert table_counts["irs_soi:Congressional District Data 2022"] == 26880
     assert table_counts["irs_soi:Publication 1304 Table 1.1"] == 80
     assert (
@@ -137,34 +143,82 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         ]
         == 17
     )
+    assert (
+        table_counts[
+            "statbel_fiscal_income:Personal income tax statistics by municipality, "
+            "income year 2023, 2025 NIS geography"
+        ]
+        == 565
+    )
+    assert (
+        table_counts[
+            "spf_finances_pit:Personal income tax statistics total taxes, income year "
+            "2023"
+        ]
+        == 1
+    )
+    assert (
+        table_counts[
+            "statbel_population_structure:Population by place of residence, nationality, "
+            "marital status, age and sex, 2026"
+        ]
+        == 18
+    )
+    assert (
+        table_counts[
+            "onss_contributions:Declared contributions 2024, Table 6 by sector, "
+            "status and sex"
+        ]
+        == 1
+    )
+    assert (
+        table_counts[
+            "onem_rva_unemployment:Annual report complete unemployment benefit "
+            "recipients, 2024"
+        ]
+        == 1
+    )
+    assert (
+        table_counts[
+            "nbb_national_accounts:Household income accounts, gross disposable income, "
+            "Belgium"
+        ]
+        == 1
+    )
     assert coverage["counts"]["by_period"] == {
         "calendar_year:2018": 1,
         "calendar_year:2023": 999,
-        "calendar_year:2024": 1464,
+        "calendar_year:2024": 1467,
         "calendar_year:2025": 1246,
+        "calendar_year:2026": 18,
         "fiscal_year:2023": 48,
         "fiscal_year:2024": 520,
         "month:2024-12": 260,
         "month:2025-12": 255,
         "tax_year:2022": 5886,
-        "tax_year:2023": 27621,
+        "tax_year:2023": 28187,
         "tax_year:2024": 34,
     }
+    assert coverage["counts"]["by_geography"]["country:BE"] == 4
+    assert coverage["counts"]["by_geography"]["nuts1:BE1"] == 6
+    assert coverage["counts"]["by_geography"]["nuts1:BE2"] == 6
+    assert coverage["counts"]["by_geography"]["nuts1:BE3"] == 6
+    assert coverage["counts"]["by_geography"]["commune:11002"] == 1
     assert coverage["counts"]["by_geography"]["country:0100000US"] == 1849
     assert coverage["counts"]["by_geography"]["state:0400000US06"] == 217
     assert (
         coverage["counts"]["by_geography"]["congressional_district:5001700US0601"] == 56
     )
     assert coverage["counts"]["by_geography"]["country:K02000001"] == 1439
-    assert len(coverage["counts"]["by_geography"]) == 484
+    assert len(coverage["counts"]["by_geography"]) == 1053
     assert coverage["counts"]["by_entity"] == {
         "family": 107,
         "firm": 1439,
         "government": 102,
-        "household": 56,
+        "household": 57,
         "institutional_sector": 1,
         "pension_plan": 2,
-        "person": 3086,
+        "person": 3672,
         "tax_unit": 33541,
     }
     assert not coverage["duplicates"]["aggregate_fact_keys"]

@@ -1,0 +1,25 @@
+source_id: statbel-fiscal-income-2023-nis-2025
+source_name: Statbel fiscal income 2023 by 2025 commune
+publisher: Statbel
+source_page: https://statbel.fgov.be/en/themes/households/taxable-income
+files:
+  2023:
+    filename: statbel_fiscal_income_commune_2023_nis_2025.csv
+    source_url: https://statbel.fgov.be/en/themes/households/taxable-income
+    source_table: Personal income tax statistics by municipality, income year 2023, aggregated
+      to 2025 NIS communes
+    sha256: 732bb3945d080c06bba2609bd55d24af0f12859840d6f6b7c3c85de8f93eed75
+    size_bytes: 101316
+    storage:
+      r2:
+        provider: r2
+        bucket: ledger-raw
+        key: raw/belgium/statbel-fiscal-income-2023-nis-2025/2023/732bb3945d080c06bba2609bd55d24af0f12859840d6f6b7c3c85de8f93eed75/statbel_fiscal_income_commune_2023_nis_2025.csv
+        uri: r2://ledger-raw/raw/belgium/statbel-fiscal-income-2023-nis-2025/2023/732bb3945d080c06bba2609bd55d24af0f12859840d6f6b7c3c85de8f93eed75/statbel_fiscal_income_commune_2023_nis_2025.csv
+    source_urls:
+    - https://statbel.fgov.be/en/themes/households/taxable-income
+    - https://statbel.fgov.be/sites/default/files/files/opendata/arbeid/TF_PSNL_INC_TAX_MUNTY.zip
+    - https://statbel.fgov.be/en/news/modification-nsi-codes-municipalities-1-january-2025-onwards
+    - https://statbel.fgov.be/sites/default/files/Over_Statbel_FR/Nomenclaturen/REFNIS_2025.csv
+    notes: Curated 2023 income-year total net taxable income by municipality, aggregated from
+      581 2019-2024 NIS codes to the 565-code 2025 NIS commune vintage.

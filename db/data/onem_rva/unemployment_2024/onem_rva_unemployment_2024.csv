@@ -1,0 +1,5 @@
+value_id,period,recipient_group,measure,value,source_url
+cci_de_2024,2024,cci_de,monthly_average_recipients,284859,https://rapportannuel.onem.be/accueil/une-evolution-des-allocations/chomage-complet/
+cci_nde_2024,2024,cci_nde,monthly_average_recipients,7931,https://rapportannuel.onem.be/accueil/une-evolution-des-allocations/chomage-complet/
+exemptions_2024,2024,specific_exemptions,monthly_average_recipients,30239,https://rapportannuel.onem.be/accueil/une-evolution-des-allocations/chomage-complet/
+total_complete_unemployment_2024,2024,total_complete_unemployment,monthly_average_recipients,323029,https://rapportannuel.onem.be/accueil/une-evolution-des-allocations/chomage-complet/

@@ -1,0 +1,22 @@
+source_id: nbb-national-accounts-household-disposable-income-2024
+source_name: NBB household income accounts 2024
+publisher: National Bank of Belgium
+source_page: https://dataexplorer.nbb.be/vis?df%5Bag%5D=BE2&df%5Bds%5D=disseminate&df%5Bid%5D=DF_REGHHINC_B&lc=en
+files:
+  2024:
+    filename: nbb_household_disposable_income_2024.csv
+    source_url: https://nsidisseminate-stat.nbb.be/rest/data/DF_REGHHINC_B/A.3R_B6G.000.CU?startPeriod=2022&endPeriod=2024
+    source_table: Household income accounts, gross disposable income, Belgium, current prices,
+      millions of euro
+    sha256: 72067b13a0ae3d85cd10650bfb152aa3228657e12255c32175e11d06eee28bbe
+    size_bytes: 292
+    storage:
+      r2:
+        provider: r2
+        bucket: ledger-raw
+        key: raw/belgium/nbb-national-accounts-household-disposable-income-2024/2024/72067b13a0ae3d85cd10650bfb152aa3228657e12255c32175e11d06eee28bbe/nbb_household_disposable_income_2024.csv
+        uri: r2://ledger-raw/raw/belgium/nbb-national-accounts-household-disposable-income-2024/2024/72067b13a0ae3d85cd10650bfb152aa3228657e12255c32175e11d06eee28bbe/nbb_household_disposable_income_2024.csv
+    source_urls:
+    - https://dataexplorer.nbb.be/vis?df%5Bag%5D=BE2&df%5Bds%5D=disseminate&df%5Bid%5D=DF_REGHHINC_B&lc=en
+    - https://nsidisseminate-stat.nbb.be/rest/data/DF_REGHHINC_B/A.3R_B6G.000.CU?startPeriod=2022&endPeriod=2024
+    notes: Direct CSV extract from NBB SDMX REST API for DF_REGHHINC_B/A.3R_B6G.000.CU, 2022-2024.
