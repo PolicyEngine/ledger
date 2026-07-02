@@ -12,6 +12,7 @@ def main() -> None:
     if sys.argv[1:2] in (
         ["bootstrap-r2"],
         ["build-bundle"],
+        ["build-consumer-artifact"],
         ["build-db"],
         ["build-fixture-facts"],
         ["build-source-cells"],

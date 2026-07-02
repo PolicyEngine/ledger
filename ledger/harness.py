@@ -736,6 +736,44 @@ def main(argv: list[str] | None = None) -> int:
         help="Fail agent acceptance unless every canonical concept is checked.",
     )
 
+    consumer_artifact_parser = subparsers.add_parser(
+        "build-consumer-artifact",
+        help=(
+            "Build a versioned consumer artifact from consumer-contract facts "
+            "and Ledger target profiles"
+        ),
+    )
+    consumer_artifact_parser.add_argument(
+        "--facts",
+        type=Path,
+        required=True,
+        help="Path to a consumer_facts.jsonl file or a bundle directory",
+    )
+    consumer_artifact_parser.add_argument(
+        "--profile",
+        action="append",
+        default=[],
+        help="Packaged target profile id (may be repeated)",
+    )
+    consumer_artifact_parser.add_argument(
+        "--profile-path",
+        action="append",
+        type=Path,
+        default=[],
+        help="Path to a target profile JSON file (may be repeated)",
+    )
+    consumer_artifact_parser.add_argument(
+        "--out",
+        type=Path,
+        required=True,
+        help="Output directory for the consumer artifact",
+    )
+    consumer_artifact_parser.add_argument(
+        "--replace",
+        action="store_true",
+        help="Replace an existing output directory",
+    )
+
     package_validate_parser = subparsers.add_parser(
         "validate-package",
         help="Validate a declarative Ledger source package",
@@ -1224,6 +1262,18 @@ def main(argv: list[str] | None = None) -> int:
         )
         print(json.dumps(report.to_dict(), indent=2, sort_keys=True))
         return 0 if report.valid else 1
+    if args.command == "build-consumer-artifact":
+        from policyengine_ledger.consumer import build_consumer_artifact
+
+        artifact_report = build_consumer_artifact(
+            args.out,
+            facts_path=args.facts,
+            profile_ids=args.profile,
+            profile_paths=args.profile_path,
+            replace=args.replace,
+        )
+        print(json.dumps(artifact_report.to_dict(), indent=2, sort_keys=True))
+        return 0
     if args.command == "validate-package":
         report = validate_source_package_dir(args.source, year=args.year)
         print(json.dumps(report.to_dict(), indent=2, sort_keys=True))

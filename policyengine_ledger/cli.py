@@ -18,7 +18,8 @@ def main() -> None:
             "  stats\n"
             "  validate-facts\n"
             "  validate-source-cells\n"
-            "  export-consumer-facts\n\n"
+            "  export-consumer-facts\n"
+            "  build-consumer-artifact\n\n"
             "Run `ledger <command> --help` for command-specific help."
         )
         return

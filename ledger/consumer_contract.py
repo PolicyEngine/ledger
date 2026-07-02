@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Any
 
 from ledger.core import (
+    DEFAULT_ASSERTION,
     AggregateConstraint,
     AggregateFact,
     build_aggregate_constraints,
@@ -140,6 +141,7 @@ def build_aggregate_fact_key(fact: AggregateFact) -> str:
             "entity": asdict(fact.entity),
             "dimension_set_key": build_dimension_set_key(fact),
             "universe_constraint_set_key": build_universe_constraint_set_key(fact),
+            "assertion": _assertion_key_value(fact),
         },
     )
 
@@ -158,8 +160,21 @@ def build_semantic_fact_key(fact: AggregateFact) -> str:
             "geography": _geography_payload(fact),
             "entity": asdict(fact.entity),
             "universe_constraint_set_key": build_universe_constraint_set_key(fact),
+            "assertion": _assertion_key_value(fact),
         },
     )
+
+
+def _assertion_key_value(fact: AggregateFact) -> str | None:
+    """Return the assertion for key payloads, omitting the default.
+
+    ``_hash_key`` drops ``None`` values, so observation facts keep the exact
+    keys they had before ``assertion`` existed while publisher projections
+    get distinct identities.
+    """
+    if fact.assertion == DEFAULT_ASSERTION:
+        return None
+    return fact.assertion
 
 
 def build_concept_alignment_key(fact: AggregateFact) -> str | None:
@@ -516,6 +531,7 @@ def _consumer_fact_row(fact: AggregateFact) -> dict[str, Any]:
         "universe_constraint_set_key": build_universe_constraint_set_key(fact),
         "value": _json_value(fact.value),
         "value_type": _value_type(fact.value),
+        "assertion": fact.assertion,
         "period": asdict(fact.period),
         "geography": _geography_payload(fact),
         "entity": asdict(fact.entity),
@@ -532,6 +548,8 @@ def _consumer_fact_row(fact: AggregateFact) -> dict[str, Any]:
         "layout": _clean(asdict(fact.layout)) if fact.layout else {},
         "label": fact.label,
     }
+    if fact.period_coverage is not None:
+        row["period_coverage"] = _clean(asdict(fact.period_coverage))
     if concept_alignment_key:
         row["concept_alignment"] = {
             "concept_alignment_key": concept_alignment_key,
@@ -670,6 +688,7 @@ _CONSUMER_REQUIRED_FIELDS = (
     "universe_constraint_set_key",
     "value",
     "value_type",
+    "assertion",
     "period",
     "geography",
     "entity",

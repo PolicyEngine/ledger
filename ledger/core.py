@@ -62,15 +62,50 @@ ALLOWED_CONCEPT_RELATIONS = {
     "approximate",
     "source_label",
 }
+ALLOWED_ASSERTIONS = {"observation", "source_projection"}
+DEFAULT_ASSERTION = "observation"
+ALLOWED_PERIOD_BASES = {
+    "calendar",
+    "tax",
+    "fiscal",
+    "survey_reference",
+    "projection_horizon",
+}
+ALLOWED_ACCOUNTING_BASES = {"cash", "accrual"}
 FACT_KEY_PREFIX = "ledger.fact.v1"
 
 
 @dataclass(frozen=True)
 class PeriodDimension:
-    """Fact period identity."""
+    """Fact period identity.
+
+    ``value`` identifies the period the fact's value refers to (its reference
+    period), which may differ from the release it was published under; release
+    labeling belongs in ``SourceProvenance.vintage`` and
+    ``PeriodCoverage.source_period_label``.
+    """
 
     type: str
     value: int | str
+
+
+@dataclass(frozen=True)
+class PeriodCoverage:
+    """Non-identity period provenance for a fact's reference period.
+
+    These fields disambiguate what span of time a published value covers when
+    the coarse ``PeriodDimension`` is not enough: lagged survey reference
+    periods (SILC incomes reference the year before the survey label),
+    fiscal-versus-calendar accounting, and publisher projection horizons.
+    They are provenance and audit metadata, excluded from stable fact keys.
+    """
+
+    start_date: str | None = None
+    end_date: str | None = None
+    basis: str | None = None
+    source_period_label: str | None = None
+    accounting_basis: str | None = None
+    notes: str | None = None
 
 
 @dataclass(frozen=True)
@@ -174,7 +209,15 @@ class SourceRecordLayout:
 
 @dataclass(frozen=True)
 class AggregateFact:
-    """Canonical Ledger published aggregate fact."""
+    """Canonical Ledger published aggregate fact.
+
+    Every fact is a source-backed claim. ``assertion`` records what kind of
+    claim the publisher made: ``observation`` for measured or administered
+    outcomes as published, ``source_projection`` for the publisher's own
+    forward-looking estimate (CBO baselines, BFP outlooks, SSA trustees
+    tables, TPC/JCT scores). PolicyEngine-computed values are never facts;
+    aged, uprated, or reconciled levels belong in downstream builds.
+    """
 
     value: int | float | str | Decimal
     period: PeriodDimension
@@ -191,6 +234,8 @@ class AggregateFact:
     source_row_keys: tuple[str, ...] = ()
     constraints: tuple[AggregateConstraint, ...] = ()
     layout: SourceRecordLayout | None = None
+    assertion: str = DEFAULT_ASSERTION
+    period_coverage: PeriodCoverage | None = None
 
 
 @dataclass(frozen=True)
@@ -261,8 +306,12 @@ def build_label(fact: AggregateFact) -> str:
 
 def _aggregation_label(fact: AggregateFact) -> str:
     if fact.aggregation.method == "sum" and fact.measure.unit == "count":
-        return "count"
-    return _humanize(fact.aggregation.method)
+        label = "count"
+    else:
+        label = _humanize(fact.aggregation.method)
+    if fact.assertion == "source_projection":
+        return f"projected {label}"
+    return label
 
 
 def build_aggregate_constraints(
@@ -408,10 +457,21 @@ def validate_fact(fact: AggregateFact) -> tuple[ValidationIssue, ...]:
             )
         )
 
+    if fact.assertion not in ALLOWED_ASSERTIONS:
+        errors.append(
+            _issue(
+                "malformed_assertion",
+                f"Unsupported assertion: {fact.assertion!r}",
+                "assertion",
+            )
+        )
+
     _validate_value(errors, fact.value)
     _validate_filters(errors, fact.filters)
     _validate_constraints(errors, fact.constraints)
     _validate_provenance(errors, fact.source)
+    if fact.period_coverage is not None:
+        _validate_period_coverage(errors, fact.period_coverage)
 
     return tuple(errors)
 
@@ -478,6 +538,7 @@ def fact_counts(facts: list[AggregateFact]) -> dict[str, dict[str, int]]:
         "by_period": _counter_dict(
             f"{fact.period.type}:{fact.period.value}" for fact in facts
         ),
+        "by_assertion": _counter_dict(fact.assertion for fact in facts),
         "missing_labels": {"count": sum(1 for fact in facts if not fact.label)},
         "missing_provenance": {
             "count": sum(1 for fact in facts if _has_missing_provenance(fact))
@@ -518,6 +579,8 @@ def _canonical_key_payload(fact: AggregateFact) -> dict[str, Any]:
     }
     if fact.constraints:
         payload["constraints"] = [asdict(constraint) for constraint in fact.constraints]
+    if fact.assertion != DEFAULT_ASSERTION:
+        payload["assertion"] = fact.assertion
     return payload
 
 
@@ -615,6 +678,61 @@ def _validate_constraints(
                     f"constraints.{index}.value",
                 )
             )
+
+
+def _validate_period_coverage(
+    errors: list[ValidationIssue],
+    coverage: PeriodCoverage,
+) -> None:
+    from datetime import date
+
+    parsed: dict[str, date] = {}
+    for field_name in ("start_date", "end_date"):
+        raw = getattr(coverage, field_name)
+        if raw is None:
+            continue
+        try:
+            parsed[field_name] = date.fromisoformat(str(raw))
+        except ValueError:
+            errors.append(
+                _issue(
+                    "malformed_period_coverage",
+                    f"Period coverage {field_name} must be an ISO date: {raw!r}",
+                    f"period_coverage.{field_name}",
+                )
+            )
+    if (
+        "start_date" in parsed
+        and "end_date" in parsed
+        and parsed["start_date"] > parsed["end_date"]
+    ):
+        errors.append(
+            _issue(
+                "malformed_period_coverage",
+                "Period coverage start_date must not be after end_date",
+                "period_coverage.start_date",
+            )
+        )
+    if coverage.basis is not None and coverage.basis not in ALLOWED_PERIOD_BASES:
+        errors.append(
+            _issue(
+                "malformed_period_coverage",
+                f"Unsupported period coverage basis: {coverage.basis!r}",
+                "period_coverage.basis",
+            )
+        )
+    if (
+        coverage.accounting_basis is not None
+        and coverage.accounting_basis not in ALLOWED_ACCOUNTING_BASES
+    ):
+        errors.append(
+            _issue(
+                "malformed_period_coverage",
+                "Unsupported period coverage accounting basis: "
+                f"{coverage.accounting_basis!r}",
+                "period_coverage.accounting_basis",
+            )
+        )
 
 
 def _validate_provenance(

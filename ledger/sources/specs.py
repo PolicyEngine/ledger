@@ -6,7 +6,12 @@ import hashlib
 import json
 from dataclasses import asdict, dataclass, field
 
-from ledger.core import AggregateConstraint, SourceRecordLayout
+from ledger.core import (
+    DEFAULT_ASSERTION,
+    AggregateConstraint,
+    PeriodCoverage,
+    SourceRecordLayout,
+)
 from ledger.sources.cells import SourceCell, build_source_cell_key
 
 Scalar = str | int | float | bool | None
@@ -91,6 +96,8 @@ class SourceRecordSpec:
     concept_evidence_notes: str | None = None
     legal_vintage: str | None = None
     layout: SourceRecordLayout | None = None
+    assertion: str = DEFAULT_ASSERTION
+    period_coverage: PeriodCoverage | None = None
 
 
 @dataclass(frozen=True)
@@ -188,6 +195,8 @@ class SourceRecordSetSpec:
     measures: tuple[SourceRecordSetMeasure, ...]
     shared_filters: dict[str, Scalar] = field(default_factory=dict)
     shared_constraints: tuple[AggregateConstraint, ...] = ()
+    assertion: str = DEFAULT_ASSERTION
+    period_coverage: PeriodCoverage | None = None
 
 
 @dataclass(frozen=True)
@@ -282,6 +291,8 @@ def compile_source_record_set_specs(
                     ),
                     domain=spec.domain,
                     value_scale=measure.value_scale * row.value_scale,
+                    assertion=spec.assertion,
+                    period_coverage=spec.period_coverage,
                     source_concept=measure.source_concept,
                     concept_relation=measure.concept_relation,
                     concept_authority=measure.concept_authority,
@@ -735,6 +746,10 @@ def _record_set_spec_hash(spec: SourceRecordSetSpec) -> str:
     payload = asdict(spec)
     if not payload.get("shared_constraints"):
         payload.pop("shared_constraints", None)
+    if payload.get("assertion") == DEFAULT_ASSERTION:
+        payload.pop("assertion", None)
+    if payload.get("period_coverage") is None:
+        payload.pop("period_coverage", None)
     for row in payload["rows"]:
         if row.get("row_end_number") is None:
             row.pop("row_end_number", None)
