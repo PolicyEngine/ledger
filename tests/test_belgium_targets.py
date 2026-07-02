@@ -62,7 +62,6 @@ BELGIUM_TARGET_STREAMS = (
         1,
     ),
 )
-EUROMOD_BE_COMPARATOR_ALIAS = "jrc-euromod-be-baseline-statistics-2025"
 
 
 @lru_cache
@@ -77,7 +76,6 @@ def _csv_rows(path: Path) -> list[dict[str, str]]:
 
 def test_belgium_target_aliases_are_registered():
     aliases = {alias for alias, *_rest in BELGIUM_TARGET_STREAMS}
-    aliases.add(EUROMOD_BE_COMPARATOR_ALIAS)
 
     assert aliases <= set(SOURCE_PACKAGE_ALIASES)
 
@@ -192,25 +190,3 @@ def test_belgium_nis_2025_crosswalk_round_trips_merged_communes():
     assert fiscal_by_geo["82039"]["geography_name"] == "Bastogne"
     assert merged_sources_by_target["46030"] == {"11056", "46003", "46013"}
     assert fiscal_by_geo["46030"]["source_nis_codes"] == "11056;46003;46013"
-
-
-def test_belgium_euromod_comparator_has_source_urls_per_row():
-    comparator_rows = _csv_rows(
-        REPO_ROOT
-        / "db"
-        / "data"
-        / "jrc"
-        / "euromod_be_baseline_statistics_2025"
-        / "jrc_euromod_be_baseline_statistics_2025.csv"
-    )
-    facts = _facts(EUROMOD_BE_COMPARATOR_ALIAS, 2025)
-
-    assert len(comparator_rows) == 18
-    assert len(facts) == 18
-    assert {row["source_url"] for row in comparator_rows} == {
-        "https://euromod-web.jrc.ec.europa.eu/sites/default/files/2025-02/Y15_CR_BE_final.pdf"
-    }
-    assert {fact.source.source_name for fact in facts} == {"jrc_euromod_be"}
-    assert {fact.geography.id for fact in facts} == {"BE"}
-    assert {fact.measure.unit for fact in facts} == {"eur", "percent", "ratio"}
-    assert validate_facts(facts).valid

@@ -89,9 +89,6 @@ SOURCE_PACKAGE_ALIASES = {
     "nbb-national-accounts-household-disposable-income-2024": Path(
         "nbb/national_accounts_household_disposable_income_2024"
     ),
-    "jrc-euromod-be-baseline-statistics-2025": Path(
-        "jrc/euromod_be_baseline_statistics_2025"
-    ),
     "cbo-revenue-projections-income-by-source-2026-02": Path(
         "cbo/revenue_projections_income_by_source_2026_02"
     ),
