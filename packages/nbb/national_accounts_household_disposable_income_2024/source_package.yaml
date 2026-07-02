@@ -1,0 +1,56 @@
+schema_version: ledger.source_package.v1
+package_id: nbb-national-accounts-household-disposable-income-2024
+label: NBB national accounts 2024 household disposable income validation target
+artifact:
+  source_name: nbb_national_accounts
+  source_table: Household income accounts, gross disposable income, Belgium
+  resource_package: db
+  resource_directory: data/nbb/national_accounts_household_disposable_income_2024
+  manifest: manifest.yaml
+  vintage: DF_REGHHINC_B_2024
+  extracted_at: '2026-07-02'
+  extraction_method: direct CSV extract from NBB SDMX REST API
+  parser: delimited_text_full_rows
+  artifact_year: 2024
+  sheet_name: nbb_household_disposable_income_2024
+record_sets:
+- record_set_id: nbb.national_accounts.cy2024.household_disposable_income.country
+  record_set_spec_id: nbb.national_accounts.household_disposable_income.country.v1
+  source_record_id_prefix: nbb.national_accounts.cy2024.household_disposable_income.country
+  sheet_name: nbb_household_disposable_income_2024
+  period_type: calendar_year
+  period: 2024
+  geography_id: BE
+  geography_level: country
+  geography_name: Belgium
+  geography_vintage: current
+  entity: household
+  domain: national_accounts
+  groupby_dimension: measure
+  rows:
+  - value_id: country_total
+    label: Household disposable income gross
+    ordinal: 0
+    row_number: 4
+    expected_row_header_column: F
+    expected_row_header: 2024
+    table_record_kind: total
+  measures:
+  - measure_id: household_disposable_income
+    label: Household disposable income
+    ordinal: 0
+    column: G
+    source_column_id: OBS_VALUE
+    expected_column_header_row: 1
+    expected_column_header: OBS_VALUE
+    concept: household_disposable_income
+    source_concept: nbb.household_income_accounts.gross_disposable_income
+    concept_relation: exact
+    concept_authority: ledger-be
+    concept_evidence_url: https://dataexplorer.nbb.be/vis?df%5Bag%5D=BE2&df%5Bds%5D=disseminate&df%5Bid%5D=DF_REGHHINC_B&lc=en
+    concept_evidence_notes: NBB household income accounts item 3R_B6G is gross disposable
+      income for Belgium in current-price millions of euros.
+    unit: eur
+    aggregation: sum
+    value_scale: 1000000
+    expected_cell_type: number

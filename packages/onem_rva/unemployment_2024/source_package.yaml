@@ -1,0 +1,57 @@
+schema_version: ledger.source_package.v1
+package_id: onem-rva-unemployment-2024
+label: ONEM/RVA unemployment benefit recipient 2024 national caseload target
+artifact:
+  source_name: onem_rva_unemployment
+  source_table: Annual report complete unemployment benefit recipients, 2024
+  resource_package: db
+  resource_directory: data/onem_rva/unemployment_2024
+  manifest: manifest.yaml
+  vintage: annual_report_2024
+  extracted_at: '2026-07-02'
+  extraction_method: curated CSV extract from ONEM/RVA annual report complete unemployment
+    table
+  parser: delimited_text_full_rows
+  artifact_year: 2024
+  sheet_name: onem_rva_unemployment_2024
+record_sets:
+- record_set_id: onem_rva.unemployment.cy2024.complete_unemployment.country
+  record_set_spec_id: onem_rva.unemployment.complete_unemployment.country.v1
+  source_record_id_prefix: onem_rva.unemployment.cy2024.complete_unemployment.country
+  sheet_name: onem_rva_unemployment_2024
+  period_type: calendar_year
+  period: 2024
+  geography_id: BE
+  geography_level: country
+  geography_name: Belgium
+  geography_vintage: current
+  entity: person
+  entity_role: benefit_recipient
+  domain: unemployment_benefits
+  groupby_dimension: measure
+  rows:
+  - value_id: country_total
+    label: Complete unemployment benefit recipients
+    ordinal: 0
+    row_number: 5
+    expected_row_header_column: A
+    expected_row_header: total_complete_unemployment_2024
+    table_record_kind: total
+  measures:
+  - measure_id: receives_unemployment_benefit
+    label: Unemployment benefit recipients
+    ordinal: 0
+    column: E
+    source_column_id: value
+    expected_column_header_row: 1
+    expected_column_header: value
+    concept: receives_unemployment_benefit
+    source_concept: onem_rva.complete_unemployment.monthly_average_recipients
+    concept_relation: exact
+    concept_authority: ledger-be
+    concept_evidence_url: https://rapportannuel.onem.be/accueil/une-evolution-des-allocations/chomage-complet/
+    concept_evidence_notes: ONEM/RVA annual report table totals complete-unemployment benefit
+      recipient monthly averages across CCI-DE, CCI-NDE and specific exemption categories.
+    unit: count
+    aggregation: sum
+    expected_cell_type: number

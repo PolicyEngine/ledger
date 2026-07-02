@@ -76,6 +76,19 @@ SOURCE_PACKAGE_ALIASES = {
     "bea-regional-state-personal-income-components-2024": Path(
         "bea/regional_personal_income_state"
     ),
+    "statbel-population-structure-2026": Path("statbel/population_structure_2026"),
+    "statbel-fiscal-income-2023-nis-2025": Path(
+        "statbel/fiscal_income_2023_nis_2025"
+    ),
+    "spf-finances-pit-2023": Path("spf_finances/pit_2023"),
+    "onss-contributions-2024": Path("onss/contributions_2024"),
+    "onem-rva-unemployment-2024": Path("onem_rva/unemployment_2024"),
+    "nbb-national-accounts-household-disposable-income-2024": Path(
+        "nbb/national_accounts_household_disposable_income_2024"
+    ),
+    "jrc-euromod-be-baseline-statistics-2025": Path(
+        "jrc/euromod_be_baseline_statistics_2025"
+    ),
     "cbo-revenue-projections-income-by-source-2026-02": Path(
         "cbo/revenue_projections_income_by_source_2026_02"
     ),

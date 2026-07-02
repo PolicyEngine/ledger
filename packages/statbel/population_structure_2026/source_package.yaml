@@ -1,0 +1,596 @@
+schema_version: ledger.source_package.v1
+package_id: statbel-population-structure-2026
+label: Statbel population structure 2026 NUTS1 people targets
+artifact:
+  source_name: statbel_population_structure
+  source_table: Population by place of residence, nationality, marital status, age and sex,
+    2026
+  resource_package: db
+  resource_directory: data/statbel/population_structure_nuts1_2026
+  manifest: manifest.yaml
+  vintage: statbel_population_structure_2026
+  extracted_at: '2026-07-02'
+  extraction_method: curated CSV extract from Statbel official 2026 population structure text
+    file
+  parser: delimited_text_full_rows
+  artifact_year: 2026
+  sheet_name: statbel_population_structure_nuts1_2026
+record_sets:
+- record_set_id: statbel.population_structure.cy2026.people.by_nuts1_age_sex
+  record_set_spec_id: statbel.population_structure.people.by_nuts1_age_sex.v1
+  source_record_id_prefix: statbel.population_structure.cy2026.people.by_nuts1_age_sex
+  sheet_name: statbel_population_structure_nuts1_2026
+  period_type: calendar_year
+  period: 2026
+  geography_id: BE
+  geography_level: country
+  geography_name: Belgium
+  geography_vintage: current
+  entity: person
+  domain: resident_population
+  groupby_dimension: demographic_group
+  rows:
+  - value_id: be1_male_0_17
+    label: Brussels Capital Region male aged 0 to 17
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: be1_male_0_17
+    geography_id: BE1
+    geography_level: nuts1
+    geography_name: Brussels Capital Region
+    geography_vintage: NUTS_2024
+    filters:
+      person.sex: male
+      person.age_band: '0_17'
+    constraints:
+    - variable: person.sex
+      operator: ==
+      value: male
+      label: Sex
+    - variable: person.age_band
+      operator: ==
+      value: '0_17'
+      label: Age band
+    - variable: person.age
+      operator: '>='
+      value: 0
+      unit: years
+      label: Age lower bound
+    - variable: person.age
+      operator: <
+      value: 18
+      unit: years
+      label: Age upper bound
+  - value_id: be1_male_18_64
+    label: Brussels Capital Region male aged 18 to 64
+    ordinal: 1
+    row_number: 3
+    expected_row_header_column: A
+    expected_row_header: be1_male_18_64
+    geography_id: BE1
+    geography_level: nuts1
+    geography_name: Brussels Capital Region
+    geography_vintage: NUTS_2024
+    filters:
+      person.sex: male
+      person.age_band: '18_64'
+    constraints:
+    - variable: person.sex
+      operator: ==
+      value: male
+      label: Sex
+    - variable: person.age_band
+      operator: ==
+      value: '18_64'
+      label: Age band
+    - variable: person.age
+      operator: '>='
+      value: 18
+      unit: years
+      label: Age lower bound
+    - variable: person.age
+      operator: <
+      value: 65
+      unit: years
+      label: Age upper bound
+  - value_id: be1_male_65_plus
+    label: Brussels Capital Region male aged 65 and over
+    ordinal: 2
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: be1_male_65_plus
+    geography_id: BE1
+    geography_level: nuts1
+    geography_name: Brussels Capital Region
+    geography_vintage: NUTS_2024
+    filters:
+      person.sex: male
+      person.age_band: 65_plus
+    constraints:
+    - variable: person.sex
+      operator: ==
+      value: male
+      label: Sex
+    - variable: person.age_band
+      operator: ==
+      value: 65_plus
+      label: Age band
+    - variable: person.age
+      operator: '>='
+      value: 65
+      unit: years
+      label: Age lower bound
+  - value_id: be1_female_0_17
+    label: Brussels Capital Region female aged 0 to 17
+    ordinal: 3
+    row_number: 5
+    expected_row_header_column: A
+    expected_row_header: be1_female_0_17
+    geography_id: BE1
+    geography_level: nuts1
+    geography_name: Brussels Capital Region
+    geography_vintage: NUTS_2024
+    filters:
+      person.sex: female
+      person.age_band: '0_17'
+    constraints:
+    - variable: person.sex
+      operator: ==
+      value: female
+      label: Sex
+    - variable: person.age_band
+      operator: ==
+      value: '0_17'
+      label: Age band
+    - variable: person.age
+      operator: '>='
+      value: 0
+      unit: years
+      label: Age lower bound
+    - variable: person.age
+      operator: <
+      value: 18
+      unit: years
+      label: Age upper bound
+  - value_id: be1_female_18_64
+    label: Brussels Capital Region female aged 18 to 64
+    ordinal: 4
+    row_number: 6
+    expected_row_header_column: A
+    expected_row_header: be1_female_18_64
+    geography_id: BE1
+    geography_level: nuts1
+    geography_name: Brussels Capital Region
+    geography_vintage: NUTS_2024
+    filters:
+      person.sex: female
+      person.age_band: '18_64'
+    constraints:
+    - variable: person.sex
+      operator: ==
+      value: female
+      label: Sex
+    - variable: person.age_band
+      operator: ==
+      value: '18_64'
+      label: Age band
+    - variable: person.age
+      operator: '>='
+      value: 18
+      unit: years
+      label: Age lower bound
+    - variable: person.age
+      operator: <
+      value: 65
+      unit: years
+      label: Age upper bound
+  - value_id: be1_female_65_plus
+    label: Brussels Capital Region female aged 65 and over
+    ordinal: 5
+    row_number: 7
+    expected_row_header_column: A
+    expected_row_header: be1_female_65_plus
+    geography_id: BE1
+    geography_level: nuts1
+    geography_name: Brussels Capital Region
+    geography_vintage: NUTS_2024
+    filters:
+      person.sex: female
+      person.age_band: 65_plus
+    constraints:
+    - variable: person.sex
+      operator: ==
+      value: female
+      label: Sex
+    - variable: person.age_band
+      operator: ==
+      value: 65_plus
+      label: Age band
+    - variable: person.age
+      operator: '>='
+      value: 65
+      unit: years
+      label: Age lower bound
+  - value_id: be2_male_0_17
+    label: Flemish Region male aged 0 to 17
+    ordinal: 6
+    row_number: 8
+    expected_row_header_column: A
+    expected_row_header: be2_male_0_17
+    geography_id: BE2
+    geography_level: nuts1
+    geography_name: Flemish Region
+    geography_vintage: NUTS_2024
+    filters:
+      person.sex: male
+      person.age_band: '0_17'
+    constraints:
+    - variable: person.sex
+      operator: ==
+      value: male
+      label: Sex
+    - variable: person.age_band
+      operator: ==
+      value: '0_17'
+      label: Age band
+    - variable: person.age
+      operator: '>='
+      value: 0
+      unit: years
+      label: Age lower bound
+    - variable: person.age
+      operator: <
+      value: 18
+      unit: years
+      label: Age upper bound
+  - value_id: be2_male_18_64
+    label: Flemish Region male aged 18 to 64
+    ordinal: 7
+    row_number: 9
+    expected_row_header_column: A
+    expected_row_header: be2_male_18_64
+    geography_id: BE2
+    geography_level: nuts1
+    geography_name: Flemish Region
+    geography_vintage: NUTS_2024
+    filters:
+      person.sex: male
+      person.age_band: '18_64'
+    constraints:
+    - variable: person.sex
+      operator: ==
+      value: male
+      label: Sex
+    - variable: person.age_band
+      operator: ==
+      value: '18_64'
+      label: Age band
+    - variable: person.age
+      operator: '>='
+      value: 18
+      unit: years
+      label: Age lower bound
+    - variable: person.age
+      operator: <
+      value: 65
+      unit: years
+      label: Age upper bound
+  - value_id: be2_male_65_plus
+    label: Flemish Region male aged 65 and over
+    ordinal: 8
+    row_number: 10
+    expected_row_header_column: A
+    expected_row_header: be2_male_65_plus
+    geography_id: BE2
+    geography_level: nuts1
+    geography_name: Flemish Region
+    geography_vintage: NUTS_2024
+    filters:
+      person.sex: male
+      person.age_band: 65_plus
+    constraints:
+    - variable: person.sex
+      operator: ==
+      value: male
+      label: Sex
+    - variable: person.age_band
+      operator: ==
+      value: 65_plus
+      label: Age band
+    - variable: person.age
+      operator: '>='
+      value: 65
+      unit: years
+      label: Age lower bound
+  - value_id: be2_female_0_17
+    label: Flemish Region female aged 0 to 17
+    ordinal: 9
+    row_number: 11
+    expected_row_header_column: A
+    expected_row_header: be2_female_0_17
+    geography_id: BE2
+    geography_level: nuts1
+    geography_name: Flemish Region
+    geography_vintage: NUTS_2024
+    filters:
+      person.sex: female
+      person.age_band: '0_17'
+    constraints:
+    - variable: person.sex
+      operator: ==
+      value: female
+      label: Sex
+    - variable: person.age_band
+      operator: ==
+      value: '0_17'
+      label: Age band
+    - variable: person.age
+      operator: '>='
+      value: 0
+      unit: years
+      label: Age lower bound
+    - variable: person.age
+      operator: <
+      value: 18
+      unit: years
+      label: Age upper bound
+  - value_id: be2_female_18_64
+    label: Flemish Region female aged 18 to 64
+    ordinal: 10
+    row_number: 12
+    expected_row_header_column: A
+    expected_row_header: be2_female_18_64
+    geography_id: BE2
+    geography_level: nuts1
+    geography_name: Flemish Region
+    geography_vintage: NUTS_2024
+    filters:
+      person.sex: female
+      person.age_band: '18_64'
+    constraints:
+    - variable: person.sex
+      operator: ==
+      value: female
+      label: Sex
+    - variable: person.age_band
+      operator: ==
+      value: '18_64'
+      label: Age band
+    - variable: person.age
+      operator: '>='
+      value: 18
+      unit: years
+      label: Age lower bound
+    - variable: person.age
+      operator: <
+      value: 65
+      unit: years
+      label: Age upper bound
+  - value_id: be2_female_65_plus
+    label: Flemish Region female aged 65 and over
+    ordinal: 11
+    row_number: 13
+    expected_row_header_column: A
+    expected_row_header: be2_female_65_plus
+    geography_id: BE2
+    geography_level: nuts1
+    geography_name: Flemish Region
+    geography_vintage: NUTS_2024
+    filters:
+      person.sex: female
+      person.age_band: 65_plus
+    constraints:
+    - variable: person.sex
+      operator: ==
+      value: female
+      label: Sex
+    - variable: person.age_band
+      operator: ==
+      value: 65_plus
+      label: Age band
+    - variable: person.age
+      operator: '>='
+      value: 65
+      unit: years
+      label: Age lower bound
+  - value_id: be3_male_0_17
+    label: Walloon Region male aged 0 to 17
+    ordinal: 12
+    row_number: 14
+    expected_row_header_column: A
+    expected_row_header: be3_male_0_17
+    geography_id: BE3
+    geography_level: nuts1
+    geography_name: Walloon Region
+    geography_vintage: NUTS_2024
+    filters:
+      person.sex: male
+      person.age_band: '0_17'
+    constraints:
+    - variable: person.sex
+      operator: ==
+      value: male
+      label: Sex
+    - variable: person.age_band
+      operator: ==
+      value: '0_17'
+      label: Age band
+    - variable: person.age
+      operator: '>='
+      value: 0
+      unit: years
+      label: Age lower bound
+    - variable: person.age
+      operator: <
+      value: 18
+      unit: years
+      label: Age upper bound
+  - value_id: be3_male_18_64
+    label: Walloon Region male aged 18 to 64
+    ordinal: 13
+    row_number: 15
+    expected_row_header_column: A
+    expected_row_header: be3_male_18_64
+    geography_id: BE3
+    geography_level: nuts1
+    geography_name: Walloon Region
+    geography_vintage: NUTS_2024
+    filters:
+      person.sex: male
+      person.age_band: '18_64'
+    constraints:
+    - variable: person.sex
+      operator: ==
+      value: male
+      label: Sex
+    - variable: person.age_band
+      operator: ==
+      value: '18_64'
+      label: Age band
+    - variable: person.age
+      operator: '>='
+      value: 18
+      unit: years
+      label: Age lower bound
+    - variable: person.age
+      operator: <
+      value: 65
+      unit: years
+      label: Age upper bound
+  - value_id: be3_male_65_plus
+    label: Walloon Region male aged 65 and over
+    ordinal: 14
+    row_number: 16
+    expected_row_header_column: A
+    expected_row_header: be3_male_65_plus
+    geography_id: BE3
+    geography_level: nuts1
+    geography_name: Walloon Region
+    geography_vintage: NUTS_2024
+    filters:
+      person.sex: male
+      person.age_band: 65_plus
+    constraints:
+    - variable: person.sex
+      operator: ==
+      value: male
+      label: Sex
+    - variable: person.age_band
+      operator: ==
+      value: 65_plus
+      label: Age band
+    - variable: person.age
+      operator: '>='
+      value: 65
+      unit: years
+      label: Age lower bound
+  - value_id: be3_female_0_17
+    label: Walloon Region female aged 0 to 17
+    ordinal: 15
+    row_number: 17
+    expected_row_header_column: A
+    expected_row_header: be3_female_0_17
+    geography_id: BE3
+    geography_level: nuts1
+    geography_name: Walloon Region
+    geography_vintage: NUTS_2024
+    filters:
+      person.sex: female
+      person.age_band: '0_17'
+    constraints:
+    - variable: person.sex
+      operator: ==
+      value: female
+      label: Sex
+    - variable: person.age_band
+      operator: ==
+      value: '0_17'
+      label: Age band
+    - variable: person.age
+      operator: '>='
+      value: 0
+      unit: years
+      label: Age lower bound
+    - variable: person.age
+      operator: <
+      value: 18
+      unit: years
+      label: Age upper bound
+  - value_id: be3_female_18_64
+    label: Walloon Region female aged 18 to 64
+    ordinal: 16
+    row_number: 18
+    expected_row_header_column: A
+    expected_row_header: be3_female_18_64
+    geography_id: BE3
+    geography_level: nuts1
+    geography_name: Walloon Region
+    geography_vintage: NUTS_2024
+    filters:
+      person.sex: female
+      person.age_band: '18_64'
+    constraints:
+    - variable: person.sex
+      operator: ==
+      value: female
+      label: Sex
+    - variable: person.age_band
+      operator: ==
+      value: '18_64'
+      label: Age band
+    - variable: person.age
+      operator: '>='
+      value: 18
+      unit: years
+      label: Age lower bound
+    - variable: person.age
+      operator: <
+      value: 65
+      unit: years
+      label: Age upper bound
+  - value_id: be3_female_65_plus
+    label: Walloon Region female aged 65 and over
+    ordinal: 17
+    row_number: 19
+    expected_row_header_column: A
+    expected_row_header: be3_female_65_plus
+    geography_id: BE3
+    geography_level: nuts1
+    geography_name: Walloon Region
+    geography_vintage: NUTS_2024
+    filters:
+      person.sex: female
+      person.age_band: 65_plus
+    constraints:
+    - variable: person.sex
+      operator: ==
+      value: female
+      label: Sex
+    - variable: person.age_band
+      operator: ==
+      value: 65_plus
+      label: Age band
+    - variable: person.age
+      operator: '>='
+      value: 65
+      unit: years
+      label: Age lower bound
+  measures:
+  - measure_id: people
+    label: Resident population
+    ordinal: 0
+    column: J
+    source_column_id: value
+    expected_column_header_row: 1
+    expected_column_header: value
+    concept: people
+    source_concept: statbel.population_structure.population
+    concept_relation: exact
+    concept_authority: ledger-be
+    concept_evidence_url: https://data.gov.be/en/datasets/nodeid5468
+    concept_evidence_notes: Statbel population structure publishes resident population by
+      place of residence, age and sex.
+    unit: count
+    aggregation: sum
+    expected_cell_type: number

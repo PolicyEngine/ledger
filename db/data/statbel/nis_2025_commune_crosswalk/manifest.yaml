@@ -1,0 +1,23 @@
+source_id: statbel-nis-2025-commune-crosswalk
+source_name: Statbel NIS 2025 commune crosswalk
+publisher: Statbel
+source_page: https://statbel.fgov.be/en/news/modification-nsi-codes-municipalities-1-january-2025-onwards
+files:
+  2025:
+    filename: statbel_nis_2025_commune_crosswalk.csv
+    source_url: https://statbel.fgov.be/en/news/modification-nsi-codes-municipalities-1-january-2025-onwards
+    source_table: Belgian municipality NIS code changes for 2025 mergers
+    sha256: 717b0fecc3d78ee072a07f35ada4280f2ae4595ef2366b23d02e96efd872b1ba
+    size_bytes: 96285
+    storage:
+      r2:
+        provider: r2
+        bucket: ledger-raw
+        key: raw/belgium/statbel-nis-2025-commune-crosswalk/2025/717b0fecc3d78ee072a07f35ada4280f2ae4595ef2366b23d02e96efd872b1ba/statbel_nis_2025_commune_crosswalk.csv
+        uri: r2://ledger-raw/raw/belgium/statbel-nis-2025-commune-crosswalk/2025/717b0fecc3d78ee072a07f35ada4280f2ae4595ef2366b23d02e96efd872b1ba/statbel_nis_2025_commune_crosswalk.csv
+    source_urls:
+    - https://statbel.fgov.be/en/news/modification-nsi-codes-municipalities-1-january-2025-onwards
+    - https://statbel.fgov.be/sites/default/files/Over_Statbel_FR/Nomenclaturen/REFNIS_2025.csv
+    - https://www.publisys.eu/list-of-the-nsi-codes/
+    notes: Curated old-to-2025 municipality crosswalk for the 30 municipality codes affected
+      by the 2024-2025 mergers, plus unchanged 2023 municipality codes.

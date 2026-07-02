@@ -1,0 +1,57 @@
+schema_version: ledger.source_package.v1
+package_id: onss-contributions-2024
+label: ONSS declared worker contribution 2024 national target
+artifact:
+  source_name: onss_contributions
+  source_table: Declared contributions 2024, Table 6 by sector, status and sex
+  resource_package: db
+  resource_directory: data/onss/contributions_2024
+  manifest: manifest.yaml
+  vintage: declared_contributions_2024
+  extracted_at: '2026-07-02'
+  extraction_method: curated CSV extract from ONSS declared contributions workbook Table 6
+  parser: delimited_text_full_rows
+  artifact_year: 2024
+  sheet_name: onss_worker_contributions_2024
+record_sets:
+- record_set_id: onss.contributions.cy2024.worker_personal_contributions.country
+  record_set_spec_id: onss.contributions.worker_personal_contributions.country.v1
+  source_record_id_prefix: onss.contributions.cy2024.worker_personal_contributions.country
+  sheet_name: onss_worker_contributions_2024
+  period_type: calendar_year
+  period: 2024
+  geography_id: BE
+  geography_level: country
+  geography_name: Belgium
+  geography_vintage: current
+  entity: person
+  entity_role: worker
+  domain: social_security_contributions
+  groupby_dimension: measure
+  rows:
+  - value_id: country_total
+    label: Worker-borne personal social security contributions
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: worker_personal_social_security_contributions_total
+    table_record_kind: total
+  measures:
+  - measure_id: worker_article_17_uncapped_component_contribution
+    label: Worker Article 17 uncapped component contribution proxy
+    ordinal: 0
+    column: E
+    source_column_id: value
+    expected_column_header_row: 1
+    expected_column_header: value
+    concept: belgium_worker_article_17_uncapped_component_contribution
+    source_concept: onss.declared_contributions.personal_social_security_contributions_worker_borne
+    concept_relation: approximate
+    concept_authority: ledger-be
+    concept_evidence_url: https://www.onss.be/stats/cotisations-declarees
+    concept_evidence_notes: ONSS Table 6 reports worker-borne personal social security contributions
+      in thousands of euros; Ledger uses it as a national contribution-component target stream.
+    unit: eur
+    aggregation: sum
+    value_scale: 1000
+    expected_cell_type: number
