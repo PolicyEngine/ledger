@@ -1,0 +1,21 @@
+source_id: onem-rva-unemployment-2024
+source_name: ONEM/RVA complete unemployment 2024
+publisher: ONEM / RVA
+source_page: https://rapportannuel.onem.be/accueil/une-evolution-des-allocations/chomage-complet/
+files:
+  2024:
+    filename: onem_rva_unemployment_2024.csv
+    source_url: https://rapportannuel.onem.be/accueil/une-evolution-des-allocations/chomage-complet/
+    source_table: Annual report complete unemployment benefit recipients, 2024
+    sha256: b0b42bc0e0e5d449108290be3b235c4736f5e160a817ea5bf32edbc4779c62f7
+    size_bytes: 687
+    storage:
+      r2:
+        provider: r2
+        bucket: ledger-raw
+        key: raw/belgium/onem-rva-unemployment-2024/2024/b0b42bc0e0e5d449108290be3b235c4736f5e160a817ea5bf32edbc4779c62f7/onem_rva_unemployment_2024.csv
+        uri: r2://ledger-raw/raw/belgium/onem-rva-unemployment-2024/2024/b0b42bc0e0e5d449108290be3b235c4736f5e160a817ea5bf32edbc4779c62f7/onem_rva_unemployment_2024.csv
+    source_urls:
+    - https://rapportannuel.onem.be/accueil/une-evolution-des-allocations/chomage-complet/
+    notes: Curated 2024 annual report table for complete unemployment benefit-recipient monthly
+      averages.

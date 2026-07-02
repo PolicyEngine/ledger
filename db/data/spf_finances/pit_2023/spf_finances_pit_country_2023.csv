@@ -1,0 +1,2 @@
+value_id,period,income_year,assessment_year,geography_id,geography_level,geography_name,value,source_url
+belgium_total_pit_tax_before_withholding,2023,2023,2024,BE,country,Belgium,62840116133.99,https://statbel.fgov.be/sites/default/files/files/opendata/arbeid/TF_PSNL_INC_TAX_MUNTY.zip

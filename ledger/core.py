@@ -20,8 +20,10 @@ ALLOWED_PERIOD_TYPES = {"calendar_year", "tax_year", "fiscal_year", "month"}
 ALLOWED_GEOGRAPHY_LEVELS = {
     "country",
     "region",
+    "nuts1",
     "state",
     "county",
+    "commune",
     "congressional_district",
     "state_legislative_district_upper",
     "state_legislative_district_lower",

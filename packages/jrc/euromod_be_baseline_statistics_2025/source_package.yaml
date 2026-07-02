@@ -1,0 +1,477 @@
+schema_version: ledger.source_package.v1
+package_id: jrc-euromod-be-baseline-statistics-2025
+label: JRC EUROMOD-BE 2025 baseline validation comparator statistics
+artifact:
+  source_name: jrc_euromod_be
+  source_table: EUROMOD Country Report Belgium 2025 validation tables
+  resource_package: db
+  resource_directory: data/jrc/euromod_be_baseline_statistics_2025
+  manifest: manifest.yaml
+  vintage: euromod_be_country_report_2025
+  extracted_at: '2026-07-02'
+  extraction_method: curated CSV extract from JRC EUROMOD Country Report Belgium Annex 3 validation
+    tables
+  parser: delimited_text_full_rows
+  artifact_year: 2025
+  sheet_name: jrc_euromod_be_baseline_statistics_2025
+record_sets:
+- record_set_id: jrc.euromod_be.cy2023.macrovalidation.amounts
+  record_set_spec_id: jrc.euromod_be.macrovalidation.amounts.v1
+  source_record_id_prefix: jrc.euromod_be.cy2023.macrovalidation.amounts
+  sheet_name: jrc_euromod_be_baseline_statistics_2025
+  period_type: calendar_year
+  period: 2023
+  geography_id: BE
+  geography_level: country
+  geography_name: Belgium
+  geography_vintage: current
+  entity: government
+  entity_role: validation_comparator
+  domain: euromod_be_macrovalidation
+  groupby_dimension: validation.metric_series
+  rows:
+  - value_id: a3_4_national_income_tax_euromod_2023
+    label: a3 4 national income tax euromod 2023
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: a3_4_national_income_tax_euromod_2023
+    filters:
+      validation.metric: national_income_tax
+      validation.series: euromod
+    constraints:
+    - variable: validation.metric
+      operator: ==
+      value: national_income_tax
+      label: Validation metric
+    - variable: validation.series
+      operator: ==
+      value: euromod
+      label: Validation series
+  - value_id: a3_4_national_income_tax_external_2023
+    label: a3 4 national income tax external 2023
+    ordinal: 1
+    row_number: 3
+    expected_row_header_column: A
+    expected_row_header: a3_4_national_income_tax_external_2023
+    filters:
+      validation.metric: national_income_tax
+      validation.series: external
+    constraints:
+    - variable: validation.metric
+      operator: ==
+      value: national_income_tax
+      label: Validation metric
+    - variable: validation.series
+      operator: ==
+      value: external
+      label: Validation series
+  - value_id: a3_4_employee_sics_euromod_2023
+    label: a3 4 employee sics euromod 2023
+    ordinal: 2
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: a3_4_employee_sics_euromod_2023
+    filters:
+      validation.metric: employee_social_insurance_contributions
+      validation.series: euromod
+    constraints:
+    - variable: validation.metric
+      operator: ==
+      value: employee_social_insurance_contributions
+      label: Validation metric
+    - variable: validation.series
+      operator: ==
+      value: euromod
+      label: Validation series
+  - value_id: a3_4_employee_sics_external_2023
+    label: a3 4 employee sics external 2023
+    ordinal: 3
+    row_number: 5
+    expected_row_header_column: A
+    expected_row_header: a3_4_employee_sics_external_2023
+    filters:
+      validation.metric: employee_social_insurance_contributions
+      validation.series: external
+    constraints:
+    - variable: validation.metric
+      operator: ==
+      value: employee_social_insurance_contributions
+      label: Validation metric
+    - variable: validation.series
+      operator: ==
+      value: external
+      label: Validation series
+  - value_id: a3_6_child_benefits_euromod_2023
+    label: a3 6 child benefits euromod 2023
+    ordinal: 4
+    row_number: 6
+    expected_row_header_column: A
+    expected_row_header: a3_6_child_benefits_euromod_2023
+    filters:
+      validation.metric: child_benefits
+      validation.series: euromod
+    constraints:
+    - variable: validation.metric
+      operator: ==
+      value: child_benefits
+      label: Validation metric
+    - variable: validation.series
+      operator: ==
+      value: euromod
+      label: Validation series
+  - value_id: a3_6_child_benefits_external_2023
+    label: a3 6 child benefits external 2023
+    ordinal: 5
+    row_number: 7
+    expected_row_header_column: A
+    expected_row_header: a3_6_child_benefits_external_2023
+    filters:
+      validation.metric: child_benefits
+      validation.series: external
+    constraints:
+    - variable: validation.metric
+      operator: ==
+      value: child_benefits
+      label: Validation metric
+    - variable: validation.series
+      operator: ==
+      value: external
+      label: Validation series
+  - value_id: a3_6_unemployment_benefits_euromod_2023
+    label: a3 6 unemployment benefits euromod 2023
+    ordinal: 6
+    row_number: 8
+    expected_row_header_column: A
+    expected_row_header: a3_6_unemployment_benefits_euromod_2023
+    filters:
+      validation.metric: unemployment_benefits
+      validation.series: euromod
+    constraints:
+    - variable: validation.metric
+      operator: ==
+      value: unemployment_benefits
+      label: Validation metric
+    - variable: validation.series
+      operator: ==
+      value: euromod
+      label: Validation series
+  - value_id: a3_6_unemployment_benefits_external_2023
+    label: a3 6 unemployment benefits external 2023
+    ordinal: 7
+    row_number: 9
+    expected_row_header_column: A
+    expected_row_header: a3_6_unemployment_benefits_external_2023
+    filters:
+      validation.metric: unemployment_benefits
+      validation.series: external
+    constraints:
+    - variable: validation.metric
+      operator: ==
+      value: unemployment_benefits
+      label: Validation metric
+    - variable: validation.series
+      operator: ==
+      value: external
+      label: Validation series
+  measures:
+  - measure_id: value
+    label: Validation table value
+    ordinal: 0
+    column: G
+    source_column_id: value
+    expected_column_header_row: 1
+    expected_column_header: value
+    concept: euromod_be.macrovalidation_amount
+    source_concept: jrc.euromod_be.validation_table_value
+    concept_relation: source_label
+    concept_authority: jrc
+    concept_evidence_url: https://euromod-web.jrc.ec.europa.eu/sites/default/files/2025-02/Y15_CR_BE_final.pdf
+    concept_evidence_notes: JRC EUROMOD-BE country report Annex 3 publishes validation table
+      EUROMOD, external-statistic, and ratio values.
+    unit: eur
+    aggregation: sum
+    value_scale: 1000000
+    expected_cell_type: number
+- record_set_id: jrc.euromod_be.cy2023.macrovalidation.ratios
+  record_set_spec_id: jrc.euromod_be.macrovalidation.ratios.v1
+  source_record_id_prefix: jrc.euromod_be.cy2023.macrovalidation.ratios
+  sheet_name: jrc_euromod_be_baseline_statistics_2025
+  period_type: calendar_year
+  period: 2023
+  geography_id: BE
+  geography_level: country
+  geography_name: Belgium
+  geography_vintage: current
+  entity: government
+  entity_role: validation_comparator
+  domain: euromod_be_macrovalidation
+  groupby_dimension: validation.metric_series
+  rows:
+  - value_id: a3_4_national_income_tax_ratio_2023
+    label: a3 4 national income tax ratio 2023
+    ordinal: 0
+    row_number: 10
+    expected_row_header_column: A
+    expected_row_header: a3_4_national_income_tax_ratio_2023
+    filters:
+      validation.metric: national_income_tax
+      validation.series: ratio
+    constraints:
+    - variable: validation.metric
+      operator: ==
+      value: national_income_tax
+      label: Validation metric
+    - variable: validation.series
+      operator: ==
+      value: ratio
+      label: Validation series
+  - value_id: a3_4_employee_sics_ratio_2023
+    label: a3 4 employee sics ratio 2023
+    ordinal: 1
+    row_number: 11
+    expected_row_header_column: A
+    expected_row_header: a3_4_employee_sics_ratio_2023
+    filters:
+      validation.metric: employee_social_insurance_contributions
+      validation.series: ratio
+    constraints:
+    - variable: validation.metric
+      operator: ==
+      value: employee_social_insurance_contributions
+      label: Validation metric
+    - variable: validation.series
+      operator: ==
+      value: ratio
+      label: Validation series
+  - value_id: a3_6_child_benefits_ratio_2023
+    label: a3 6 child benefits ratio 2023
+    ordinal: 2
+    row_number: 12
+    expected_row_header_column: A
+    expected_row_header: a3_6_child_benefits_ratio_2023
+    filters:
+      validation.metric: child_benefits
+      validation.series: ratio
+    constraints:
+    - variable: validation.metric
+      operator: ==
+      value: child_benefits
+      label: Validation metric
+    - variable: validation.series
+      operator: ==
+      value: ratio
+      label: Validation series
+  - value_id: a3_6_unemployment_benefits_ratio_2023
+    label: a3 6 unemployment benefits ratio 2023
+    ordinal: 3
+    row_number: 13
+    expected_row_header_column: A
+    expected_row_header: a3_6_unemployment_benefits_ratio_2023
+    filters:
+      validation.metric: unemployment_benefits
+      validation.series: ratio
+    constraints:
+    - variable: validation.metric
+      operator: ==
+      value: unemployment_benefits
+      label: Validation metric
+    - variable: validation.series
+      operator: ==
+      value: ratio
+      label: Validation series
+  measures:
+  - measure_id: value
+    label: Validation table value
+    ordinal: 0
+    column: G
+    source_column_id: value
+    expected_column_header_row: 1
+    expected_column_header: value
+    concept: euromod_be.macrovalidation_ratio
+    source_concept: jrc.euromod_be.validation_table_value
+    concept_relation: source_label
+    concept_authority: jrc
+    concept_evidence_url: https://euromod-web.jrc.ec.europa.eu/sites/default/files/2025-02/Y15_CR_BE_final.pdf
+    concept_evidence_notes: JRC EUROMOD-BE country report Annex 3 publishes validation table
+      EUROMOD, external-statistic, and ratio values.
+    unit: ratio
+    aggregation: sum
+    value_scale: 1
+    expected_cell_type: number
+- record_set_id: jrc.euromod_be.cy2022.distribution.percent_values
+  record_set_spec_id: jrc.euromod_be.distribution.percent_values.v1
+  source_record_id_prefix: jrc.euromod_be.cy2022.distribution.percent_values
+  sheet_name: jrc_euromod_be_baseline_statistics_2025
+  period_type: calendar_year
+  period: 2022
+  geography_id: BE
+  geography_level: country
+  geography_name: Belgium
+  geography_vintage: current
+  entity: government
+  entity_role: validation_comparator
+  domain: euromod_be_macrovalidation
+  groupby_dimension: validation.metric_series
+  rows:
+  - value_id: a3_7_gini_euromod_2022
+    label: a3 7 gini euromod 2022
+    ordinal: 0
+    row_number: 14
+    expected_row_header_column: A
+    expected_row_header: a3_7_gini_euromod_2022
+    filters:
+      validation.metric: gini
+      validation.series: euromod
+    constraints:
+    - variable: validation.metric
+      operator: ==
+      value: gini
+      label: Validation metric
+    - variable: validation.series
+      operator: ==
+      value: euromod
+      label: Validation series
+  - value_id: a3_7_gini_external_2022
+    label: a3 7 gini external 2022
+    ordinal: 1
+    row_number: 15
+    expected_row_header_column: A
+    expected_row_header: a3_7_gini_external_2022
+    filters:
+      validation.metric: gini
+      validation.series: external
+    constraints:
+    - variable: validation.metric
+      operator: ==
+      value: gini
+      label: Validation metric
+    - variable: validation.series
+      operator: ==
+      value: external
+      label: Validation series
+  - value_id: a3_8_poverty_60_total_euromod_2022
+    label: a3 8 poverty 60 total euromod 2022
+    ordinal: 2
+    row_number: 16
+    expected_row_header_column: A
+    expected_row_header: a3_8_poverty_60_total_euromod_2022
+    filters:
+      validation.metric: at_risk_poverty_60_median_total
+      validation.series: euromod
+    constraints:
+    - variable: validation.metric
+      operator: ==
+      value: at_risk_poverty_60_median_total
+      label: Validation metric
+    - variable: validation.series
+      operator: ==
+      value: euromod
+      label: Validation series
+  - value_id: a3_8_poverty_60_total_external_2022
+    label: a3 8 poverty 60 total external 2022
+    ordinal: 3
+    row_number: 17
+    expected_row_header_column: A
+    expected_row_header: a3_8_poverty_60_total_external_2022
+    filters:
+      validation.metric: at_risk_poverty_60_median_total
+      validation.series: external
+    constraints:
+    - variable: validation.metric
+      operator: ==
+      value: at_risk_poverty_60_median_total
+      label: Validation metric
+    - variable: validation.series
+      operator: ==
+      value: external
+      label: Validation series
+  measures:
+  - measure_id: value
+    label: Validation table value
+    ordinal: 0
+    column: G
+    source_column_id: value
+    expected_column_header_row: 1
+    expected_column_header: value
+    concept: euromod_be.distribution_validation_percent
+    source_concept: jrc.euromod_be.validation_table_value
+    concept_relation: source_label
+    concept_authority: jrc
+    concept_evidence_url: https://euromod-web.jrc.ec.europa.eu/sites/default/files/2025-02/Y15_CR_BE_final.pdf
+    concept_evidence_notes: JRC EUROMOD-BE country report Annex 3 publishes validation table
+      EUROMOD, external-statistic, and ratio values.
+    unit: percent
+    aggregation: sum
+    value_scale: 1
+    expected_cell_type: number
+- record_set_id: jrc.euromod_be.cy2022.distribution.ratios
+  record_set_spec_id: jrc.euromod_be.distribution.ratios.v1
+  source_record_id_prefix: jrc.euromod_be.cy2022.distribution.ratios
+  sheet_name: jrc_euromod_be_baseline_statistics_2025
+  period_type: calendar_year
+  period: 2022
+  geography_id: BE
+  geography_level: country
+  geography_name: Belgium
+  geography_vintage: current
+  entity: government
+  entity_role: validation_comparator
+  domain: euromod_be_macrovalidation
+  groupby_dimension: validation.metric_series
+  rows:
+  - value_id: a3_7_gini_ratio_2022
+    label: a3 7 gini ratio 2022
+    ordinal: 0
+    row_number: 18
+    expected_row_header_column: A
+    expected_row_header: a3_7_gini_ratio_2022
+    filters:
+      validation.metric: gini
+      validation.series: ratio
+    constraints:
+    - variable: validation.metric
+      operator: ==
+      value: gini
+      label: Validation metric
+    - variable: validation.series
+      operator: ==
+      value: ratio
+      label: Validation series
+  - value_id: a3_8_poverty_60_total_ratio_2022
+    label: a3 8 poverty 60 total ratio 2022
+    ordinal: 1
+    row_number: 19
+    expected_row_header_column: A
+    expected_row_header: a3_8_poverty_60_total_ratio_2022
+    filters:
+      validation.metric: at_risk_poverty_60_median_total
+      validation.series: ratio
+    constraints:
+    - variable: validation.metric
+      operator: ==
+      value: at_risk_poverty_60_median_total
+      label: Validation metric
+    - variable: validation.series
+      operator: ==
+      value: ratio
+      label: Validation series
+  measures:
+  - measure_id: value
+    label: Validation table value
+    ordinal: 0
+    column: G
+    source_column_id: value
+    expected_column_header_row: 1
+    expected_column_header: value
+    concept: euromod_be.distribution_validation_ratio
+    source_concept: jrc.euromod_be.validation_table_value
+    concept_relation: source_label
+    concept_authority: jrc
+    concept_evidence_url: https://euromod-web.jrc.ec.europa.eu/sites/default/files/2025-02/Y15_CR_BE_final.pdf
+    concept_evidence_notes: JRC EUROMOD-BE country report Annex 3 publishes validation table
+      EUROMOD, external-statistic, and ratio values.
+    unit: ratio
+    aggregation: sum
+    value_scale: 1
+    expected_cell_type: number
