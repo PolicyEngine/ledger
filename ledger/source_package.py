@@ -192,6 +192,9 @@ DEFAULT_SOURCE_ARTIFACT_CACHE_DIR = (
     Path.home() / ".cache" / "policyengine-ledger" / "source-artifacts"
 )
 SOURCE_PACKAGE_FILENAME = "source_package.yaml"
+# Repository ``packages/`` directory: the source-package authoring surface a
+# complete bundle must cover (see PolicyEngine/ledger#78).
+SOURCE_PACKAGE_ROOT = Path(__file__).resolve().parents[1] / SOURCE_PACKAGE_RESOURCE_PACKAGE
 EXCEL_COLUMN_RE = re.compile(r"^[A-Z]+$")
 
 
@@ -1078,6 +1081,101 @@ def resolve_source_package_path(source: str | Path) -> Path:
         return Path(str(resource_path))
     except (FileNotFoundError, ModuleNotFoundError):
         raise FileNotFoundError(f"Source package not found: {source}") from None
+
+
+class SourcePackageAliasDriftError(RuntimeError):
+    """Raised when the alias map and ``packages/*`` layout have drifted.
+
+    Drift means a bundle built from the alias map would be silently
+    incomplete (an on-disk package with no alias entry is dropped) or would
+    reference a directory that no longer exists (a stale alias). Both are
+    reported here rather than silently skipped (see PolicyEngine/ledger#78).
+    """
+
+
+def source_package_root() -> Path:
+    """Return the repository ``packages/`` directory (the authoring surface)."""
+    return SOURCE_PACKAGE_ROOT
+
+
+def discover_source_package_dirs(root: Path | None = None) -> list[Path]:
+    """Discover ``<source>/<package>`` directories under a packages root.
+
+    Returns repo-relative package paths (e.g. ``usda_snap/fy69_to_current``),
+    matching the shape of the alias-map values, sorted for determinism. This
+    is the authoring surface a complete bundle must cover.
+    """
+    packages_root = root if root is not None else source_package_root()
+    if not packages_root.exists():
+        return []
+    discovered = {
+        manifest.parent.relative_to(packages_root)
+        for manifest in packages_root.glob(f"*/*/{SOURCE_PACKAGE_FILENAME}")
+    }
+    return sorted(discovered, key=str)
+
+
+def find_alias_map_drift(
+    root: Path | None = None,
+    aliases: dict[str, Path] | None = None,
+) -> tuple[list[Path], list[Path]]:
+    """Report alias/directory drift as ``(missing_dirs, unmapped_dirs)``.
+
+    ``missing_dirs`` are alias targets with no directory on disk (stale
+    aliases). ``unmapped_dirs`` are on-disk package directories with no alias
+    entry (silently-dropped packages). Both are returned as repo-relative
+    package paths, sorted.
+    """
+    packages_root = root if root is not None else source_package_root()
+    alias_map = aliases if aliases is not None else SOURCE_PACKAGE_ALIASES
+
+    discovered = set(discover_source_package_dirs(root=packages_root))
+    alias_targets = {Path(target) for target in alias_map.values()}
+
+    missing_dirs = sorted(
+        (
+            target
+            for target in alias_targets
+            if not (packages_root / target / SOURCE_PACKAGE_FILENAME).exists()
+        ),
+        key=str,
+    )
+    unmapped_dirs = sorted(discovered - alias_targets, key=str)
+    return missing_dirs, unmapped_dirs
+
+
+def assert_alias_map_covers_packages(
+    root: Path | None = None,
+    aliases: dict[str, Path] | None = None,
+) -> None:
+    """Fail loudly if the alias map and ``packages/*`` layout have drifted.
+
+    Raises :class:`SourcePackageAliasDriftError` naming every stale alias
+    target and every unmapped package directory, so a drifted map cannot
+    silently produce a partial bundle.
+    """
+    missing_dirs, unmapped_dirs = find_alias_map_drift(root=root, aliases=aliases)
+    if not missing_dirs and not unmapped_dirs:
+        return
+
+    problems: list[str] = []
+    if unmapped_dirs:
+        listing = ", ".join(str(path) for path in unmapped_dirs)
+        problems.append(
+            "packages/* directories with no SOURCE_PACKAGE_ALIASES entry "
+            f"(would be silently dropped from bundles): {listing}"
+        )
+    if missing_dirs:
+        listing = ", ".join(str(path) for path in missing_dirs)
+        problems.append(
+            "SOURCE_PACKAGE_ALIASES entries pointing at missing directories "
+            f"(stale aliases): {listing}"
+        )
+    raise SourcePackageAliasDriftError(
+        "Source-package alias map has drifted from the packages/* layout. "
+        + " ".join(problems)
+        + " Re-sync SOURCE_PACKAGE_ALIASES with the packages/* directories."
+    )
 
 
 def _validate_record_set_authoring(

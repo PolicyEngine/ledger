@@ -9,7 +9,11 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any, Callable, Sequence
 
-from ledger.source_package import SOURCE_PACKAGE_ALIASES, validate_source_package
+from ledger.source_package import (
+    SOURCE_PACKAGE_ALIASES,
+    assert_alias_map_covers_packages,
+    validate_source_package,
+)
 from ledger.suite import BuildSuiteReport, build_source_suite
 
 BUNDLE_SCHEMA_VERSION = "ledger.bundle.v1"
@@ -129,6 +133,11 @@ def build_bundle(
     sources_path.mkdir(parents=True, exist_ok=True)
 
     explicit_sources = sources is not None
+    if not explicit_sources:
+        # A default bundle must cover every packages/* directory. Fail loudly
+        # if the alias map has drifted from the layout rather than silently
+        # dropping unmapped packages (see PolicyEngine/ledger#78).
+        assert_alias_map_covers_packages()
     requested_sources = tuple(
         str(source) for source in (sources or DEFAULT_BUNDLE_SOURCES)
     )
