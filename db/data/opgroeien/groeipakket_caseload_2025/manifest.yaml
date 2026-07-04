@@ -1,0 +1,28 @@
+source_id: opgroeien-groeipakket-caseload-2025
+source_name: Opgroeien Groeipakket caseload 2025
+publisher: Opgroeien (Agentschap Opgroeien regie), Flemish Community
+source_page: https://www.opgroeien.be/kennis/cijfers-en-onderzoek/groeipakket
+files:
+  2025:
+    filename: opgroeien_groeipakket_caseload_2025.csv
+    source_url: https://www.opgroeien.be/kennis/cijfers-en-onderzoek/groeipakket
+    source_table: Groeipakket caseload by benefit component, 2025
+    sha256: 1ad5bda6547d9329bd4eed70096f120bcc83407265a0a760e102c9f55fd31566
+    size_bytes: 947
+    storage:
+      r2:
+        provider: r2
+        bucket: ledger-raw
+        key: raw/belgium/opgroeien-groeipakket-caseload-2025/2025/1ad5bda6547d9329bd4eed70096f120bcc83407265a0a760e102c9f55fd31566/opgroeien_groeipakket_caseload_2025.csv
+        uri: r2://ledger-raw/raw/belgium/opgroeien-groeipakket-caseload-2025/2025/1ad5bda6547d9329bd4eed70096f120bcc83407265a0a760e102c9f55fd31566/opgroeien_groeipakket_caseload_2025.csv
+    source_urls:
+    - https://www.opgroeien.be/kennis/cijfers-en-onderzoek/groeipakket
+    - https://www.opgroeien.be/kennis/cijfers-en-onderzoek/groeipakket/cijfers-op-maat
+    notes: >-
+      Curated per-component Groeipakket caseload counts published by Opgroeien
+      (the Flemish government agency administering the Groeipakket) on its
+      statistics page. Each component carries its own published reference basis
+      (end 2025, December 2025, or school year 2025-2026). The basisbedrag child
+      count is published only as "more than 1.6 million" (a rounded lower bound),
+      so it is omitted from the child record set and recorded as a gap; the exact
+      basisbedrag family count (930,010) is published and retained.

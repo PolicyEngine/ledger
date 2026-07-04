@@ -1,0 +1,243 @@
+schema_version: ledger.source_package.v1
+package_id: opgroeien-groeipakket-caseload-2025
+label: Opgroeien Groeipakket 2025 Flemish child benefit caseload by component
+artifact:
+  source_name: opgroeien_groeipakket
+  source_table: Groeipakket caseload by benefit component, 2025
+  resource_package: db
+  resource_directory: data/opgroeien/groeipakket_caseload_2025
+  manifest: manifest.yaml
+  vintage: groeipakket_caseload_2025
+  extracted_at: '2026-07-04'
+  extraction_method: curated CSV extract from Opgroeien Groeipakket statistics page per-component caseload figures
+  parser: delimited_text_full_rows
+  artifact_year: 2025
+  sheet_name: opgroeien_groeipakket_caseload_2025
+record_sets:
+- record_set_id: opgroeien.groeipakket.cy2025.child_caseload.by_component
+  record_set_spec_id: opgroeien.groeipakket.child_caseload.by_component.v1
+  source_record_id_prefix: opgroeien.groeipakket.cy2025.child_caseload
+  sheet_name: opgroeien_groeipakket_caseload_2025
+  period_type: calendar_year
+  period: 2025
+  geography_id: BE2
+  geography_level: nuts1
+  geography_name: Flemish Region
+  geography_vintage: NUTS_2024
+  entity: person
+  entity_role: benefit_recipient
+  domain: child_benefit
+  groupby_dimension: groeipakket.component
+  rows:
+  - value_id: sociale_toeslag
+    label: Social supplement child caseload
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: sociale_toeslag
+    table_record_kind: total
+    filters:
+      groeipakket.component: social_supplement
+    constraints:
+    - variable: groeipakket.component
+      operator: ==
+      value: social_supplement
+      label: Groeipakket component
+  - value_id: wezentoeslag
+    label: Orphan supplement child caseload
+    ordinal: 1
+    row_number: 3
+    expected_row_header_column: A
+    expected_row_header: wezentoeslag
+    table_record_kind: total
+    filters:
+      groeipakket.component: orphan_supplement
+    constraints:
+    - variable: groeipakket.component
+      operator: ==
+      value: orphan_supplement
+      label: Groeipakket component
+  - value_id: zorgtoeslag
+    label: Care supplement child caseload
+    ordinal: 2
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: zorgtoeslag
+    table_record_kind: total
+    filters:
+      groeipakket.component: care_supplement
+    constraints:
+    - variable: groeipakket.component
+      operator: ==
+      value: care_supplement
+      label: Groeipakket component
+  - value_id: pleegzorgtoeslag
+    label: Foster care supplement child caseload
+    ordinal: 3
+    row_number: 5
+    expected_row_header_column: A
+    expected_row_header: pleegzorgtoeslag
+    table_record_kind: total
+    filters:
+      groeipakket.component: foster_care_supplement
+    constraints:
+    - variable: groeipakket.component
+      operator: ==
+      value: foster_care_supplement
+      label: Groeipakket component
+  - value_id: schooltoeslag
+    label: School allowance child caseload
+    ordinal: 4
+    row_number: 6
+    expected_row_header_column: A
+    expected_row_header: schooltoeslag
+    table_record_kind: total
+    filters:
+      groeipakket.component: school_allowance
+    constraints:
+    - variable: groeipakket.component
+      operator: ==
+      value: school_allowance
+      label: Groeipakket component
+  - value_id: ondersteuningstoeslag
+    label: Support supplement child caseload
+    ordinal: 5
+    row_number: 7
+    expected_row_header_column: A
+    expected_row_header: ondersteuningstoeslag
+    table_record_kind: total
+    filters:
+      groeipakket.component: support_supplement
+    constraints:
+    - variable: groeipakket.component
+      operator: ==
+      value: support_supplement
+      label: Groeipakket component
+  measures:
+  - measure_id: children
+    label: Children receiving Groeipakket component
+    ordinal: 0
+    column: E
+    source_column_id: children
+    expected_column_header_row: 1
+    expected_column_header: children
+    concept: groeipakket_children_receiving_component
+    source_concept: opgroeien.groeipakket.children_by_component
+    concept_relation: exact
+    concept_authority: ledger-be
+    concept_evidence_url: https://www.opgroeien.be/kennis/cijfers-en-onderzoek/groeipakket
+    concept_evidence_notes: >-
+      Opgroeien publishes the number of children receiving each Groeipakket
+      component. Reference basis differs by component (December 2025 for social
+      and orphan supplements, end 2025 for care, foster-care and support
+      supplements, school year 2025-2026 for the school allowance); the exact
+      basis for each row is preserved in the reference_basis column.
+    unit: count
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: opgroeien.groeipakket.cy2025.family_caseload.by_component
+  record_set_spec_id: opgroeien.groeipakket.family_caseload.by_component.v1
+  source_record_id_prefix: opgroeien.groeipakket.cy2025.family_caseload
+  sheet_name: opgroeien_groeipakket_caseload_2025
+  period_type: calendar_year
+  period: 2025
+  geography_id: BE2
+  geography_level: nuts1
+  geography_name: Flemish Region
+  geography_vintage: NUTS_2024
+  entity: household
+  entity_role: benefit_recipient
+  domain: child_benefit
+  groupby_dimension: groeipakket.component
+  rows:
+  - value_id: sociale_toeslag
+    label: Social supplement family caseload
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: sociale_toeslag
+    table_record_kind: total
+    filters:
+      groeipakket.component: social_supplement
+    constraints:
+    - variable: groeipakket.component
+      operator: ==
+      value: social_supplement
+      label: Groeipakket component
+  - value_id: wezentoeslag
+    label: Orphan supplement family caseload
+    ordinal: 1
+    row_number: 3
+    expected_row_header_column: A
+    expected_row_header: wezentoeslag
+    table_record_kind: total
+    filters:
+      groeipakket.component: orphan_supplement
+    constraints:
+    - variable: groeipakket.component
+      operator: ==
+      value: orphan_supplement
+      label: Groeipakket component
+  - value_id: zorgtoeslag
+    label: Care supplement family caseload
+    ordinal: 2
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: zorgtoeslag
+    table_record_kind: total
+    filters:
+      groeipakket.component: care_supplement
+    constraints:
+    - variable: groeipakket.component
+      operator: ==
+      value: care_supplement
+      label: Groeipakket component
+  - value_id: pleegzorgtoeslag
+    label: Foster care supplement family caseload
+    ordinal: 3
+    row_number: 5
+    expected_row_header_column: A
+    expected_row_header: pleegzorgtoeslag
+    table_record_kind: total
+    filters:
+      groeipakket.component: foster_care_supplement
+    constraints:
+    - variable: groeipakket.component
+      operator: ==
+      value: foster_care_supplement
+      label: Groeipakket component
+  - value_id: basisbedrag
+    label: Basic amount family caseload
+    ordinal: 4
+    row_number: 8
+    expected_row_header_column: A
+    expected_row_header: basisbedrag
+    table_record_kind: total
+    filters:
+      groeipakket.component: basic_amount
+    constraints:
+    - variable: groeipakket.component
+      operator: ==
+      value: basic_amount
+      label: Groeipakket component
+  measures:
+  - measure_id: families
+    label: Families receiving Groeipakket component
+    ordinal: 0
+    column: F
+    source_column_id: families
+    expected_column_header_row: 1
+    expected_column_header: families
+    concept: groeipakket_families_receiving_component
+    source_concept: opgroeien.groeipakket.families_by_component
+    concept_relation: exact
+    concept_authority: ledger-be
+    concept_evidence_url: https://www.opgroeien.be/kennis/cijfers-en-onderzoek/groeipakket
+    concept_evidence_notes: >-
+      Opgroeien publishes the number of families receiving each Groeipakket
+      component. The basisbedrag family count (930,010, end 2025) is published
+      exactly and included here; other rows carry the same reference basis as the
+      corresponding child caseload row.
+    unit: count
+    aggregation: sum
+    expected_cell_type: number
