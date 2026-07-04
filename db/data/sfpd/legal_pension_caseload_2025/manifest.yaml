@@ -1,0 +1,30 @@
+source_id: sfpd-legal-pension-caseload-2025
+source_name: SFPD/SFP legal pension caseload 2025
+publisher: Service fédéral des Pensions (SFP/SFPD), via PensionStat.be
+source_page: https://www.pensionstat.be/fr
+files:
+  2025:
+    filename: sfpd_legal_pension_caseload_2025.csv
+    source_url: https://www.pensionstat.be/fr
+    source_table: Legal pension beneficiaries by scheme, January 2025
+    sha256: 5e2a249035f0871d81c21a0f44f88b9680990394a6f252fd5684d22b235a5a81
+    size_bytes: 370
+    storage:
+      r2:
+        provider: r2
+        bucket: ledger-raw
+        key: raw/belgium/sfpd-legal-pension-caseload-2025/2025/5e2a249035f0871d81c21a0f44f88b9680990394a6f252fd5684d22b235a5a81/sfpd_legal_pension_caseload_2025.csv
+        uri: r2://ledger-raw/raw/belgium/sfpd-legal-pension-caseload-2025/2025/5e2a249035f0871d81c21a0f44f88b9680990394a6f252fd5684d22b235a5a81/sfpd_legal_pension_caseload_2025.csv
+    source_urls:
+    - https://www.pensionstat.be/fr
+    - https://www.pensionstat.be/fr/chiffres-cles/pension-legale/pensionnes
+    notes: >-
+      Legal pension beneficiary counts published by the Federal Pensions Service
+      (SFP/SFPD) via PensionStat.be (a Sigedis / SFP / INASTI initiative),
+      January 2025 reference. The three scheme counts (employee, self-employed,
+      civil servant) sum to 3,653,050, which exceeds the 2,674,520 all-schemes
+      total because a person with a mixed career is counted in each scheme they
+      draw from; the scheme rows are therefore per-scheme recipient counts, not a
+      partition of the total. Total legal pension expenditure is published only
+      as a rounded "69 billion EUR" without an exact figure or reference year on
+      the source page, so it is recorded as a gap rather than a fact.
