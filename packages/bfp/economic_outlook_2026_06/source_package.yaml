@@ -1,0 +1,158 @@
+schema_version: ledger.source_package.v1
+package_id: bfp-economic-outlook-2026-06
+label: BFP June 2026 economic outlook headline projections
+artifact:
+  source_name: bfp_economic_outlook
+  source_table: Economic Budget 2026-2027 - Economic Outlook 2028-2031, June 2026 headline projections
+  resource_package: db
+  resource_directory: data/bfp/economic_outlook_2026_06
+  manifest: manifest.yaml
+  vintage: bfp_june_2026_outlook
+  extracted_at: '2026-07-04'
+  extraction_method: curated CSV extract from Federal Planning Bureau June 2026 economic outlook publication page headline figures
+  parser: delimited_text_full_rows
+  artifact_year: 2026
+  sheet_name: bfp_economic_outlook_2026_06
+record_sets:
+- record_set_id: bfp.economic_outlook.cy2026.headline_projections.country
+  record_set_spec_id: bfp.economic_outlook.headline_projections.cy2026.v1
+  assertion: source_projection
+  source_record_id_prefix: bfp.economic_outlook.cy2026.headline_projections
+  sheet_name: bfp_economic_outlook_2026_06
+  period_type: calendar_year
+  period: 2026
+  geography_id: BE
+  geography_level: country
+  geography_name: Belgium
+  geography_vintage: current
+  entity: government
+  entity_role: forecaster
+  domain: economic_outlook
+  groupby_dimension: bfp.metric
+  rows:
+  - value_id: outlook_2026
+    label: BFP June 2026 outlook, projection year 2026
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: outlook_2026
+    table_record_kind: total
+  measures:
+  - measure_id: real_gdp_growth
+    label: Projected real GDP growth
+    ordinal: 0
+    column: D
+    source_column_id: real_gdp_growth
+    expected_column_header_row: 1
+    expected_column_header: real_gdp_growth
+    concept: bfp.real_gdp_growth_projection
+    source_concept: bfp.economic_outlook.real_gdp_growth
+    concept_relation: source_label
+    concept_authority: bfp
+    concept_evidence_url: https://www.plan.be/en/publications/economic-budget-2026-2027-economic-outlook-2028
+    concept_evidence_notes: >-
+      Federal Planning Bureau June 2026 economic outlook projects real GDP growth
+      of 0.7% for 2026. Publisher projection kept as a BFP concept; downstream
+      adapters decide explicitly whether and how to use it.
+    unit: percent
+    aggregation: sum
+    expected_cell_type: number
+  - measure_id: consumer_price_inflation
+    label: Projected consumer price inflation
+    ordinal: 1
+    column: E
+    source_column_id: consumer_price_inflation
+    expected_column_header_row: 1
+    expected_column_header: consumer_price_inflation
+    concept: bfp.consumer_price_inflation_projection
+    source_concept: bfp.economic_outlook.consumer_price_inflation
+    concept_relation: source_label
+    concept_authority: bfp
+    concept_evidence_url: https://www.plan.be/en/publications/economic-budget-2026-2027-economic-outlook-2028
+    concept_evidence_notes: >-
+      Federal Planning Bureau June 2026 economic outlook projects consumer price
+      inflation of 3.4% for 2026.
+    unit: percent
+    aggregation: sum
+    expected_cell_type: number
+  - measure_id: general_government_deficit_pct_gdp
+    label: Projected general government deficit as a share of GDP
+    ordinal: 2
+    column: F
+    source_column_id: general_government_deficit_pct_gdp
+    expected_column_header_row: 1
+    expected_column_header: general_government_deficit_pct_gdp
+    concept: bfp.general_government_deficit_pct_gdp_projection
+    source_concept: bfp.economic_outlook.general_government_deficit_pct_gdp
+    concept_relation: source_label
+    concept_authority: bfp
+    concept_evidence_url: https://www.plan.be/en/publications/economic-budget-2026-2027-economic-outlook-2028
+    concept_evidence_notes: >-
+      Federal Planning Bureau June 2026 economic outlook projects the general
+      government deficit stabilising at 5.1% of GDP in 2026. Stored as the
+      published deficit magnitude (positive); net lending is the negative of this
+      value.
+    unit: percent_of_gdp
+    aggregation: sum
+    expected_cell_type: number
+- record_set_id: bfp.economic_outlook.cy2031.headline_projections.country
+  record_set_spec_id: bfp.economic_outlook.headline_projections.cy2031.v1
+  assertion: source_projection
+  source_record_id_prefix: bfp.economic_outlook.cy2031.headline_projections
+  sheet_name: bfp_economic_outlook_2026_06
+  period_type: calendar_year
+  period: 2031
+  geography_id: BE
+  geography_level: country
+  geography_name: Belgium
+  geography_vintage: current
+  entity: government
+  entity_role: forecaster
+  domain: economic_outlook
+  groupby_dimension: bfp.metric
+  rows:
+  - value_id: outlook_2031
+    label: BFP June 2026 outlook, projection year 2031
+    ordinal: 0
+    row_number: 3
+    expected_row_header_column: A
+    expected_row_header: outlook_2031
+    table_record_kind: total
+  measures:
+  - measure_id: consumer_price_inflation
+    label: Projected consumer price inflation
+    ordinal: 0
+    column: E
+    source_column_id: consumer_price_inflation
+    expected_column_header_row: 1
+    expected_column_header: consumer_price_inflation
+    concept: bfp.consumer_price_inflation_projection
+    source_concept: bfp.economic_outlook.consumer_price_inflation
+    concept_relation: source_label
+    concept_authority: bfp
+    concept_evidence_url: https://www.plan.be/en/publications/economic-budget-2026-2027-economic-outlook-2028
+    concept_evidence_notes: >-
+      Federal Planning Bureau June 2026 economic outlook projects consumer price
+      inflation easing to 1.7% by the end of the projection period (2031).
+    unit: percent
+    aggregation: sum
+    expected_cell_type: number
+  - measure_id: general_government_deficit_pct_gdp
+    label: Projected general government deficit as a share of GDP
+    ordinal: 1
+    column: F
+    source_column_id: general_government_deficit_pct_gdp
+    expected_column_header_row: 1
+    expected_column_header: general_government_deficit_pct_gdp
+    concept: bfp.general_government_deficit_pct_gdp_projection
+    source_concept: bfp.economic_outlook.general_government_deficit_pct_gdp
+    concept_relation: source_label
+    concept_authority: bfp
+    concept_evidence_url: https://www.plan.be/en/publications/economic-budget-2026-2027-economic-outlook-2028
+    concept_evidence_notes: >-
+      Federal Planning Bureau June 2026 economic outlook projects the general
+      government deficit widening to 6.4% of GDP by 2031. Stored as the published
+      deficit magnitude (positive); net lending is the negative of this value.
+    unit: percent_of_gdp
+    aggregation: sum
+    expected_cell_type: number

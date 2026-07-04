@@ -1,0 +1,33 @@
+source_id: bfp-economic-outlook-2026-06
+source_name: BFP economic outlook June 2026
+publisher: Federal Planning Bureau (Bureau fédéral du Plan / Federaal Planbureau)
+source_page: https://www.plan.be/en/publications/economic-budget-2026-2027-economic-outlook-2028
+files:
+  2026:
+    filename: bfp_economic_outlook_2026_06.csv
+    source_url: https://www.plan.be/en/publications/economic-budget-2026-2027-economic-outlook-2028
+    source_table: Economic Budget 2026-2027 - Economic Outlook 2028-2031, June 2026 headline projections
+    sha256: 925eb195ff31de15fbe46b694a78ee8e338a44fd56af52bc57ad72690c816c51
+    size_bytes: 377
+    storage:
+      r2:
+        provider: r2
+        bucket: ledger-raw
+        key: raw/belgium/bfp-economic-outlook-2026-06/2026/925eb195ff31de15fbe46b694a78ee8e338a44fd56af52bc57ad72690c816c51/bfp_economic_outlook_2026_06.csv
+        uri: r2://ledger-raw/raw/belgium/bfp-economic-outlook-2026-06/2026/925eb195ff31de15fbe46b694a78ee8e338a44fd56af52bc57ad72690c816c51/bfp_economic_outlook_2026_06.csv
+    source_urls:
+    - https://www.plan.be/en/publications/economic-budget-2026-2027-economic-outlook-2028
+    - https://www.plan.be/sites/default/files/documents/FOR_MIDTERM_2631_13322_FR.pdf
+    - https://www.plan.be/sites/default/files/documents/FOR_MIDTERM_2631_13322_NL.pdf
+    notes: >-
+      Headline projection figures published by the Federal Planning Bureau (the
+      Belgian OBR-analog) in its "Economic Budget 2026-2027 - Economic Outlook
+      2028-2031" of 12 June 2026. These are publisher projections, typed
+      assertion: source_projection. Only figures printed exactly on the
+      publication page are recorded: real GDP growth 2026 (0.7%), consumer price
+      inflation 2026 (3.4%) and end-of-period 2031 (1.7%), and the general
+      government deficit as a share of GDP in 2026 (5.1%) and 2031 (6.4%). The
+      employment figures on the page ("around 20 000" jobs in 2026, "nearly
+      230 000" over 2027-2031) are stated as rounded approximations and the
+      per-year 2027-2030 GDP path is not on the press page, so both are recorded
+      as gaps rather than facts pending extraction from the full report PDF.
