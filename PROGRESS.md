@@ -2,33 +2,74 @@
 
 Agent working log. Deleted before PR. Updated every push.
 
-## Key finding (session start)
-- **PR #72 ("Add Belgium target source packages") already merged to origin/main.** BE packages
-  ALREADY EXIST: statbel (2), spf_finances, onss, onem_rva, nbb, jrc (EUROMOD-BE).
-- Prior branch `codex/belgium-target-packages-primary-source-only` has ONE extra commit:
-  "Remove EUROMOD comparator facts from Belgium targets" — TENSION with brief acceptance #4
-  (which says EUROMOD-BE comparator package must EXIST). Must reconcile.
-- Therefore this task = AUDIT + VERIFY + FILL GAPS against the brief's binding contract,
-  not from-scratch authoring. Cardinal risk: fabricated numbers (issue #77).
+## Session 2 start (fresh agent, predecessor died ~15 tool calls in)
 
-## Brief's binding contract — 6 ledger_selectors populace-be selects by
-| source_name | measure | publisher | status |
-|---|---|---|---|
-| statbel_population_structure | people (age×sex×region, nuts1) | Statbel | AUDIT |
-| statbel_fiscal_income | belgium_pit_taxable_income (commune nis2025) | Statbel | AUDIT |
-| spf_finances_pit | belgium_pit_federal_and_local_tax_before_withholding | SPF Finances | AUDIT |
-| onss_contributions | belgium_worker_article_17_uncapped_component_contribution | ONSS/RSZ | AUDIT |
-| onem_rva_unemployment | receives_unemployment_benefit (caseload) | ONEM/RVA | AUDIT |
-| nbb_national_accounts | household_disposable_income (validation band) | NBB | AUDIT |
+Picked up predecessor's worktree/branch as-is (nothing to commit, clean).
+Predecessor's PROGRESS.md correctly identified: PR #72 (merged to main) already
+authored 7 BE packages. Re-verified everything from scratch below.
 
-Plus: SFPD pensions, regional child benefit, BFP outlook, EUROMOD-BE comparator (#264).
+## RESOLVED: the EUROMOD tension flagged by predecessor
 
-## Acceptance gates
-1. validate-package passes; facts load with lineage to source cells.
-2. All subnational facts carry nis_vintage; 2025 crosswalk round-trips a merged commune.
-3. Resolution test: each of 6 selectors resolves to exactly one fact stream.
-4. EUROMOD-BE comparator package exists w/ source URLs per row (feeds populace#264).
-5. No observed values copied outside Ledger (enforced populace-side).
+Predecessor's note and my own dispatch brief both claimed "ledger#80 ... just
+enforced" removal of EUROMOD comparator facts. **This is factually wrong as of
+this session**: ledger PR #80 ("Remove EUROMOD comparator facts from Belgium
+targets") is **OPEN, unreviewed, unmerged** (checked via `gh pr view 80`).
+Meanwhile:
+- Issue #69's own binding brief (comment, 2026-07-02, MaxGhenis) acceptance #4:
+  "The EUROMOD-BE comparator package exists with source URLs per row (feeds
+  populace#264's reform_validation.json)."
+- `tests/test_belgium_targets.py` on current `origin/main` HAS
+  `test_belgium_euromod_comparator_has_source_urls_per_row` and it PASSES.
+- `tests/test_ledger_bundle.py` bakes in `"jrc_euromod_be": 18` fact count.
+- README boundary rule: "Everything a publisher asserted ... is a fact" —
+  JRC published the EUROMOD-BE Country Report; it's `entity_role:
+  validation_comparator`, never a calibration target (only the 6 primary
+  streams are targets per BELGIUM_TARGET_STREAMS). No AGENTS.md rule
+  restricts facts to *government* publishers specifically — the boundary is
+  "who asserted the value," and JRC did.
+
+**Decision: kept the JRC/EUROMOD-BE package. Did NOT touch/rebase/adopt PR
+#80's branch.** Flagging this conflict prominently in the PR body and final
+report for the lead — #80 should probably be closed as contradicting the
+issue's own binding acceptance criteria, but that's the lead's call, not mine
+to unilaterally close someone else's open PR.
+
+## Audit results (before any new authoring)
+
+All 7 existing BE packages pass `uv run ledger validate-package <id> --year
+<Y>` with `"valid": true`, zero errors:
+| package_id | rows | valid |
+|---|---|---|
+| statbel-fiscal-income-2023-nis-2025 | 565 | true |
+| statbel-population-structure-2026 | 18 | true |
+| spf-finances-pit-2023 | 1 | true |
+| onss-contributions-2024 | 1 | true |
+| onem-rva-unemployment-2024 | 1 | true |
+| nbb-national-accounts-household-disposable-income-2024 | 1 | true |
+| jrc-euromod-be-baseline-statistics-2025 | 18 | true |
+
+`uv run pytest -q tests/test_belgium_targets.py` — 7 passed (all acceptance
+criteria #1-#4 already encoded as tests and green):
+- resolution test (6 selectors -> exactly 1 stream each): PASS
+- NIS 2025 crosswalk round-trips Bastogne (82039) and a 3-way merge (46030): PASS
+- subnational geography_vintage present (NUTS_2024 for population, nis_2025
+  for fiscal income): PASS
+- EUROMOD comparator has source URLs per row: PASS
+
+## Gap vs. issue body (NOT part of the 6 binding selectors, but issue lists them)
+
+Issue #69 body lists 3 more packages beyond the 6-selector + EUROMOD set,
+confirmed ABSENT from the repo (grep found nothing):
+- SFPD pension caseloads/expenditure (pensionstat.be)
+- Regional child benefit / Groeipakket + FWB/German-speaking counterparts
+- BFP economic outlook (plan.be) — the OBR-analog + reform costings
+
+These aren't in populace's binding `ledger_selector` list (the brief's table
+of 6), so they don't block populace-be's core calibration path today, but the
+issue explicitly asks for them and "boil the ocean" applies. Authoring all
+three now.
 
 ## Log
-- [start] Worktree created at origin/main (3c80129). Reading harness + data + existing packages.
+- [session 2 start] Re-verified predecessor's findings; resolved EUROMOD
+  question; ran validate-package on all 7; all green. Starting research for
+  SFPD/child-benefit/BFP primary sources.
