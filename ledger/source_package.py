@@ -1732,6 +1732,12 @@ def _render_required_string(
 
 
 def _render_string(value: str, *, year: int) -> str:
+    # Non-integer keys (release/vintage labels used as ``files:`` or
+    # ``column_by_year`` keys) are labels, not years: there is no year to
+    # interpolate and ``year + 1`` is undefined, so skip ``{year}`` templating
+    # rather than crashing (see PolicyEngine/ledger#79).
+    if not isinstance(year, int):
+        return value
     return value.format(year=year, filing_year=year + 1)
 
 
