@@ -1,13 +1,29 @@
-"""
-ETL for USDA SNAP (Supplemental Nutrition Assistance Program) targets.
+"""ETL for USDA SNAP (Supplemental Nutrition Assistance Program) targets.
 
-Loads data from USDA Food and Nutrition Service into the targets database.
-Data source: https://www.fns.usda.gov/pd/supplemental-nutrition-assistance-program-snap
+Loads SNAP participation and benefit targets into the legacy targets database.
+
+Values are sourced from the trustworthy USDA FNS source package at
+``packages/usda_snap/fy69_to_current``, which parses the FY24 workbook
+(``SNAP Monthly State Participation and Benefit Summary``) cell-by-cell with
+guard cells and checksum-locked provenance. This ETL previously hardcoded a
+``SNAP_DATA`` dict of suspiciously round per-state values with no per-value
+citation (see PolicyEngine/ledger#77); those fabricated numbers have been
+removed in favor of the parsed source facts, so ``ledger load snap`` now emits
+only source-backed values.
+
+Data source page:
+https://www.fns.usda.gov/pd/supplemental-nutrition-assistance-program-snap
 """
 
 from __future__ import annotations
 
+from collections import defaultdict
+
 from sqlmodel import Session, select
+
+from ledger.core import AggregateFact
+from ledger.normalization import SourceFact, as_target, convert_units, target_kwargs
+from ledger.source_package import load_source_package
 
 from .schema import (
     DataSource,
@@ -18,167 +34,104 @@ from .schema import (
     TargetType,
     init_db,
 )
-from ledger.normalization import SourceFact, as_target, convert_units, target_kwargs
 
-# State FIPS codes
-STATE_FIPS = {
-    "AL": "01",
-    "AK": "02",
-    "AZ": "04",
-    "AR": "05",
-    "CA": "06",
-    "CO": "08",
-    "CT": "09",
-    "DE": "10",
-    "DC": "11",
-    "FL": "12",
-    "GA": "13",
-    "HI": "15",
-    "ID": "16",
-    "IL": "17",
-    "IN": "18",
-    "IA": "19",
-    "KS": "20",
-    "KY": "21",
-    "LA": "22",
-    "ME": "23",
-    "MD": "24",
-    "MA": "25",
-    "MI": "26",
-    "MN": "27",
-    "MS": "28",
-    "MO": "29",
-    "MT": "30",
-    "NE": "31",
-    "NV": "32",
-    "NH": "33",
-    "NJ": "34",
-    "NM": "35",
-    "NY": "36",
-    "NC": "37",
-    "ND": "38",
-    "OH": "39",
-    "OK": "40",
-    "OR": "41",
-    "PA": "42",
-    "RI": "44",
-    "SC": "45",
-    "SD": "46",
-    "TN": "47",
-    "TX": "48",
-    "UT": "49",
-    "VT": "50",
-    "VA": "51",
-    "WA": "53",
-    "WV": "54",
-    "WI": "55",
-    "WY": "56",
-    "PR": "72",
-    "VI": "78",
-    "GU": "66",
-}
-
-# SNAP data by year (from USDA FNS)
-# Source: https://www.fns.usda.gov/pd/supplemental-nutrition-assistance-program-snap
-# Values: households (thousands), benefits (millions of dollars)
-SNAP_DATA = {
-    2023: {
-        "national": {
-            "households": 22_323,  # thousands
-            "participants": 42_104,  # thousands
-            "benefits": 112_848,  # millions
-            "avg_benefit_per_person": 216.99,  # dollars/month
-        },
-        # Top 10 states by participation
-        "states": {
-            "CA": {"households": 2_891, "participants": 5_123, "benefits": 14_234},
-            "TX": {"households": 2_156, "participants": 4_012, "benefits": 9_876},
-            "FL": {"households": 1_987, "participants": 3_654, "benefits": 8_234},
-            "NY": {"households": 1_654, "participants": 2_987, "benefits": 7_654},
-            "PA": {"households": 1_234, "participants": 2_345, "benefits": 5_432},
-            "IL": {"households": 1_123, "participants": 2_134, "benefits": 4_987},
-            "OH": {"households": 987, "participants": 1_876, "benefits": 4_321},
-            "GA": {"households": 912, "participants": 1_765, "benefits": 3_987},
-            "MI": {"households": 876, "participants": 1_654, "benefits": 3_654},
-            "NC": {"households": 834, "participants": 1_567, "benefits": 3_432},
-        },
-    },
-    2022: {
-        "national": {
-            "households": 21_567,
-            "participants": 41_234,
-            "benefits": 119_432,  # Higher due to emergency allotments
-            "avg_benefit_per_person": 234.56,
-        },
-        "states": {
-            "CA": {"households": 2_765, "participants": 4_987, "benefits": 15_123},
-            "TX": {"households": 2_098, "participants": 3_876, "benefits": 10_234},
-            "FL": {"households": 1_876, "participants": 3_456, "benefits": 8_765},
-            "NY": {"households": 1_598, "participants": 2_876, "benefits": 8_123},
-            "PA": {"households": 1_198, "participants": 2_234, "benefits": 5_765},
-            "IL": {"households": 1_087, "participants": 2_054, "benefits": 5_234},
-            "OH": {"households": 954, "participants": 1_798, "benefits": 4_567},
-            "GA": {"households": 887, "participants": 1_698, "benefits": 4_234},
-            "MI": {"households": 845, "participants": 1_598, "benefits": 3_876},
-            "NC": {"households": 798, "participants": 1_498, "benefits": 3_654},
-        },
-    },
-    2021: {
-        "national": {
-            "households": 21_876,
-            "participants": 41_987,
-            "benefits": 113_456,
-            "avg_benefit_per_person": 228.12,
-        },
-        "states": {
-            "CA": {"households": 2_834, "participants": 5_076, "benefits": 14_567},
-            "TX": {"households": 2_123, "participants": 3_945, "benefits": 9_987},
-            "FL": {"households": 1_934, "participants": 3_587, "benefits": 8_456},
-            "NY": {"households": 1_623, "participants": 2_934, "benefits": 7_876},
-            "PA": {"households": 1_212, "participants": 2_287, "benefits": 5_543},
-            "IL": {"households": 1_098, "participants": 2_087, "benefits": 5_098},
-            "OH": {"households": 967, "participants": 1_834, "benefits": 4_432},
-            "GA": {"households": 898, "participants": 1_723, "benefits": 4_098},
-            "MI": {"households": 856, "participants": 1_623, "benefits": 3_765},
-            "NC": {"households": 812, "participants": 1_534, "benefits": 3_543},
-        },
-    },
-}
+# Trustworthy FNS source package parsed cell-by-cell with guard cells.
+SNAP_SOURCE_PACKAGE = "packages/usda_snap/fy69_to_current"
 
 SOURCE_URL = (
     "https://www.fns.usda.gov/pd/supplemental-nutrition-assistance-program-snap"
 )
 
+# Source-package canonical concepts mapped to legacy target variables. Each
+# tuple is (target variable, target type, output unit). The FNS workbook
+# publishes household and person counts as absolute counts and benefits as
+# absolute dollars, so no scale conversion is applied.
+_MEASURE_TARGETS: dict[str, tuple[str, TargetType, str]] = {
+    "usda_snap.average_monthly_households": (
+        "snap_household_count",
+        TargetType.COUNT,
+        "count",
+    ),
+    "usda_snap.average_monthly_persons": (
+        "snap_participant_count",
+        TargetType.COUNT,
+        "count",
+    ),
+    "usda_snap.total_benefits": (
+        "snap_benefits",
+        TargetType.AMOUNT,
+        "dollars",
+    ),
+}
+
+
+def _fips_from_geography_id(geography_id: str) -> str | None:
+    """Extract a 2-digit state FIPS code from a Census GEOID.
+
+    State GEOIDs look like ``0400000US06`` (California). Non-state geographies
+    (e.g. the national ``0100000US``) return ``None``.
+    """
+    marker = "US"
+    index = geography_id.rfind(marker)
+    if index == -1:
+        return None
+    suffix = geography_id[index + len(marker) :]
+    if len(suffix) == 2 and suffix.isdigit():
+        return suffix
+    return None
+
+
+def _provenance_note(fact: AggregateFact) -> str:
+    """Build a per-value provenance note from the fact's source lineage."""
+    source = fact.source
+    parts = [
+        f"USDA FNS {source.source_table}" if source.source_table else "USDA FNS",
+    ]
+    if source.source_file:
+        parts.append(f"source_file={source.source_file}")
+    if source.vintage:
+        parts.append(f"vintage={source.vintage}")
+    if source.source_sha256:
+        parts.append(f"sha256={source.source_sha256}")
+    if source.raw_r2_uri:
+        parts.append(f"raw={source.raw_r2_uri}")
+    if fact.source_record_id:
+        parts.append(f"record={fact.source_record_id}")
+    return "; ".join(parts)
+
 
 def build_snap_target(
     stratum: Stratum,
+    fact: AggregateFact,
     *,
     variable: str,
-    raw_value: float,
-    period: int,
-    raw_unit: str,
-    output_unit: str,
-    factor: float,
     target_type: TargetType,
+    output_unit: str,
     source_table: str,
 ) -> Target:
-    """Build a SNAP target input from a source fact and unit conversion."""
-    fact = SourceFact(
+    """Build a SNAP target input from a parsed source fact.
+
+    The value already arrives in its published absolute unit, so this records a
+    no-op ``convert_units`` step purely to attach normalization lineage; the
+    numeric value is unchanged.
+    """
+    source_fact = SourceFact(
         name=variable,
-        value=raw_value,
-        period=period,
-        unit=raw_unit,
+        value=fact.value,
+        period=fact.period.value,
+        unit=fact.measure.unit,
         source=DataSource.USDA_SNAP,
         jurisdiction=stratum.jurisdiction,
         source_table=source_table,
         source_url=SOURCE_URL,
     )
-    converted = convert_units(fact, factor, output_unit)
+    converted = convert_units(source_fact, 1, output_unit)
     blueprint = as_target(
         converted,
         variable=variable,
         target_type=target_type,
         stratum_name=stratum.name,
+        notes=_provenance_note(fact),
     )
     return Target(**target_kwargs(blueprint, stratum_id=stratum.id))
 
@@ -225,24 +178,45 @@ def get_or_create_stratum(
     return stratum
 
 
-def load_snap_targets(session: Session, years: list[int] | None = None):
+def load_snap_facts(years: list[int] | None = None) -> list[AggregateFact]:
+    """Load source-backed SNAP facts from the trustworthy FNS source package.
+
+    The package artifact is the FY2024 workbook, so every fact carries a
+    ``fiscal_year 2024`` reference period. ``years`` optionally filters to
+    matching fact reference periods; a year with no matching facts (e.g. a
+    prior fiscal year not yet added to the package) simply yields nothing
+    rather than mislabeling FY2024 data.
     """
-    Load SNAP targets into database.
+    package = load_source_package(SNAP_SOURCE_PACKAGE)
+    facts = package.build_facts(package.artifact.artifact_year)
+    if years is not None:
+        wanted = set(years)
+        facts = [fact for fact in facts if fact.period.value in wanted]
+    return facts
+
+
+def load_snap_targets(session: Session, years: list[int] | None = None):
+    """Load SNAP targets into the database from parsed FNS source facts.
 
     Args:
-        session: Database session
-        years: Years to load (default: all available)
+        session: Database session.
+        years: Optional list of fiscal-year reference periods to include.
+            Defaults to every period the source package publishes.
     """
-    if years is None:
-        years = list(SNAP_DATA.keys())
+    facts = load_snap_facts(years)
 
-    for year in years:
-        if year not in SNAP_DATA:
+    # Group facts by geography so each stratum gets its measures together.
+    by_geography: dict[str, list[AggregateFact]] = defaultdict(list)
+    for fact in facts:
+        by_geography[fact.geography.id].append(fact)
+
+    national_stratum: Stratum | None = None
+
+    # Materialize the national stratum first so state strata can parent to it.
+    for geography_facts in by_geography.values():
+        if geography_facts[0].geography.level != "country":
             continue
 
-        data = SNAP_DATA[year]
-
-        # Create national SNAP stratum
         national_stratum = get_or_create_stratum(
             session,
             name="US SNAP Recipients",
@@ -252,109 +226,58 @@ def load_snap_targets(session: Session, years: list[int] | None = None):
             stratum_group_id="snap_national",
         )
 
-        # Add national totals
-        national_data = data["national"]
-
-        session.add(
-            build_snap_target(
-                national_stratum,
-                variable="snap_household_count",
-                period=year,
-                raw_value=national_data["households"],
-                raw_unit="thousands",
-                output_unit="count",
-                factor=1000,
-                target_type=TargetType.COUNT,
-                source_table="SNAP National Summary",
-            )
-        )
-
-        session.add(
-            build_snap_target(
-                national_stratum,
-                variable="snap_participant_count",
-                period=year,
-                raw_value=national_data["participants"],
-                raw_unit="thousands",
-                output_unit="count",
-                factor=1000,
-                target_type=TargetType.COUNT,
-                source_table="SNAP National Summary",
-            )
-        )
-
-        session.add(
-            build_snap_target(
-                national_stratum,
-                variable="snap_benefits",
-                period=year,
-                raw_value=national_data["benefits"],
-                raw_unit="millions_of_dollars",
-                output_unit="dollars",
-                factor=1_000_000,
-                target_type=TargetType.AMOUNT,
-                source_table="SNAP National Summary",
-            )
-        )
-
-        # Add state-level targets
-        for state_abbrev, state_data in data.get("states", {}).items():
-            if state_abbrev not in STATE_FIPS:
+        for fact in geography_facts:
+            mapping = _MEASURE_TARGETS.get(fact.measure.concept)
+            if mapping is None:
                 continue
-
-            fips = STATE_FIPS[state_abbrev]
-
-            state_stratum = get_or_create_stratum(
-                session,
-                name=f"{state_abbrev} SNAP Recipients",
-                jurisdiction=Jurisdiction.US,
-                constraints=[
-                    ("snap", "==", "1"),
-                    ("state_fips", "==", fips),
-                ],
-                description=f"SNAP recipients in {state_abbrev}",
-                parent_id=national_stratum.id,
-                stratum_group_id="snap_states",
-            )
-
+            variable, target_type, output_unit = mapping
             session.add(
                 build_snap_target(
-                    state_stratum,
-                    variable="snap_household_count",
-                    period=year,
-                    raw_value=state_data["households"],
-                    raw_unit="thousands",
-                    output_unit="count",
-                    factor=1000,
-                    target_type=TargetType.COUNT,
-                    source_table="SNAP State Summary",
+                    national_stratum,
+                    fact,
+                    variable=variable,
+                    target_type=target_type,
+                    output_unit=output_unit,
+                    source_table="SNAP National Summary",
                 )
             )
 
-            session.add(
-                build_snap_target(
-                    state_stratum,
-                    variable="snap_participant_count",
-                    period=year,
-                    raw_value=state_data["participants"],
-                    raw_unit="thousands",
-                    output_unit="count",
-                    factor=1000,
-                    target_type=TargetType.COUNT,
-                    source_table="SNAP State Summary",
-                )
-            )
+    # State-level strata and targets.
+    for geography_id, geography_facts in by_geography.items():
+        first = geography_facts[0]
+        if first.geography.level != "state":
+            continue
 
+        fips = _fips_from_geography_id(geography_id)
+        if fips is None:
+            continue
+
+        state_name = first.geography.name or geography_id
+        state_stratum = get_or_create_stratum(
+            session,
+            name=f"{state_name} SNAP Recipients",
+            jurisdiction=Jurisdiction.US,
+            constraints=[
+                ("snap", "==", "1"),
+                ("state_fips", "==", fips),
+            ],
+            description=f"SNAP recipients in {state_name}",
+            parent_id=national_stratum.id if national_stratum else None,
+            stratum_group_id="snap_states",
+        )
+
+        for fact in geography_facts:
+            mapping = _MEASURE_TARGETS.get(fact.measure.concept)
+            if mapping is None:
+                continue
+            variable, target_type, output_unit = mapping
             session.add(
                 build_snap_target(
                     state_stratum,
-                    variable="snap_benefits",
-                    period=year,
-                    raw_value=state_data["benefits"],
-                    raw_unit="millions_of_dollars",
-                    output_unit="dollars",
-                    factor=1_000_000,
-                    target_type=TargetType.AMOUNT,
+                    fact,
+                    variable=variable,
+                    target_type=target_type,
+                    output_unit=output_unit,
                     source_table="SNAP State Summary",
                 )
             )
@@ -365,6 +288,7 @@ def load_snap_targets(session: Session, years: list[int] | None = None):
 def run_etl(db_path=None):
     """Run the SNAP ETL pipeline."""
     from pathlib import Path
+
     from .schema import DEFAULT_DB_PATH
 
     path = Path(db_path) if db_path else DEFAULT_DB_PATH

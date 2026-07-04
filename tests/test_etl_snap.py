@@ -1,4 +1,9 @@
-"""Tests for SNAP ETL."""
+"""Tests for SNAP ETL.
+
+Values are asserted against the trustworthy USDA FNS source package
+(``packages/usda_snap/fy69_to_current``) rather than any hardcoded table, so
+the tests cannot silently bless fabricated numbers (see PolicyEngine/ledger#77).
+"""
 
 import tempfile
 from pathlib import Path
@@ -13,7 +18,10 @@ from db.schema import (
     TargetType,
     init_db,
 )
-from db.etl_snap import load_snap_targets, SNAP_DATA
+from db.etl_snap import load_snap_facts, load_snap_targets
+
+# The FNS source package artifact is the FY2024 workbook.
+SNAP_YEAR = 2024
 
 
 @pytest.fixture
@@ -25,13 +33,48 @@ def temp_db():
         yield engine
 
 
+@pytest.fixture(scope="module")
+def snap_facts():
+    """Parsed SNAP facts from the trustworthy source package."""
+    return load_snap_facts()
+
+
+def _fact_value(facts, *, geography_id, concept):
+    """Return the parsed value for a geography/concept pair."""
+    for fact in facts:
+        if fact.geography.id == geography_id and fact.measure.concept == concept:
+            return fact.value
+    raise AssertionError(f"no source fact for {geography_id} / {concept}")
+
+
+class TestSnapSourceFacts:
+    """The ETL must source its values from the FNS source package."""
+
+    def test_facts_are_fiscal_year_2024(self, snap_facts):
+        """Every parsed fact carries the FY2024 reference period."""
+        assert snap_facts
+        assert {fact.period.value for fact in snap_facts} == {SNAP_YEAR}
+
+    def test_facts_carry_source_provenance(self, snap_facts):
+        """Each parsed fact traces to the checksum-locked FNS artifact."""
+        for fact in snap_facts:
+            assert fact.source.source_name == "usda_snap"
+            assert fact.source.source_sha256
+            assert fact.source.raw_r2_uri
+
+    def test_year_filter_excludes_absent_periods(self):
+        """Filtering to a year with no facts yields nothing, not mislabeled data."""
+        assert load_snap_facts([SNAP_YEAR])
+        assert load_snap_facts([2021]) == []
+
+
 class TestSnapETL:
     """Tests for SNAP ETL loader."""
 
     def test_load_snap_creates_national_stratum(self, temp_db):
         """Loading SNAP data should create a national stratum."""
         with Session(temp_db) as session:
-            load_snap_targets(session, years=[2023])
+            load_snap_targets(session, years=[SNAP_YEAR])
 
             national = session.exec(
                 select(Stratum).where(Stratum.name == "US SNAP Recipients")
@@ -40,34 +83,38 @@ class TestSnapETL:
             assert national is not None
             assert national.stratum_group_id == "snap_national"
 
-    def test_load_snap_creates_national_targets(self, temp_db):
-        """Loading SNAP data should create national-level targets."""
+    def test_load_snap_creates_national_targets(self, temp_db, snap_facts):
+        """National household target should match the parsed FNS value."""
         with Session(temp_db) as session:
-            load_snap_targets(session, years=[2023])
+            load_snap_targets(session, years=[SNAP_YEAR])
 
             national = session.exec(
                 select(Stratum).where(Stratum.name == "US SNAP Recipients")
             ).first()
 
-            # Check household count
             hh_target = session.exec(
                 select(Target)
                 .where(Target.stratum_id == national.id)
                 .where(Target.variable == "snap_household_count")
-                .where(Target.period == 2023)
+                .where(Target.period == SNAP_YEAR)
             ).first()
 
             assert hh_target is not None
-            expected_hh = SNAP_DATA[2023]["national"]["households"] * 1000
+            expected_hh = _fact_value(
+                snap_facts,
+                geography_id="0100000US",
+                concept="usda_snap.average_monthly_households",
+            )
             assert hh_target.value == expected_hh
             assert hh_target.target_type == TargetType.COUNT
             assert hh_target.source == DataSource.USDA_SNAP
-            assert "convert_units" in hh_target.notes
+            # Provenance must be present and cite the FNS artifact.
+            assert "usda_snap" in hh_target.notes.lower() or "USDA FNS" in hh_target.notes
 
-    def test_load_snap_creates_participant_targets(self, temp_db):
-        """Loading SNAP should create participant count targets."""
+    def test_load_snap_creates_participant_targets(self, temp_db, snap_facts):
+        """Participant target should match the parsed FNS person count."""
         with Session(temp_db) as session:
-            load_snap_targets(session, years=[2023])
+            load_snap_targets(session, years=[SNAP_YEAR])
 
             national = session.exec(
                 select(Stratum).where(Stratum.name == "US SNAP Recipients")
@@ -77,17 +124,21 @@ class TestSnapETL:
                 select(Target)
                 .where(Target.stratum_id == national.id)
                 .where(Target.variable == "snap_participant_count")
-                .where(Target.period == 2023)
+                .where(Target.period == SNAP_YEAR)
             ).first()
 
             assert participant_target is not None
-            expected = SNAP_DATA[2023]["national"]["participants"] * 1000
+            expected = _fact_value(
+                snap_facts,
+                geography_id="0100000US",
+                concept="usda_snap.average_monthly_persons",
+            )
             assert participant_target.value == expected
 
-    def test_load_snap_creates_benefit_targets(self, temp_db):
-        """Loading SNAP should create benefit amount targets."""
+    def test_load_snap_creates_benefit_targets(self, temp_db, snap_facts):
+        """Benefit target should match the parsed FNS total benefits."""
         with Session(temp_db) as session:
-            load_snap_targets(session, years=[2023])
+            load_snap_targets(session, years=[SNAP_YEAR])
 
             national = session.exec(
                 select(Stratum).where(Stratum.name == "US SNAP Recipients")
@@ -97,35 +148,41 @@ class TestSnapETL:
                 select(Target)
                 .where(Target.stratum_id == national.id)
                 .where(Target.variable == "snap_benefits")
-                .where(Target.period == 2023)
+                .where(Target.period == SNAP_YEAR)
             ).first()
 
             assert benefit_target is not None
-            expected = SNAP_DATA[2023]["national"]["benefits"] * 1_000_000
+            expected = _fact_value(
+                snap_facts,
+                geography_id="0100000US",
+                concept="usda_snap.total_benefits",
+            )
             assert benefit_target.value == expected
             assert benefit_target.target_type == TargetType.AMOUNT
-            assert "convert_units" in benefit_target.notes
 
-    def test_load_snap_creates_state_strata(self, temp_db):
-        """Loading SNAP should create state-level strata."""
+    def test_load_snap_creates_state_strata(self, temp_db, snap_facts):
+        """Loading SNAP should create one stratum per parsed state geography."""
         with Session(temp_db) as session:
-            load_snap_targets(session, years=[2023])
+            load_snap_targets(session, years=[SNAP_YEAR])
 
             state_strata = session.exec(
                 select(Stratum).where(Stratum.stratum_group_id == "snap_states")
             ).all()
 
-            # Should have strata for states in the data
-            expected_states = len(SNAP_DATA[2023].get("states", {}))
-            assert len(state_strata) == expected_states
+            expected_states = {
+                fact.geography.id
+                for fact in snap_facts
+                if fact.geography.level == "state"
+            }
+            assert len(state_strata) == len(expected_states)
 
-    def test_load_snap_state_targets_correct(self, temp_db):
-        """State-level SNAP targets should have correct values."""
+    def test_load_snap_state_targets_correct(self, temp_db, snap_facts):
+        """State-level SNAP targets should match parsed FNS values."""
         with Session(temp_db) as session:
-            load_snap_targets(session, years=[2023])
+            load_snap_targets(session, years=[SNAP_YEAR])
 
             ca_stratum = session.exec(
-                select(Stratum).where(Stratum.name == "CA SNAP Recipients")
+                select(Stratum).where(Stratum.name == "California SNAP Recipients")
             ).first()
 
             assert ca_stratum is not None
@@ -136,13 +193,17 @@ class TestSnapETL:
                 .where(Target.variable == "snap_household_count")
             ).first()
 
-            expected_ca_hh = SNAP_DATA[2023]["states"]["CA"]["households"] * 1000
+            expected_ca_hh = _fact_value(
+                snap_facts,
+                geography_id="0400000US06",
+                concept="usda_snap.average_monthly_households",
+            )
             assert ca_hh.value == expected_ca_hh
 
-    def test_load_multiple_years(self, temp_db):
-        """Loading multiple years should create targets for each."""
+    def test_load_year_present(self, temp_db):
+        """Loading the available year should create national targets for it."""
         with Session(temp_db) as session:
-            load_snap_targets(session, years=[2021, 2022, 2023])
+            load_snap_targets(session, years=[SNAP_YEAR])
 
             national = session.exec(
                 select(Stratum).where(Stratum.name == "US SNAP Recipients")
@@ -155,13 +216,13 @@ class TestSnapETL:
             ).all()
 
             years = {t.period for t in targets}
-            assert years == {2021, 2022, 2023}
+            assert years == {SNAP_YEAR}
 
     def test_load_snap_idempotent(self, temp_db):
-        """Loading SNAP twice should not duplicate data."""
+        """Loading SNAP twice should not duplicate the national stratum."""
         with Session(temp_db) as session:
-            load_snap_targets(session, years=[2023])
-            load_snap_targets(session, years=[2023])
+            load_snap_targets(session, years=[SNAP_YEAR])
+            load_snap_targets(session, years=[SNAP_YEAR])
 
             national_strata = session.exec(
                 select(Stratum).where(Stratum.name == "US SNAP Recipients")
@@ -173,14 +234,14 @@ class TestSnapETL:
     def test_state_stratum_has_parent(self, temp_db):
         """State strata should have national stratum as parent."""
         with Session(temp_db) as session:
-            load_snap_targets(session, years=[2023])
+            load_snap_targets(session, years=[SNAP_YEAR])
 
             national = session.exec(
                 select(Stratum).where(Stratum.name == "US SNAP Recipients")
             ).first()
 
             ca = session.exec(
-                select(Stratum).where(Stratum.name == "CA SNAP Recipients")
+                select(Stratum).where(Stratum.name == "California SNAP Recipients")
             ).first()
 
             assert ca.parent_id == national.id
