@@ -79,6 +79,7 @@ SOURCE_PACKAGE_ALIASES = {
     "bea-regional-state-personal-income-components-2024": Path(
         "bea/regional_personal_income_state"
     ),
+    "ici-fact-book-table-30": Path("ici/fact_book_table_30"),
     "statbel-population-structure-2026": Path("statbel/population_structure_2026"),
     "statbel-fiscal-income-2023-nis-2025": Path(
         "statbel/fiscal_income_2023_nis_2025"
@@ -142,6 +143,7 @@ SOURCE_PACKAGE_ALIASES = {
         "hhs_acf_liheap/fy2024_national_profile"
     ),
     "jct-tax-expenditures-2024": Path("jct/tax_expenditures_2024"),
+    "soi-soca-table-1": Path("irs_soi/soca_table_1"),
     "soi-table-1-1": Path("irs_soi/table_1_1"),
     "soi-table-1-2": Path("irs_soi/table_1_2"),
     "soi-table-1-4": Path("irs_soi/table_1_4"),
