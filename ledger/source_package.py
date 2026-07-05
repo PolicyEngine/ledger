@@ -79,6 +79,7 @@ SOURCE_PACKAGE_ALIASES = {
     "bea-regional-state-personal-income-components-2024": Path(
         "bea/regional_personal_income_state"
     ),
+    "ici-fact-book-table-30": Path("ici/fact_book_table_30"),
     "statbel-population-structure-2026": Path("statbel/population_structure_2026"),
     "statbel-fiscal-income-2023-nis-2025": Path(
         "statbel/fiscal_income_2023_nis_2025"

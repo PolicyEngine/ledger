@@ -1,0 +1,18 @@
+source_id: ici
+package_id: ici-fact-book-table-30
+dataset: ici_fact_book_table_30
+source_page: https://www.icifactbook.org/26-fb-data-tables.html
+table: 2026 Investment Company Fact Book Data Table 30, Long-Term Mutual Funds Paid and Reinvested Capital Gains by Type of Fund
+files:
+  2026:
+    filename: 26-fb-table-30.xlsx
+    source_url: https://www.icifactbook.org/xls/26-fb-table-30.xlsx
+    sha256: bd15d5fc983e55632bbe3f884f9c826f6d4c85693f722e60cf216cff61d9e8b0
+    size_bytes: 21755
+    fetched_at: '2026-07-02'
+    storage:
+      r2:
+        provider: r2
+        bucket: ledger-raw
+        key: raw/ici/ici-fact-book-table-30/2026/bd15d5fc983e55632bbe3f884f9c826f6d4c85693f722e60cf216cff61d9e8b0/26-fb-table-30.xlsx
+        uri: r2://ledger-raw/raw/ici/ici-fact-book-table-30/2026/bd15d5fc983e55632bbe3f884f9c826f6d4c85693f722e60cf216cff61d9e8b0/26-fb-table-30.xlsx

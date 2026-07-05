@@ -1,0 +1,261 @@
+schema_version: ledger.source_package.v1
+package_id: ici-fact-book-table-30
+label: ICI Fact Book Table 30 mutual fund capital gains distributions
+artifact:
+  source_name: ici
+  source_table: 2026 Investment Company Fact Book Data Table 30, Long-Term Mutual Funds Paid and Reinvested Capital Gains by Type of Fund
+  resource_package: db
+  resource_directory: data/ici/fact_book_table_30
+  manifest: manifest.yaml
+  vintage: calendar_year_{year}
+  extracted_at: "2026-07-02"
+  extraction_method: xlsx whole-workbook used-range cell parse
+  parser: xlsx_used_range
+  artifact_year: 2026
+record_sets:
+  - record_set_id: ici.cy2015.fact_book_table_30
+    record_set_spec_id: ici.fact_book_table_30.paid_reinvested.v1
+    source_record_id_prefix: ici.cy2015.fact_book_table_30
+    sheet_name: final
+    period_type: calendar_year
+    period: "2015"
+    geography_id: 0100000US
+    geography_level: country
+    geography_name: United States
+    geography_vintage: current
+    entity: institutional_sector
+    entity_role: long_term_mutual_funds
+    domain: mutual_fund_capital_gains_distributions
+    groupby_dimension: ici.distribution_disposition
+    rows:
+      - value_id: year_2015
+        label: "2015"
+        ordinal: 0
+        row_number: 41
+        expected_row_header_column: A
+        expected_row_header: 2015
+        table_record_kind: total
+    measures:
+      - measure_id: paid_total
+        label: Paid capital gains, total
+        ordinal: 0
+        column: B
+        concept: ici.mutual_fund_capital_gains_paid
+        unit: usd
+        aggregation: sum
+        source_concept: ici.mutual_fund_capital_gains_paid
+        concept_relation: exact
+        concept_authority: ledger-us
+        concept_evidence_url: https://www.icifactbook.org/26-fb-data-tables.html
+        concept_evidence_notes: >
+          ICI Fact Book Table 30 total capital gains paid by long-term
+          mutual funds. Includes short-term and long-term capital gains
+          distributions and all account types (taxable and tax-deferred);
+          funds investing primarily in other mutual funds are excluded.
+          Year-level anchor for the populace capital gain distributions
+          imputation and the GROWTH Act (H.R. 2089 / S. 1839) analysis.
+        legal_vintage: calendar_year_2015
+        value_scale: 1000000
+      - measure_id: reinvested_total
+        label: Reinvested capital gains, total
+        ordinal: 1
+        column: G
+        concept: ici.mutual_fund_capital_gains_reinvested
+        unit: usd
+        aggregation: sum
+        value_scale: 1000000
+  - record_set_id: ici.cy2021.fact_book_table_30
+    record_set_spec_id: ici.fact_book_table_30.paid_reinvested.v1
+    source_record_id_prefix: ici.cy2021.fact_book_table_30
+    sheet_name: final
+    period_type: calendar_year
+    period: "2021"
+    geography_id: 0100000US
+    geography_level: country
+    geography_name: United States
+    geography_vintage: current
+    entity: institutional_sector
+    entity_role: long_term_mutual_funds
+    domain: mutual_fund_capital_gains_distributions
+    groupby_dimension: ici.distribution_disposition
+    rows:
+      - value_id: year_2021
+        label: "2021"
+        ordinal: 0
+        row_number: 47
+        expected_row_header_column: A
+        expected_row_header: 2021
+        table_record_kind: total
+    measures:
+      - measure_id: paid_total
+        label: Paid capital gains, total
+        ordinal: 0
+        column: B
+        concept: ici.mutual_fund_capital_gains_paid
+        unit: usd
+        aggregation: sum
+        value_scale: 1000000
+      - measure_id: reinvested_total
+        label: Reinvested capital gains, total
+        ordinal: 1
+        column: G
+        concept: ici.mutual_fund_capital_gains_reinvested
+        unit: usd
+        aggregation: sum
+        value_scale: 1000000
+  - record_set_id: ici.cy2022.fact_book_table_30
+    record_set_spec_id: ici.fact_book_table_30.paid_reinvested.v1
+    source_record_id_prefix: ici.cy2022.fact_book_table_30
+    sheet_name: final
+    period_type: calendar_year
+    period: "2022"
+    geography_id: 0100000US
+    geography_level: country
+    geography_name: United States
+    geography_vintage: current
+    entity: institutional_sector
+    entity_role: long_term_mutual_funds
+    domain: mutual_fund_capital_gains_distributions
+    groupby_dimension: ici.distribution_disposition
+    rows:
+      - value_id: year_2022
+        label: "2022"
+        ordinal: 0
+        row_number: 48
+        expected_row_header_column: A
+        expected_row_header: 2022
+        table_record_kind: total
+    measures:
+      - measure_id: paid_total
+        label: Paid capital gains, total
+        ordinal: 0
+        column: B
+        concept: ici.mutual_fund_capital_gains_paid
+        unit: usd
+        aggregation: sum
+        value_scale: 1000000
+      - measure_id: reinvested_total
+        label: Reinvested capital gains, total
+        ordinal: 1
+        column: G
+        concept: ici.mutual_fund_capital_gains_reinvested
+        unit: usd
+        aggregation: sum
+        value_scale: 1000000
+  - record_set_id: ici.cy2023.fact_book_table_30
+    record_set_spec_id: ici.fact_book_table_30.paid_reinvested.v1
+    source_record_id_prefix: ici.cy2023.fact_book_table_30
+    sheet_name: final
+    period_type: calendar_year
+    period: "2023"
+    geography_id: 0100000US
+    geography_level: country
+    geography_name: United States
+    geography_vintage: current
+    entity: institutional_sector
+    entity_role: long_term_mutual_funds
+    domain: mutual_fund_capital_gains_distributions
+    groupby_dimension: ici.distribution_disposition
+    rows:
+      - value_id: year_2023
+        label: "2023"
+        ordinal: 0
+        row_number: 49
+        expected_row_header_column: A
+        expected_row_header: 2023
+        table_record_kind: total
+    measures:
+      - measure_id: paid_total
+        label: Paid capital gains, total
+        ordinal: 0
+        column: B
+        concept: ici.mutual_fund_capital_gains_paid
+        unit: usd
+        aggregation: sum
+        value_scale: 1000000
+      - measure_id: reinvested_total
+        label: Reinvested capital gains, total
+        ordinal: 1
+        column: G
+        concept: ici.mutual_fund_capital_gains_reinvested
+        unit: usd
+        aggregation: sum
+        value_scale: 1000000
+  - record_set_id: ici.cy2024.fact_book_table_30
+    record_set_spec_id: ici.fact_book_table_30.paid_reinvested.v1
+    source_record_id_prefix: ici.cy2024.fact_book_table_30
+    sheet_name: final
+    period_type: calendar_year
+    period: "2024"
+    geography_id: 0100000US
+    geography_level: country
+    geography_name: United States
+    geography_vintage: current
+    entity: institutional_sector
+    entity_role: long_term_mutual_funds
+    domain: mutual_fund_capital_gains_distributions
+    groupby_dimension: ici.distribution_disposition
+    rows:
+      - value_id: year_2024
+        label: "2024"
+        ordinal: 0
+        row_number: 50
+        expected_row_header_column: A
+        expected_row_header: 2024
+        table_record_kind: total
+    measures:
+      - measure_id: paid_total
+        label: Paid capital gains, total
+        ordinal: 0
+        column: B
+        concept: ici.mutual_fund_capital_gains_paid
+        unit: usd
+        aggregation: sum
+        value_scale: 1000000
+      - measure_id: reinvested_total
+        label: Reinvested capital gains, total
+        ordinal: 1
+        column: G
+        concept: ici.mutual_fund_capital_gains_reinvested
+        unit: usd
+        aggregation: sum
+        value_scale: 1000000
+  - record_set_id: ici.cy2025.fact_book_table_30
+    record_set_spec_id: ici.fact_book_table_30.paid_reinvested.v1
+    source_record_id_prefix: ici.cy2025.fact_book_table_30
+    sheet_name: final
+    period_type: calendar_year
+    period: "2025"
+    geography_id: 0100000US
+    geography_level: country
+    geography_name: United States
+    geography_vintage: current
+    entity: institutional_sector
+    entity_role: long_term_mutual_funds
+    domain: mutual_fund_capital_gains_distributions
+    groupby_dimension: ici.distribution_disposition
+    rows:
+      - value_id: year_2025
+        label: "2025"
+        ordinal: 0
+        row_number: 51
+        expected_row_header_column: A
+        expected_row_header: 2025
+        table_record_kind: total
+    measures:
+      - measure_id: paid_total
+        label: Paid capital gains, total
+        ordinal: 0
+        column: B
+        concept: ici.mutual_fund_capital_gains_paid
+        unit: usd
+        aggregation: sum
+        value_scale: 1000000
+      - measure_id: reinvested_total
+        label: Reinvested capital gains, total
+        ordinal: 1
+        column: G
+        concept: ici.mutual_fund_capital_gains_reinvested
+        unit: usd
+        aggregation: sum
+        value_scale: 1000000
