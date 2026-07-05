@@ -214,3 +214,93 @@ def test_belgium_euromod_comparator_has_source_urls_per_row():
     assert {fact.geography.id for fact in facts} == {"BE"}
     assert {fact.measure.unit for fact in facts} == {"eur", "percent", "ratio"}
     assert validate_facts(facts).valid
+
+
+SFPD_PENSION_ALIAS = "sfpd-legal-pension-caseload-2025"
+GROEIPAKKET_ALIAS = "opgroeien-groeipakket-caseload-2025"
+BFP_OUTLOOK_ALIAS = "bfp-economic-outlook-2026-06"
+
+
+def test_belgium_supplementary_publisher_aliases_are_registered():
+    assert {SFPD_PENSION_ALIAS, GROEIPAKKET_ALIAS, BFP_OUTLOOK_ALIAS} <= set(
+        SOURCE_PACKAGE_ALIASES
+    )
+
+
+def test_sfpd_legal_pension_caseload_matches_published_cells():
+    facts = _facts(SFPD_PENSION_ALIAS, 2025)
+    by_scheme = {fact.filters["sfpd.scheme"]: fact.value for fact in facts}
+
+    # Exact published counts from PensionStat.be (SFP/SFPD), January 2025.
+    assert by_scheme == {
+        "all": 2674520,
+        "employee": 2357954,
+        "self_employed": 690590,
+        "civil_servant": 604506,
+    }
+    # Scheme counts are per-scheme recipients (mixed careers), not a partition:
+    # their sum exceeds the all-schemes total.
+    scheme_sum = sum(v for k, v in by_scheme.items() if k != "all")
+    assert scheme_sum > by_scheme["all"]
+    assert {fact.source.source_name for fact in facts} == {"sfpd_pensions"}
+    assert {fact.geography.level for fact in facts} == {"country"}
+    assert {fact.measure.unit for fact in facts} == {"count"}
+    assert validate_facts(facts).valid
+
+
+def test_groeipakket_caseload_matches_published_component_cells():
+    facts = _facts(GROEIPAKKET_ALIAS, 2025)
+    children = {
+        fact.filters["groeipakket.component"]: fact.value
+        for fact in facts
+        if fact.measure.concept == "groeipakket_children_receiving_component"
+    }
+    families = {
+        fact.filters["groeipakket.component"]: fact.value
+        for fact in facts
+        if fact.measure.concept == "groeipakket_families_receiving_component"
+    }
+
+    # Exact published caseload cells from Opgroeien (Flemish agency).
+    assert children == {
+        "social_supplement": 522148,
+        "orphan_supplement": 21741,
+        "care_supplement": 51261,
+        "foster_care_supplement": 7348,
+        "school_allowance": 499339,
+        "support_supplement": 8735,
+    }
+    assert families == {
+        "social_supplement": 281551,
+        "orphan_supplement": 14824,
+        "care_supplement": 46748,
+        "foster_care_supplement": 5891,
+        "basic_amount": 930010,
+    }
+    # basisbedrag child count is published only as a rounded ">1.6M" lower bound,
+    # so it is intentionally omitted from the child record set (recorded as a gap).
+    assert "basic_amount" not in children
+    assert {fact.geography.id for fact in facts} == {"BE2"}
+    assert {fact.geography.vintage for fact in facts} == {"NUTS_2024"}
+    assert validate_facts(facts).valid
+
+
+def test_bfp_economic_outlook_facts_are_typed_source_projection():
+    facts = _facts(BFP_OUTLOOK_ALIAS, 2026)
+    by_key = {
+        (fact.period.value, fact.measure.concept): fact.value for fact in facts
+    }
+
+    # Exact published headline figures from the BFP June 2026 outlook.
+    assert by_key == {
+        (2026, "bfp.real_gdp_growth_projection"): 0.7,
+        (2026, "bfp.consumer_price_inflation_projection"): 3.4,
+        (2026, "bfp.general_government_deficit_pct_gdp_projection"): 5.1,
+        (2031, "bfp.consumer_price_inflation_projection"): 1.7,
+        (2031, "bfp.general_government_deficit_pct_gdp_projection"): 6.4,
+    }
+    # Publisher projections must be typed source_projection, never observation.
+    assert {fact.assertion for fact in facts} == {"source_projection"}
+    assert {fact.source.source_name for fact in facts} == {"bfp_economic_outlook"}
+    assert {fact.geography.id for fact in facts} == {"BE"}
+    assert validate_facts(facts).valid

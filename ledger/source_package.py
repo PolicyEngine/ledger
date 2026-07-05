@@ -92,6 +92,13 @@ SOURCE_PACKAGE_ALIASES = {
     "jrc-euromod-be-baseline-statistics-2025": Path(
         "jrc/euromod_be_baseline_statistics_2025"
     ),
+    "sfpd-legal-pension-caseload-2025": Path(
+        "sfpd/legal_pension_caseload_2025"
+    ),
+    "opgroeien-groeipakket-caseload-2025": Path(
+        "opgroeien/groeipakket_caseload_2025"
+    ),
+    "bfp-economic-outlook-2026-06": Path("bfp/economic_outlook_2026_06"),
     "cbo-revenue-projections-income-by-source-2026-02": Path(
         "cbo/revenue_projections_income_by_source_2026_02"
     ),

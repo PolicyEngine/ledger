@@ -1,0 +1,3 @@
+value_id,period,series_basis,real_gdp_growth,consumer_price_inflation,general_government_deficit_pct_gdp,source_url
+outlook_2026,2026,june_2026_outlook,0.7,3.4,5.1,https://www.plan.be/en/publications/economic-budget-2026-2027-economic-outlook-2028
+outlook_2031,2031,june_2026_outlook,,1.7,6.4,https://www.plan.be/en/publications/economic-budget-2026-2027-economic-outlook-2028

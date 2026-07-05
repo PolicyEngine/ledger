@@ -1,0 +1,110 @@
+schema_version: ledger.source_package.v1
+package_id: sfpd-legal-pension-caseload-2025
+label: SFPD legal pension caseload 2025 by scheme
+artifact:
+  source_name: sfpd_pensions
+  source_table: Legal pension beneficiaries by scheme, January 2025
+  resource_package: db
+  resource_directory: data/sfpd/legal_pension_caseload_2025
+  manifest: manifest.yaml
+  vintage: pensionstat_legal_pension_2025
+  extracted_at: '2026-07-04'
+  extraction_method: curated CSV extract from PensionStat.be published legal pension beneficiary headline figures
+  parser: delimited_text_full_rows
+  artifact_year: 2025
+  sheet_name: sfpd_legal_pension_caseload_2025
+record_sets:
+- record_set_id: sfpd.legal_pension.cy2025.recipients.by_scheme
+  record_set_spec_id: sfpd.legal_pension.recipients.by_scheme.v1
+  source_record_id_prefix: sfpd.legal_pension.cy2025.recipients
+  sheet_name: sfpd_legal_pension_caseload_2025
+  period_type: calendar_year
+  period: 2025
+  geography_id: BE
+  geography_level: country
+  geography_name: Belgium
+  geography_vintage: current
+  entity: person
+  entity_role: benefit_recipient
+  domain: pensions
+  groupby_dimension: sfpd.scheme
+  rows:
+  - value_id: all_schemes
+    label: All legal pension schemes recipients
+    ordinal: 0
+    row_number: 2
+    expected_row_header_column: A
+    expected_row_header: all_schemes
+    table_record_kind: total
+    filters:
+      sfpd.scheme: all
+    constraints:
+    - variable: sfpd.scheme
+      operator: ==
+      value: all
+      label: Pension scheme
+  - value_id: salarie
+    label: Employee scheme recipients
+    ordinal: 1
+    row_number: 3
+    expected_row_header_column: A
+    expected_row_header: salarie
+    table_record_kind: total
+    filters:
+      sfpd.scheme: employee
+    constraints:
+    - variable: sfpd.scheme
+      operator: ==
+      value: employee
+      label: Pension scheme
+  - value_id: independant
+    label: Self-employed scheme recipients
+    ordinal: 2
+    row_number: 4
+    expected_row_header_column: A
+    expected_row_header: independant
+    table_record_kind: total
+    filters:
+      sfpd.scheme: self_employed
+    constraints:
+    - variable: sfpd.scheme
+      operator: ==
+      value: self_employed
+      label: Pension scheme
+  - value_id: fonctionnaire
+    label: Civil servant scheme recipients
+    ordinal: 3
+    row_number: 5
+    expected_row_header_column: A
+    expected_row_header: fonctionnaire
+    table_record_kind: total
+    filters:
+      sfpd.scheme: civil_servant
+    constraints:
+    - variable: sfpd.scheme
+      operator: ==
+      value: civil_servant
+      label: Pension scheme
+  measures:
+  - measure_id: recipients
+    label: Legal pension beneficiaries
+    ordinal: 0
+    column: E
+    source_column_id: recipients
+    expected_column_header_row: 1
+    expected_column_header: recipients
+    concept: legal_pension_recipients
+    source_concept: sfpd.legal_pension.beneficiaries
+    concept_relation: exact
+    concept_authority: ledger-be
+    concept_evidence_url: https://www.pensionstat.be/fr
+    concept_evidence_notes: >-
+      PensionStat.be (Federal Pensions Service / Sigedis / INASTI) publishes the
+      count of people receiving income from the legal pension schemes, January
+      2025. The all-schemes row is the published total (2,674,520). The three
+      scheme rows are per-scheme beneficiary counts; their sum (3,653,050)
+      exceeds the total because mixed-career pensioners are counted in each
+      scheme they draw from, so the scheme rows are not a partition of the total.
+    unit: count
+    aggregation: sum
+    expected_cell_type: number
