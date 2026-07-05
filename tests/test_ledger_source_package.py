@@ -22,6 +22,7 @@ from ledger.source_package import (
     SOURCE_ARTIFACT_FETCH_ENV,
     SourceArtifactSpec,
     _read_source_artifact_content,
+    _render_string,
     _source_artifact_cache_path,
     load_source_package,
     validate_source_package,
@@ -2833,3 +2834,41 @@ def test_kff_marketplace_effectuated_enrollment_builds_2024_state_facts():
     assert values_by_record[us].geography.level == "country"
     assert values_by_record[al].value == 396_750
     assert values_by_record[ca].value == 1_795_695
+
+
+def test_render_string_templates_integer_year_with_filing_year():
+    """Integer years must still template both ``{year}`` and ``{filing_year}``."""
+    template = "Tax Year {year} (Filing Year {filing_year})"
+    assert _render_string(template, year=2023) == "Tax Year 2023 (Filing Year 2024)"
+
+
+def test_render_string_treats_non_integer_year_as_label():
+    """Non-integer ``files:``/``column_by_year`` keys are labels, not years.
+
+    A label key has no year to interpolate, so templating is skipped rather
+    than crashing on ``year + 1`` (see PolicyEngine/ledger#79). Plain strings
+    with no placeholders pass through unchanged.
+    """
+    assert _render_string("SNAP national summary", year="extracted_targets") == (
+        "SNAP national summary"
+    )
+    # A ``{year}`` placeholder under a label key is left literal rather than
+    # crashing or silently interpolating the label.
+    assert _render_string("cms_nhe.cy{year}.x", year="release_2026") == (
+        "cms_nhe.cy{year}.x"
+    )
+
+
+def test_build_facts_with_label_year_does_not_crash():
+    """Building a package with a label year yields facts, not a TypeError.
+
+    The SSA Table 7.B1 manifest carries an ``extracted_targets`` label key in
+    ``files:`` alongside the numeric ``2024`` key. Building with that label
+    must not raise ``year + 1`` TypeError; the package has no label-scoped
+    record sets, so it simply builds what it can (see PolicyEngine/ledger#79).
+    """
+    package = load_source_package("packages/ssa/ssi_table_7b1_2024")
+    facts = package.build_facts("extracted_targets")
+    # Record-set periods are literal 2024, so a label build still resolves them.
+    assert facts
+    assert all(fact.period.value == 2024 for fact in facts)
