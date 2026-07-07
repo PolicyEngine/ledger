@@ -566,3 +566,34 @@ record_sets:
         aggregation: sum
         value_scale: 1000
         expected_cell_type: number
+      - measure_id: home_mortgage_interest_returns
+        label: Returns with total home mortgage interest deduction
+        ordinal: 37
+        column: CW
+        column_by_year:
+          2021: CK
+          2022: CW
+          2023: CW
+        source_column_id: home_mortgage_interest_returns
+        expected_column_header_row: 8
+        expected_column_header: Number of returns
+        concept: irs_soi.returns_with_total_home_mortgage_interest_deduction
+        unit: count
+        aggregation: sum
+        expected_cell_type: number
+      - measure_id: home_mortgage_interest_amount
+        label: Total home mortgage interest deduction amount
+        ordinal: 38
+        column: CX
+        column_by_year:
+          2021: CL
+          2022: CX
+          2023: CX
+        source_column_id: home_mortgage_interest_amount
+        expected_column_header_row: 8
+        expected_column_header: Amount
+        concept: irs_soi.total_home_mortgage_interest_deduction
+        unit: usd
+        aggregation: sum
+        value_scale: 1000
+        expected_cell_type: number
