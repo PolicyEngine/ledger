@@ -611,3 +611,173 @@ record_sets:
           national calibration source for self_employed_pension_contribution_ald.
         legal_vintage: tax_year_{year}
         value_scale: 1000
+      - measure_id: capital_gain_distributions_returns
+        label: Returns with capital gain distributions reported on Form 1040
+        ordinal: 17
+        column: AJ
+        column_by_year:
+          2021: X
+          2022: AJ
+          2023: AJ
+        concept: irs_soi.returns_with_capital_gain_distributions_1040
+        unit: count
+        aggregation: sum
+      - measure_id: capital_gain_distributions_amount
+        label: Capital gain distributions reported on Form 1040
+        ordinal: 18
+        column: AK
+        column_by_year:
+          2021: Y
+          2022: AK
+          2023: AK
+        concept: irs_soi.capital_gain_distributions_1040
+        unit: usd
+        aggregation: sum
+        source_concept: irs_soi.capital_gain_distributions_1040
+        concept_relation: broad_match
+        concept_authority: ledger-us
+        concept_evidence_url: https://www.irs.gov/statistics/soi-tax-stats-individual-income-tax-returns-complete-report-publication-1304-basic-tables-part-1
+        concept_evidence_notes: >
+          IRS SOI Table 1.4 "Capital gain distributions reported on Form 1040"
+          is the capital-gain component filers report directly on Form 1040
+          without a Schedule D. PolicyEngine-US carries this as the
+          non_sch_d_capital_gains input (the non-Schedule-D leg of the
+          net-capital-gains split), so Ledger treats the SOI line as a broad
+          match to that component.
+        legal_vintage: tax_year_{year}
+        value_scale: 1000
+      - measure_id: estate_trust_net_income_returns
+        label: Returns with estate and trust net income
+        ordinal: 19
+        column: BX
+        column_by_year:
+          2021: BL
+          2022: BX
+          2023: BX
+        concept: irs_soi.returns_with_estate_and_trust_net_income
+        unit: count
+        aggregation: sum
+      - measure_id: estate_trust_net_income_amount
+        label: Estate and trust net income
+        ordinal: 20
+        column: BY
+        column_by_year:
+          2021: BM
+          2022: BY
+          2023: BY
+        concept: irs_soi.estate_and_trust_net_income
+        unit: usd
+        aggregation: sum
+        source_concept: irs_soi.estate_and_trust_net_income
+        concept_relation: broad_match
+        concept_authority: ledger-us
+        concept_evidence_url: https://www.irs.gov/statistics/soi-tax-stats-individual-income-tax-returns-complete-report-publication-1304-basic-tables-part-1
+        concept_evidence_notes: >
+          IRS SOI Table 1.4 "Estate and trust — Net income" is the positive leg
+          of Schedule E Part III estate and trust income. PolicyEngine-US carries
+          the signed estate_income input; Ledger treats this SOI line as a broad
+          match to the positive component of that input.
+        legal_vintage: tax_year_{year}
+        value_scale: 1000
+      - measure_id: estate_trust_net_loss_returns
+        label: Returns with estate and trust net loss
+        ordinal: 21
+        column: BZ
+        column_by_year:
+          2021: BN
+          2022: BZ
+          2023: BZ
+        concept: irs_soi.returns_with_estate_and_trust_net_loss
+        unit: count
+        aggregation: sum
+      - measure_id: estate_trust_net_loss_amount
+        label: Estate and trust net loss
+        ordinal: 22
+        column: CA
+        column_by_year:
+          2021: BO
+          2022: CA
+          2023: CA
+        concept: irs_soi.estate_and_trust_net_loss
+        unit: usd
+        aggregation: sum
+        source_concept: irs_soi.estate_and_trust_net_loss
+        concept_relation: broad_match
+        concept_authority: ledger-us
+        concept_evidence_url: https://www.irs.gov/statistics/soi-tax-stats-individual-income-tax-returns-complete-report-publication-1304-basic-tables-part-1
+        concept_evidence_notes: >
+          IRS SOI Table 1.4 "Estate and trust — Net loss" is the negative leg of
+          Schedule E Part III estate and trust income (reported as a positive
+          magnitude). PolicyEngine-US carries the signed estate_income input;
+          Ledger treats this SOI line as a broad match to the magnitude of the
+          negative component of that input.
+        legal_vintage: tax_year_{year}
+        value_scale: 1000
+      - measure_id: other_income_net_income_returns
+        label: Returns with other income (net income)
+        ordinal: 23
+        column: CN
+        column_by_year:
+          2021: CB
+          2022: CN
+          2023: CN
+        concept: irs_soi.returns_with_other_income_net_income
+        unit: count
+        aggregation: sum
+      - measure_id: other_income_net_income_amount
+        label: Other income (net income)
+        ordinal: 24
+        column: CO
+        column_by_year:
+          2021: CC
+          2022: CO
+          2023: CO
+        concept: irs_soi.other_income_net_income
+        unit: usd
+        aggregation: sum
+        source_concept: irs_soi.other_income_net_income
+        concept_relation: broad_match
+        concept_authority: ledger-us
+        concept_evidence_url: https://www.irs.gov/statistics/soi-tax-stats-individual-income-tax-returns-complete-report-publication-1304-basic-tables-part-1
+        concept_evidence_notes: >
+          IRS SOI Table 1.4 "Other income — Net income" is the positive leg of
+          the Form 1040 Schedule 1 other-income line (miscellaneous income not
+          reported elsewhere). PolicyEngine-US carries the signed
+          miscellaneous_income input; Ledger treats this SOI line as a broad
+          match to the positive component of that input.
+        legal_vintage: tax_year_{year}
+        value_scale: 1000
+      - measure_id: other_income_net_loss_returns
+        label: Returns with other income (net loss)
+        ordinal: 25
+        column: CP
+        column_by_year:
+          2021: CD
+          2022: CP
+          2023: CP
+        concept: irs_soi.returns_with_other_income_net_loss
+        unit: count
+        aggregation: sum
+      - measure_id: other_income_net_loss_amount
+        label: Other income (net loss)
+        ordinal: 26
+        column: CQ
+        column_by_year:
+          2021: CE
+          2022: CQ
+          2023: CQ
+        concept: irs_soi.other_income_net_loss
+        unit: usd
+        aggregation: sum
+        source_concept: irs_soi.other_income_net_loss
+        concept_relation: broad_match
+        concept_authority: ledger-us
+        concept_evidence_url: https://www.irs.gov/statistics/soi-tax-stats-individual-income-tax-returns-complete-report-publication-1304-basic-tables-part-1
+        concept_evidence_notes: >
+          IRS SOI Table 1.4 "Other income — Net loss" is the negative leg of the
+          Form 1040 Schedule 1 other-income line (reported as a positive
+          magnitude). PolicyEngine-US carries the signed miscellaneous_income
+          input; Ledger treats this SOI line as a broad match to the magnitude of
+          the negative component of that input.
+        legal_vintage: tax_year_{year}
+        value_scale: 1000
