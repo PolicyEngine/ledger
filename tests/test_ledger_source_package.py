@@ -267,7 +267,7 @@ def test_source_package_path_builds_valid_soi_table_1_4_facts():
 
     assert package.package_id == "soi-table-1-4"
     assert len(cells) == 8109
-    assert len(facts) == 340
+    assert len(facts) == 540
     assert validate_facts(facts).valid
     assert facts[0].source.source_table == "Publication 1304 Table 1.4"
     assert (
@@ -580,8 +580,8 @@ def test_national_soi_source_package_aliases_validate_fixture_counts():
         "soi-table-2-1": {
             "record_set_count": 1,
             "row_count": 1,
-            "measure_count": 37,
-            "source_record_count": 37,
+            "measure_count": 39,
+            "source_record_count": 39,
             "source_region_count": 1,
         },
         "soi-table-2-5": {
@@ -681,7 +681,7 @@ def test_soi_table_2_1_package_builds_itemized_deduction_details():
     assert validate_source_rows(rows).valid
     assert validate_source_cells(cells).valid
     assert validate_facts(facts).valid
-    assert len(facts) == 37
+    assert len(facts) == 39
 
     charitable = values_by_record[
         "irs_soi.ty2023.table_2_1.itemized_all_returns.all.charitable_amount"
