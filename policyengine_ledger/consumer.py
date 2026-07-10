@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import math
 import shutil
 from collections.abc import Mapping, Sequence
 from dataclasses import asdict, dataclass, field
@@ -26,6 +27,7 @@ from importlib.resources import files as _resource_files
 from pathlib import Path
 from typing import Any
 
+from ledger.consumer_contract import _hash_key
 from ledger.core import ALLOWED_ASSERTIONS, DEFAULT_ASSERTION
 from policyengine_ledger.schema import (
     CONSUMER_FACT_SCHEMA_SHA256,
@@ -726,6 +728,12 @@ def load_consumer_artifact(path: str | Path) -> ConsumerArtifact:
             f"{actual_sha256} != {manifest['facts_sha256']}."
         )
     rows = _load_consumer_rows(facts_file, validate_schema=True)
+    declared_row_count = manifest.get("fact_row_count")
+    if declared_row_count is not None and declared_row_count != len(rows):
+        raise ValueError(
+            f"Consumer artifact manifest declares fact_row_count "
+            f"{declared_row_count} but the feed carries {len(rows)} rows."
+        )
     manifest_predates_fix = "consumer_fact_schema_sha256" not in manifest
     profiles: dict[str, TargetProfile] = {}
     profile_hash_semantics: dict[str, str] = {}
@@ -738,7 +746,19 @@ def load_consumer_artifact(path: str | Path) -> ConsumerArtifact:
             manifest_predates_fix=manifest_predates_fix,
         )
         payload = json.loads(profile_file.read_text())
-        profiles[profile_id] = target_profile_from_mapping(payload)
+        profile = target_profile_from_mapping(payload)
+        declared_targets = (
+            profile_meta.get("target_count")
+            if isinstance(profile_meta, Mapping)
+            else None
+        )
+        if declared_targets is not None and declared_targets != len(payload["targets"]):
+            raise ValueError(
+                f"Consumer artifact manifest declares target_count "
+                f"{declared_targets} for profile {profile_id!r} but the file "
+                f"carries {len(payload['targets'])} targets."
+            )
+        profiles[profile_id] = profile
     return ConsumerArtifact(
         path=artifact_path,
         manifest=manifest,
@@ -797,6 +817,53 @@ def _resolve_facts_path(facts_path: str | Path) -> Path:
     return path
 
 
+def _reject_non_finite(value: Any) -> Any:
+    raise ValueError(f"Consumer fact contains a non-finite JSON number: {value!r}.")
+
+
+def _assert_finite_numbers(value: Any, *, line_number: int, path: Path) -> None:
+    """Reject NaN/Infinity even inside nested structures.
+
+    ``json.loads`` accepts ``NaN``/``Infinity`` tokens that are not valid JSON
+    under the consumer-fact contract; a non-finite value must never enter a
+    schema-valid, hash-valid artifact.
+    """
+    if isinstance(value, float) and not math.isfinite(value):
+        raise ValueError(
+            f"Row {line_number} of {path} contains a non-finite number: {value!r}."
+        )
+    if isinstance(value, dict):
+        for item in value.values():
+            _assert_finite_numbers(item, line_number=line_number, path=path)
+    elif isinstance(value, list):
+        for item in value:
+            _assert_finite_numbers(item, line_number=line_number, path=path)
+
+
+def _recompute_aggregate_fact_key(row: dict[str, Any]) -> str:
+    """Recompute the aggregate fact key from the row's own content.
+
+    The producer derives ``aggregate_fact_key`` over the row's component keys
+    plus its raw aggregation/period/geography/entity/assertion; recomputing it
+    here and comparing rejects a forged or drifted identity key that schema
+    validation (which only checks key SYNTAX) and uniqueness cannot catch.
+    """
+    assertion = row.get("assertion")
+    payload = {
+        "source_release_key": row.get("source_release_key"),
+        "source_series_key": row.get("source_series_key"),
+        "observed_measure_key": row.get("observed_measure_key"),
+        "aggregation": row.get("aggregation"),
+        "period": row.get("period"),
+        "geography": row.get("geography"),
+        "entity": row.get("entity"),
+        "dimension_set_key": row.get("dimension_set_key"),
+        "universe_constraint_set_key": row.get("universe_constraint_set_key"),
+        "assertion": None if assertion == DEFAULT_ASSERTION else assertion,
+    }
+    return _hash_key("ledger.aggregate_fact.v2", payload)
+
+
 def _load_consumer_rows(
     path: Path,
     *,
@@ -808,7 +875,8 @@ def _load_consumer_rows(
         for line_number, line in enumerate(file, start=1):
             if not line.strip():
                 continue
-            row = json.loads(line)
+            row = json.loads(line, parse_constant=_reject_non_finite)
+            _assert_finite_numbers(row, line_number=line_number, path=path)
             if validate_schema:
                 validate_consumer_fact_row(row, line_number, path)
             assertion = row.setdefault("assertion", DEFAULT_ASSERTION)
@@ -818,6 +886,14 @@ def _load_consumer_rows(
                     f"{assertion!r}."
                 )
             key = row.get("aggregate_fact_key")
+            if validate_schema:
+                recomputed = _recompute_aggregate_fact_key(row)
+                if key != recomputed:
+                    raise ValueError(
+                        f"Row {line_number} of {path} declares aggregate_fact_key "
+                        f"{key!r} but its content hashes to {recomputed!r}; the "
+                        "identity key does not match the row."
+                    )
             if key in seen_keys:
                 raise ValueError(
                     f"Row {line_number} of {path} repeats aggregate_fact_key "

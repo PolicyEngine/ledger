@@ -642,3 +642,76 @@ def test_artifact_build_rejects_duplicate_aggregate_fact_key(tmp_path):
             facts_path=facts_path,
             profile_paths=[profile_path],
         )
+
+
+def _build_and_load_with_row_mutation(tmp_path, mutate):
+    facts_path, profile_path = _write_artifact_inputs(tmp_path)
+    out_dir = tmp_path / "artifact"
+    build_consumer_artifact(out_dir, facts_path=facts_path, profile_paths=[profile_path])
+    facts_file = out_dir / "consumer_facts.jsonl"
+    lines = [ln for ln in facts_file.read_text().splitlines() if ln.strip()]
+    rows = [json.loads(ln) for ln in lines]
+    mutate(rows)
+    facts_file.write_text(
+        "".join(json.dumps(r, sort_keys=True) + "\n" for r in rows)
+    )
+    # Re-point the manifest facts hash so the row checks (not the file hash) fire.
+    import hashlib as _hashlib
+
+    manifest_path = out_dir / "manifest.json"
+    manifest = json.loads(manifest_path.read_text())
+    manifest["facts_sha256"] = _hashlib.sha256(facts_file.read_bytes()).hexdigest()
+    manifest_path.write_text(json.dumps(manifest))
+    return out_dir
+
+
+def test_load_rejects_a_forged_all_zero_identity_key(tmp_path):
+    # Sol finding 7: schema validates key SYNTAX; a syntactically valid but
+    # forged identity key that does not hash the row's content must be rejected.
+    def zero_keys(rows):
+        zero = "0" * 24
+        rows[0]["aggregate_fact_key"] = f"ledger.aggregate_fact.v2:{zero}"
+        rows[0]["source_release_key"] = f"ledger.source_release.v2:{zero}"
+        rows[0]["source_series_key"] = f"ledger.source_series.v2:{zero}"
+        rows[0]["observed_measure_key"] = f"ledger.observed_measure.v2:{zero}"
+        rows[0]["dimension_set_key"] = f"ledger.dimension_set.v2:{zero}"
+        rows[0]["universe_constraint_set_key"] = (
+            f"ledger.universe_constraint_set.v2:{zero}"
+        )
+
+    out_dir = _build_and_load_with_row_mutation(tmp_path, zero_keys)
+    with pytest.raises(ValueError, match="does not match the row"):
+        load_consumer_artifact(out_dir)
+
+
+def test_load_rejects_a_non_finite_number(tmp_path):
+    facts_path, profile_path = _write_artifact_inputs(tmp_path)
+    out_dir = tmp_path / "artifact"
+    build_consumer_artifact(out_dir, facts_path=facts_path, profile_paths=[profile_path])
+    facts_file = out_dir / "consumer_facts.jsonl"
+    lines = [ln for ln in facts_file.read_text().splitlines() if ln.strip()]
+    # Inject a raw NaN token that json.loads would otherwise accept.
+    lines[0] = lines[0].replace('"value":110', '"value":NaN', 1)
+    if "NaN" not in lines[0]:
+        lines[0] = lines[0][:-1] + ',"rogue":NaN}'
+    facts_file.write_text("\n".join(lines) + "\n")
+    import hashlib as _hashlib
+
+    manifest_path = out_dir / "manifest.json"
+    manifest = json.loads(manifest_path.read_text())
+    manifest["facts_sha256"] = _hashlib.sha256(facts_file.read_bytes()).hexdigest()
+    manifest_path.write_text(json.dumps(manifest))
+    with pytest.raises(ValueError, match="non-finite"):
+        load_consumer_artifact(out_dir)
+
+
+def test_load_rejects_a_false_manifest_row_count(tmp_path):
+    facts_path, profile_path = _write_artifact_inputs(tmp_path)
+    out_dir = tmp_path / "artifact"
+    build_consumer_artifact(out_dir, facts_path=facts_path, profile_paths=[profile_path])
+    manifest_path = out_dir / "manifest.json"
+    manifest = json.loads(manifest_path.read_text())
+    manifest["fact_row_count"] = 999
+    manifest_path.write_text(json.dumps(manifest))
+    with pytest.raises(ValueError, match="fact_row_count"):
+        load_consumer_artifact(out_dir)
