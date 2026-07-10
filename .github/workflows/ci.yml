@@ -60,7 +60,14 @@ jobs:
           import policyengine_ledger.sources
           import policyengine_ledger.target_profiles
           import policyengine_ledger.targets
+          from policyengine_ledger.schema import (
+              CONSUMER_FACT_SCHEMA_SHA256,
+              consumer_fact_schema,
+          )
 
           assert policyengine_ledger.__name__ == "policyengine_ledger"
+          # The pinned consumer-fact schema must ship inside the wheel.
+          assert consumer_fact_schema()["title"] == "Ledger consumer fact contract row"
+          assert len(CONSUMER_FACT_SCHEMA_SHA256) == 64
           PY
           /tmp/ledger-wheel-smoke/bin/ledger --help >/dev/null

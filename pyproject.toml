@@ -12,6 +12,7 @@ authors = [
 dependencies = [
     "sqlmodel>=0.0.22",
     "supabase>=2.0.0",  # Supabase Python client
+    "jsonschema>=4.20.0",  # Consumer-fact row contract validation
     "pyyaml>=6.0",
     "httpx>=0.27.0",  # For fetching external data
     "numpy>=1.24.0",  # For source table normalization
