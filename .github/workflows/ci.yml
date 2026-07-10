@@ -64,6 +64,9 @@ jobs:
           tests/test_download_cps.py
           tests/test_hierarchical_pipeline.py
           tests/test_supabase_client.py
+          tests/test_policyengine_ledger.py
+          scripts/check_thesis_facts_append.py
+          scripts/canonical_json.py
 
       - name: Test Arch surface
         run: >
@@ -86,6 +89,7 @@ jobs:
           tests/test_download_cps.py
           tests/test_hierarchical_pipeline.py
           tests/test_supabase_client.py
+          tests/test_policyengine_ledger.py
           -q
 
       - name: Build target input database

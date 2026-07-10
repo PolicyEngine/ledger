@@ -1,0 +1,58 @@
+name: Thesis facts append gate
+
+# Deterministic review for every change to the observation ledger. Resolver
+# appends arrive as pull requests targeting codex/thesis-ledger-facts; this
+# gate enforces the immutable frozen prefix, an append-only diff against the
+# PR base, per-row schema and binding requirements, and explicit supersede
+# semantics for corrections. Direct pushes get the same full-file checks.
+
+on:
+  pull_request:
+    branches:
+      - codex/thesis-ledger-facts
+    paths:
+      - "ledger/**"
+      - "scripts/check_thesis_facts_append.py"
+      - "scripts/canonical_json.py"
+      - ".github/workflows/thesis-facts-append.yml"
+  push:
+    branches:
+      - codex/thesis-ledger-facts
+    paths:
+      - "ledger/**"
+
+jobs:
+  append-gate:
+    name: Append gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Enforce append-only ledger invariants
+        run: |
+          set -euo pipefail
+          if [ -n "${{ github.base_ref }}" ]; then
+            git fetch origin "${{ github.base_ref }}" --depth=1
+            python3 scripts/check_thesis_facts_append.py \
+              --base-ref "origin/${{ github.base_ref }}"
+          else
+            python3 scripts/check_thesis_facts_append.py
+          fi
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+
+      - name: Install dependencies
+        run: uv sync --locked --all-extras
+
+      - name: Ledger observation invariants
+        run: uv run pytest tests/test_policyengine_ledger.py -q

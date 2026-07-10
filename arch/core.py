@@ -17,7 +17,16 @@ from typing import Any
 
 Scalar = str | int | float | bool | None
 
-ALLOWED_PERIOD_TYPES = {"calendar_year", "tax_year", "fiscal_year", "month"}
+ALLOWED_PERIOD_TYPES = {
+    "calendar_year",
+    "tax_year",
+    "fiscal_year",
+    "month",
+    # Sub-monthly and quarterly publisher prints recorded by the Thesis
+    # resolver (e.g. DOL UI weekly claims, BEA quarterly GDP).
+    "quarter",
+    "week_ending",
+}
 ALLOWED_GEOGRAPHY_LEVELS = {
     "country",
     "region",
@@ -43,6 +52,9 @@ ALLOWED_ENTITIES = {
     "government",
     "dwelling",
     "institutional_sector",
+    # Macro publisher prints (GDP growth, industrial production, price
+    # indexes) describe the whole economy, not a person-level population.
+    "economy",
 }
 ALLOWED_AGGREGATIONS = {
     "count",
@@ -52,6 +64,9 @@ ALLOWED_AGGREGATIONS = {
     "rate",
     "ratio",
     "share",
+    # A published series value taken as printed (policy rates, index
+    # levels, claims counts) — the publisher's own aggregate, not ours.
+    "level",
 }
 ALLOWED_CONSTRAINT_OPERATORS = {"==", "!=", ">", ">=", "<", "<=", "in"}
 ALLOWED_CONCEPT_RELATIONS = {
