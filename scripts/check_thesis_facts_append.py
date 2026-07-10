@@ -63,12 +63,37 @@ def _lines(text: str) -> list[str]:
     return [line for line in text.split("\n") if line.strip()]
 
 
+def reject_non_append_bytes(text: str) -> None:
+    """Reject blank/whitespace-only lines and any non-single trailing newline.
+
+    ``_lines`` drops blank lines so row parsing is convenient, but that means a
+    blank line inserted into the frozen JSONL would normalize away and pass both
+    the prefix hash and the append-only diff. A JSONL row is exactly one
+    non-empty line: a blank/whitespace-only line inside the covered region is a
+    byte tamper, and the file must end with exactly one trailing newline.
+    """
+    parts = text.split("\n")
+    if parts[-1] != "":
+        raise AppendError("ledger must end with exactly one trailing newline")
+    for index, part in enumerate(parts[:-1], start=1):
+        if not part.strip():
+            raise AppendError(
+                f"line {index} is blank or whitespace-only; a JSONL row is one "
+                "non-empty line and a stray blank line is a tamper"
+            )
+
+
 def expected_assertion_version_id(row: dict[str, Any]) -> str:
     """Recompute the content address the resolver must have written.
 
-    Mirrors ``assertion_version`` in the Thesis resolver: the ID commits to
-    everything that changes what the assertion means, so an in-place edit
-    is detectable and a correction must supersede explicitly.
+    Mirrors ``assertion_version`` in the Thesis resolver (av1 v2 spec): the ID
+    commits to everything that changes what the assertion MEANS — identity,
+    value, timing, population, the complete measure concept mapping, exact
+    source lineage/digest, row/cell lineage, and the archived response digest —
+    so an in-place edit is detectable and a correction must supersede
+    explicitly. This projection must stay byte-identical to the Brier writer's
+    ``assertion_version`` (both fed to the shared ``canonical_sha256``), so any
+    change here is a coordinated schema migration on both sides.
     """
     measure = row.get("measure") or {}
     source = row.get("source") or {}
@@ -76,14 +101,59 @@ def expected_assertion_version_id(row: dict[str, Any]) -> str:
     projection["measure"] = {
         "concept": measure.get("concept"),
         "unit": measure.get("unit"),
+        "source_concept": measure.get("source_concept"),
+        "concept_relation": measure.get("concept_relation"),
+        "concept_authority": measure.get("concept_authority"),
+        "legal_vintage": measure.get("legal_vintage"),
     }
     projection["source"] = {
         "source_name": source.get("source_name"),
         "source_table": source.get("source_table"),
+        "source_file": source.get("source_file"),
         "url": source.get("url"),
         "vintage": source.get("vintage"),
+        "source_sha256": source.get("source_sha256"),
     }
-    return f"av1:{canonical_sha256(projection)}"
+    projection["lineage"] = {
+        "source_row_keys": row.get("source_row_keys"),
+        "source_cell_keys": row.get("source_cell_keys"),
+    }
+    projection["responseArchiveSha256"] = (row.get("responseArchive") or {}).get(
+        "sha256"
+    )
+    return f"av2:{canonical_sha256(projection)}"
+
+
+def _effective_assertion_id(row: dict[str, Any]) -> str:
+    """Return the row's effective assertion version ID.
+
+    Post-cutover rows carry an explicit ``assertionVersion.id`` (validated
+    against the recomputed content address in :func:`check_rows`); legacy
+    pre-versioning rows are addressable by their recomputed content address.
+    Either way every row has exactly one effective ID that a correction must
+    name and that no later row may reissue.
+    """
+    version = row.get("assertionVersion")
+    if isinstance(version, dict) and version.get("id"):
+        return str(version["id"])
+    return expected_assertion_version_id(row)
+
+
+def effective_current_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Return the latest non-superseded row per assertion identity.
+
+    A correction names the version it replaces via
+    ``assertionVersion.supersedes``; the replaced row drops out of the current
+    view. Aggregate-fact validation runs on this supersede-aware view so a
+    legitimate correction (same semantic key, new value) is not mistaken for a
+    duplicate key.
+    """
+    superseded: set[str] = set()
+    for row in rows:
+        version = row.get("assertionVersion")
+        if isinstance(version, dict) and version.get("supersedes"):
+            superseded.add(str(version["supersedes"]))
+    return [row for row in rows if _effective_assertion_id(row) not in superseded]
 
 
 def check_prefix(lines: list[str]) -> dict[str, Any]:
@@ -137,26 +207,35 @@ def check_rows(lines: list[str], prefix_count: int) -> None:
         if not unit:
             raise AppendError(f"line {number} ({record_id}) has no measure unit")
 
+        recomputed = expected_assertion_version_id(row)
         version = row.get("assertionVersion")
-        version_id = None
         supersedes = None
         if version is not None:
             if not isinstance(version, dict):
                 raise AppendError(f"line {number} assertionVersion is not an object")
             version_id = str(version.get("id", ""))
             supersedes = version.get("supersedes")
-            expected = expected_assertion_version_id(row)
-            if version_id != expected:
+            if version_id != recomputed:
                 raise AppendError(
                     f"line {number} ({record_id}) assertionVersion.id does not "
-                    f"match its content ({version_id} != {expected})"
+                    f"match its content ({version_id} != {recomputed})"
                 )
-            if version_id in versions:
-                raise AppendError(
-                    f"line {number} restates assertion version {version_id} "
-                    f"from line {versions[version_id]}"
-                )
-            versions[version_id] = number
+            effective_id = version_id
+        else:
+            # Pre-versioning rows are addressable by their recomputed content
+            # address; that ID is reserved just like an explicit one so a legacy
+            # synthetic ID cannot be silently reissued.
+            effective_id = recomputed
+
+        # Reserve the effective ID of EVERY row. A collision means two rows
+        # claim the same assertion version — a duplicate legacy ID or an
+        # A->B->A chain trying to restore a superseded value.
+        if effective_id in versions:
+            raise AppendError(
+                f"line {number} restates assertion version {effective_id} "
+                f"from line {versions[effective_id]}"
+            )
+        versions[effective_id] = number
 
         if number > prefix_count:
             for field in (
@@ -214,12 +293,7 @@ def check_rows(lines: list[str], prefix_count: int) -> None:
                 f"line {number} supersedes {supersedes} but {record_id} has "
                 "no earlier row"
             )
-        # Rows that predate explicit versioning are still addressable: their
-        # version is the content address a correction must recompute.
-        active_by_record_id[str(record_id)] = (
-            number,
-            version_id or expected_assertion_version_id(row),
-        )
+        active_by_record_id[str(record_id)] = (number, effective_id)
 
 
 def check_append_only(base_ref: str, lines: list[str]) -> int:
@@ -245,6 +319,42 @@ def check_append_only(base_ref: str, lines: list[str]) -> int:
     return len(lines) - len(base_lines)
 
 
+def _manifest_at_ref(base_ref: str) -> dict[str, Any]:
+    relative = PREFIX_PATH.relative_to(ROOT).as_posix()
+    try:
+        text = subprocess.check_output(
+            ["git", "show", f"{base_ref}:{relative}"], cwd=ROOT, text=True
+        )
+    except subprocess.CalledProcessError as exc:
+        raise AppendError(
+            f"cannot read {relative} at base {base_ref}"
+        ) from exc
+    return json.loads(text)
+
+
+def check_prefix_anchored_to_base(base_ref: str, candidate_prefix: dict[str, Any]) -> int:
+    """Require the frozen prefix manifest to be unchanged from the base.
+
+    The immutable-prefix manifest lives beside the ledger and is candidate-
+    controlled, so a PR could grow ``prefixLineCount`` over its own append and
+    have every post-cutover binding skipped (the appended row would count as
+    "prefix"). Growing the frozen prefix is an explicit, separately reviewed
+    migration — never part of the automated append path — so under a base ref
+    the count, cumulative hash, and per-line hashes must match the base exactly.
+    Returns the BASE prefix line count, which callers use as the post-cutover
+    binding boundary so a candidate-controlled count can never move it.
+    """
+    base_prefix = _manifest_at_ref(base_ref)
+    for field in ("prefixLineCount", "prefixSha256", "lineSha256s"):
+        if candidate_prefix.get(field) != base_prefix.get(field):
+            raise AppendError(
+                f"immutable prefix manifest {field} changed vs base {base_ref}; "
+                "the frozen prefix cannot grow through the automated append path "
+                "— growing it is an explicit reviewed migration"
+            )
+    return int(base_prefix["prefixLineCount"])
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -252,13 +362,22 @@ def main() -> int:
         help="enforce an append-only diff against this git ref",
     )
     args = parser.parse_args()
-    lines = _lines(LEDGER_PATH.read_text(encoding="utf-8"))
+    text = LEDGER_PATH.read_text(encoding="utf-8")
     try:
+        reject_non_append_bytes(text)
+        lines = _lines(text)
         prefix = check_prefix(lines)
-        check_rows(lines, int(prefix["prefixLineCount"]))
+        # The post-cutover binding boundary is the BASE prefix count under a
+        # base ref, so a PR cannot grandfather an unbound append by growing the
+        # candidate manifest over it. Without a base ref (push) there is nothing
+        # to anchor against, so the candidate manifest is trusted for the
+        # full-file invariants only — base-anchoring requires the PR path.
+        binding_boundary = int(prefix["prefixLineCount"])
         appended = None
         if args.base_ref:
+            binding_boundary = check_prefix_anchored_to_base(args.base_ref, prefix)
             appended = check_append_only(args.base_ref, lines)
+        check_rows(lines, binding_boundary)
     except AppendError as exc:
         print(f"thesis-facts append check failed: {exc}", file=sys.stderr)
         return 1

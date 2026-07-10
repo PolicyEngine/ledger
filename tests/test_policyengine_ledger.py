@@ -34,6 +34,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from check_thesis_facts_append import (  # noqa: E402
     check_prefix,
     check_rows,
+    effective_current_rows,
     expected_assertion_version_id,
 )
 
@@ -113,7 +114,11 @@ def test_official_observation_ledger_contains_facts_not_predictions():
 
 
 def test_official_observations_validate_as_aggregate_facts():
-    facts = [_to_aggregate_fact(row) for row in _read_ledger_facts()]
+    # ``validate_facts`` rejects two rows sharing a semantic aggregate key, so
+    # the journal is validated as its supersede-aware effective current view
+    # (latest non-superseded row per identity) rather than as raw duplicates.
+    current = effective_current_rows(_read_ledger_facts())
+    facts = [_to_aggregate_fact(row) for row in current]
 
     report = validate_facts(facts)
 
@@ -207,7 +212,7 @@ def test_a_correction_naming_a_stale_version_is_rejected():
     correction = _appended_row(original, value_delta=1)
     correction["assertionVersion"] = {
         "id": expected_assertion_version_id(correction),
-        "supersedes": "av1:" + "0" * 64,
+        "supersedes": "av2:" + "0" * 64,
     }
     try:
         check_rows(
