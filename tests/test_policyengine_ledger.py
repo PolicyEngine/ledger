@@ -1,9 +1,17 @@
-"""Tests for checked-in PolicyEngine Ledger observation facts."""
+"""Invariants for the checked-in PolicyEngine Ledger observation facts.
+
+The old version of this file hard-coded a closed inventory of 49
+source_record_ids, went stale at the first append, and was dropped from CI.
+These tests assert the properties that must hold at ANY row count instead:
+the frozen prefix is immutable, every row is a valid publisher fact, and
+duplicate identities only exist as explicit supersede corrections.
+"""
 
 from __future__ import annotations
 
 import json
-import re
+import subprocess
+import sys
 from pathlib import Path
 
 from arch.core import (
@@ -17,69 +25,46 @@ from arch.core import (
     validate_facts,
 )
 
-
 ROOT = Path(__file__).resolve().parents[1]
 LEDGER_PATH = ROOT / "ledger" / "official_observations.jsonl"
+PREFIX_PATH = ROOT / "ledger" / "immutable_prefix.json"
 
-EXPECTED_SOURCE_RECORD_IDS = {
-    "bank_of_canada.overnight_rate.after_june_2026",
-    "bls.ces.total_nonfarm_payroll_change.may_2026.first_print",
-    "bls.ces.average_hourly_earnings_private.may_2026.first_print",
-    "bls.cpi.u.core_mom.may_2026.first_print",
-    "bls.cpi.u.headline_mom.may_2026.first_print",
-    "bls.cps.unemployment_rate.may_2026.first_print",
-    "bls.import_price_index.all_imports_mom.may_2026.first_print",
-    "bls.ppi.final_demand_monthly_change.may_2026.first_print",
-    "boe.bank_rate.2026-06-18",
-    "boe.bank_rate.after_mpc_june_2026.first_print",
-    "boj.policy_rate_guideline.after_june_2026",
-    "census.housing_starts.saar.may_2026.first_print",
-    "census.marts.adv44x72.may_2026.monthly_change.advance",
-    "census.mtis.total_business_inventories_level.april_2026.first_print",
-    "cms.medicaid_pi.beneficiaries_renewed_total.california.feb_2026.original_submission",
-    "cms.medicaid_pi.beneficiaries_renewed_ex_parte.california.feb_2026.original_submission",
-    "cms.medicaid_pi.beneficiaries_disenrolled_total.california.feb_2026.original_submission",
-    "cms.medicaid_pi.beneficiaries_disenrolled_procedural.california.feb_2026.original_submission",
-    "dol.eta.initial_claims.sa.week_ending_2026_06_06",
-    "ecb.deposit_facility_rate.after_june_2026",
-    "estat.jp.cpi.core_exfreshfood.yoy.2026-05",
-    "eurostat.hicp.all_items_annual_rate.euro_area.may_2026.final_first_print",
-    "eurostat.industrial_production.euro_area.april_2026.first_print",
-    "fed.g17.capacity_utilization.total_industry.may_2026.first_print",
-    "fed.g17.industrial_production.total_index_mom.may_2026.first_print",
-    "fns.snap.application_processing_timeliness.california.fy2024.official_release",
-    "fns.snap.overpayment_payment_error_rate.us.fy2024.official_release",
-    "fns.snap.total_payment_error_rate.us.fy2024.official_release",
-    "fns.snap.underpayment_payment_error_rate.us.fy2024.official_release",
-    "ons.cpi.annual_rate.may_2026.first_print",
-    "ons.cpih.annual_rate.2026-05",
-    "ons.gdp.monthly_growth.april_2026.first_print",
-    "ons.hmrc.paye_payrolled_employees.may_2026.first_print",
-    "ons.labour.unemployment_rate.february_to_april_2026.first_print",
-    "ons.pusf.j5ii.public_sector_net_borrowing_ex_banks.may_2026.first_print",
-    "ons.retail_sales.volume_mom.may_2026.first_print",
-    "rba.cash_rate_target.after_june_2026",
-    "statcan.building_permits.total_value_mom.canada.april_2026.first_print",
-    "statcan.employment_insurance.regular_beneficiaries.canada.april_2026.first_print",
-    "statcan.lfs.employment_change.canada.may_2026.first_print",
-    "statcan.lfs.unemployment_rate.canada.may_2026.first_print",
-    "statcan.retail_trade.sales_mom.canada.april_2026.first_print",
-    "statcan.wholesale_trade.sales_mom_exclusions.canada.april_2026.first_print",
-    "statjp.cpi.all_items_annual_rate.japan.may_2026.first_print",
-    "treasury.mts.monthly_deficit.may_2026.first_print",
-    "us.census.housing_starts.total_saar.2026-05",
-    "us.dol.initial_claims.sa.week_2026-06-13",
-    "us.fed.fomc.target_range_upper.2026-06",
-    "us.frb.industrial_production.total.mom_sa.2026-05",
-}
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from check_thesis_facts_append import (  # noqa: E402
+    check_prefix,
+    check_rows,
+    expected_assertion_version_id,
+)
+
+
+def _read_lines() -> list[str]:
+    return [
+        line
+        for line in LEDGER_PATH.read_text(encoding="utf-8").split("\n")
+        if line.strip()
+    ]
 
 
 def _read_ledger_facts() -> list[dict]:
-    return [
-        json.loads(line)
-        for line in LEDGER_PATH.read_text(encoding="utf-8").splitlines()
-        if line.strip()
-    ]
+    return [json.loads(line) for line in _read_lines()]
+
+
+LEDGER_ROW_KEYS = {
+    "label",
+    "observed_at",
+    "source_record_id",
+    "source_cell_keys",
+    "source_row_keys",
+    # Resolution provenance attached by the Thesis resolver.
+    "ledgerRepoSha",
+    "sourceVintage",
+    "retrievedAt",
+    "responseArchive",
+    "targetContentHash",
+    "sourceBindingProjection",
+    "assertionVersion",
+}
 
 
 def _to_aggregate_fact(row: dict) -> AggregateFact:
@@ -100,21 +85,29 @@ def _to_aggregate_fact(row: dict) -> AggregateFact:
     )
 
 
-def test_official_observation_ledger_has_expected_rows():
-    rows = _read_ledger_facts()
+def test_immutable_prefix_is_intact():
+    lines = _read_lines()
 
-    assert {row["source_record_id"] for row in rows} == EXPECTED_SOURCE_RECORD_IDS
-    assert len(rows) == len(EXPECTED_SOURCE_RECORD_IDS)
+    prefix = check_prefix(lines)
+
+    assert prefix["prefixLineCount"] >= 128
+    assert len(lines) >= prefix["prefixLineCount"]
+
+
+def test_every_row_satisfies_the_append_invariants():
+    lines = _read_lines()
+    prefix = check_prefix(lines)
+
+    # Raises on any malformed row, unexplained duplicate identity,
+    # mis-addressed assertion version, or missing post-prefix binding.
+    check_rows(lines, int(prefix["prefixLineCount"]))
 
 
 def test_official_observation_ledger_contains_facts_not_predictions():
-    rows = _read_ledger_facts()
-
-    for row in rows:
+    for row in _read_ledger_facts():
         assert "prediction" not in json.dumps(row).lower()
         assert "forecast" not in json.dumps(row).lower()
         assert row["source_record_id"]
-        assert re.fullmatch(r"\d{4}-\d{2}-\d{2}", row["observed_at"])
         assert row["source"]["url"].startswith("https://")
         assert row["source"]["vintage"]
 
@@ -125,22 +118,102 @@ def test_official_observations_validate_as_aggregate_facts():
     report = validate_facts(facts)
 
     assert report.valid, report.to_dict()
-    assert report.counts["by_source"] == {
-        "bank_of_canada": 1,
-        "bls": 7,
-        "boe": 2,
-        "boj": 1,
-        "census": 4,
-        "cms": 4,
-        "dol": 2,
-        "ecb": 1,
-        "eurostat": 2,
-        "fed": 4,
-        "fns": 4,
-        "ons": 7,
-        "rba": 1,
-        "statcan": 6,
-        "statjp": 2,
-        "treasury": 1,
-    }
     assert report.counts["missing_lineage"]["count"] == 0
+
+
+def test_rows_carry_no_unknown_top_level_fields():
+    known = set(AggregateFact.__dataclass_fields__) | LEDGER_ROW_KEYS
+    for number, row in enumerate(_read_ledger_facts(), start=1):
+        unknown = set(row) - known
+        assert not unknown, f"line {number} has unknown fields: {sorted(unknown)}"
+
+
+def test_a_rewritten_prefix_line_is_detected(tmp_path):
+    lines = _read_lines()
+    row = json.loads(lines[0])
+    row["value"] = 999999
+    tampered = [json.dumps(row, separators=(",", ":")), *lines[1:]]
+    ledger_dir = tmp_path / "ledger"
+    ledger_dir.mkdir()
+    (ledger_dir / "official_observations.jsonl").write_text(
+        "\n".join(tampered) + "\n"
+    )
+    (ledger_dir / "immutable_prefix.json").write_text(PREFIX_PATH.read_text())
+    scripts_dir = tmp_path / "scripts"
+    scripts_dir.mkdir()
+    for name in ("check_thesis_facts_append.py", "canonical_json.py"):
+        (scripts_dir / name).write_text((ROOT / "scripts" / name).read_text())
+
+    completed = subprocess.run(
+        [sys.executable, str(scripts_dir / "check_thesis_facts_append.py")],
+        capture_output=True,
+        text=True,
+    )
+
+    assert completed.returncode == 1
+    assert "was rewritten" in completed.stderr
+
+
+def _appended_row(original: dict, *, value_delta: float = 0) -> dict:
+    row = {
+        **original,
+        "value": original["value"] + value_delta,
+        "retrievedAt": "2026-07-11T00:00:00Z",
+        "sourceVintage": "2026-07-11",
+        "ledgerRepoSha": "a" * 40,
+        "responseArchive": {"sha256": "b" * 64, "contentEncoding": "gzip"},
+    }
+    row.pop("targetContentHash", None)
+    row.pop("sourceBindingProjection", None)
+    return row
+
+
+def test_a_duplicate_identity_without_supersedes_is_detected():
+    lines = _read_lines()
+    duplicate = _appended_row(json.loads(lines[-1]))
+    duplicate["assertionVersion"] = {
+        "id": expected_assertion_version_id(duplicate),
+        "supersedes": None,
+    }
+    try:
+        check_rows(
+            [*lines, json.dumps(duplicate, separators=(",", ":"))], len(lines)
+        )
+    except ValueError as error:
+        assert "without superseding" in str(error)
+    else:
+        raise AssertionError("duplicate identity was accepted silently")
+
+
+def test_an_explicit_supersede_correction_is_accepted():
+    # A correction of a pre-versioning row supersedes that row's
+    # recomputable content address.
+    lines = _read_lines()
+    original = json.loads(lines[-1])
+    correction = _appended_row(original, value_delta=1)
+    correction["assertionVersion"] = {
+        "id": expected_assertion_version_id(correction),
+        "supersedes": expected_assertion_version_id(original),
+    }
+
+    check_rows(
+        [*lines, json.dumps(correction, separators=(",", ":"))], len(lines)
+    )
+
+
+def test_a_correction_naming_a_stale_version_is_rejected():
+    lines = _read_lines()
+    original = json.loads(lines[-1])
+    correction = _appended_row(original, value_delta=1)
+    correction["assertionVersion"] = {
+        "id": expected_assertion_version_id(correction),
+        "supersedes": "av1:" + "0" * 64,
+    }
+    try:
+        check_rows(
+            [*lines, json.dumps(correction, separators=(",", ":"))], len(lines)
+        )
+    except ValueError as error:
+        assert "the active version" in str(error)
+    else:
+        raise AssertionError("stale supersedes target was accepted")
