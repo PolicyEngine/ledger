@@ -1,12 +1,22 @@
 from __future__ import annotations
 
+from pathlib import Path
+
 import pytest
 
+import policyengine_ledger.target_profiles as target_profiles_pkg
+from policyengine_ledger.consumer import _select_rows
 from policyengine_ledger.target_profiles import (
     TARGET_PROFILE_SCHEMA_VERSION,
     load_target_profile,
     target_profile_from_mapping,
 )
+
+_PROFILE_DIR = Path(target_profiles_pkg.__file__).parent
+
+
+def _packaged_profile_ids() -> list[str]:
+    return sorted(path.stem for path in _PROFILE_DIR.glob("*.json"))
 
 
 def test__given_uk_local_profile__then_it_declares_measurement_contracts() -> None:
@@ -241,6 +251,31 @@ def test__given_non_sum_default_operation__then_profile_is_rejected() -> None:
     # When / Then
     with pytest.raises(ValueError, match="operation 'sum'"):
         target_profile_from_mapping(payload)
+
+
+def test_every_packaged_profile_selector_uses_supported_keys() -> None:
+    # Given the packaged target profiles
+    profile_ids = _packaged_profile_ids()
+    assert profile_ids
+
+    # Then every ledger_selector resolves against the supported vocabulary
+    for profile_id in profile_ids:
+        profile = load_target_profile(profile_id)
+        for target in profile.targets:
+            for level in target.geography_levels:
+                _, issues = _select_rows(
+                    profile.profile_id,
+                    target,
+                    [],
+                    geography_level=level,
+                )
+                unknown = [
+                    issue for issue in issues if issue.code == "unknown_selector_key"
+                ]
+                assert not unknown, (
+                    f"{profile_id}/{target.target_id} ships an unsupported "
+                    f"selector: {[issue.message for issue in unknown]}"
+                )
 
 
 def _minimal_profile_payload() -> dict[str, object]:

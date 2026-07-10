@@ -9,12 +9,16 @@ calibrated un-aged at a later build year and nothing complained.
 
 from __future__ import annotations
 
+import hashlib
 import json
+from pathlib import Path
 
 import pytest
 
+import policyengine_ledger.target_profiles as target_profiles_pkg
 from ledger.consumer_contract import consumer_fact_rows
 from ledger.core import (
+    AggregateConstraint,
     AggregateFact,
     Aggregation,
     EntityDimension,
@@ -31,6 +35,7 @@ from policyengine_ledger.consumer import (
     load_consumer_artifact,
     resolve_profile_targets,
 )
+from policyengine_ledger.schema import CONSUMER_FACT_SCHEMA_SHA256
 from policyengine_ledger.target_profiles import target_profile_from_mapping
 
 SHA = "ab" * 32
@@ -394,3 +399,246 @@ def test_artifact_is_reproducible(tmp_path):
         )
     for name in ("manifest.json", "coverage.json", "consumer_facts.jsonl"):
         assert (first / name).read_bytes() == (second / name).read_bytes()
+
+
+def _ons_firm_crosstab_fact(*, record_set_id, dimensions, value, cell):
+    constraints = tuple(
+        AggregateConstraint(variable=key, operator="==", value=band)
+        for key, band in sorted(dimensions.items())
+    )
+    return AggregateFact(
+        value=value,
+        period=PeriodDimension(type="calendar_year", value=2025),
+        geography=GeographyDimension(level="country", id="K02000001", vintage="2025"),
+        entity=EntityDimension(name="firm"),
+        measure=Measure(concept="uk.firm.count", unit="count"),
+        aggregation=Aggregation(method="sum"),
+        source=SourceProvenance(
+            source_name="ons",
+            source_table="UK Business Counts 2025",
+            source_file="ukbusinesscounts2025.xlsx",
+            url="https://www.ons.gov.uk/ukbusinesscounts2025.xlsx",
+            vintage="cy2025",
+            extracted_at="2026-06-01",
+            extraction_method="test",
+            source_sha256=SHA,
+            source_size_bytes=100,
+            raw_r2_bucket="ledger-raw",
+            raw_r2_key=f"raw/ons/ukbc/{cell}/{SHA}/x.xlsx",
+            raw_r2_uri=f"r2://ledger-raw/raw/ons/ukbc/{cell}/{SHA}/x.xlsx",
+        ),
+        domain="uk_enterprises",
+        source_record_id=f"ons.uk_business.cy2025.{cell}",
+        source_cell_keys=(f"ledger.source_cell.v1:{cell}",),
+        filters=dict(dimensions),
+        constraints=constraints,
+        layout=SourceRecordLayout(
+            record_set_id=record_set_id,
+            record_set_spec_id="ons.uk_business.v1",
+            measure_id="enterprise_count",
+        ),
+    )
+
+
+def _uk_firms_crosstab_rows():
+    by_sic_turnover = "ons.uk_business.cy2025.enterprise_count.by_sic_turnover_band"
+    by_sic_employment = "ons.uk_business.cy2025.enterprise_count.by_sic_employment_band"
+    return consumer_fact_rows(
+        [
+            _ons_firm_crosstab_fact(
+                record_set_id=by_sic_turnover,
+                dimensions={
+                    "uk.firm.sic_code": "A",
+                    "uk.firm.turnover_band": "0_99k",
+                },
+                value=1200,
+                cell="sic_turnover.A.0_99k",
+            ),
+            _ons_firm_crosstab_fact(
+                record_set_id=by_sic_turnover,
+                dimensions={
+                    "uk.firm.sic_code": "C",
+                    "uk.firm.turnover_band": "100_249k",
+                },
+                value=800,
+                cell="sic_turnover.C.100_249k",
+            ),
+            _ons_firm_crosstab_fact(
+                record_set_id=by_sic_employment,
+                dimensions={
+                    "uk.firm.sic_code": "A",
+                    "uk.firm.employment_band": "0_9",
+                },
+                value=1500,
+                cell="sic_employment.A.0_9",
+            ),
+            _ons_firm_crosstab_fact(
+                record_set_id=by_sic_employment,
+                dimensions={
+                    "uk.firm.sic_code": "C",
+                    "uk.firm.employment_band": "10_49",
+                },
+                value=430,
+                cell="sic_employment.C.10_49",
+            ),
+        ]
+    )
+
+
+def _uk_firms_crosstab_profile_payload():
+    payload = json.loads(
+        (Path(target_profiles_pkg.__file__).parent / "uk_firms.json").read_text()
+    )
+    crosstab_ids = {
+        "ons.uk_business.enterprise_count.sic_turnover_bands",
+        "ons.uk_business.enterprise_count.sic_employment_bands",
+    }
+    payload["targets"] = [
+        target for target in payload["targets"] if target["target_id"] in crosstab_ids
+    ]
+    return payload
+
+
+def test_uk_firms_cross_tab_targets_resolve_through_dimensions_selector(tmp_path):
+    facts_path = tmp_path / "consumer_facts.jsonl"
+    with facts_path.open("w") as file:
+        for row in _uk_firms_crosstab_rows():
+            file.write(json.dumps(row, sort_keys=True) + "\n")
+    profile_path = tmp_path / "uk_firms.json"
+    profile_path.write_text(json.dumps(_uk_firms_crosstab_profile_payload()))
+
+    out_dir = tmp_path / "artifact"
+    build_consumer_artifact(
+        out_dir,
+        facts_path=facts_path,
+        profile_paths=[profile_path],
+    )
+    artifact = load_consumer_artifact(out_dir)
+
+    report = artifact.resolve("uk_firms", {"type": "calendar_year", "value": 2025})
+
+    assert report.valid
+    assert artifact.profile_hash_semantics == {"uk_firms": "exact"}
+    by_target: dict[str, list] = {}
+    for row in report.resolved:
+        assert row.basis == "fact"
+        by_target.setdefault(row.target_id, []).append(row)
+
+    sic_turnover = by_target["ons.uk_business.enterprise_count.sic_turnover_bands"]
+    sic_employment = by_target["ons.uk_business.enterprise_count.sic_employment_bands"]
+    assert sorted(row.value for row in sic_turnover) == [800, 1200]
+    assert sorted(row.value for row in sic_employment) == [430, 1500]
+    assert all(
+        sorted(row.dimensions) == ["uk.firm.sic_code", "uk.firm.turnover_band"]
+        for row in sic_turnover
+    )
+    assert all(
+        sorted(row.dimensions) == ["uk.firm.employment_band", "uk.firm.sic_code"]
+        for row in sic_employment
+    )
+
+
+def _rewrite_facts_file(out_dir, rows):
+    facts_file = out_dir / "consumer_facts.jsonl"
+    facts_file.write_text(
+        "".join(json.dumps(row, sort_keys=True) + "\n" for row in rows)
+    )
+    manifest_path = out_dir / "manifest.json"
+    manifest = json.loads(manifest_path.read_text())
+    manifest["facts_sha256"] = hashlib.sha256(facts_file.read_bytes()).hexdigest()
+    manifest_path.write_text(json.dumps(manifest, sort_keys=True, indent=2) + "\n")
+
+
+def test_artifact_load_rejects_row_missing_required_field(tmp_path):
+    facts_path, profile_path = _write_artifact_inputs(tmp_path)
+    out_dir = tmp_path / "artifact"
+    build_consumer_artifact(out_dir, facts_path=facts_path, profile_paths=[profile_path])
+
+    rows = _rows()
+    del rows[0]["observed_measure"]["unit"]
+    _rewrite_facts_file(out_dir, rows)
+
+    with pytest.raises(ValueError, match="unit"):
+        load_consumer_artifact(out_dir)
+
+
+def test_artifact_load_rejects_unknown_extra_field(tmp_path):
+    facts_path, profile_path = _write_artifact_inputs(tmp_path)
+    out_dir = tmp_path / "artifact"
+    build_consumer_artifact(out_dir, facts_path=facts_path, profile_paths=[profile_path])
+
+    rows = _rows()
+    rows[0]["unexpected_field"] = "surprise"
+    _rewrite_facts_file(out_dir, rows)
+
+    with pytest.raises(ValueError, match="unexpected_field"):
+        load_consumer_artifact(out_dir)
+
+
+def test_artifact_load_rejects_unknown_schema_sha256(tmp_path):
+    facts_path, profile_path = _write_artifact_inputs(tmp_path)
+    out_dir = tmp_path / "artifact"
+    build_consumer_artifact(out_dir, facts_path=facts_path, profile_paths=[profile_path])
+
+    manifest_path = out_dir / "manifest.json"
+    manifest = json.loads(manifest_path.read_text())
+    manifest["consumer_fact_schema_sha256"] = "0" * 64
+    manifest_path.write_text(json.dumps(manifest, sort_keys=True, indent=2) + "\n")
+
+    with pytest.raises(ValueError, match="consumer_fact_schema_sha256"):
+        load_consumer_artifact(out_dir)
+
+
+def test_artifact_load_rejects_tampered_profile(tmp_path):
+    facts_path, profile_path = _write_artifact_inputs(tmp_path)
+    out_dir = tmp_path / "artifact"
+    build_consumer_artifact(out_dir, facts_path=facts_path, profile_paths=[profile_path])
+
+    profile_file = out_dir / "profiles" / "test_profile.json"
+    tampered = profile_file.read_bytes().replace(b"Test profile", b"Xest profile", 1)
+    assert tampered != profile_file.read_bytes()
+    profile_file.write_bytes(tampered)
+
+    with pytest.raises(ValueError, match="does not match the manifest"):
+        load_consumer_artifact(out_dir)
+
+
+def test_artifact_load_accepts_legacy_profile_hash_only_via_explicit_path(tmp_path):
+    facts_path, profile_path = _write_artifact_inputs(tmp_path)
+    out_dir = tmp_path / "artifact"
+    build_consumer_artifact(out_dir, facts_path=facts_path, profile_paths=[profile_path])
+
+    profile_file = out_dir / "profiles" / "test_profile.json"
+    profile_bytes = profile_file.read_bytes()
+    assert profile_bytes.endswith(b"\n")
+    legacy_hash = hashlib.sha256(profile_bytes[:-1]).hexdigest()
+
+    manifest_path = out_dir / "manifest.json"
+    manifest = json.loads(manifest_path.read_text())
+    # A pre-fix manifest carries no schema sha and hashed the profile without
+    # its trailing newline.
+    del manifest["consumer_fact_schema_sha256"]
+    manifest["profiles"]["test_profile"]["sha256"] = legacy_hash
+    manifest_path.write_text(json.dumps(manifest, sort_keys=True, indent=2) + "\n")
+
+    artifact = load_consumer_artifact(out_dir)
+    assert artifact.profile_hash_semantics == {"test_profile": "legacy_profile_hash"}
+
+    # The same legacy hash is rejected once the manifest is post-fix.
+    manifest["consumer_fact_schema_sha256"] = CONSUMER_FACT_SCHEMA_SHA256
+    manifest_path.write_text(json.dumps(manifest, sort_keys=True, indent=2) + "\n")
+    with pytest.raises(ValueError, match="does not match the manifest"):
+        load_consumer_artifact(out_dir)
+
+
+def test_artifact_build_rejects_duplicate_aggregate_fact_key(tmp_path):
+    facts_path, profile_path = _write_artifact_inputs(tmp_path)
+    with facts_path.open("a") as file:
+        file.write(json.dumps(_rows()[0], sort_keys=True) + "\n")
+
+    with pytest.raises(ValueError, match="aggregate_fact_key"):
+        build_consumer_artifact(
+            tmp_path / "artifact",
+            facts_path=facts_path,
+            profile_paths=[profile_path],
+        )

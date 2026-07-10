@@ -27,6 +27,10 @@ from pathlib import Path
 from typing import Any
 
 from ledger.core import ALLOWED_ASSERTIONS, DEFAULT_ASSERTION
+from policyengine_ledger.schema import (
+    CONSUMER_FACT_SCHEMA_SHA256,
+    validate_consumer_fact_row,
+)
 from policyengine_ledger.target_profiles import (
     TargetProfile,
     TargetProfileTarget,
@@ -51,6 +55,7 @@ _SELECTOR_KEYS = {
     "record_set_id",
     "record_set_spec_id",
     "groupby_dimension",
+    "dimensions",
     "domain",
     "entity",
     "assertion",
@@ -419,10 +424,19 @@ def _select_rows(
         for row in rows
         if row.get("geography", {}).get("level") == geography_level
         and all(
-            _selector_value(row, key) == value for key, value in selector.items()
+            _selector_matches(row, key, value) for key, value in selector.items()
         )
     ]
     return matched, issues
+
+
+def _selector_matches(row: Mapping[str, Any], key: str, value: Any) -> bool:
+    actual = _selector_value(row, key)
+    if isinstance(actual, list):
+        # Dimension-identity selectors match order-insensitively on the exact
+        # set of dimension variable names the row carries.
+        return isinstance(value, list) and sorted(actual) == sorted(value)
+    return actual == value
 
 
 def _selector_value(row: Mapping[str, Any], key: str) -> Any:
@@ -448,6 +462,8 @@ def _selector_value(row: Mapping[str, Any], key: str) -> Any:
         return layout.get("record_set_spec_id")
     if key == "groupby_dimension":
         return layout.get("groupby_dimension")
+    if key == "dimensions":
+        return sorted(row.get("dimensions", {}))
     if key == "domain":
         return row.get("universe_constraints", {}).get("domain")
     if key == "entity":
@@ -541,12 +557,20 @@ def _normalize_alignments(
 
 @dataclass(frozen=True)
 class ConsumerArtifact:
-    """A loaded Ledger consumer artifact."""
+    """A loaded Ledger consumer artifact.
+
+    ``profile_hash_semantics`` records, per profile id, which manifest hash
+    semantics the load accepted: ``exact`` for the byte-for-byte file hash, or
+    ``legacy_profile_hash`` for a pre-fix manifest whose profile hash omitted
+    the trailing newline. Tampered profile bytes never match either and fail
+    the load.
+    """
 
     path: Path
     manifest: dict[str, Any]
     rows: tuple[dict[str, Any], ...]
     profiles: Mapping[str, TargetProfile]
+    profile_hash_semantics: Mapping[str, str] = field(default_factory=dict)
 
     def resolve(
         self,
@@ -623,7 +647,7 @@ def build_consumer_artifact(
         shutil.rmtree(output_path)
     output_path.mkdir(parents=True)
 
-    rows = _load_consumer_rows(_resolve_facts_path(facts_path))
+    rows = _load_consumer_rows(_resolve_facts_path(facts_path), validate_schema=True)
     profiles = _load_profiles(profile_ids, profile_paths)
 
     facts_out = output_path / "consumer_facts.jsonl"
@@ -637,9 +661,10 @@ def build_consumer_artifact(
     profile_meta: dict[str, Any] = {}
     for profile_id, payload in profiles.items():
         profile_json = json.dumps(payload, sort_keys=True, indent=2)
-        (profiles_dir / f"{profile_id}.json").write_text(profile_json + "\n")
+        profile_bytes = (profile_json + "\n").encode("utf-8")
+        (profiles_dir / f"{profile_id}.json").write_bytes(profile_bytes)
         profile_meta[profile_id] = {
-            "sha256": hashlib.sha256(profile_json.encode("utf-8")).hexdigest(),
+            "sha256": hashlib.sha256(profile_bytes).hexdigest(),
             "target_count": len(payload["targets"]),
         }
 
@@ -651,6 +676,7 @@ def build_consumer_artifact(
         "consumer_fact_schema_versions": sorted(
             {row.get("schema_version") for row in rows}
         ),
+        "consumer_fact_schema_sha256": CONSUMER_FACT_SCHEMA_SHA256,
         "fact_row_count": len(rows),
         "facts_sha256": _sha256_file(facts_out),
         "profiles": profile_meta,
@@ -667,13 +693,30 @@ def build_consumer_artifact(
 
 
 def load_consumer_artifact(path: str | Path) -> ConsumerArtifact:
-    """Load a consumer artifact directory and verify its manifest hashes."""
+    """Load a consumer artifact directory and verify its manifest hashes.
+
+    Verification is fail-closed: the manifest's declared consumer-fact schema
+    (when present) must match the packaged schema, fact rows are re-hashed and
+    schema-validated, and every profile file is re-hashed against the manifest.
+    A manifest that predates the profile-hash fix may match through the
+    explicit ``legacy_profile_hash`` path, recorded on the returned artifact.
+    """
     artifact_path = Path(path)
     manifest = json.loads((artifact_path / "manifest.json").read_text())
     if manifest.get("schema_version") != CONSUMER_ARTIFACT_SCHEMA_VERSION:
         raise ValueError(
             "Unsupported consumer artifact schema_version: "
             f"{manifest.get('schema_version')!r}."
+        )
+    manifest_schema_sha256 = manifest.get("consumer_fact_schema_sha256")
+    if (
+        manifest_schema_sha256 is not None
+        and manifest_schema_sha256 != CONSUMER_FACT_SCHEMA_SHA256
+    ):
+        raise ValueError(
+            "Consumer artifact declares consumer_fact_schema_sha256 "
+            f"{manifest_schema_sha256!r}, which does not match the packaged "
+            f"consumer-fact schema {CONSUMER_FACT_SCHEMA_SHA256!r}."
         )
     facts_file = artifact_path / "consumer_facts.jsonl"
     actual_sha256 = _sha256_file(facts_file)
@@ -682,18 +725,61 @@ def load_consumer_artifact(path: str | Path) -> ConsumerArtifact:
             f"Consumer artifact fact rows do not match the manifest hash: "
             f"{actual_sha256} != {manifest['facts_sha256']}."
         )
-    rows = _load_consumer_rows(facts_file)
+    rows = _load_consumer_rows(facts_file, validate_schema=True)
+    manifest_predates_fix = "consumer_fact_schema_sha256" not in manifest
     profiles: dict[str, TargetProfile] = {}
-    for profile_id in manifest.get("profiles", {}):
-        payload = json.loads(
-            (artifact_path / "profiles" / f"{profile_id}.json").read_text()
+    profile_hash_semantics: dict[str, str] = {}
+    for profile_id, profile_meta in manifest.get("profiles", {}).items():
+        profile_file = artifact_path / "profiles" / f"{profile_id}.json"
+        profile_hash_semantics[profile_id] = _verify_profile_hash(
+            profile_id,
+            profile_file,
+            profile_meta,
+            manifest_predates_fix=manifest_predates_fix,
         )
+        payload = json.loads(profile_file.read_text())
         profiles[profile_id] = target_profile_from_mapping(payload)
     return ConsumerArtifact(
         path=artifact_path,
         manifest=manifest,
         rows=tuple(rows),
         profiles=profiles,
+        profile_hash_semantics=profile_hash_semantics,
+    )
+
+
+def _verify_profile_hash(
+    profile_id: str,
+    profile_file: Path,
+    profile_meta: Any,
+    *,
+    manifest_predates_fix: bool,
+) -> str:
+    """Return the profile hash semantics matched, or raise on any mismatch.
+
+    ``exact`` matches the byte-for-byte file hash written since the fix.
+    ``legacy_profile_hash`` matches a pre-fix manifest whose hash omitted the
+    trailing newline; it is accepted only when the manifest predates the fix
+    (no ``consumer_fact_schema_sha256``). Tampered bytes match neither.
+    """
+    expected = profile_meta.get("sha256") if isinstance(profile_meta, Mapping) else None
+    if not expected:
+        raise ValueError(
+            f"Consumer artifact manifest is missing a sha256 for profile "
+            f"{profile_id!r}."
+        )
+    file_bytes = profile_file.read_bytes()
+    if hashlib.sha256(file_bytes).hexdigest() == expected:
+        return "exact"
+    if (
+        manifest_predates_fix
+        and file_bytes.endswith(b"\n")
+        and hashlib.sha256(file_bytes[:-1]).hexdigest() == expected
+    ):
+        return "legacy_profile_hash"
+    raise ValueError(
+        f"Consumer artifact profile {profile_id!r} does not match the manifest "
+        f"hash: {hashlib.sha256(file_bytes).hexdigest()} != {expected}."
     )
 
 
@@ -711,19 +797,33 @@ def _resolve_facts_path(facts_path: str | Path) -> Path:
     return path
 
 
-def _load_consumer_rows(path: Path) -> list[dict[str, Any]]:
+def _load_consumer_rows(
+    path: Path,
+    *,
+    validate_schema: bool = True,
+) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
+    seen_keys: set[str] = set()
     with path.open() as file:
         for line_number, line in enumerate(file, start=1):
             if not line.strip():
                 continue
             row = json.loads(line)
+            if validate_schema:
+                validate_consumer_fact_row(row, line_number, path)
             assertion = row.setdefault("assertion", DEFAULT_ASSERTION)
             if assertion not in ALLOWED_ASSERTIONS:
                 raise ValueError(
                     f"Row {line_number} of {path} has unsupported assertion "
                     f"{assertion!r}."
                 )
+            key = row.get("aggregate_fact_key")
+            if key in seen_keys:
+                raise ValueError(
+                    f"Row {line_number} of {path} repeats aggregate_fact_key "
+                    f"{key!r}; consumer artifact fact rows must be unique."
+                )
+            seen_keys.add(key)
             rows.append(row)
     return rows
 
