@@ -34,6 +34,7 @@ jobs:
         run: >
           uv run ruff check
           arch
+          tests/test_arch_bundle.py
           db/cli.py
           db/etl_snap.py
           db/etl_aca_enrollment.py
@@ -136,3 +137,32 @@ jobs:
           assert ConditionalMAF is not None
           PY
           /tmp/arch-wheel-smoke/bin/arch --help >/dev/null
+
+  # Exact-count pin on the merged consumer bundle (tests/test_arch_bundle.py).
+  # Deliberately a standalone job rather than part of the required "Arch
+  # checks" pytest whitelist: the merged build takes ~6 minutes, and "Arch
+  # checks" gates the Thesis resolver's daily append PRs, which cannot touch
+  # bundle inputs. This job keeps bundle drift loud on every push and PR
+  # without adding latency to the required append path.
+  arch-bundle-drift:
+    name: Arch bundle drift
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+
+      - name: Install dependencies
+        run: uv sync --locked --all-extras
+
+      - name: Pin merged bundle counts
+        run: uv run pytest tests/test_arch_bundle.py -q

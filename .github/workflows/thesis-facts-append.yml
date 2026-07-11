@@ -6,30 +6,21 @@ name: Thesis facts append gate
 # PR base, the witnessed release chain, per-row schema and binding requirements,
 # and explicit supersede semantics for corrections. Direct pushes get the same
 # full-file checks.
+#
+# No paths filter, on purpose: branch protection lists "Append gate" as a
+# required status check, so it must report on every pull request into the
+# branch. With a paths filter, a PR that touches none of the gated files
+# (tests, CI config) never receives the check and deadlocks on "Expected".
+# For such PRs the append-only diff is trivially clean and the gate stays
+# cheap.
 
 on:
   pull_request:
     branches:
       - codex/thesis-ledger-facts
-    paths:
-      - "ledger/**"
-      - "releases/**"
-      - "scripts/check_thesis_facts_append.py"
-      - "scripts/canonical_json.py"
-      - "scripts/cut_release_manifest.py"
-      - "scripts/verify_release_chain.py"
-      - ".github/workflows/thesis-facts-append.yml"
   push:
     branches:
       - codex/thesis-ledger-facts
-    paths:
-      - "ledger/**"
-      - "releases/**"
-      - "scripts/check_thesis_facts_append.py"
-      - "scripts/canonical_json.py"
-      - "scripts/cut_release_manifest.py"
-      - "scripts/verify_release_chain.py"
-      - ".github/workflows/thesis-facts-append.yml"
 
 jobs:
   append-gate:

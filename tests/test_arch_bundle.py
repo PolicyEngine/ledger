@@ -13,6 +13,26 @@ def _load_jsonl(path):
 
 
 def test_build_bundle_writes_merged_consumer_contract(tmp_path):
+    """Pin the merged default bundle to exact counts so drift is loud.
+
+    Every count below is deliberately hardcoded: any change to bundle
+    inputs (``arch/``, ``packages/``, ``db/data/``) must update this test
+    in the same change. On this branch those inputs are frozen — the
+    thesis-facts branch takes ledger appends, not source-package work —
+    so a failure here is a tripwire, not routine drift. The counts were
+    regenerated 2026-07-11 from the fork-point package set (main PRs
+    #34-#48 landed before this branch forked and were never reflected
+    here because CI did not run this file). Regenerate by rebuilding:
+    ``uv run arch build-bundle --year 2023 --out <dir>`` and reading the
+    artifacts it writes.
+
+    CI runs this file as the standalone "Arch bundle drift" job, and it
+    is deliberately NOT in the required "Arch checks" pytest whitelist:
+    the merged build takes ~6 minutes, and the required set gates the
+    Thesis resolver's daily append PRs, which cannot affect bundle
+    inputs. Keeping the slow pin visible-but-nonblocking protects append
+    merge latency; the omission from the whitelist is not an oversight.
+    """
     output_dir = tmp_path / "bundle"
 
     report = build_bundle(output_dir, year=2023)
@@ -29,62 +49,95 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "aggregate_duplicate_key_count": 0,
         "entity_count": 6,
         "error_count": 0,
-        "fact_count": 7149,
-        "geography_count": 54,
-        "period_count": 7,
+        "fact_count": 10268,
+        "geography_count": 483,
+        "period_count": 9,
         "semantic_duplicate_key_count": 3,
-        "skipped_source_count": 0,
-        "source_count": 12,
-        "source_package_count": 27,
+        "skipped_source_count": 8,
+        "source_count": 16,
+        "source_package_count": 39,
         "warning_count": 1,
     }
-    assert len(rows) == 7149
+    assert len(rows) == 10268
     assert rows[0]["aggregate_fact_key"].startswith("arch.aggregate_fact.v2:")
     assert rows[0]["semantic_fact_key"].startswith("arch.semantic_fact.v2:")
-    assert source_packages["source_package_count"] == 27
-    assert source_packages["skipped_source_count"] == 0
-    assert not source_packages["skipped_sources"]
-    assert coverage["fact_count"] == 7149
+    assert source_packages["source_package_count"] == 39
+    assert source_packages["skipped_source_count"] == 8
+    assert sorted(item["source"] for item in source_packages["skipped_sources"]) == [
+        "census-acs-s0101-congressional-district-age-2024",
+        "census-acs-s0101-national-age-2024",
+        "census-acs-s0101-state-age-2024",
+        "census-acs-s2201-congressional-district-snap-2024",
+        "cms-aca-effectuated-enrollment-2022",
+        "cms-aca-oep-state-level",
+        "cms-aca-oep-state-level-2022",
+        "cms-aca-oep-state-level-2025",
+    ]
+    assert {
+        item["reason"] for item in source_packages["skipped_sources"]
+    } == {"source package is not available for requested year"}
+    assert coverage["fact_count"] == 10268
     assert coverage["counts"]["by_source"] == {
+        "bea": 443,
+        "cbo": 6,
+        "census_acs": 468,
         "census_pep": 988,
+        "census_population_projections": 86,
         "census_stc": 46,
-        "cms_medicaid": 260,
+        "cms_medicaid": 515,
         "cms_medicare": 1,
         "cms_nhe": 1,
         "federal_reserve": 1,
-        "hhs_acf_liheap": 1,
+        "hhs_acf_liheap": 2,
         "hhs_acf_tanf": 110,
-        "irs_soi": 5467,
+        "irs_soi": 6911,
         "kff": 52,
-        "ssa": 6,
+        "ssa": 422,
         "usda_snap": 216,
     }
     assert coverage["counts"]["by_source_table"] == {
+        "bea:BEA NIPA annual data flat file": 27,
+        "bea:BEA Regional annual state personal income CSV ZIP": 416,
         (
-            "census_pep:Annual Estimates of the Resident Population by Single Year "
-            "of Age and Sex for the United States"
+            "cbo:Revenue Projections, by Category, February 2026, sheet "
+            "3.Individual Income Tax Details"
+        ): 6,
+        (
+            "census_acs:ACS 2023 1-year detailed table B01001 female age "
+            "bands by state"
+        ): 468,
+        (
+            "census_pep:Annual Estimates of the Resident Population by "
+            "Single Year of Age and Sex for the United States"
         ): 19,
         (
-            "census_pep:Annual State Resident Population Estimates by Single Year "
-            "of Age, Sex, Race, and Hispanic Origin"
+            "census_pep:Annual State Resident Population Estimates by "
+            "Single Year of Age, Sex, Race, and Hispanic Origin"
         ): 969,
+        (
+            "census_population_projections:2023 National Population "
+            "Projections Main Series, middle series"
+        ): 86,
         "census_stc:FY2023 STC Flat File item T40 Individual Income Taxes": 46,
         (
-            "cms_medicaid:State Medicaid and CHIP Applications, Eligibility "
-            "Determinations, and Enrollment Data"
-        ): 260,
+            "cms_medicaid:State Medicaid and CHIP Applications, "
+            "Eligibility Determinations, and Enrollment Data"
+        ): 515,
         "cms_medicare:2025 Medicare Trustees Report Table III.C3": 1,
         (
-            "cms_nhe:National Health Expenditures by type of service and source "
-            "of funds, CY 1960-2024"
+            "cms_nhe:National Health Expenditures by type of service and "
+            "source of funds, CY 1960-2024"
         ): 1,
         "federal_reserve:Z.1 B.101 Households and nonprofit organizations": 1,
+        "hhs_acf_liheap:LIHEAP FY2023 National Profile (All States)": 1,
         "hhs_acf_liheap:LIHEAP FY2024 National Profile (All States)": 1,
         "hhs_acf_tanf:FY 2024 Federal TANF and State MOE Financial Data": 52,
         "hhs_acf_tanf:TANF Caseload Data 2024": 58,
+        "irs_soi:Congressional District Data 2022": 1440,
         "irs_soi:Historic Table 2": 605,
         "irs_soi:Historic Table 2 state AGI facts": 918,
         "irs_soi:Historic Table 2 state broad totals": 2703,
+        "irs_soi:Historic Table 2 state data, United States total": 4,
         "irs_soi:Historic Table 2 state EITC totals": 510,
         "irs_soi:Publication 1304 Table 1.1": 80,
         "irs_soi:Publication 1304 Table 1.2": 7,
@@ -108,28 +161,37 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
             "Age of Taxpayer"
         ): 2,
         "kff:Full Year Average Marketplace Effectuated Enrollment, 2017-2024": 52,
-        "ssa:SSA Annual Statistical Supplement 2025 extracted OASDI and SSI target rows": 6,
-        "usda_snap:SNAP Monthly State Participation and Benefit Summary FY69 to current": 216,
+        "ssa:SSA Annual Statistical Supplement 2025 Table 7.B1": 416,
+        (
+            "ssa:SSA Annual Statistical Supplement 2025 extracted OASDI "
+            "and SSI target rows"
+        ): 6,
+        (
+            "usda_snap:SNAP Monthly State Participation and Benefit "
+            "Summary FY69 to current"
+        ): 216,
     }
     assert coverage["counts"]["by_period"] == {
-        "calendar_year:2023": 2,
-        "calendar_year:2024": 1047,
-        "fiscal_year:2023": 46,
+        "calendar_year:2018": 1,
+        "calendar_year:2023": 997,
+        "calendar_year:2024": 1464,
+        "fiscal_year:2023": 47,
         "fiscal_year:2024": 327,
         "month:2024-12": 260,
+        "month:2025-12": 255,
         "tax_year:2022": 4968,
-        "tax_year:2023": 499,
+        "tax_year:2023": 1949,
     }
-    assert coverage["counts"]["by_geography"]["country:0100000US"] == 1384
-    assert coverage["counts"]["by_geography"]["state:0400000US06"] == 113
-    assert len(coverage["counts"]["by_geography"]) == 54
+    assert coverage["counts"]["by_geography"]["country:0100000US"] == 1527
+    assert coverage["counts"]["by_geography"]["state:0400000US06"] == 146
+    assert len(coverage["counts"]["by_geography"]) == 483
     assert coverage["counts"]["by_entity"] == {
         "family": 107,
         "government": 101,
-        "household": 55,
+        "household": 56,
         "institutional_sector": 1,
-        "person": 1418,
-        "tax_unit": 5467,
+        "person": 3086,
+        "tax_unit": 6917,
     }
     assert not coverage["duplicates"]["aggregate_fact_keys"]
     assert len(coverage["duplicates"]["semantic_fact_keys"]) == 3
@@ -211,6 +273,24 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         output_dir
         / "sources"
         / "kff-marketplace-effectuated-enrollment"
+        / "consumer_facts.jsonl"
+    ).exists()
+    assert (
+        output_dir
+        / "sources"
+        / "bea-nipa-personal-income-components"
+        / "consumer_facts.jsonl"
+    ).exists()
+    assert (
+        output_dir
+        / "sources"
+        / "soi-congressional-district-2022"
+        / "consumer_facts.jsonl"
+    ).exists()
+    assert (
+        output_dir
+        / "sources"
+        / "ssa-ssi-table-7b1-2024"
         / "consumer_facts.jsonl"
     ).exists()
 
