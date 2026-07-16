@@ -86,6 +86,8 @@ class SourceRecordSpec:
     entity_role: str | None
     aggregation: str
     domain: str
+    provenance_class: str
+    survey_instrument: str | None = None
     filters: dict[str, Scalar] = field(default_factory=dict)
     constraints: tuple[AggregateConstraint, ...] = ()
     value_scale: int | float = 1
@@ -193,6 +195,8 @@ class SourceRecordSetSpec:
     groupby_dimension: str
     rows: tuple[SourceRecordSetRow, ...]
     measures: tuple[SourceRecordSetMeasure, ...]
+    provenance_class: str
+    survey_instrument: str | None = None
     shared_filters: dict[str, Scalar] = field(default_factory=dict)
     shared_constraints: tuple[AggregateConstraint, ...] = ()
     assertion: str = DEFAULT_ASSERTION
@@ -290,6 +294,8 @@ def compile_source_record_set_specs(
                         *measure.constraints,
                     ),
                     domain=spec.domain,
+                    provenance_class=spec.provenance_class,
+                    survey_instrument=spec.survey_instrument,
                     value_scale=measure.value_scale * row.value_scale,
                     assertion=spec.assertion,
                     period_coverage=spec.period_coverage,

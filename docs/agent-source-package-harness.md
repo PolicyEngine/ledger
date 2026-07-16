@@ -481,6 +481,28 @@ units, aggregation methods, filters, and first-class constraints. The harness
 compiles those rows and measures into atomic source records, validates selectors
 against parsed cells, then emits target facts and the relational Ledger DB.
 
+Every record set must declare a `provenance_class`; there is no default. The
+closed vocabulary describes the publisher's measurement basis:
+
+- `administrative` for program, tax, collection, caseload, or payment records;
+- `census` for full-enumeration or census-controlled counts;
+- `survey_aggregate` for published sample-survey tabulations; and
+- `model_output` for model-based estimates, outlooks, baselines, and other
+  evaluation/oracle outputs.
+
+A `survey_aggregate` record set must also name its source survey in a non-empty
+`survey_instrument` string. `survey_instrument` is forbidden for every other
+class. Missing, unknown, wrongly typed, and misplaced values fail package load
+and build validation.
+
+```yaml
+record_sets:
+  - record_set_id: census_acs.acs1_{year}.s0101.national_age
+    provenance_class: survey_aggregate
+    survey_instrument: ACS 1-year
+    record_set_spec_id: census_acs.s0101.national_age.v1
+```
+
 Agents may add new package directories and YAML specs. They should not modify
 `ledger.core`, `ledger.database`, or `ledger.suite` unless the package cannot be
 expressed in the current contract and the failure is documented in the build

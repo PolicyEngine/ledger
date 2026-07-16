@@ -14,6 +14,7 @@ artifact:
   artifact_year: 2024
 record_sets:
   - record_set_id: hhs_acf_tanf.fy2024.average_monthly_families.us
+    provenance_class: administrative
     record_set_spec_id: hhs_acf_tanf.average_monthly_families.v1
     source_record_id_prefix: hhs_acf_tanf.fy2024.average_monthly_families.us
     sheet_name: FYCY2024-Families
@@ -102,6 +103,7 @@ record_sets:
         aggregation: mean
         expected_cell_type: number
   - record_set_id: hhs_acf_tanf.fy2024.average_monthly_families.state
+    provenance_class: administrative
     record_set_spec_id: hhs_acf_tanf.average_monthly_families_state.v1
     source_record_id_prefix: hhs_acf_tanf.fy2024.average_monthly_families.state
     sheet_name: FYCY2024-Families
@@ -693,6 +695,7 @@ record_sets:
         aggregation: mean
         expected_cell_type: number
   - record_set_id: hhs_acf_tanf.fy2024.average_monthly_recipients.us
+    provenance_class: administrative
     record_set_spec_id: hhs_acf_tanf.average_monthly_recipients.v1
     source_record_id_prefix: hhs_acf_tanf.fy2024.average_monthly_recipients.us
     sheet_name: FYCY2024-Recipients

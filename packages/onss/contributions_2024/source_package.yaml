@@ -15,6 +15,7 @@ artifact:
   sheet_name: onss_worker_contributions_2024
 record_sets:
 - record_set_id: onss.contributions.cy2024.worker_personal_contributions.country
+  provenance_class: administrative
   record_set_spec_id: onss.contributions.worker_personal_contributions.country.v1
   source_record_id_prefix: onss.contributions.cy2024.worker_personal_contributions.country
   sheet_name: onss_worker_contributions_2024

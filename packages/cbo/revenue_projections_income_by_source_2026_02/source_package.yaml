@@ -25,6 +25,7 @@ artifact:
     - source_concept_id: net_business_income
 record_sets:
   - record_set_id: cbo.revenue_projection.ty{year}.income_by_source.adjusted_gross_income
+    provenance_class: model_output
     record_set_spec_id: cbo.revenue_projection.income_by_source.adjusted_gross_income.v1
     assertion: source_projection
     source_record_id_prefix: cbo.revenue_projection.ty{year}.income_by_source
@@ -87,6 +88,7 @@ record_sets:
         aggregation: sum
         expected_cell_type: number
   - record_set_id: cbo.revenue_projection.ty{year}.income_by_source.wages_and_salaries
+    provenance_class: model_output
     record_set_spec_id: cbo.revenue_projection.income_by_source.wages_and_salaries.v1
     assertion: source_projection
     source_record_id_prefix: cbo.revenue_projection.ty{year}.income_by_source
@@ -134,6 +136,7 @@ record_sets:
         aggregation: sum
         expected_cell_type: number
   - record_set_id: cbo.revenue_projection.ty{year}.income_by_source.taxable_interest_ordinary_dividends
+    provenance_class: model_output
     record_set_spec_id: cbo.revenue_projection.income_by_source.taxable_interest_ordinary_dividends.v1
     assertion: source_projection
     source_record_id_prefix: cbo.revenue_projection.ty{year}.income_by_source
@@ -184,6 +187,7 @@ record_sets:
         aggregation: sum
         expected_cell_type: number
   - record_set_id: cbo.revenue_projection.ty{year}.income_by_source.qualified_dividend_income
+    provenance_class: model_output
     record_set_spec_id: cbo.revenue_projection.income_by_source.qualified_dividend_income.v1
     assertion: source_projection
     source_record_id_prefix: cbo.revenue_projection.ty{year}.income_by_source
@@ -231,6 +235,7 @@ record_sets:
         aggregation: sum
         expected_cell_type: number
   - record_set_id: cbo.revenue_projection.ty{year}.income_by_source.net_capital_gain
+    provenance_class: model_output
     record_set_spec_id: cbo.revenue_projection.income_by_source.net_capital_gain.v1
     assertion: source_projection
     source_record_id_prefix: cbo.revenue_projection.ty{year}.income_by_source
@@ -278,6 +283,7 @@ record_sets:
         aggregation: sum
         expected_cell_type: number
   - record_set_id: cbo.revenue_projection.ty{year}.income_by_source.net_business_income
+    provenance_class: model_output
     record_set_spec_id: cbo.revenue_projection.income_by_source.net_business_income.v1
     assertion: source_projection
     source_record_id_prefix: cbo.revenue_projection.ty{year}.income_by_source

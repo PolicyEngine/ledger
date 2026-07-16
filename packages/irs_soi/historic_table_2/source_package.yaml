@@ -38,6 +38,7 @@ artifact:
       AGI_STUB: 10
 record_sets:
   - record_set_id: irs_soi.ty2022.historic_table_2.us
+    provenance_class: administrative
     record_set_spec_id: irs_soi.historic_table_2.us.v1
     source_record_id_prefix: irs_soi.ty2022.historic_table_2.us
     sheet_name: in55cmcsv

@@ -50,6 +50,8 @@ def _fact(
     measure_id="agi",
     concept="irs_soi.adjusted_gross_income",
     assertion="observation",
+    provenance_class="administrative",
+    survey_instrument=None,
 ):
     return AggregateFact(
         value=value,
@@ -62,6 +64,8 @@ def _fact(
         entity=EntityDimension(name="tax_unit", role="filing_unit"),
         measure=Measure(concept=concept, unit="usd"),
         aggregation=Aggregation(method="sum"),
+        provenance_class=provenance_class,
+        survey_instrument=survey_instrument,
         source=SourceProvenance(
             source_name=source_name,
             source_table="Table T",
@@ -308,6 +312,7 @@ def _write_artifact_inputs(tmp_path):
                         "ledger_selector": {
                             "source_name": "irs_soi",
                             "source_measure_id": "agi",
+                            "provenance_class": "administrative",
                         },
                         "measurement": {"entity": "tax_unit", "concept": "us.agi"},
                         "bindings": {
@@ -339,6 +344,10 @@ def test_artifact_build_load_resolve_round_trip(tmp_path):
         {"type": "tax_year", "value": 2022},
     )
     assert resolution.resolved[0].value == 110
+    assert resolution.resolved[0].provenance_class == "administrative"
+    assert resolution.resolved[0].survey_instrument is None
+    assert resolution.resolved[0].to_dict()["provenance_class"] == "administrative"
+    assert "survey_instrument" not in resolution.resolved[0].to_dict()
 
     with pytest.raises(PeriodContractError):
         artifact.resolve("test_profile", {"type": "tax_year", "value": 2025})
@@ -378,6 +387,82 @@ def test_artifact_load_rejects_tampered_facts(tmp_path):
         load_consumer_artifact(out_dir)
 
 
+def _apply_provenance_case(row, case):
+    if case == "missing":
+        row.pop("provenance_class")
+    elif case == "unknown":
+        row["provenance_class"] = "unknown"
+    elif case == "wrong_type":
+        row["provenance_class"] = 1
+    elif case == "survey_missing_instrument":
+        row["provenance_class"] = "survey_aggregate"
+    elif case == "survey_blank_instrument":
+        row["provenance_class"] = "survey_aggregate"
+        row["survey_instrument"] = "  "
+    elif case == "misplaced_instrument":
+        row["survey_instrument"] = "ACS 1-year"
+    else:  # pragma: no cover - test authoring guard
+        raise AssertionError(case)
+
+
+@pytest.mark.parametrize(
+    ("case", "message"),
+    [
+        ("missing", "provenance_class"),
+        ("unknown", "provenance_class"),
+        ("wrong_type", "provenance_class"),
+        ("survey_missing_instrument", "survey_instrument"),
+        ("survey_blank_instrument", "survey_instrument"),
+        ("misplaced_instrument", "survey_instrument"),
+    ],
+)
+def test_artifact_build_rejects_malformed_provenance(tmp_path, case, message):
+    facts_path, profile_path = _write_artifact_inputs(tmp_path)
+    rows = facts_path.read_text().splitlines()
+    first = json.loads(rows[0])
+    _apply_provenance_case(first, case)
+    rows[0] = json.dumps(first, sort_keys=True)
+    facts_path.write_text("\n".join(rows) + "\n")
+
+    with pytest.raises(ValueError, match=message):
+        build_consumer_artifact(
+            tmp_path / "artifact",
+            facts_path=facts_path,
+            profile_paths=[profile_path],
+        )
+
+
+@pytest.mark.parametrize(
+    ("case", "message"),
+    [
+        ("missing", "provenance_class"),
+        ("unknown", "provenance_class"),
+        ("misplaced_instrument", "survey_instrument"),
+    ],
+)
+def test_artifact_load_rejects_malformed_provenance(tmp_path, case, message):
+    facts_path, profile_path = _write_artifact_inputs(tmp_path)
+    out_dir = tmp_path / "artifact"
+    build_consumer_artifact(
+        out_dir,
+        facts_path=facts_path,
+        profile_paths=[profile_path],
+    )
+    facts_file = out_dir / "consumer_facts.jsonl"
+    rows = facts_file.read_text().splitlines()
+    first = json.loads(rows[0])
+    _apply_provenance_case(first, case)
+    rows[0] = json.dumps(first, sort_keys=True)
+    facts_file.write_text("\n".join(rows) + "\n")
+    manifest_path = out_dir / "manifest.json"
+    manifest = json.loads(manifest_path.read_text())
+    manifest["facts_sha256"] = hashlib.sha256(facts_file.read_bytes()).hexdigest()
+    manifest_path.write_text(json.dumps(manifest, sort_keys=True, indent=2) + "\n")
+
+    with pytest.raises(ValueError, match=message):
+        load_consumer_artifact(out_dir)
+
+
 def test_artifact_requires_profiles(tmp_path):
     facts_path, _ = _write_artifact_inputs(tmp_path)
     with pytest.raises(ValueError, match="at least one target profile"):
@@ -408,6 +493,7 @@ def _ons_firm_crosstab_fact(*, record_set_id, dimensions, value, cell):
     )
     return AggregateFact(
         value=value,
+        provenance_class="administrative",
         period=PeriodDimension(type="calendar_year", value=2025),
         geography=GeographyDimension(level="country", id="K02000001", vintage="2025"),
         entity=EntityDimension(name="firm"),

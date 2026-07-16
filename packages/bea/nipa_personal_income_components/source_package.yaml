@@ -52,6 +52,7 @@ artifact:
       Period: "{year}"
 record_sets:
   - record_set_id: bea_nipa.cy{year}.proprietors_income
+    provenance_class: model_output
     record_set_spec_id: bea_nipa.proprietors_income.v1
     source_record_id_prefix: bea_nipa.cy{year}.proprietors_income
     sheet_name: NipaDataA
@@ -101,6 +102,7 @@ record_sets:
         value_scale: 1000000
         expected_cell_type: number
   - record_set_id: bea_nipa.cy{year}.rental_income_of_persons
+    provenance_class: model_output
     record_set_spec_id: bea_nipa.rental_income_of_persons.v1
     source_record_id_prefix: bea_nipa.cy{year}.rental_income_of_persons
     sheet_name: NipaDataA
@@ -150,6 +152,7 @@ record_sets:
         value_scale: 1000000
         expected_cell_type: number
   - record_set_id: bea_nipa.cy{year}.personal_interest_income
+    provenance_class: model_output
     record_set_spec_id: bea_nipa.personal_interest_income.v1
     source_record_id_prefix: bea_nipa.cy{year}.personal_interest_income
     sheet_name: NipaDataA
@@ -199,6 +202,7 @@ record_sets:
         value_scale: 1000000
         expected_cell_type: number
   - record_set_id: bea_nipa.cy{year}.personal_dividend_income
+    provenance_class: model_output
     record_set_spec_id: bea_nipa.personal_dividend_income.v1
     source_record_id_prefix: bea_nipa.cy{year}.personal_dividend_income
     sheet_name: NipaDataA
@@ -248,6 +252,7 @@ record_sets:
         value_scale: 1000000
         expected_cell_type: number
   - record_set_id: bea_nipa.cy{year}.supplements_to_wages_and_salaries
+    provenance_class: model_output
     record_set_spec_id: bea_nipa.supplements_to_wages_and_salaries.v1
     source_record_id_prefix: bea_nipa.cy{year}.supplements_to_wages_and_salaries
     sheet_name: NipaDataA
@@ -297,6 +302,7 @@ record_sets:
         value_scale: 1000000
         expected_cell_type: number
   - record_set_id: bea_nipa.cy{year}.employer_pension_and_insurance_contributions
+    provenance_class: model_output
     record_set_spec_id: bea_nipa.employer_pension_and_insurance_contributions.v1
     source_record_id_prefix: bea_nipa.cy{year}.employer_pension_and_insurance_contributions
     sheet_name: NipaDataA
@@ -346,6 +352,7 @@ record_sets:
         value_scale: 1000000
         expected_cell_type: number
   - record_set_id: bea_nipa.cy{year}.employer_government_social_insurance_contributions
+    provenance_class: model_output
     record_set_spec_id: bea_nipa.employer_government_social_insurance_contributions.v1
     source_record_id_prefix: bea_nipa.cy{year}.employer_government_social_insurance_contributions
     sheet_name: NipaDataA
@@ -395,6 +402,7 @@ record_sets:
         value_scale: 1000000
         expected_cell_type: number
   - record_set_id: bea_nipa.cy{year}.farm_proprietors_income
+    provenance_class: model_output
     record_set_spec_id: bea_nipa.farm_proprietors_income.v1
     source_record_id_prefix: bea_nipa.cy{year}.farm_proprietors_income
     sheet_name: NipaDataA
@@ -444,6 +452,7 @@ record_sets:
         value_scale: 1000000
         expected_cell_type: number
   - record_set_id: bea_nipa.cy{year}.nonfarm_proprietors_income
+    provenance_class: model_output
     record_set_spec_id: bea_nipa.nonfarm_proprietors_income.v1
     source_record_id_prefix: bea_nipa.cy{year}.nonfarm_proprietors_income
     sheet_name: NipaDataA
@@ -493,6 +502,7 @@ record_sets:
         value_scale: 1000000
         expected_cell_type: number
   - record_set_id: bea_nipa.cy{year}.government_social_benefits_to_persons
+    provenance_class: model_output
     record_set_spec_id: bea_nipa.government_social_benefits_to_persons.v1
     source_record_id_prefix: bea_nipa.cy{year}.government_social_benefits_to_persons
     sheet_name: NipaDataA
@@ -542,6 +552,7 @@ record_sets:
         value_scale: 1000000
         expected_cell_type: number
   - record_set_id: bea_nipa.cy{year}.social_security_benefits
+    provenance_class: model_output
     record_set_spec_id: bea_nipa.social_security_benefits.v1
     source_record_id_prefix: bea_nipa.cy{year}.social_security_benefits
     sheet_name: NipaDataA
@@ -591,6 +602,7 @@ record_sets:
         value_scale: 1000000
         expected_cell_type: number
   - record_set_id: bea_nipa.cy{year}.medicare_benefits
+    provenance_class: model_output
     record_set_spec_id: bea_nipa.medicare_benefits.v1
     source_record_id_prefix: bea_nipa.cy{year}.medicare_benefits
     sheet_name: NipaDataA
@@ -640,6 +652,7 @@ record_sets:
         value_scale: 1000000
         expected_cell_type: number
   - record_set_id: bea_nipa.cy{year}.medicaid_benefits
+    provenance_class: model_output
     record_set_spec_id: bea_nipa.medicaid_benefits.v1
     source_record_id_prefix: bea_nipa.cy{year}.medicaid_benefits
     sheet_name: NipaDataA
@@ -689,6 +702,7 @@ record_sets:
         value_scale: 1000000
         expected_cell_type: number
   - record_set_id: bea_nipa.cy{year}.unemployment_insurance_benefits
+    provenance_class: model_output
     record_set_spec_id: bea_nipa.unemployment_insurance_benefits.v1
     source_record_id_prefix: bea_nipa.cy{year}.unemployment_insurance_benefits
     sheet_name: NipaDataA
@@ -738,6 +752,7 @@ record_sets:
         value_scale: 1000000
         expected_cell_type: number
   - record_set_id: bea_nipa.cy{year}.veterans_benefits
+    provenance_class: model_output
     record_set_spec_id: bea_nipa.veterans_benefits.v1
     source_record_id_prefix: bea_nipa.cy{year}.veterans_benefits
     sheet_name: NipaDataA
@@ -787,6 +802,7 @@ record_sets:
         value_scale: 1000000
         expected_cell_type: number
   - record_set_id: bea_nipa.cy{year}.other_government_social_benefits
+    provenance_class: model_output
     record_set_spec_id: bea_nipa.other_government_social_benefits.v1
     source_record_id_prefix: bea_nipa.cy{year}.other_government_social_benefits
     sheet_name: NipaDataA
@@ -836,6 +852,7 @@ record_sets:
         value_scale: 1000000
         expected_cell_type: number
   - record_set_id: bea_nipa.cy{year}.business_current_transfer_receipts
+    provenance_class: model_output
     record_set_spec_id: bea_nipa.business_current_transfer_receipts.v1
     source_record_id_prefix: bea_nipa.cy{year}.business_current_transfer_receipts
     sheet_name: NipaDataA
@@ -885,6 +902,7 @@ record_sets:
         value_scale: 1000000
         expected_cell_type: number
   - record_set_id: bea_nipa.cy{year}.personal_current_transfer_receipts
+    provenance_class: model_output
     record_set_spec_id: bea_nipa.personal_current_transfer_receipts.v1
     source_record_id_prefix: bea_nipa.cy{year}.personal_current_transfer_receipts
     sheet_name: NipaDataA

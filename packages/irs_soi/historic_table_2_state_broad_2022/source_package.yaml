@@ -118,6 +118,7 @@ artifact:
     AGI_STUB: 0
 record_sets:
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.al
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.al
   sheet_name: in55cmcsv
@@ -772,6 +773,7 @@ record_sets:
     expected_column_header: A11070
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.ak
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.ak
   sheet_name: in55cmcsv
@@ -805,6 +807,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.az
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.az
   sheet_name: in55cmcsv
@@ -838,6 +841,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.ar
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.ar
   sheet_name: in55cmcsv
@@ -871,6 +875,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.ca
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.ca
   sheet_name: in55cmcsv
@@ -904,6 +909,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.co
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.co
   sheet_name: in55cmcsv
@@ -937,6 +943,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.ct
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.ct
   sheet_name: in55cmcsv
@@ -970,6 +977,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.de
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.de
   sheet_name: in55cmcsv
@@ -1003,6 +1011,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.dc
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.dc
   sheet_name: in55cmcsv
@@ -1036,6 +1045,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.fl
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.fl
   sheet_name: in55cmcsv
@@ -1069,6 +1079,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.ga
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.ga
   sheet_name: in55cmcsv
@@ -1102,6 +1113,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.hi
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.hi
   sheet_name: in55cmcsv
@@ -1135,6 +1147,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.id
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.id
   sheet_name: in55cmcsv
@@ -1168,6 +1181,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.il
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.il
   sheet_name: in55cmcsv
@@ -1201,6 +1215,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.in
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.in
   sheet_name: in55cmcsv
@@ -1234,6 +1249,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.ia
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.ia
   sheet_name: in55cmcsv
@@ -1267,6 +1283,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.ks
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.ks
   sheet_name: in55cmcsv
@@ -1300,6 +1317,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.ky
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.ky
   sheet_name: in55cmcsv
@@ -1333,6 +1351,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.la
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.la
   sheet_name: in55cmcsv
@@ -1366,6 +1385,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.me
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.me
   sheet_name: in55cmcsv
@@ -1399,6 +1419,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.md
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.md
   sheet_name: in55cmcsv
@@ -1432,6 +1453,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.ma
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.ma
   sheet_name: in55cmcsv
@@ -1465,6 +1487,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.mi
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.mi
   sheet_name: in55cmcsv
@@ -1498,6 +1521,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.mn
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.mn
   sheet_name: in55cmcsv
@@ -1531,6 +1555,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.ms
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.ms
   sheet_name: in55cmcsv
@@ -1564,6 +1589,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.mo
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.mo
   sheet_name: in55cmcsv
@@ -1597,6 +1623,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.mt
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.mt
   sheet_name: in55cmcsv
@@ -1630,6 +1657,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.ne
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.ne
   sheet_name: in55cmcsv
@@ -1663,6 +1691,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.nv
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.nv
   sheet_name: in55cmcsv
@@ -1696,6 +1725,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.nh
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.nh
   sheet_name: in55cmcsv
@@ -1729,6 +1759,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.nj
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.nj
   sheet_name: in55cmcsv
@@ -1762,6 +1793,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.nm
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.nm
   sheet_name: in55cmcsv
@@ -1795,6 +1827,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.ny
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.ny
   sheet_name: in55cmcsv
@@ -1828,6 +1861,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.nc
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.nc
   sheet_name: in55cmcsv
@@ -1861,6 +1895,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.nd
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.nd
   sheet_name: in55cmcsv
@@ -1894,6 +1929,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.oh
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.oh
   sheet_name: in55cmcsv
@@ -1927,6 +1963,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.ok
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.ok
   sheet_name: in55cmcsv
@@ -1960,6 +1997,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.or
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.or
   sheet_name: in55cmcsv
@@ -1993,6 +2031,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.pa
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.pa
   sheet_name: in55cmcsv
@@ -2026,6 +2065,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.ri
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.ri
   sheet_name: in55cmcsv
@@ -2059,6 +2099,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.sc
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.sc
   sheet_name: in55cmcsv
@@ -2092,6 +2133,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.sd
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.sd
   sheet_name: in55cmcsv
@@ -2125,6 +2167,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.tn
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.tn
   sheet_name: in55cmcsv
@@ -2158,6 +2201,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.tx
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.tx
   sheet_name: in55cmcsv
@@ -2191,6 +2235,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.ut
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.ut
   sheet_name: in55cmcsv
@@ -2224,6 +2269,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.vt
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.vt
   sheet_name: in55cmcsv
@@ -2257,6 +2303,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.va
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.va
   sheet_name: in55cmcsv
@@ -2290,6 +2337,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.wa
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.wa
   sheet_name: in55cmcsv
@@ -2323,6 +2371,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.wv
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.wv
   sheet_name: in55cmcsv
@@ -2356,6 +2405,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.wi
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.wi
   sheet_name: in55cmcsv
@@ -2389,6 +2439,7 @@ record_sets:
     table_record_kind: total
   measures: *id001
 - record_set_id: irs_soi.ty2022.historic_table_2.state_broad.wy
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_broad_totals.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_broad.wy
   sheet_name: in55cmcsv

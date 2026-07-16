@@ -14,6 +14,7 @@ artifact:
   sheet_name: jct_tax_expenditures_2024
 record_sets:
   - record_set_id: jct.tax_expenditures.cy2024
+    provenance_class: model_output
     record_set_spec_id: jct.individual_tax_expenditure_revenue_loss.v1
     source_record_id_prefix: jct.tax_expenditures.cy2024
     sheet_name: jct_tax_expenditures_2024

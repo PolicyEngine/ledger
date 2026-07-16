@@ -17,6 +17,7 @@ artifact:
   sheet_name: statbel_fiscal_income_commune_2023_nis_2025
 record_sets:
 - record_set_id: statbel.fiscal_income.tax_year2023.taxable_income.by_commune_nis2025
+  provenance_class: administrative
   record_set_spec_id: statbel.fiscal_income.taxable_income.by_commune_nis2025.v1
   source_record_id_prefix: statbel.fiscal_income.tax_year2023.taxable_income.by_commune_nis2025
   sheet_name: statbel_fiscal_income_commune_2023_nis_2025

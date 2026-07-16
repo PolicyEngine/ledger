@@ -15,6 +15,7 @@ artifact:
   sheet_name: bfp_economic_outlook_2026_06
 record_sets:
 - record_set_id: bfp.economic_outlook.cy2026.headline_projections.country
+  provenance_class: model_output
   record_set_spec_id: bfp.economic_outlook.headline_projections.cy2026.v1
   assertion: source_projection
   source_record_id_prefix: bfp.economic_outlook.cy2026.headline_projections
@@ -96,6 +97,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: bfp.economic_outlook.cy2031.headline_projections.country
+  provenance_class: model_output
   record_set_spec_id: bfp.economic_outlook.headline_projections.cy2031.v1
   assertion: source_projection
   source_record_id_prefix: bfp.economic_outlook.cy2031.headline_projections

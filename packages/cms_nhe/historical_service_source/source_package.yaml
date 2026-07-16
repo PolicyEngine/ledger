@@ -15,6 +15,7 @@ artifact:
   artifact_year: 2024
 record_sets:
 - record_set_id: cms_nhe.cy{year}.medicaid_title_xix_expenditures
+  provenance_class: administrative
   record_set_spec_id: cms_nhe.medicaid_title_xix_expenditures.v1
   source_record_id_prefix: cms_nhe.cy{year}.medicaid_title_xix_expenditures
   sheet_name: NHE24

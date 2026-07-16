@@ -28,7 +28,11 @@ from pathlib import Path
 from typing import Any
 
 from ledger.consumer_contract import _hash_key
-from ledger.core import ALLOWED_ASSERTIONS, DEFAULT_ASSERTION
+from ledger.core import (
+    ALLOWED_ASSERTIONS,
+    ALLOWED_PROVENANCE_CLASSES,
+    DEFAULT_ASSERTION,
+)
 from policyengine_ledger.schema import (
     CONSUMER_FACT_SCHEMA_SHA256,
     validate_consumer_fact_row,
@@ -61,6 +65,7 @@ _SELECTOR_KEYS = {
     "domain",
     "entity",
     "assertion",
+    "provenance_class",
 }
 
 
@@ -180,6 +185,7 @@ class ResolvedTarget:
     value_type: str
     unit: str | None
     assertion: str
+    provenance_class: str
     fact_period: dict[str, Any]
     requested_period: dict[str, Any]
     aggregate_fact_key: str
@@ -192,6 +198,7 @@ class ResolvedTarget:
     lineage: dict[str, Any]
     alignment: dict[str, Any] | None = None
     label: str | None = None
+    survey_instrument: str | None = None
 
     def to_dict(self) -> dict[str, Any]:
         """Return a JSON-serializable resolved row."""
@@ -203,6 +210,8 @@ class ResolvedTarget:
             payload.pop("alignment", None)
         if payload.get("label") is None:
             payload.pop("label", None)
+        if payload.get("survey_instrument") is None:
+            payload.pop("survey_instrument", None)
         return payload
 
 
@@ -383,6 +392,7 @@ def _resolved_target(
         value_type=row["value_type"],
         unit=observed_measure.get("unit"),
         assertion=row["assertion"],
+        provenance_class=row["provenance_class"],
         fact_period=dict(row["period"]),
         requested_period=requested_period,
         aggregate_fact_key=row["aggregate_fact_key"],
@@ -395,6 +405,7 @@ def _resolved_target(
         lineage=dict(row.get("lineage", {})),
         alignment=alignment.to_dict() if alignment is not None else None,
         label=row.get("label"),
+        survey_instrument=row.get("survey_instrument"),
     )
 
 
@@ -472,6 +483,8 @@ def _selector_value(row: Mapping[str, Any], key: str) -> Any:
         return row.get("entity", {}).get("name")
     if key == "assertion":
         return row.get("assertion")
+    if key == "provenance_class":
+        return row.get("provenance_class")
     raise KeyError(key)
 
 
@@ -879,6 +892,7 @@ def _load_consumer_rows(
             _assert_finite_numbers(row, line_number=line_number, path=path)
             if validate_schema:
                 validate_consumer_fact_row(row, line_number, path)
+            _validate_consumer_row_provenance(row, line_number=line_number, path=path)
             assertion = row.setdefault("assertion", DEFAULT_ASSERTION)
             if assertion not in ALLOWED_ASSERTIONS:
                 raise ValueError(
@@ -902,6 +916,39 @@ def _load_consumer_rows(
             seen_keys.add(key)
             rows.append(row)
     return rows
+
+
+def _validate_consumer_row_provenance(
+    row: Mapping[str, Any],
+    *,
+    line_number: int,
+    path: Path,
+) -> None:
+    if "provenance_class" not in row:
+        raise ValueError(
+            f"Row {line_number} of {path} is missing required provenance_class."
+        )
+    provenance_class = row["provenance_class"]
+    if type(provenance_class) is not str or (
+        provenance_class not in ALLOWED_PROVENANCE_CLASSES
+    ):
+        raise ValueError(
+            f"Row {line_number} of {path} has unsupported provenance_class "
+            f"{provenance_class!r}."
+        )
+    has_survey_instrument = "survey_instrument" in row
+    survey_instrument = row.get("survey_instrument")
+    if provenance_class == "survey_aggregate":
+        if type(survey_instrument) is not str or not survey_instrument.strip():
+            raise ValueError(
+                f"Row {line_number} of {path} needs a non-empty "
+                "survey_instrument for survey_aggregate provenance."
+            )
+    elif has_survey_instrument:
+        raise ValueError(
+            f"Row {line_number} of {path} has survey_instrument outside "
+            "survey_aggregate provenance."
+        )
 
 
 def _load_profiles(

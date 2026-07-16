@@ -37,6 +37,21 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "warning_count": 1,
     }
     assert len(rows) == 39219
+    assert {row["provenance_class"] for row in rows} <= {
+        "administrative",
+        "census",
+        "model_output",
+        "survey_aggregate",
+    }
+    assert all(
+        (
+            isinstance(row.get("survey_instrument"), str)
+            and row["survey_instrument"].strip()
+        )
+        if row["provenance_class"] == "survey_aggregate"
+        else "survey_instrument" not in row
+        for row in rows
+    )
     assert rows[0]["aggregate_fact_key"].startswith("ledger.aggregate_fact.v2:")
     assert rows[0]["semantic_fact_key"].startswith("ledger.semantic_fact.v2:")
     assert source_packages["source_package_count"] == 60

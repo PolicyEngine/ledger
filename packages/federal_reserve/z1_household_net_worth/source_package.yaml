@@ -14,6 +14,11 @@ artifact:
   artifact_year: 2026
 record_sets:
   - record_set_id: federal_reserve_z1.cy{year}.households_nonprofits_balance_sheet.net_worth
+    # Z.1 household net worth is an assembled national-account estimate (the
+    # household sector is partly residual-derived), the same genus as BEA NIPA
+    # aggregates — classified model_output for consistency with that principle,
+    # not administrative records.
+    provenance_class: model_output
     record_set_spec_id: federal_reserve_z1.households_nonprofits_balance_sheet.net_worth.v1
     source_record_id_prefix: federal_reserve_z1.cy{year}.households_nonprofits_balance_sheet.net_worth
     sheet_name: table_1

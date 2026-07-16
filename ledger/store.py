@@ -64,6 +64,8 @@ def fact_from_mapping(payload: dict[str, Any]) -> AggregateFact:
         measure=Measure(**payload["measure"]),
         aggregation=Aggregation(**payload["aggregation"]),
         source=SourceProvenance(**payload["source"]),
+        provenance_class=payload["provenance_class"],
+        survey_instrument=payload.get("survey_instrument"),
         filters=dict(payload.get("filters", {})),
         domain=payload.get("domain", "all"),
         label=payload.get("label"),
@@ -107,6 +109,8 @@ def fact_to_mapping(fact: AggregateFact) -> dict[str, Any]:
         }
     if fact.assertion == DEFAULT_ASSERTION:
         payload.pop("assertion", None)
+    if fact.survey_instrument is None:
+        payload.pop("survey_instrument", None)
     if fact.period_coverage is None:
         payload.pop("period_coverage", None)
     else:

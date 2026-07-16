@@ -6,6 +6,7 @@ import path for consumers such as Populace and Thesis.
 
 from ledger.core import (
     ALLOWED_ASSERTIONS,
+    ALLOWED_PROVENANCE_CLASSES,
     DEFAULT_ASSERTION,
     AggregateConstraint,
     AggregateFact,
@@ -38,6 +39,7 @@ from policyengine_ledger.consumer import (
 
 __all__ = [
     "ALLOWED_ASSERTIONS",
+    "ALLOWED_PROVENANCE_CLASSES",
     "DEFAULT_ASSERTION",
     "AggregateConstraint",
     "AggregateFact",

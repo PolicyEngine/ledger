@@ -131598,6 +131598,7 @@ artifact:
     AGE: 85
 record_sets:
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.01
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.01
   sheet_name: sc-est2024-alldata6
@@ -133192,6 +133193,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.02
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.02
   sheet_name: sc-est2024-alldata6
@@ -134786,6 +134788,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.04
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.04
   sheet_name: sc-est2024-alldata6
@@ -136380,6 +136383,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.05
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.05
   sheet_name: sc-est2024-alldata6
@@ -137974,6 +137978,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.06
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.06
   sheet_name: sc-est2024-alldata6
@@ -139568,6 +139573,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.08
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.08
   sheet_name: sc-est2024-alldata6
@@ -141162,6 +141168,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.09
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.09
   sheet_name: sc-est2024-alldata6
@@ -142756,6 +142763,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.10
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.10
   sheet_name: sc-est2024-alldata6
@@ -144350,6 +144358,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.11
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.11
   sheet_name: sc-est2024-alldata6
@@ -145944,6 +145953,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.12
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.12
   sheet_name: sc-est2024-alldata6
@@ -147538,6 +147548,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.13
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.13
   sheet_name: sc-est2024-alldata6
@@ -149132,6 +149143,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.15
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.15
   sheet_name: sc-est2024-alldata6
@@ -150726,6 +150738,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.16
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.16
   sheet_name: sc-est2024-alldata6
@@ -152320,6 +152333,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.17
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.17
   sheet_name: sc-est2024-alldata6
@@ -153914,6 +153928,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.18
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.18
   sheet_name: sc-est2024-alldata6
@@ -155508,6 +155523,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.19
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.19
   sheet_name: sc-est2024-alldata6
@@ -157102,6 +157118,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.20
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.20
   sheet_name: sc-est2024-alldata6
@@ -158696,6 +158713,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.21
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.21
   sheet_name: sc-est2024-alldata6
@@ -160290,6 +160308,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.22
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.22
   sheet_name: sc-est2024-alldata6
@@ -161884,6 +161903,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.23
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.23
   sheet_name: sc-est2024-alldata6
@@ -163478,6 +163498,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.24
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.24
   sheet_name: sc-est2024-alldata6
@@ -165072,6 +165093,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.25
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.25
   sheet_name: sc-est2024-alldata6
@@ -166666,6 +166688,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.26
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.26
   sheet_name: sc-est2024-alldata6
@@ -168260,6 +168283,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.27
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.27
   sheet_name: sc-est2024-alldata6
@@ -169854,6 +169878,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.28
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.28
   sheet_name: sc-est2024-alldata6
@@ -171448,6 +171473,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.29
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.29
   sheet_name: sc-est2024-alldata6
@@ -173042,6 +173068,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.30
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.30
   sheet_name: sc-est2024-alldata6
@@ -174636,6 +174663,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.31
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.31
   sheet_name: sc-est2024-alldata6
@@ -176230,6 +176258,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.32
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.32
   sheet_name: sc-est2024-alldata6
@@ -177824,6 +177853,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.33
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.33
   sheet_name: sc-est2024-alldata6
@@ -179418,6 +179448,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.34
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.34
   sheet_name: sc-est2024-alldata6
@@ -181012,6 +181043,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.35
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.35
   sheet_name: sc-est2024-alldata6
@@ -182606,6 +182638,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.36
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.36
   sheet_name: sc-est2024-alldata6
@@ -184200,6 +184233,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.37
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.37
   sheet_name: sc-est2024-alldata6
@@ -185794,6 +185828,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.38
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.38
   sheet_name: sc-est2024-alldata6
@@ -187388,6 +187423,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.39
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.39
   sheet_name: sc-est2024-alldata6
@@ -188982,6 +189018,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.40
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.40
   sheet_name: sc-est2024-alldata6
@@ -190576,6 +190613,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.41
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.41
   sheet_name: sc-est2024-alldata6
@@ -192170,6 +192208,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.42
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.42
   sheet_name: sc-est2024-alldata6
@@ -193764,6 +193803,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.44
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.44
   sheet_name: sc-est2024-alldata6
@@ -195358,6 +195398,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.45
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.45
   sheet_name: sc-est2024-alldata6
@@ -196952,6 +196993,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.46
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.46
   sheet_name: sc-est2024-alldata6
@@ -198546,6 +198588,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.47
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.47
   sheet_name: sc-est2024-alldata6
@@ -200140,6 +200183,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.48
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.48
   sheet_name: sc-est2024-alldata6
@@ -201734,6 +201778,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.49
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.49
   sheet_name: sc-est2024-alldata6
@@ -203328,6 +203373,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.50
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.50
   sheet_name: sc-est2024-alldata6
@@ -204922,6 +204968,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.51
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.51
   sheet_name: sc-est2024-alldata6
@@ -206516,6 +206563,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.53
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.53
   sheet_name: sc-est2024-alldata6
@@ -208110,6 +208158,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.54
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.54
   sheet_name: sc-est2024-alldata6
@@ -209704,6 +209753,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.55
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.55
   sheet_name: sc-est2024-alldata6
@@ -211298,6 +211348,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_pep.v2024.cy2024.state_resident_population.56
+  provenance_class: census
   record_set_spec_id: census_pep.v2024.state_resident_population_age.v1
   source_record_id_prefix: census_pep.v2024.cy2024.state_resident_population.56
   sheet_name: sc-est2024-alldata6

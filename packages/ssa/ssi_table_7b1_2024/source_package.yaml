@@ -4550,6 +4550,7 @@ record_sets:
       label: SSI category
     table_record_kind: detail
   record_set_id: ssa_supplement.cy2024.ssi_recipients.by_area_category
+  provenance_class: administrative
   record_set_spec_id: ssa_supplement.ssi_recipients.by_area_category.v1
   source_record_id_prefix: ssa_supplement.cy2024.ssi_recipients.by_area_category
   measures:
@@ -9106,6 +9107,7 @@ record_sets:
       label: SSI category
     table_record_kind: detail
   record_set_id: ssa_supplement.cy2024.ssi_payments.by_area_category
+  provenance_class: administrative
   record_set_spec_id: ssa_supplement.ssi_payments.by_area_category.v1
   source_record_id_prefix: ssa_supplement.cy2024.ssi_payments.by_area_category
   measures:

@@ -15,6 +15,7 @@ artifact:
   sheet_name: spf_finances_pit_country_2023
 record_sets:
 - record_set_id: spf_finances.pit.tax_year2023.tax_before_withholding.country
+  provenance_class: administrative
   record_set_spec_id: spf_finances.pit.tax_before_withholding.country.v1
   source_record_id_prefix: spf_finances.pit.tax_year2023.tax_before_withholding.country
   sheet_name: spf_finances_pit_country_2023

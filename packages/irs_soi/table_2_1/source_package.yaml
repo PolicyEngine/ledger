@@ -12,6 +12,7 @@ artifact:
   extraction_method: xlrd whole-workbook used-range cell parse
 record_sets:
   - record_set_id: irs_soi.ty{year}.table_2_1.itemized_all_returns
+    provenance_class: administrative
     record_set_spec_id: irs_soi.table_2_1.itemized_all_returns.v1
     source_record_id_prefix: irs_soi.ty{year}.table_2_1.itemized_all_returns
     sheet_name: TBL21

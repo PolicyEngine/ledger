@@ -15,6 +15,12 @@ artifact:
   artifact_year: 2024
 record_sets:
 - record_set_id: cms_nhe.cy{year}.esi_employer_contribution_premiums
+  # NHE sponsor tables blend MEPS-IC survey estimates with administrative
+  # filings into a constructed account (same genus as BEA NIPA): model
+  # output, not source records. Note the standing tension with
+  # cms-nhe-historical-service-source (classified administrative for its
+  # Medicaid Title XIX line) — revisit both in the populace gate review.
+  provenance_class: model_output
   record_set_spec_id: cms_nhe.esi_employer_contribution_premiums.v1
   source_record_id_prefix: cms_nhe.cy{year}.esi_employer_contribution_premiums
   sheet_name: Table 24
@@ -83,6 +89,12 @@ record_sets:
     value_scale: 1000000000
     expected_cell_type: number
 - record_set_id: cms_nhe.cy{year}.esi_private_employer_contribution_premiums
+  # NHE sponsor tables blend MEPS-IC survey estimates with administrative
+  # filings into a constructed account (same genus as BEA NIPA): model
+  # output, not source records. Note the standing tension with
+  # cms-nhe-historical-service-source (classified administrative for its
+  # Medicaid Title XIX line) — revisit both in the populace gate review.
+  provenance_class: model_output
   record_set_spec_id: cms_nhe.esi_private_employer_contribution_premiums.v1
   source_record_id_prefix: cms_nhe.cy{year}.esi_private_employer_contribution_premiums
   sheet_name: Table 24

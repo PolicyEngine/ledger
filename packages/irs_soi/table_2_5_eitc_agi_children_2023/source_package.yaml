@@ -13,6 +13,7 @@ artifact:
   extraction_method: xlrd whole-workbook used-range cell parse
 record_sets:
 - record_set_id: irs_soi.ty2023.table_2_5.eitc_by_agi_children.no_qualifying_children
+  provenance_class: administrative
   record_set_spec_id: irs_soi.table_2_5.eitc_by_agi_children.no_qualifying_children.v1
   source_record_id_prefix: irs_soi.ty2023.table_2_5.eitc_by_agi_children.no_qualifying_children
   sheet_name: TBL25
@@ -1148,6 +1149,7 @@ record_sets:
       unit: count
       label: Earned income credit qualifying children
 - record_set_id: irs_soi.ty2023.table_2_5.eitc_by_agi_children.one_qualifying_child
+  provenance_class: administrative
   record_set_spec_id: irs_soi.table_2_5.eitc_by_agi_children.one_qualifying_child.v1
   source_record_id_prefix: irs_soi.ty2023.table_2_5.eitc_by_agi_children.one_qualifying_child
   sheet_name: TBL25
@@ -2283,6 +2285,7 @@ record_sets:
       unit: count
       label: Earned income credit qualifying children
 - record_set_id: irs_soi.ty2023.table_2_5.eitc_by_agi_children.two_qualifying_children
+  provenance_class: administrative
   record_set_spec_id: irs_soi.table_2_5.eitc_by_agi_children.two_qualifying_children.v1
   source_record_id_prefix: irs_soi.ty2023.table_2_5.eitc_by_agi_children.two_qualifying_children
   sheet_name: TBL25
@@ -3418,6 +3421,7 @@ record_sets:
       unit: count
       label: Earned income credit qualifying children
 - record_set_id: irs_soi.ty2023.table_2_5.eitc_by_agi_children.three_or_more_qualifying_children
+  provenance_class: administrative
   record_set_spec_id: irs_soi.table_2_5.eitc_by_agi_children.three_or_more_qualifying_children.v1
   source_record_id_prefix: irs_soi.ty2023.table_2_5.eitc_by_agi_children.three_or_more_qualifying_children
   sheet_name: TBL25

@@ -18,6 +18,7 @@ artifact:
   sheet_name: hmrc_vat_firm_targets_2024_25
 record_sets:
   - record_set_id: hmrc.vat.fy2024_25.registered_trader_count.by_turnover_band
+    provenance_class: administrative
     record_set_spec_id: hmrc.vat.registered_trader_count.by_turnover_band.v1
     source_record_id_prefix: hmrc.vat.fy2024_25.registered_trader_count.by_turnover_band
     sheet_name: hmrc_vat_firm_targets_2024_25
@@ -291,6 +292,7 @@ record_sets:
         aggregation: sum
         expected_cell_type: number
   - record_set_id: hmrc.vat.fy2024_25.net_liability.by_turnover_band
+    provenance_class: administrative
     record_set_spec_id: hmrc.vat.net_liability.by_turnover_band.v1
     source_record_id_prefix: hmrc.vat.fy2024_25.net_liability.by_turnover_band
     sheet_name: hmrc_vat_firm_targets_2024_25

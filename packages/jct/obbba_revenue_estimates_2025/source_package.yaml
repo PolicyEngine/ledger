@@ -26,6 +26,9 @@ artifact:
   artifact_year: 2025
 record_sets:
   - record_set_id: jct.obbba_title_vii.fy{year}
+    # JCT revenue-effect estimates (JCX-35-25) are counterfactual model
+    # outputs, not observed collections — same class as jct-tax-expenditures.
+    provenance_class: model_output
     record_set_spec_id: jct.obbba_no_tax_provision_revenue_effect.v1
     assertion: source_projection
     source_record_id_prefix: jct.obbba_title_vii.fy{year}

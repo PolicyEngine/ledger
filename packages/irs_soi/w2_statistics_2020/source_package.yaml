@@ -14,6 +14,7 @@ artifact:
   artifact_year: 2020
 record_sets:
 - record_set_id: irs_soi.ty{year}.form_w2_social_security_tips
+  provenance_class: administrative
   record_set_spec_id: irs_soi.form_w2_social_security_tips.v1
   source_record_id_prefix: irs_soi.ty{year}.form_w2_social_security_tips
   sheet_name: Table 4.B
@@ -89,6 +90,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: irs_soi.ty{year}.form_w2_401k_elective_deferrals
+  provenance_class: administrative
   record_set_spec_id: irs_soi.form_w2_401k_elective_deferrals.v1
   source_record_id_prefix: irs_soi.ty{year}.form_w2_401k_elective_deferrals
   sheet_name: Table 4.B
@@ -129,6 +131,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: irs_soi.ty{year}.form_w2_designated_roth_401k_contributions
+  provenance_class: administrative
   record_set_spec_id: irs_soi.form_w2_designated_roth_401k_contributions.v1
   source_record_id_prefix: irs_soi.ty{year}.form_w2_designated_roth_401k_contributions
   sheet_name: Table 4.B

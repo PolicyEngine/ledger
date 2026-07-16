@@ -13,6 +13,7 @@ artifact:
   parser: pdf_text_numbers
 record_sets:
   - record_set_id: hhs_acf_liheap.fy2023.national_profile
+    provenance_class: administrative
     record_set_spec_id: hhs_acf_liheap.national_profile.v1
     source_record_id_prefix: hhs_acf_liheap.fy2023.national_profile
     sheet_name: document_numbers

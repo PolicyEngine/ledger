@@ -119,6 +119,7 @@ artifact:
     Geography: Wyoming
 record_sets:
 - record_set_id: kff.marketplace_effectuated_enrollment.2024.state
+  provenance_class: administrative
   record_set_spec_id: kff.marketplace_effectuated_enrollment_state.v1
   source_record_id_prefix: kff.marketplace_effectuated_enrollment.2024.state
   sheet_name: indicator
