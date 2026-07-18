@@ -1176,7 +1176,14 @@ def test_cutter_rollback_preserves_concurrent_replacement(
             )
             replacement_path = next(manifest_directory.glob("*.producer.sig"))
             replacement_path.unlink()
-            replacement_path.write_bytes(replacement)
+            # The replacement must be a DIRECTORY: a rewritten regular file's
+            # freed inode can be recycled instantly on ext4, making the
+            # rollback's (device, inode) ownership check mistake the
+            # replacement for the cutter's own file and remove it. No unlink
+            # variant can remove a directory on any platform, so this pins
+            # the concurrent-replacement-preserved path deterministically.
+            replacement_path.mkdir()
+            (replacement_path / "payload").write_bytes(replacement)
             raise ReleaseChainError("forced verification after replacement")
         return real_verify(*args, **kwargs)
 
@@ -1198,7 +1205,7 @@ def test_cutter_rollback_preserves_concurrent_replacement(
 
     assert calls == 3
     assert replacement_path is not None
-    assert replacement_path.read_bytes() == replacement
+    assert (replacement_path / "payload").read_bytes() == replacement
     remaining = list(replacement_path.parent.iterdir())
     assert remaining == [replacement_path]
 
