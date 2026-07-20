@@ -1,0 +1,161 @@
+schema_version: ledger.source_package.v1
+package_id: cms-nhe-table-24
+label: CMS NHE Table 24 employer-sponsored insurance premium contributions
+artifact:
+  source_name: cms_nhe
+  source_table: 'Employer-Sponsored Private Health Insurance: Calendar Years 1987-2024'
+  resource_package: db
+  resource_directory: data/cms_nhe/table_24
+  manifest: manifest.yaml
+  vintage: cms_nhe_2024_historical_release
+  extracted_at: '2026-07-20'
+  extraction_method: ZIP archive XLSX member whole-workbook used-range cell parse
+  parser: zip_xlsx_used_range
+  archive_member: Table 24 Employer-Sponsored Private Health Insurance.xlsx
+  artifact_year: 2024
+record_sets:
+- record_set_id: cms_nhe.cy{year}.esi_employer_contribution_premiums
+  record_set_spec_id: cms_nhe.esi_employer_contribution_premiums.v1
+  source_record_id_prefix: cms_nhe.cy{year}.esi_employer_contribution_premiums
+  sheet_name: Table 24
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: employer_sponsored_insurance_enrollee
+  domain: national_health_expenditures
+  groupby_dimension: cms_nhe.esi_premium_contributor
+  rows:
+  - value_id: employer_contribution
+    label: Employer contribution to private health insurance premiums
+    ordinal: 0
+    row_number: 5
+    expected_row_header_column: A
+    expected_row_header: "  Employer Contribution to Private\n     Health Insurance Premiums "
+    table_record_kind: total
+    guard_cells:
+    - column: A
+      row: 1
+      expected_value: "Table 24 \nEmployer-Sponsored Private Health Insurance: Calendar Years 1987-2024"
+      label: table title
+    - column: B
+      row: 3
+      expected_value: "                                                                                                                                    Amount in Billions"
+      label: amount-in-billions section banner
+  measures:
+  - measure_id: contribution_amount
+    label: Employer contribution amount
+    ordinal: 0
+    column_by_year:
+      2023: AL
+      2024: AM
+    source_column_id: contribution_amount_billions
+    expected_column_header_row: 2
+    expected_column_header_by_year:
+      2023: 2023
+      2024: 2024
+    concept: cms_nhe.employer_contribution_private_health_insurance_premiums
+    unit: usd
+    aggregation: sum
+    source_concept: cms_nhe.employer_contribution_private_health_insurance_premiums
+    concept_relation: broad_match
+    concept_authority: ledger-us
+    concept_evidence_url: https://www.cms.gov/data-research/statistics-trends-and-reports/national-health-expenditure-data/historical
+    concept_evidence_notes: >
+      CMS National Health Expenditure Accounts Table 24 reports the Employer
+      Contribution to Private Health Insurance Premiums line: the employer
+      share only, with the employee share carried on the separate Employee
+      Contribution to Private Health Insurance Premiums line. The line spans
+      private, federal, and state and local government employers, including
+      contributions on behalf of retirees and COBRA continuation coverage
+      (PolicyEngine/populace#454 concept resolution), and per Table 24
+      footnotes 1-2 includes Medicare Retiree Drug Subsidy payments to
+      employer plans beginning 2006, small business tax credits beginning
+      2010, and Early Retirement Reinsurance Program payments for 2010-2011.
+      PolicyEngine-US carries person-level
+      employer_sponsored_insurance_premiums (annual employer-paid health
+      insurance premiums); this NHEA calendar-year line is the national
+      calibration anchor for that concept (PolicyEngine/populace#454).
+    legal_vintage: calendar_year_{year}
+    value_scale: 1000000000
+    expected_cell_type: number
+- record_set_id: cms_nhe.cy{year}.esi_private_employer_contribution_premiums
+  record_set_spec_id: cms_nhe.esi_private_employer_contribution_premiums.v1
+  source_record_id_prefix: cms_nhe.cy{year}.esi_private_employer_contribution_premiums
+  sheet_name: Table 24
+  period_type: calendar_year
+  period: '{year}'
+  geography_id: 0100000US
+  geography_level: country
+  geography_name: United States
+  geography_vintage: current
+  entity: person
+  entity_role: employer_sponsored_insurance_enrollee
+  domain: national_health_expenditures
+  groupby_dimension: cms_nhe.esi_premium_contributor
+  rows:
+  - value_id: private_employers
+    label: Private employer contribution to private health insurance premiums
+    ordinal: 0
+    row_number: 6
+    expected_row_header_column: A
+    expected_row_header: "     Private Employers1"
+    table_record_kind: detail
+    filters:
+      esi_employer_sector: private
+    constraints:
+    - variable: esi_employer_sector
+      operator: ==
+      value: private
+      label: ESI employer sector
+    guard_cells:
+    - column: A
+      row: 1
+      expected_value: "Table 24 \nEmployer-Sponsored Private Health Insurance: Calendar Years 1987-2024"
+      label: table title
+    - column: B
+      row: 3
+      expected_value: "                                                                                                                                    Amount in Billions"
+      label: amount-in-billions section banner
+    - column: A
+      row: 5
+      expected_value: "  Employer Contribution to Private\n     Health Insurance Premiums "
+      label: parent employer-contribution line
+  measures:
+  - measure_id: contribution_amount
+    label: Private employer contribution amount
+    ordinal: 0
+    column_by_year:
+      2023: AL
+      2024: AM
+    source_column_id: contribution_amount_billions
+    expected_column_header_row: 2
+    expected_column_header_by_year:
+      2023: 2023
+      2024: 2024
+    concept: cms_nhe.private_employer_contribution_private_health_insurance_premiums
+    unit: usd
+    aggregation: sum
+    source_concept: cms_nhe.private_employer_contribution_private_health_insurance_premiums
+    concept_relation: broad_match
+    concept_authority: ledger-us
+    concept_evidence_url: https://www.cms.gov/data-research/statistics-trends-and-reports/national-health-expenditure-data/historical
+    concept_evidence_notes: >
+      Private Employers component of the CMS NHEA Table 24 Employer
+      Contribution to Private Health Insurance Premiums line: employer share
+      only and private-sector employers only, with federal and state and
+      local government employer contributions carried on separate component
+      lines. Per Table 24 footnote 1 it includes Medicare Retiree Drug
+      Subsidy payments to private employer plans beginning 2006, small
+      business tax credits beginning 2010, and Early Retirement Reinsurance
+      Program payments for 2010-2011. This component is strictly narrower
+      than both the Table 24 employer-contribution total and person-level
+      employer_sponsored_insurance_premiums in PolicyEngine-US; it gives
+      Populace a private-sector-only alternative anchor for that concept
+      (PolicyEngine/populace#454).
+    legal_vintage: calendar_year_{year}
+    value_scale: 1000000000
+    expected_cell_type: number

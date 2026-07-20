@@ -867,6 +867,68 @@ def test_cms_nhe_package_builds_medicaid_expenditure_fact():
     assert not fact.constraints
 
 
+def test_cms_nhe_table_24_package_builds_esi_employer_contribution_facts():
+    package = load_source_package("cms-nhe-table-24")
+    facts_by_year = {}
+    for year in (2023, 2024):
+        cells = package.build_source_cells(year)
+        facts = package.build_facts(year, cells=cells)
+        assert validate_source_cells(cells).valid
+        assert validate_facts(facts).valid
+        assert len(cells) == 1_677
+        assert len(facts) == 2
+        facts_by_year[year] = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "cms-nhe-table-24"
+
+    total_2023 = facts_by_year[2023][
+        "cms_nhe.cy2023.esi_employer_contribution_premiums."
+        "employer_contribution.contribution_amount"
+    ]
+    total_2024 = facts_by_year[2024][
+        "cms_nhe.cy2024.esi_employer_contribution_premiums."
+        "employer_contribution.contribution_amount"
+    ]
+    private_2023 = facts_by_year[2023][
+        "cms_nhe.cy2023.esi_private_employer_contribution_premiums."
+        "private_employers.contribution_amount"
+    ]
+    private_2024 = facts_by_year[2024][
+        "cms_nhe.cy2024.esi_private_employer_contribution_premiums."
+        "private_employers.contribution_amount"
+    ]
+
+    # CMS NHEA Table 24, Amount in Billions: 975.7 / 1,047.0 (employer
+    # contribution) and 709.0 / 753.4 (private employers) for CY2023/CY2024.
+    assert total_2023.value == 975_700_000_000
+    assert total_2024.value == 1_047_000_000_000
+    assert private_2023.value == 709_000_000_000
+    assert private_2024.value == 753_400_000_000
+
+    assert total_2023.measure.concept == (
+        "cms_nhe.employer_contribution_private_health_insurance_premiums"
+    )
+    assert total_2023.measure.concept_relation == "broad_match"
+    assert total_2023.measure.concept_authority == "ledger-us"
+    assert total_2023.measure.legal_vintage == "calendar_year_2023"
+    assert total_2024.measure.legal_vintage == "calendar_year_2024"
+    assert private_2023.measure.concept == (
+        "cms_nhe.private_employer_contribution_private_health_insurance_premiums"
+    )
+    assert total_2023.period.type == "calendar_year"
+    assert total_2023.geography.id == "0100000US"
+    assert total_2023.entity.name == "person"
+    assert total_2023.source.source_file == (
+        "nhe-tables.zip!Table 24 Employer-Sponsored Private Health Insurance.xlsx"
+    )
+    assert total_2023.source.raw_r2_uri
+    assert not total_2023.constraints
+    assert [
+        (item.variable, item.operator, item.value)
+        for item in private_2023.constraints
+    ] == [("esi_employer_sector", "==", "private")]
+
+
 def test_source_package_alias_builds_cms_aca_oep_state_level_facts():
     package = load_source_package("cms-aca-oep-state-level")
     rows = package.build_source_rows(2024)

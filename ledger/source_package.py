@@ -133,6 +133,7 @@ SOURCE_PACKAGE_ALIASES = {
         "cms_medicare/medicare_trustees_report_2025"
     ),
     "cms-nhe-historical-service-source": Path("cms_nhe/historical_service_source"),
+    "cms-nhe-table-24": Path("cms_nhe/table_24"),
     "federal-reserve-z1-household-net-worth": Path(
         "federal_reserve/z1_household_net_worth"
     ),
