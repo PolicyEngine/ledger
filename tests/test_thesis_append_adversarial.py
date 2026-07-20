@@ -348,7 +348,12 @@ def test_workflow_has_a_base_owned_trusted_pr_gate():
         '[[ "$PR_NUMBER" =~ ^[0-9]+$ ]]',
         '"+refs/pull/${PR_NUMBER}/merge:refs/remotes/origin/pr-merge"',
         'PYTHONPATH="$base_gate/scripts"',
-        'python3 "$base_gate/scripts/check_thesis_facts_append.py"',
+        # The base gate provisions the BASE commit's own hash-locked env and
+        # runs with it — dropping either line would let a shimmed base gate
+        # ModuleNotFoundError or resolve deps the PR could influence.
+        'uv sync --locked --no-dev --project "$base_gate"',
+        'uv run --locked --no-dev --project "$base_gate"',
+        'python "$base_gate/scripts/check_thesis_facts_append.py"',
         '--root "$candidate"',
         '--base-ref "$BASE_SHA"',
     ):
