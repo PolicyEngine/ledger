@@ -560,3 +560,15 @@ target_input = as_target(
   abstractions and calibration interfaces.
 - [microplex-us](https://github.com/PolicyEngine/microplex-us) - US-specific
   simulation adapters and calibration profiles.
+
+## Witnessed observation journal
+
+The `codex/thesis-ledger-facts` branch carries an append-only, externally
+witnessed observation ledger: every append lands with a chained release
+manifest, dual RFC 3161 receipts, and an Ed25519 producer signature,
+verified by a gate that runs from the base commit's hash-locked
+environment. Verification machinery is consumed from the `vidimus`
+package with this repository's trust pins committed in
+`scripts/vidimus_pins.py`; see `releases/README.md` (immutable
+post-genesis, like everything under `releases/`) for the schema, offline
+verification procedure, and security limits.
