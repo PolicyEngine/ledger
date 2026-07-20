@@ -137,13 +137,13 @@ def test_build_source_suite_supports_soi_table_1_4(tmp_path):
     assert summary["counts"] == {
         "artifact_count": 1,
         "agent_acceptance_error_count": 0,
-        "concept_alignment_count": 7,
-        "constraint_count": 972,
-        "consumer_fact_count": 540,
-        "fact_count": 540,
+        "concept_alignment_count": 8,
+        "constraint_count": 1044,
+        "consumer_fact_count": 580,
+        "fact_count": 580,
         "lineage_coverage": 1.0,
         "source_cell_count": 8109,
-        "source_record_count": 540,
+        "source_record_count": 580,
         "source_region_count": 1,
         "source_row_count": 0,
     }

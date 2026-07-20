@@ -73,6 +73,19 @@ record_sets:
     concept: irs_soi.form_w2_social_security_tip_income
     unit: usd
     aggregation: sum
+    source_concept: irs_soi.form_w2_social_security_tip_income
+    concept_relation: broad_match
+    concept_authority: ledger-us
+    concept_evidence_url: https://www.irs.gov/statistics/soi-tax-stats-individual-information-return-form-w2-statistics
+    concept_evidence_notes: >
+      IRS SOI Form W-2 statistics Table 4.B reports W-2 Box 7 Social
+      security tips for all taxpayers with a Form W-2. PolicyEngine-US
+      carries person-level tip_income; this SOI total is the national
+      calibration anchor for that concept (PolicyEngine/populace#451
+      item 3). Box 7 covers only tips reported to employers and excludes
+      unreported tips picked up on Form 4137, so it is a conservative
+      floor for tip_income.
+    legal_vintage: tax_year_{year}
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: irs_soi.ty{year}.form_w2_401k_elective_deferrals

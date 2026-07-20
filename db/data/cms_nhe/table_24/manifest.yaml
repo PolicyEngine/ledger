@@ -1,0 +1,24 @@
+source_id: cms_nhe
+package_id: cms-nhe-table-24
+dataset: cms_nhe_table_24
+source_page: https://www.cms.gov/data-research/statistics-trends-and-reports/national-health-expenditure-data/historical
+table: 'Employer-Sponsored Private Health Insurance: Calendar Years 1987-2024'
+files:
+  2024:
+    filename: nhe-tables.zip
+    source_url: https://www.cms.gov/files/zip/nhe-tables.zip
+    sha256: a09ef6d3e84e25d745047a47b6b08a0d96b303085b4c725b67ce67a0eb0c4420
+    size_bytes: 520391
+    fetched_at: '2026-07-20T05:01:52+00:00'
+    source_table: 'Employer-Sponsored Private Health Insurance: Calendar Years 1987-2024'
+    archive_member: Table 24 Employer-Sponsored Private Health Insurance.xlsx
+    notes: Full CMS NHE tables ZIP preserved; Table 24 amounts are reported in
+      billions of dollars. R2 storage below declares the canonical
+      content-addressed location; publish with `ledger publish-raw --root
+      db/data` from a ledger-raw-credentialed environment.
+    storage:
+      r2:
+        provider: r2
+        bucket: ledger-raw
+        key: raw/cms_nhe/cms-nhe-table-24/2024/a09ef6d3e84e25d745047a47b6b08a0d96b303085b4c725b67ce67a0eb0c4420/nhe-tables.zip
+        uri: r2://ledger-raw/raw/cms_nhe/cms-nhe-table-24/2024/a09ef6d3e84e25d745047a47b6b08a0d96b303085b4c725b67ce67a0eb0c4420/nhe-tables.zip

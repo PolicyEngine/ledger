@@ -781,3 +781,37 @@ record_sets:
           the negative component of that input.
         legal_vintage: tax_year_{year}
         value_scale: 1000
+      - measure_id: self_employed_health_insurance_ald_returns
+        label: Returns with self-employed health insurance deduction
+        ordinal: 27
+        column: DN
+        column_by_year:
+          2021: DB
+          2022: DN
+          2023: DN
+        concept: irs_soi.returns_with_self_employed_health_insurance_deduction
+        unit: count
+        aggregation: sum
+      - measure_id: self_employed_health_insurance_ald
+        label: Self-employed health insurance deduction
+        ordinal: 28
+        column: DO
+        column_by_year:
+          2021: DC
+          2022: DO
+          2023: DO
+        concept: irs_soi.self_employed_health_insurance_deduction
+        unit: usd
+        aggregation: sum
+        source_concept: irs_soi.self_employed_health_insurance_deduction
+        concept_relation: broad_match
+        concept_authority: ledger-us
+        concept_evidence_url: https://www.irs.gov/statistics/soi-tax-stats-individual-income-tax-returns-complete-report-publication-1304-basic-tables-part-1
+        concept_evidence_notes: >
+          IRS SOI Table 1.4 labels this statutory-adjustments measure
+          Self-employed health insurance deduction. PolicyEngine-US computes
+          the same adjustment as self_employed_health_insurance_ald; this SOI
+          line is the national calibration source for that concept
+          (PolicyEngine/populace#451 item 2).
+        legal_vintage: tax_year_{year}
+        value_scale: 1000
