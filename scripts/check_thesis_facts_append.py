@@ -394,14 +394,32 @@ def check_rows(lines: list[str], prefix_count: int) -> None:
                 raise AppendError(
                     f"appended line {number} responseArchive lacks a digest"
                 )
-            has_hash = bool(row.get("targetContentHash"))
-            projection = row.get("sourceBindingProjection")
-            if has_hash != bool(projection):
+            # Key PRESENCE pairs the binding, and present values must be
+            # shape-valid: truthiness accepted targetContentHash "" with a
+            # missing (or {}) projection, silently waiving the contract
+            # binding (found during the vidimus extraction review).
+            has_hash = "targetContentHash" in row
+            has_projection = "sourceBindingProjection" in row
+            if has_hash != has_projection:
                 raise AppendError(
                     f"appended line {number} ({record_id}) must carry "
                     "targetContentHash and sourceBindingProjection together"
                 )
-            if projection:
+            if has_hash:
+                content_hash = row["targetContentHash"]
+                if not isinstance(content_hash, str) or not re.fullmatch(
+                    r"[0-9a-f]{64}", content_hash
+                ):
+                    raise AppendError(
+                        f"appended line {number} ({record_id}) "
+                        "targetContentHash is not a SHA-256 hex digest"
+                    )
+                projection = row["sourceBindingProjection"]
+                if not isinstance(projection, dict) or not projection:
+                    raise AppendError(
+                        f"appended line {number} ({record_id}) "
+                        "sourceBindingProjection must be a non-empty object"
+                    )
                 if projection.get("responseSha256") != archive.get("sha256"):
                     raise AppendError(
                         f"appended line {number} projection digest does not "
