@@ -281,66 +281,6 @@ wheels = [
 ]
 
 [[package]]
-name = "policyengine-arch-data"
-version = "0.1.0"
-source = { editable = "." }
-dependencies = [
-    { name = "cryptography" },
-    { name = "httpx" },
-    { name = "microplex" },
-    { name = "numpy" },
-    { name = "odfpy" },
-    { name = "openpyxl" },
-    { name = "pandas" },
-    { name = "pyarrow" },
-    { name = "pypdf" },
-    { name = "pyyaml" },
-    { name = "scipy" },
-    { name = "sqlmodel" },
-    { name = "supabase" },
-    { name = "xlrd" },
-]
-
-[package.optional-dependencies]
-dev = [
-    { name = "pytest" },
-    { name = "ruff" },
-]
-policyengine = [
-    { name = "policyengine-us" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "pytest" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "cryptography", specifier = ">=46.0.3" },
-    { name = "httpx", specifier = ">=0.27.0" },
-    { name = "microplex", specifier = ">=0.1.0" },
-    { name = "numpy", specifier = ">=1.24.0" },
-    { name = "odfpy", specifier = ">=1.4.1" },
-    { name = "openpyxl", specifier = ">=3.1.0" },
-    { name = "pandas", specifier = ">=2.0.0" },
-    { name = "policyengine-us", marker = "extra == 'policyengine'", specifier = ">=1.670.2" },
-    { name = "pyarrow", specifier = ">=22.0.0" },
-    { name = "pypdf", specifier = ">=6.0.0" },
-    { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0.0,<9" },
-    { name = "pyyaml", specifier = ">=6.0" },
-    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.5.0" },
-    { name = "scipy", specifier = ">=1.11.0" },
-    { name = "sqlmodel", specifier = ">=0.0.22" },
-    { name = "supabase", specifier = ">=2.0.0" },
-    { name = "xlrd", specifier = ">=2.0.1" },
-]
-provides-extras = ["dev", "policyengine"]
-
-[package.metadata.requires-dev]
-dev = [{ name = "pytest", specifier = ">=8.0.0,<9" }]
-
-[[package]]
 name = "cryptography"
 version = "46.0.3"
 source = { registry = "https://pypi.org/simple" }
@@ -1698,6 +1638,68 @@ wheels = [
 ]
 
 [[package]]
+name = "policyengine-arch-data"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "cryptography" },
+    { name = "httpx" },
+    { name = "microplex" },
+    { name = "numpy" },
+    { name = "odfpy" },
+    { name = "openpyxl" },
+    { name = "pandas" },
+    { name = "pyarrow" },
+    { name = "pypdf" },
+    { name = "pyyaml" },
+    { name = "scipy" },
+    { name = "sqlmodel" },
+    { name = "supabase" },
+    { name = "vidimus" },
+    { name = "xlrd" },
+]
+
+[package.optional-dependencies]
+dev = [
+    { name = "pytest" },
+    { name = "ruff" },
+]
+policyengine = [
+    { name = "policyengine-us" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "pytest" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "cryptography", specifier = ">=46.0.3" },
+    { name = "httpx", specifier = ">=0.27.0" },
+    { name = "microplex", specifier = ">=0.1.0" },
+    { name = "numpy", specifier = ">=1.24.0" },
+    { name = "odfpy", specifier = ">=1.4.1" },
+    { name = "openpyxl", specifier = ">=3.1.0" },
+    { name = "pandas", specifier = ">=2.0.0" },
+    { name = "policyengine-us", marker = "extra == 'policyengine'", specifier = ">=1.670.2" },
+    { name = "pyarrow", specifier = ">=22.0.0" },
+    { name = "pypdf", specifier = ">=6.0.0" },
+    { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0.0,<9" },
+    { name = "pyyaml", specifier = ">=6.0" },
+    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.5.0" },
+    { name = "scipy", specifier = ">=1.11.0" },
+    { name = "sqlmodel", specifier = ">=0.0.22" },
+    { name = "supabase", specifier = ">=2.0.0" },
+    { name = "vidimus", specifier = "==0.1.2" },
+    { name = "xlrd", specifier = ">=2.0.1" },
+]
+provides-extras = ["dev", "policyengine"]
+
+[package.metadata.requires-dev]
+dev = [{ name = "pytest", specifier = ">=8.0.0,<9" }]
+
+[[package]]
 name = "policyengine-core"
 version = "3.25.3"
 source = { registry = "https://pypi.org/simple" }
@@ -2862,6 +2864,18 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/35/12/06f87be706ccc5794569d14f903c2f755aa98e1a9d53e4e7e17d9986e9d1/us-3.2.0.tar.gz", hash = "sha256:cb223e85393dcc5171ead0dd212badc47f9667b23700fea3e7ea5f310d545338", size = 16046, upload-time = "2024-07-22T01:09:42.736Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/65/a8/1791660a87f03d10a3bce00401a66035999c91f5a9a6987569b84df5719d/us-3.2.0-py3-none-any.whl", hash = "sha256:571714ad6d473c72bbd2058a53404cdf4ecc0129e4f19adfcbeb4e2d7e3dc3e7", size = 13775, upload-time = "2024-07-22T01:09:41.432Z" },
+]
+
+[[package]]
+name = "vidimus"
+version = "0.1.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "cryptography" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/e9/4b/83079ebfa8a96e47e73743b7a7f7d18ca6e7d41b8ef99d94a57e6da44cab/vidimus-0.1.2.tar.gz", hash = "sha256:ef0f798ecea994ce8796358442c046ddd77a9f7fc5608ca1bf35f9aa73a05b3f", size = 58045, upload-time = "2026-07-20T17:17:16.793Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b8/0d/fa474cfbd58439eacd8268d2d956c7440667b1b67252188c20454f17607c/vidimus-0.1.2-py3-none-any.whl", hash = "sha256:f6662a73b31bb7c67b038b7179680c48de93c368ad2d9fd0bcde34fd3f6841ba", size = 28938, upload-time = "2026-07-20T17:17:15.392Z" },
 ]
 
 [[package]]
