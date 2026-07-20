@@ -73,8 +73,12 @@ key.
 Clone the repository at the state you want to inspect and run:
 
 ```console
-python3 scripts/verify_release_chain.py --full
+uv run --locked python scripts/verify_release_chain.py --full
 ```
+
+The verifier is a thin shim over the `vidimus` package (hash-pinned in
+`uv.lock`; trust anchors stay committed in this repository under
+`scripts/vidimus_pins.py`), so the locked environment is required.
 
 The verifier needs Python, OpenSSL, the committed manifests, signatures and
 receipts, the committed anchors, and the ledger files. The project environment's
