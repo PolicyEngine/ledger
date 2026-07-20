@@ -636,6 +636,61 @@ def test_manifest_extension_cannot_grandfather_an_unbound_append(tmp_path):
     assert "immutable prefix manifest" in completed.stderr
 
 
+@pytest.mark.parametrize(
+    ("mutation", "expected_error"),
+    [
+        # Truthiness accepted "" as absent: hash "" with the projection key
+        # removed used to pass the pairing check entirely.
+        ("empty_hash_no_projection", "must carry"),
+        # Both falsy-but-present: "" paired with {} skipped every check.
+        ("empty_hash_empty_projection", "not a SHA-256 hex digest"),
+        # A present non-dict projection crashed instead of refusing.
+        ("valid_hash_string_projection", "non-empty object"),
+    ],
+)
+def test_binding_pair_presence_and_shape_are_enforced(
+    tmp_path, mutation, expected_error
+):
+    # Found during the vidimus extraction review: bool(row.get(...)) treated
+    # falsy-but-present binding values as absent, silently waiving the
+    # contract binding for a row that claims to grade a registered target.
+    lines = _read_lines()
+    original_text = "\n".join(lines) + "\n"
+    original_manifest = json.loads(PREFIX_PATH.read_text(encoding="utf-8"))
+    _write_checker_fixture(tmp_path, original_text, original_manifest)
+    base = _init_fixture_repo(tmp_path)
+
+    row = copy.deepcopy(json.loads(lines[-1]))
+    row["source_record_id"] = "verification.binding.truthiness_waiver"
+    row["observed_at"] = "2099-03-01"
+    row["period"] = {"type": "month", "value": "2099-02"}
+    if mutation == "empty_hash_no_projection":
+        row["targetContentHash"] = ""
+        row.pop("sourceBindingProjection", None)
+    elif mutation == "empty_hash_empty_projection":
+        row["targetContentHash"] = ""
+        row["sourceBindingProjection"] = {}
+    else:
+        # The base row may legitimately carry no binding pair, so pin a
+        # format-valid hash to isolate the projection-shape refusal.
+        row["targetContentHash"] = "a" * 64
+        row["sourceBindingProjection"] = "bound"
+    sys.path.insert(0, str(Path("scripts").resolve()))
+    import check_thesis_facts_append as gate_module
+
+    row["assertionVersion"] = {
+        "id": gate_module.expected_assertion_version_id(row),
+        "supersedes": None,
+    }
+    lines.append(_json_line(row))
+    _write_checker_fixture(tmp_path, "\n".join(lines) + "\n", original_manifest)
+
+    completed = _run_checker(tmp_path, base)
+
+    assert completed.returncode == 1, completed.stdout + completed.stderr
+    assert expected_error in completed.stderr
+
+
 @pytest.mark.xfail(
     strict=True,
     reason=(
