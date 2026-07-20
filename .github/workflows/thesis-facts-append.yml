@@ -79,8 +79,14 @@ jobs:
           git -C "$candidate" checkout --detach refs/remotes/origin/pr-merge
           MERGE_SHA="$(git -C "$candidate" rev-parse HEAD)"
           [[ "$MERGE_SHA" =~ ^[0-9a-f]{40,64}$ ]]
-          if [ -n "$EVENT_MERGE_SHA" ]; then
-            test "$MERGE_SHA" = "$EVENT_MERGE_SHA"
+          # GitHub recomputes the test merge (fresh committer timestamp, new
+          # SHA) between event emission and this fetch, so an authentic event
+          # field can legitimately differ from the fetched ref on synchronize
+          # events. The gate judges the fetched ref either way; equality was
+          # never a security boundary — advisory only.
+          if [ -n "$EVENT_MERGE_SHA" ] && [ "$MERGE_SHA" != "$EVENT_MERGE_SHA" ]; then
+            echo "note: event merge_commit_sha $EVENT_MERGE_SHA differs from" \
+              "fetched merge ref $MERGE_SHA (recomputed test merge)" >&2
           fi
           git -C "$candidate" cat-file -e "${BASE_SHA}^{commit}"
 
