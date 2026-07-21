@@ -23,7 +23,7 @@ def test_load_soi_table_1_1_data_reads_packaged_2023_source():
 
 
 def test_available_soi_years_include_latest_table_1_4_sources():
-    assert available_soi_table_1_4_years() == [2021, 2022, 2023]
+    assert available_soi_table_1_4_years() == [2020, 2021, 2022, 2023]
 
 
 def test_load_soi_table_1_4_data_reads_packaged_2023_wage_source():
