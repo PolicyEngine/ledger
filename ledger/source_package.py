@@ -179,6 +179,7 @@ SOURCE_PACKAGE_ALIASES = {
     "ssa-annual-statistical-supplement-2025": Path(
         "ssa/annual_statistical_supplement_2025"
     ),
+    "ssa-ssi-monthly-statistics-2024-12": Path("ssa/ssi_monthly_statistics_2024_12"),
     "ssa-ssi-table-7b1-2024": Path("ssa/ssi_table_7b1_2024"),
     "hhs-acf-tanf-caseload-2024": Path("hhs_acf/tanf_caseload_2024"),
     "hhs-acf-tanf-financial-2024": Path("hhs_acf/tanf_financial_2024"),
