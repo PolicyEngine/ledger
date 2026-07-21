@@ -4,6 +4,17 @@ dataset: irs_soi_publication_1304_table_1_4
 source_page: https://www.irs.gov/statistics/soi-tax-stats-individual-income-tax-returns-complete-report-publication-1304-basic-tables-part-1
 table: Table 1.4
 files:
+  2020:
+    filename: 20in14ar.xls
+    source_url: https://www.irs.gov/pub/irs-soi/20in14ar.xls
+    sha256: a9d32849a4cc3b1c57ee1e8a3c36d84e9e1aba224b05e2bd2824c47f60669dc2
+    size_bytes: 106496
+    storage:
+      r2:
+        provider: r2
+        bucket: ledger-raw
+        key: raw/irs_soi/soi-table-1-4/2020/a9d32849a4cc3b1c57ee1e8a3c36d84e9e1aba224b05e2bd2824c47f60669dc2/20in14ar.xls
+        uri: r2://ledger-raw/raw/irs_soi/soi-table-1-4/2020/a9d32849a4cc3b1c57ee1e8a3c36d84e9e1aba224b05e2bd2824c47f60669dc2/20in14ar.xls
   2021:
     filename: 21in14ar.xls
     source_url: https://www.irs.gov/pub/irs-soi/21in14ar.xls

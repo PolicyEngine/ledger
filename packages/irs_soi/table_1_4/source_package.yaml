@@ -407,6 +407,11 @@ record_sets:
         label: Returns with total wages
         ordinal: 0
         column: F
+        column_by_year:
+          2020: F
+          2021: F
+          2022: F
+          2023: F
         concept: irs_soi.returns_with_total_wages
         unit: count
         aggregation: sum
@@ -414,6 +419,11 @@ record_sets:
         label: Total wages
         ordinal: 1
         column: G
+        column_by_year:
+          2020: G
+          2021: G
+          2022: G
+          2023: G
         concept: us:statutes/26/62#input.wages
         unit: usd
         aggregation: sum
@@ -434,6 +444,7 @@ record_sets:
         ordinal: 2
         column: AL
         column_by_year:
+          2020: Z
           2021: Z
           2022: AL
           2023: AL
@@ -445,6 +456,7 @@ record_sets:
         ordinal: 3
         column: AM
         column_by_year:
+          2020: AA
           2021: AA
           2022: AM
           2023: AM
@@ -457,6 +469,7 @@ record_sets:
         ordinal: 4
         column: AT
         column_by_year:
+          2020: AH
           2021: AH
           2022: AT
           2023: AT
@@ -468,6 +481,7 @@ record_sets:
         ordinal: 5
         column: AU
         column_by_year:
+          2020: AI
           2021: AI
           2022: AU
           2023: AU
@@ -480,6 +494,7 @@ record_sets:
         ordinal: 6
         column: AX
         column_by_year:
+          2020: AL
           2021: AL
           2022: AX
           2023: AX
@@ -491,6 +506,7 @@ record_sets:
         ordinal: 7
         column: AY
         column_by_year:
+          2020: AM
           2021: AM
           2022: AY
           2023: AY
@@ -503,6 +519,7 @@ record_sets:
         ordinal: 8
         column: CF
         column_by_year:
+          2020: BP
           2021: BT
           2022: CF
           2023: CF
@@ -514,6 +531,7 @@ record_sets:
         ordinal: 9
         column: CG
         column_by_year:
+          2020: BQ
           2021: BU
           2022: CG
           2023: CG
@@ -526,6 +544,7 @@ record_sets:
         ordinal: 10
         column: CJ
         column_by_year:
+          2020: BV
           2021: BX
           2022: CJ
           2023: CJ
@@ -537,6 +556,7 @@ record_sets:
         ordinal: 11
         column: CK
         column_by_year:
+          2020: BW
           2021: BY
           2022: CK
           2023: CK
@@ -549,6 +569,7 @@ record_sets:
         ordinal: 12
         column: AD
         column_by_year:
+          2020: R
           2021: R
           2022: AD
           2023: AD
@@ -560,6 +581,7 @@ record_sets:
         ordinal: 13
         column: AE
         column_by_year:
+          2020: S
           2021: S
           2022: AE
           2023: AE
@@ -572,6 +594,7 @@ record_sets:
         ordinal: 14
         column: DR
         column_by_year:
+          2020: DD
           2021: DF
           2022: DR
           2023: DR
@@ -583,6 +606,7 @@ record_sets:
         ordinal: 15
         column: DS
         column_by_year:
+          2020: DE
           2021: DG
           2022: DS
           2023: DS
@@ -595,6 +619,7 @@ record_sets:
         ordinal: 16
         column: DM
         column_by_year:
+          2020: CY
           2021: DA
           2022: DM
           2023: DM
@@ -616,6 +641,7 @@ record_sets:
         ordinal: 17
         column: AJ
         column_by_year:
+          2020: X
           2021: X
           2022: AJ
           2023: AJ
@@ -627,6 +653,7 @@ record_sets:
         ordinal: 18
         column: AK
         column_by_year:
+          2020: Y
           2021: Y
           2022: AK
           2023: AK
@@ -651,6 +678,7 @@ record_sets:
         ordinal: 19
         column: BX
         column_by_year:
+          2020: BH
           2021: BL
           2022: BX
           2023: BX
@@ -662,6 +690,7 @@ record_sets:
         ordinal: 20
         column: BY
         column_by_year:
+          2020: BI
           2021: BM
           2022: BY
           2023: BY
@@ -684,6 +713,7 @@ record_sets:
         ordinal: 21
         column: BZ
         column_by_year:
+          2020: BJ
           2021: BN
           2022: BZ
           2023: BZ
@@ -695,6 +725,7 @@ record_sets:
         ordinal: 22
         column: CA
         column_by_year:
+          2020: BK
           2021: BO
           2022: CA
           2023: CA
@@ -718,6 +749,7 @@ record_sets:
         ordinal: 23
         column: CN
         column_by_year:
+          2020: BZ
           2021: CB
           2022: CN
           2023: CN
@@ -729,6 +761,7 @@ record_sets:
         ordinal: 24
         column: CO
         column_by_year:
+          2020: CA
           2021: CC
           2022: CO
           2023: CO
@@ -752,6 +785,7 @@ record_sets:
         ordinal: 25
         column: CP
         column_by_year:
+          2020: CB
           2021: CD
           2022: CP
           2023: CP
@@ -763,6 +797,7 @@ record_sets:
         ordinal: 26
         column: CQ
         column_by_year:
+          2020: CC
           2021: CE
           2022: CQ
           2023: CQ
@@ -786,6 +821,7 @@ record_sets:
         ordinal: 27
         column: DN
         column_by_year:
+          2020: CZ
           2021: DB
           2022: DN
           2023: DN
@@ -797,6 +833,7 @@ record_sets:
         ordinal: 28
         column: DO
         column_by_year:
+          2020: DA
           2021: DC
           2022: DO
           2023: DO
