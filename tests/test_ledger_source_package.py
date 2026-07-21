@@ -1463,6 +1463,102 @@ def test_ssa_ssi_table_7b1_source_package_builds_area_category_facts():
     assert ca_disabled_payments.geography.id == "0400000US06"
 
 
+def test_ssa_ssi_monthly_2024_12_source_package_alias_validates_counts():
+    report = validate_source_package("ssa-ssi-monthly-statistics-2024-12", year=2024)
+
+    assert report.valid
+    assert report.counts == {
+        "record_set_count": 1,
+        "row_count": 4,
+        "measure_count": 1,
+        "source_record_count": 4,
+        "source_region_count": 1,
+    }
+
+
+def test_ssa_ssi_monthly_2024_12_package_builds_federal_payment_age_facts():
+    package = load_source_package("ssa-ssi-monthly-statistics-2024-12")
+    rows = package.build_source_rows(2024)
+    cells = package.build_source_cells(2024, source_rows=rows)
+    facts = package.build_facts(2024, cells=cells, source_rows=rows)
+    values_by_record = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "ssa-ssi-monthly-statistics-2024-12"
+    assert len(rows) == 4
+    assert validate_source_rows(rows).valid
+    assert validate_source_cells(cells).valid
+    assert len(cells) == 35
+    assert len(facts) == 4
+    assert validate_facts(facts).valid
+    assert validate_consumer_fact_contract(facts).valid
+    assert all(fact.source.raw_r2_uri for fact in facts)
+
+    prefix = "ssa_ssi_monthly.month2024_12.ssi_federal_payment_recipients.by_age."
+    all_ages = values_by_record[prefix + "all_ages.recipient_count"]
+    under_18 = values_by_record[prefix + "under_18.recipient_count"]
+    aged_18_to_64 = values_by_record[prefix + "age_18_to_64.recipient_count"]
+    aged_65_or_older = values_by_record[prefix + "age_65_or_older.recipient_count"]
+
+    # SSA SSI Monthly Statistics, December 2024, Table 1, "Total with—
+    # Federal payment" row: persons receiving a federal SSI payment in
+    # December 2024, by the three published age groups. These are the
+    # PolicyEngine/populace#470 age-band take-up count targets.
+    assert all_ages.value == 7_289_843
+    assert under_18.value == 1_001_922
+    assert aged_18_to_64.value == 3_905_779
+    assert aged_65_or_older.value == 2_382_142
+    assert (
+        under_18.value + aged_18_to_64.value + aged_65_or_older.value
+        == all_ages.value
+    )
+
+    assert all_ages.period.type == "month"
+    assert all_ages.period.value == "2024-12"
+    assert all_ages.geography.id == "0100000US"
+    assert all_ages.entity.name == "person"
+    assert all_ages.entity.role == "ssi_recipient"
+    assert all_ages.constraints == ()
+    assert all_ages.layout.table_record_kind == "total"
+
+    assert {
+        (item.variable, item.operator, item.value)
+        for item in under_18.constraints
+    } == {("age", ">=", 0), ("age", "<", 18)}
+    assert {
+        (item.variable, item.operator, item.value)
+        for item in aged_18_to_64.constraints
+    } == {("age", ">=", 18), ("age", "<", 65)}
+    assert {
+        (item.variable, item.operator, item.value)
+        for item in aged_65_or_older.constraints
+    } == {("age", ">=", 65)}
+    assert under_18.layout.groupby_dimension == "age"
+    assert under_18.layout.groupby_value_id == "under_18"
+
+    measure = under_18.measure
+    assert measure.concept == "ssa.ssi_federal_payment_recipient_count"
+    assert measure.source_concept == (
+        "ssa_ssi_monthly.table_1.federal_payment_recipient_count"
+    )
+    assert measure.concept_relation == "exact"
+    assert measure.concept_authority == "ledger-us"
+    assert measure.concept_evidence_url == (
+        "https://www.ssa.gov/policy/docs/statcomps/ssi_monthly/2024-12/table01.html"
+    )
+    assert "federal SSI payment in December 2024" in measure.concept_evidence_notes
+    assert "PolicyEngine/populace#470" in measure.concept_evidence_notes
+    assert "PolicyEngine/populace#469" in measure.concept_evidence_notes
+    assert "PolicyEngine/populace#473" in measure.concept_evidence_notes
+
+    assert under_18.source.source_file == "ssi_monthly_2024_12_table01.csv"
+    assert under_18.source.url == (
+        "https://www.ssa.gov/policy/docs/statcomps/ssi_monthly/2024-12/table01.html"
+    )
+    assert under_18.source.source_sha256 == (
+        "44438b49392c2a581a239c7490492152c408213f313f450a762d84281de98e40"
+    )
+
+
 def test_ons_uk_business_firm_targets_source_package_alias_validates_counts():
     report = validate_source_package("ons-uk-business-firm-targets-2025", year=2025)
 
