@@ -1198,6 +1198,57 @@ def test_jct_tax_expenditure_package_builds_selected_individual_facts():
     )
 
 
+def test_jct_obbba_package_builds_no_tax_provision_projection_facts():
+    package = load_source_package("jct-obbba-revenue-estimates-2025")
+    facts_by_year = {}
+    for year in (2026, 2027, 2028, 2029):
+        cells = package.build_source_cells(year)
+        records = package.build_source_records(year, cells=cells)
+        facts = package.build_facts(year, cells=cells)
+        assert validate_source_cells(cells).valid
+        assert validate_facts(facts).valid
+        assert validate_consumer_fact_contract(facts).valid
+        assert len(records) == 2
+        assert len(facts) == 2
+        facts_by_year[year] = {fact.source_record_id: fact for fact in facts}
+
+    assert package.package_id == "jct-obbba-revenue-estimates-2025"
+
+    # JCX-35-25 Chapter 2 rows, millions of dollars as published; signed
+    # fiscal-year budget effects relative to the present law baseline.
+    expected_values = {
+        (2026, "no_tax_on_tips"): -10_121_000_000,
+        (2027, "no_tax_on_tips"): -7_664_000_000,
+        (2028, "no_tax_on_tips"): -8_078_000_000,
+        (2029, "no_tax_on_tips"): -5_262_000_000,
+        (2026, "no_tax_on_overtime"): -32_806_000_000,
+        (2027, "no_tax_on_overtime"): -25_672_000_000,
+        (2028, "no_tax_on_overtime"): -22_982_000_000,
+        (2029, "no_tax_on_overtime"): -8_113_000_000,
+    }
+    for (year, provision), expected in expected_values.items():
+        record_id = f"jct.obbba_title_vii.fy{year}.{provision}.revenue_effect"
+        fact = facts_by_year[year][record_id]
+        assert fact.value == expected
+        assert fact.assertion == "source_projection"
+        assert fact.period.type == "fiscal_year"
+        assert fact.period.value == year
+        assert fact.geography.id == "0100000US"
+        assert fact.entity.name == "tax_unit"
+        assert fact.source.source_name == "jct"
+        assert fact.source.raw_r2_uri
+        assert fact.measure.concept == "jct.obbba_provision_revenue_effect"
+        assert fact.measure.source_concept == "jct.estimated_budget_effect"
+        assert fact.measure.concept_authority == "jct"
+        assert fact.measure.unit == "usd"
+        assert fact.measure.legal_vintage == f"fiscal_year_{year}"
+        assert fact.filters["provision"] == provision
+        assert [
+            (item.variable, item.operator, item.value)
+            for item in fact.constraints
+        ] == [("provision", "==", provision)]
+
+
 @pytest.mark.parametrize(
     ("source", "year", "cell_count", "households", "addresses", "source_file"),
     [

@@ -31,7 +31,7 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "geography_count": 1053,
         "period_count": 16,
         "semantic_duplicate_key_count": 12,
-        "skipped_source_count": 9,
+        "skipped_source_count": 10,
         "source_count": 29,
         "source_package_count": 60,
         "warning_count": 1,
@@ -40,7 +40,7 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
     assert rows[0]["aggregate_fact_key"].startswith("ledger.aggregate_fact.v2:")
     assert rows[0]["semantic_fact_key"].startswith("ledger.semantic_fact.v2:")
     assert source_packages["source_package_count"] == 60
-    assert source_packages["skipped_source_count"] == 9
+    assert source_packages["skipped_source_count"] == 10
     assert sorted(item["source"] for item in source_packages["skipped_sources"]) == [
         "census-acs-s0101-congressional-district-age-2024",
         "census-acs-s0101-national-age-2024",
@@ -50,6 +50,7 @@ def test_build_bundle_writes_merged_consumer_contract(tmp_path):
         "cms-aca-oep-state-level",
         "cms-aca-oep-state-level-2022",
         "cms-aca-oep-state-level-2025",
+        "jct-obbba-revenue-estimates-2025",
         "jct-tax-expenditures-2024",
     ]
     assert coverage["fact_count"] == 39219
@@ -500,6 +501,45 @@ def test_build_bundle_cli_supports_jct_tax_expenditure_source(tmp_path, capsys):
         "jct.tax_expenditures.cy2024.deductible_mortgage_interest.revenue_loss",
         "jct.tax_expenditures.cy2024.qualified_business_income_deduction.revenue_loss",
     }
+
+
+def test_build_bundle_cli_supports_jct_obbba_source(tmp_path, capsys):
+    output_dir = tmp_path / "bundle"
+
+    exit_code = harness_main(
+        [
+            "build-bundle",
+            "--year",
+            "2026",
+            "--source",
+            "jct-obbba-revenue-estimates-2025",
+            "--out",
+            str(output_dir),
+        ]
+    )
+    payload = json.loads(capsys.readouterr().out)
+    rows = _load_jsonl(output_dir / "consumer_facts.jsonl")
+
+    assert exit_code == 0
+    assert payload["valid"]
+    assert payload["counts"]["source_package_count"] == 1
+    assert payload["counts"]["fact_count"] == 2
+    assert payload["coverage"]["counts"]["by_source"] == {"jct": 2}
+    assert payload["coverage"]["counts"]["by_entity"] == {"tax_unit": 2}
+    assert {row["lineage"]["source_record_id"] for row in rows} == {
+        "jct.obbba_title_vii.fy2026.no_tax_on_tips.revenue_effect",
+        "jct.obbba_title_vii.fy2026.no_tax_on_overtime.revenue_effect",
+    }
+    values = {
+        row["lineage"]["source_record_id"]: row["value"] for row in rows
+    }
+    # JCX-35-25 FY2026: tips -$10,121M, overtime -$32,806M.
+    assert values[
+        "jct.obbba_title_vii.fy2026.no_tax_on_tips.revenue_effect"
+    ] == -10_121_000_000
+    assert values[
+        "jct.obbba_title_vii.fy2026.no_tax_on_overtime.revenue_effect"
+    ] == -32_806_000_000
 
 
 def test_build_bundle_coverage_reports_duplicate_keys():

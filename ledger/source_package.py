@@ -143,6 +143,7 @@ SOURCE_PACKAGE_ALIASES = {
     "hhs-acf-liheap-fy2024-national-profile": Path(
         "hhs_acf_liheap/fy2024_national_profile"
     ),
+    "jct-obbba-revenue-estimates-2025": Path("jct/obbba_revenue_estimates_2025"),
     "jct-tax-expenditures-2024": Path("jct/tax_expenditures_2024"),
     "soi-table-1-1": Path("irs_soi/table_1_1"),
     "soi-table-1-2": Path("irs_soi/table_1_2"),
