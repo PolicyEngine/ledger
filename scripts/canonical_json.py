@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-# Thin shim over vidimus==0.1.2 (hash-pinned in uv.lock). Any vidimus upgrade
+# Thin shim over receipt==0.2.0 (hash-pinned in uv.lock). Any receipt upgrade
 # requires a fresh byte-equivalence proof at this repo's then-current pin BEFORE
 # the bump.
-"""Canonical JSON compatibility surface backed by vidimus."""
+"""Canonical JSON compatibility surface backed by receipt."""
 
-from vidimus.canonical import (
+from receipt.canonical import (
     canonical_bytes,
     canonical_sha256,
     canonical_stringify,

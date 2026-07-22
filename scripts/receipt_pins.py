@@ -1,11 +1,11 @@
-"""Consumer-owned trust and append-gate configuration for vidimus."""
+"""Consumer-owned trust and append-gate configuration for receipt."""
 
 from __future__ import annotations
 
 import pathlib
 
-from vidimus.append_gate import AppendGateSpec
-from vidimus.release_chain import AnchorSpec, ChainSpec
+from receipt.append_gate import AppendGateSpec
+from receipt.release_chain import AnchorSpec, ChainSpec
 
 
 LEDGER_SPEC = ChainSpec(

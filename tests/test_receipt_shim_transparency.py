@@ -1,4 +1,4 @@
-"""Byte-level differential tests for the vidimus consumer shims."""
+"""Byte-level differential tests for the receipt consumer shims."""
 
 from __future__ import annotations
 
@@ -57,7 +57,7 @@ def test_original_oracle_fixtures_are_authenticated(name: str) -> None:
 def original_oracle(tmp_path_factory: pytest.TempPathFactory) -> pathlib.Path:
     """Copy the authenticated original scripts into one executable tree."""
 
-    oracle = tmp_path_factory.mktemp("vidimus-original-oracle")
+    oracle = tmp_path_factory.mktemp("receipt-original-oracle")
     scripts = oracle / "scripts"
     scripts.mkdir()
     for name, expected in ORIGINAL_HASHES.items():
