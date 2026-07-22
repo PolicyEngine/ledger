@@ -1,0 +1,133 @@
+schema_version: ledger.source_package.v1
+package_id: jct-obbba-revenue-estimates-2025
+label: JCT OBBBA Title VII revenue estimates, no-tax-on-tips and no-tax-on-overtime (JCX-35-25)
+artifact:
+  source_name: jct
+  source_table: Estimated Revenue Effects Relative to the Present Law Baseline of the Tax Provisions in Title VII - Finance (JCX-35-25)
+  resource_package: db
+  resource_directory: data/jct/obbba_revenue_estimates_2025
+  manifest: manifest.yaml
+  vintage: jcx_35_25
+  extracted_at: "2026-07-22"
+  extraction_method: >-
+    manual extraction of the JCX-35-25 Chapter 2 no-tax-on-tips and
+    no-tax-on-overtime rows (Title VII Subtitle A, "Delivering on Presidential
+    Priorities to Provide New Middle-Class Tax Relief") from the publisher PDF
+    into a curated CSV; fiscal-year budget-effect columns kept verbatim in
+    millions of dollars with published signs and "---" markers. The jct.gov
+    publication page is Cloudflare-challenged from the agent shell; the PDF was
+    fetched from the canonical getattachment URL (sha256 documented in the
+    manifest notes). The dense wrapped landscape table is not robust to the
+    pdf_text_numbers parser, so the package follows the curated-CSV precedent
+    of jct-tax-expenditures-2024 and
+    cbo-revenue-projections-income-by-source-2026-02.
+  parser: delimited_text_full_rows
+  sheet_name: jct_obbba_revenue_estimates_2025
+  artifact_year: 2025
+record_sets:
+  - record_set_id: jct.obbba_title_vii.fy{year}
+    record_set_spec_id: jct.obbba_no_tax_provision_revenue_effect.v1
+    assertion: source_projection
+    source_record_id_prefix: jct.obbba_title_vii.fy{year}
+    sheet_name: jct_obbba_revenue_estimates_2025
+    period_type: fiscal_year
+    period: "{year}"
+    geography_id: 0100000US
+    geography_level: country
+    geography_name: United States
+    geography_vintage: current
+    entity: tax_unit
+    entity_role: federal_income_tax_unit
+    domain: federal_income_tax
+    groupby_dimension: jct.provision
+    rows:
+      - value_id: no_tax_on_tips
+        label: No tax on tips (sunset 12/31/28)
+        ordinal: 0
+        row_number: 2
+        expected_row_header_column: A
+        expected_row_header: no_tax_on_tips
+        filters:
+          provision: no_tax_on_tips
+        constraints:
+          - variable: provision
+            operator: "=="
+            value: no_tax_on_tips
+            label: JCT Title VII Chapter 2 provision row
+        guard_cells:
+          - column: B
+            row: 2
+            expected_value: No tax on tips
+            label: provision label
+          - column: D
+            row: 2
+            expected_value: tyba 12/31/24
+            label: effective date
+        table_record_kind: total
+      - value_id: no_tax_on_overtime
+        label: No tax on overtime (sunset 12/31/28)
+        ordinal: 1
+        row_number: 3
+        expected_row_header_column: A
+        expected_row_header: no_tax_on_overtime
+        filters:
+          provision: no_tax_on_overtime
+        constraints:
+          - variable: provision
+            operator: "=="
+            value: no_tax_on_overtime
+            label: JCT Title VII Chapter 2 provision row
+        guard_cells:
+          - column: B
+            row: 3
+            expected_value: No tax on overtime
+            label: provision label
+          - column: D
+            row: 3
+            expected_value: tyba 12/31/24
+            label: effective date
+        table_record_kind: total
+    measures:
+      - measure_id: revenue_effect
+        label: Estimated budget effect relative to the present law baseline
+        ordinal: 0
+        column_by_year:
+          2026: F
+          2027: G
+          2028: H
+          2029: I
+        source_column_id: fy_{year}
+        expected_column_header_row: 1
+        expected_column_header: fy_{year}
+        concept: jct.obbba_provision_revenue_effect
+        source_concept: jct.estimated_budget_effect
+        concept_relation: source_label
+        concept_authority: jct
+        concept_evidence_url: https://www.jct.gov/publications/2025/jcx-35-25/
+        concept_evidence_notes: >-
+          JCX-35-25 (July 1, 2025) scores the tax provisions of Title VII of
+          the Senate-passed reconciliation substitute (enacted as Public Law
+          119-21, OBBBA) relative to the present law baseline, in millions of
+          dollars by fiscal year; negative values are revenue decreases. The
+          no-tax-on-tips row scores the IRC 224 qualified-tips deduction
+          (PolicyEngine-US channel: tip_income -> tip_income_deduction); the
+          no-tax-on-overtime row scores the IRC 225 qualified-overtime
+          deduction (PolicyEngine-US channel: fsla_overtime_premium ->
+          overtime_income_deduction). These are publisher revenue-flow
+          projections, not aggregates of any engine variable: downstream
+          adapters must decide explicitly whether and how to use them (the
+          populace reform-coverage probes use them as validation anchors;
+          PolicyEngine/populace#451 item 4). Context receipts, 2026-07-22: no
+          BLS or Census series publishes an FLSA overtime-premium dollar
+          aggregate (BLS CES publishes manufacturing overtime hours only, BLS
+          ECEC publishes per-hour supplemental-pay cost levels); Treasury
+          filing-season releases report claim floors only ("over 25 million
+          filers ... average deduction of over $3,100", press release sb0441,
+          April 2026; "over 29 million filers ... over $3,100", sb0517, June
+          2, 2026) and publish no exact aggregate, so the JCT score is the
+          only exact-valued official overtime anchor.
+        unit: usd
+        aggregation: sum
+        value_scale: 1000000
+        expected_cell_type: number
+        legal_vintage: fiscal_year_{year}
