@@ -21,7 +21,7 @@ jobs:
           github.event_name == 'push' &&
           github.ref == 'refs/heads/codex/thesis-ledger-facts'
         # Runs in the repo's hash-locked env: the verifier may import
-        # packaged dependencies (vidimus) once the consumption shims land.
+        # packaged dependencies (receipt) once the consumption shims land.
         run: |
           uv sync --locked --no-dev
           uv run --locked --no-dev python scripts/verify_release_chain.py --full

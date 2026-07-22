@@ -97,7 +97,7 @@ jobs:
 
           # Provision the BASE commit's own hash-locked environment and run
           # the base gate with it: the gate scripts may import packaged
-          # dependencies (vidimus), and installing from the base's uv.lock
+          # dependencies, and installing from the base's uv.lock
           # keeps the PR unable to influence what code judges it.
           uv sync --locked --no-dev --project "$base_gate"
 
@@ -139,7 +139,7 @@ jobs:
             test "$(git -C "$base_gate" rev-parse HEAD)" = "$base_sha"
 
             # Base gate runs from the BASE commit's own hash-locked env so
-            # gate imports (vidimus) resolve without the PR influencing them.
+            # gate dependencies resolve without the PR influencing them.
             uv sync --locked --no-dev --project "$base_gate"
 
             cd "$RUNNER_TEMP"

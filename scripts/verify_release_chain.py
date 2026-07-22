@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Thin shim over vidimus==0.1.2 (hash-pinned in uv.lock). Any vidimus upgrade
+# Thin shim over receipt==0.2.0 (hash-pinned in uv.lock). Any receipt upgrade
 # requires a fresh byte-equivalence proof at this repo's then-current pin BEFORE
 # the bump.
 """Offline verification for the witnessed thesis-ledger release chain."""
@@ -12,16 +12,16 @@ import sys
 from datetime import datetime
 from typing import Any
 
-import vidimus.release_chain as _vidimus
+import receipt.release_chain as _receipt
 
 try:
-    from vidimus_pins import LEDGER_SPEC
+    from receipt_pins import LEDGER_SPEC
 except ModuleNotFoundError as exc:
-    if exc.name != "vidimus_pins":
+    if exc.name != "receipt_pins":
         raise
     # The test suite copies the legacy three-script surface into temporary
     # repositories. The editable consumer tree remains the sole pin owner.
-    from scripts.vidimus_pins import LEDGER_SPEC
+    from scripts.receipt_pins import LEDGER_SPEC
 
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -34,46 +34,46 @@ ANCHORS = LEDGER_SPEC.anchors
 PRODUCER_PUBLIC_KEY_FILENAME = LEDGER_SPEC.producer_public_key_filename
 PRODUCER_SPKI_SHA256 = LEDGER_SPEC.producer_spki_sha256
 
-CRYPTOGRAPHY_AVAILABLE = _vidimus.CRYPTOGRAPHY_AVAILABLE
-DEFAULT_CLOCK_SKEW_SECONDS = _vidimus.DEFAULT_CLOCK_SKEW_SECONDS
-MAX_FUTURE_SECONDS = _vidimus.MAX_FUTURE_SECONDS
-MAX_RELEASE_INDEX = _vidimus.MAX_RELEASE_INDEX
-MANIFEST_RE = _vidimus.MANIFEST_RE
-PRODUCER_SIGNATURE_BYTES = _vidimus.PRODUCER_SIGNATURE_BYTES
-PRODUCER_SIGNATURE_RE = _vidimus.PRODUCER_SIGNATURE_RE
-RECEIPT_RE = _vidimus._receipt_re(LEDGER_SPEC)
-SHA256_RE = _vidimus.SHA256_RE
-STRICT_UTC_RE = _vidimus.STRICT_UTC_RE
-TIME_STAMP_RE = _vidimus.TIME_STAMP_RE
+CRYPTOGRAPHY_AVAILABLE = _receipt.CRYPTOGRAPHY_AVAILABLE
+DEFAULT_CLOCK_SKEW_SECONDS = _receipt.DEFAULT_CLOCK_SKEW_SECONDS
+MAX_FUTURE_SECONDS = _receipt.MAX_FUTURE_SECONDS
+MAX_RELEASE_INDEX = _receipt.MAX_RELEASE_INDEX
+MANIFEST_RE = _receipt.MANIFEST_RE
+PRODUCER_SIGNATURE_BYTES = _receipt.PRODUCER_SIGNATURE_BYTES
+PRODUCER_SIGNATURE_RE = _receipt.PRODUCER_SIGNATURE_RE
+RECEIPT_RE = _receipt._receipt_re(LEDGER_SPEC)
+SHA256_RE = _receipt.SHA256_RE
+STRICT_UTC_RE = _receipt.STRICT_UTC_RE
+TIME_STAMP_RE = _receipt.TIME_STAMP_RE
 
-AnchorSpec = _vidimus.AnchorSpec
-ChainSpec = _vidimus.ChainSpec
-ChainVerification = _vidimus.ChainVerification
-GitEntry = _vidimus.GitEntry
-ReleaseChainError = _vidimus.ReleaseChainError
-ReleaseRecord = _vidimus.ReleaseRecord
+AnchorSpec = _receipt.AnchorSpec
+ChainSpec = _receipt.ChainSpec
+ChainVerification = _receipt.ChainVerification
+GitEntry = _receipt.GitEntry
+ReleaseChainError = _receipt.ReleaseChainError
+ReleaseRecord = _receipt.ReleaseRecord
 
-git_blob_bytes = _vidimus.git_blob_bytes
-git_file_entry = _vidimus.git_file_entry
-git_tree_entries = _vidimus.git_tree_entries
-jsonl_line_offsets = _vidimus.jsonl_line_offsets
-manifest_filename = _vidimus.manifest_filename
-parse_created_at = _vidimus.parse_created_at
-producer_signature_path_for_manifest = _vidimus.producer_signature_path_for_manifest
-resolve_base_commit = _vidimus.resolve_base_commit
-sha256_bytes = _vidimus.sha256_bytes
+git_blob_bytes = _receipt.git_blob_bytes
+git_file_entry = _receipt.git_file_entry
+git_tree_entries = _receipt.git_tree_entries
+jsonl_line_offsets = _receipt.jsonl_line_offsets
+manifest_filename = _receipt.manifest_filename
+parse_created_at = _receipt.parse_created_at
+producer_signature_path_for_manifest = _receipt.producer_signature_path_for_manifest
+resolve_base_commit = _receipt.resolve_base_commit
+sha256_bytes = _receipt.sha256_bytes
 
 
 def validate_manifest_schema(manifest: Any) -> dict[str, Any]:
-    return _vidimus.validate_manifest_schema(manifest, LEDGER_SPEC)
+    return _receipt.validate_manifest_schema(manifest, LEDGER_SPEC)
 
 
 def load_manifest(path: pathlib.Path) -> tuple[dict[str, Any], bytes, str]:
-    return _vidimus.load_manifest(path, LEDGER_SPEC)
+    return _receipt.load_manifest(path, LEDGER_SPEC)
 
 
 def receipt_paths_for_manifest(path: pathlib.Path) -> dict[str, pathlib.Path]:
-    return _vidimus.receipt_paths_for_manifest(path, LEDGER_SPEC)
+    return _receipt.receipt_paths_for_manifest(path, LEDGER_SPEC)
 
 
 def verify_producer_signature_bytes(
@@ -84,7 +84,7 @@ def verify_producer_signature_bytes(
     enforce_production_pin: bool,
     label: str,
 ) -> None:
-    return _vidimus.verify_producer_signature_bytes(
+    return _receipt.verify_producer_signature_bytes(
         manifest,
         signature,
         spec=LEDGER_SPEC,
@@ -101,7 +101,7 @@ def verify_producer_signature(
     anchor_dir: pathlib.Path,
     enforce_production_pin: bool,
 ) -> None:
-    return _vidimus.verify_producer_signature(
+    return _receipt.verify_producer_signature(
         manifest,
         signature_path,
         spec=LEDGER_SPEC,
@@ -119,7 +119,7 @@ def verify_receipt(
     enforce_production_pins: bool,
     now: datetime | None = None,
 ) -> datetime:
-    return _vidimus.verify_receipt(
+    return _receipt.verify_receipt(
         manifest_digest,
         receipt,
         tsa,
@@ -141,7 +141,7 @@ def verify_release_receipts(
     previous_times: dict[str, datetime] | None = None,
     now: datetime | None = None,
 ) -> dict[str, datetime]:
-    return _vidimus.verify_release_receipts(
+    return _receipt.verify_release_receipts(
         manifest,
         manifest_digest,
         receipt_paths,
@@ -165,7 +165,7 @@ def verify_release_chain(
     clock_skew_seconds: int = DEFAULT_CLOCK_SKEW_SECONDS,
     now: datetime | None = None,
 ) -> ChainVerification:
-    return _vidimus.verify_release_chain(
+    return _receipt.verify_release_chain(
         root,
         spec=LEDGER_SPEC,
         anchor_dir=anchor_dir,
@@ -181,7 +181,7 @@ def verify_release_chain(
 def verify_release_history_immutable(
     root: pathlib.Path, base_ref: str
 ) -> tuple[str, set[str], dict[str, GitEntry]]:
-    return _vidimus.verify_release_history_immutable(root, base_ref, LEDGER_SPEC)
+    return _receipt.verify_release_history_immutable(root, base_ref, LEDGER_SPEC)
 
 
 def materialize_base_tree(
@@ -190,7 +190,7 @@ def materialize_base_tree(
     destination: pathlib.Path,
     release_entries: dict[str, GitEntry],
 ) -> None:
-    return _vidimus.materialize_base_tree(
+    return _receipt.materialize_base_tree(
         root,
         commit,
         destination,
@@ -208,7 +208,7 @@ def verify_base_release_chain(
     enforce_production_pins: bool = True,
     clock_skew_seconds: int = DEFAULT_CLOCK_SKEW_SECONDS,
 ) -> ChainVerification:
-    return _vidimus.verify_base_release_chain(
+    return _receipt.verify_base_release_chain(
         root,
         commit,
         release_entries,
@@ -272,7 +272,7 @@ def main() -> int:
         return 0
     head = verification.releases[-1]
     receipt_summary = ", ".join(
-        f"{tsa}={_vidimus._format_time(value)}"
+        f"{tsa}={_receipt._format_time(value)}"
         for tsa, value in sorted(head.receipt_times.items())
     )
     print(

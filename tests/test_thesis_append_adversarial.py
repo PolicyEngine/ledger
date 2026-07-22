@@ -656,7 +656,7 @@ def test_manifest_extension_cannot_grandfather_an_unbound_append(tmp_path):
 def test_binding_pair_presence_and_shape_are_enforced(
     tmp_path, mutation, expected_error
 ):
-    # Found during the vidimus extraction review: bool(row.get(...)) treated
+    # Found during the package extraction review: bool(row.get(...)) treated
     # falsy-but-present binding values as absent, silently waiving the
     # contract binding for a row that claims to grade a registered target.
     lines = _read_lines()
