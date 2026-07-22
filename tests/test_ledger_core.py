@@ -31,6 +31,7 @@ def _fact(**overrides):
         entity=EntityDimension(name="tax_unit", role="filing_unit"),
         measure=Measure(concept="irs_soi.adjusted_gross_income", unit="usd"),
         aggregation=Aggregation(method="sum"),
+        provenance_class="administrative",
         filters={"filing_status": "all"},
         source=SourceProvenance(
             source_name="irs_soi",

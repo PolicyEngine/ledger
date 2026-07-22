@@ -16,6 +16,7 @@ artifact:
   - ITEM: T40
 record_sets:
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.us
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.us
   sheet_name: FY{year}-Flat-File
@@ -51,6 +52,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.al
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.al
   sheet_name: FY{year}-Flat-File
@@ -86,6 +88,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.az
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.az
   sheet_name: FY{year}-Flat-File
@@ -121,6 +124,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.ar
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.ar
   sheet_name: FY{year}-Flat-File
@@ -156,6 +160,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.ca
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.ca
   sheet_name: FY{year}-Flat-File
@@ -191,6 +196,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.co
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.co
   sheet_name: FY{year}-Flat-File
@@ -226,6 +232,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.ct
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.ct
   sheet_name: FY{year}-Flat-File
@@ -261,6 +268,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.de
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.de
   sheet_name: FY{year}-Flat-File
@@ -296,6 +304,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.dc
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.dc
   sheet_name: FY{year}-Flat-File
@@ -331,6 +340,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.ga
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.ga
   sheet_name: FY{year}-Flat-File
@@ -366,6 +376,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.hi
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.hi
   sheet_name: FY{year}-Flat-File
@@ -401,6 +412,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.id
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.id
   sheet_name: FY{year}-Flat-File
@@ -436,6 +448,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.il
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.il
   sheet_name: FY{year}-Flat-File
@@ -471,6 +484,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.in
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.in
   sheet_name: FY{year}-Flat-File
@@ -506,6 +520,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.ia
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.ia
   sheet_name: FY{year}-Flat-File
@@ -541,6 +556,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.ks
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.ks
   sheet_name: FY{year}-Flat-File
@@ -576,6 +592,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.ky
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.ky
   sheet_name: FY{year}-Flat-File
@@ -611,6 +628,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.la
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.la
   sheet_name: FY{year}-Flat-File
@@ -646,6 +664,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.me
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.me
   sheet_name: FY{year}-Flat-File
@@ -681,6 +700,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.md
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.md
   sheet_name: FY{year}-Flat-File
@@ -716,6 +736,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.ma
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.ma
   sheet_name: FY{year}-Flat-File
@@ -751,6 +772,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.mi
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.mi
   sheet_name: FY{year}-Flat-File
@@ -786,6 +808,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.mn
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.mn
   sheet_name: FY{year}-Flat-File
@@ -821,6 +844,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.ms
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.ms
   sheet_name: FY{year}-Flat-File
@@ -856,6 +880,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.mo
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.mo
   sheet_name: FY{year}-Flat-File
@@ -891,6 +916,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.mt
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.mt
   sheet_name: FY{year}-Flat-File
@@ -926,6 +952,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.ne
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.ne
   sheet_name: FY{year}-Flat-File
@@ -961,6 +988,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.nh
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.nh
   sheet_name: FY{year}-Flat-File
@@ -996,6 +1024,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.nj
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.nj
   sheet_name: FY{year}-Flat-File
@@ -1031,6 +1060,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.nm
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.nm
   sheet_name: FY{year}-Flat-File
@@ -1066,6 +1096,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.ny
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.ny
   sheet_name: FY{year}-Flat-File
@@ -1101,6 +1132,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.nc
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.nc
   sheet_name: FY{year}-Flat-File
@@ -1136,6 +1168,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.nd
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.nd
   sheet_name: FY{year}-Flat-File
@@ -1171,6 +1204,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.oh
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.oh
   sheet_name: FY{year}-Flat-File
@@ -1206,6 +1240,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.ok
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.ok
   sheet_name: FY{year}-Flat-File
@@ -1241,6 +1276,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.or
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.or
   sheet_name: FY{year}-Flat-File
@@ -1276,6 +1312,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.pa
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.pa
   sheet_name: FY{year}-Flat-File
@@ -1311,6 +1348,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.ri
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.ri
   sheet_name: FY{year}-Flat-File
@@ -1346,6 +1384,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.sc
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.sc
   sheet_name: FY{year}-Flat-File
@@ -1381,6 +1420,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.tn
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.tn
   sheet_name: FY{year}-Flat-File
@@ -1416,6 +1456,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.ut
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.ut
   sheet_name: FY{year}-Flat-File
@@ -1451,6 +1492,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.vt
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.vt
   sheet_name: FY{year}-Flat-File
@@ -1486,6 +1528,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.va
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.va
   sheet_name: FY{year}-Flat-File
@@ -1521,6 +1564,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.wa
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.wa
   sheet_name: FY{year}-Flat-File
@@ -1556,6 +1600,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.wv
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.wv
   sheet_name: FY{year}-Flat-File
@@ -1591,6 +1636,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: census_stc.fy{year}.individual_income_tax_collections.wi
+  provenance_class: administrative
   record_set_spec_id: census_stc.individual_income_tax_collections.v1
   source_record_id_prefix: census_stc.fy{year}.individual_income_tax_collections.wi
   sheet_name: FY{year}-Flat-File

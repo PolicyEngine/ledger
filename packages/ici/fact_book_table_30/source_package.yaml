@@ -14,6 +14,8 @@ artifact:
   artifact_year: 2026
 record_sets:
   - record_set_id: ici.cy2015.fact_book_table_30
+    provenance_class: survey_aggregate
+    survey_instrument: ICI Monthly Long-Term Survey
     record_set_spec_id: ici.fact_book_table_30.paid_reinvested.v1
     source_record_id_prefix: ici.cy2015.fact_book_table_30
     sheet_name: final
@@ -65,6 +67,8 @@ record_sets:
         aggregation: sum
         value_scale: 1000000
   - record_set_id: ici.cy2021.fact_book_table_30
+    provenance_class: survey_aggregate
+    survey_instrument: ICI Monthly Long-Term Survey
     record_set_spec_id: ici.fact_book_table_30.paid_reinvested.v1
     source_record_id_prefix: ici.cy2021.fact_book_table_30
     sheet_name: final
@@ -104,6 +108,8 @@ record_sets:
         aggregation: sum
         value_scale: 1000000
   - record_set_id: ici.cy2022.fact_book_table_30
+    provenance_class: survey_aggregate
+    survey_instrument: ICI Monthly Long-Term Survey
     record_set_spec_id: ici.fact_book_table_30.paid_reinvested.v1
     source_record_id_prefix: ici.cy2022.fact_book_table_30
     sheet_name: final
@@ -143,6 +149,8 @@ record_sets:
         aggregation: sum
         value_scale: 1000000
   - record_set_id: ici.cy2023.fact_book_table_30
+    provenance_class: survey_aggregate
+    survey_instrument: ICI Monthly Long-Term Survey
     record_set_spec_id: ici.fact_book_table_30.paid_reinvested.v1
     source_record_id_prefix: ici.cy2023.fact_book_table_30
     sheet_name: final
@@ -182,6 +190,8 @@ record_sets:
         aggregation: sum
         value_scale: 1000000
   - record_set_id: ici.cy2024.fact_book_table_30
+    provenance_class: survey_aggregate
+    survey_instrument: ICI Monthly Long-Term Survey
     record_set_spec_id: ici.fact_book_table_30.paid_reinvested.v1
     source_record_id_prefix: ici.cy2024.fact_book_table_30
     sheet_name: final
@@ -221,6 +231,8 @@ record_sets:
         aggregation: sum
         value_scale: 1000000
   - record_set_id: ici.cy2025.fact_book_table_30
+    provenance_class: survey_aggregate
+    survey_instrument: ICI Monthly Long-Term Survey
     record_set_spec_id: ici.fact_book_table_30.paid_reinvested.v1
     source_record_id_prefix: ici.cy2025.fact_book_table_30
     sheet_name: final

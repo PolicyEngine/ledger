@@ -66,6 +66,28 @@ def _assert_matches_schema(row: Any, schema: dict[str, Any], root: dict[str, Any
             raise AssertionError(f"Unsupported test schema ref: {ref}")
         schema = root["$defs"][ref.removeprefix("#/$defs/")]
 
+    if "not" in schema:
+        try:
+            _assert_matches_schema(row, schema["not"], root)
+        except AssertionError:
+            pass
+        else:
+            raise AssertionError(f"{row!r} matches forbidden schema {schema['not']!r}")
+
+    for clause in schema.get("allOf", ()):
+        condition = clause.get("if")
+        if condition is None:
+            _assert_matches_schema(row, clause, root)
+            continue
+        try:
+            _assert_matches_schema(row, condition, root)
+        except AssertionError:
+            branch = clause.get("else")
+        else:
+            branch = clause.get("then")
+        if branch is not None:
+            _assert_matches_schema(row, branch, root)
+
     expected_type = schema.get("type")
     if expected_type is not None:
         allowed_types = (
@@ -128,6 +150,8 @@ def test_consumer_fact_row_exposes_ledger_and_lineage_keys():
     assert row["semantic_fact_key"].startswith("ledger.semantic_fact.v2:")
     assert row["legacy_fact_key"].startswith("ledger.fact.v1:")
     assert row["source_release_key"].startswith("ledger.source_release.v2:")
+    assert row["provenance_class"] == "administrative"
+    assert "survey_instrument" not in row
     assert row["observed_measure_key"].startswith("ledger.observed_measure.v2:")
     assert row["concept_alignment"]["canonical_concept"] == (
         "us:statutes/26/62#adjusted_gross_income"
@@ -426,6 +450,56 @@ def test_checked_in_consumer_fact_sample_matches_schema():
     assert len(rows) == 3
     for row in rows:
         _assert_matches_schema(row, schema, schema)
+
+
+def test_consumer_schema_requires_conditional_provenance_fields():
+    schema = json.loads(CONSUMER_FACT_SCHEMA_PATH.read_text())
+    row = consumer_fact_row(_soi_agi_fact())
+
+    missing = dict(row)
+    missing.pop("provenance_class")
+    with pytest.raises(AssertionError, match="provenance_class"):
+        _assert_matches_schema(missing, schema, schema)
+
+    unknown = {**row, "provenance_class": "unknown"}
+    with pytest.raises(AssertionError, match="not in enum"):
+        _assert_matches_schema(unknown, schema, schema)
+
+    survey_missing_instrument = {**row, "provenance_class": "survey_aggregate"}
+    with pytest.raises(AssertionError, match="survey_instrument"):
+        _assert_matches_schema(survey_missing_instrument, schema, schema)
+
+    misplaced = {**row, "survey_instrument": "ACS 1-year"}
+    with pytest.raises(AssertionError, match="forbidden schema"):
+        _assert_matches_schema(misplaced, schema, schema)
+
+    survey = {
+        **row,
+        "provenance_class": "survey_aggregate",
+        "survey_instrument": "ACS 1-year",
+    }
+    _assert_matches_schema(survey, schema, schema)
+
+
+@pytest.mark.parametrize(
+    "fact",
+    [
+        replace(_soi_agi_fact(), provenance_class="unknown"),
+        replace(_soi_agi_fact(), provenance_class="survey_aggregate"),
+        replace(_soi_agi_fact(), survey_instrument="ACS 1-year"),
+    ],
+)
+def test_consumer_export_rejects_malformed_provenance(fact):
+    report = validate_consumer_fact_contract([fact])
+
+    assert not report.valid
+    assert report.errors[0].code in {
+        "malformed_provenance_class",
+        "missing_survey_instrument",
+        "misplaced_survey_instrument",
+    }
+    with pytest.raises(ValueError, match="invalid Ledger consumer-contract facts"):
+        consumer_fact_row(fact)
 
 
 def test_checked_in_consumer_fact_sample_matches_exporter():

@@ -12,6 +12,7 @@ artifact:
   extraction_method: xlrd whole-workbook used-range cell parse
 record_sets:
   - record_set_id: irs_soi.ty{year}.table_1_4
+    provenance_class: administrative
     record_set_spec_id: irs_soi.table_1_4.total_wages.v1
     source_record_id_prefix: irs_soi.ty{year}.table_1_4
     sheet_name: TBL14

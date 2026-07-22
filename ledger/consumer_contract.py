@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Any
 
 from ledger.core import (
+    ALLOWED_PROVENANCE_CLASSES,
     DEFAULT_ASSERTION,
     AggregateConstraint,
     AggregateFact,
@@ -332,6 +333,19 @@ def validate_consumer_fact_contract(
                 )
             )
 
+        provenance_issue = _fact_provenance_class_issue(fact)
+        if provenance_issue is not None:
+            code, message, field = provenance_issue
+            errors.append(
+                ConsumerFactContractIssue(
+                    code=code,
+                    message=message,
+                    fact_index=index,
+                    fact_key=fact_key,
+                    field=field,
+                )
+            )
+
         if not fact.source_record_id:
             errors.append(
                 ConsumerFactContractIssue(
@@ -415,6 +429,33 @@ def _derived_source_provenance_issue(fact: AggregateFact) -> str | None:
         return (
             "Ledger source_record_id must identify a publisher-backed row, not "
             "a downstream derived target row."
+        )
+    return None
+
+
+def _fact_provenance_class_issue(
+    fact: AggregateFact,
+) -> tuple[str, str, str] | None:
+    if type(fact.provenance_class) is not str or (
+        fact.provenance_class not in ALLOWED_PROVENANCE_CLASSES
+    ):
+        return (
+            "malformed_provenance_class",
+            f"Unsupported provenance class: {fact.provenance_class!r}.",
+            "provenance_class",
+        )
+    if fact.provenance_class == "survey_aggregate":
+        if type(fact.survey_instrument) is not str or not fact.survey_instrument.strip():
+            return (
+                "missing_survey_instrument",
+                "Survey aggregates need a non-empty survey instrument.",
+                "survey_instrument",
+            )
+    elif fact.survey_instrument is not None:
+        return (
+            "misplaced_survey_instrument",
+            "survey_instrument is only valid for survey_aggregate facts.",
+            "survey_instrument",
         )
     return None
 
@@ -532,6 +573,8 @@ def _consumer_fact_row(fact: AggregateFact) -> dict[str, Any]:
         "value": _json_value(fact.value),
         "value_type": _value_type(fact.value),
         "assertion": fact.assertion,
+        "provenance_class": fact.provenance_class,
+        "survey_instrument": fact.survey_instrument,
         "period": asdict(fact.period),
         "geography": _geography_payload(fact),
         "entity": asdict(fact.entity),
@@ -689,6 +732,7 @@ _CONSUMER_REQUIRED_FIELDS = (
     "value",
     "value_type",
     "assertion",
+    "provenance_class",
     "period",
     "geography",
     "entity",

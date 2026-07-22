@@ -19,6 +19,7 @@ import yaml
 from ledger.core import (
     ALLOWED_AGGREGATIONS,
     ALLOWED_ASSERTIONS,
+    ALLOWED_PROVENANCE_CLASSES,
     DEFAULT_ASSERTION,
     Aggregation,
     AggregateConstraint,
@@ -721,6 +722,9 @@ class DeclarativeRecordSet:
 
     def to_record_set_spec(self, year: int) -> SourceRecordSetSpec:
         """Compile this YAML payload into the core record-set spec."""
+        provenance_class, survey_instrument = _provenance_fields_from_mapping(
+            self.payload
+        )
         rows = tuple(
             _row_from_mapping(row, year=year)
             for row in _required(self.payload, "rows", "record_set")
@@ -769,6 +773,8 @@ class DeclarativeRecordSet:
             ),
             rows=rows,
             measures=measures,
+            provenance_class=provenance_class,
+            survey_instrument=survey_instrument,
             shared_filters={
                 key: _render_value(value, year=year)
                 for key, value in self.payload.get("shared_filters", {}).items()
@@ -886,10 +892,7 @@ def load_source_package(source: str | Path) -> SourcePackage:
         artifact=_artifact_from_mapping(
             _required(payload, "artifact", str(path)),
         ),
-        record_sets=tuple(
-            DeclarativeRecordSet(record_set)
-            for record_set in _required(payload, "record_sets", str(path))
-        ),
+        record_sets=_record_sets_from_mapping(payload, path),
         package_path=package_dir,
     )
 
@@ -1756,6 +1759,8 @@ def _fact_from_source_record(
         ),
         aggregation=Aggregation(method=spec.aggregation),
         source=source,
+        provenance_class=spec.provenance_class,
+        survey_instrument=spec.survey_instrument,
         filters=spec.filters,
         domain=spec.domain,
         source_record_id=record.source_record_id,
@@ -1799,6 +1804,62 @@ def _assertion_from_mapping(payload: dict[str, Any]) -> str:
             "facts; only publisher observations and publisher projections are."
         )
     return assertion
+
+
+def _provenance_fields_from_mapping(
+    payload: dict[str, Any],
+) -> tuple[str, str | None]:
+    if not isinstance(payload, dict):
+        raise TypeError("record_set must be a mapping.")
+    provenance_class = _required(payload, "provenance_class", "record_set")
+    if type(provenance_class) is not str:
+        raise TypeError(
+            "record_set provenance_class must be a string, "
+            f"got {type(provenance_class).__name__}."
+        )
+    if provenance_class not in ALLOWED_PROVENANCE_CLASSES:
+        raise ValueError(
+            "record_set provenance_class must be one of "
+            f"{sorted(ALLOWED_PROVENANCE_CLASSES)}, got {provenance_class!r}."
+        )
+
+    has_survey_instrument = "survey_instrument" in payload
+    survey_instrument = payload.get("survey_instrument")
+    if provenance_class == "survey_aggregate":
+        if not has_survey_instrument:
+            raise KeyError(
+                "Missing required record_set field: survey_instrument"
+            )
+        if type(survey_instrument) is not str or not survey_instrument.strip():
+            raise TypeError(
+                "record_set survey_instrument must be a non-empty string for "
+                "survey_aggregate provenance."
+            )
+        return provenance_class, survey_instrument
+
+    if has_survey_instrument:
+        raise ValueError(
+            "record_set survey_instrument is forbidden unless provenance_class "
+            "is 'survey_aggregate'."
+        )
+    return provenance_class, None
+
+
+def _record_sets_from_mapping(
+    payload: dict[str, Any],
+    path: Path,
+) -> tuple[DeclarativeRecordSet, ...]:
+    record_sets = _required(payload, "record_sets", str(path))
+    if not isinstance(record_sets, list):
+        raise TypeError("source package record_sets must be a list.")
+    loaded = []
+    for index, record_set in enumerate(record_sets):
+        try:
+            _provenance_fields_from_mapping(record_set)
+        except (KeyError, TypeError, ValueError) as exc:
+            raise type(exc)(f"record_sets[{index}]: {exc}") from exc
+        loaded.append(DeclarativeRecordSet(record_set))
+    return tuple(loaded)
 
 
 def _period_coverage_from_mapping(
@@ -2019,6 +2080,7 @@ artifact:
   extraction_method: xlrd whole-workbook used-range cell parse
 record_sets:
   - record_set_id: {source_id}.ty{{year}}.TODO_table
+    provenance_class: TODO
     record_set_spec_id: {source_id}.TODO_table.v1
     source_record_id_prefix: {source_id}.ty{{year}}.TODO_table
     sheet_name: TODO

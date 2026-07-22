@@ -14,6 +14,7 @@ artifact:
   artifact_year: 2024
 record_sets:
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.us
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.us
   sheet_name: A.1 Fed & State by Category
@@ -53,6 +54,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.ak
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.ak
   sheet_name: Alaska
@@ -92,6 +94,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.al
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.al
   sheet_name: Alabama
@@ -131,6 +134,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.ar
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.ar
   sheet_name: Arkansas
@@ -170,6 +174,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.az
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.az
   sheet_name: Arizona
@@ -209,6 +214,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.ca
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.ca
   sheet_name: California
@@ -248,6 +254,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.co
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.co
   sheet_name: Colorado
@@ -287,6 +294,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.ct
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.ct
   sheet_name: Connecticut
@@ -326,6 +334,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.dc
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.dc
   sheet_name: DC
@@ -365,6 +374,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.de
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.de
   sheet_name: Delaware
@@ -404,6 +414,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.fl
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.fl
   sheet_name: Florida
@@ -443,6 +454,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.ga
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.ga
   sheet_name: Georgia
@@ -482,6 +494,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.hi
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.hi
   sheet_name: Hawaii
@@ -521,6 +534,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.ia
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.ia
   sheet_name: Iowa
@@ -560,6 +574,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.id
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.id
   sheet_name: Idaho
@@ -599,6 +614,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.il
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.il
   sheet_name: Illinois
@@ -638,6 +654,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.in
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.in
   sheet_name: Indiana
@@ -677,6 +694,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.ks
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.ks
   sheet_name: Kansas
@@ -716,6 +734,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.ky
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.ky
   sheet_name: Kentucky
@@ -755,6 +774,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.la
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.la
   sheet_name: Louisiana
@@ -794,6 +814,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.ma
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.ma
   sheet_name: Massachusetts
@@ -833,6 +854,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.md
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.md
   sheet_name: Maryland
@@ -872,6 +894,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.me
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.me
   sheet_name: Maine
@@ -911,6 +934,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.mi
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.mi
   sheet_name: Michigan
@@ -950,6 +974,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.mn
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.mn
   sheet_name: Minnesota
@@ -989,6 +1014,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.mo
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.mo
   sheet_name: Missouri
@@ -1028,6 +1054,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.ms
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.ms
   sheet_name: Mississippi
@@ -1067,6 +1094,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.mt
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.mt
   sheet_name: Montana
@@ -1106,6 +1134,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.nc
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.nc
   sheet_name: North Carolina
@@ -1145,6 +1174,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.nd
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.nd
   sheet_name: North Dakota
@@ -1184,6 +1214,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.ne
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.ne
   sheet_name: Nebraska
@@ -1223,6 +1254,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.nh
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.nh
   sheet_name: New Hampshire
@@ -1262,6 +1294,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.nj
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.nj
   sheet_name: New Jersey
@@ -1301,6 +1334,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.nm
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.nm
   sheet_name: New Mexico
@@ -1340,6 +1374,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.nv
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.nv
   sheet_name: Nevada
@@ -1379,6 +1414,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.ny
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.ny
   sheet_name: New York
@@ -1418,6 +1454,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.oh
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.oh
   sheet_name: Ohio
@@ -1457,6 +1494,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.ok
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.ok
   sheet_name: Oklahoma
@@ -1496,6 +1534,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.or
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.or
   sheet_name: Oregon
@@ -1535,6 +1574,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.pa
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.pa
   sheet_name: Pennsylvania
@@ -1574,6 +1614,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.ri
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.ri
   sheet_name: Rhode Island
@@ -1613,6 +1654,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.sc
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.sc
   sheet_name: South Carolina
@@ -1652,6 +1694,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.sd
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.sd
   sheet_name: South Dakota
@@ -1691,6 +1734,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.tn
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.tn
   sheet_name: Tennessee
@@ -1730,6 +1774,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.tx
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.tx
   sheet_name: Texas
@@ -1769,6 +1814,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.ut
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.ut
   sheet_name: Utah
@@ -1808,6 +1854,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.va
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.va
   sheet_name: Virginia
@@ -1847,6 +1894,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.vt
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.vt
   sheet_name: Vermont
@@ -1886,6 +1934,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.wa
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.wa
   sheet_name: Washington
@@ -1925,6 +1974,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.wi
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.wi
   sheet_name: Wisconsin
@@ -1964,6 +2014,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.wv
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.wv
   sheet_name: West Virginia
@@ -2003,6 +2054,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: hhs_acf_tanf.fy2024.cash_assistance.wy
+  provenance_class: administrative
   record_set_spec_id: hhs_acf_tanf.cash_assistance.v1
   source_record_id_prefix: hhs_acf_tanf.fy2024.cash_assistance.wy
   sheet_name: Wyoming

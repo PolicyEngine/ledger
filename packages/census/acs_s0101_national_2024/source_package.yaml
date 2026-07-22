@@ -14,6 +14,8 @@ artifact:
   sheet_name: api_response
 record_sets:
 - record_set_id: census_acs.acs1_{year}.s0101.national_age
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s0101.national_age.v1
   source_record_id_prefix: census_acs.acs1_{year}.s0101.national_age
   sheet_name: api_response

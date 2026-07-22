@@ -14,6 +14,7 @@ artifact:
   artifact_year: 2025
 record_sets:
   - record_set_id: cms_medicare.cy2024.part_b_premium_income
+    provenance_class: administrative
     record_set_spec_id: cms_medicare.part_b_premium_income.v1
     source_record_id_prefix: cms_medicare.cy2024.part_b_premium_income
     sheet_name: document_numbers

@@ -17,6 +17,7 @@ artifact:
   sheet_name: statbel_population_structure_nuts1_2026
 record_sets:
 - record_set_id: statbel.population_structure.cy2026.people.by_nuts1_age_sex
+  provenance_class: census
   record_set_spec_id: statbel.population_structure.people.by_nuts1_age_sex.v1
   source_record_id_prefix: statbel.population_structure.cy2026.people.by_nuts1_age_sex
   sheet_name: statbel_population_structure_nuts1_2026

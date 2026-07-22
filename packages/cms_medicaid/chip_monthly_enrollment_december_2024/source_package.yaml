@@ -222,6 +222,7 @@ artifact:
     Final Report: Y
 record_sets:
 - record_set_id: cms_medicaid.month2024_12.state_enrollment
+  provenance_class: administrative
   record_set_spec_id: cms_medicaid.state_monthly_enrollment.v1
   source_record_id_prefix: cms_medicaid.month2024_12.state_enrollment
   sheet_name: pi-dataset-april-2026-release.csv

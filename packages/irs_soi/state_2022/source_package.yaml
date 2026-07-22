@@ -14,6 +14,7 @@ artifact:
   artifact_year: 2022
 record_sets:
   - record_set_id: irs_soi.ty{year}.state_2022.us.return_count
+    provenance_class: administrative
     record_set_spec_id: irs_soi.state_2022.us.return_count.v1
     source_record_id_prefix: irs_soi.ty{year}.state_2022.us.return_count
     sheet_name: Sheet1
@@ -56,6 +57,7 @@ record_sets:
         aggregation: sum
         expected_cell_type: number
   - record_set_id: irs_soi.ty{year}.state_2022.us.adjusted_gross_income
+    provenance_class: administrative
     record_set_spec_id: irs_soi.state_2022.us.adjusted_gross_income.v1
     source_record_id_prefix: irs_soi.ty{year}.state_2022.us.adjusted_gross_income
     sheet_name: Sheet1
@@ -110,6 +112,7 @@ record_sets:
         value_scale: 1000
         expected_cell_type: number
   - record_set_id: irs_soi.ty{year}.state_2022.us.eitc_three_or_more_children_returns
+    provenance_class: administrative
     record_set_spec_id: irs_soi.state_2022.us.eitc_three_or_more_children_returns.v1
     source_record_id_prefix: irs_soi.ty{year}.state_2022.us.eitc_three_or_more_children_returns
     sheet_name: Sheet1
@@ -161,6 +164,7 @@ record_sets:
         aggregation: sum
         expected_cell_type: number
   - record_set_id: irs_soi.ty{year}.state_2022.us.eitc_three_or_more_children_amount
+    provenance_class: administrative
     record_set_spec_id: irs_soi.state_2022.us.eitc_three_or_more_children_amount.v1
     source_record_id_prefix: irs_soi.ty{year}.state_2022.us.eitc_three_or_more_children_amount
     sheet_name: Sheet1

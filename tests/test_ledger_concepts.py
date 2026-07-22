@@ -50,6 +50,7 @@ def _credit_fact(**overrides):
             legal_vintage="tax_year_2023",
         ),
         aggregation=Aggregation(method="sum"),
+        provenance_class="administrative",
         filters={"filing_status": "all"},
         source=SourceProvenance(
             source_name="irs_soi",

@@ -291,6 +291,8 @@ def _create_schema(connection: sqlite3.Connection) -> None:
             aggregation_method TEXT NOT NULL,
             aggregation_denominator TEXT,
             domain TEXT NOT NULL,
+            provenance_class TEXT NOT NULL,
+            survey_instrument TEXT,
             assertion TEXT NOT NULL DEFAULT 'observation',
             period_coverage_json TEXT,
             filters_json TEXT NOT NULL,
@@ -834,6 +836,8 @@ def _insert_aggregate_fact(
             aggregation_method,
             aggregation_denominator,
             domain,
+            provenance_class,
+            survey_instrument,
             assertion,
             period_coverage_json,
             filters_json,
@@ -847,7 +851,7 @@ def _insert_aggregate_fact(
             source_extraction_method,
             source_method_notes
         )
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """,
         (
             fact_key,
@@ -890,6 +894,8 @@ def _insert_aggregate_fact(
             fact.aggregation.method,
             fact.aggregation.denominator,
             fact.domain,
+            fact.provenance_class,
+            fact.survey_instrument,
             fact.assertion,
             (
                 _json_dumps(

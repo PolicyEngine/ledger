@@ -17,6 +17,7 @@ artifact:
   sheet_name: ons_uk_business_firm_sector_targets_2025
 record_sets:
 - record_set_id: ons.uk_business.cy2025.enterprise_count.by_sic_turnover_band
+  provenance_class: administrative
   record_set_spec_id: ons.uk_business.enterprise_count.by_sic_turnover_band.v1
   source_record_id_prefix: ons.uk_business.cy2025.enterprise_count.by_sic_turnover_band
   sheet_name: ons_uk_business_firm_sector_targets_2025
@@ -21554,6 +21555,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: ons.uk_business.cy2025.enterprise_count.by_sic_employment_band
+  provenance_class: administrative
   record_set_spec_id: ons.uk_business.enterprise_count.by_sic_employment_band.v1
   source_record_id_prefix: ons.uk_business.cy2025.enterprise_count.by_sic_employment_band
   sheet_name: ons_uk_business_firm_sector_targets_2025

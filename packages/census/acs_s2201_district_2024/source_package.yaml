@@ -16,6 +16,8 @@ artifact:
   sheet_name: api_response
 record_sets:
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0101
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0101
   sheet_name: api_response
@@ -106,6 +108,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0102
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0102
   sheet_name: api_response
@@ -196,6 +200,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0103
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0103
   sheet_name: api_response
@@ -286,6 +292,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0104
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0104
   sheet_name: api_response
@@ -376,6 +384,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0105
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0105
   sheet_name: api_response
@@ -466,6 +476,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0106
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0106
   sheet_name: api_response
@@ -556,6 +568,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0107
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0107
   sheet_name: api_response
@@ -646,6 +660,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0200
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0200
   sheet_name: api_response
@@ -736,6 +752,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0401
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0401
   sheet_name: api_response
@@ -826,6 +844,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0402
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0402
   sheet_name: api_response
@@ -916,6 +936,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0403
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0403
   sheet_name: api_response
@@ -1006,6 +1028,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0404
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0404
   sheet_name: api_response
@@ -1096,6 +1120,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0405
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0405
   sheet_name: api_response
@@ -1186,6 +1212,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0406
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0406
   sheet_name: api_response
@@ -1276,6 +1304,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0407
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0407
   sheet_name: api_response
@@ -1366,6 +1396,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0408
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0408
   sheet_name: api_response
@@ -1456,6 +1488,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0409
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0409
   sheet_name: api_response
@@ -1546,6 +1580,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0501
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0501
   sheet_name: api_response
@@ -1636,6 +1672,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0502
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0502
   sheet_name: api_response
@@ -1726,6 +1764,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0503
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0503
   sheet_name: api_response
@@ -1816,6 +1856,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0504
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0504
   sheet_name: api_response
@@ -1906,6 +1948,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0601
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0601
   sheet_name: api_response
@@ -1996,6 +2040,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0602
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0602
   sheet_name: api_response
@@ -2086,6 +2132,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0603
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0603
   sheet_name: api_response
@@ -2176,6 +2224,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0604
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0604
   sheet_name: api_response
@@ -2266,6 +2316,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0605
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0605
   sheet_name: api_response
@@ -2356,6 +2408,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0606
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0606
   sheet_name: api_response
@@ -2446,6 +2500,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0607
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0607
   sheet_name: api_response
@@ -2536,6 +2592,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0608
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0608
   sheet_name: api_response
@@ -2626,6 +2684,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0609
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0609
   sheet_name: api_response
@@ -2716,6 +2776,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0610
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0610
   sheet_name: api_response
@@ -2806,6 +2868,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0611
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0611
   sheet_name: api_response
@@ -2896,6 +2960,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0612
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0612
   sheet_name: api_response
@@ -2986,6 +3052,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0613
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0613
   sheet_name: api_response
@@ -3076,6 +3144,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0614
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0614
   sheet_name: api_response
@@ -3166,6 +3236,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0615
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0615
   sheet_name: api_response
@@ -3256,6 +3328,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0616
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0616
   sheet_name: api_response
@@ -3346,6 +3420,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0617
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0617
   sheet_name: api_response
@@ -3436,6 +3512,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0618
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0618
   sheet_name: api_response
@@ -3526,6 +3604,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0619
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0619
   sheet_name: api_response
@@ -3616,6 +3696,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0620
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0620
   sheet_name: api_response
@@ -3706,6 +3788,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0621
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0621
   sheet_name: api_response
@@ -3796,6 +3880,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0622
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0622
   sheet_name: api_response
@@ -3886,6 +3972,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0623
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0623
   sheet_name: api_response
@@ -3976,6 +4064,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0624
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0624
   sheet_name: api_response
@@ -4066,6 +4156,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0625
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0625
   sheet_name: api_response
@@ -4156,6 +4248,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0626
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0626
   sheet_name: api_response
@@ -4246,6 +4340,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0627
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0627
   sheet_name: api_response
@@ -4336,6 +4432,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0628
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0628
   sheet_name: api_response
@@ -4426,6 +4524,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0629
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0629
   sheet_name: api_response
@@ -4516,6 +4616,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0630
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0630
   sheet_name: api_response
@@ -4606,6 +4708,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0631
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0631
   sheet_name: api_response
@@ -4696,6 +4800,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0632
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0632
   sheet_name: api_response
@@ -4786,6 +4892,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0633
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0633
   sheet_name: api_response
@@ -4876,6 +4984,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0634
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0634
   sheet_name: api_response
@@ -4966,6 +5076,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0635
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0635
   sheet_name: api_response
@@ -5056,6 +5168,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0636
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0636
   sheet_name: api_response
@@ -5146,6 +5260,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0637
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0637
   sheet_name: api_response
@@ -5236,6 +5352,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0638
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0638
   sheet_name: api_response
@@ -5326,6 +5444,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0639
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0639
   sheet_name: api_response
@@ -5416,6 +5536,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0640
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0640
   sheet_name: api_response
@@ -5506,6 +5628,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0641
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0641
   sheet_name: api_response
@@ -5596,6 +5720,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0642
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0642
   sheet_name: api_response
@@ -5686,6 +5812,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0643
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0643
   sheet_name: api_response
@@ -5776,6 +5904,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0644
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0644
   sheet_name: api_response
@@ -5866,6 +5996,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0645
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0645
   sheet_name: api_response
@@ -5956,6 +6088,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0646
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0646
   sheet_name: api_response
@@ -6046,6 +6180,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0647
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0647
   sheet_name: api_response
@@ -6136,6 +6272,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0648
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0648
   sheet_name: api_response
@@ -6226,6 +6364,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0649
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0649
   sheet_name: api_response
@@ -6316,6 +6456,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0650
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0650
   sheet_name: api_response
@@ -6406,6 +6548,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0651
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0651
   sheet_name: api_response
@@ -6496,6 +6640,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0652
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0652
   sheet_name: api_response
@@ -6586,6 +6732,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0801
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0801
   sheet_name: api_response
@@ -6676,6 +6824,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0802
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0802
   sheet_name: api_response
@@ -6766,6 +6916,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0803
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0803
   sheet_name: api_response
@@ -6856,6 +7008,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0804
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0804
   sheet_name: api_response
@@ -6946,6 +7100,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0805
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0805
   sheet_name: api_response
@@ -7036,6 +7192,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0806
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0806
   sheet_name: api_response
@@ -7126,6 +7284,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0807
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0807
   sheet_name: api_response
@@ -7216,6 +7376,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0808
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0808
   sheet_name: api_response
@@ -7306,6 +7468,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0901
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0901
   sheet_name: api_response
@@ -7396,6 +7560,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0902
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0902
   sheet_name: api_response
@@ -7486,6 +7652,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0903
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0903
   sheet_name: api_response
@@ -7576,6 +7744,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0904
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0904
   sheet_name: api_response
@@ -7666,6 +7836,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.0905
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.0905
   sheet_name: api_response
@@ -7756,6 +7928,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1000
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1000
   sheet_name: api_response
@@ -7846,6 +8020,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1198
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1198
   sheet_name: api_response
@@ -7936,6 +8112,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1201
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1201
   sheet_name: api_response
@@ -8026,6 +8204,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1202
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1202
   sheet_name: api_response
@@ -8116,6 +8296,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1203
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1203
   sheet_name: api_response
@@ -8206,6 +8388,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1204
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1204
   sheet_name: api_response
@@ -8296,6 +8480,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1205
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1205
   sheet_name: api_response
@@ -8386,6 +8572,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1206
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1206
   sheet_name: api_response
@@ -8476,6 +8664,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1207
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1207
   sheet_name: api_response
@@ -8566,6 +8756,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1208
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1208
   sheet_name: api_response
@@ -8656,6 +8848,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1209
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1209
   sheet_name: api_response
@@ -8746,6 +8940,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1210
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1210
   sheet_name: api_response
@@ -8836,6 +9032,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1211
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1211
   sheet_name: api_response
@@ -8926,6 +9124,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1212
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1212
   sheet_name: api_response
@@ -9016,6 +9216,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1213
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1213
   sheet_name: api_response
@@ -9106,6 +9308,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1214
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1214
   sheet_name: api_response
@@ -9196,6 +9400,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1215
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1215
   sheet_name: api_response
@@ -9286,6 +9492,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1216
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1216
   sheet_name: api_response
@@ -9376,6 +9584,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1217
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1217
   sheet_name: api_response
@@ -9466,6 +9676,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1218
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1218
   sheet_name: api_response
@@ -9556,6 +9768,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1219
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1219
   sheet_name: api_response
@@ -9646,6 +9860,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1220
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1220
   sheet_name: api_response
@@ -9736,6 +9952,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1221
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1221
   sheet_name: api_response
@@ -9826,6 +10044,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1222
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1222
   sheet_name: api_response
@@ -9916,6 +10136,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1223
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1223
   sheet_name: api_response
@@ -10006,6 +10228,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1224
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1224
   sheet_name: api_response
@@ -10096,6 +10320,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1225
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1225
   sheet_name: api_response
@@ -10186,6 +10412,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1226
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1226
   sheet_name: api_response
@@ -10276,6 +10504,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1227
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1227
   sheet_name: api_response
@@ -10366,6 +10596,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1228
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1228
   sheet_name: api_response
@@ -10456,6 +10688,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1301
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1301
   sheet_name: api_response
@@ -10546,6 +10780,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1302
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1302
   sheet_name: api_response
@@ -10636,6 +10872,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1303
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1303
   sheet_name: api_response
@@ -10726,6 +10964,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1304
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1304
   sheet_name: api_response
@@ -10816,6 +11056,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1305
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1305
   sheet_name: api_response
@@ -10906,6 +11148,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1306
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1306
   sheet_name: api_response
@@ -10996,6 +11240,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1307
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1307
   sheet_name: api_response
@@ -11086,6 +11332,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1308
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1308
   sheet_name: api_response
@@ -11176,6 +11424,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1309
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1309
   sheet_name: api_response
@@ -11266,6 +11516,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1310
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1310
   sheet_name: api_response
@@ -11356,6 +11608,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1311
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1311
   sheet_name: api_response
@@ -11446,6 +11700,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1312
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1312
   sheet_name: api_response
@@ -11536,6 +11792,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1313
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1313
   sheet_name: api_response
@@ -11626,6 +11884,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1314
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1314
   sheet_name: api_response
@@ -11716,6 +11976,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1501
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1501
   sheet_name: api_response
@@ -11806,6 +12068,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1502
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1502
   sheet_name: api_response
@@ -11896,6 +12160,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1601
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1601
   sheet_name: api_response
@@ -11986,6 +12252,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1602
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1602
   sheet_name: api_response
@@ -12076,6 +12344,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1701
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1701
   sheet_name: api_response
@@ -12166,6 +12436,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1702
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1702
   sheet_name: api_response
@@ -12256,6 +12528,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1703
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1703
   sheet_name: api_response
@@ -12346,6 +12620,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1704
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1704
   sheet_name: api_response
@@ -12436,6 +12712,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1705
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1705
   sheet_name: api_response
@@ -12526,6 +12804,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1706
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1706
   sheet_name: api_response
@@ -12616,6 +12896,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1707
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1707
   sheet_name: api_response
@@ -12706,6 +12988,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1708
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1708
   sheet_name: api_response
@@ -12796,6 +13080,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1709
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1709
   sheet_name: api_response
@@ -12886,6 +13172,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1710
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1710
   sheet_name: api_response
@@ -12976,6 +13264,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1711
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1711
   sheet_name: api_response
@@ -13066,6 +13356,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1712
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1712
   sheet_name: api_response
@@ -13156,6 +13448,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1713
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1713
   sheet_name: api_response
@@ -13246,6 +13540,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1714
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1714
   sheet_name: api_response
@@ -13336,6 +13632,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1715
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1715
   sheet_name: api_response
@@ -13426,6 +13724,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1716
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1716
   sheet_name: api_response
@@ -13516,6 +13816,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1717
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1717
   sheet_name: api_response
@@ -13606,6 +13908,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1801
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1801
   sheet_name: api_response
@@ -13696,6 +14000,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1802
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1802
   sheet_name: api_response
@@ -13786,6 +14092,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1803
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1803
   sheet_name: api_response
@@ -13876,6 +14184,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1804
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1804
   sheet_name: api_response
@@ -13966,6 +14276,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1805
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1805
   sheet_name: api_response
@@ -14056,6 +14368,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1806
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1806
   sheet_name: api_response
@@ -14146,6 +14460,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1807
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1807
   sheet_name: api_response
@@ -14236,6 +14552,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1808
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1808
   sheet_name: api_response
@@ -14326,6 +14644,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1809
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1809
   sheet_name: api_response
@@ -14416,6 +14736,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1901
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1901
   sheet_name: api_response
@@ -14506,6 +14828,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1902
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1902
   sheet_name: api_response
@@ -14596,6 +14920,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1903
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1903
   sheet_name: api_response
@@ -14686,6 +15012,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.1904
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.1904
   sheet_name: api_response
@@ -14776,6 +15104,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2001
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2001
   sheet_name: api_response
@@ -14866,6 +15196,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2002
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2002
   sheet_name: api_response
@@ -14956,6 +15288,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2003
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2003
   sheet_name: api_response
@@ -15046,6 +15380,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2004
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2004
   sheet_name: api_response
@@ -15136,6 +15472,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2101
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2101
   sheet_name: api_response
@@ -15226,6 +15564,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2102
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2102
   sheet_name: api_response
@@ -15316,6 +15656,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2103
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2103
   sheet_name: api_response
@@ -15406,6 +15748,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2104
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2104
   sheet_name: api_response
@@ -15496,6 +15840,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2105
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2105
   sheet_name: api_response
@@ -15586,6 +15932,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2106
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2106
   sheet_name: api_response
@@ -15676,6 +16024,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2201
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2201
   sheet_name: api_response
@@ -15766,6 +16116,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2202
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2202
   sheet_name: api_response
@@ -15856,6 +16208,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2203
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2203
   sheet_name: api_response
@@ -15946,6 +16300,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2204
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2204
   sheet_name: api_response
@@ -16036,6 +16392,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2205
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2205
   sheet_name: api_response
@@ -16126,6 +16484,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2206
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2206
   sheet_name: api_response
@@ -16216,6 +16576,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2301
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2301
   sheet_name: api_response
@@ -16306,6 +16668,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2302
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2302
   sheet_name: api_response
@@ -16396,6 +16760,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2401
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2401
   sheet_name: api_response
@@ -16486,6 +16852,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2402
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2402
   sheet_name: api_response
@@ -16576,6 +16944,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2403
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2403
   sheet_name: api_response
@@ -16666,6 +17036,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2404
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2404
   sheet_name: api_response
@@ -16756,6 +17128,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2405
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2405
   sheet_name: api_response
@@ -16846,6 +17220,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2406
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2406
   sheet_name: api_response
@@ -16936,6 +17312,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2407
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2407
   sheet_name: api_response
@@ -17026,6 +17404,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2408
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2408
   sheet_name: api_response
@@ -17116,6 +17496,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2501
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2501
   sheet_name: api_response
@@ -17206,6 +17588,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2502
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2502
   sheet_name: api_response
@@ -17296,6 +17680,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2503
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2503
   sheet_name: api_response
@@ -17386,6 +17772,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2504
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2504
   sheet_name: api_response
@@ -17476,6 +17864,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2505
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2505
   sheet_name: api_response
@@ -17566,6 +17956,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2506
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2506
   sheet_name: api_response
@@ -17656,6 +18048,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2507
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2507
   sheet_name: api_response
@@ -17746,6 +18140,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2508
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2508
   sheet_name: api_response
@@ -17836,6 +18232,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2509
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2509
   sheet_name: api_response
@@ -17926,6 +18324,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2601
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2601
   sheet_name: api_response
@@ -18016,6 +18416,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2602
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2602
   sheet_name: api_response
@@ -18106,6 +18508,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2603
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2603
   sheet_name: api_response
@@ -18196,6 +18600,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2604
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2604
   sheet_name: api_response
@@ -18286,6 +18692,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2605
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2605
   sheet_name: api_response
@@ -18376,6 +18784,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2606
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2606
   sheet_name: api_response
@@ -18466,6 +18876,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2607
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2607
   sheet_name: api_response
@@ -18556,6 +18968,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2608
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2608
   sheet_name: api_response
@@ -18646,6 +19060,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2609
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2609
   sheet_name: api_response
@@ -18736,6 +19152,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2610
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2610
   sheet_name: api_response
@@ -18826,6 +19244,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2611
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2611
   sheet_name: api_response
@@ -18916,6 +19336,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2612
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2612
   sheet_name: api_response
@@ -19006,6 +19428,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2613
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2613
   sheet_name: api_response
@@ -19096,6 +19520,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2701
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2701
   sheet_name: api_response
@@ -19186,6 +19612,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2702
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2702
   sheet_name: api_response
@@ -19276,6 +19704,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2703
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2703
   sheet_name: api_response
@@ -19366,6 +19796,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2704
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2704
   sheet_name: api_response
@@ -19456,6 +19888,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2705
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2705
   sheet_name: api_response
@@ -19546,6 +19980,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2706
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2706
   sheet_name: api_response
@@ -19636,6 +20072,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2707
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2707
   sheet_name: api_response
@@ -19726,6 +20164,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2708
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2708
   sheet_name: api_response
@@ -19816,6 +20256,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2801
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2801
   sheet_name: api_response
@@ -19906,6 +20348,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2802
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2802
   sheet_name: api_response
@@ -19996,6 +20440,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2803
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2803
   sheet_name: api_response
@@ -20086,6 +20532,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2804
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2804
   sheet_name: api_response
@@ -20176,6 +20624,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2901
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2901
   sheet_name: api_response
@@ -20266,6 +20716,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2902
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2902
   sheet_name: api_response
@@ -20356,6 +20808,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2903
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2903
   sheet_name: api_response
@@ -20446,6 +20900,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2904
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2904
   sheet_name: api_response
@@ -20536,6 +20992,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2905
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2905
   sheet_name: api_response
@@ -20626,6 +21084,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2906
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2906
   sheet_name: api_response
@@ -20716,6 +21176,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2907
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2907
   sheet_name: api_response
@@ -20806,6 +21268,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.2908
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.2908
   sheet_name: api_response
@@ -20896,6 +21360,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3001
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3001
   sheet_name: api_response
@@ -20986,6 +21452,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3002
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3002
   sheet_name: api_response
@@ -21076,6 +21544,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3101
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3101
   sheet_name: api_response
@@ -21166,6 +21636,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3102
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3102
   sheet_name: api_response
@@ -21256,6 +21728,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3103
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3103
   sheet_name: api_response
@@ -21346,6 +21820,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3201
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3201
   sheet_name: api_response
@@ -21436,6 +21912,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3202
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3202
   sheet_name: api_response
@@ -21526,6 +22004,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3203
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3203
   sheet_name: api_response
@@ -21616,6 +22096,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3204
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3204
   sheet_name: api_response
@@ -21706,6 +22188,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3301
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3301
   sheet_name: api_response
@@ -21796,6 +22280,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3302
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3302
   sheet_name: api_response
@@ -21886,6 +22372,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3401
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3401
   sheet_name: api_response
@@ -21976,6 +22464,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3402
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3402
   sheet_name: api_response
@@ -22066,6 +22556,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3403
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3403
   sheet_name: api_response
@@ -22156,6 +22648,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3404
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3404
   sheet_name: api_response
@@ -22246,6 +22740,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3405
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3405
   sheet_name: api_response
@@ -22336,6 +22832,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3406
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3406
   sheet_name: api_response
@@ -22426,6 +22924,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3407
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3407
   sheet_name: api_response
@@ -22516,6 +23016,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3408
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3408
   sheet_name: api_response
@@ -22606,6 +23108,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3409
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3409
   sheet_name: api_response
@@ -22696,6 +23200,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3410
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3410
   sheet_name: api_response
@@ -22786,6 +23292,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3411
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3411
   sheet_name: api_response
@@ -22876,6 +23384,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3412
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3412
   sheet_name: api_response
@@ -22966,6 +23476,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3501
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3501
   sheet_name: api_response
@@ -23056,6 +23568,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3502
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3502
   sheet_name: api_response
@@ -23146,6 +23660,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3503
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3503
   sheet_name: api_response
@@ -23236,6 +23752,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3601
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3601
   sheet_name: api_response
@@ -23326,6 +23844,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3602
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3602
   sheet_name: api_response
@@ -23416,6 +23936,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3603
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3603
   sheet_name: api_response
@@ -23506,6 +24028,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3604
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3604
   sheet_name: api_response
@@ -23596,6 +24120,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3605
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3605
   sheet_name: api_response
@@ -23686,6 +24212,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3606
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3606
   sheet_name: api_response
@@ -23776,6 +24304,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3607
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3607
   sheet_name: api_response
@@ -23866,6 +24396,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3608
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3608
   sheet_name: api_response
@@ -23956,6 +24488,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3609
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3609
   sheet_name: api_response
@@ -24046,6 +24580,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3610
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3610
   sheet_name: api_response
@@ -24136,6 +24672,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3611
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3611
   sheet_name: api_response
@@ -24226,6 +24764,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3612
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3612
   sheet_name: api_response
@@ -24316,6 +24856,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3613
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3613
   sheet_name: api_response
@@ -24406,6 +24948,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3614
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3614
   sheet_name: api_response
@@ -24496,6 +25040,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3615
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3615
   sheet_name: api_response
@@ -24586,6 +25132,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3616
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3616
   sheet_name: api_response
@@ -24676,6 +25224,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3617
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3617
   sheet_name: api_response
@@ -24766,6 +25316,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3618
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3618
   sheet_name: api_response
@@ -24856,6 +25408,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3619
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3619
   sheet_name: api_response
@@ -24946,6 +25500,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3620
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3620
   sheet_name: api_response
@@ -25036,6 +25592,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3621
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3621
   sheet_name: api_response
@@ -25126,6 +25684,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3622
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3622
   sheet_name: api_response
@@ -25216,6 +25776,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3623
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3623
   sheet_name: api_response
@@ -25306,6 +25868,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3624
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3624
   sheet_name: api_response
@@ -25396,6 +25960,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3625
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3625
   sheet_name: api_response
@@ -25486,6 +26052,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3626
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3626
   sheet_name: api_response
@@ -25576,6 +26144,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3701
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3701
   sheet_name: api_response
@@ -25666,6 +26236,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3702
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3702
   sheet_name: api_response
@@ -25756,6 +26328,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3703
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3703
   sheet_name: api_response
@@ -25846,6 +26420,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3704
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3704
   sheet_name: api_response
@@ -25936,6 +26512,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3705
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3705
   sheet_name: api_response
@@ -26026,6 +26604,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3706
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3706
   sheet_name: api_response
@@ -26116,6 +26696,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3707
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3707
   sheet_name: api_response
@@ -26206,6 +26788,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3708
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3708
   sheet_name: api_response
@@ -26296,6 +26880,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3709
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3709
   sheet_name: api_response
@@ -26386,6 +26972,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3710
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3710
   sheet_name: api_response
@@ -26476,6 +27064,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3711
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3711
   sheet_name: api_response
@@ -26566,6 +27156,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3712
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3712
   sheet_name: api_response
@@ -26656,6 +27248,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3713
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3713
   sheet_name: api_response
@@ -26746,6 +27340,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3714
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3714
   sheet_name: api_response
@@ -26836,6 +27432,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3800
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3800
   sheet_name: api_response
@@ -26926,6 +27524,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3901
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3901
   sheet_name: api_response
@@ -27016,6 +27616,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3902
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3902
   sheet_name: api_response
@@ -27106,6 +27708,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3903
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3903
   sheet_name: api_response
@@ -27196,6 +27800,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3904
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3904
   sheet_name: api_response
@@ -27286,6 +27892,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3905
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3905
   sheet_name: api_response
@@ -27376,6 +27984,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3906
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3906
   sheet_name: api_response
@@ -27466,6 +28076,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3907
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3907
   sheet_name: api_response
@@ -27556,6 +28168,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3908
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3908
   sheet_name: api_response
@@ -27646,6 +28260,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3909
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3909
   sheet_name: api_response
@@ -27736,6 +28352,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3910
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3910
   sheet_name: api_response
@@ -27826,6 +28444,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3911
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3911
   sheet_name: api_response
@@ -27916,6 +28536,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3912
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3912
   sheet_name: api_response
@@ -28006,6 +28628,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3913
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3913
   sheet_name: api_response
@@ -28096,6 +28720,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3914
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3914
   sheet_name: api_response
@@ -28186,6 +28812,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.3915
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.3915
   sheet_name: api_response
@@ -28276,6 +28904,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4001
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4001
   sheet_name: api_response
@@ -28366,6 +28996,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4002
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4002
   sheet_name: api_response
@@ -28456,6 +29088,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4003
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4003
   sheet_name: api_response
@@ -28546,6 +29180,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4004
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4004
   sheet_name: api_response
@@ -28636,6 +29272,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4005
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4005
   sheet_name: api_response
@@ -28726,6 +29364,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4101
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4101
   sheet_name: api_response
@@ -28816,6 +29456,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4102
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4102
   sheet_name: api_response
@@ -28906,6 +29548,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4103
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4103
   sheet_name: api_response
@@ -28996,6 +29640,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4104
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4104
   sheet_name: api_response
@@ -29086,6 +29732,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4105
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4105
   sheet_name: api_response
@@ -29176,6 +29824,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4106
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4106
   sheet_name: api_response
@@ -29266,6 +29916,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4201
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4201
   sheet_name: api_response
@@ -29356,6 +30008,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4202
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4202
   sheet_name: api_response
@@ -29446,6 +30100,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4203
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4203
   sheet_name: api_response
@@ -29536,6 +30192,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4204
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4204
   sheet_name: api_response
@@ -29626,6 +30284,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4205
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4205
   sheet_name: api_response
@@ -29716,6 +30376,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4206
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4206
   sheet_name: api_response
@@ -29806,6 +30468,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4207
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4207
   sheet_name: api_response
@@ -29896,6 +30560,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4208
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4208
   sheet_name: api_response
@@ -29986,6 +30652,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4209
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4209
   sheet_name: api_response
@@ -30076,6 +30744,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4210
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4210
   sheet_name: api_response
@@ -30166,6 +30836,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4211
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4211
   sheet_name: api_response
@@ -30256,6 +30928,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4212
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4212
   sheet_name: api_response
@@ -30346,6 +31020,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4213
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4213
   sheet_name: api_response
@@ -30436,6 +31112,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4214
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4214
   sheet_name: api_response
@@ -30526,6 +31204,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4215
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4215
   sheet_name: api_response
@@ -30616,6 +31296,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4216
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4216
   sheet_name: api_response
@@ -30706,6 +31388,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4217
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4217
   sheet_name: api_response
@@ -30796,6 +31480,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4401
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4401
   sheet_name: api_response
@@ -30886,6 +31572,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4402
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4402
   sheet_name: api_response
@@ -30976,6 +31664,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4501
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4501
   sheet_name: api_response
@@ -31066,6 +31756,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4502
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4502
   sheet_name: api_response
@@ -31156,6 +31848,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4503
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4503
   sheet_name: api_response
@@ -31246,6 +31940,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4504
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4504
   sheet_name: api_response
@@ -31336,6 +32032,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4505
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4505
   sheet_name: api_response
@@ -31426,6 +32124,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4506
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4506
   sheet_name: api_response
@@ -31516,6 +32216,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4507
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4507
   sheet_name: api_response
@@ -31606,6 +32308,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4600
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4600
   sheet_name: api_response
@@ -31696,6 +32400,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4701
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4701
   sheet_name: api_response
@@ -31786,6 +32492,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4702
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4702
   sheet_name: api_response
@@ -31876,6 +32584,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4703
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4703
   sheet_name: api_response
@@ -31966,6 +32676,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4704
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4704
   sheet_name: api_response
@@ -32056,6 +32768,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4705
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4705
   sheet_name: api_response
@@ -32146,6 +32860,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4706
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4706
   sheet_name: api_response
@@ -32236,6 +32952,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4707
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4707
   sheet_name: api_response
@@ -32326,6 +33044,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4708
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4708
   sheet_name: api_response
@@ -32416,6 +33136,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4709
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4709
   sheet_name: api_response
@@ -32506,6 +33228,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4801
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4801
   sheet_name: api_response
@@ -32596,6 +33320,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4802
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4802
   sheet_name: api_response
@@ -32686,6 +33412,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4803
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4803
   sheet_name: api_response
@@ -32776,6 +33504,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4804
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4804
   sheet_name: api_response
@@ -32866,6 +33596,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4805
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4805
   sheet_name: api_response
@@ -32956,6 +33688,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4806
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4806
   sheet_name: api_response
@@ -33046,6 +33780,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4807
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4807
   sheet_name: api_response
@@ -33136,6 +33872,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4808
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4808
   sheet_name: api_response
@@ -33226,6 +33964,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4809
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4809
   sheet_name: api_response
@@ -33316,6 +34056,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4810
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4810
   sheet_name: api_response
@@ -33406,6 +34148,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4811
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4811
   sheet_name: api_response
@@ -33496,6 +34240,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4812
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4812
   sheet_name: api_response
@@ -33586,6 +34332,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4813
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4813
   sheet_name: api_response
@@ -33676,6 +34424,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4814
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4814
   sheet_name: api_response
@@ -33766,6 +34516,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4815
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4815
   sheet_name: api_response
@@ -33856,6 +34608,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4816
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4816
   sheet_name: api_response
@@ -33946,6 +34700,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4817
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4817
   sheet_name: api_response
@@ -34036,6 +34792,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4818
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4818
   sheet_name: api_response
@@ -34126,6 +34884,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4819
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4819
   sheet_name: api_response
@@ -34216,6 +34976,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4820
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4820
   sheet_name: api_response
@@ -34306,6 +35068,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4821
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4821
   sheet_name: api_response
@@ -34396,6 +35160,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4822
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4822
   sheet_name: api_response
@@ -34486,6 +35252,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4823
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4823
   sheet_name: api_response
@@ -34576,6 +35344,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4824
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4824
   sheet_name: api_response
@@ -34666,6 +35436,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4825
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4825
   sheet_name: api_response
@@ -34756,6 +35528,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4826
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4826
   sheet_name: api_response
@@ -34846,6 +35620,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4827
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4827
   sheet_name: api_response
@@ -34936,6 +35712,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4828
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4828
   sheet_name: api_response
@@ -35026,6 +35804,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4829
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4829
   sheet_name: api_response
@@ -35116,6 +35896,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4830
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4830
   sheet_name: api_response
@@ -35206,6 +35988,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4831
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4831
   sheet_name: api_response
@@ -35296,6 +36080,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4832
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4832
   sheet_name: api_response
@@ -35386,6 +36172,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4833
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4833
   sheet_name: api_response
@@ -35476,6 +36264,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4834
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4834
   sheet_name: api_response
@@ -35566,6 +36356,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4835
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4835
   sheet_name: api_response
@@ -35656,6 +36448,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4836
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4836
   sheet_name: api_response
@@ -35746,6 +36540,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4837
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4837
   sheet_name: api_response
@@ -35836,6 +36632,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4838
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4838
   sheet_name: api_response
@@ -35926,6 +36724,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4901
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4901
   sheet_name: api_response
@@ -36016,6 +36816,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4902
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4902
   sheet_name: api_response
@@ -36106,6 +36908,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4903
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4903
   sheet_name: api_response
@@ -36196,6 +37000,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.4904
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.4904
   sheet_name: api_response
@@ -36286,6 +37092,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5000
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5000
   sheet_name: api_response
@@ -36376,6 +37184,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5101
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5101
   sheet_name: api_response
@@ -36466,6 +37276,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5102
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5102
   sheet_name: api_response
@@ -36556,6 +37368,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5103
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5103
   sheet_name: api_response
@@ -36646,6 +37460,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5104
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5104
   sheet_name: api_response
@@ -36736,6 +37552,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5105
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5105
   sheet_name: api_response
@@ -36826,6 +37644,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5106
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5106
   sheet_name: api_response
@@ -36916,6 +37736,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5107
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5107
   sheet_name: api_response
@@ -37006,6 +37828,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5108
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5108
   sheet_name: api_response
@@ -37096,6 +37920,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5109
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5109
   sheet_name: api_response
@@ -37186,6 +38012,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5110
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5110
   sheet_name: api_response
@@ -37276,6 +38104,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5111
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5111
   sheet_name: api_response
@@ -37366,6 +38196,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5301
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5301
   sheet_name: api_response
@@ -37456,6 +38288,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5302
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5302
   sheet_name: api_response
@@ -37546,6 +38380,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5303
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5303
   sheet_name: api_response
@@ -37636,6 +38472,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5304
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5304
   sheet_name: api_response
@@ -37726,6 +38564,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5305
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5305
   sheet_name: api_response
@@ -37816,6 +38656,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5306
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5306
   sheet_name: api_response
@@ -37906,6 +38748,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5307
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5307
   sheet_name: api_response
@@ -37996,6 +38840,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5308
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5308
   sheet_name: api_response
@@ -38086,6 +38932,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5309
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5309
   sheet_name: api_response
@@ -38176,6 +39024,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5310
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5310
   sheet_name: api_response
@@ -38266,6 +39116,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5401
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5401
   sheet_name: api_response
@@ -38356,6 +39208,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5402
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5402
   sheet_name: api_response
@@ -38446,6 +39300,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5501
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5501
   sheet_name: api_response
@@ -38536,6 +39392,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5502
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5502
   sheet_name: api_response
@@ -38626,6 +39484,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5503
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5503
   sheet_name: api_response
@@ -38716,6 +39576,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5504
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5504
   sheet_name: api_response
@@ -38806,6 +39668,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5505
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5505
   sheet_name: api_response
@@ -38896,6 +39760,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5506
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5506
   sheet_name: api_response
@@ -38986,6 +39852,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5507
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5507
   sheet_name: api_response
@@ -39076,6 +39944,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5508
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5508
   sheet_name: api_response
@@ -39166,6 +40036,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.5600
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.5600
   sheet_name: api_response
@@ -39256,6 +40128,8 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: census_acs.acs1_{year}.s2201.congressional_district_snap.7298
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.s2201.congressional_district_snap.v1
   source_record_id_prefix: census_acs.acs1_{year}.s2201.congressional_district_snap.7298
   sheet_name: api_response

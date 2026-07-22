@@ -30,7 +30,9 @@ This repository provides:
   geography, period, source table, and lineage. Publisher projections (CBO
   baselines, BFP outlooks, SSA trustees tables, TPC/JCT scores) are facts
   typed `assertion: source_projection`; measured outcomes are the default
-  `assertion: observation`.
+  `assertion: observation`. Every fact also carries a required, closed
+  `provenance_class` measurement basis; survey aggregates additionally name
+  their `survey_instrument`.
 - **Normalization**: Low-assumption representation changes such as unit/scale
   conversion and source-published total/share arithmetic.
 - **Target profiles**: Source-backed target contracts and model-measurement

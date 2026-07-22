@@ -21,6 +21,7 @@ from ledger.consumer_contract import (
 )
 from ledger.core import (
     ALLOWED_ASSERTIONS,
+    ALLOWED_PROVENANCE_CLASSES,
     AggregateFact,
     Aggregation,
     EntityDimension,
@@ -100,6 +101,64 @@ def test_fact_counts_report_assertions():
     assert counts["by_assertion"] == {"observation": 1, "source_projection": 1}
 
 
+def test_provenance_class_vocabulary_is_closed_and_type_strict():
+    assert ALLOWED_PROVENANCE_CLASSES == {
+        "administrative",
+        "census",
+        "model_output",
+        "survey_aggregate",
+    }
+    fact = _fixture_fact()
+    for value in (None, "", "survey", 1, ["administrative"]):
+        issues = validate_fact(dataclasses.replace(fact, provenance_class=value))
+        assert [issue.code for issue in issues] == ["malformed_provenance_class"]
+
+
+def test_survey_instrument_is_required_only_for_survey_aggregates():
+    fact = _fixture_fact()
+    missing = dataclasses.replace(fact, provenance_class="survey_aggregate")
+    blank = dataclasses.replace(
+        fact,
+        provenance_class="survey_aggregate",
+        survey_instrument="  ",
+    )
+    misplaced = dataclasses.replace(fact, survey_instrument="ACS 1-year")
+    valid = dataclasses.replace(
+        fact,
+        provenance_class="survey_aggregate",
+        survey_instrument="ACS 1-year",
+    )
+
+    assert [issue.code for issue in validate_fact(missing)] == [
+        "missing_survey_instrument"
+    ]
+    assert [issue.code for issue in validate_fact(blank)] == [
+        "missing_survey_instrument"
+    ]
+    assert [issue.code for issue in validate_fact(misplaced)] == [
+        "misplaced_survey_instrument"
+    ]
+    assert not validate_fact(valid)
+    payload = fact_to_mapping(valid)
+    assert payload["provenance_class"] == "survey_aggregate"
+    assert payload["survey_instrument"] == "ACS 1-year"
+    assert fact_from_mapping(json.loads(json.dumps(payload))) == valid
+
+
+def test_provenance_class_is_required_on_fact_load_but_not_fact_identity():
+    fact = _fixture_fact()
+    payload = fact_to_mapping(fact)
+    payload.pop("provenance_class")
+
+    with pytest.raises(KeyError, match="provenance_class"):
+        fact_from_mapping(payload)
+
+    reclassified = dataclasses.replace(fact, provenance_class="model_output")
+    assert build_fact_key(reclassified) == build_fact_key(fact)
+    assert build_aggregate_fact_key(reclassified) == build_aggregate_fact_key(fact)
+    assert build_semantic_fact_key(reclassified) == build_semantic_fact_key(fact)
+
+
 def test_period_coverage_is_not_identity():
     fact = _fixture_fact()
     covered = dataclasses.replace(
@@ -160,6 +219,7 @@ def test_consumer_rows_expose_assertion():
 def _record_set_payload(**overrides) -> dict:
     payload = {
         "record_set_id": "cbo.cy2027.baseline.receipts",
+        "provenance_class": "model_output",
         "record_set_spec_id": "cbo.baseline.receipts.v1",
         "source_record_id_prefix": "cbo.cy2027.baseline.receipts",
         "sheet_name": "Sheet1",
@@ -238,6 +298,7 @@ def _minimal_fact(**overrides) -> AggregateFact:
         entity=EntityDimension(name="tax_unit"),
         measure=Measure(concept="irs_soi.agi", unit="usd"),
         aggregation=Aggregation(method="sum"),
+        provenance_class="administrative",
         source=SourceProvenance(
             source_name="irs_soi",
             source_table="Table 1.1",

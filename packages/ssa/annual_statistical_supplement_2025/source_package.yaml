@@ -28,6 +28,7 @@ artifact:
       period: 2024
 record_sets:
   - record_set_id: ssa_supplement.cy2024.oasdi_ssi_payments
+    provenance_class: administrative
     record_set_spec_id: ssa_supplement.oasdi_ssi_payments.v1
     source_record_id_prefix: ssa_supplement.cy2024.oasdi_ssi_payments
     sheet_name: ssa_oasdi_ssi_2024

@@ -15,6 +15,7 @@ artifact:
   sheet_name: opgroeien_groeipakket_caseload_2025
 record_sets:
 - record_set_id: opgroeien.groeipakket.cy2025.child_caseload.by_component
+  provenance_class: administrative
   record_set_spec_id: opgroeien.groeipakket.child_caseload.by_component.v1
   source_record_id_prefix: opgroeien.groeipakket.cy2025.child_caseload
   sheet_name: opgroeien_groeipakket_caseload_2025
@@ -136,6 +137,7 @@ record_sets:
     aggregation: sum
     expected_cell_type: number
 - record_set_id: opgroeien.groeipakket.cy2025.family_caseload.by_component
+  provenance_class: administrative
   record_set_spec_id: opgroeien.groeipakket.family_caseload.by_component.v1
   source_record_id_prefix: opgroeien.groeipakket.cy2025.family_caseload
   sheet_name: opgroeien_groeipakket_caseload_2025

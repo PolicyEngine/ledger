@@ -17,6 +17,7 @@
     "value",
     "value_type",
     "assertion",
+    "provenance_class",
     "period",
     "geography",
     "entity",
@@ -26,6 +27,32 @@
     "universe_constraints",
     "source",
     "lineage"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "provenance_class": {
+            "const": "survey_aggregate"
+          }
+        },
+        "required": [
+          "provenance_class"
+        ]
+      },
+      "then": {
+        "required": [
+          "survey_instrument"
+        ]
+      },
+      "else": {
+        "not": {
+          "required": [
+            "survey_instrument"
+          ]
+        }
+      }
+    }
   ],
   "properties": {
     "schema_version": {
@@ -338,6 +365,21 @@
         "source_projection"
       ],
       "description": "Who asserted the value: a publisher-measured outcome (observation) or the publisher's own forward-looking estimate (source_projection). PolicyEngine-computed values are never consumer facts."
+    },
+    "provenance_class": {
+      "type": "string",
+      "enum": [
+        "administrative",
+        "census",
+        "survey_aggregate",
+        "model_output"
+      ],
+      "description": "Publisher measurement basis. Consumers can gate calibration inputs on this required, closed classification."
+    },
+    "survey_instrument": {
+      "type": "string",
+      "pattern": ".*\\S.*",
+      "description": "Survey name required exactly when provenance_class is survey_aggregate."
     },
     "period_coverage": {
       "type": "object",

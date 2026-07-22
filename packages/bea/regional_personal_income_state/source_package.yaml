@@ -1265,6 +1265,7 @@ artifact:
     LineCode: 42
 record_sets:
 - record_set_id: bea_regional.cy{year}.state_personal_income
+  provenance_class: model_output
   record_set_spec_id: bea_regional.state_personal_income.v1
   source_record_id_prefix: bea_regional.cy{year}.state_personal_income
   sheet_name: SAINC5N__ALL_AREAS_1998_2025.csv
@@ -3173,6 +3174,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: bea_regional.cy{year}.state_dividends_interest_rent
+  provenance_class: model_output
   record_set_spec_id: bea_regional.state_dividends_interest_rent.v1
   source_record_id_prefix: bea_regional.cy{year}.state_dividends_interest_rent
   sheet_name: SAINC5N__ALL_AREAS_1998_2025.csv
@@ -5077,6 +5079,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: bea_regional.cy{year}.state_personal_current_transfer_receipts
+  provenance_class: model_output
   record_set_spec_id: bea_regional.state_personal_current_transfer_receipts.v1
   source_record_id_prefix: bea_regional.cy{year}.state_personal_current_transfer_receipts
   sheet_name: SAINC5N__ALL_AREAS_1998_2025.csv
@@ -6981,6 +6984,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: bea_regional.cy{year}.state_wages_salaries
+  provenance_class: model_output
   record_set_spec_id: bea_regional.state_wages_salaries.v1
   source_record_id_prefix: bea_regional.cy{year}.state_wages_salaries
   sheet_name: SAINC5N__ALL_AREAS_1998_2025.csv
@@ -8885,6 +8889,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: bea_regional.cy{year}.state_supplements_to_wages_salaries
+  provenance_class: model_output
   record_set_spec_id: bea_regional.state_supplements_to_wages_salaries.v1
   source_record_id_prefix: bea_regional.cy{year}.state_supplements_to_wages_salaries
   sheet_name: SAINC5N__ALL_AREAS_1998_2025.csv
@@ -10789,6 +10794,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: bea_regional.cy{year}.state_proprietors_income
+  provenance_class: model_output
   record_set_spec_id: bea_regional.state_proprietors_income.v1
   source_record_id_prefix: bea_regional.cy{year}.state_proprietors_income
   sheet_name: SAINC5N__ALL_AREAS_1998_2025.csv
@@ -12693,6 +12699,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: bea_regional.cy{year}.state_contributions_for_government_social_insurance
+  provenance_class: model_output
   record_set_spec_id: bea_regional.state_contributions_for_government_social_insurance.v1
   source_record_id_prefix: bea_regional.cy{year}.state_contributions_for_government_social_insurance
   sheet_name: SAINC5N__ALL_AREAS_1998_2025.csv
@@ -14597,6 +14604,7 @@ record_sets:
     value_scale: 1000
     expected_cell_type: number
 - record_set_id: bea_regional.cy{year}.state_residence_adjustment
+  provenance_class: model_output
   record_set_spec_id: bea_regional.state_residence_adjustment.v1
   source_record_id_prefix: bea_regional.cy{year}.state_residence_adjustment
   sheet_name: SAINC5N__ALL_AREAS_1998_2025.csv

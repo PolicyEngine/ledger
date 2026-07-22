@@ -13,6 +13,7 @@ artifact:
   parser: xlsx_used_range
 record_sets:
 - record_set_id: cms_aca.effectuated_enrollment.{year}.state_marketplace
+  provenance_class: administrative
   record_set_spec_id: cms_aca.effectuated_enrollment_state_marketplace.v1
   source_record_id_prefix: cms_aca.effectuated_enrollment.{year}.state_marketplace
   sheet_name: Full Year {year}

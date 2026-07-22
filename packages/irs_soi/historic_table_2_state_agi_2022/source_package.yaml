@@ -1036,6 +1036,7 @@ artifact:
     AGI_STUB: 10
 record_sets:
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.al
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.al
   sheet_name: in55cmcsv
@@ -1300,6 +1301,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.ak
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.ak
   sheet_name: in55cmcsv
@@ -1564,6 +1566,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.az
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.az
   sheet_name: in55cmcsv
@@ -1828,6 +1831,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.ar
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.ar
   sheet_name: in55cmcsv
@@ -2092,6 +2096,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.ca
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.ca
   sheet_name: in55cmcsv
@@ -2356,6 +2361,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.co
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.co
   sheet_name: in55cmcsv
@@ -2620,6 +2626,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.ct
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.ct
   sheet_name: in55cmcsv
@@ -2884,6 +2891,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.de
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.de
   sheet_name: in55cmcsv
@@ -3148,6 +3156,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.dc
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.dc
   sheet_name: in55cmcsv
@@ -3412,6 +3421,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.fl
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.fl
   sheet_name: in55cmcsv
@@ -3676,6 +3686,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.ga
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.ga
   sheet_name: in55cmcsv
@@ -3940,6 +3951,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.hi
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.hi
   sheet_name: in55cmcsv
@@ -4204,6 +4216,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.id
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.id
   sheet_name: in55cmcsv
@@ -4468,6 +4481,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.il
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.il
   sheet_name: in55cmcsv
@@ -4732,6 +4746,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.in
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.in
   sheet_name: in55cmcsv
@@ -4996,6 +5011,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.ia
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.ia
   sheet_name: in55cmcsv
@@ -5260,6 +5276,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.ks
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.ks
   sheet_name: in55cmcsv
@@ -5524,6 +5541,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.ky
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.ky
   sheet_name: in55cmcsv
@@ -5788,6 +5806,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.la
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.la
   sheet_name: in55cmcsv
@@ -6052,6 +6071,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.me
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.me
   sheet_name: in55cmcsv
@@ -6316,6 +6336,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.md
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.md
   sheet_name: in55cmcsv
@@ -6580,6 +6601,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.ma
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.ma
   sheet_name: in55cmcsv
@@ -6844,6 +6866,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.mi
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.mi
   sheet_name: in55cmcsv
@@ -7108,6 +7131,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.mn
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.mn
   sheet_name: in55cmcsv
@@ -7372,6 +7396,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.ms
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.ms
   sheet_name: in55cmcsv
@@ -7636,6 +7661,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.mo
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.mo
   sheet_name: in55cmcsv
@@ -7900,6 +7926,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.mt
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.mt
   sheet_name: in55cmcsv
@@ -8164,6 +8191,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.ne
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.ne
   sheet_name: in55cmcsv
@@ -8428,6 +8456,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.nv
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.nv
   sheet_name: in55cmcsv
@@ -8692,6 +8721,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.nh
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.nh
   sheet_name: in55cmcsv
@@ -8956,6 +8986,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.nj
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.nj
   sheet_name: in55cmcsv
@@ -9220,6 +9251,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.nm
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.nm
   sheet_name: in55cmcsv
@@ -9484,6 +9516,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.ny
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.ny
   sheet_name: in55cmcsv
@@ -9748,6 +9781,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.nc
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.nc
   sheet_name: in55cmcsv
@@ -10012,6 +10046,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.nd
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.nd
   sheet_name: in55cmcsv
@@ -10276,6 +10311,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.oh
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.oh
   sheet_name: in55cmcsv
@@ -10540,6 +10576,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.ok
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.ok
   sheet_name: in55cmcsv
@@ -10804,6 +10841,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.or
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.or
   sheet_name: in55cmcsv
@@ -11068,6 +11106,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.pa
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.pa
   sheet_name: in55cmcsv
@@ -11332,6 +11371,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.ri
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.ri
   sheet_name: in55cmcsv
@@ -11596,6 +11636,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.sc
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.sc
   sheet_name: in55cmcsv
@@ -11860,6 +11901,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.sd
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.sd
   sheet_name: in55cmcsv
@@ -12124,6 +12166,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.tn
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.tn
   sheet_name: in55cmcsv
@@ -12388,6 +12431,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.tx
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.tx
   sheet_name: in55cmcsv
@@ -12652,6 +12696,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.ut
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.ut
   sheet_name: in55cmcsv
@@ -12916,6 +12961,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.vt
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.vt
   sheet_name: in55cmcsv
@@ -13180,6 +13226,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.va
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.va
   sheet_name: in55cmcsv
@@ -13444,6 +13491,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.wa
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.wa
   sheet_name: in55cmcsv
@@ -13708,6 +13756,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.wv
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.wv
   sheet_name: in55cmcsv
@@ -13972,6 +14021,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.wi
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.wi
   sheet_name: in55cmcsv
@@ -14236,6 +14286,7 @@ record_sets:
     aggregation: sum
     value_scale: 1000
 - record_set_id: irs_soi.ty2022.historic_table_2.state_agi.wy
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_agi_counts_and_amounts.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_agi.wy
   sheet_name: in55cmcsv

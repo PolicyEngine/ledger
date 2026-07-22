@@ -223,6 +223,7 @@ def test_agent_acceptance_accepts_aggregate_income_range_source_rows():
         entity=EntityDimension(name="tax_unit"),
         measure=Measure(concept="irs_soi.taxable_interest", unit="usd"),
         aggregation=Aggregation(method="sum"),
+        provenance_class="administrative",
         source=SourceProvenance(
             source_name="irs_soi",
             source_table="test",
@@ -329,6 +330,7 @@ def test_agent_acceptance_rejects_row_constraints_without_source_evidence():
             unit="usd",
         ),
         aggregation=Aggregation(method="sum"),
+        provenance_class="model_output",
         source=SourceProvenance(
             source_name="bea",
             source_table="test",
@@ -438,6 +440,7 @@ def test_agent_acceptance_accepts_source_row_bound_constraints():
             unit="gbp",
         ),
         aggregation=Aggregation(method="sum"),
+        provenance_class="model_output",
         source=SourceProvenance(
             source_name="hmrc_spi",
             source_table="test",
@@ -557,6 +560,7 @@ def test_agent_acceptance_accepts_age_constraints_from_source_cell_header():
             unit="count",
         ),
         aggregation=Aggregation(method="sum"),
+        provenance_class="model_output",
         source=SourceProvenance(
             source_name="census_population_projections",
             source_table="test",

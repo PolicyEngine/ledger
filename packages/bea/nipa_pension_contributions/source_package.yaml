@@ -20,6 +20,7 @@ artifact:
       Period: "{year}"
 record_sets:
   - record_set_id: bea_nipa.cy{year}.defined_contribution_employer_contributions
+    provenance_class: model_output
     record_set_spec_id: bea_nipa.defined_contribution_employer_contributions.v1
     source_record_id_prefix: bea_nipa.cy{year}.defined_contribution_employer_contributions
     sheet_name: NipaDataA
@@ -62,6 +63,7 @@ record_sets:
         value_scale: 1000000
         expected_cell_type: number
   - record_set_id: bea_nipa.cy{year}.defined_contribution_actual_contributions
+    provenance_class: model_output
     record_set_spec_id: bea_nipa.defined_contribution_actual_contributions.v1
     source_record_id_prefix: bea_nipa.cy{year}.defined_contribution_actual_contributions
     sheet_name: NipaDataA

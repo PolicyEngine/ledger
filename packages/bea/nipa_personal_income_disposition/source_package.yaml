@@ -28,6 +28,7 @@ artifact:
     Period: '{year}'
 record_sets:
 - record_set_id: bea_nipa.cy{year}.personal_income
+  provenance_class: model_output
   record_set_spec_id: bea_nipa.personal_income.v1
   source_record_id_prefix: bea_nipa.cy{year}.personal_income
   sheet_name: NipaDataA
@@ -77,6 +78,7 @@ record_sets:
     value_scale: 1000000
     expected_cell_type: number
 - record_set_id: bea_nipa.cy{year}.personal_current_taxes
+  provenance_class: model_output
   record_set_spec_id: bea_nipa.personal_current_taxes.v1
   source_record_id_prefix: bea_nipa.cy{year}.personal_current_taxes
   sheet_name: NipaDataA
@@ -126,6 +128,7 @@ record_sets:
     value_scale: 1000000
     expected_cell_type: number
 - record_set_id: bea_nipa.cy{year}.disposable_personal_income
+  provenance_class: model_output
   record_set_spec_id: bea_nipa.disposable_personal_income.v1
   source_record_id_prefix: bea_nipa.cy{year}.disposable_personal_income
   sheet_name: NipaDataA
@@ -175,6 +178,7 @@ record_sets:
     value_scale: 1000000
     expected_cell_type: number
 - record_set_id: bea_nipa.cy{year}.personal_outlays
+  provenance_class: model_output
   record_set_spec_id: bea_nipa.personal_outlays.v1
   source_record_id_prefix: bea_nipa.cy{year}.personal_outlays
   sheet_name: NipaDataA
@@ -224,6 +228,7 @@ record_sets:
     value_scale: 1000000
     expected_cell_type: number
 - record_set_id: bea_nipa.cy{year}.personal_saving
+  provenance_class: model_output
   record_set_spec_id: bea_nipa.personal_saving.v1
   source_record_id_prefix: bea_nipa.cy{year}.personal_saving
   sheet_name: NipaDataA
@@ -273,6 +278,7 @@ record_sets:
     value_scale: 1000000
     expected_cell_type: number
 - record_set_id: bea_nipa.cy{year}.personal_saving_rate
+  provenance_class: model_output
   record_set_spec_id: bea_nipa.personal_saving_rate.v1
   source_record_id_prefix: bea_nipa.cy{year}.personal_saving_rate
   sheet_name: NipaDataA

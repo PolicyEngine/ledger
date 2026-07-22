@@ -64,6 +64,12 @@ ALLOWED_CONCEPT_RELATIONS = {
 }
 ALLOWED_ASSERTIONS = {"observation", "source_projection"}
 DEFAULT_ASSERTION = "observation"
+ALLOWED_PROVENANCE_CLASSES = {
+    "administrative",
+    "census",
+    "model_output",
+    "survey_aggregate",
+}
 ALLOWED_PERIOD_BASES = {
     "calendar",
     "tax",
@@ -217,6 +223,10 @@ class AggregateFact:
     forward-looking estimate (CBO baselines, BFP outlooks, SSA trustees
     tables, TPC/JCT scores). PolicyEngine-computed values are never facts;
     aged, uprated, or reconciled levels belong in downstream builds.
+
+    ``provenance_class`` records the publisher's measurement basis and has no
+    default. Survey aggregates additionally require ``survey_instrument``;
+    that field is forbidden for administrative, census, and model outputs.
     """
 
     value: int | float | str | Decimal
@@ -226,6 +236,8 @@ class AggregateFact:
     measure: Measure
     aggregation: Aggregation
     source: SourceProvenance
+    provenance_class: str
+    survey_instrument: str | None = None
     filters: dict[str, Scalar] = field(default_factory=dict)
     domain: str = "all"
     label: str | None = None
@@ -466,6 +478,8 @@ def validate_fact(fact: AggregateFact) -> tuple[ValidationIssue, ...]:
             )
         )
 
+    _validate_provenance_class(errors, fact)
+
     _validate_value(errors, fact.value)
     _validate_filters(errors, fact.filters)
     _validate_constraints(errors, fact.constraints)
@@ -539,6 +553,9 @@ def fact_counts(facts: list[AggregateFact]) -> dict[str, dict[str, int]]:
             f"{fact.period.type}:{fact.period.value}" for fact in facts
         ),
         "by_assertion": _counter_dict(fact.assertion for fact in facts),
+        "by_provenance_class": _counter_dict(
+            fact.provenance_class for fact in facts
+        ),
         "missing_labels": {"count": sum(1 for fact in facts if not fact.label)},
         "missing_provenance": {
             "count": sum(1 for fact in facts if _has_missing_provenance(fact))
@@ -592,6 +609,42 @@ def _validate_value(errors: list[ValidationIssue], value: Any) -> None:
         return
     if isinstance(value, str) and not value.strip():
         errors.append(_issue("missing_value", "Fact value is required", "value"))
+
+
+def _validate_provenance_class(
+    errors: list[ValidationIssue],
+    fact: AggregateFact,
+) -> None:
+    provenance_class = fact.provenance_class
+    if type(provenance_class) is not str or (
+        provenance_class not in ALLOWED_PROVENANCE_CLASSES
+    ):
+        errors.append(
+            _issue(
+                "malformed_provenance_class",
+                f"Unsupported provenance class: {provenance_class!r}",
+                "provenance_class",
+            )
+        )
+        return
+
+    if provenance_class == "survey_aggregate":
+        if type(fact.survey_instrument) is not str or not fact.survey_instrument.strip():
+            errors.append(
+                _issue(
+                    "missing_survey_instrument",
+                    "Survey-aggregate facts need a non-empty survey instrument.",
+                    "survey_instrument",
+                )
+            )
+    elif fact.survey_instrument is not None:
+        errors.append(
+            _issue(
+                "misplaced_survey_instrument",
+                "survey_instrument is only valid for survey_aggregate facts.",
+                "survey_instrument",
+            )
+        )
 
 
 def _validate_filters(

@@ -20,6 +20,7 @@ from ledger.core import validate_facts
 from ledger.source_package import (
     SOURCE_ARTIFACT_CACHE_ENV,
     SOURCE_ARTIFACT_FETCH_ENV,
+    DeclarativeRecordSet,
     SourceArtifactSpec,
     _read_source_artifact_content,
     _render_string,
@@ -32,6 +33,12 @@ from ledger.sources.rows import validate_source_rows
 from ledger.suite import build_source_suite
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
+ALLOWED_PROVENANCE_CLASSES = {
+    "administrative",
+    "census",
+    "model_output",
+    "survey_aggregate",
+}
 
 
 class _InlineZipArtifactSpec(SourceArtifactSpec):
@@ -87,6 +94,126 @@ class _MissingArtifactPath:
         raise FileNotFoundError("not packaged")
 
 
+@pytest.mark.parametrize(
+    ("provenance_fields", "message"),
+    [
+        ({}, "provenance_class"),
+        ({"provenance_class": "unknown"}, "must be one of"),
+        ({"provenance_class": 1}, "must be a string"),
+        ({"provenance_class": ["administrative"]}, "must be a string"),
+        ({"provenance_class": "survey_aggregate"}, "survey_instrument"),
+        (
+            {"provenance_class": "survey_aggregate", "survey_instrument": ""},
+            "non-empty string",
+        ),
+        (
+            {"provenance_class": "survey_aggregate", "survey_instrument": "  "},
+            "non-empty string",
+        ),
+        (
+            {"provenance_class": "survey_aggregate", "survey_instrument": 1},
+            "non-empty string",
+        ),
+        (
+            {
+                "provenance_class": "administrative",
+                "survey_instrument": "ACS 1-year",
+            },
+            "forbidden",
+        ),
+    ],
+)
+def test_record_set_provenance_schema_fails_load_compile_and_validation(
+    tmp_path,
+    provenance_fields,
+    message,
+):
+    source_path = REPO_ROOT / "packages" / "irs_soi" / "table_1_1"
+    payload = yaml.safe_load((source_path / "source_package.yaml").read_text())
+    record_set = payload["record_sets"][0]
+    record_set.pop("provenance_class")
+    record_set.pop("survey_instrument", None)
+    record_set.update(provenance_fields)
+
+    package_dir = tmp_path / "malformed-provenance"
+    package_dir.mkdir()
+    (package_dir / "source_package.yaml").write_text(yaml.safe_dump(payload))
+
+    with pytest.raises((KeyError, TypeError, ValueError), match=message):
+        load_source_package(package_dir)
+    with pytest.raises((KeyError, TypeError, ValueError), match=message):
+        DeclarativeRecordSet(record_set).to_record_set_spec(2023)
+    report = validate_source_package(package_dir, year=2023)
+    assert not report.valid
+    assert [error.code for error in report.errors] == ["source_package_load_failed"]
+    assert message in report.errors[0].message
+
+
+def test_record_set_provenance_fields_propagate_to_specs_and_facts():
+    administrative = load_source_package("soi-table-1-1")
+    admin_set = administrative.build_source_record_set_specs(2023)[0]
+    admin_spec = administrative.build_source_record_specs(2023)[0]
+    admin_fact = administrative.build_facts(2023)[0]
+    survey = load_source_package("census-acs-s0101-national-age-2024")
+    survey_set = survey.build_source_record_set_specs(2024)[0]
+    survey_spec = survey.build_source_record_specs(2024)[0]
+
+    assert admin_set.provenance_class == "administrative"
+    assert admin_spec.provenance_class == "administrative"
+    assert admin_fact.provenance_class == "administrative"
+    assert admin_fact.survey_instrument is None
+    assert survey_set.provenance_class == "survey_aggregate"
+    assert survey_set.survey_instrument == "ACS 1-year"
+    assert survey_spec.provenance_class == "survey_aggregate"
+    assert survey_spec.survey_instrument == "ACS 1-year"
+
+
+def test_every_source_package_record_set_declares_provenance_class():
+    missing: list[str] = []
+    malformed: list[str] = []
+    record_set_count = 0
+    provenance_line_count = 0
+    record_set_line_count = 0
+
+    for path in sorted((REPO_ROOT / "packages").glob("*/*/source_package.yaml")):
+        text = path.read_text()
+        record_set_line_count += sum(
+            1
+            for line in text.splitlines()
+            if line.lstrip().removeprefix("- ").startswith("record_set_id:")
+        )
+        provenance_line_count += sum(
+            1
+            for line in text.splitlines()
+            if line.lstrip().startswith("provenance_class:")
+        )
+        payload = yaml.safe_load(text)
+        for index, record_set in enumerate(payload["record_sets"]):
+            record_set_count += 1
+            record_set_id = record_set.get("record_set_id", f"index {index}")
+            location = f"{path.relative_to(REPO_ROOT)}:{record_set_id}"
+            if "provenance_class" not in record_set:
+                missing.append(location)
+                continue
+            provenance_class = record_set["provenance_class"]
+            survey_instrument = record_set.get("survey_instrument")
+            if provenance_class not in ALLOWED_PROVENANCE_CLASSES:
+                malformed.append(f"{location}: {provenance_class!r}")
+            elif provenance_class == "survey_aggregate":
+                if type(survey_instrument) is not str or not survey_instrument.strip():
+                    malformed.append(f"{location}: missing survey_instrument")
+            elif "survey_instrument" in record_set:
+                malformed.append(f"{location}: misplaced survey_instrument")
+
+        assert len(load_source_package(path).record_sets) == len(payload["record_sets"])
+
+    assert not missing, "Record sets missing provenance_class:\n" + "\n".join(missing)
+    assert not malformed, "Malformed provenance declarations:\n" + "\n".join(
+        malformed
+    )
+    assert record_set_line_count == provenance_line_count == record_set_count
+
+
 def test_source_package_alias_compiles_soi_table_1_1_specs():
     package = load_source_package("soi-table-1-1")
     record_set = package.build_source_record_set_specs(2023)[0]
@@ -99,7 +226,7 @@ def test_source_package_alias_compiles_soi_table_1_1_specs():
     assert len(specs) == 80
     assert specs[0].source_record_id == "irs_soi.ty2023.table_1_1.all.return_count"
     assert specs[0].layout is not None
-    assert specs[0].layout.record_set_spec_hash == "011ac4a343bae6b43ca9da3c"
+    assert specs[0].layout.record_set_spec_hash == "a1ecc4d67a3d281548a4660e"
 
 
 def test_empty_guard_cells_do_not_change_legacy_single_cell_hash(tmp_path):
@@ -114,7 +241,7 @@ def test_empty_guard_cells_do_not_change_legacy_single_cell_hash(tmp_path):
     specs = load_source_package(package_dir).build_source_record_specs(2023)
 
     assert specs[0].layout is not None
-    assert specs[0].layout.record_set_spec_hash == "011ac4a343bae6b43ca9da3c"
+    assert specs[0].layout.record_set_spec_hash == "a1ecc4d67a3d281548a4660e"
 
 
 def test_source_package_validation_rejects_count_aggregation(tmp_path):

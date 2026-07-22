@@ -16,6 +16,7 @@ artifact:
   sheet_name: jrc_euromod_be_baseline_statistics_2025
 record_sets:
 - record_set_id: jrc.euromod_be.cy2023.macrovalidation.amounts
+  provenance_class: model_output
   record_set_spec_id: jrc.euromod_be.macrovalidation.amounts.v1
   source_record_id_prefix: jrc.euromod_be.cy2023.macrovalidation.amounts
   sheet_name: jrc_euromod_be_baseline_statistics_2025
@@ -194,6 +195,7 @@ record_sets:
     value_scale: 1000000
     expected_cell_type: number
 - record_set_id: jrc.euromod_be.cy2023.macrovalidation.ratios
+  provenance_class: model_output
   record_set_spec_id: jrc.euromod_be.macrovalidation.ratios.v1
   source_record_id_prefix: jrc.euromod_be.cy2023.macrovalidation.ratios
   sheet_name: jrc_euromod_be_baseline_statistics_2025
@@ -300,6 +302,7 @@ record_sets:
     value_scale: 1
     expected_cell_type: number
 - record_set_id: jrc.euromod_be.cy2022.distribution.percent_values
+  provenance_class: model_output
   record_set_spec_id: jrc.euromod_be.distribution.percent_values.v1
   source_record_id_prefix: jrc.euromod_be.cy2022.distribution.percent_values
   sheet_name: jrc_euromod_be_baseline_statistics_2025
@@ -406,6 +409,7 @@ record_sets:
     value_scale: 1
     expected_cell_type: number
 - record_set_id: jrc.euromod_be.cy2022.distribution.ratios
+  provenance_class: model_output
   record_set_spec_id: jrc.euromod_be.distribution.ratios.v1
   source_record_id_prefix: jrc.euromod_be.cy2022.distribution.ratios
   sheet_name: jrc_euromod_be_baseline_statistics_2025

@@ -73,6 +73,8 @@ def test_build_ledger_db_writes_aggregate_fact_constraints_and_lineage(tmp_path)
         assert all_returns["entity_name"] == "tax_unit"
         assert all_returns["value_numeric"] == 160_602_107
         assert all_returns["domain"] == "all_individual_income_tax_returns"
+        assert all_returns["provenance_class"] == "administrative"
+        assert all_returns["survey_instrument"] is None
         assert artifact["raw_r2_bucket"] == "ledger-raw"
         assert artifact["raw_r2_key"].startswith("raw/irs_soi/soi-table-1-1/2023/")
         assert artifact["raw_r2_uri"].startswith("r2://ledger-raw/")

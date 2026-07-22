@@ -1456,6 +1456,7 @@ artifact:
     agi_stub: 0
 record_sets:
 - record_set_id: irs_soi.ty{year}.congressional_district_2022.all_returns
+  provenance_class: administrative
   record_set_spec_id: irs_soi.congressional_district_2022.all_returns.v1
   source_record_id_prefix: irs_soi.ty{year}.congressional_district_2022.all_returns
   sheet_name: incd2022

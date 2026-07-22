@@ -15,6 +15,7 @@ artifact:
   sheet_name: sfpd_legal_pension_caseload_2025
 record_sets:
 - record_set_id: sfpd.legal_pension.cy2025.recipients.by_scheme
+  provenance_class: administrative
   record_set_spec_id: sfpd.legal_pension.recipients.by_scheme.v1
   source_record_id_prefix: sfpd.legal_pension.cy2025.recipients
   sheet_name: sfpd_legal_pension_caseload_2025

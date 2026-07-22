@@ -118,6 +118,7 @@ artifact:
     AGI_STUB: 0
 record_sets:
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.al
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.al
   sheet_name: in55cmcsv
@@ -330,6 +331,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.ak
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.ak
   sheet_name: in55cmcsv
@@ -542,6 +544,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.az
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.az
   sheet_name: in55cmcsv
@@ -754,6 +757,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.ar
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.ar
   sheet_name: in55cmcsv
@@ -966,6 +970,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.ca
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.ca
   sheet_name: in55cmcsv
@@ -1178,6 +1183,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.co
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.co
   sheet_name: in55cmcsv
@@ -1390,6 +1396,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.ct
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.ct
   sheet_name: in55cmcsv
@@ -1602,6 +1609,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.de
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.de
   sheet_name: in55cmcsv
@@ -1814,6 +1822,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.dc
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.dc
   sheet_name: in55cmcsv
@@ -2026,6 +2035,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.fl
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.fl
   sheet_name: in55cmcsv
@@ -2238,6 +2248,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.ga
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.ga
   sheet_name: in55cmcsv
@@ -2450,6 +2461,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.hi
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.hi
   sheet_name: in55cmcsv
@@ -2662,6 +2674,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.id
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.id
   sheet_name: in55cmcsv
@@ -2874,6 +2887,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.il
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.il
   sheet_name: in55cmcsv
@@ -3086,6 +3100,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.in
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.in
   sheet_name: in55cmcsv
@@ -3298,6 +3313,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.ia
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.ia
   sheet_name: in55cmcsv
@@ -3510,6 +3526,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.ks
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.ks
   sheet_name: in55cmcsv
@@ -3722,6 +3739,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.ky
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.ky
   sheet_name: in55cmcsv
@@ -3934,6 +3952,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.la
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.la
   sheet_name: in55cmcsv
@@ -4146,6 +4165,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.me
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.me
   sheet_name: in55cmcsv
@@ -4358,6 +4378,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.md
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.md
   sheet_name: in55cmcsv
@@ -4570,6 +4591,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.ma
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.ma
   sheet_name: in55cmcsv
@@ -4782,6 +4804,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.mi
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.mi
   sheet_name: in55cmcsv
@@ -4994,6 +5017,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.mn
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.mn
   sheet_name: in55cmcsv
@@ -5206,6 +5230,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.ms
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.ms
   sheet_name: in55cmcsv
@@ -5418,6 +5443,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.mo
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.mo
   sheet_name: in55cmcsv
@@ -5630,6 +5656,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.mt
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.mt
   sheet_name: in55cmcsv
@@ -5842,6 +5869,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.ne
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.ne
   sheet_name: in55cmcsv
@@ -6054,6 +6082,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.nv
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.nv
   sheet_name: in55cmcsv
@@ -6266,6 +6295,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.nh
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.nh
   sheet_name: in55cmcsv
@@ -6478,6 +6508,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.nj
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.nj
   sheet_name: in55cmcsv
@@ -6690,6 +6721,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.nm
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.nm
   sheet_name: in55cmcsv
@@ -6902,6 +6934,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.ny
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.ny
   sheet_name: in55cmcsv
@@ -7114,6 +7147,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.nc
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.nc
   sheet_name: in55cmcsv
@@ -7326,6 +7360,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.nd
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.nd
   sheet_name: in55cmcsv
@@ -7538,6 +7573,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.oh
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.oh
   sheet_name: in55cmcsv
@@ -7750,6 +7786,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.ok
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.ok
   sheet_name: in55cmcsv
@@ -7962,6 +7999,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.or
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.or
   sheet_name: in55cmcsv
@@ -8174,6 +8212,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.pa
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.pa
   sheet_name: in55cmcsv
@@ -8386,6 +8425,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.ri
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.ri
   sheet_name: in55cmcsv
@@ -8598,6 +8638,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.sc
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.sc
   sheet_name: in55cmcsv
@@ -8810,6 +8851,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.sd
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.sd
   sheet_name: in55cmcsv
@@ -9022,6 +9064,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.tn
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.tn
   sheet_name: in55cmcsv
@@ -9234,6 +9277,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.tx
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.tx
   sheet_name: in55cmcsv
@@ -9446,6 +9490,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.ut
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.ut
   sheet_name: in55cmcsv
@@ -9658,6 +9703,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.vt
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.vt
   sheet_name: in55cmcsv
@@ -9870,6 +9916,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.va
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.va
   sheet_name: in55cmcsv
@@ -10082,6 +10129,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.wa
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.wa
   sheet_name: in55cmcsv
@@ -10294,6 +10342,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.wv
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.wv
   sheet_name: in55cmcsv
@@ -10506,6 +10555,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.wi
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.wi
   sheet_name: in55cmcsv
@@ -10718,6 +10768,7 @@ record_sets:
       unit: count
       label: EITC qualifying children
 - record_set_id: irs_soi.ty2022.historic_table_2.state_eitc.wy
+  provenance_class: administrative
   record_set_spec_id: irs_soi.historic_table_2.state_eitc.v1
   source_record_id_prefix: irs_soi.ty2022.historic_table_2.state_eitc.wy
   sheet_name: in55cmcsv

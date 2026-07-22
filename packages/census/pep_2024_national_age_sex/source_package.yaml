@@ -220,6 +220,7 @@ artifact:
     AGE: 100
 record_sets:
 - record_set_id: census_pep.cy2024.national_resident_population_age
+  provenance_class: census
   record_set_spec_id: census_pep.national_resident_population_age.v1
   source_record_id_prefix: census_pep.cy2024.national_resident_population_age
   sheet_name: nc-est2024-agesex-res

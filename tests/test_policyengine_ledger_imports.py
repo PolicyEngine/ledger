@@ -24,6 +24,7 @@ def test__given_ledger_import_path__then_it_reexports_ledger_fact_schema() -> No
         entity=EntityDimension(name="person"),
         measure=Measure(concept="test.people", unit="count"),
         aggregation=Aggregation(method="sum"),
+        provenance_class="administrative",
         source=SourceProvenance(
             source_name="test",
             source_table="Fixture",

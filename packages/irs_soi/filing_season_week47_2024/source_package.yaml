@@ -14,6 +14,7 @@ artifact:
   artifact_year: 2024
 record_sets:
   - record_set_id: irs_soi.ty2024.filing_season_week47.eitc_all_returns.count
+    provenance_class: administrative
     record_set_spec_id: irs_soi.filing_season_week47.eitc_count.v1
     source_record_id_prefix: irs_soi.ty2024.filing_season_week47.eitc_all_returns
     sheet_name: Filing Season
@@ -59,6 +60,7 @@ record_sets:
         aggregation: sum
         expected_cell_type: number
   - record_set_id: irs_soi.ty2024.filing_season_week47.eitc_all_returns.amount
+    provenance_class: administrative
     record_set_spec_id: irs_soi.filing_season_week47.eitc_amount.v1
     source_record_id_prefix: irs_soi.ty2024.filing_season_week47.eitc_all_returns
     sheet_name: Filing Season
@@ -105,6 +107,7 @@ record_sets:
         value_scale: 1000
         expected_cell_type: number
   - record_set_id: irs_soi.ty2024.filing_season_week47.eitc_by_agi.count
+    provenance_class: administrative
     record_set_spec_id: irs_soi.filing_season_week47.eitc_by_agi_count.v1
     source_record_id_prefix: irs_soi.ty2024.filing_season_week47.eitc_by_agi
     sheet_name: Filing Season
@@ -370,6 +373,7 @@ record_sets:
         aggregation: sum
         expected_cell_type: number
   - record_set_id: irs_soi.ty2024.filing_season_week47.eitc_by_agi.amount
+    provenance_class: administrative
     record_set_spec_id: irs_soi.filing_season_week47.eitc_by_agi_amount.v1
     source_record_id_prefix: irs_soi.ty2024.filing_season_week47.eitc_by_agi
     sheet_name: Filing Season

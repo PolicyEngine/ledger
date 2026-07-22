@@ -15,6 +15,8 @@ artifact:
   sheet_name: api_response
 record_sets:
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.01
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.01
   sheet_name: api_response
@@ -267,6 +269,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.02
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.02
   sheet_name: api_response
@@ -519,6 +523,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.04
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.04
   sheet_name: api_response
@@ -771,6 +777,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.05
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.05
   sheet_name: api_response
@@ -1023,6 +1031,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.06
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.06
   sheet_name: api_response
@@ -1275,6 +1285,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.08
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.08
   sheet_name: api_response
@@ -1527,6 +1539,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.09
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.09
   sheet_name: api_response
@@ -1779,6 +1793,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.10
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.10
   sheet_name: api_response
@@ -2031,6 +2047,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.11
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.11
   sheet_name: api_response
@@ -2283,6 +2301,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.12
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.12
   sheet_name: api_response
@@ -2535,6 +2555,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.13
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.13
   sheet_name: api_response
@@ -2787,6 +2809,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.15
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.15
   sheet_name: api_response
@@ -3039,6 +3063,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.16
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.16
   sheet_name: api_response
@@ -3291,6 +3317,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.17
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.17
   sheet_name: api_response
@@ -3543,6 +3571,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.18
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.18
   sheet_name: api_response
@@ -3795,6 +3825,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.19
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.19
   sheet_name: api_response
@@ -4047,6 +4079,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.20
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.20
   sheet_name: api_response
@@ -4299,6 +4333,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.21
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.21
   sheet_name: api_response
@@ -4551,6 +4587,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.22
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.22
   sheet_name: api_response
@@ -4803,6 +4841,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.23
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.23
   sheet_name: api_response
@@ -5055,6 +5095,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.24
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.24
   sheet_name: api_response
@@ -5307,6 +5349,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.25
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.25
   sheet_name: api_response
@@ -5559,6 +5603,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.26
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.26
   sheet_name: api_response
@@ -5811,6 +5857,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.27
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.27
   sheet_name: api_response
@@ -6063,6 +6111,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.28
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.28
   sheet_name: api_response
@@ -6315,6 +6365,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.29
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.29
   sheet_name: api_response
@@ -6567,6 +6619,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.30
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.30
   sheet_name: api_response
@@ -6819,6 +6873,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.31
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.31
   sheet_name: api_response
@@ -7071,6 +7127,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.32
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.32
   sheet_name: api_response
@@ -7323,6 +7381,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.33
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.33
   sheet_name: api_response
@@ -7575,6 +7635,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.34
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.34
   sheet_name: api_response
@@ -7827,6 +7889,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.35
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.35
   sheet_name: api_response
@@ -8079,6 +8143,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.36
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.36
   sheet_name: api_response
@@ -8331,6 +8397,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.37
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.37
   sheet_name: api_response
@@ -8583,6 +8651,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.38
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.38
   sheet_name: api_response
@@ -8835,6 +8905,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.39
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.39
   sheet_name: api_response
@@ -9087,6 +9159,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.40
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.40
   sheet_name: api_response
@@ -9339,6 +9413,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.41
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.41
   sheet_name: api_response
@@ -9591,6 +9667,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.42
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.42
   sheet_name: api_response
@@ -9843,6 +9921,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.44
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.44
   sheet_name: api_response
@@ -10095,6 +10175,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.45
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.45
   sheet_name: api_response
@@ -10347,6 +10429,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.46
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.46
   sheet_name: api_response
@@ -10599,6 +10683,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.47
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.47
   sheet_name: api_response
@@ -10851,6 +10937,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.48
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.48
   sheet_name: api_response
@@ -11103,6 +11191,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.49
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.49
   sheet_name: api_response
@@ -11355,6 +11445,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.50
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.50
   sheet_name: api_response
@@ -11607,6 +11699,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.51
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.51
   sheet_name: api_response
@@ -11859,6 +11953,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.53
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.53
   sheet_name: api_response
@@ -12111,6 +12207,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.54
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.54
   sheet_name: api_response
@@ -12363,6 +12461,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.55
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.55
   sheet_name: api_response
@@ -12615,6 +12715,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.56
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.56
   sheet_name: api_response
@@ -12867,6 +12969,8 @@ record_sets:
       value: female
       label: Sex
 - record_set_id: census_acs.acs1_{year}.b01001.female_age.72
+  provenance_class: survey_aggregate
+  survey_instrument: ACS 1-year
   record_set_spec_id: census_acs.b01001.female_age.state.v1
   source_record_id_prefix: census_acs.acs1_{year}.b01001.female_age.72
   sheet_name: api_response

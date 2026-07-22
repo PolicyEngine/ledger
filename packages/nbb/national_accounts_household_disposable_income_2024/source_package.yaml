@@ -15,6 +15,7 @@ artifact:
   sheet_name: nbb_household_disposable_income_2024
 record_sets:
 - record_set_id: nbb.national_accounts.cy2024.household_disposable_income.country
+  provenance_class: model_output
   record_set_spec_id: nbb.national_accounts.household_disposable_income.country.v1
   source_record_id_prefix: nbb.national_accounts.cy2024.household_disposable_income.country
   sheet_name: nbb_household_disposable_income_2024

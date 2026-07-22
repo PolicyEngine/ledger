@@ -21,6 +21,7 @@ artifact:
     - source_concept_id: individual_income_taxes
 record_sets:
   - record_set_id: cbo.fy{year}.revenues
+    provenance_class: administrative
     record_set_spec_id: cbo.individual_income_tax_receipts.v1
     source_record_id_prefix: cbo.fy{year}.revenues
     sheet_name: income_tax_receipts

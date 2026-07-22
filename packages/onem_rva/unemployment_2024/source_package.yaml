@@ -16,6 +16,7 @@ artifact:
   sheet_name: onem_rva_unemployment_2024
 record_sets:
 - record_set_id: onem_rva.unemployment.cy2024.complete_unemployment.country
+  provenance_class: administrative
   record_set_spec_id: onem_rva.unemployment.complete_unemployment.country.v1
   source_record_id_prefix: onem_rva.unemployment.cy2024.complete_unemployment.country
   sheet_name: onem_rva_unemployment_2024
