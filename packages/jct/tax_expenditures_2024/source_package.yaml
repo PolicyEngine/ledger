@@ -99,6 +99,90 @@ record_sets:
             value: qualified_business_income_deduction
             label: JCT tax expenditure row
         table_record_kind: total
+      - value_id: self_employed_health_insurance_deduction
+        label: Self-employed health insurance deduction
+        ordinal: 5
+        row_number: 7
+        expected_row_header_column: A
+        expected_row_header: self_employed_health_insurance_deduction
+        filters:
+          tax_expenditure: self_employed_health_insurance_deduction
+        constraints:
+          - variable: tax_expenditure
+            operator: "=="
+            value: self_employed_health_insurance_deduction
+            label: JCT tax expenditure row
+        table_record_kind: total
+      - value_id: health_savings_account_deduction
+        label: Health savings account deduction
+        ordinal: 6
+        row_number: 8
+        expected_row_header_column: A
+        expected_row_header: health_savings_account_deduction
+        filters:
+          tax_expenditure: health_savings_account_deduction
+        constraints:
+          - variable: tax_expenditure
+            operator: "=="
+            value: health_savings_account_deduction
+            label: JCT tax expenditure row
+        table_record_kind: total
+      - value_id: student_loan_interest_deduction
+        label: Student loan interest deduction
+        ordinal: 7
+        row_number: 9
+        expected_row_header_column: A
+        expected_row_header: student_loan_interest_deduction
+        filters:
+          tax_expenditure: student_loan_interest_deduction
+        constraints:
+          - variable: tax_expenditure
+            operator: "=="
+            value: student_loan_interest_deduction
+            label: JCT tax expenditure row
+        table_record_kind: total
+      - value_id: self_employed_pension_contribution_deduction
+        label: Self-employed pension (Keogh) net exclusion
+        ordinal: 8
+        row_number: 10
+        expected_row_header_column: A
+        expected_row_header: self_employed_pension_contribution_deduction
+        filters:
+          tax_expenditure: self_employed_pension_contribution_deduction
+        constraints:
+          - variable: tax_expenditure
+            operator: "=="
+            value: self_employed_pension_contribution_deduction
+            label: JCT tax expenditure row
+        table_record_kind: total
+      - value_id: traditional_ira_deduction
+        label: Traditional IRA net exclusion
+        ordinal: 9
+        row_number: 11
+        expected_row_header_column: A
+        expected_row_header: traditional_ira_deduction
+        filters:
+          tax_expenditure: traditional_ira_deduction
+        constraints:
+          - variable: tax_expenditure
+            operator: "=="
+            value: traditional_ira_deduction
+            label: JCT tax expenditure row
+        table_record_kind: total
+      - value_id: cdcc_and_employer_child_care_exclusion
+        label: CDCC and employer child care exclusion
+        ordinal: 10
+        row_number: 12
+        expected_row_header_column: A
+        expected_row_header: cdcc_and_employer_child_care_exclusion
+        filters:
+          tax_expenditure: cdcc_and_employer_child_care_exclusion
+        constraints:
+          - variable: tax_expenditure
+            operator: "=="
+            value: cdcc_and_employer_child_care_exclusion
+            label: JCT tax expenditure row
+        table_record_kind: total
     measures:
       - measure_id: revenue_loss
         label: Individual income tax revenue loss

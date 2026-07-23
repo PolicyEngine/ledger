@@ -13,16 +13,16 @@ files:
   2024:
     filename: jct_tax_expenditures_2024.csv
     source_url: https://www.jct.gov/getattachment/765709fb-9a4b-430a-8f9e-4d342ec97f7e/x-48-24.pdf
-    sha256: a6db137830f744ef140c796e23da2673480a70fb3fbcba848476d5ccbf27ffa8
-    size_bytes: 1154
+    sha256: 8bfdd02de4e44040bc52fde70134bc64d15bea536f3e48e5324b1964980218ce
+    size_bytes: 3024
     source_table: Estimates of Federal Tax Expenditures for Fiscal Years 2024-2028
     year: 2024
     storage:
       r2:
         provider: r2
         bucket: ledger-raw
-        key: raw/jct/jct-tax-expenditures-2024/2024/a6db137830f744ef140c796e23da2673480a70fb3fbcba848476d5ccbf27ffa8/jct_tax_expenditures_2024.csv
-        uri: r2://ledger-raw/raw/jct/jct-tax-expenditures-2024/2024/a6db137830f744ef140c796e23da2673480a70fb3fbcba848476d5ccbf27ffa8/jct_tax_expenditures_2024.csv
+        key: raw/jct/jct-tax-expenditures-2024/2024/8bfdd02de4e44040bc52fde70134bc64d15bea536f3e48e5324b1964980218ce/jct_tax_expenditures_2024.csv
+        uri: r2://ledger-raw/raw/jct/jct-tax-expenditures-2024/2024/8bfdd02de4e44040bc52fde70134bc64d15bea536f3e48e5324b1964980218ce/jct_tax_expenditures_2024.csv
 notes:
   - >
     Calendar-year 2024 values use the individual income tax revenue-loss column
