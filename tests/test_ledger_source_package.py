@@ -1157,13 +1157,13 @@ def test_jct_tax_expenditure_package_builds_selected_individual_facts():
     values_by_record = {fact.source_record_id: fact for fact in facts}
 
     assert package.package_id == "jct-tax-expenditures-2024"
-    assert len(cells) == 30
+    assert len(cells) == 60
     assert validate_source_cells(cells).valid
-    assert len(records) == 5
-    assert len(facts) == 5
+    assert len(records) == 11
+    assert len(facts) == 11
     assert validate_facts(facts).valid
     assert validate_consumer_fact_contract(facts).valid
-    assert len(consumer_rows) == 5
+    assert len(consumer_rows) == 11
     assert all(fact.source.source_name == "jct" for fact in facts)
     assert all(fact.source.raw_r2_uri for fact in facts)
 
@@ -1173,6 +1173,13 @@ def test_jct_tax_expenditure_package_builds_selected_individual_facts():
         "jct.tax_expenditures.cy2024.charitable_deduction.revenue_loss": 60_400_000_000,
         "jct.tax_expenditures.cy2024.deductible_mortgage_interest.revenue_loss": 24_800_000_000,
         "jct.tax_expenditures.cy2024.qualified_business_income_deduction.revenue_loss": 63_100_000_000,
+        # JCX-48-24 extension (populace#514 anchors), FY2024 individuals column:
+        "jct.tax_expenditures.cy2024.self_employed_health_insurance_deduction.revenue_loss": 8_400_000_000,
+        "jct.tax_expenditures.cy2024.health_savings_account_deduction.revenue_loss": 12_200_000_000,
+        "jct.tax_expenditures.cy2024.student_loan_interest_deduction.revenue_loss": 2_400_000_000,
+        "jct.tax_expenditures.cy2024.self_employed_pension_contribution_deduction.revenue_loss": 16_600_000_000,
+        "jct.tax_expenditures.cy2024.traditional_ira_deduction.revenue_loss": 16_000_000_000,
+        "jct.tax_expenditures.cy2024.cdcc_and_employer_child_care_exclusion.revenue_loss": 5_600_000_000,
     }
     assert {record.source_record_id for record in records} == set(expected_values)
     assert {
